@@ -61,3 +61,10 @@ src/data.ts의 모든 일정·라인업·가격·장소 조합은 **가상 샘�
 ## 브랜치 및 기여
 
 개발 통합 브랜치는 `dev`이며 작업 브랜치는 여기에서 분기합니다. 커밋 형식과 PR 작성 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)에 정리했습니다. PR 대상은 `dev`입니다.
+
+## 개발 일정
+
+[개발 로드맵 및 상세 일정](docs/development-roadmap.md): 2026년 11월 2일 베타 공개, 11월 16일 1차 완성 목표.
+
+- [베타 출시 요구사항](docs/product-requirements.md): 화면별 동작, 데이터·알림 정책, 완료 기준.
+- [기능별 작업 목록](docs/development-backlog.md): 작업 ID, 일정, 선행 조건, 검증 기준과 진행 상태.
