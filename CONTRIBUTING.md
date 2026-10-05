@@ -57,3 +57,9 @@ GitHub에서 PR을 만들 때 `.github/pull_request_template.md`가 사용됩니
 - 모든 텍스트 파일은 UTF-8로 읽고 저장합니다.
 - 의존성은 `package-lock.json`과 함께 커밋합니다. `node_modules`, `dist`, `.env`와 비밀키는 커밋하지 않습니다.
 - 현재 공연은 가상 샘플입니다. 공식 정보가 연결되기 전까지 샘플 안내를 유지합니다. 푸시 기능 구현 전에는 일정 저장을 알림 예약으로 표현하지 않습니다.
+
+## 자동 검사와 브랜치 보호
+
+GitHub Actions의 `Build and lint` 검사가 `dev`/`main` 대상 PR과 두 브랜치의 push에서 실행됩니다. Node.js 24에서 `npm ci`, `npm run lint`, `npm run build`를 수행합니다.
+
+`dev`와 `main`에는 PR을 통한 병합, `Build and lint` 통과, 최신 대상 브랜치 반영, 리뷰 대화 해결을 요구하도록 설정합니다. 관리자도 규칙을 따르며 강제 푸시와 브랜치 삭제는 허용하지 않습니다. 개인 프로젝트이므로 타인의 승인 개수는 0으로 설정합니다. 리뷰 승인과 자동 검사 통과는 별개의 조건입니다.
