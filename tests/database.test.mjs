@@ -18,6 +18,19 @@ test('migration: publication, isolation, ownership, cancellation and cascade', a
     await db.exec(await readFile(new URL('../supabase/migrations/202610060001_initial.sql', import.meta.url), 'utf8'))
     await db.exec(`insert into auth.users values ('${a}'), ('${b}'), ('${admin}');
       insert into private.admins values ('${admin}');`)
+    const registration = await readFile(new URL('../supabase/manual/register-oasis.sql', import.meta.url), 'utf8')
+    await db.exec(registration)
+    await db.exec(registration)
+    assert.equal((await db.query('select * from public.bands')).rows.length, 1)
+    await db.exec('delete from public.bands')
+    const remoteProbe = await readFile(new URL('../supabase/manual/verify-catalog-rls.sql', import.meta.url), 'utf8')
+    await db.exec(remoteProbe)
+    assert.equal((await db.query('select * from public.bands')).rows.length, 0)
+    assert.equal((await db.query('select * from public.concerts')).rows.length, 0)
+    // The probe must fail when a non-admin write policy is accidentally opened.
+    await db.exec('create policy broken_write on public.bands for insert to authenticated with check (true)')
+    await assert.rejects(db.exec(remoteProbe), /FAIL: non-admin inserted a band/)
+    await db.exec('rollback; reset role; drop policy broken_write on public.bands')
     const role = async (user) => {
       await db.exec('reset role')
       await db.query("select set_config('request.jwt.claim.sub', $1, false)", [user ?? ''])
