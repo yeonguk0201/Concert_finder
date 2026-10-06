@@ -19,12 +19,22 @@ beforeEach(() => {
   Element.prototype.scrollIntoView = vi.fn()
   mocks.bands = mapBands([{ id: 'real-band', name: 'Verified band', country_code: 'GB', aliases: [], description: null }])
   mocks.concerts = mapConcerts([{ id: 'real-concert', title: 'Verified concert', format: 'solo', city: '서울', venue: null, starts_on: '2026-12-12', ends_on: null, announced_on: '2026-10-06', cancelled: false,
-    concert_bands: [{ band_id: 'real-band' }], ticket_schedules: [{ id: 'real-ticket', opens_at: null, price_description: null, booking_url: null }], concert_sources: [] }], mocks.bands as ReturnType<typeof mapBands>)
+    concert_bands: [{ band_id: 'real-band' }], ticket_schedules: { id: 'real-ticket', opens_at: null, price_description: null, booking_url: null }, concert_sources: [] }], mocks.bands as ReturnType<typeof mapBands>)
   mocks.session = null; mocks.follows = []; mocks.saves = []
   localStorage.setItem('encore.bands', '["oasis"]'); localStorage.setItem('encore.saved', '["oasis-seoul"]')
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+test('an unknown opening time still allows saving the one-to-one ticket schedule', async () => {
+  mocks.session = { user: { id: 'account', email: 'account@example.test' } }
+  mocks.toggle.mockResolvedValue(true)
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
+  const button = await screen.findByRole('button', { name: '예매 일정 저장', exact: true })
+  expect((button as HTMLButtonElement).disabled).toBe(false)
+  fireEvent.click(button)
+  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'real-ticket'))
+})
 test('band search finds aliases and supports following without concerts', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
   mocks.bands = mapBands([{ id: 'only-band', name: 'Only band', country_code: 'GB', aliases: ['공연 없는 밴드'], description: null }])

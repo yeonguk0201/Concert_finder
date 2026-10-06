@@ -1,11 +1,12 @@
 import type { Band, Concert } from './data'
 
 export type BandRow = { id: string; name: string; aliases: string[]; country_code: string; description: string | null }
+type TicketRow = { id: string; opens_at: string | null; price_description: string | null; booking_url: string | null }
 export type ConcertRow = {
   id: string; title: string; format: string; city: string | null; venue: string | null;
   starts_on: string | null; ends_on: string | null; announced_on: string | null; cancelled: boolean;
   concert_bands: { band_id: string }[];
-  ticket_schedules: { id: string; opens_at: string | null; price_description: string | null; booking_url: string | null }[];
+  ticket_schedules: TicketRow | TicketRow[] | null;
   concert_sources: { url: string; label: string; verified_at: string | null }[];
 }
 export function mapBands(rows: BandRow[]): Band[] {
@@ -15,7 +16,7 @@ export function mapBands(rows: BandRow[]): Band[] {
 }
 export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {
   return rows.map(row => {
-    const ticket = row.ticket_schedules[0]
+    const ticket = Array.isArray(row.ticket_schedules) ? row.ticket_schedules[0] : row.ticket_schedules
     const bandIds = row.concert_bands.map(item => item.band_id)
     return { id: row.id, title: row.title, bandIds,
       type: row.format === 'festival' ? '페스티벌' : bands.some(b => bandIds.includes(b.id) && b.countryCode !== 'KR') ? '내한' : '국내',
