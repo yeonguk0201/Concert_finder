@@ -4,6 +4,8 @@ import { bands, concerts } from './data'
 import type { Concert } from './data'
 import { calendarFile, formatDate, readIds } from './lib'
 import './App.css'
+import { useAuth } from './useAuth'
+import { AccountPanel } from './AccountPanel'
 
 type Page = 'home' | 'discover' | 'bands' | 'saved'
 type IconName = 'home' | 'search' | 'heart' | 'bell' | 'arrow' | 'close' | 'calendar' | 'pin'
@@ -25,6 +27,7 @@ function Poster({ concert }: { concert: Concert }) {
 const navigation: { id: Page; label: string; icon: IconName }[] = [{ id: 'home', label: '홈', icon: 'home' }, { id: 'discover', label: '공연 둘러보기', icon: 'search' }, { id: 'bands', label: '찜한 밴드', icon: 'heart' }, { id: 'saved', label: '내 예매 일정', icon: 'calendar' }]
 
 function App() {
+  const auth = useAuth()
   const [page, setPage] = useState<Page>('home')
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState('전체')
@@ -55,6 +58,7 @@ function App() {
     <aside className="sidebar"><a className="brand" href="#" onClick={e => { e.preventDefault(); navigate('home') }}><span className="brand-mark">e</span>encore<span className="brand-dot">.</span></a><p className="brand-caption">다음 라이브를 만나는 곳</p><nav aria-label="주 메뉴">{navigation.map(item => <button key={item.id} className={`nav-item ${page === item.id ? 'selected' : ''}`} aria-current={page === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon name={item.icon} /><span>{item.label}</span>{item.id === 'bands' && <span className="count">{followed.length}</span>}</button>)}</nav><div className="sidebar-following"><span className="eyebrow">MY ARTISTS</span>{bands.filter(b => followed.includes(b.id)).map(b => <button key={b.id} onClick={() => { navigate('discover'); setQuery(b.name) }}><span className="avatar" style={{ background: b.color }}>{b.initials}</span>{b.name}<span className="online-dot" /></button>)}{!followed.length && <p>좋아하는 밴드를 찜해보세요.</p>}</div><div className="sidebar-note"><span>FOR THE LOVE OF LIVE</span><p>좋아하는 음악은<br />라이브로 완성되니까.</p><div className="sound-bars">▂ ▅ ▃ █ ▆ ▂ ▄ ▇ ▃ ▅</div></div><div className="profile"><span className="profile-avatar">♪</span><div><strong>음악을 좋아하는 당신</strong><span>로컬 프리뷰 · 로그인 없이 체험</span></div></div></aside>
     <main id="main"><header className="topbar"><span className="breadcrumb">DISCOVER YOUR NEXT LIVE</span><label className="search-box"><Icon name="search" size={18} /><input aria-label="밴드 또는 공연 검색" placeholder="밴드, 공연을 검색해보세요" value={query} onChange={e => { setQuery(e.target.value); if (page !== 'discover') setPage('discover') }} />{query && <button onClick={() => setQuery('')} aria-label="검색 지우기"><Icon name="close" size={16} /></button>}</label><button className="top-calendar" aria-label="저장한 예매 일정 보기" onClick={() => navigate('saved')}><Icon name="calendar" />{saved.length > 0 && <span>{saved.length}</span>}</button></header>
     <div className="content"><div className="demo-notice"><span className="status-dot" />PREVIEW<span>모든 공연 정보는 가상 샘플입니다. 실제 일정·예매 정보가 아닙니다.</span></div>
+    <AccountPanel auth={auth} />
     {page === 'home' && <>
       <div className="page-heading"><div><span className="eyebrow">GOOD MUSIC. GREAT NIGHTS.</span><h1>다음엔, 어떤 라이브?</h1><p>기다리던 밴드부터 새로운 발견까지. 한국에서 만나요.</p></div><span className="region"><Icon name="pin" size={16} />대한민국 전체</span></div>
       <section className="hero"><div className="hero-copy"><span className="hero-label"><span className="status-dot" /> SPOTLIGHT · 내한</span><h2>Some nights<br />stay <em>forever.</em></h2><p>플레이리스트 밖에서 만나는 우리.<br />Oasis와 함께할 다음 라이브를 확인하세요.</p><button className="primary" onClick={() => openDetails(concerts[0])}>공연 자세히 보기 <Icon name="arrow" size={18} /></button><span className="hero-meta">2026.12.12 SAT <span> / </span> 고양종합운동장 · 샘플</span></div><div className="hero-art" aria-hidden="true"><div className="vinyl"><div className="vinyl-label">oasis<span>LIVE FOREVER</span></div></div><span className="art-caption">LOUDER<br />TOGETHER.</span><span className="art-star">✳</span></div></section>
