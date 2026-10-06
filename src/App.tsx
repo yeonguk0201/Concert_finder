@@ -8,10 +8,12 @@ import { useAuth } from './useAuth'
 import { AccountPanel } from './AccountPanel'
 import { accountMode } from './backend'
 import { useCatalog } from './useCatalog'
+import { useAdminAccess } from './useAdminAccess'
+import { AdminPanel } from './AdminPanel'
 import { useAccountStorage } from './useAccountStorage'
 import { unavailableConcert } from './catalog'
 
-type Page = 'home' | 'discover' | 'bands' | 'saved'
+type Page = 'home' | 'discover' | 'bands' | 'saved' | 'admin'
 type IconName = 'home' | 'search' | 'heart' | 'bell' | 'arrow' | 'close' | 'calendar' | 'pin'
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
   const paths: Record<IconName, ReactNode> = {
@@ -33,9 +35,10 @@ const navigation: { id: Page; label: string; icon: IconName }[] = [{ id: 'home',
 function App() {
   const auth = useAuth()
   const catalog = useCatalog()
+  const admin = useAdminAccess(auth.session?.user.id ?? null)
   const { bands, concerts } = catalog
   const account = useAccountStorage(auth.session?.user.id ?? null)
-  const [page, setPage] = useState<Page>(() => { const page = new URLSearchParams(location.search).get('page'); return navigation.some(n => n.id === page) ? page as Page : 'home' })
+  const [page, setPage] = useState<Page>(() => { const page = new URLSearchParams(location.search).get('page'); return page === 'admin' || navigation.some(n => n.id === page) ? page as Page : 'home' })
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState('전체')
   const [city, setCity] = useState('전국')
@@ -97,6 +100,8 @@ function App() {
     <main id="main"><header className="topbar"><span className="breadcrumb">DISCOVER YOUR NEXT LIVE</span><label className="search-box"><Icon name="search" size={18} /><input aria-label="밴드 또는 공연 검색" placeholder="밴드, 공연을 검색해보세요" value={query} onChange={e => { setQuery(e.target.value); if (page !== 'discover' && page !== 'bands') { setPage('discover'); updateUrl('discover') } }} />{query && <button onClick={() => setQuery('')} aria-label="검색 지우기"><Icon name="close" size={16} /></button>}</label><button className="top-calendar" aria-label="저장한 예매 일정 보기" onClick={() => navigate('saved')}><Icon name="calendar" />{saved.length > 0 && <span>{saved.length}</span>}</button></header>
     <div className="content">{!accountMode && <div className="demo-notice"><span className="status-dot" />PREVIEW<span>모든 공연 정보는 가상 샘플입니다. 실제 일정·예매 정보가 아닙니다.</span></div>}
     <AccountPanel key={loginPrompt} auth={auth} initiallyExpanded={Boolean(loginPrompt)} />
+    {admin.allowed && <button className="outline" onClick={() => navigate(page === 'admin' ? 'home' : 'admin')}>{page === 'admin' ? '홈으로 돌아가기' : '관리자 공연 검수'}</button>}
+    {page === 'admin' && (admin.allowed ? <AdminPanel key={auth.session!.user.id} onSaved={catalog.reload} /> : <div className="info-banner" role="status">{admin.error || '로그인된 관리자만 공연을 등록·검수할 수 있습니다.'}{admin.error && <button className="outline" onClick={admin.reload}>권한 다시 확인</button>}</div>)}
     {catalog.loading && <p role="status">공연 정보를 불러오는 중…</p>}
     {catalog.error && <div className="info-banner" role="alert">{catalog.error}<button className="outline" onClick={catalog.reload}>다시 불러오기</button></div>}
     {accountMode && auth.session && <div className="account-sync"><span role="status">{account.loading ? '계정 저장 목록을 불러오는 중…' : account.pending.length ? '계정에 저장 중…' : '계정 저장 · 다른 기기의 변경은 다시 불러오기로 확인하세요.'}</span><button className="outline" disabled={account.loading || Boolean(account.pending.length)} onClick={() => { account.reload(); catalog.reload() }}>다시 불러오기</button></div>}
