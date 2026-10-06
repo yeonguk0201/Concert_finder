@@ -1,0 +1,11 @@
+# <type>: <변경 목적을 짧게 작성>
+# 예: feat: 밴드 공연 탐색과 예매 일정 저장 구현
+#
+# 필요한 경우 문제와 변경 결과를 본문에 작성합니다.
+#
+# 검증: 실행한 명령과 결과, 미검증 항목을 작성합니다.
+# 예: 검증: npm run build, npm run lint 통과
+#
+# type: feat | fix | docs | style | refactor | test | chore
+# 제목은 변경 결과를 설명하고, 본문은 제목과 빈 줄로 구분합니다.
+# 관련 이슈: Refs #123 또는 Closes #123
