@@ -1,5 +1,5 @@
-export type Band = { id: string; name: string; country: string; genre: string; color: string; initials: string }
-export type Concert = { id: string; title: string; bandIds: string[]; type: '내한' | '국내' | '페스티벌'; date: string; venue: string; city: string; announcedAt: string; ticketAt: string; price: string; palette: string; headline: string; description: string }
+export type Band = { id: string; name: string; country: string; genre: string; color: string; initials: string; aliases?: string[]; countryCode?: string }
+export type Concert = { id: string; title: string; bandIds: string[]; type: '내한' | '국내' | '페스티벌'; date: string; venue: string; city: string; announcedAt: string; ticketAt: string; price: string; palette: string; headline: string; description: string; endsOn?: string; ticketScheduleId?: string; cancelled?: boolean; unavailable?: boolean; sources?: { url: string; label: string }[]; bookingUrl?: string }
 
 // Fictional preview data: these are not verified concert announcements.
 export const bands: Band[] = [
