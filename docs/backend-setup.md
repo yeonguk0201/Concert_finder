@@ -5,8 +5,8 @@
 ## 신규 프로젝트 준비
 
 1. Supabase SQL Editor에서 `supabase/migrations/202610060001_initial.sql`을 실행한다. 기존 테이블이 있는 프로젝트에는 바로 실행하지 말고 구조와 충돌을 확인한다. 마이그레이션은 한 번만 적용한다.
-2. `.env.example`을 `.env`로 복사하고 Project URL과 공개용 publishable key를 넣는다. service_role·secret key와 DB 비밀번호는 브라우저 코드나 `VITE_` 변수에 넣지 않는다.
-3. Auth → URL Configuration에 개발 URL(예: `http://localhost:5173`)을 Site URL과 Redirect URLs로 등록한다. 배포 후에는 실제 HTTPS URL을 등록한다.
+2. `.env.example`을 `.env`로 복사하고 프로젝트 상단 Connect 창에서 Project URL과 공개용 publishable key를 확인해 넣는다. service_role·secret key와 DB 비밀번호는 브라우저 코드나 `VITE_` 변수에 넣지 않는다.
+3. Auth → URL Configuration에서 Site URL에 `http://localhost:5173`, Redirect URLs에 `http://localhost:5173/**`를 등록한다. `127.0.0.1`로 접속한다면 그 주소도 별도로 등록한다. 링크 요청에 원래 화면을 보존하는 query가 포함되므로 개발용 경로 허용을 확인한다. 배포 후에는 실제 HTTPS 복귀 경로를 명시적으로 등록하고 광범위한 wildcard는 개발 환경에만 사용한다.
 4. 이메일 provider와 이메일 템플릿을 확인한다. 기본 magic link 템플릿을 사용한다. SPA는 implicit flow로 링크를 연 브라우저에서 세션을 받는다. 외부 기기에서도 로그인할 수 있으나 원래 기기의 세션을 자동 생성하지 않는다.
 5. 개발 서버를 다시 시작한다. 실제 밴드·공연 데이터가 없으면 빈 목록이 정상이다. 샘플을 운영 DB에 넣지 않는다.
 
@@ -42,3 +42,5 @@
 초기 마이그레이션은 신규 프로젝트용이다. 운영 적용 전에 백업을 확보한다. 실패하면 트랜잭션을 롤백하고 원인을 해결한 뒤 다시 실행한다. 적용 후 데이터가 존재하면 테이블을 삭제해 되돌리지 말고 후속 수정 마이그레이션을 만든다. 개발용 빈 프로젝트만 초기화할 수 있다.
 
 참고: [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [이메일 링크 인증](https://supabase.com/docs/guides/auth/auth-email-passwordless).
+
+공식 설정 설명: [공개용 API 키 확인](https://supabase.com/docs/guides/getting-started/api-keys), [복귀 URL 허용 규칙](https://supabase.com/docs/guides/auth/redirect-urls).
