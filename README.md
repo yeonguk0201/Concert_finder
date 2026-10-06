@@ -64,7 +64,7 @@ src/data.ts의 모든 일정·라인업·가격·장소 조합은 **가상 샘�
 
 ## 개발 일정
 
-[개발 로드맵 및 상세 일정](docs/development-roadmap.md): 2026년 11월 2일 베타 공개, 11월 16일 1차 완성 목표.
+[개발 로드맵 및 상세 일정](docs/development-roadmap.md): 기존 약 4일의 작업을 하루 목표로 묶어 2026년 10월 19일 베타 공개, 10월 26일 1차 완성 목표.
 
 - [베타 출시 요구사항](docs/product-requirements.md): 화면별 동작, 데이터·알림 정책, 완료 기준.
 - [기능별 작업 목록](docs/development-backlog.md): 작업 ID, 일정, 선행 조건, 검증 기준과 진행 상태.
