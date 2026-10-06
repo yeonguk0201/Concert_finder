@@ -1,22 +1,27 @@
 import { useEffect, useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
 import { backend, configurationError } from './backend'
+import { authCallback } from './authErrors'
 
 export function useAuth() {
   const [session, setSession] = useState<Session | null>(null)
   const [loading, setLoading] = useState(Boolean(backend))
-  const [error, setError] = useState(configurationError)
+  // Read before effects clean the URL; StrictMode replays setup and cleanup.
+  const [error, setError] = useState(() => configurationError || authCallback(new URL(window.location.href)).error)
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState('')
   useEffect(() => {
     if (!backend) return
     let active = true
     let eventSeen = false
-    const hash = new URLSearchParams(window.location.hash.slice(1))
-    if (hash.has('error') || hash.has('error_description')) {
-      queueMicrotask(() => { if (active) setError('로그인 링크가 만료되었거나 사용할 수 없습니다. 새 링크를 요청해 주세요.') })
-      history.replaceState(null, '', window.location.pathname + window.location.search)
+    const handleCallback = () => {
+      const callback = authCallback(new URL(window.location.href))
+      if (callback.error) { setError(callback.error); history.replaceState(null, '', callback.cleanUrl) }
     }
+    const initial = authCallback(new URL(window.location.href))
+    if (initial.error) history.replaceState(null, '', initial.cleanUrl)
+    window.addEventListener('hashchange', handleCallback)
+    window.addEventListener('popstate', handleCallback)
     const { data: { subscription } } = backend.auth.onAuthStateChange((_event, next) => {
       eventSeen = true
       if (active) { setSession(next); setLoading(false) }
@@ -26,14 +31,14 @@ export function useAuth() {
       setSession(data.session); setLoading(false)
       if (failure) setError('세션을 복구하지 못했습니다. 새 로그인 링크를 요청해 주세요.')
     }).catch(() => { if (active) { setLoading(false); setError('세션 확인에 실패했습니다. 연결을 확인하고 다시 시도해 주세요.') } })
-    return () => { active = false; subscription.unsubscribe() }
+    return () => { active = false; subscription.unsubscribe(); window.removeEventListener('hashchange', handleCallback); window.removeEventListener('popstate', handleCallback) }
   }, [])
 
   const requestLink = async (email: string) => {
     if (!backend || busy) return
     setBusy(true); setError(''); setMessage('')
     try {
-      // Hash keeps the current page/detail available in a newly opened browser.
+      // Query keeps the current page/detail available in a newly opened browser.
       const redirect = new URL(window.location.href)
       redirect.hash = ''
       const { error: failure } = await backend.auth.signInWithOtp({ email: email.trim(), options: { emailRedirectTo: redirect.href } })

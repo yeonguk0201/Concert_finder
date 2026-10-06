@@ -2,6 +2,8 @@
 import { act, cleanup, renderHook, waitFor } from '@testing-library/react'
 import { afterEach, expect, test, vi } from 'vitest'
 import { useAuth } from '../src/useAuth'
+import { StrictMode } from 'react'
+import { authCallback } from '../src/authErrors'
 
 const mock = vi.hoisted(() => ({
   getSession: vi.fn(), signInWithOtp: vi.fn(), signOut: vi.fn(),
@@ -48,4 +50,36 @@ test('auth event wins over stale session restoration and unmount unsubscribes', 
   expect(result.current.session).toBeNull()
   unmount()
   expect(mock.unsubscribe).toHaveBeenCalled()
+})
+
+test('StrictMode effect replay retains callback error after cleaning the fragment', async () => {
+  history.replaceState(null, '', '/?page=saved&event=abc#error=access_denied&error_code=otp_expired&error_description=expired')
+  mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
+  const { result } = renderHook(useAuth, { wrapper: StrictMode })
+  await waitFor(() => expect(result.current.loading).toBe(false))
+  expect(result.current.error).toContain('만료')
+  expect(location.hash).toBe('')
+  expect(location.search).toBe('?page=saved&event=abc')
+})
+test('query callback errors and error_code alone are recognized without displaying raw descriptions', async () => {
+  history.replaceState(null, '', '/?page=bands&error_code=otp_expired&error_description=private_value#section=account')
+  mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
+  const { result } = renderHook(useAuth, { wrapper: StrictMode })
+  await waitFor(() => expect(result.current.loading).toBe(false))
+  expect(result.current.error).toContain('만료')
+  expect(result.current.error).not.toContain('private_value')
+  expect(location.search).toBe('?page=bands')
+  expect(location.hash).toBe('#section=account')
+  expect(authCallback(new URL('https://app.example/#access_token=test')).error).toBe('')
+})
+test('an invalid link arriving by hash navigation is handled without a page reload', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.loading).toBe(false))
+  act(() => {
+    history.replaceState(null, '', '/?page=saved#error_code=otp_expired')
+    window.dispatchEvent(new HashChangeEvent('hashchange'))
+  })
+  expect(result.current.error).toContain('만료')
+  expect(location.hash).toBe('')
 })
