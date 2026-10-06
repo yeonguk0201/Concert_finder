@@ -25,6 +25,27 @@ beforeEach(() => {
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+test('band search finds aliases and supports following without concerts', async () => {
+  mocks.session = { user: { id: 'account', email: 'account@example.test' } }
+  mocks.bands = mapBands([{ id: 'only-band', name: 'Only band', country_code: 'GB', aliases: ['공연 없는 밴드'], description: null }])
+  mocks.concerts = []; mocks.toggle.mockResolvedValue(true)
+  render(<App />)
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '공연 없는' } })
+  fireEvent.click(screen.getByRole('button', { name: 'Only band 찜하기' }))
+  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', 'only-band'))
+  fireEvent.click(screen.getAllByRole('button', { name: /찜한 밴드/ })[0])
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '없는 이름' } })
+  expect(screen.getByRole('heading', { name: '좋아하는 밴드를 찜하세요.' })).toBeTruthy()
+  expect(screen.queryByRole('button', { name: 'Only band 찜하기' })).toBeNull()
+  fireEvent.click(screen.getByRole('button', { name: '검색 지우기' }))
+  expect(screen.getByRole('button', { name: 'Only band 찜하기' })).toBeTruthy()
+})
+test('empty catalog explains why bands cannot be followed', () => {
+  mocks.bands = []; mocks.concerts = []
+  history.replaceState(null, '', '/?page=bands')
+  render(<App />)
+  expect(screen.getByRole('heading', { name: '등록된 밴드가 아직 없어요.' })).toBeTruthy()
+})
 test('account mode excludes local samples and login prompt keeps the original event URL', async () => {
   render(<App />)
   expect(screen.queryByText(/가상 샘플/)).toBeNull()
