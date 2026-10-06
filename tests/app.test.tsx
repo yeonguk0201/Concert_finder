@@ -25,6 +25,12 @@ beforeEach(() => {
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+test('direct admin URL does not expose an editor to an unsigned user', () => {
+  history.replaceState(null, '', '/?page=admin')
+  render(<App />)
+  expect(screen.getByText('로그인된 관리자만 공연을 등록·검수할 수 있습니다.')).toBeTruthy()
+  expect(screen.queryByLabelText('관리자 공연 검수')).toBeNull()
+})
 test('failed schedule save shows failure without success and permits a retry', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
   mocks.toggle.mockResolvedValueOnce(false).mockResolvedValueOnce(true)
