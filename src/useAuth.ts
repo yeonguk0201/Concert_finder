@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
 import { backend, configurationError } from './backend'
-import { authCallback } from './authErrors'
+import { authCallback, loginRequestError } from './authErrors'
 
 export function useAuth() {
   const [session, setSession] = useState<Session | null>(null)
@@ -42,9 +42,9 @@ export function useAuth() {
       const redirect = new URL(window.location.href)
       redirect.hash = ''
       const { error: failure } = await backend.auth.signInWithOtp({ email: email.trim(), options: { emailRedirectTo: redirect.href } })
-      if (failure) setError('로그인 링크 요청에 실패했습니다. 이메일과 연결을 확인한 뒤 잠시 후 다시 시도해 주세요.')
+      if (failure) setError(loginRequestError(failure))
       else setMessage('이메일에서 로그인 링크를 열어 주세요. 링크를 연 브라우저에 로그인됩니다.')
-    } catch { setError('로그인 서버에 연결하지 못했습니다. 다시 시도해 주세요.') }
+    } catch (failure) { setError(loginRequestError(failure)) }
     finally { setBusy(false) }
   }
   const signOut = async () => {

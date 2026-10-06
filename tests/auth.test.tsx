@@ -3,7 +3,7 @@ import { act, cleanup, renderHook, waitFor } from '@testing-library/react'
 import { afterEach, expect, test, vi } from 'vitest'
 import { useAuth } from '../src/useAuth'
 import { StrictMode } from 'react'
-import { authCallback } from '../src/authErrors'
+import { authCallback, loginRequestError } from '../src/authErrors'
 
 const mock = vi.hoisted(() => ({
   getSession: vi.fn(), signInWithOtp: vi.fn(), signOut: vi.fn(),
@@ -82,4 +82,36 @@ test('an invalid link arriving by hash navigation is handled without a page relo
   })
   expect(result.current.error).toContain('만료')
   expect(location.hash).toBe('')
+})
+
+test('request after logout distinguishes the server email quota and can recover on a later request', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { user: { id: 'a' } } }, error: null })
+  mock.signOut.mockResolvedValue({ error: null })
+  mock.signInWithOtp.mockResolvedValueOnce({ error: { code: 'over_email_send_rate_limit', status: 429, message: 'Email rate limit exceeded' } }).mockResolvedValueOnce({ error: null })
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.session?.user.id).toBe('a'))
+  await act(() => result.current.signOut())
+  await act(() => result.current.requestLink('a@example.test'))
+  expect(result.current.error).toContain('발송 한도')
+  expect(result.current.message).toBe('')
+  expect(result.current.busy).toBe(false)
+  expect(result.current.session).toBeNull()
+  await act(() => result.current.requestLink('a@example.test'))
+  expect(result.current.error).toBe('')
+  expect(result.current.message).toContain('이메일')
+})
+test('email cooldown, request throttling, network and server failures have distinct safe messages', async () => {
+  expect(loginRequestError({ code: 'over_email_send_rate_limit', message: 'For security purposes, you can only request this after 60 seconds.' })).toContain('60초')
+  expect(loginRequestError({ code: 'over_request_rate_limit', status: 429 })).toContain('요청이 너무 많습니다')
+  expect(loginRequestError({ status: 429 })).toContain('요청이 너무 많습니다')
+  expect(loginRequestError({ code: 'email_address_invalid' })).toContain('이메일 주소')
+  expect(loginRequestError({ code: 'email_address_not_authorized' })).toContain('관리자')
+  expect(loginRequestError({ status: 500, message: 'private server details' })).toContain('일시적인 오류')
+  expect(loginRequestError({ message: 'private server details' })).not.toContain('private')
+  mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
+  mock.signInWithOtp.mockRejectedValueOnce(new TypeError('Failed to fetch'))
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.loading).toBe(false))
+  await act(() => result.current.requestLink('a@example.test'))
+  expect(result.current.error).toContain('연결하지 못했습니다')
 })

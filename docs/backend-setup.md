@@ -49,3 +49,14 @@
 참고: [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [이메일 링크 인증](https://supabase.com/docs/guides/auth/auth-email-passwordless).
 
 공식 설정 설명: [공개용 API 키 확인](https://supabase.com/docs/guides/getting-started/api-keys), [복귀 URL 허용 규칙](https://supabase.com/docs/guides/auth/redirect-urls).
+
+## 로그인 오류 점검 · 2026-10-06
+
+사용자가 재사용/만료 링크에서 안내가 나타나지 않고 로그아웃 후 링크 재요청이 실패한다고 보고했다.
+
+- 링크 안내 누락: StrictMode의 effect 재실행 중 첫 실행이 URL 오류를 지운 뒤 예약한 상태 변경이 취소됐다. 오류를 초기 상태에서 읽도록 수정했고 query·fragment의 error/error_code/error_description 및 같은 페이지 hash 이동을 처리한다. 원래 page/event는 보존하며 서버 설명 원문은 표시하지 않는다. StrictMode 회귀 테스트와 데스크톱·390px 모바일의 모의 otp_expired 복귀 화면으로 검증했다. 실제 재사용/만료 이메일 링크의 재검증은 아직 남아 있다.
+- 재요청 실패: 실제 프로젝트에서 HTTP 429, over_email_send_rate_limit을 확인했다. 앱에서도 이메일 발송 한도 안내가 표시됨을 확인했다. 로그아웃 이후 로컬 상태 오류로 단정하지 않는다. 한도 초과·짧은 재요청 간격·요청량 제한·네트워크·서버 오류를 구분해 안내한다.
+- 기본 이메일 provider는 프로젝트당 시간당 2통이며 동일 이메일의 기본 재요청 간격은 60초다. 실제 발송 제한은 provider와 프로젝트 설정에 따른다. 총량 한도 초과를 60초 대기만으로 해결한다고 안내하지 않는다. 제한 해제 후 재시도하거나 반복 검증·베타 준비 시 별도 SMTP 연결을 준비한다. 이번 수정에서 외부 서비스 생성·SMTP 변경·인증 제한 변경은 하지 않았다.
+- 검증: 총 17개 자동 테스트(1개 PostgreSQL 통합, 16개 프런트엔드), lint/build, diff check 통과. 발송 한도 상태에서 정상 새 링크 발송·로그인 복구는 아직 재검증하지 않았다.
+
+공식 문서: [인증 요청·이메일 발송 제한](https://supabase.com/docs/guides/auth/rate-limits), [인증 오류 코드](https://supabase.com/docs/guides/auth/debugging/error-codes).
