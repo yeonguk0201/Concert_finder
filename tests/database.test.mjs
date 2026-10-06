@@ -36,6 +36,29 @@ test('migration: publication, isolation, ownership, cancellation and cascade', a
       await db.query("select set_config('request.jwt.claim.sub', $1, false)", [user ?? ''])
       await db.exec(`set role ${user ? 'authenticated' : 'anon'}`)
     }
+    const mcrImport = await readFile(new URL('../supabase/manual/register-mcr-korea-2026.sql', import.meta.url), 'utf8')
+    await db.exec(mcrImport)
+    const published = (await db.query('select * from public.concerts')).rows[0]
+    assert.equal(published.status, 'published')
+    assert.equal(published.starts_on.toISOString().slice(0, 10), '2026-11-07')
+    assert.equal(published.announced_on.toISOString().slice(0, 10), '2025-07-07')
+    assert.equal(published.announced_at, null)
+    const ticket = (await db.query('select * from public.ticket_schedules')).rows[0]
+    assert.equal(ticket.opens_at.toISOString(), '2025-07-14T03:00:00.000Z')
+    assert.equal((await db.query('select starts_at from public.concert_sessions')).rows[0].starts_at.toISOString(), '2026-11-07T10:00:00.000Z')
+    await role(a)
+    await db.query('insert into public.saved_schedules(ticket_schedule_id) values ($1)', [ticket.id])
+    await role(b)
+    assert.equal((await db.query('select * from public.saved_schedules')).rows.length, 0)
+    await db.exec('reset role')
+    await db.exec(mcrImport)
+    assert.equal((await db.query('select * from public.concerts')).rows.length, 1)
+    assert.equal((await db.query('select * from public.concert_sources')).rows.length, 4)
+    assert.equal((await db.query('select revision from public.ticket_schedules')).rows[0].revision, 1)
+    assert.equal((await db.query('select first_published_at from public.concerts')).rows[0].first_published_at.getTime(), published.first_published_at.getTime())
+    await role(a)
+    assert.equal((await db.query('delete from public.saved_schedules returning *')).rows.length, 1)
+    await db.exec('reset role; delete from public.concerts; delete from public.bands')
     await role(admin)
     const band = (await db.query("insert into public.bands(name,country_code) values ('Overseas', 'GB') returning id")).rows[0].id
     const domestic = (await db.query("insert into public.bands(name,country_code) values ('Domestic', 'KR') returning id")).rows[0].id
