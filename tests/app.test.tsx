@@ -25,6 +25,20 @@ beforeEach(() => {
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+test('failed schedule save shows failure without success and permits a retry', async () => {
+  mocks.session = { user: { id: 'account', email: 'account@example.test' } }
+  mocks.toggle.mockResolvedValueOnce(false).mockResolvedValueOnce(true)
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
+  const button = await screen.findByRole('button', { name: '예매 일정 저장', exact: true })
+  fireEvent.click(button)
+  await waitFor(() => expect(screen.getByText('일정을 저장하지 못했습니다. 다시 시도해 주세요.')).toBeTruthy())
+  expect(screen.queryByText('계정에 일정을 저장했어요. 자동 푸시 알림은 아직 제공하지 않습니다.')).toBeNull()
+  expect((button as HTMLButtonElement).disabled).toBe(false)
+  fireEvent.click(button)
+  await waitFor(() => expect(screen.getByText('계정에 일정을 저장했어요. 자동 푸시 알림은 아직 제공하지 않습니다.')).toBeTruthy())
+  expect(mocks.toggle).toHaveBeenCalledTimes(2)
+})
 test('an unknown opening time still allows saving the one-to-one ticket schedule', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
   mocks.toggle.mockResolvedValue(true)
