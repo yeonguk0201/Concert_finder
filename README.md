@@ -1,70 +1,149 @@
-# encore. — Concert Finder
+<div align="center">
 
-밴드의 한국 공연을 발견하고 찜한 밴드 소식과 예매 일정을 모아보는 모바일 대응 웹앱 초안.
+# encore.
 
-## 실행
+### 좋아하는 밴드의 다음 한국 공연을 만나는 곳
 
-Node.js 22.12 이상 또는 24 사용. 모든 텍스트 파일은 UTF-8로 저장합니다.
+국내 공연부터 내한 콘서트, 페스티벌 출연까지.<br>
+밴드를 찜하고 공연 소식과 예매 일정을 한곳에서 확인하는 모바일 대응 웹앱입니다.
+
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Auth%20%2B%20PostgreSQL-3ECF8E?logo=supabase&logoColor=black)
+[![CI](https://github.com/yeonguk0201/Concert_finder/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/yeonguk0201/Concert_finder/actions/workflows/ci.yml)
+
+[빠른 시작](#빠른-시작) · [개발 로드맵](docs/development-roadmap.md) · [Supabase 설정](docs/backend-setup.md) · [기여 가이드](CONTRIBUTING.md)
+
+</div>
+
+---
+
+## 우리가 만드는 경험
+
+**공식 공연 정보 자동 수집 → 신규·변경 정보 검수 → DB 공개 → 열린 앱에 실시간 반영**이 핵심 목표입니다. 관심 밴드의 소식과 일반 예매 일정을 연결하고, 동의한 사용자에게 알림을 전달하는 서비스로 확장합니다.
+
+현재는 이메일 로그인, 계정별 찜·예매 일정 저장과 공식 출처를 연결한 공연 탐색까지 구현했습니다. 자동 수집과 실시간 화면 갱신, 푸시 발송은 아직 구현하지 않았습니다. 관리자 직접 등록은 검수·오류 수정·누락 보완을 위한 경로로 준비합니다.
+
+## 현재 기능
+
+| 기능 | 현재 제공하는 동작 |
+| --- | --- |
+| 공연 탐색 | 밴드·공연·공연장 검색, 국내·내한·페스티벌 분류, 지역 필터 |
+| 밴드 찜 | 공식 이름·한글 별칭·약칭 검색, 공연이 없는 밴드도 찜 가능 |
+| 이메일 로그인 | 로그인 링크, 새로고침 세션 유지, 로그아웃, 만료 링크·발송 제한 안내 |
+| 계정별 저장 | 찜·일정 서버 저장, 다른 계정과 격리, 다른 기기에서 다시 불러오기 |
+| 공연 상세 | 날짜·장소·가격·일반 예매 시각, 공식 출처와 예매처 링크 |
+| 내 예매 일정 | 저장·해제·목록 조회, 확인된 예매 시각의 `.ics` 캘린더 다운로드 |
+| 접근 권한 | 공개 전 공연 비노출, 본인 저장만 접근, 일반 사용자의 카탈로그 변경 차단 |
+| 실패 처리 | 저장 실패 시 기존 상태 유지, 재시도, 계정 전환 시 이전 데이터 제거 |
+
+> **일정 저장은 티켓 구매나 푸시 알림 예약이 아닙니다.** 미확인 정보는 미정으로 표시하고, 시각이 미정이면 캘린더 다운로드를 비활성화합니다. 다른 기기 변경은 현재 새로고침 또는 ‘다시 불러오기’로 확인합니다.
+
+<details>
+<summary>초기 프리뷰 화면 보기 · 가상 샘플</summary>
+
+![encore. 초기 화면 — 가상 샘플 데이터](docs/preview.png)
+
+초기 UI 기록입니다. 이 이미지의 공연·라인업·가격·장소 조합은 가상 샘플이며, 현재 계정 모드의 실제 데이터 화면과 다릅니다.
+
+</details>
+
+## 빠른 시작
+
+Node.js **24**를 기준으로 개발·CI를 검증합니다.
 
 ```sh
-npm install
-npm run dev -- --host 127.0.0.1
-npm run build
-npm run lint
+git clone https://github.com/yeonguk0201/Concert_finder.git
+cd Concert_finder
+npm ci
+npm run dev
 ```
 
-## 기술 선택
+개발 서버: `http://localhost:5173`
 
-- React + TypeScript: 컴포넌트 UI와 공연/밴드 데이터 타입.
-- Vite: 개발 서버와 정적 웹 배포용 빌드. 첫 버전은 별도 백엔드 없이 실행.
-- CSS: 반응형 화면, SVG 아이콘, 자체 제작 타이포그래피 포스터. 외부 이미지 없이 표시. Google Fonts 실패 시 시스템 폰트 사용.
-- localStorage: 찜한 밴드와 저장한 예매 일정을 현재 브라우저에 보관.
-- 다음 단계: Supabase(PostgreSQL + Auth), 서버 측 수집 작업, Firebase Cloud Messaging. 아직 연결하거나 유료 서비스를 생성하지 않음.
+### 두 가지 실행 모드
 
-공식 참고: https://vite.dev/guide/ · https://supabase.com/docs/guides/getting-started/quickstarts/reactjs
+| 모드 | 설정 | 데이터와 저장 |
+| --- | --- | --- |
+| 로컬 프리뷰 | Supabase 환경변수 두 값이 모두 비어 있음 | 가상 샘플 + 현재 브라우저의 localStorage |
+| 계정 모드 | Supabase URL과 공개용 키 설정 | Supabase 공개 카탈로그 + 로그인 계정의 서버 저장 |
 
-## 구현된 기능
+프리뷰의 모든 공연 정보는 `src/data.ts`에 있는 **가상 샘플**입니다. 화면과 캘린더 파일에 샘플 표시를 유지하며, 실제 계정으로 샘플 찜·일정을 자동 이전하지 않습니다. 계정 모드에서 조회 실패가 발생해도 샘플 데이터로 대체하지 않습니다.
 
-- 홈: 스포트라이트, 찜한 밴드의 예매 소식, 최신 발표 공연.
-- 탐색: 밴드/공연/공연장 검색, 내한/국내/페스티벌 분류, 전국/도시 필터.
-- 밴드 찜/해제: 국내 밴드와 해외 밴드, 페스티벌 라인업에 포함된 밴드까지 매칭.
-- 상세: 공연 일시, 장소, 티켓 오픈, 가격, 밴드 찜, 예매 일정 저장.
-- 내 예매 일정: 티켓 오픈순 정렬, 삭제, .ics 캘린더 다운로드(KST 시간 변환).
-- 접근성: 버튼 레이블과 선택 상태, 키보드 포커스, 네이티브 모달, 모바일 메뉴, 상태 메시지.
+### Supabase 연결
 
-## 데이터와 제한
+1. **신규·빈 프로젝트**의 SQL Editor에서 [초기 마이그레이션](supabase/migrations/202610060001_initial.sql)을 실행합니다. 기존 프로젝트에는 구조·충돌 확인 없이 적용하지 않습니다.
+2. `.env.example`을 `.env`로 복사하고 아래 두 값을 넣습니다.
+3. Auth의 Site URL·Redirect URLs에 개발 서버 주소를 등록하고 이메일 로그인을 준비합니다.
+4. 개발 서버를 재시작합니다. 밴드·공연이 없는 프로젝트에는 빈 목록이 표시됩니다.
 
-src/data.ts의 모든 일정·라인업·가격·장소 조합은 **가상 샘플**입니다. 실제 내한 공연 발표가 아닙니다. 화면 및 캘린더 파일에도 샘플 표시를 포함합니다. 실제 구매 링크, 로그인, 크롤러, 푸시 알림은 아직 없습니다. 저장 기능은 푸시 예약이 아닙니다.
+```dotenv
+VITE_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
+```
 
-데이터는 Band, Concert 타입으로 분리되어 있으며 실제 데이터 연동 시 조회 계층을 추가합니다. 날짜는 ISO 8601 +09:00으로 기록하고 Asia/Seoul 기준으로 표시합니다.
+**service_role·secret key·DB 비밀번호는 브라우저 코드와 `VITE_` 변수에 넣지 않습니다.** `.env`는 Git에 포함하지 않습니다.
 
-## 후속 개발 순서
+설정·SMTP 점검·실제 계정 검증은 [Supabase 연결 안내](docs/backend-setup.md)에 정리했습니다. 검증한 실제 밴드·공연의 초기 등록 SQL은 [supabase/manual](supabase/manual)에 있습니다. 일반 예매가 이미 열린 공연은 과거 오픈일을 유지하며 새 예매 오픈으로 표시하지 않습니다.
 
-1. Supabase 스키마: artists, events, event_artists, follows, saved_events, sources. 사용자 데이터에는 Auth + RLS 필수.
-2. 관리자 공연 등록: 공식 출처 URL, 최초 발표 시각, 공연/예매 시간, 변경 이력. 페스티벌 출연과 이벤트를 분리.
-3. 이메일/소셜 로그인과 서버 저장 연결. 기기 간 동기화.
-4. 공식 데이터 제공·수집 가능 범위를 확인한 출처부터 수집. 중복 이벤트 병합, 아티스트 별칭 매칭, 검수 후 공개.
-5. 알림 동의와 구독, 서버 스케줄러, 신규 발표/라인업 추가/예매 직전/변경/취소 알림, 재시도 및 중복 방지.
-6. PWA 설치 지원과 실제 기기 푸시 검증. 앱스토어 출시는 사용성 검증 후 결정.
+## 구조
 
-초안 검증 기준: 찜/해제와 새로고침 유지, 페스티벌 밴드 매칭, 복합 검색 필터, 일정 저장/삭제, 모달 키보드 종료, 캘린더 시간, 모바일 가로 넘침 확인.
+```text
+src/
+  App.tsx                화면·탐색·상세·저장 동작
+  backend.ts             Supabase 클라이언트
+  useAuth.ts             이메일 로그인·세션
+  useCatalog.ts          공개 카탈로그 조회
+  catalog.ts             서버 응답을 화면 데이터로 변환
+  accountApi.ts          계정 찜·일정 API
+  useAccountStorage.ts   저장 상태·경합·실패 복구
+  data.ts                로컬 프리뷰용 가상 샘플
+supabase/
+  migrations/            스키마·RLS·공개 조건
+  manual/                초기 등록·권한 검증 SQL
+tests/                   DB·인증·저장·화면 회귀 테스트
+```
 
-## 초안 검증 결과
+React + TypeScript와 Vite로 UI를 구성하고, Supabase Auth·PostgreSQL·RLS로 로그인과 데이터 접근을 관리합니다. CSS·SVG·타이포그래피 포스터로 화면을 구성하며 실제 공연 사진을 임의로 사용하지 않습니다.
 
-- npm run build: TypeScript 검사 및 프로덕션 빌드 통과.
-- npm run lint: 경고 없이 통과.
-- 브라우저: 상세 모달, 예매 일정 저장/삭제, 새로고침 유지, 밴드 찜 유지, 페스티벌 출연 밴드 검색, 분류+지역 복합 필터 확인.
-- 모바일 390px 뷰포트: 가로 넘침 없음, 하단 메뉴 및 상세 화면 확인. Escape로 모달 닫힘 확인.
-- 캘린더: 한국 시간 12:00 → UTC 03:00, 30분 일정, UTF-8 기준 75바이트 줄 접기 검증.
-- 브라우저 콘솔 오류 없음. 화면 기록: docs/preview.png.
+## 검증
 
-## 브랜치 및 기여
+```sh
+npm test
+npm run lint
+npm run build
+```
 
-개발 통합 브랜치는 `dev`이며 작업 브랜치는 여기에서 분기합니다. 커밋 형식과 PR 작성 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)에 정리했습니다. PR 대상은 `dev`입니다.
+2026-10-06 기준 **23개 테스트**와 lint·build를 통과했습니다.
 
-## 개발 일정
+- **DB 통합:** PGlite PostgreSQL에서 마이그레이션, 공개 조건, RLS, 계정 격리·관리자 제한, 재등록·삭제 동작 검증.
+- **프런트엔드:** 인증 오류·세션, 일대일 예매 응답, 계정 전환·경합, 저장 실패와 복구, 샘플 분리 검증.
+- **실제 연결:** 공개 카탈로그·예매 관계 조회와 데스크톱·390px 모바일 상세·검색·저장 버튼 확인.
+- **사용자 확인:** 이메일 로그인·로그아웃·세션·오류 복구, 계정별 찜·예매 일정 유지·해제·격리·다기기 반영.
 
-[개발 로드맵 및 상세 일정](docs/development-roadmap.md): 기존 약 4일의 작업을 하루 목표로 묶어 2026년 10월 19일 베타 공개, 10월 26일 1차 완성 목표.
+네트워크 실패는 실제 Supabase SDK/API/저장 hook의 `fetch` 단계에 오류를 주입해 검증했습니다. 실제 로그인 브라우저의 오프라인 전환이나 원격 서버 장애 검증과 구분합니다. GitHub Actions에서도 테스트·lint·build를 실행합니다.
 
-- [베타 출시 요구사항](docs/product-requirements.md): 화면별 동작, 데이터·알림 정책, 완료 기준.
-- [기능별 작업 목록](docs/development-backlog.md): 작업 ID, 일정, 선행 조건, 검증 기준과 진행 상태.
+## 다음 핵심 작업
+
+- [ ] 관리자 검수·공개·수정 화면과 변경 이력 연결
+- [ ] 최소 한 공식 출처의 반복 자동 수집, 중복 판별·변경 감지·실패 추적
+- [ ] DB 변경의 실시간 화면 반영, 연결 복구·계정 전환 검증
+- [ ] 알림 동의·기기 관리, 신규 소식·예매 전 알림 및 실제 수신 검증
+- [ ] 테스트 배포, 운영 안내·계정 삭제, 사용자 피드백과 베타 공개
+
+**10월 19일 베타 · 10월 26일 1차 완성**은 목표 일정입니다. 자동 수집과 DB 실시간 반영을 베타 필수 조건으로 두며, 실제 구현·검증 상태에 따라 일정을 조정합니다.
+
+| 문서 | 내용 |
+| --- | --- |
+| [제품 요구사항](docs/product-requirements.md) | 사용자 흐름, 데이터·알림 정책, 완료 기준 |
+| [개발 로드맵](docs/development-roadmap.md) | 일정, 핵심 목표, 진행 기록 |
+| [개발 작업 목록](docs/development-backlog.md) | 작업 ID, 의존 관계, 상태 |
+| [Supabase 연결 안내](docs/backend-setup.md) | 설정, 수동 SQL, 실제 검증·제약 |
+| [기여 가이드](CONTRIBUTING.md) | 커밋, 검증, PR 규칙 |
+
+## 브랜치 흐름
+
+`작업 브랜치 → dev PR → main 출시 PR`
+
+`dev`는 개발 통합, `main`은 출시 통합 브랜치입니다. 완료하고 검증한 논리적 변경마다 커밋하며, 병합과 배포는 별도로 확인합니다. 모든 텍스트 파일은 UTF-8로 읽고 저장합니다.
