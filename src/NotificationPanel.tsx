@@ -54,7 +54,7 @@ export function NotificationPanel({ userId }: { userId: string }) {
       <p>1시간 이내에 저장하면 다음 발송 처리에서 전달합니다. 이미 지난 예매는 보내지 않습니다. 처리 주기와 기기 연결 상태에 따라 수신이 늦어질 수 있습니다.</p>
       {supported && publicKey ? <div className="notification-register"><label>기기 이름<input maxLength={80} value={label} onChange={e => setLabel(e.target.value)} /></label><button className="outline" disabled={!label.trim()} onClick={() => void run(() => registerPushDevice(userId, label.trim(), publicKey), '이 기기를 등록했습니다. 테스트 알림으로 실제 수신을 확인해 주세요.')}>이 기기 알림 허용·등록</button></div> : <p>{!supported ? '이 환경에서 웹 푸시를 사용할 수 없습니다. HTTPS와 브라우저 지원을 확인해 주세요. 아이폰은 홈 화면에 추가한 웹앱에서 확인하세요.' : '웹 푸시 공개 키 설정이 필요합니다. 아직 기기 등록과 발송을 사용할 수 없습니다.'}</p>}
       <ul className="notification-devices">{settings.devices.map(device => <li key={device.id}><span>{device.label} · {device.active ? '활성' : '해제됨'}</span>{device.active && <div><button className="outline" disabled={!settings.preferences.announcements && !settings.preferences.ticket_reminders} onClick={() => void run(() => requestPushTest(device.id), '테스트 발송을 요청했습니다. 서버 처리 후 휴대폰 알림을 확인해 주세요. 요청 성공은 실제 수신 확인과 다릅니다.')}>테스트 알림 요청</button><button className="outline" onClick={() => void run(() => removePushDevice(device.id), '기기 수신을 해제했습니다.')}>기기 해제</button></div>}</li>)}</ul>
-      {!settings.devices.some(d => d.active) && <p>활성 기기가 없습니다. 수신하려면 이 기기를 등록해 주세요.</p>}
+      {!settings.devices.some(d => d.active) && <p>활성 기기가 없습니다. 수신하려면 이 기기를 등록해 주세요. 수신 동의는 기기 등록 전에 저장할 수 있습니다.</p>}
     </fieldset>}
     {error && <p className="account-error" role="alert">{error}</p>}
     {message && <p role="status">{message}</p>}
