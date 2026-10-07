@@ -1,18 +1,65 @@
 // @vitest-environment jsdom
-import { act, cleanup, renderHook, waitFor } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react'
 import { afterEach, expect, test, vi } from 'vitest'
 import { useAuth } from '../src/useAuth'
 import { StrictMode } from 'react'
 import { authCallback, loginRequestError } from '../src/authErrors'
+import { AccountPanel } from '../src/AccountPanel'
 
 const mock = vi.hoisted(() => ({
-  getSession: vi.fn(), signInWithOtp: vi.fn(), signOut: vi.fn(),
+  getSession: vi.fn(), signInWithOtp: vi.fn(), verifyOtp: vi.fn(), signOut: vi.fn(),
   callback: null as null | ((event: string, session: unknown) => void), unsubscribe: vi.fn(),
 }))
-vi.mock('../src/backend', () => ({ configurationError: '', backend: { auth: {
-  getSession: mock.getSession, signInWithOtp: mock.signInWithOtp, signOut: mock.signOut,
+vi.mock('../src/backend', () => ({ configurationError: '', accountMode: true, backend: { auth: {
+  getSession: mock.getSession, signInWithOtp: mock.signInWithOtp, verifyOtp: mock.verifyOtp, signOut: mock.signOut,
   onAuthStateChange: (callback: typeof mock.callback) => { mock.callback = callback; return { data: { subscription: { unsubscribe: mock.unsubscribe } } } },
 } } }))
+
+test('email code signs in within the requesting app without opening a callback URL', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
+  mock.signInWithOtp.mockResolvedValue({ error: null })
+  mock.verifyOtp.mockResolvedValue({ data: { session: { user: { id: 'home-screen', email: 'a@example.test' } } }, error: null })
+  function HomeScreenLogin() { return <AccountPanel auth={useAuth()} initiallyExpanded /> }
+  render(<HomeScreenLogin />)
+  await waitFor(() => expect((screen.getByRole('button', { name: '로그인 메일 받기' }) as HTMLButtonElement).disabled).toBe(false))
+  fireEvent.change(screen.getByLabelText('이메일'), { target: { value: 'a@example.test' } })
+  fireEvent.click(screen.getByRole('button', { name: '로그인 메일 받기' }))
+  const codeInput = await screen.findByLabelText('이메일 인증번호')
+  // Editing the request field must not verify the received code against a different email.
+  fireEvent.change(screen.getByLabelText('이메일'), { target: { value: 'other@example.test' } })
+  fireEvent.change(codeInput, { target: { value: '123456' } })
+  fireEvent.click(screen.getByRole('button', { name: '인증번호로 로그인' }))
+  await screen.findByText('계정으로 로그인됨')
+  expect(mock.verifyOtp).toHaveBeenCalledWith({ email: 'a@example.test', token: '123456', type: 'email' })
+  expect(screen.queryByLabelText('이메일 인증번호')).toBeNull()
+  expect(location.hash).toBe('')
+})
+
+test('invalid, expired and offline codes retain the requesting email and allow retry', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
+  mock.signInWithOtp.mockResolvedValue({ error: null })
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.loading).toBe(false))
+  await act(() => result.current.verifyCode('123456'))
+  expect(mock.verifyOtp).not.toHaveBeenCalled()
+  await act(() => result.current.requestLink(' a@example.test '))
+  await act(() => result.current.verifyCode('bad'))
+  expect(mock.verifyOtp).not.toHaveBeenCalled()
+  mock.verifyOtp.mockResolvedValueOnce({ data: { session: null }, error: { code: 'otp_expired', message: 'private_token' } })
+    .mockRejectedValueOnce(new TypeError('private_network_details'))
+    .mockResolvedValueOnce({ data: { session: { user: { id: 'a' } } }, error: null })
+  await act(() => result.current.verifyCode('123456'))
+  expect(result.current.error).toContain('만료')
+  expect(result.current.error).not.toContain('private')
+  expect(result.current.pendingEmail).toBe('a@example.test')
+  await act(() => result.current.verifyCode('123456'))
+  expect(result.current.error).toContain('연결하지 못했습니다')
+  expect(result.current.busy).toBe(false)
+  await act(() => result.current.verifyCode(' 12345678 '))
+  expect(result.current.session?.user.id).toBe('a')
+  expect(result.current.pendingEmail).toBe('')
+  expect(result.current.error).toBe('')
+})
 afterEach(() => { cleanup(); vi.clearAllMocks(); history.replaceState(null, '', '/') })
 
 test('session restores, failed logout retains session, successful logout clears it', async () => {
