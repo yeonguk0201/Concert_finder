@@ -49,3 +49,10 @@ export function kstInput(value: string | null | undefined) {
   return new Date(new Date(value).getTime() + 9 * 3600000).toISOString().slice(0, 16)
 }
 export function kstTimestamp(value: string) { return value ? new Date(`${value}:00+09:00`).toISOString() : null }
+
+export function announcementDateError(concert: Pick<AdminConcert, 'announced_on' | 'announced_at'>) {
+  if (!concert.announced_at) return ''
+  if (!concert.announced_on) return '발표 시각을 입력하려면 공식 발표일도 입력해 주세요. 시각이 미확인이면 비워 두세요.'
+  const date = kstInput(concert.announced_at).slice(0, 10)
+  return date === concert.announced_on ? '' : `공식 발표일(${concert.announced_on})과 발표 시각의 날짜(${date})가 다릅니다. 같은 날짜로 맞추거나 미확인 시각을 비워 주세요.`
+}

@@ -6,3 +6,10 @@
 .collection-panel button { margin: 6px; }
 .collection-panel pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .collection-panel a, .collection-panel p { overflow-wrap: anywhere; }
+.admin-save-feedback { margin-top: 12px; overflow-wrap: anywhere; }
+.admin-save-feedback:empty { display: none; }
+.admin-save-feedback p { margin: 8px 0 0; padding: 12px 14px; border: 1px solid var(--border); border-radius: 6px; }
+.admin-save-feedback .admin-feedback-error { color: #ffc1b8; border-color: #9d5148; background: #321e1b; }
+.admin-save-feedback .admin-feedback-success { color: var(--accent); background: #1d2a18; }
+.admin-panel input[aria-invalid=true] { border-color: #e98d80; }
+.admin-save-feedback .outline { margin: 8px 0 0 12px; }
