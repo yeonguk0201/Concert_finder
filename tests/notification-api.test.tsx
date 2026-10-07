@@ -4,6 +4,28 @@ const request = vi.hoisted(() => vi.fn())
 vi.mock('../src/backend', () => ({ backend: { rpc: request } }))
 afterEach(() => vi.resetAllMocks())
 
+test('existing preference rows can be toggled repeatedly without sending database metadata as RPC arguments', async () => {
+  let preferences = { user_id: 'test-account', updated_at: '2026-10-08T00:00:00Z', announcements: true, ticket_reminders: false }
+  request.mockImplementation(async (name, args) => {
+    if (name === 'notification_settings') return { data: { preferences: { ...preferences }, devices: [] }, error: null }
+    if (Object.keys(args).sort().join(',') !== 'announcements,ticket_reminders') {
+      return { data: null, error: { code: 'PGRST202', message: 'No function matches the supplied argument names' } }
+    }
+    preferences = { ...preferences, ...args }
+    return { data: null, error: null }
+  })
+  let settings = await loadNotificationSettings()
+  await saveNotificationPreferences({ ...settings.preferences, ticket_reminders: true })
+  settings = await loadNotificationSettings()
+  expect(settings.preferences).toEqual({ announcements: true, ticket_reminders: true })
+  await saveNotificationPreferences({ ...settings.preferences, announcements: false })
+  settings = await loadNotificationSettings()
+  expect(settings.preferences).toEqual({ announcements: false, ticket_reminders: true })
+  // Protect callers too, even if they supply a complete persisted row.
+  await saveNotificationPreferences(preferences)
+  expect(request).toHaveBeenLastCalledWith('set_notification_preferences', { announcements: false, ticket_reminders: true })
+})
+
 test('settings without devices or VAPID still load and persist consent', async () => {
   const settings = { preferences: { announcements: false, ticket_reminders: false }, devices: [] }
   request.mockResolvedValueOnce({ data: settings, error: null }).mockResolvedValueOnce({ data: null, error: null })
