@@ -5,6 +5,7 @@ import { useAccountStorage } from '../src/useAccountStorage'
 
 const api = vi.hoisted(() => ({ readAccount: vi.fn(), writeAccount: vi.fn() }))
 vi.mock('../src/accountApi', () => api)
+vi.mock('../src/useRealtime', () => ({ useRealtime: () => 'connected' }))
 afterEach(() => { cleanup(); vi.resetAllMocks() })
 const deferred = <T,>() => { let resolve!: (value: T) => void; const promise = new Promise<T>(r => { resolve = r }); return { promise, resolve } }
 
