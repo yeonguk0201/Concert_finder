@@ -14,6 +14,16 @@ beforeEach(() => {
   api.save.mockImplementation(async prefs => { settings.preferences = prefs })
 })
 afterEach(() => { cleanup(); vi.resetAllMocks(); vi.unstubAllEnvs() })
+test('missing public key prevents device registration but does not prevent consent saving', async () => {
+  vi.stubEnv('VITE_VAPID_PUBLIC_KEY','')
+  render(<NotificationPanel userId="a" />)
+  const checkbox=await screen.findByRole('checkbox',{name:'저장한 예매 일정의 1시간 전 알림'})
+  expect(screen.getByText(/웹 푸시 공개 키 설정이 필요합니다/)).toBeTruthy()
+  expect(screen.queryByRole('button',{name:'이 기기 알림 허용·등록'})).toBeNull()
+  fireEvent.click(checkbox)
+  await waitFor(() => expect((checkbox as HTMLInputElement).checked).toBe(true))
+  expect(api.save).toHaveBeenCalledWith({announcements:false,ticket_reminders:true})
+})
 test('consent is opt-in, persists only after success and failures permit retry', async () => {
   render(<NotificationPanel userId="a" />)
   const checkbox=await screen.findByRole('checkbox',{name:'찜한 밴드의 신규 공개·페스티벌 라인업 추가'})

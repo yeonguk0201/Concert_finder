@@ -64,3 +64,17 @@ select count(*) as active_devices from private.push_devices where active;
 전체 PostgreSQL 마이그레이션을 PGlite로 적용한 접근 권한·초기 입력 무알림·여러 밴드/기기 대상·예매 revision·해제/취소·최종 조회·최대 재시도·lease·계정 삭제 cascade를 검증했다. 제공자 모의 전송·Service Worker의 알림 표시/동일 origin 클릭·UI 동의 실패 복구/기기 관리/계정 전환도 검증했다. 데스크톱/390px 모바일 모의 UI에서 가로 넘침과 콘솔 경고/오류가 없었다. 모의 UI는 실제 Push 권한이나 단말 수신을 검증한 것이 아니다.
 
 참고 구현 문서: [MDN Push 구독](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe) · [web-push 공식 라이브러리](https://github.com/web-push-libs/web-push).
+
+## 설정 화면 오류 구분 · 2026-10-08
+
+기기 미등록과 공개 키 누락은 알림 수신/기기 등록을 막지만, 수신 동의 저장·설정 조회의 선행 조건이 아니다. 이 두 작업도 실패하면 키 설정과 별도로 RPC 응답을 확인한다. 초기 조회에 실패하면 체크박스는 기본 해제 상태를 보여주며 저장은 비활성화한다. 이것을 서버에 저장된 실제 동의 상태로 해석하지 않는다.
+
+- **웹 푸시 공개 키 설정이 필요합니다**: 현재 열린 빌드에 공개 키가 없다. Vercel의 Environment Variables에서 `VITE_VAPID_PUBLIC_KEY`를 Preview에 저장하고 알림 코드가 있는 해당 Preview를 재배포한다. Production/main 재배포만 하면 별도 Preview에는 적용되지 않는다. 재배포된 Preview URL에서 다시 로그인한다.
+- **알림 설정 조회** 오류와 **수신 동의 저장** 오류를 구분한다. 원본 서버 메시지·응답의 개인 정보는 표시하지 않고 안전한 오류 코드만 안내한다.
+- `PGRST202`: 현재 배포가 연결한 DB의 RPC 미적용 또는 스키마 캐시/연결 프로젝트 불일치를 확인한다. SQL 전체를 무작정 재실행하지 않는다.
+- `PGRST301` 등 인증 오류: 새 로그인 링크로 다시 접속한다. `42501`이 계속되면 함수 실행 권한을 확인한다.
+- `42702` 등 DB 처리 오류: 코드와 실패 동작을 공유하고 해당 함수 정의를 확인한다. 네트워크 오류는 연결을 다시 확인한다.
+
+Postgres 로그에 오류가 없어도 요청이 DB 실행 전에 API gateway/PostgREST에서 실패할 수 있다. 필요하면 Logs의 API/PostgREST 또는 브라우저 Network에서 `notification_settings`/`set_notification_preferences` 응답의 상태·`code`를 확인한다. Authorization 헤더·토큰·이메일·구독 비밀값은 공유하지 않는다. 원격 API 스키마에서 함수/인수/테이블 존재를 확인한 것은 실제 로그인 계정의 조회·저장 성공을 확인한 것이 아니다.
+
+진단 안내 보완은 자동 테스트 58개(Node 18 + UI 40)·lint·build·diff 검사를 통과했다. 빌드는 성공했으며 500kB 초과 번들 안내 경고가 있었다. 원격 함수/인수/열 존재는 읽기 전용으로 확인했다. 사용자 휴대폰의 실제 실패 응답·공개 키가 반영된 배포 확인·수신은 후속 검증이다.
