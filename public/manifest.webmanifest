@@ -1,0 +1,11 @@
+{
+  "name": "encore. 공연 소식",
+  "short_name": "encore.",
+  "lang": "ko",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111311",
+  "theme_color": "#111311",
+  "icons": [{ "src": "/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
