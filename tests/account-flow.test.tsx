@@ -4,6 +4,7 @@ import { afterEach, expect, test, vi } from 'vitest'
 import { useAccountStorage } from '../src/useAccountStorage'
 
 const transport = vi.hoisted(() => ({ fetch: vi.fn() }))
+vi.mock('../src/useRealtime', () => ({ useRealtime: () => 'connected' }))
 vi.mock('../src/backend', async () => {
   const { createClient } = await import('@supabase/supabase-js')
   return { backend: createClient('https://failure-probe.example.test', 'sb_publishable_local_test', {

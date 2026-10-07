@@ -4,6 +4,7 @@ import { bands as fixtures, concerts as fixtureConcerts } from './data'
 import type { Band, Concert } from './data'
 import { mapBands, mapConcerts } from './catalog'
 import type { BandRow, ConcertRow } from './catalog'
+import { useRealtime } from './useRealtime'
 
 export function useCatalog() {
   const [data, setData] = useState<{ bands: Band[]; concerts: Concert[] }>({ bands: accountMode ? [] : fixtures, concerts: accountMode ? [] : fixtureConcerts })
@@ -26,5 +27,6 @@ export function useCatalog() {
     return () => { active = false }
   }, [revision])
   const reload = useCallback(() => setRevision(r => r + 1), [])
-  return { ...data, loading, error, reload }
+  const syncStatus = useRealtime('catalog_signal', null, reload)
+  return { ...data, loading, error, reload, syncStatus }
 }
