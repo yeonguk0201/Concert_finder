@@ -19,12 +19,23 @@ alter table private.notification_deliveries add column lease_token uuid;
 alter table private.notification_deliveries add column lease_until timestamptz;
 alter table private.notification_deliveries add column sent_at timestamptz;
 alter table private.notification_deliveries add column is_test boolean not null default false;
+alter table private.notification_deliveries add column created_at timestamptz not null default clock_timestamp();
 alter table private.notification_deliveries drop constraint notification_deliveries_check;
 alter table private.notification_deliveries add constraint notification_deliveries_check check (
   (is_test and change_id is null and ticket_schedule_id is null and schedule_revision is null) or
   (not is_test and ((change_id is not null and ticket_schedule_id is null and schedule_revision is null) or
     (change_id is null and ticket_schedule_id is not null and schedule_revision is not null))));
 create index delivery_due_idx on private.notification_deliveries(due_at) where status='pending';
+create table private.notification_attempts (
+  delivery_id uuid not null references private.notification_deliveries(id) on delete cascade,
+  attempt integer not null,
+  started_at timestamptz not null default clock_timestamp(),
+  finished_at timestamptz,
+  outcome text,
+  error_code text,
+  primary key(delivery_id,attempt)
+);
+alter table private.notification_attempts enable row level security;
 
 create function public.notification_settings() returns jsonb
 language plpgsql security definer set search_path='' as $$
@@ -39,11 +50,12 @@ end $$;
 revoke all on function public.notification_settings() from public;
 grant execute on function public.notification_settings() to authenticated;
 
-create function public.register_push_device(subscription jsonb, device_label text) returns uuid
+create function public.register_push_device(subscription jsonb, device_label text, expected_user_id uuid) returns uuid
 language plpgsql security definer set search_path='' as $$
 declare result uuid; url text := subscription->>'endpoint';
 begin
   if auth.uid() is null then raise exception 'LOGIN_REQUIRED' using errcode='42501'; end if;
+  if auth.uid() is distinct from expected_user_id then raise exception 'ACCOUNT_CHANGED'; end if;
   -- Restrict destinations to push providers, preventing server-side arbitrary HTTP requests.
   if url is null or length(url)>2048 or url !~ '^https://(fcm\.googleapis\.com|updates\.push\.services\.mozilla\.com|web\.push\.apple\.com)/[^[:space:]]+$'
     or coalesce(subscription->'keys'->>'p256dh','') !~ '^[A-Za-z0-9_-]{87}={0,2}$'
@@ -58,14 +70,14 @@ begin
   if result is null then raise exception 'DEVICE_OWNED_BY_OTHER_ACCOUNT'; end if;
   return result;
 end $$;
-revoke all on function public.register_push_device(jsonb,text) from public;
-grant execute on function public.register_push_device(jsonb,text) to authenticated;
+revoke all on function public.register_push_device(jsonb,text,uuid) from public;
+grant execute on function public.register_push_device(jsonb,text,uuid) to authenticated;
 
 create function public.disable_push_device(device_id uuid) returns void
 language plpgsql security definer set search_path='' as $$
 begin
   update private.push_devices set active=false,updated_at=clock_timestamp() where id=device_id and user_id=auth.uid();
-  update private.notification_deliveries set status='invalidated' where user_id=auth.uid()
+  update private.notification_deliveries set status='invalidated',last_error='DEVICE_DISABLED' where user_id=auth.uid()
     and device_key=device_id::text and status in ('pending','sending');
 end $$;
 revoke all on function public.disable_push_device(uuid) from public;
@@ -78,7 +90,7 @@ begin
   insert into public.notification_preferences(user_id,announcements,ticket_reminders,updated_at)
     values(auth.uid(),announcements,ticket_reminders,clock_timestamp())
     on conflict(user_id) do update set announcements=excluded.announcements,ticket_reminders=excluded.ticket_reminders,updated_at=excluded.updated_at;
-  update private.notification_deliveries n set status='invalidated' where user_id=auth.uid() and status in ('pending','sending')
+  update private.notification_deliveries n set status='invalidated',last_error='CONSENT_REVOKED' where user_id=auth.uid() and status in ('pending','sending')
     and ((not is_test and change_id is not null and not set_notification_preferences.announcements)
       or (not is_test and ticket_schedule_id is not null and not set_notification_preferences.ticket_reminders)
       or (is_test and not set_notification_preferences.announcements and not set_notification_preferences.ticket_reminders));
@@ -94,7 +106,7 @@ begin
   if not exists(select 1 from private.push_devices d join public.notification_preferences p on p.user_id=d.user_id
     where d.id=device_id and d.user_id=auth.uid() and d.active and (p.announcements or p.ticket_reminders)) then
     raise exception 'CONSENT_AND_DEVICE_REQUIRED'; end if;
-  if exists(select 1 from private.notification_deliveries where user_id=auth.uid() and is_test and due_at>clock_timestamp()-interval '1 minute') then
+  if exists(select 1 from private.notification_deliveries where user_id=auth.uid() and is_test and created_at>clock_timestamp()-interval '1 minute') then
     raise exception 'TEST_RATE_LIMIT'; end if;
   insert into private.notification_deliveries(user_id,device_key,due_at,is_test) values(auth.uid(),device_id::text,clock_timestamp(),true);
 end $$;
@@ -129,14 +141,18 @@ create trigger record_publication after update on public.concerts for each row e
 
 create function private.record_lineup() returns trigger
 language plpgsql security definer set search_path='' as $$
+declare addition record;
 begin
-  if exists(select 1 from public.concerts where id=new.concert_id and status='published' and not cancelled) then
-    insert into private.publication_changes(concert_id,kind,initial_import,band_ids)
-      values(new.concert_id,'lineup',coalesce(nullif(current_setting('encore.initial_import',true),'')::boolean,false),array[new.band_id]);
-  end if;
+  -- A single admin save can add several bands: one change per concert, not one per band.
+  for addition in select concert_id,array_agg(band_id) as band_ids from added_bands group by concert_id loop
+    if exists(select 1 from public.concerts where id=addition.concert_id and status='published' and not cancelled) then
+      insert into private.publication_changes(concert_id,kind,initial_import,band_ids)
+        values(addition.concert_id,'lineup',coalesce(nullif(current_setting('encore.initial_import',true),'')::boolean,false),addition.band_ids);
+    end if;
+  end loop;
   return null;
 end $$;
-create trigger record_lineup after insert on public.concert_bands for each row execute function private.record_lineup();
+create trigger record_lineup after insert on public.concert_bands referencing new table as added_bands for each statement execute function private.record_lineup();
 
 create function private.delivery_eligible(delivery_id uuid) returns boolean
 language sql stable security definer set search_path='' as $$
@@ -146,7 +162,7 @@ language sql stable security definer set search_path='' as $$
     left join private.publication_changes ch on ch.id=n.change_id
     left join public.ticket_schedules t on t.id=n.ticket_schedule_id
     left join public.concerts c on c.id=coalesce(ch.concert_id,t.concert_id)
-    where n.id=delivery_id and ((n.is_test and (p.announcements or p.ticket_reminders) and n.due_at>clock_timestamp()-interval '10 minutes')
+    where n.id=delivery_id and ((n.is_test and (p.announcements or p.ticket_reminders) and n.created_at>clock_timestamp()-interval '10 minutes')
       or (not n.is_test and c.status='published' and not c.cancelled
       and coalesce(c.ends_on,c.starts_on)>=(clock_timestamp() at time zone 'Asia/Seoul')::date
       and ((ch.id is not null and p.announcements and not ch.initial_import
@@ -162,9 +178,11 @@ language plpgsql security definer set search_path='' as $$
 declare result jsonb;
 begin
   -- An interrupted send has an unknown outcome: never automatically send it again.
+  update private.notification_attempts a set finished_at=clock_timestamp(),outcome='failed',error_code='UNKNOWN_OUTCOME'
+    from private.notification_deliveries n where a.delivery_id=n.id and a.finished_at is null and n.status='sending' and n.lease_until<clock_timestamp();
   update private.notification_deliveries set status='failed',last_error='UNKNOWN_OUTCOME'
     where status='sending' and lease_until<clock_timestamp();
-  update private.notification_deliveries n set status='invalidated'
+  update private.notification_deliveries n set status='invalidated',last_error='STATE_CHANGED'
     where status in ('pending','sending') and not private.delivery_eligible(n.id);
   insert into private.notification_deliveries(user_id,ticket_schedule_id,schedule_revision,device_key,due_at)
     select s.user_id,t.id,t.revision,d.id::text,greatest(t.opens_at-interval '1 hour',s.created_at,d.created_at,p.updated_at)
@@ -178,7 +196,7 @@ begin
       where notification_deliveries.status='invalidated';
   with candidates as (
     select id from private.notification_deliveries where status='pending' and due_at<=clock_timestamp() and attempts<3
-    order by due_at limit 50 for update skip locked
+    order by due_at limit 10 for update skip locked
   ), claimed as (
     update private.notification_deliveries n set status='sending',lease_token=gen_random_uuid(),lease_until=clock_timestamp()+interval '2 minutes'
     from candidates c where n.id=c.id returning n.id,n.lease_token
@@ -194,11 +212,12 @@ begin
     and status='sending' and lease_until>clock_timestamp() for update;
   if not found then return null; end if;
   if not private.delivery_eligible(n.id) then
-    update private.notification_deliveries set status='invalidated' where id=n.id; return null;
+    update private.notification_deliveries set status='invalidated',last_error='STATE_CHANGED' where id=n.id; return null;
   end if;
   -- Only authorize once per lease, even if an HTTP request is accidentally repeated.
   if n.last_error='AUTHORIZED' then return null; end if;
   update private.notification_deliveries set attempts=attempts+1,last_error='AUTHORIZED' where id=n.id;
+  insert into private.notification_attempts(delivery_id,attempt) values(n.id,n.attempts+1);
   if n.is_test then
     return (select jsonb_build_object('subscription',jsonb_build_object('endpoint',d.endpoint,'keys',jsonb_build_object('p256dh',d.p256dh,'auth',d.auth_key)),
       'title','encore. 테스트 알림','body','이 알림이 보이면 실제 기기 수신을 확인한 것입니다.','concertId',null,'tag',n.id,'ttl',60)
@@ -221,8 +240,12 @@ language plpgsql security definer set search_path='' as $$
 declare n private.notification_deliveries;
 begin
   if outcome not in ('sent','retry','invalid_device','failed') then raise exception 'INVALID_OUTCOME'; end if;
-  select * into n from private.notification_deliveries where id=delivery_id and lease_token=token and status='sending' for update;
+  select * into n from private.notification_deliveries where id=delivery_id and lease_token=token and status in ('sending','invalidated') for update;
   if not found then return; end if;
+  update private.notification_attempts set finished_at=clock_timestamp(),outcome=finish_notification.outcome,error_code=left(finish_notification.error_code,80)
+    where notification_attempts.delivery_id=n.id and attempt=n.attempts and finished_at is null;
+  -- Preserve revocation, but still record the outcome of an already in-flight request.
+  if n.status='invalidated' then return; end if;
   if outcome='invalid_device' then
     update private.push_devices set active=false,updated_at=clock_timestamp() where id::text=n.device_key;
     update private.notification_deliveries set status='invalidated',last_error='INVALID_DEVICE'

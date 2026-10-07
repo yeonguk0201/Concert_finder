@@ -51,10 +51,11 @@ async function main() {
     return data
   }
   // Bounded draining; the next scheduled run processes remaining batches.
-  for (let i = 0; i < 10; i++) {
+  const started = Date.now()
+  for (let i = 0; i < 10 && Date.now() - started < 8 * 60_000; i++) {
     const counts = await dispatchNotifications({ rpc, send: (...args) => webpush.sendNotification(...args) })
     console.log(JSON.stringify(counts)) // Never log endpoint/key/payload/user IDs.
-    if (counts.claimed < 50) break
+    if (counts.claimed < 10) break
   }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

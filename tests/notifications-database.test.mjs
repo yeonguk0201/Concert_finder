@@ -8,11 +8,12 @@ test('notification consent, targets, scheduling, leases and access control', asy
   const a = '00000000-0000-0000-0000-000000000001', b = '00000000-0000-0000-0000-000000000002'
   const admin = '00000000-0000-0000-0000-000000000003'
   const owner = () => db.exec('reset role')
-  const role = async id => { await owner(); await db.query("select set_config('request.jwt.claim.sub',$1,false)", [id]); await db.exec('set role authenticated') }
+  let currentUser
+  const role = async id => { currentUser=id; await owner(); await db.query("select set_config('request.jwt.claim.sub',$1,false)", [id]); await db.exec('set role authenticated') }
   const rpc = async (name, values = [], placeholders = values.map((_, i) => `$${i + 1}`).join(',')) =>
     (await db.query(`select public.${name}(${placeholders}) as result`, values)).rows[0].result
   const prefs = (ann, ticket) => rpc('set_notification_preferences', [ann, ticket])
-  const register = path => rpc('register_push_device', [{ endpoint: `https://fcm.googleapis.com/fcm/send/${path}`, keys: { p256dh: 'A'.repeat(87), auth: 'B'.repeat(22) } }, path])
+  const register = path => rpc('register_push_device', [{ endpoint: `https://fcm.googleapis.com/fcm/send/${path}`, keys: { p256dh: 'A'.repeat(87), auth: 'B'.repeat(22) } }, path,currentUser])
   let d1, d2, band1, band2, concert, schedule
   const count = async status => (await db.query('select count(*)::int as n from private.notification_deliveries where status=$1', [status])).rows[0].n
   const claim = () => rpc('claim_notification_batch')
@@ -23,7 +24,7 @@ test('notification consent, targets, scheduling, leases and access control', asy
       create schema auth; create table auth.users(id uuid primary key);
       create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
       grant usage on schema auth to anon,authenticated; grant execute on function auth.uid() to anon,authenticated;`)
-    for (const file of ['202610060001_initial.sql','202610070001_admin_review.sql','202610090001_notifications.sql']) {
+    for (const file of ['202610060001_initial.sql','202610070001_admin_review.sql','202610080001_ingestion.sql','202610080002_realtime.sql','202610090001_notifications.sql']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${file}`, import.meta.url), 'utf8'))
     }
     await db.query('insert into auth.users values ($1),($2),($3)', [a,b,admin])
@@ -37,7 +38,8 @@ test('notification consent, targets, scheduling, leases and access control', asy
       assert.equal(settings.devices.length,2)
       assert.ok(!JSON.stringify(settings).includes('endpoint'))
       await assert.rejects(register('bad path'),/INVALID_SUBSCRIPTION/)
-      await assert.rejects(rpc('register_push_device', [{ endpoint:'https://localhost/internal', keys:{p256dh:'A'.repeat(87),auth:'B'.repeat(22)} },'bad']),/INVALID_SUBSCRIPTION/)
+      await assert.rejects(rpc('register_push_device', [{ endpoint:'https://localhost/internal', keys:{p256dh:'A'.repeat(87),auth:'B'.repeat(22)} },'bad',a]),/INVALID_SUBSCRIPTION/)
+      await assert.rejects(rpc('register_push_device', [{},'wrong account',b]),/ACCOUNT_CHANGED/)
       await assert.rejects(db.query('select * from private.push_devices'),/permission denied/)
       await assert.rejects(claim(),/permission denied/)
       await role(b)
@@ -73,9 +75,11 @@ test('notification consent, targets, scheduling, leases and access control', asy
       await owner()
       const band3 = (await db.query("insert into public.bands(name,country_code) values('New artist','US') returning id")).rows[0].id
       await role(b); await prefs(true,false); await db.query('insert into public.band_follows(band_id) values($1)',[band3])
-      await role(admin); await db.query('insert into public.concert_bands(concert_id,band_id) values($1,$2)',[concert,band3])
+      await owner(); const band4 = (await db.query("insert into public.bands(name,country_code) values('Another new artist','GB') returning id")).rows[0].id
+      await role(b); await db.query('insert into public.band_follows(band_id) values($1)',[band4])
+      await role(admin); await db.query('insert into public.concert_bands(concert_id,band_id) values($1,$2),($1,$3)',[concert,band3,band4])
       await owner(); const batch=await claim(); assert.equal(batch.length,1)
-      await role(b); await db.query('delete from public.band_follows where band_id=$1',[band3])
+      await role(b); await db.query('delete from public.band_follows where band_id in ($1,$2)',[band3,band4])
       await owner(); assert.equal(await authorize(batch[0]),null)
       assert.equal(await count('invalidated'),1)
     })
@@ -124,6 +128,8 @@ test('notification consent, targets, scheduling, leases and access control', asy
         row=(await claim())[0]; assert.ok(await authorize(row)); await finish(row,'retry','HTTP_503')
       }
       assert.equal((await db.query('select status,attempts from private.notification_deliveries where id=$1',[row.id])).rows[0].status,'failed')
+      const attempts=(await db.query('select * from private.notification_attempts where delivery_id=$1',[row.id])).rows
+      assert.equal(attempts.length,3); assert.ok(attempts.every(a=>a.finished_at && a.error_code==='HTTP_503'))
       assert.equal((await claim()).length,0)
       await db.exec('delete from private.notification_deliveries where is_test')
       await role(a); await rpc('request_push_test',[d2]); await owner(); row=(await claim())[0]
