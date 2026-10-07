@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import { adminError, emptyConcert, kstInput, kstTimestamp, loadAdminCatalog, saveAdminBand, saveAdminConcert } from './adminApi'
 import type { AdminCatalog, AdminConcert } from './adminApi'
 import './AdminPanel.css'
+import { CollectionPanel } from './CollectionPanel'
 
 const statusLabels = { draft: '초안', review: '검수 대기', published: '공개', withdrawn: '공개 중단' }
 export function AdminPanel({ onSaved }: { onSaved: () => void }) {
@@ -80,6 +81,7 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
     {loading && <p role="status">관리자 목록을 불러오는 중…</p>}
     {error && <p role="alert" className="account-error">{error}</p>}
     {message && <p role="status">{message}</p>}
+    <CollectionPanel catalog={catalog} onSelect={concert => { if (!busy && !needsRefresh) { setForm(concert); setMessage('수집 후보를 입력했습니다. 출처와 기존 내용을 확인하고 저장하세요.') } }} />
     <div className="admin-layout"><aside className="admin-list" aria-label="검수 공연 목록">
       <button className="primary" disabled={busy || needsRefresh} onClick={() => { setForm(emptyConcert()); setMessage(''); setError('') }}>새 공연 등록</button>
       {catalog.concerts.map(c => <button key={c.id} disabled={busy || needsRefresh} aria-pressed={form.id === c.id} onClick={() => { setForm(structuredClone(c)); setMessage(''); setError('') }}><span>{statusLabels[c.status]}{c.cancelled ? ' · 취소' : ''}</span><strong>{c.title}</strong><small>{c.starts_on ?? '공연일 미정'}</small></button>)}

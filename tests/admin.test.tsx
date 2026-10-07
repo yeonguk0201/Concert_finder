@@ -6,7 +6,7 @@ import { emptyConcert, kstInput, kstTimestamp } from '../src/adminApi'
 import { useAdminAccess } from '../src/useAdminAccess'
 
 const mocks = vi.hoisted(() => ({ load: vi.fn(), save: vi.fn(), band: vi.fn(), rpc: vi.fn() }))
-vi.mock('../src/backend', () => ({ backend: { rpc: mocks.rpc } }))
+vi.mock('../src/backend', () => ({ backend: { rpc: mocks.rpc, from: () => ({ select: () => ({ eq: () => ({ order: async () => ({ data: [], error: null }) }), order: () => ({ limit: async () => ({ data: [], error: null }) }) }) }) } }))
 vi.mock('../src/adminApi', async importOriginal => ({ ...await importOriginal<typeof import('../src/adminApi')>(), loadAdminCatalog: mocks.load, saveAdminConcert: mocks.save, saveAdminBand: mocks.band }))
 afterEach(() => { cleanup(); vi.resetAllMocks() })
 
