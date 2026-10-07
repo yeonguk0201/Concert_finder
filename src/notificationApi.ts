@@ -28,9 +28,12 @@ export async function loadNotificationSettings(): Promise<NotificationSettings> 
     typeof data.preferences?.ticket_reminders !== 'boolean' || !Array.isArray(data.devices)) {
     throw new NotificationRequestError('notification_settings', { code: 'INVALID_SETTINGS_RESPONSE' })
   }
-  return data as NotificationSettings
+  // Persisted rows include user_id/updated_at; keep those out of editable preferences.
+  return { preferences: { announcements: data.preferences.announcements, ticket_reminders: data.preferences.ticket_reminders }, devices: data.devices }
 }
-export const saveNotificationPreferences = (value: Preferences) => rpc('set_notification_preferences', value)
+export const saveNotificationPreferences = (value: Preferences) => rpc('set_notification_preferences', {
+  announcements: value.announcements, ticket_reminders: value.ticket_reminders,
+})
 export const disablePushDevice = (id: string) => rpc('disable_push_device', { device_id: id })
 export const requestPushTest = (id: string) => rpc('request_push_test', { device_id: id })
 export function pushSupported() {
@@ -80,7 +83,7 @@ export function notificationError(error: unknown) {
   if (message.includes('LOGIN_REQUIRED') || /^PGRST30[123]$/.test(code) || /JWT.*expired|Invalid JWT/i.test(message)) {
     return describe('로그인을 다시 확인해야 합니다. 로그아웃 후 새 로그인 링크로 접속해 주세요.')
   }
-  if (code === 'PGRST202') return describe('현재 연결된 DB에서 알림 함수를 찾지 못했습니다. 알림 SQL 적용과 배포의 DB 연결을 확인해 주세요.')
+  if (code === 'PGRST202') return describe('알림 함수와 요청 인수가 일치하지 않습니다. 배포 버전과 알림 함수 적용 상태를 확인해 주세요.')
   if (code === '42501') return describe('알림 설정에 접근하지 못했습니다. 다시 로그인한 뒤에도 계속되면 DB 함수 권한을 확인해야 합니다.')
   if (code.startsWith('42') || code === 'INVALID_SETTINGS_RESPONSE') return describe('서버의 알림 설정 처리에 문제가 있습니다. 이 오류 코드를 전달해 주세요.')
   if (/Failed to fetch|fetch failed|NetworkError|Load failed/i.test(message)) return describe('서버에 연결하지 못했습니다. 네트워크를 확인하고 다시 시도해 주세요.')
