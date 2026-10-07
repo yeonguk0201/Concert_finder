@@ -25,6 +25,12 @@ beforeEach(() => {
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+
+test('notification deep link explains unavailable or withdrawn concert', () => {
+  history.replaceState(null, '', '/?page=discover&event=removed-concert')
+  render(<App />)
+  expect(screen.getByText('이 공연 정보는 삭제되었거나 공개가 중단되었습니다.')).toBeTruthy()
+})
 test('direct admin URL does not expose an editor to an unsigned user', () => {
   history.replaceState(null, '', '/?page=admin')
   render(<App />)
@@ -39,10 +45,10 @@ test('failed schedule save shows failure without success and permits a retry', a
   const button = await screen.findByRole('button', { name: '예매 일정 저장', exact: true })
   fireEvent.click(button)
   await waitFor(() => expect(screen.getByText('일정을 저장하지 못했습니다. 다시 시도해 주세요.')).toBeTruthy())
-  expect(screen.queryByText('계정에 일정을 저장했어요. 자동 푸시 알림은 아직 제공하지 않습니다.')).toBeNull()
+  expect(screen.queryByText('계정에 일정을 저장했어요. 알림 수신은 별도 동의·기기 등록이 필요합니다.')).toBeNull()
   expect((button as HTMLButtonElement).disabled).toBe(false)
   fireEvent.click(button)
-  await waitFor(() => expect(screen.getByText('계정에 일정을 저장했어요. 자동 푸시 알림은 아직 제공하지 않습니다.')).toBeTruthy())
+  await waitFor(() => expect(screen.getByText('계정에 일정을 저장했어요. 알림 수신은 별도 동의·기기 등록이 필요합니다.')).toBeTruthy())
   expect(mocks.toggle).toHaveBeenCalledTimes(2)
 })
 test('an unknown opening time still allows saving the one-to-one ticket schedule', async () => {

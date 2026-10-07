@@ -7,7 +7,7 @@ export type AdminConcert = {
   id?: string; updated_at?: string; first_published_at?: string | null
   title: string; format: 'solo' | 'festival'; city: string | null; venue: string | null
   starts_on: string | null; ends_on: string | null; announced_on: string | null; announced_at: string | null
-  announcement_verified: boolean; cancelled: boolean; status: 'draft' | 'review' | 'published' | 'withdrawn'
+  announcement_verified: boolean; cancelled: boolean; initial_import?: boolean; status: 'draft' | 'review' | 'published' | 'withdrawn'
   sources: Source[]; band_ids: string[]; sessions: SessionRow[]
   ticket: { id?: string; revision?: number; opens_at: string | null; booking_url: string | null; price_description: string | null } | null
 }
