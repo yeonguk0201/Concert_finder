@@ -1,0 +1,4 @@
+[functions.notification-delivery]
+# This server-only endpoint validates NOTIFICATION_CRON_SECRET itself.
+# A normal authenticated user's JWT must not grant permission to send push.
+verify_jwt = false

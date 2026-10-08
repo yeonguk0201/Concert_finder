@@ -32,5 +32,9 @@ jobs:
         run: npm run lint
       - name: Database and account tests
         run: npm test
+      - name: Supabase notification runtime
+        run: |
+          npx --yes deno@2.1.4 check --config supabase/functions/notification-delivery/deno.json supabase/functions/notification-delivery/index.ts
+          npx --yes deno@2.1.4 test --config supabase/functions/notification-delivery/deno.json supabase/functions/notification-delivery/runtime.test.ts
       - name: Build
         run: npm run build
