@@ -25,3 +25,22 @@ test('worker reauthorizes every send and records results without leaking or send
   assert.equal(JSON.parse(sent[0][1]).url,'/?page=discover&event=concert')
   assert.equal(calls.filter(c=>c.name==='finish_notification').length,2)
 })
+
+test('edge batch bounds concurrency to two and waits for pending sends after an RPC failure', async () => {
+  let inFlight = 0, maximum = 0, finished = 0
+  const rpc = async (name, args) => {
+    if (name === 'claim_notification_batch') return Array.from({ length: 10 }, (_, i) => ({ id: String(i), lease_token: 'lease' }))
+    if (name === 'authorize_notification') return { subscription: { endpoint: 'https://fcm.googleapis.com/push' }, title: '', body: '', tag: args.delivery_id }
+    if (name === 'finish_notification') { finished++; if (args.delivery_id === '0') throw new Error('RPC_FAILED') }
+  }
+  const send = async () => {
+    inFlight++; maximum = Math.max(maximum, inFlight)
+    await new Promise(resolve => setTimeout(resolve, 1))
+    inFlight--
+  }
+  await assert.rejects(dispatchNotifications({ rpc, send, concurrency: 2 }), /RPC_FAILED/)
+  assert.equal(maximum, 2)
+  assert.equal(inFlight, 0)
+  assert.equal(finished, 10)
+  await assert.rejects(dispatchNotifications({ rpc, send, concurrency: 3 }), /INVALID_CONCURRENCY/)
+})

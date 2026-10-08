@@ -1,9 +1,7 @@
 name: Deliver concert notifications
 on:
   workflow_dispatch:
-  schedule:
-    # Offset from the hour boundary; GitHub schedules may still be delayed.
-    - cron: '2-59/5 * * * *'
+# Automatic delivery is owned by Supabase Cron. Keep this as a manual fallback.
 permissions:
   contents: read
 concurrency:

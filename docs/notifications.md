@@ -18,6 +18,8 @@
 
 ## 연결 순서
 
+2026-10-09: GitHub schedule 미실행으로 자동 발송 실행기를 Supabase Cron으로 전환한다. 새 설정·배포·검증은 [Supabase 정기 알림 발송](supabase-notifications.md)을 따른다. 아래 GitHub 설정은 이전 연결 기록이며, 새 workflow는 수동 복구용으로만 유지한다. 코드 구현과 실제 원격 자동 실행 완료는 구분한다.
+
 1. 검증된 코드 브랜치를 dev 대상 PR로 반영하고 해당 버전을 HTTPS 테스트 환경에 배포한다. 알림 구현과 후속 수정은 PR #10~#13으로 진행했으며 홈 화면 앱 번호 로그인 PR #13의 dev 병합을 확인했다. dev 병합만으로 main 출시나 정기 발송 시작을 의미하지 않는다.
 2. Supabase SQL Editor에서 기존 10/6~10/8 마이그레이션 다음에 [202610090001_notifications.sql](../supabase/migrations/202610090001_notifications.sql)을 실행한다. private 스키마를 Data API에 노출하지 않는다. 일반 사용자는 워커 RPC와 구독 키를 읽을 수 없어야 한다.
 3. 로컬 저장소에서 `node scripts/generate-vapid.mjs`를 실행한다. 기존 파일을 덮어쓰지 않고 Git에서 제외된 `.env.push.local`에 UTF-8로 키를 저장한다. 비밀키를 채팅·커밋·로그에 복사하지 않는다. 키는 매 배포마다 새로 만들지 않는다.
