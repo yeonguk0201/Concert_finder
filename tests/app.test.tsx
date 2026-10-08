@@ -7,12 +7,15 @@ import { mapBands, mapConcerts } from '../src/catalog'
 const mocks = vi.hoisted(() => ({
   session: null as null | { user: { id: string; email: string } },
   toggle: vi.fn(), reload: vi.fn(),
+  adminAllowed: false,
   bands: [] as unknown[], concerts: [] as unknown[], follows: [] as string[], saves: [] as string[],
 }))
 vi.mock('../src/backend', () => ({ accountMode: true, backend: {}, configurationError: '' }))
 vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: false, error: '', busy: false, message: '', requestLink: vi.fn(), signOut: vi.fn() }) }))
 vi.mock('../src/useCatalog', () => ({ useCatalog: () => ({ bands: mocks.bands, concerts: mocks.concerts, loading: false, error: '', reload: mocks.reload }) }))
 vi.mock('../src/useAccountStorage', () => ({ useAccountStorage: () => ({ bands: mocks.follows, schedules: mocks.saves, loading: false, error: '', pending: [], toggle: mocks.toggle, reload: mocks.reload }) }))
+vi.mock('../src/useAdminAccess', () => ({ useAdminAccess: () => ({ allowed: mocks.adminAllowed, error: '', reload: vi.fn() }) }))
+vi.mock('../src/AdminPanel', () => ({ AdminPanel: () => <section aria-label="관리자 공연 검수">관리자 편집기</section> }))
 beforeEach(() => {
   HTMLDialogElement.prototype.showModal = function () { this.setAttribute('open', '') }
   HTMLDialogElement.prototype.close = function () { this.removeAttribute('open') }
@@ -21,10 +24,40 @@ beforeEach(() => {
   mocks.concerts = mapConcerts([{ id: 'real-concert', title: 'Verified concert', format: 'solo', city: '서울', venue: null, starts_on: '2026-12-12', ends_on: null, announced_on: '2026-10-06', cancelled: false,
     concert_bands: [{ band_id: 'real-band' }], ticket_schedules: { id: 'real-ticket', opens_at: null, price_description: null, booking_url: null }, concert_sources: [] }], mocks.bands as ReturnType<typeof mapBands>)
   mocks.session = null; mocks.follows = []; mocks.saves = []
+  mocks.adminAllowed = false
   localStorage.setItem('encore.bands', '["oasis"]'); localStorage.setItem('encore.saved', '["oasis-seoul"]')
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+
+test('admin navigation and session restoration keep exactly one notification panel', () => {
+  history.replaceState(null, '', '/?page=admin')
+  const view = render(<App />)
+  mocks.session = { user: { id: 'admin-account', email: 'admin@example.test' } }
+  view.rerender(<App />)
+  mocks.adminAllowed = true
+  view.rerender(<App />)
+  for (let i = 0; i < 3; i++) {
+    expect(screen.getAllByRole('region', { name: '공연 알림 설정' })).toHaveLength(1)
+    fireEvent.click(screen.getByRole('button', { name: '홈으로 돌아가기' }))
+    expect(screen.getAllByRole('region', { name: '공연 알림 설정' })).toHaveLength(1)
+    fireEvent.click(screen.getByRole('button', { name: '관리자 공연 검수' }))
+    view.rerender(<App />)
+  }
+  mocks.session = { user: { id: 'other-account', email: 'other@example.test' } }
+  mocks.adminAllowed = false
+  view.rerender(<App />)
+  expect(screen.getAllByRole('region', { name: '공연 알림 설정' })).toHaveLength(1)
+  mocks.session = null
+  view.rerender(<App />)
+  expect(screen.queryByRole('region', { name: '공연 알림 설정' })).toBeNull()
+})
+
+test('notification deep link explains unavailable or withdrawn concert', () => {
+  history.replaceState(null, '', '/?page=discover&event=removed-concert')
+  render(<App />)
+  expect(screen.getByText('이 공연 정보는 삭제되었거나 공개가 중단되었습니다.')).toBeTruthy()
+})
 test('direct admin URL does not expose an editor to an unsigned user', () => {
   history.replaceState(null, '', '/?page=admin')
   render(<App />)
@@ -39,10 +72,10 @@ test('failed schedule save shows failure without success and permits a retry', a
   const button = await screen.findByRole('button', { name: '예매 일정 저장', exact: true })
   fireEvent.click(button)
   await waitFor(() => expect(screen.getByText('일정을 저장하지 못했습니다. 다시 시도해 주세요.')).toBeTruthy())
-  expect(screen.queryByText('계정에 일정을 저장했어요. 자동 푸시 알림은 아직 제공하지 않습니다.')).toBeNull()
+  expect(screen.queryByText('계정에 일정을 저장했어요. 알림 수신은 별도 동의·기기 등록이 필요합니다.')).toBeNull()
   expect((button as HTMLButtonElement).disabled).toBe(false)
   fireEvent.click(button)
-  await waitFor(() => expect(screen.getByText('계정에 일정을 저장했어요. 자동 푸시 알림은 아직 제공하지 않습니다.')).toBeTruthy())
+  await waitFor(() => expect(screen.getByText('계정에 일정을 저장했어요. 알림 수신은 별도 동의·기기 등록이 필요합니다.')).toBeTruthy())
   expect(mocks.toggle).toHaveBeenCalledTimes(2)
 })
 test('an unknown opening time still allows saving the one-to-one ticket schedule', async () => {

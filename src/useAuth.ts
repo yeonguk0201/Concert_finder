@@ -10,6 +10,7 @@ export function useAuth() {
   const [error, setError] = useState(() => configurationError || authCallback(new URL(window.location.href)).error)
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState('')
+  const [pendingEmail, setPendingEmail] = useState('')
   useEffect(() => {
     if (!backend) return
     let active = true
@@ -24,7 +25,7 @@ export function useAuth() {
     window.addEventListener('popstate', handleCallback)
     const { data: { subscription } } = backend.auth.onAuthStateChange((_event, next) => {
       eventSeen = true
-      if (active) { setSession(next); setLoading(false) }
+      if (active) { setSession(next); setLoading(false); if (next) { setPendingEmail(''); setMessage('') } }
     })
     void backend.auth.getSession().then(({ data, error: failure }) => {
       if (!active || eventSeen) return
@@ -43,8 +44,28 @@ export function useAuth() {
       redirect.hash = ''
       const { error: failure } = await backend.auth.signInWithOtp({ email: email.trim(), options: { emailRedirectTo: redirect.href } })
       if (failure) setError(loginRequestError(failure))
-      else setMessage('이메일에서 로그인 링크를 열어 주세요. 링크를 연 브라우저에 로그인됩니다.')
+      else {
+        setPendingEmail(email.trim())
+        setMessage('이메일의 인증번호를 이 화면에 입력하거나 로그인 링크를 열어 주세요. 링크는 열린 브라우저에 로그인됩니다.')
+      }
     } catch (failure) { setError(loginRequestError(failure)) }
+    finally { setBusy(false) }
+  }
+  const verifyCode = async (code: string) => {
+    if (!backend || busy || !pendingEmail) return
+    setError(''); setMessage('')
+    const token = code.trim()
+    if (!/^\d{6,10}$/.test(token)) { setError('이메일에 표시된 숫자 인증번호를 입력해 주세요.'); return }
+    setBusy(true)
+    try {
+      const { data, error: failure } = await backend.auth.verifyOtp({ email: pendingEmail, token, type: 'email' })
+      if (failure) {
+        setError(failure.code === 'otp_expired' || failure.code === 'access_denied'
+          ? '인증번호가 만료되었거나 올바르지 않습니다. 최신 메일의 번호를 확인하거나 새로 요청해 주세요.'
+          : '인증번호를 확인하지 못했습니다. 연결과 번호를 확인하고 다시 시도해 주세요.')
+      } else if (data.session) { setSession(data.session); setPendingEmail('') }
+      else setError('로그인을 완료하지 못했습니다. 새 인증번호를 요청해 주세요.')
+    } catch { setError('로그인 서버에 연결하지 못했습니다. 연결을 확인하고 다시 시도해 주세요.') }
     finally { setBusy(false) }
   }
   const signOut = async () => {
@@ -57,5 +78,5 @@ export function useAuth() {
     } catch { setError('로그아웃하지 못했습니다. 연결을 확인해 주세요.') }
     finally { setBusy(false) }
   }
-  return { session, loading, error, busy, message, requestLink, signOut }
+  return { session, loading, error, busy, message, pendingEmail, requestLink, verifyCode, signOut }
 }

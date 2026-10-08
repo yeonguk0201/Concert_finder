@@ -106,6 +106,7 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
       </div>
       <label className="admin-check"><input type="checkbox" checked={form.announcement_verified} onChange={e => edit({ announcement_verified: e.target.checked })} />공식 출처에서 발표일을 확인했습니다</label>
       <label className="admin-check"><input type="checkbox" checked={form.cancelled} onChange={e => edit({ cancelled: e.target.checked })} />공식 취소 안내를 확인했습니다</label>
+      <label className="admin-check"><input type="checkbox" checked={form.initial_import ?? false} onChange={e => edit({ initial_import: e.target.checked })} />기존 정보 보완 등록 · 이번 공개/라인업 추가 알림 보내지 않기</label>
       <h2>출연 밴드</h2><div className="admin-lineup">{catalog.bands.map(b => <label className="admin-check" key={b.id}><input type="checkbox" checked={form.band_ids.includes(b.id)} onChange={e => edit({ band_ids: e.target.checked ? [...form.band_ids, b.id] : form.band_ids.filter(id => id !== b.id) })} />{b.name} ({b.country_code})</label>)}</div>
       {!catalog.bands.length && <p>아래에서 밴드를 먼저 등록하세요.</p>}
       <h2>공식 출처</h2>
