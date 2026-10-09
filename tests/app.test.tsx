@@ -111,7 +111,7 @@ test('empty catalog explains why bands cannot be followed', () => {
 })
 test('account mode excludes local samples and login prompt keeps the original event URL', async () => {
   render(<App />)
-  expect(screen.queryByText(/가상 샘플/)).toBeNull()
+  expect(document.querySelector('.demo-notice')).toBeNull()
   expect(screen.queryByText('Oasis')).toBeNull()
   fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
   await waitFor(() => expect(screen.getByRole('dialog').hasAttribute('open')).toBe(true))

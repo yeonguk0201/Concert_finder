@@ -94,6 +94,20 @@ test('account deletion requires explicit confirmation, preserves session on fail
   expect(screen.queryByText('계정으로 로그인됨')).toBeNull()
   expect(mock.invoke).toHaveBeenLastCalledWith('delete-account', { body: { expectedUserId: 'a', confirmation: '계정 삭제' } })
 })
+
+test('a completed deletion cannot sign out an account selected while the request was pending', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { user: { id: 'a' } } }, error: null })
+  let complete: (value: unknown) => void = () => {}
+  mock.invoke.mockReturnValue(new Promise(resolve => { complete = resolve }))
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.session?.user.id).toBe('a'))
+  let deletion: Promise<boolean> | undefined
+  act(() => { deletion = result.current.deleteAccount('a') })
+  act(() => mock.callback?.('SIGNED_IN', { user: { id: 'b' } }))
+  await act(async () => { complete({ data: { deleted: true }, error: null }); await deletion })
+  expect(result.current.session?.user.id).toBe('b')
+  expect(mock.signOut).not.toHaveBeenCalled()
+})
 test('expired callback is cleaned and requesting a new link preserves the target page', async () => {
   history.replaceState(null, '', '/?page=saved&event=abc#error=access_denied&error_description=expired')
   mock.getSession.mockResolvedValue({ data: { session: null }, error: null })

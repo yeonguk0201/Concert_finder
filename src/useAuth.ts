@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
 import { backend, configurationError } from './backend'
 import { authCallback, loginRequestError } from './authErrors'
 
 export function useAuth() {
   const [session, setSession] = useState<Session | null>(null)
+  const currentUser = useRef<string | null>(null)
+  useLayoutEffect(() => { currentUser.current = session?.user.id ?? null }, [session])
   const [loading, setLoading] = useState(Boolean(backend))
   // Read before effects clean the URL; StrictMode replays setup and cleanup.
   const [error, setError] = useState(() => configurationError || authCallback(new URL(window.location.href)).error)
@@ -86,8 +88,9 @@ export function useAuth() {
         body: { expectedUserId, confirmation: '계정 삭제' },
       })
       if (failure || data?.deleted !== true) throw new Error('DELETE_FAILED')
+      if (currentUser.current !== expectedUserId) return true
       // Clear the current browser's persisted auth tokens even after Auth deletion.
-      await backend.auth.signOut({ scope: 'local' })
+      await backend.auth.signOut({ scope: 'local' }).catch(() => ({ error: null }))
       setSession(null); setPendingEmail('')
       setMessage('계정과 계정에 저장된 데이터를 삭제했습니다. 이미 전달된 알림과 내려받은 캘린더는 기기에서 직접 삭제해 주세요.')
       return true

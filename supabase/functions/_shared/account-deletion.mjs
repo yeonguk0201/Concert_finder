@@ -17,7 +17,7 @@ export function createAccountDeletionHandler({ authenticate, deleteUser }) {
     try { body = await request.json() } catch { return reply(400, { error: 'INVALID_REQUEST' }) }
     if (body?.confirmation !== '계정 삭제' || typeof body?.expectedUserId !== 'string') return reply(400, { error: 'CONFIRMATION_REQUIRED' })
     try {
-      // A server lookup rejects deleted users and revoked/invalid sessions.
+      // A server lookup rejects deleted users and invalid tokens.
       const user = await authenticate(authorization.replace(/^Bearer /i, ''))
       if (!user) return reply(401, { error: 'LOGIN_REQUIRED' })
       if (user.id !== body.expectedUserId) return reply(409, { error: 'ACCOUNT_CHANGED' })

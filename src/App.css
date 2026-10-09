@@ -16,3 +16,17 @@
 .notification-devices { padding: 0; list-style: none; }
 .notification-devices li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; }
 .notification-devices li > div { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* W19: reflow, visible keyboard access and touch targets. */
+body{min-width:320px}
+summary{cursor:pointer}summary:focus-visible{outline:2px solid #c6f18b;outline-offset:4px}
+.skip-link{position:fixed;top:8px;left:8px;transform:translateY(-150%);z-index:30;background:#c5f28b;color:#111;padding:12px 18px;border-radius:6px}
+.skip-link:focus{transform:none}
+.sound-bars{max-width:100%;overflow:hidden}
+.service-guide{border-top:1px solid var(--border);padding:24px 0;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.service-guide h2{font-size:18px}.service-guide p{margin:10px 0;color:#b4bdad}.service-guide details{border-bottom:1px solid var(--border);padding:10px 0}.service-guide summary{min-height:44px;display:list-item;padding:10px 0}
+.account-deletion{margin-top:12px}.danger{color:#ffb6a2;border-color:#a75f4d}
+button,input,select{min-height:44px}.save-icon{min-width:44px}.dialog-close{min-width:44px;min-height:44px}
+.detail-body dd{min-width:0;overflow-wrap:anywhere}.detail-dialog{overscroll-behavior:contain}.card-tags{flex-wrap:wrap}.card-tags .save-icon{margin-left:auto}
+@media(max-width:800px){.content{padding-bottom:calc(100px + env(safe-area-inset-bottom))}.mobile-nav button{min-height:48px}.account-heading{flex-wrap:wrap}.account-sync{flex-wrap:wrap}}
+@media(max-width:580px){input,select,.account-panel input,.filter-right select{font-size:16px}.account-panel{font-size:13px}.account-panel form input{flex-basis:100%;width:100%}.band-card{flex-wrap:wrap}.band-card>div{min-width:0;flex:1;overflow-wrap:anywhere}.follow-button{font-size:12px}.schedule-info{min-width:0;flex-basis:calc(100% - 70px)}.schedule-list .outline{margin-left:0}.card-title{font-size:13px}.venue,.card-content p{font-size:11px}.filter-tabs button{font-size:12px}.mobile-nav button{font-size:11px}.detail-body{padding:24px 18px}.detail-body dl{font-size:13px}.detail-body>p{font-size:14px}.detail-content .poster strong{max-width:calc(100% - 50px)}}
