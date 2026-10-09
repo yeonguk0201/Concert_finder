@@ -78,5 +78,23 @@ export function useAuth() {
     } catch { setError('로그아웃하지 못했습니다. 연결을 확인해 주세요.') }
     finally { setBusy(false) }
   }
-  return { session, loading, error, busy, message, pendingEmail, requestLink, verifyCode, signOut }
+  const deleteAccount = async (expectedUserId: string) => {
+    if (!backend || busy || !session || session.user.id !== expectedUserId) return false
+    setBusy(true); setError(''); setMessage('')
+    try {
+      const { data, error: failure } = await backend.functions.invoke('delete-account', {
+        body: { expectedUserId, confirmation: '계정 삭제' },
+      })
+      if (failure || data?.deleted !== true) throw new Error('DELETE_FAILED')
+      // Clear the current browser's persisted auth tokens even after Auth deletion.
+      await backend.auth.signOut({ scope: 'local' })
+      setSession(null); setPendingEmail('')
+      setMessage('계정과 계정에 저장된 데이터를 삭제했습니다. 이미 전달된 알림과 내려받은 캘린더는 기기에서 직접 삭제해 주세요.')
+      return true
+    } catch {
+      setError('계정 삭제를 확인하지 못했습니다. 연결을 확인해 주세요. 로그인 상태를 다시 확인한 뒤 재시도할 수 있습니다.')
+      return false
+    } finally { setBusy(false) }
+  }
+  return { session, loading, error, busy, message, pendingEmail, requestLink, verifyCode, signOut, deleteAccount }
 }
