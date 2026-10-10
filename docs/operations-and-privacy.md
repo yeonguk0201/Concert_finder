@@ -79,9 +79,9 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 
 | 제공자 | 공식 자료로 확인한 범위 | 이 프로젝트에서 추가 확인할 사항 |
 | --- | --- | --- |
-| Supabase | DB 호스팅은 프로젝트 생성 시 선택한 AWS 지역. 일별 백업 보관은 플랜에 따라 다르며 Pro 7일·Team 14일·Enterprise 최대 30일. | 프로젝트 목록에서 실제 지역 ap-southeast-2 확인. 플랜·PITR·별도 백업 여부, Auth/함수 로그 보관 설정은 추가 확인 |
+| Supabase | DB 호스팅은 프로젝트 생성 시 선택한 AWS 지역. 일별 백업 보관은 플랜에 따라 다르며 Pro 7일·Team 14일·Enterprise 최대 30일. | 지역 ap-southeast-2 조회 확인. 사용자 Free 플랜 확인, 예약 백업 화면에 Free 미포함/Pro 업그레이드 안내 확인. 실제 로그 설정·별도 수동 백업 여부는 별도 |
 | Vercel | Runtime Logs는 Functions·Routing Middleware 실행 로그에 대한 안내다. | 팀 API에서 실제 Hobby 플랜 확인. 정적 호스팅 접속 기록·분석/외부 로그 연동 여부는 추가 확인; Runtime Logs 기간을 전체 데이터 보관 기간으로 사용하지 않음 |
-| 로그인 메일·브라우저 푸시 | 앱은 로그인 메일과 웹 푸시를 사용하며 공연 이메일 알림은 제공하지 않음. | 실제 SMTP 제공자·푸시 전달 제공자별 지역·보관 정책 |
+| 로그인 메일·브라우저 푸시 | 앱은 로그인 메일과 웹 푸시를 사용하며 공연 이메일 알림은 제공하지 않음. | 첨부 설정에서 Custom SMTP 활성·smtp.gmail.com·465 포트 확인. Gmail SMTP 사용. 푸시 제공자별 운영 로그의 정확한 보관 기간은 미확인 |
 | Google Fonts | 공식 FAQ의 Privacy 본문을 브라우저로 확인. 폰트 요청에 IP·요청 URL·브라우저/OS 및 referrer 헤더가 포함되며 Fonts API는 쿠키를 설정·기록하지 않는다고 안내함. | 정확한 보관 기간·처리 지역 추가 확인 |
 
 근거: [Supabase 지역·이전 안내](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq), [Supabase 백업](https://supabase.com/docs/guides/platform/backups), [Vercel Runtime Logs](https://vercel.com/docs/logs/runtime). [Google Fonts FAQ의 Privacy](https://fonts.google.com/faq#privacy)는 웹 검색 도구에서 본문을 확보하지 못했으나 이후 브라우저에서 직접 확인했다. 공개된 요청 정보·쿠키 설명 범위를 기록하며 보관 기간은 추정하지 않는다. 정책 대조만으로 개인정보 처리방침 준비 전체를 완료로 바꾸지 않는다.
@@ -101,3 +101,16 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 남은 대시보드 확인은 Supabase 조직의 Billing 플랜, 해당 프로젝트의 Custom SMTP 활성 여부와 제공자명, Database Backups/PITR 활성 상태를 읽기만 한다. 업그레이드 안내나 접근 제한이면 해당 표시를 기록하고 백업이 전혀 없다고 추정하지 않는다. 비밀번호·SMTP 키·연결 문자열은 기록하지 않는다. 확인된 플랜/제공자에 맞춰 공식 로그·백업·메일 정책을 대조하고, 공개 문서에 보관 기간이 없으면 미공개로 기록한다. 문의 메일함 보관·별도 백업 등 운영자 측 실제 운영 정책도 제공자 기본 정책과 구분한다.
 
 근거: [Supabase SMTP](https://supabase.com/docs/guides/auth/auth-smtp), [Supabase 로그](https://supabase.com/docs/guides/observability/logs), [백업](https://supabase.com/docs/guides/platform/backups).
+
+
+### 사용자 설정 확인과 보관 정책 대조 결과 · 2026-10-10
+
+- 사용자 보고: Supabase Free, Custom SMTP 켜짐, 백업은 업그레이드 안내.
+- SMTP 첨부 화면: Gmail SMTP 호스트 smtp.gmail.com, 포트 465, 사용자별 최소 발송 간격 60초. 비밀번호·키는 제공받거나 기록하지 않았다. 개인 메일용 제공자에 대한 전달성 안내가 표시되며 연결 실패를 뜻하는 오류로 기록하지 않는다. 새 SMTP 설정·메일 발송은 수행하지 않았다.
+- 백업 첨부 화면: Scheduled backups 탭에 Free 플랜의 프로젝트 백업 미포함과 Pro 업그레이드 안내 표시. 유료 예약 백업 복원 기능을 사용 중으로 표시하지 않는다. 화면 위쪽의 일반적인 일별 백업 설명보다 플랜별 안내를 적용한다. 외부 수동 백업이나 제공자 내부 복구 사본까지 전혀 없다고 단정하지 않는다.
+
+[Supabase 요금표](https://supabase.com/pricing)는 Free의 Automatic backups·PITR 미포함을 명시한다. API/DB 로그 보관은 요금표상 Free 1일이며, [로그 사용량 문서](https://supabase.com/docs/guides/platform/manage-your-usage/logs-query)의 한도 초과 시 보관 축소 조건은 별도다. 이는 찜·저장 일정이나 앱 DB의 발송 기록이 하루 뒤 자동 삭제된다는 뜻이 아니다. 실제 프로젝트 로그 설정·제공자 내부 보안 기록의 모든 삭제 기한을 이 숫자로 대체하지 않는다.
+
+Gmail로 전달하거나 문의로 받은 이메일 사본은 encore 계정 삭제 API의 삭제 대상이 아니다. [Gmail 삭제 안내](https://support.google.com/mail/answer/7401?hl=ko)의 휴지통 30일은 메일을 삭제한 뒤의 처리이며 인증 메일 발송 30일 뒤 또는 encore 탈퇴 30일 뒤 자동 삭제를 뜻하지 않는다. [Google 보관 안내](https://policies.google.com/technologies/retention?hl=ko)는 데이터 유형별 보관과 별도 삭제/백업 절차를 설명하므로 SMTP의 모든 기록에 하나의 보관 기한을 약속하지 않는다.
+
+오늘 요청한 플랜·SMTP·예약 백업의 설정 확인과 공식 자료 대조를 완료했다. 공개 전 후속은 정식 개인정보 처리방침에 실제 처리 주체·목적·지역/이전·권리 요청 경로를 정리하고, 문의 메일함 운영자의 실제 보관/삭제 기준과 별도 백업 유무를 결정하는 것이다. 공개 자료에 정확한 기한이 없는 제공자 기록은 미공개/추가 확인으로 기록하며 수치를 추정하지 않는다.
