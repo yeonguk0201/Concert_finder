@@ -92,3 +92,12 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 [dev PR #26](https://github.com/yeonguk0201/Concert_finder/pull/26)·[출시 PR #27](https://github.com/yeonguk0201/Concert_finder/pull/27)을 필수 CI·Vercel 검사 통과 후 병합했다. main 커밋 `74556a3bdbfeb13c68f1e9671ac5cb54b3fb8ffb`의 Vercel 배포 `dpl_DZTdYenVXFt2dcYmZh4i2JwwhACL`가 READY이고 기존 운영 도메인에 연결됐음을 확인했다. 해당 main 커밋의 push CI도 성공했다.
 
 운영 브라우저에서 ‘운영 범위와 문의’를 펼쳐 운영자 김영욱·문의 yeongukb@gmail.com 표시와 mailto 링크를 확인했고 콘솔 오류/경고는 없었다. 문의 메일이나 테스트 푸시는 발송하지 않았다. 운영자명·연락처 반영을 제공자별 보관 정책 확정이나 스크린리더 검증 완료로 확대하지 않는다.
+
+
+### 실제 보관 설정 확인 순서
+
+프로젝트의 지역 ap-southeast-2와 Vercel Hobby 플랜은 조회 확인했다. 코드/의존성/설정 파일 검색에서는 Vercel Analytics·Speed Insights·Sentry·외부 로그 연동 설정을 찾지 못했으나 대시보드 측 설정의 부재까지 입증한 것은 아니다.
+
+남은 대시보드 확인은 Supabase 조직의 Billing 플랜, 해당 프로젝트의 Custom SMTP 활성 여부와 제공자명, Database Backups/PITR 활성 상태를 읽기만 한다. 업그레이드 안내나 접근 제한이면 해당 표시를 기록하고 백업이 전혀 없다고 추정하지 않는다. 비밀번호·SMTP 키·연결 문자열은 기록하지 않는다. 확인된 플랜/제공자에 맞춰 공식 로그·백업·메일 정책을 대조하고, 공개 문서에 보관 기간이 없으면 미공개로 기록한다. 문의 메일함 보관·별도 백업 등 운영자 측 실제 운영 정책도 제공자 기본 정책과 구분한다.
+
+근거: [Supabase SMTP](https://supabase.com/docs/guides/auth/auth-smtp), [Supabase 로그](https://supabase.com/docs/guides/observability/logs), [백업](https://supabase.com/docs/guides/platform/backups).
