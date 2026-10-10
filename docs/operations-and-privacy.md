@@ -1,6 +1,6 @@
 # 계정 삭제와 운영·개인정보 안내
 
-W19 구현일: 2026-10-09. 앱 하단에서 지원 환경·알림 중단·수집 정보·삭제 범위를 로그인 없이 읽을 수 있다. 운영자/문의 창구와 제공자별 처리 지역·보관/백업 정책은 공개 전에 확정해야 한다. 이 문서는 법적 검토 완료를 의미하지 않는다.
+W19 구현일: 2026-10-09. 앱 하단에서 지원 환경·알림 중단·수집 정보·삭제 범위를 로그인 없이 읽을 수 있다. 운영자는 김영욱, 문의 창구는 yeongukb@gmail.com으로 사용자 지정했다. 제공자별 처리 지역·보관/백업 정책은 공개 전에 확정해야 한다. 이 문서는 법적 검토 완료를 의미하지 않는다.
 
 ## 계정 삭제 적용
 
@@ -45,7 +45,7 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 
 ## 공개 전 확정 항목
 
-- 운영자 표시명과 실제 문의 수신 창구.
+- 운영자 표시명: 김영욱. 문의 수신 창구: [yeongukb@gmail.com](mailto:yeongukb@gmail.com). 2026-10-10 사용자 지정, 앱 안내 반영. 테스트 메일은 발송하지 않았다.
 - Supabase/Vercel/설정된 SMTP/푸시/Google Fonts 제공자별 처리 지역·목적·위탁/이전 안내와 보관·백업 정책. 현재 CSS는 Google Fonts를 요청한다.
 - 실제 기기 버전별 지원 범위, 접근성 스크린리더 점검 결과.
 - 원격 삭제 검증 결과, 삭제 후 알림/다기기 접근 차단 결과.
@@ -71,3 +71,17 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 사용자가 O04에서 다른 기기의 로그인 표시 잔존과 알림 동의 저장 23503 거부를 확인했다. 브라우저 세션 복구·앱 복귀·저장 외래키 오류 후 Auth 서버의 계정 확인을 추가하고, 인증 무효가 확인되면 로컬 로그아웃과 재로그인 안내로 전환하도록 수정했다. 23503 자체만으로 삭제를 단정하거나 정상 계정을 로그아웃하지 않는다.
 
 [dev PR #24](https://github.com/yeonguk0201/Concert_finder/pull/24)·[출시 PR #25](https://github.com/yeonguk0201/Concert_finder/pull/25)의 검사 통과 후 main `c17dd4a`를 배포했다. 운영 배포 production READY·기존 도메인 연결·main CI 성공과 정상 로그인 화면/콘솔을 확인했다. lint·build 및 Node 26개·UI 50개 통과. 배포 후 사용자가 다른 기기에서 새로고침 시 삭제된 계정 안내가 나타난다고 확인해 로그인 표시 결함의 재검증에 성공했다. 앱 복귀만으로의 동작은 별도 실제 확인 대기다. [O04 상세 근거](device-integration-validation.md).
+
+
+### 제공자 공식 자료 대조 · 2026-10-10
+
+공식 자료의 일반 조건과 이 프로젝트에 실제 적용된 설정을 구분한다. 확인되지 않은 처리 지역·보관 기간을 앱에 수치로 약속하지 않는다.
+
+| 제공자 | 공식 자료로 확인한 범위 | 이 프로젝트에서 추가 확인할 사항 |
+| --- | --- | --- |
+| Supabase | DB 호스팅은 프로젝트 생성 시 선택한 AWS 지역. 일별 백업 보관은 플랜에 따라 다르며 Pro 7일·Team 14일·Enterprise 최대 30일. | 프로젝트 목록에서 실제 지역 ap-southeast-2 확인. 플랜·PITR·별도 백업 여부, Auth/함수 로그 보관 설정은 추가 확인 |
+| Vercel | Runtime Logs는 Functions·Routing Middleware 실행 로그에 대한 안내다. | 팀 API에서 실제 Hobby 플랜 확인. 정적 호스팅 접속 기록·분석/외부 로그 연동 여부는 추가 확인; Runtime Logs 기간을 전체 데이터 보관 기간으로 사용하지 않음 |
+| 로그인 메일·브라우저 푸시 | 앱은 로그인 메일과 웹 푸시를 사용하며 공연 이메일 알림은 제공하지 않음. | 실제 SMTP 제공자·푸시 전달 제공자별 지역·보관 정책 |
+| Google Fonts | CSS에서 외부 폰트를 요청함. | 폰트 제공자 개인정보 안내의 구체적인 항목·보관 조건 추가 대조 |
+
+근거: [Supabase 지역·이전 안내](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq), [Supabase 백업](https://supabase.com/docs/guides/platform/backups), [Vercel Runtime Logs](https://vercel.com/docs/logs/runtime). Google Fonts FAQ는 동적 페이지로 본문을 확보하지 못해 세부 정책을 확인 완료로 표시하지 않았다. 정책 대조만으로 개인정보 처리방침 준비 전체를 완료로 바꾸지 않는다.
