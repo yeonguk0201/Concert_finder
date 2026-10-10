@@ -1,4 +1,5 @@
 import { backend } from './backend'
+import { requestAuthCheck } from './authEvents'
 
 export type Collection = 'bands' | 'schedules'
 export async function readAccount(userId: string) {
@@ -18,5 +19,5 @@ export async function writeAccount(userId: string, collection: Collection, id: s
     ? backend.from(table).upsert({ user_id: userId, [column]: id }, { onConflict: `user_id,${column}`, ignoreDuplicates: true })
     : backend.from(table).delete().eq('user_id', userId).eq(column, id)
   const { error } = await query
-  if (error) throw new Error('Account write failed')
+  if (error) { requestAuthCheck(error.code); throw new Error('Account write failed') }
 }
