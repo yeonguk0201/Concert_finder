@@ -56,3 +56,11 @@ test('expired authentication, missing privilege and invalid payload provide acti
   try { await loadNotificationSettings() } catch (error) { failure = error }
   expect(notificationError(failure)).toContain('INVALID_SETTINGS_RESPONSE')
 })
+
+
+test('foreign-key rejection provides account recovery guidance without exposing the constraint code', () => {
+  const message = notificationError({ code: '23503', message: 'private foreign key details' })
+  expect(message).toContain('계정 상태를 다시 확인')
+  expect(message).not.toContain('23503')
+  expect(message).not.toContain('private')
+})

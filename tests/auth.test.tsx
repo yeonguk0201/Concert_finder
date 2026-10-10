@@ -1,19 +1,23 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react'
-import { afterEach, expect, test, vi } from 'vitest'
+import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 import { useAuth } from '../src/useAuth'
 import { StrictMode } from 'react'
 import { authCallback, loginRequestError } from '../src/authErrors'
 import { AccountPanel } from '../src/AccountPanel'
+import { requestAuthCheck } from '../src/authEvents'
+import { saveNotificationPreferences } from '../src/notificationApi'
 
 const mock = vi.hoisted(() => ({
-  getSession: vi.fn(), signInWithOtp: vi.fn(), verifyOtp: vi.fn(), signOut: vi.fn(), invoke: vi.fn(),
+  getSession: vi.fn(), getUser: vi.fn(), signInWithOtp: vi.fn(), verifyOtp: vi.fn(), signOut: vi.fn(), invoke: vi.fn(), rpc: vi.fn(),
   callback: null as null | ((event: string, session: unknown) => void), unsubscribe: vi.fn(),
 }))
-vi.mock('../src/backend', () => ({ configurationError: '', accountMode: true, backend: { functions: { invoke: mock.invoke }, auth: {
-  getSession: mock.getSession, signInWithOtp: mock.signInWithOtp, verifyOtp: mock.verifyOtp, signOut: mock.signOut,
+vi.mock('../src/backend', () => ({ configurationError: '', accountMode: true, backend: { rpc: mock.rpc, functions: { invoke: mock.invoke }, auth: {
+  getSession: mock.getSession, getUser: mock.getUser, signInWithOtp: mock.signInWithOtp, verifyOtp: mock.verifyOtp, signOut: mock.signOut,
   onAuthStateChange: (callback: typeof mock.callback) => { mock.callback = callback; return { data: { subscription: { unsubscribe: mock.unsubscribe } } } },
 } } }))
+
+beforeEach(() => { mock.getUser.mockReset().mockResolvedValue({ data: { user: { id: 'a' } }, error: null }) })
 
 test('email code signs in within the requesting app without opening a callback URL', async () => {
   mock.getSession.mockResolvedValue({ data: { session: null }, error: null })
@@ -195,4 +199,52 @@ test('email cooldown, request throttling, network and server failures have disti
   await waitFor(() => expect(result.current.loading).toBe(false))
   await act(() => result.current.requestLink('a@example.test'))
   expect(result.current.error).toContain('연결하지 못했습니다')
+})
+
+
+test('a deleted user restored from browser storage is signed out with safe guidance', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { access_token: 'deleted-token', user: { id: 'deleted' } } }, error: null })
+  mock.getUser.mockResolvedValue({ data: { user: null }, error: { code: 'user_not_found', status: 403, message: 'private' } })
+  mock.signOut.mockImplementation(async () => { mock.callback?.('SIGNED_OUT', null); return { error: null } })
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.message).toContain('계정이 삭제되었거나'))
+  expect(result.current.session).toBeNull()
+  expect(result.current.loading).toBe(false)
+  expect(result.current.message).not.toContain('private')
+  expect(mock.getUser).toHaveBeenCalledWith('deleted-token')
+  expect(mock.signOut).toHaveBeenCalledWith({ scope: 'local' })
+})
+
+test('focus and a rejected save recheck the account; offline and unrelated constraints do not sign it out', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { access_token: 'token-a', user: { id: 'a' } } }, error: null })
+  mock.signOut.mockResolvedValue({ error: null })
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.loading).toBe(false))
+  mock.getUser.mockResolvedValueOnce({ data: { user: null }, error: { status: 503 } })
+  act(() => window.dispatchEvent(new Event('focus')))
+  await waitFor(() => expect(result.current.error).toContain('서버에서 확인하지 못했습니다'))
+  expect(result.current.session?.user.id).toBe('a')
+  expect(mock.signOut).not.toHaveBeenCalled()
+  mock.getUser.mockResolvedValueOnce({ data: { user: { id: 'a' } }, error: null })
+  act(() => requestAuthCheck('23503'))
+  await waitFor(() => expect(mock.getUser).toHaveBeenCalledTimes(3))
+  await waitFor(() => expect(result.current.error).toBe(''))
+  expect(result.current.session?.user.id).toBe('a')
+  expect(mock.signOut).not.toHaveBeenCalled()
+  mock.getUser.mockResolvedValueOnce({ data: { user: null }, error: { code: 'user_not_found', status: 403 } })
+  mock.rpc.mockResolvedValueOnce({ data: null, error: { code: '23503' } })
+  await act(async () => { await expect(saveNotificationPreferences({ announcements: true, ticket_reminders: true })).rejects.toThrow() })
+  await waitFor(() => expect(result.current.session).toBeNull())
+})
+
+test('an old account validation result cannot sign out a newly selected account', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { access_token: 'token-a', user: { id: 'a' } } }, error: null })
+  let finish: (value: unknown) => void = () => {}
+  mock.getUser.mockReturnValueOnce(new Promise(resolve => { finish = resolve }))
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(mock.getUser).toHaveBeenCalledWith('token-a'))
+  act(() => mock.callback?.('SIGNED_IN', { access_token: 'token-b', user: { id: 'b' } }))
+  await act(async () => finish({ data: { user: null }, error: { code: 'user_not_found', status: 403 } }))
+  expect(result.current.session?.user.id).toBe('b')
+  expect(mock.signOut).not.toHaveBeenCalled()
 })

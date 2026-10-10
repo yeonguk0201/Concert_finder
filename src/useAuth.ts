@@ -2,6 +2,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
 import { backend, configurationError } from './backend'
 import { authCallback, loginRequestError } from './authErrors'
+import { authCheckEvent } from './authEvents'
+
+const verificationError = '로그인 상태를 서버에서 확인하지 못했습니다. 연결을 확인하고 다시 시도해 주세요.'
 
 export function useAuth() {
   const [session, setSession] = useState<Session | null>(null)
@@ -15,8 +18,47 @@ export function useAuth() {
   const [pendingEmail, setPendingEmail] = useState('')
   useEffect(() => {
     if (!backend) return
+    const client = backend
     let active = true
     let eventSeen = false
+    let latest: Session | null = null
+    let revision = 0
+    const validate = async (next: Session, version: number) => {
+      try {
+        // Pass the captured token: checking an old account must not inspect a new login.
+        const { error: failure } = await client.auth.getUser(next.access_token)
+        if (!active || revision !== version) return
+        if (failure && (failure.status === 401 || failure.status === 403 ||
+          ['user_not_found', 'session_not_found', 'session_expired', 'bad_jwt'].includes(failure.code ?? ''))) {
+          const { error: signOutFailure } = await client.auth.signOut({ scope: 'local' })
+          if (!active || (revision !== version && latest !== null)) return
+          if (signOutFailure) {
+            setError('로그인이 더 이상 유효하지 않습니다. 연결을 확인한 뒤 로그아웃하고 다시 로그인해 주세요.')
+            return
+          }
+          latest = null; setSession(null); setPendingEmail(''); setError('')
+          setMessage('계정이 삭제되었거나 로그인이 만료되어 로그아웃했습니다. 이용하려면 다시 로그인해 주세요.')
+        } else if (failure) {
+          setError(verificationError)
+        } else setError(previous => previous === verificationError ? '' : previous)
+      } catch {
+        if (active && revision === version) setError(verificationError)
+      } finally {
+        if (active && (revision === version || latest === null)) setLoading(false)
+      }
+    }
+    const accept = (next: Session | null) => {
+      latest = next
+      const version = ++revision
+      setSession(next); setLoading(Boolean(next))
+      if (next) {
+        setPendingEmail(''); setMessage('')
+        // Never await Auth calls inside onAuthStateChange's synchronous callback.
+        void validate(next, version)
+      }
+    }
+    const recheck = () => { if (active && latest) void validate(latest, ++revision) }
+    const onVisible = () => { if (document.visibilityState === 'visible') recheck() }
     const handleCallback = () => {
       const callback = authCallback(new URL(window.location.href))
       if (callback.error) { setError(callback.error); history.replaceState(null, '', callback.cleanUrl) }
@@ -27,14 +69,22 @@ export function useAuth() {
     window.addEventListener('popstate', handleCallback)
     const { data: { subscription } } = backend.auth.onAuthStateChange((_event, next) => {
       eventSeen = true
-      if (active) { setSession(next); setLoading(false); if (next) { setPendingEmail(''); setMessage('') } }
+      if (active) accept(next)
     })
     void backend.auth.getSession().then(({ data, error: failure }) => {
       if (!active || eventSeen) return
-      setSession(data.session); setLoading(false)
+      accept(data.session)
       if (failure) setError('세션을 복구하지 못했습니다. 새 로그인 링크를 요청해 주세요.')
     }).catch(() => { if (active) { setLoading(false); setError('세션 확인에 실패했습니다. 연결을 확인하고 다시 시도해 주세요.') } })
-    return () => { active = false; subscription.unsubscribe(); window.removeEventListener('hashchange', handleCallback); window.removeEventListener('popstate', handleCallback) }
+    window.addEventListener('focus', recheck)
+    window.addEventListener(authCheckEvent, recheck)
+    document.addEventListener('visibilitychange', onVisible)
+    return () => {
+      active = false; subscription.unsubscribe()
+      window.removeEventListener('hashchange', handleCallback); window.removeEventListener('popstate', handleCallback)
+      window.removeEventListener('focus', recheck); window.removeEventListener(authCheckEvent, recheck)
+      document.removeEventListener('visibilitychange', onVisible)
+    }
   }, [])
 
   const requestLink = async (email: string) => {
