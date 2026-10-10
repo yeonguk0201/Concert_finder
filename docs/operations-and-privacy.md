@@ -70,4 +70,4 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 
 사용자가 O04에서 다른 기기의 로그인 표시 잔존과 알림 동의 저장 23503 거부를 확인했다. 브라우저 세션 복구·앱 복귀·저장 외래키 오류 후 Auth 서버의 계정 확인을 추가하고, 인증 무효가 확인되면 로컬 로그아웃과 재로그인 안내로 전환하도록 수정했다. 23503 자체만으로 삭제를 단정하거나 정상 계정을 로그아웃하지 않는다.
 
-[dev PR #24](https://github.com/yeonguk0201/Concert_finder/pull/24)·[출시 PR #25](https://github.com/yeonguk0201/Concert_finder/pull/25)의 검사 통과 후 main `c17dd4a`를 배포했다. 운영 배포 production READY·기존 도메인 연결·main CI 성공과 정상 로그인 화면/콘솔을 확인했다. lint·build 및 Node 26개·UI 50개 통과; 실기기 수정 재검증은 대기다. [O04 상세 근거](device-integration-validation.md).
+[dev PR #24](https://github.com/yeonguk0201/Concert_finder/pull/24)·[출시 PR #25](https://github.com/yeonguk0201/Concert_finder/pull/25)의 검사 통과 후 main `c17dd4a`를 배포했다. 운영 배포 production READY·기존 도메인 연결·main CI 성공과 정상 로그인 화면/콘솔을 확인했다. lint·build 및 Node 26개·UI 50개 통과. 배포 후 사용자가 다른 기기에서 새로고침 시 삭제된 계정 안내가 나타난다고 확인해 로그인 표시 결함의 재검증에 성공했다. 앱 복귀만으로의 동작은 별도 실제 확인 대기다. [O04 상세 근거](device-integration-validation.md).
