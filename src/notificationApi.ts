@@ -1,4 +1,5 @@
 import { backend } from './backend'
+import { requestAuthCheck } from './authEvents'
 
 export type Preferences = { announcements: boolean; ticket_reminders: boolean }
 export type PushDevice = { id: string; label: string; active: boolean; updated_at: string }
@@ -19,7 +20,7 @@ class NotificationRequestError extends Error {
 async function rpc(name: string, args: Record<string, unknown> = {}) {
   if (!backend) throw new Error('BACKEND_REQUIRED')
   const { data, error } = await backend.rpc(name, args)
-  if (error) throw new NotificationRequestError(name, error)
+  if (error) { requestAuthCheck(error.code); throw new NotificationRequestError(name, error) }
   return data
 }
 export async function loadNotificationSettings(): Promise<NotificationSettings> {
@@ -80,6 +81,7 @@ export function notificationError(error: unknown) {
   const code = /^[A-Z0-9_]{1,40}$/.test(rawCode) ? rawCode : ''
   const operation = error instanceof NotificationRequestError ? operationLabels[error.operation] : ''
   const describe = (value: string) => `${operation ? `${operation}: ` : ''}${value}${code ? ` (오류 코드: ${code})` : ''}`
+  if (code === '23503') return '로그인 상태 또는 저장 대상이 더 이상 유효하지 않습니다. 계정 상태를 다시 확인한 뒤 로그인하거나 화면을 새로고침해 주세요.'
   if (message.includes('LOGIN_REQUIRED') || /^PGRST30[123]$/.test(code) || /JWT.*expired|Invalid JWT/i.test(message)) {
     return describe('로그인을 다시 확인해야 합니다. 로그아웃 후 새 로그인 링크로 접속해 주세요.')
   }
