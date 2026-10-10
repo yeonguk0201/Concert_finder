@@ -7,7 +7,7 @@ W19 구현일: 2026-10-09. 앱 하단에서 지원 환경·알림 중단·수집
 새 DB 마이그레이션은 없다. 기존 FK cascade를 전체 마이그레이션 적용 PostgreSQL 테스트에서 확인했다. 서버 전용 Edge Function `delete-account`를 추가했다.
 
 ```sh
-supabase functions deploy delete-account --project-ref <프로젝트-ref>
+npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로젝트-ref> --use-api
 ```
 
 현재 프로젝트에 로그인·연결된 Supabase CLI로 배포한다. `SUPABASE_URL`과 `SUPABASE_SERVICE_ROLE_KEY`는 호스팅 Edge 런타임의 서버 환경변수를 사용한다. 서비스 키를 VITE 변수나 브라우저에 넣지 않는다. [공식 Admin 삭제 API](https://supabase.com/docs/reference/javascript/auth-admin-deleteuser)를 사용한다. config의 `verify_jwt=false`는 인증 생략을 뜻하지 않는다. 함수가 bearer를 Auth `getUser`로 서버 검증하고, 검증한 사용자 ID만 삭제에 사용한다. 요청의 expectedUserId는 계정 전환 감지용 비교값이며 삭제 권한의 근거가 아니다. 요청 body/토큰을 로그에 남기지 않는다.
@@ -51,3 +51,12 @@ supabase functions deploy delete-account --project-ref <프로젝트-ref>
 - 원격 삭제 검증 결과, 삭제 후 알림/다기기 접근 차단 결과.
 
 미확정 항목을 임의로 채우거나 개인정보 안내가 모두 완료됐다고 표시하지 않는다.
+
+## 운영 배포 확인 · 2026-10-10
+
+- 기존 `Concert_finder` Supabase 프로젝트(`czjrzylvnewfjnfwjhwf`)에 `delete-account`를 API 번들 방식으로 배포했다. 함수 목록에서 ACTIVE v1을 확인했다. DB 마이그레이션이나 추가 비밀값 설정은 하지 않았다.
+- 원격 함수에서 무인증 POST 401, 잘못된 bearer POST 401, CORS OPTIONS 204를 확인했다. 실제 계정을 삭제하는 요청은 실행하지 않았다.
+- [dev PR #22](https://github.com/yeonguk0201/Concert_finder/pull/22), [main 출시 PR #23](https://github.com/yeonguk0201/Concert_finder/pull/23)의 필수 CI·Vercel 검사 통과 후 병합했다. main 병합 커밋은 `8dcdfbf64e9ea15361f5f464592d851b90212903`이다. 해당 main 커밋의 push CI도 성공했다.
+- Vercel 프로젝트 `concert_finder` / 팀 `yeonguks-projects` / 운영 브랜치 main을 확인했다. 배포 `dpl_7joagVhb4Art5yLqLQCSMGbbJQPX`가 위 커밋의 production READY이고 [기존 운영 도메인](https://concertfinder-blue.vercel.app/)에 연결됐다.
+- 로그인된 운영 화면에서 ‘계정 삭제 안내’와 확인 입력·취소·‘계정 영구 삭제’ 버튼을 확인했다. 입력이 비어 있으면 영구 삭제 버튼이 비활성화되며, 콘솔 오류·경고는 없었다. 사용자 계정이나 저장·알림 설정은 변경하지 않았다.
+- O03/O04의 실제 삭제·타 기기 접근/발송 차단·재가입 검증은 아직 미실행이다. 삭제용 계정으로 진행한다. 배포 성공을 계정 삭제 검증 완료로 표시하지 않는다.
