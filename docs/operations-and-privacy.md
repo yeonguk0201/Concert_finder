@@ -82,6 +82,13 @@ npx --yes supabase@2.120.0 functions deploy delete-account --project-ref <프로
 | Supabase | DB 호스팅은 프로젝트 생성 시 선택한 AWS 지역. 일별 백업 보관은 플랜에 따라 다르며 Pro 7일·Team 14일·Enterprise 최대 30일. | 프로젝트 목록에서 실제 지역 ap-southeast-2 확인. 플랜·PITR·별도 백업 여부, Auth/함수 로그 보관 설정은 추가 확인 |
 | Vercel | Runtime Logs는 Functions·Routing Middleware 실행 로그에 대한 안내다. | 팀 API에서 실제 Hobby 플랜 확인. 정적 호스팅 접속 기록·분석/외부 로그 연동 여부는 추가 확인; Runtime Logs 기간을 전체 데이터 보관 기간으로 사용하지 않음 |
 | 로그인 메일·브라우저 푸시 | 앱은 로그인 메일과 웹 푸시를 사용하며 공연 이메일 알림은 제공하지 않음. | 실제 SMTP 제공자·푸시 전달 제공자별 지역·보관 정책 |
-| Google Fonts | CSS에서 외부 폰트를 요청함. | 폰트 제공자 개인정보 안내의 구체적인 항목·보관 조건 추가 대조 |
+| Google Fonts | 공식 FAQ의 Privacy 본문을 브라우저로 확인. 폰트 요청에 IP·요청 URL·브라우저/OS 및 referrer 헤더가 포함되며 Fonts API는 쿠키를 설정·기록하지 않는다고 안내함. | 정확한 보관 기간·처리 지역 추가 확인 |
 
-근거: [Supabase 지역·이전 안내](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq), [Supabase 백업](https://supabase.com/docs/guides/platform/backups), [Vercel Runtime Logs](https://vercel.com/docs/logs/runtime). Google Fonts FAQ는 동적 페이지로 본문을 확보하지 못해 세부 정책을 확인 완료로 표시하지 않았다. 정책 대조만으로 개인정보 처리방침 준비 전체를 완료로 바꾸지 않는다.
+근거: [Supabase 지역·이전 안내](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq), [Supabase 백업](https://supabase.com/docs/guides/platform/backups), [Vercel Runtime Logs](https://vercel.com/docs/logs/runtime). [Google Fonts FAQ의 Privacy](https://fonts.google.com/faq#privacy)는 웹 검색 도구에서 본문을 확보하지 못했으나 이후 브라우저에서 직접 확인했다. 공개된 요청 정보·쿠키 설명 범위를 기록하며 보관 기간은 추정하지 않는다. 정책 대조만으로 개인정보 처리방침 준비 전체를 완료로 바꾸지 않는다.
+
+
+### 운영 연락처 배포 확인 · 2026-10-10
+
+[dev PR #26](https://github.com/yeonguk0201/Concert_finder/pull/26)·[출시 PR #27](https://github.com/yeonguk0201/Concert_finder/pull/27)을 필수 CI·Vercel 검사 통과 후 병합했다. main 커밋 `74556a3bdbfeb13c68f1e9671ac5cb54b3fb8ffb`의 Vercel 배포 `dpl_DZTdYenVXFt2dcYmZh4i2JwwhACL`가 READY이고 기존 운영 도메인에 연결됐음을 확인했다. 해당 main 커밋의 push CI도 성공했다.
+
+운영 브라우저에서 ‘운영 범위와 문의’를 펼쳐 운영자 김영욱·문의 yeongukb@gmail.com 표시와 mailto 링크를 확인했고 콘솔 오류/경고는 없었다. 문의 메일이나 테스트 푸시는 발송하지 않았다. 운영자명·연락처 반영을 제공자별 보관 정책 확정이나 스크린리더 검증 완료로 확대하지 않는다.
