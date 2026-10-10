@@ -7,10 +7,10 @@ import { authCallback, loginRequestError } from '../src/authErrors'
 import { AccountPanel } from '../src/AccountPanel'
 
 const mock = vi.hoisted(() => ({
-  getSession: vi.fn(), signInWithOtp: vi.fn(), verifyOtp: vi.fn(), signOut: vi.fn(),
+  getSession: vi.fn(), signInWithOtp: vi.fn(), verifyOtp: vi.fn(), signOut: vi.fn(), invoke: vi.fn(),
   callback: null as null | ((event: string, session: unknown) => void), unsubscribe: vi.fn(),
 }))
-vi.mock('../src/backend', () => ({ configurationError: '', accountMode: true, backend: { auth: {
+vi.mock('../src/backend', () => ({ configurationError: '', accountMode: true, backend: { functions: { invoke: mock.invoke }, auth: {
   getSession: mock.getSession, signInWithOtp: mock.signInWithOtp, verifyOtp: mock.verifyOtp, signOut: mock.signOut,
   onAuthStateChange: (callback: typeof mock.callback) => { mock.callback = callback; return { data: { subscription: { unsubscribe: mock.unsubscribe } } } },
 } } }))
@@ -73,6 +73,40 @@ test('session restores, failed logout retains session, successful logout clears 
   expect(result.current.error).toContain('로그아웃하지 못했습니다')
   await act(() => result.current.signOut())
   expect(result.current.session).toBeNull()
+})
+
+test('account deletion requires explicit confirmation, preserves session on failure and clears it on success', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { user: { id: 'a', email: 'a@example.test' } } }, error: null })
+  mock.invoke.mockResolvedValueOnce({ data: null, error: new Error('private') }).mockResolvedValueOnce({ data: { deleted: true }, error: null })
+  mock.signOut.mockResolvedValue({ error: null })
+  function Account() { return <AccountPanel auth={useAuth()} /> }
+  render(<Account />)
+  fireEvent.click(await screen.findByRole('button', { name: '계정 삭제 안내' }))
+  const submit = screen.getByRole('button', { name: '계정 영구 삭제' }) as HTMLButtonElement
+  expect(submit.disabled).toBe(true)
+  fireEvent.change(screen.getByLabelText('확인을 위해 ‘계정 삭제’ 입력'), { target: { value: '계정 삭제' } })
+  fireEvent.click(submit)
+  await screen.findByRole('alert')
+  expect(screen.getByText('계정으로 로그인됨')).toBeTruthy()
+  expect(screen.getByRole('alert').textContent).not.toContain('private')
+  fireEvent.click(submit)
+  await screen.findByText(/계정과 계정에 저장된 데이터를 삭제했습니다/)
+  expect(screen.queryByText('계정으로 로그인됨')).toBeNull()
+  expect(mock.invoke).toHaveBeenLastCalledWith('delete-account', { body: { expectedUserId: 'a', confirmation: '계정 삭제' } })
+})
+
+test('a completed deletion cannot sign out an account selected while the request was pending', async () => {
+  mock.getSession.mockResolvedValue({ data: { session: { user: { id: 'a' } } }, error: null })
+  let complete: (value: unknown) => void = () => {}
+  mock.invoke.mockReturnValue(new Promise(resolve => { complete = resolve }))
+  const { result } = renderHook(useAuth)
+  await waitFor(() => expect(result.current.session?.user.id).toBe('a'))
+  let deletion: Promise<boolean> | undefined
+  act(() => { deletion = result.current.deleteAccount('a') })
+  act(() => mock.callback?.('SIGNED_IN', { user: { id: 'b' } }))
+  await act(async () => { complete({ data: { deleted: true }, error: null }); await deletion })
+  expect(result.current.session?.user.id).toBe('b')
+  expect(mock.signOut).not.toHaveBeenCalled()
 })
 test('expired callback is cleaned and requesting a new link preserves the target page', async () => {
   history.replaceState(null, '', '/?page=saved&event=abc#error=access_denied&error_description=expired')
