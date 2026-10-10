@@ -30,18 +30,21 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
 
-test('admin navigation and session restoration keep exactly one notification panel', () => {
-  history.replaceState(null, '', '/?page=admin')
+test('settings and admin editors stay out of the feed, including after account changes', () => {
   const view = render(<App />)
   mocks.session = { user: { id: 'admin-account', email: 'admin@example.test' } }
   view.rerender(<App />)
   mocks.adminAllowed = true
   view.rerender(<App />)
+  expect(screen.queryByRole('region', { name: '공연 알림 설정' })).toBeNull()
+  expect(screen.queryByRole('button', { name: '관리자 공연 검수' })).toBeNull()
+  fireEvent.click(screen.getByRole('button', { name: '알림·계정 설정' }))
   for (let i = 0; i < 3; i++) {
     expect(screen.getAllByRole('region', { name: '공연 알림 설정' })).toHaveLength(1)
-    fireEvent.click(screen.getByRole('button', { name: '홈으로 돌아가기' }))
-    expect(screen.getAllByRole('region', { name: '공연 알림 설정' })).toHaveLength(1)
     fireEvent.click(screen.getByRole('button', { name: '관리자 공연 검수' }))
+    expect(screen.queryByRole('region', { name: '공연 알림 설정' })).toBeNull()
+    expect(screen.getByText('관리자 편집기')).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: '알림·계정 설정으로 돌아가기' }))
     view.rerender(<App />)
   }
   mocks.session = { user: { id: 'other-account', email: 'other@example.test' } }
@@ -98,7 +101,7 @@ test('band search finds aliases and supports following without concerts', async 
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', 'only-band'))
   fireEvent.click(screen.getAllByRole('button', { name: /찜한 밴드/ })[0])
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '없는 이름' } })
-  expect(screen.getByRole('heading', { name: '좋아하는 밴드를 찜하세요.' })).toBeTruthy()
+  expect(screen.getByRole('heading', { name: '“없는 이름” 검색 결과' })).toBeTruthy()
   expect(screen.queryByRole('button', { name: 'Only band 찜하기' })).toBeNull()
   fireEvent.click(screen.getByRole('button', { name: '검색 지우기' }))
   expect(screen.getByRole('button', { name: 'Only band 찜하기' })).toBeTruthy()
@@ -129,4 +132,22 @@ test('saved unknown times disable calendar, unavailable saves can still be delet
   expect(screen.getAllByRole('button', { name: '캘린더 저장' }).every(button => (button as HTMLButtonElement).disabled)).toBe(true)
   fireEvent.click(screen.getByRole('button', { name: '공개 중단 또는 삭제된 공연 저장한 일정 삭제' }))
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'hidden-ticket'))
+})
+
+test('search has an explicit result page, resets stale filters and restores its query from the URL', () => {
+  history.replaceState(null, '', '/?page=search&q=Verified')
+  const view = render(<App />)
+  expect((screen.getByLabelText('밴드 또는 공연 검색') as HTMLInputElement).value).toBe('Verified')
+  expect(screen.getByRole('heading', { name: '“Verified” 검색 결과' })).toBeTruthy()
+  fireEvent.click(screen.getByRole('button', { name: '국내', exact: true }))
+  expect(screen.queryByRole('button', { name: 'Verified concert 상세 보기' })).toBeNull()
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: 'band' } })
+  expect(screen.getByRole('button', { name: 'Verified band 찜하기' })).toBeTruthy()
+  expect(screen.getByRole('button', { name: 'Verified concert 상세 보기' })).toBeTruthy()
+  expect(location.search).toBe('?page=search&q=band')
+  fireEvent.submit(screen.getByRole('search'))
+  expect(screen.getByRole('heading', { name: '“band” 검색 결과' })).toBeTruthy()
+  view.unmount()
+  render(<App />)
+  expect((screen.getByLabelText('밴드 또는 공연 검색') as HTMLInputElement).value).toBe('band')
 })

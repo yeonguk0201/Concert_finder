@@ -30,3 +30,21 @@ button,input,select{min-height:44px}.save-icon{min-width:44px}.dialog-close{min-
 .detail-body dd{min-width:0;overflow-wrap:anywhere}.detail-dialog{overscroll-behavior:contain}.card-tags{flex-wrap:wrap}.card-tags .save-icon{margin-left:auto}
 @media(max-width:800px){.content{padding-bottom:calc(100px + env(safe-area-inset-bottom))}.mobile-nav button{min-height:48px}.account-heading{flex-wrap:wrap}.account-sync{flex-wrap:wrap}}
 @media(max-width:580px){input,select,.account-panel input,.filter-right select{font-size:16px}.account-panel{font-size:13px}.account-panel form input{flex-basis:100%;width:100%}.band-card{flex-wrap:wrap}.band-card>div{min-width:0;flex:1;overflow-wrap:anywhere}.follow-button{font-size:12px}.schedule-info{min-width:0;flex-basis:calc(100% - 70px)}.schedule-list .outline{margin-left:0}.card-title{font-size:13px}.venue,.card-content p{font-size:11px}.filter-tabs button{font-size:12px}.mobile-nav button{font-size:11px}.detail-body{padding:24px 18px}.detail-body dl{font-size:13px}.detail-body>p{font-size:14px}.detail-content .poster strong{max-width:calc(100% - 50px)}}
+
+/* W18: keep search and settings separate from the concert feed. */
+.search-box input{min-width:0;flex:1;width:100%}.search-box button{flex-shrink:0;min-width:32px}
+.topbar>.top-calendar{flex-shrink:0;min-width:44px}.page-heading h1{overflow-wrap:anywhere}
+section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
+.notification-panel summary{padding:12px 0;min-height:44px}.notification-panel h3{margin-top:24px;font-size:14px}
+.band-card>div{min-width:0;overflow-wrap:anywhere}.band-card h2{line-height:1.5}
+.poster.poster-layout{height:auto;min-height:240px;gap:22px;container-type:inline-size}
+.poster.poster-layout strong{font-family:inherit;font-style:normal;font-size:clamp(20px,11cqi,42px);line-height:1.15;letter-spacing:-1px;white-space:pre-line;overflow-wrap:anywhere;max-width:100%}
+.poster.poster-layout.poster-long strong{font-size:clamp(17px,8cqi,30px)}
+.poster.poster-layout .poster-top{font-size:10px;letter-spacing:.5px;line-height:1.5}
+.poster.poster-layout .poster-bottom{font-size:10px;line-height:1.5;flex-wrap:wrap;gap:8px}
+.poster.poster-layout .poster-bottom>span{font-size:9px;display:inline}
+.detail-content .poster.poster-layout{height:100%;min-height:360px}
+@media(max-width:580px){.topbar{gap:6px;padding:0 12px}.search-box{gap:5px;padding:0 8px}.search-box>svg{display:none}.poster.poster-layout{min-height:190px;padding:14px;gap:18px}.poster.poster-layout strong{font-size:clamp(18px,12cqi,32px)}.poster.poster-layout.poster-long strong{font-size:clamp(16px,9cqi,24px)}.poster.poster-layout .poster-top,.poster.poster-layout .poster-bottom{font-size:9px}.poster.poster-layout .poster-bottom>span{display:none}.detail-content .poster.poster-layout{height:auto;min-height:200px}.detail-content .poster.poster-layout strong{max-width:calc(100% - 30px)}}
+.search-box button{align-items:center;justify-content:center}.topbar .settings-link{display:flex;align-items:center;gap:5px;font-size:12px}
+
+.top-calendar.settings-link>span{position:static;background:none;color:inherit;border-radius:0;font-size:12px;min-width:0}
