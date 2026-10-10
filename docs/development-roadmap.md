@@ -238,3 +238,7 @@ N04c 경계/과거, N05 남은 해제·취소, 상세 클릭, N04b 기존 시각
 ### 계정 삭제 운영 배포 · 2026-10-10
 
 사용자 배포 요청에 따라 dev PR #22·main 출시 PR #23을 필수 CI·Vercel 검사 성공 후 병합했다. main 커밋 `8dcdfbf`의 운영 Vercel 배포가 READY이고 https://concertfinder-blue.vercel.app/ 에 연결됐으며 main push CI도 성공했다. 기존 Supabase 프로젝트의 delete-account 함수 ACTIVE v1, 무인증/잘못된 bearer POST 401과 CORS OPTIONS 204를 확인했다. 로그인된 운영 화면에서 계정 삭제 안내·확인 입력·취소·빈 입력일 때 비활성인 영구 삭제 버튼 및 콘솔 오류 없음 확인. 실제 계정 삭제는 수행하지 않았으며 O03/O04는 삭제용 계정 검증 대기다. [배포 근거와 다음 검증](operations-and-privacy.md).
+
+### 계정 삭제 사용자 확인 · 2026-10-10
+
+운영 배포 후 사용자가 실제 계정 삭제가 동작한다고 확인했다. O03의 삭제 흐름 성공으로 기록하며, 서버 행 제거 직접 조회·삭제 후 알림 차단·다른 계정 유지·재가입 빈 목록과 O04의 다른 기기 접근/쓰기 차단은 별도 검증 대기다. [상세 기록](device-integration-validation.md).
