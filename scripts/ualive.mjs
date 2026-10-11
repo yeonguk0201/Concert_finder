@@ -1,5 +1,7 @@
 import { JSDOM } from 'jsdom'
 import { createHash } from 'node:crypto'
+import { artwork, matchArtist } from './catalog-policy.mjs'
+import { getText, checkRobots } from './collection-http.mjs'
 
 export const origin = 'https://ualive.com'
 export function concertLinks(html) {
@@ -23,19 +25,18 @@ export function parseConcert(html, url) {
     announced_on: null, announced_at: null, announcement_verified: false, cancelled: false, status: 'review',
     sources: [{ url: source.href, label: 'ualive 주최사', verified_at: null }], band_ids: [], sessions,
     ticket: { opens_at: null, booking_url: booking, price_description: null } }
+  const cast = [...document.querySelectorAll('h2')].find(h => h.textContent.trim() === '출연진')?.closest('section')
+  payload.artist_keys = [...new Set([...(cast?.querySelectorAll('img[alt]') ?? [])].map(img => matchArtist(img.alt)?.key).filter(Boolean))]
+  payload.review_reasons = payload.artist_keys.length ? [] : ['대상 장르/아티스트 미확정']
+  const image = [...document.images].find(img => img.alt.trim() === title)
+  payload.artwork = image ? artwork(image.getAttribute('src'), source.href, '공연 제목과 일치하는 본문 포스터') : null
   return { source_url: source.href, payload, content_hash: createHash('sha256').update(JSON.stringify(payload)).digest('hex') }
 }
 export async function collect(fetcher = fetch, pause = ms => new Promise(resolve => setTimeout(resolve, ms))) {
-  const get = async url => {
-    const response = await fetcher(url, { signal: AbortSignal.timeout(20000), redirect: 'error', headers: { 'User-Agent': 'EncoreCatalog/0.1 (official concert metadata review)' } })
-    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-    const html = await response.text()
-    if (html.length > 2000000) throw new Error('Response too large')
-    return html
-  }
+  const get = url => getText(url, fetcher)
   // Fail closed if robots changes; no internal APIs or login endpoints are used.
   const robots = await get(`${origin}/robots.txt`)
-  if (/Disallow:\s*\/(?:concerts[^\s]*|\s*$)/mi.test(robots)) throw new Error('Concert collection disallowed by robots.txt')
+  checkRobots(robots, ['/concerts', '/concerts/397'])
   const links = concertLinks(await get(`${origin}/concerts`))
   if (!links.length || links.length > 50) throw new Error('Unexpected listing size')
   const candidates = [], failures = []

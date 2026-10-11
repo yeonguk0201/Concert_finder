@@ -1,0 +1,69 @@
+-- W21: candidate ingestion and identity registration only; no automatic publication.
+alter table public.collection_candidates drop constraint collection_candidates_source_url_check;
+alter table public.collection_candidates add constraint collection_candidates_source_url_check check (
+  source_url ~ '^https://ualive\.com/concerts/[0-9]+$'
+  or source_url ~ '^https://www\.mintpaper\.co\.kr/festivals/[0-9]+$'
+  or source_url ~ '^https://radwimps\.jp/live/[0-9]+/$'
+);
+alter table public.collection_runs add column source text not null default 'ualive';
+alter table public.collection_runs add column excluded jsonb not null default '[]';
+create table private.artist_identities (
+  identity_key text primary key, band_id uuid not null references public.bands(id),
+  genre text not null, evidence_url text not null check (evidence_url ~ '^https://'),
+  registered_at timestamptz not null default now()
+);
+alter table private.artist_identities enable row level security;
+
+create function public.admin_ingest_catalog(source text, batch jsonb, identities jsonb default '[]') returns void
+language plpgsql security definer set search_path = '' as $$
+declare item jsonb; identity jsonb; band uuid; matches uuid[]; ids jsonb; key text; proposed jsonb;
+begin
+  if not private.is_admin() and coalesce(nullif(current_setting('request.jwt.claims', true), '')::jsonb->>'role','') <> 'service_role' then raise exception 'ADMIN_REQUIRED'; end if;
+  if source not in ('ualive','mintpaper','radwimps') or jsonb_typeof(batch->'candidates') is distinct from 'array'
+    or jsonb_array_length(batch->'candidates') > 50 or jsonb_typeof(batch->'failures') is distinct from 'array'
+    or jsonb_typeof(identities) is distinct from 'array' or jsonb_array_length(identities) > 100 then raise exception 'INVALID_BATCH'; end if;
+  -- Serialize first registration and cross-source aliases; preserves follows and existing IDs.
+  lock table public.bands in share row exclusive mode;
+  for identity in select value from jsonb_array_elements(identities) loop
+    if coalesce(identity->>'key','') = '' or coalesce(identity->>'name','') = '' or coalesce(identity->>'genre','') = ''
+      or coalesce(identity->>'evidence','') !~ '^https://' or coalesce(identity->>'country','') !~ '^[A-Z]{2}$'
+      or jsonb_typeof(identity->'aliases') is distinct from 'array' then raise exception 'INVALID_IDENTITY'; end if;
+    select i.band_id into band from private.artist_identities i where i.identity_key = identity->>'key';
+    if band is not null then continue; end if;
+    select array_agg(distinct b.id) into matches from public.bands b
+      where b.country_code = identity->>'country' and exists (
+        select 1 from unnest(array[b.name] || b.aliases) n
+        cross join jsonb_array_elements_text(jsonb_build_array(identity->>'name') || (identity->'aliases')) m
+        where lower(regexp_replace(n, '[[:space:]·._-]', '', 'g')) = lower(regexp_replace(m, '[[:space:]·._-]', '', 'g'))
+      );
+    if cardinality(matches) > 1 then continue; end if; -- ambiguous names stay unresolved
+    band := matches[1];
+    if band is null then
+      insert into public.bands(name,aliases,country_code,description)
+        values(identity->>'name', array(select jsonb_array_elements_text(identity->'aliases')), identity->>'country', identity->>'genre') returning id into band;
+    end if;
+    insert into private.artist_identities(identity_key,band_id,genre,evidence_url) values(identity->>'key',band,identity->>'genre',identity->>'evidence');
+  end loop;
+  for item in select value from jsonb_array_elements(batch->'candidates') loop
+    if coalesce(item->>'content_hash','') !~ '^[a-f0-9]{64}$' or jsonb_typeof(item->'payload') is distinct from 'object'
+      or not (case source when 'ualive' then coalesce(item->>'source_url','') ~ '^https://ualive\.com/concerts/[0-9]+$'
+        when 'mintpaper' then coalesce(item->>'source_url','') ~ '^https://www\.mintpaper\.co\.kr/festivals/[0-9]+$'
+        when 'radwimps' then coalesce(item->>'source_url','') ~ '^https://radwimps\.jp/live/[0-9]+/$' end) then raise exception 'INVALID_CANDIDATE'; end if;
+    ids := '[]';
+    for key in select jsonb_array_elements_text(coalesce(item->'payload'->'artist_keys','[]')) loop
+      select i.band_id into band from private.artist_identities i where i.identity_key = key;
+      if band is not null then ids := ids || jsonb_build_array(band); end if;
+    end loop;
+    proposed := (item->'payload') || jsonb_build_object('band_ids', ids, 'status','review', 'initial_import',true);
+    insert into public.collection_candidates(source_url,payload,content_hash) values(item->>'source_url',proposed,item->>'content_hash')
+      on conflict(source_url) do update set
+        previous_payload = case when collection_candidates.content_hash <> excluded.content_hash then collection_candidates.payload else collection_candidates.previous_payload end,
+        payload = excluded.payload, content_hash = excluded.content_hash, fetched_at = now(),
+        revision = collection_candidates.revision + case when collection_candidates.content_hash <> excluded.content_hash or collection_candidates.payload->'band_ids' is distinct from excluded.payload->'band_ids' then 1 else 0 end,
+        status = case when collection_candidates.content_hash <> excluded.content_hash or collection_candidates.payload->'band_ids' is distinct from excluded.payload->'band_ids' then 'pending' else collection_candidates.status end;
+  end loop;
+  insert into public.collection_runs(source,candidate_count,failures,excluded)
+    values(source,jsonb_array_length(batch->'candidates'),batch->'failures',coalesce(batch->'excluded','[]'));
+end $$;
+revoke all on function public.admin_ingest_catalog(text,jsonb,jsonb) from public;
+grant execute on function public.admin_ingest_catalog(text,jsonb,jsonb) to authenticated,service_role;
