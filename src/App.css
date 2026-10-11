@@ -59,3 +59,11 @@ section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
 .external-artist-card p { font-size: 14px; line-height: 1.6; }
 .external-artist-card a { display: block; margin-bottom: 16px; font-size: 13px; }
 .external-artist-card .outline { width: 100%; white-space: normal; }
+.artist-photo { flex: 0 0 80px; width: 80px; max-width: 100%; margin: 0 0 14px; }
+.artist-photo img, .artist-photo-fallback { width: 80px; height: 80px; border-radius: 12px; }
+.artist-photo img { display: block; object-fit: contain; background: #161916; }
+.artist-photo-fallback { display: grid; place-items: center; color: #242a23; font-size: 28px; font-weight: 700; }
+.artist-photo figcaption { display: grid; gap: 3px; font-size: 9px; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere; max-height: 84px; overflow-y: auto; }
+.artist-photo figcaption a { margin: 0; font-size: inherit; color: inherit; text-decoration: underline; }
+.band-card .artist-photo { margin: 0; }
+@media(max-width:580px) { .band-card { flex-wrap: wrap; }.band-card .artist-photo { flex-basis: 60px; width: 60px; }.band-card .artist-photo img, .band-card .artist-photo-fallback { width: 60px; height: 60px; }.band-card .follow-button { margin-left: auto; } }

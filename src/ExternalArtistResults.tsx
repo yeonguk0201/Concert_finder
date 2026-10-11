@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { backend } from './backend'
 import type { BandRow } from './catalog'
+import { ArtistPhoto } from './ArtistPhoto'
 
 type Artist = { key: string; name: string; country: string | null; aliases: string[]; evidence: string; disambiguation: string; type: string }
 
@@ -85,6 +86,7 @@ export function ExternalArtistResults({ query, userId, disabled, onLogin, onSele
       <div className="external-artist-grid">{state.artists.map(artist => {
         const saved = selection.saved.includes(`${userId}:${artist.key}`)
         return <article key={artist.key} className="external-artist-card">
+          <ArtistPhoto name={artist.name} mbid={artist.key.slice(3)} />
           <h3>{artist.name}</h3><p>{artist.country ?? '국적 미확인'} · {artist.type || '유형 미확인'}</p>
           {artist.disambiguation && <p>{artist.disambiguation}</p>}
           {artist.aliases.length > 0 && <p className="artist-aliases">{artist.aliases.slice(0, 8).join(', ')}</p>}

@@ -10,3 +10,7 @@ verify_jwt = false
 [functions.artist-search]
 # Search is public; import verifies the Auth user before any registration.
 verify_jwt = false
+
+[functions.artist-photo]
+# Public metadata only; fixed provider URLs and server-only identity/cache RPCs.
+verify_jwt = false
