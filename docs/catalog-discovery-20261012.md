@@ -88,4 +88,6 @@
 - 입력 대기는 600ms에서 400ms로 줄였다. MusicBrainz 자체 응답 시간·공유 요청 제한·혼잡을 제거하는 변경은 아니다. 실제 공개 API 확인에서 Ado 첫 요청은 503이었고 후속 요청은 약 925ms, green apple은 약 323ms였다. Ado 일본 가수가 첫 결과, Mrs. GREEN APPLE이 해당 검색의 첫 결과로 남음을 확인했다. 전체 서비스의 응답 시간 측정이나 속도 보장은 아니다.
 - 반영하려면 `artist-search` 함수를 다시 배포해야 한다. 로컬 프런트엔드 변경만으로 운영 함수의 필터가 바뀌지는 않는다.
 
+사진은 검색 완료 후 별도로 연결한다. [아티스트 사진 연결·적용 순서](artist-photos.md)를 참고한다.
+
 관련 문서: [10/11 기록](catalog-expansion-20261011.md) · [공식 수집 운영](official-collection.md) · [자동 운영 계획](automated-catalog-plan.md)
