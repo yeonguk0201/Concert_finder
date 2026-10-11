@@ -2,6 +2,7 @@ import { JSDOM } from 'jsdom'
 import { createHash } from 'node:crypto'
 import { artwork, matchArtist } from './catalog-policy.mjs'
 import { getText, checkRobots } from './collection-http.mjs'
+import { discoveredArtist } from './artist-discovery.mjs'
 
 export const origin = 'https://ualive.com'
 export function concertLinks(html) {
@@ -26,6 +27,7 @@ export function parseConcert(html, url) {
     sources: [{ url: source.href, label: 'ualive 주최사', verified_at: null }], band_ids: [], sessions,
     ticket: { opens_at: null, booking_url: booking, price_description: null } }
   const cast = [...document.querySelectorAll('h2')].find(h => h.textContent.trim() === '출연진')?.closest('section')
+  payload.discovered_artists = [...new Set([...(cast?.querySelectorAll('img[alt]') ?? [])].map(img => img.alt.trim()))].map(name => discoveredArtist(name, source.href)).filter(Boolean)
   payload.artist_keys = [...new Set([...(cast?.querySelectorAll('img[alt]') ?? [])].map(img => matchArtist(img.alt)?.key).filter(Boolean))]
   payload.review_reasons = payload.artist_keys.length ? [] : ['대상 장르/아티스트 미확정']
   const image = [...document.images].find(img => img.alt.trim() === title)

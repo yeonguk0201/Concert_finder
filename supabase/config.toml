@@ -6,3 +6,7 @@ verify_jwt = false
 [functions.delete-account]
 # The handler validates the bearer with Auth getUser before using the Admin API.
 verify_jwt = false
+
+[functions.artist-search]
+# Handler verifies the Auth user and current database admin membership.
+verify_jwt = false

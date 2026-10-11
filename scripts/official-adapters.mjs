@@ -2,6 +2,7 @@ import { JSDOM } from 'jsdom'
 import { createHash } from 'node:crypto'
 import { artwork, matchProfile } from './catalog-policy.mjs'
 import { getText, checkRobots, pause } from './collection-http.mjs'
+import { discoveredArtist } from './artist-discovery.mjs'
 
 export function candidate(source, payload, artistKeys = [], reasons = []) {
   return { source_url: source, payload: { ...payload, artist_keys: artistKeys, review_reasons: reasons }, content_hash: createHash('sha256').update(JSON.stringify({ ...payload, artist_keys: artistKeys, review_reasons: reasons })).digest('hex') }
@@ -33,6 +34,12 @@ export function parseMintpaper(html, url) {
   payload.starts_on = day(festival.startDate); payload.ends_on = day(festival.endDate)
   if (payload.ends_on < payload.starts_on) throw new Error('Invalid date range')
   const keys = [...new Set(festival.lineup.flatMap(group => (group.banners ?? []).map(b => matchProfile(b.link)?.key).filter(Boolean)))]
+  payload.discovered_artists = festival.lineup.flatMap(group => (group.banners ?? []).map(b => {
+    const reviewed = matchProfile(b.link)
+    const image = data[b.image?.__ref]
+    return discoveredArtist(reviewed?.name ?? b.title ?? image?.alternativeText, source.href, b.link)
+      ?? { name: null, source_url: source.href, profile_url: b.link, key: reviewed?.key ?? null, reason: '원문에 이름 없음: 프로필로 신원 확인 필요' }
+  }))
   payload.artwork = artwork(data[festival.coverImage?.__ref]?.url, source.href, 'Festival.coverImage: 공연 ID에 연결된 커버')
   return candidate(source.href, payload, keys, ['혼합 페스티벌: 확인된 대상 밴드만 연결; 개별 출연일은 검수', ...(!keys.length ? ['대상 아티스트 미확정'] : [])])
 }
@@ -47,6 +54,7 @@ export function parseRadwimps(html, url) {
   const korea = /(?:Korea|Seoul|韓国|ソウル|Nanji Hangang Park)/i.test(body.textContent)
   if (!korea) return null
   const payload = basePayload(title, source.href, 'RADWIMPS 공식 LIVE')
+  payload.discovered_artists = [discoveredArtist('RADWIMPS', source.href)]
   const announcement = document.querySelector('.p-article__head time')?.getAttribute('datetime')
   if (/^\d{4}-\d{2}-\d{2}$/.test(announcement ?? '')) payload.announced_on = announcement
   return candidate(source.href, payload, ['radwimps'], ['한국 언급 확인; 회차·공연일·장소·출연일 원문 검수 필요'])
