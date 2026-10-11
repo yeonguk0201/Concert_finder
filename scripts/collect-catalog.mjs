@@ -1,7 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import { collect } from './ualive.mjs'
 import { collectAdapter } from './official-adapters.mjs'
-import { artists } from './catalog-policy.mjs'
+import { artists, validateArtwork } from './catalog-policy.mjs'
+import { createHash } from 'node:crypto'
 import { writeFile } from 'node:fs/promises'
 
 const upload = process.argv.includes('--upload')
@@ -19,6 +20,16 @@ try {
       if (source === 'ualive') {
         result.excluded.push(...result.candidates.filter(c => !c.payload.artist_keys.length).map(c => ({ source_url: c.source_url, reason: '대상 아티스트 미확정: 수집 검수에서 제외, 지원 목록 보완 필요' })))
         result.candidates = result.candidates.filter(c => c.payload.artist_keys.length)
+      }
+      for (const row of result.candidates) {
+        if (!row.payload.artwork) continue
+        const discovered = row.payload.artwork
+        row.payload.artwork = await validateArtwork(row.payload.artwork)
+        row.payload.artwork_probe = { ...discovered, checked_at: new Date().toISOString(), status: row.payload.artwork ? 'validated' : 'rejected' }
+        const stable = structuredClone(row.payload)
+        if (stable.artwork) delete stable.artwork.checked_at
+        delete stable.artwork_probe.checked_at
+        row.content_hash = createHash('sha256').update(JSON.stringify(stable)).digest('hex')
       }
       if (client) {
         const { error } = await client.rpc('admin_ingest_catalog', { source, batch: result, identities: artists })

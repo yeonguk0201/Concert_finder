@@ -2,7 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { PGlite } from '@electric-sql/pglite'
-import { artists, matchArtist, matchProfile, artworkUrl } from '../scripts/catalog-policy.mjs'
+import { artists, matchArtist, matchProfile, artworkUrl, validateArtwork } from '../scripts/catalog-policy.mjs'
 import { parseMintpaper, parseRadwimps } from '../scripts/official-adapters.mjs'
 import { getText, checkRobots } from '../scripts/collection-http.mjs'
 
@@ -27,7 +27,8 @@ test('festival uses event-linked cover and target lineup profiles, never all per
 test('Japanese artist route keeps global tours out and Korean ambiguous dates in review', () => {
   const page = text => `<div class="p-article__head"><time datetime="2025-05-22"></time><h2 class="title">Festival</h2></div><div class="p-article__body">${text}</div>`
   assert.equal(parseRadwimps(page('Tokyo 2026'), 'https://radwimps.jp/live/1/'),null)
-  const row = parseRadwimps(page('Nanji Hangang Park 2025年9月6日・7日'), 'https://radwimps.jp/live/1/')
+  assert.equal(parseRadwimps(page('Solo member Seoul show'), 'https://radwimps.jp/live/1/'),null)
+  const row = parseRadwimps(page('RADWIMPS Nanji Hangang Park 2025年9月6日・7日'), 'https://radwimps.jp/live/1/')
   assert.equal(row.payload.starts_on,null); assert.equal(row.payload.announced_on,'2025-05-22')
   assert.deepEqual(row.payload.artist_keys,['radwimps'])
 })
@@ -37,6 +38,15 @@ test('HTTP limits apply while reading; robots wildcards and exclusions fail clos
   assert.throws(()=>checkRobots('Disallow: /',['/festivals']),/disallowed/)
   checkRobots('Disallow: /wp-admin/',['/live/1/'])
 })
+test('image probes never follow redirects or fetch arbitrary hosts and reject unsafe MIME/size', async () => {
+  const image={url:'https://resource.ualive.com/poster.jpg',source_url:'https://ualive.com/concerts/397'}
+  let calls=0
+  const fetcher=async(url,options)=>{ calls++; assert.equal(options.method,'HEAD'); assert.equal(options.redirect,'error'); return new Response(null,{headers:{'content-type':'image/jpeg','content-length':'5000'}}) }
+  assert.equal((await validateArtwork(image,fetcher)).byte_length,5000)
+  assert.equal(await validateArtwork({...image,url:'https://127.0.0.1/a.jpg'},fetcher),null); assert.equal(calls,1)
+  assert.equal(await validateArtwork(image,async()=>new Response(null,{headers:{'content-type':'image/svg+xml','content-length':'5000'}})),null)
+  assert.equal(await validateArtwork(image,async()=>new Response(null,{headers:{'content-type':'image/jpeg','content-length':'8000001'}})),null)
+})
 test('multi-source ingestion registers identities once, preserves existing follows and rejects unauthorized writes', async () => {
   const db = new PGlite()
   try {
@@ -45,10 +55,11 @@ test('multi-source ingestion registers identities once, preserves existing follo
     for (const file of ['202610060001_initial.sql','202610070001_admin_review.sql','202610080001_ingestion.sql','202610110001_catalog_expansion.sql']) await db.exec(await readFile(new URL(`../supabase/migrations/${file}`,import.meta.url),'utf8'))
     const user='00000000-0000-0000-0000-000000000001'
     await db.query('insert into auth.users values ($1)',[user])
-    await db.query("insert into public.bands(name,country_code) values ('쏜애플','KR')")
+    await db.query("insert into public.bands(name,country_code,description) values ('쏜애플','KR','공식 사이트: https://www.mpmg.co.kr/')")
     const existing=(await db.query('select id from public.bands')).rows[0].id
+    await db.query("insert into public.bands(name,country_code) values ('ONE OK ROCK','JP')")
     await db.query('insert into public.band_follows(user_id,band_id) values($1,$2)',[user,existing])
-    const batch={candidates:[{source_url:'https://www.mintpaper.co.kr/festivals/172',payload:{title:'Festival',artist_keys:['thornapple']},content_hash:'a'.repeat(64)}],failures:[],excluded:[]}
+    const batch={candidates:[{source_url:'https://www.mintpaper.co.kr/festivals/172',payload:{title:'Festival',artist_keys:['thornapple','oneokrock']},content_hash:'a'.repeat(64)}],failures:[],excluded:[]}
     const ingest=()=>db.query("select public.admin_ingest_catalog('mintpaper',$1,$2)",[batch,artists])
     await db.exec('set role authenticated'); await assert.rejects(ingest(),/ADMIN_REQUIRED/); await db.exec('reset role')
     await db.query("select set_config('request.jwt.claims','{\"role\":\"service_role\"}',false)")
@@ -57,7 +68,13 @@ test('multi-source ingestion registers identities once, preserves existing follo
     assert.equal(row.revision,1); assert.deepEqual(row.payload.band_ids,[existing]); assert.equal(row.payload.initial_import,true)
     assert.equal((await db.query('select * from public.band_follows')).rows.length,1)
     assert.equal((await db.query('select * from public.bands')).rows.length,artists.length)
+    assert.equal((await db.query("select * from private.artist_identities where identity_key='oneokrock'")).rows.length,0)
     assert.equal((await db.query('select * from public.concerts')).rows.length,0)
+    await db.query("update public.bands set description='공식 사이트: https://www.oneokrock.com/en/about/' where name='ONE OK ROCK'")
+    await ingest()
+    const rematched=(await db.query('select * from public.collection_candidates')).rows[0]
+    assert.equal(rematched.revision,2); assert.equal(rematched.payload.band_ids.length,2)
+    assert.deepEqual(rematched.previous_payload.band_ids,[existing])
     batch.candidates[0].source_url='https://evil.test/festivals/1'; await assert.rejects(ingest(),/INVALID_CANDIDATE/)
   } finally { await db.close() }
 })

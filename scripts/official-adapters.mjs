@@ -42,6 +42,7 @@ export function parseRadwimps(html, url) {
   const title = document.querySelector('.p-article__head .title')?.textContent.trim()
   const body = document.querySelector('.p-article__body')
   if (!title || !body) throw new Error('Artist live layout changed')
+  if (!/RADWIMPS/i.test(`${title} ${body.textContent}`)) return null // solo member activity is not a band appearance
   // Do not associate Japanese/global tour dates with a Korean city by proximity.
   const korea = /(?:Korea|Seoul|韓国|ソウル|Nanji Hangang Park)/i.test(body.textContent)
   if (!korea) return null

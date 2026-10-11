@@ -38,6 +38,13 @@ begin
       );
     if cardinality(matches) > 1 then continue; end if; -- ambiguous names stay unresolved
     band := matches[1];
+    -- A unique same-country name is insufficient proof of identity.
+    if band is not null and not exists (
+      select 1 from public.bands b where b.id = band and position(identity->>'evidence' in coalesce(b.description,'')) > 0
+    ) and not exists (
+      select 1 from public.concert_bands cb join public.concert_sources cs on cs.concert_id = cb.concert_id
+      where cb.band_id = band and cs.url = identity->>'evidence' and cs.verified_at is not null
+    ) then continue; end if;
     if band is null then
       insert into public.bands(name,aliases,country_code,description)
         values(identity->>'name', array(select jsonb_array_elements_text(identity->'aliases')), identity->>'country', identity->>'genre') returning id into band;
@@ -55,9 +62,12 @@ begin
       if band is not null then ids := ids || jsonb_build_array(band); end if;
     end loop;
     proposed := (item->'payload') || jsonb_build_object('band_ids', ids, 'status','review', 'initial_import',true);
+    if jsonb_array_length(ids) <> jsonb_array_length(coalesce(item->'payload'->'artist_keys','[]')) then
+      proposed := proposed || jsonb_build_object('review_reasons',coalesce(proposed->'review_reasons','[]') || '["아티스트 신원 충돌/근거 미확인: 수동 검수 필요"]'::jsonb);
+    end if;
     insert into public.collection_candidates(source_url,payload,content_hash) values(item->>'source_url',proposed,item->>'content_hash')
       on conflict(source_url) do update set
-        previous_payload = case when collection_candidates.content_hash <> excluded.content_hash then collection_candidates.payload else collection_candidates.previous_payload end,
+        previous_payload = case when collection_candidates.content_hash <> excluded.content_hash or collection_candidates.payload->'band_ids' is distinct from excluded.payload->'band_ids' then collection_candidates.payload else collection_candidates.previous_payload end,
         payload = excluded.payload, content_hash = excluded.content_hash, fetched_at = now(),
         revision = collection_candidates.revision + case when collection_candidates.content_hash <> excluded.content_hash or collection_candidates.payload->'band_ids' is distinct from excluded.payload->'band_ids' then 1 else 0 end,
         status = case when collection_candidates.content_hash <> excluded.content_hash or collection_candidates.payload->'band_ids' is distinct from excluded.payload->'band_ids' then 'pending' else collection_candidates.status end;
