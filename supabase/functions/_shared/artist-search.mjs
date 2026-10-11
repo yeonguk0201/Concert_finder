@@ -1,4 +1,4 @@
-import { artistQuery, mbidPattern, musicbrainzArtist } from './musicbrainz-data.mjs'
+import { artistQuery, mbidPattern, musicbrainzArtist, relevantArtists } from './musicbrainz-data.mjs'
 
 export function createArtistSearchHandler({ authenticateUser, cache, importArtist, loadBand, fetcher = fetch }) {
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }
@@ -15,7 +15,7 @@ export function createArtistSearchHandler({ authenticateUser, cache, importArtis
       if (!importing && body.action !== 'search') return reply(400, { error: 'INVALID_QUERY' })
       if (importing && (!token || !await authenticateUser(token))) return reply(401, { error: 'LOGIN_REQUIRED' })
       if (importing ? !mbidPattern.test(body.id ?? '') : typeof body.query !== 'string' || body.query.trim().length < 2 || body.query.length > 100) return reply(400, { error: 'INVALID_QUERY' })
-      const term = importing ? `id:${body.id}` : `query:${body.query.trim().normalize('NFKC').toLowerCase()}`
+      const term = importing ? `id:${body.id}` : `query:v2:${body.query.trim().normalize('NFKC').toLowerCase()}`
       let result = await cache('get', term)
       if (!result) {
         if (!await cache('reserve', term)) return reply(429, { error: 'SEARCH_BUSY' })
@@ -41,7 +41,7 @@ export function createArtistSearchHandler({ authenticateUser, cache, importArtis
         if (!bandId) return reply(409, { error: 'IDENTITY_CONFLICT' })
         return reply(200, { band_id: bandId, band: await loadBand(bandId) })
       }
-      return reply(200, { artists: result })
+      return reply(200, { artists: relevantArtists(result, body.query.trim()) })
     } catch { return reply(503, { error: 'ARTIST_SEARCH_FAILED' }) }
   }
 }

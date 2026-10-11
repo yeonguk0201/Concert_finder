@@ -34,18 +34,27 @@ export function ExternalArtistResults({ query, userId, disabled, onLogin, onSele
   const [state, setState] = useState<{ term: string; artists: Artist[]; loading: boolean; error: string }>({ term: '', artists: [], loading: false, error: '' })
   const [selection, setSelection] = useState<{ key: string; error: string; saved: string[] }>({ key: '', error: '', saved: [] })
   const pending = useRef(false)
+  const cache = useRef(new Map<string, { artists: Artist[]; expires: number }>())
   const scope = useRef({ term, userId })
   // Cancel UI updates and account writes when search or account changes.
   useLayoutEffect(() => { const current = { term, userId }; scope.current = current; return () => { if (scope.current === current) scope.current = { term: '', userId: null } } }, [term, userId])
   useEffect(() => {
     if (term.length < 2 || term.length > 100) return
     let active = true
+    const key = term.normalize('NFKC').toLowerCase()
+    const cached = cache.current.get(key)
+    if (cached && cached.expires > Date.now()) {
+      queueMicrotask(() => { if (active) setState({ term, artists: cached.artists, loading: false, error: '' }) })
+      return () => { active = false }
+    }
     const timer = setTimeout(() => {
       setState({ term, artists: [], loading: true, error: '' })
       void invoke({ action: 'search', query: term }).then(data => {
+        if (cache.current.size >= 20) cache.current.delete(cache.current.keys().next().value!)
+        cache.current.set(key, { artists: data.artists, expires: Date.now() + 300000 })
         if (active) setState({ term, artists: data.artists, loading: false, error: '' })
       }).catch(error => { if (active) setState({ term, artists: [], loading: false, error: errorMessage(error) }) })
-    }, 600)
+    }, 400)
     return () => { active = false; clearTimeout(timer) }
   }, [term, revision])
 
@@ -70,7 +79,7 @@ export function ExternalArtistResults({ query, userId, disabled, onLogin, onSele
 
   return <section aria-label="외부 아티스트 검색 결과" className="external-artists">
     <div className="section-heading"><h2>외부 아티스트</h2></div>
-    <p>MusicBrainz에서 이름·별칭으로 찾습니다. 국적과 소개를 확인해 선택하면 고유 ID로 등록하고, 공연이 없어도 찜할 수 있습니다.</p>
+    <p>이름·별칭이 일치하고 국적이 확인된 가수·그룹을 찾습니다. 소개를 확인해 선택하면 공연이 없어도 찜할 수 있습니다.</p>
     {term.length < 2 ? <p>두 글자 이상 입력해 주세요.</p> : term.length > 100 ? <p>검색어는 100자 이내로 입력해 주세요.</p> : state.term !== term || state.loading ? <p role="status">외부 아티스트 검색 중…</p> : <>
       {state.error ? <p role="alert">{state.error} <button className="outline" onClick={() => setRevision(r => r + 1)}>다시 검색</button></p> : !state.artists.length && <p role="status">일치하는 외부 아티스트가 없습니다. 원어 이름이나 다른 별칭으로 검색해 보세요.</p>}
       <div className="external-artist-grid">{state.artists.map(artist => {

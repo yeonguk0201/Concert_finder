@@ -43,6 +43,16 @@ test('old query results never replace the current search', async () => {
   await waitFor(() => expect(screen.queryByText('FLOW')).toBeNull())
 })
 
+test('repeated normalized searches reuse public results without another request', async () => {
+  mock.invoke.mockResolvedValue({ data: { artists: [artist] } })
+  const view = render(<ExternalArtistResults {...props} />)
+  await screen.findByText('FLOW')
+  view.rerender(<ExternalArtistResults {...props} query="F" />)
+  view.rerender(<ExternalArtistResults {...props} query="flow" />)
+  await screen.findByText('FLOW')
+  expect(mock.invoke).toHaveBeenCalledOnce()
+})
+
 test('account changes during registration prevent following for the new account', async () => {
   let resolveImport!: (value: unknown) => void
   mock.invoke.mockResolvedValueOnce({ data: { artists: [artist] } }).mockImplementationOnce(() => new Promise(resolve => { resolveImport = resolve }))
