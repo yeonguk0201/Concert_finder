@@ -68,13 +68,14 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
   const historyFields = [
     ['title', '공연 제목'], ['format', '형식'], ['status', '공개 상태'], ['city', '도시'], ['venue', '공연장'],
     ['starts_on', '공연 시작일'], ['ends_on', '공연 종료일'], ['announced_on', '발표일'], ['announced_at', '발표 시각'],
-    ['announcement_verified', '발표 확인'], ['cancelled', '공연 취소'], ['sources', '공식 출처'], ['band_ids', '출연 밴드'], ['sessions', '회차'], ['ticket', '일반 예매'],
+    ['announcement_verified', '발표 확인'], ['cancelled', '공연 취소'], ['sources', '공식 출처'], ['band_ids', '출연 밴드'], ['sessions', '회차'], ['ticket', '일반 예매'], ['artwork','공식 포스터'],
   ] as const
   const describe = (record: AdminConcert | null, field: typeof historyFields[number][0]): string => {
     if (!record) return '등록 전'
     if (field === 'status') return statusLabels[record.status]
     if (field === 'format') return record.format === 'solo' ? '단독 공연' : '페스티벌'
     if (field === 'sources') return record.sources.map(s => `${s.label}: ${s.url} (${s.verified_at ? '확인 완료' : '미확인'})`).join('\n') || '없음'
+    if (field === 'artwork') return record.artwork ? `${record.artwork.url}\n${record.artwork.source_url}\n${record.artwork.selection_reason}\n표시 ${record.artwork.display_approved ? '승인' : '보류'} · ${record.artwork.checked_at ?? '확인 시각 미기록'}` : '없음'
     if (field === 'band_ids') return record.band_ids.map(id => catalog.bands.find(b => b.id === id)?.name ?? '삭제된 밴드').join(', ') || '없음'
     if (field === 'sessions') return record.sessions.map(s => `${s.label}: ${s.starts_on ?? '미정'} ${kstInput(s.starts_at) || '시각 미정'}`).join('\n') || '없음'
     if (field === 'ticket') return record.ticket ? `오픈: ${kstInput(record.ticket.opens_at) || '미정'}\n예매처: ${record.ticket.booking_url || '미정'}\n가격: ${record.ticket.price_description || '미정'}` : '없음'
@@ -110,6 +111,7 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
       <h2>출연 밴드</h2><div className="admin-lineup">{catalog.bands.map(b => <label className="admin-check" key={b.id}><input type="checkbox" checked={form.band_ids.includes(b.id)} onChange={e => edit({ band_ids: e.target.checked ? [...form.band_ids, b.id] : form.band_ids.filter(id => id !== b.id) })} />{b.name} ({b.country_code})</label>)}</div>
       {!catalog.bands.length && <p>아래에서 밴드를 먼저 등록하세요.</p>}
       <h2>공식 출처</h2>
+      {form.artwork && <fieldset><legend>공식 포스터</legend><p><a href={form.artwork.url} target="_blank" rel="noopener noreferrer">이미지 원문 ↗</a> · {form.artwork.selection_reason}</p><p>이미지 발견만으로 이용 허락이 확인되지는 않습니다. 원문과 같은 공연인지, 외부 표시 조건을 확인하세요.</p><label className="admin-check"><input type="checkbox" checked={form.artwork.display_approved} onChange={e => edit({ artwork: { ...form.artwork!, display_approved: e.target.checked, checked_at: new Date().toISOString() } })} />공연 매칭과 이미지 이용 조건을 확인하여 외부 표시 승인</label><button type="button" className="outline" onClick={() => edit({ artwork: null })}>포스터 연결 제거</button></fieldset>}
       {form.sources.map((s, index) => <div className="admin-repeat" key={index}>
         <label>출처 이름<input required value={s.label} onChange={e => edit({ sources: form.sources.map((v, i) => i === index ? { ...v, label: e.target.value } : v) })} /></label>
         <label>공식 HTTPS 링크<input required type="url" pattern="https://.+" value={s.url} onChange={e => edit({ sources: form.sources.map((v, i) => i === index ? { ...v, url: e.target.value } : v) })} /></label>

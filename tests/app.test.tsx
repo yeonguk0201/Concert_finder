@@ -30,6 +30,14 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
 
+test('home discovers upcoming domestic performances as well as overseas bands', () => {
+  mocks.bands = mapBands([{id:'kr',name:'국내 밴드',country_code:'KR',aliases:[],description:'록'}])
+  mocks.concerts = [{ ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), title:'국내 밴드 공연', bandIds:['kr'], type:'국내' }]
+  render(<App />)
+  expect(screen.getByRole('button',{name:'국내 밴드 공연 상세 보기'})).toBeTruthy()
+  expect(screen.getByText('최근 공연 소식')).toBeTruthy()
+})
+
 test('settings and admin editors stay out of the feed, including after account changes', () => {
   const view = render(<App />)
   mocks.session = { user: { id: 'admin-account', email: 'admin@example.test' } }

@@ -48,3 +48,6 @@ section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
 .search-box button{align-items:center;justify-content:center}.topbar .settings-link{display:flex;align-items:center;gap:5px;font-size:12px}
 
 .top-calendar.settings-link>span{position:static;background:none;color:inherit;border-radius:0;font-size:12px;min-width:0}
+.poster.poster-image{padding:0;height:auto;min-height:0;display:flex;align-items:center;justify-content:center;background:#151a13;overflow:visible}
+.poster.poster-image img{display:block;width:100%;height:auto;object-fit:contain;border-radius:inherit}
+.detail-content .poster.poster-image{height:auto;min-height:0;align-self:start}
