@@ -71,6 +71,6 @@ export function ArtistPhoto({ name, mbid, bandId, color = '#a8c0ab' }: { name: s
   const photo = state.key === key && !state.failed ? state.photo : null
   return <figure ref={element} className="artist-photo">
     {photo ? <img src={photo.url} alt={`${name} 프로필`} width={80} height={80} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setState(s => ({ ...s, failed: true }))} /> : <span className="artist-photo-fallback" style={{ background: color }} aria-label={`${name} 이니셜`}>{Array.from(name).slice(0, 2).join('')}</span>}
-    {photo && <figcaption><a href={photo.source} target="_blank" rel="noopener noreferrer">사진: {photo.author}</a>{photo.credit && <span>{photo.credit}</span>}<a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a><span>썸네일 표시</span></figcaption>}
+    {photo && <figcaption><details><summary aria-label={`${name} 사진 출처`}>사진 출처</summary><div className="artist-photo-credits"><a href={photo.source} target="_blank" rel="noopener noreferrer">사진: {photo.author}</a>{photo.credit && <span>{photo.credit}</span>}<a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a><span>정사각형으로 잘라 표시</span></div></details></figcaption>}
   </figure>
 }

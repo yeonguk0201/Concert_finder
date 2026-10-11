@@ -15,12 +15,16 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.resetAllMocks(); vi.unstubAllGlobals() })
 
-test('photo loads after initials and retains visible attribution; failed image returns to initials', async () => {
+test('photo loads after initials; attribution expands on request and failed images return to initials', async () => {
   mock.invoke.mockResolvedValue({ data: { photo } })
   render(<ArtistPhoto name="Test Artist" mbid="00000000-0000-4000-8000-000000000001" />)
   expect(screen.getByLabelText('Test Artist 이니셜')).toBeTruthy()
   expect(mock.invoke).not.toHaveBeenCalled()
   const image = await screen.findByRole('img', { name: 'Test Artist 프로필' }, { timeout: 4000 })
+  const details = screen.getByText('사진 출처').closest('details')!
+  expect(details.hasAttribute('open')).toBe(false)
+  fireEvent.click(screen.getByText('사진 출처'))
+  expect(details.hasAttribute('open')).toBe(true)
   expect(screen.getByRole('link', { name: '사진: Photographer' }).getAttribute('href')).toBe(photo.source)
   expect(screen.getByRole('link', { name: 'CC BY 4.0' }).getAttribute('href')).toBe(photo.licenseUrl)
   fireEvent.error(image)
