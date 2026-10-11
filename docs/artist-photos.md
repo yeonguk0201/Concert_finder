@@ -35,4 +35,10 @@
 - 실제 공개 API에서 Radiohead의 Wikidata Q44190 연결, Commons 썸네일·Raph_PH 크레딧·CC BY 4.0 반환을 확인했다. Ado는 연결된 항목에서 사용할 사진이 없어 null을 반환했다. 모든 아티스트에 사진이 존재한다는 보장은 없다.
 - 가상 사진 응답을 사용한 headless Edge에서 1280·390·320px 사진·출처 링크·찜 동작, 가로 넘침과 페이지 오류 없음을 확인했다. 원격 SQL 적용·함수 배포·운영 계정의 전체 흐름 검증은 수행하지 않았다.
 
+## 썸네일 표시 보완 · 2026-10-12
+
+썸네일을 가운데 기준 정사각형으로 잘라 채우고, 긴 크레딧을 기본으로 접힌 **사진 출처** 패널로 옮겼다. 출처·저작자·라이선스 링크와 자르기 안내는 펼쳐서 확인할 수 있다. 프런트엔드 수정이므로 기존 사진 함수가 연결된 환경에서는 새 함수 배포 없이 적용된다.
+
+lint·build 및 사진 UI 테스트 3개가 통과했다. 가상 사진 응답을 사용한 headless Edge 1280·390·320px에서 기본 출처 접힘, 펼침 후 카드 높이 유지·가로 넘침 없음, 사진 채움·찜 동작을 확인했다. 기존 번들 크기 경고는 남아 있다. Ado의 실제 연결 항목 Q104012678에는 P18이 없어 사진 없음 결과를 재확인했다. 주요 아티스트 사전 등록·별칭·대표 이미지 직접 관리는 [10/12 추가 작업](development-roadmap.md)에 계획으로 추가했으며 이번 변경에서 DB에 이미지를 지정하지 않았다.
+
 참조: [MusicBrainz 관계](https://musicbrainz.org/relationships/artist-url), [Wikidata 데이터 접근](https://www.wikidata.org/wiki/Help:Data_access), [Commons 이미지 정보 API](https://www.mediawiki.org/wiki/API:Imageinfo), [Commons 재이용 안내](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia).
