@@ -27,6 +27,7 @@ export function useCatalog() {
     return () => { active = false }
   }, [revision])
   const reload = useCallback(() => setRevision(r => r + 1), [])
+  const addBand = useCallback((band: Band) => setData(current => ({ ...current, bands: [...current.bands.filter(b => b.id !== band.id), band] })), [])
   const syncStatus = useRealtime('catalog_signal', null, reload)
-  return { ...data, loading, error, reload, syncStatus }
+  return { ...data, loading, error, reload, addBand, syncStatus }
 }

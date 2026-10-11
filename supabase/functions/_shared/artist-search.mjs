@@ -1,20 +1,19 @@
 import { artistQuery, mbidPattern, musicbrainzArtist } from './musicbrainz-data.mjs'
 
-export function createArtistSearchHandler({ authenticateAdmin, cache, importArtist, fetcher = fetch }) {
+export function createArtistSearchHandler({ authenticateUser, cache, importArtist, loadBand, fetcher = fetch }) {
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }
   const reply = (status, body) => new Response(JSON.stringify(body), { status, headers })
   return async request => {
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers })
     if (request.method !== 'POST') return reply(405, { error: 'METHOD_NOT_ALLOWED' })
     const token = /^Bearer (\S+)$/i.exec(request.headers.get('authorization') ?? '')?.[1]
-    if (!token) return reply(401, { error: 'LOGIN_REQUIRED' })
     try {
-      if (!await authenticateAdmin(token)) return reply(403, { error: 'ADMIN_REQUIRED' })
       let body
       try { const text = await request.text(); if (text.length > 2000) return reply(400, { error: 'INVALID_QUERY' }); body = JSON.parse(text) } catch { return reply(400, { error: 'INVALID_QUERY' }) }
       if (!body || typeof body !== 'object' || Array.isArray(body)) return reply(400, { error: 'INVALID_QUERY' })
       const importing = body.action === 'import'
       if (!importing && body.action !== 'search') return reply(400, { error: 'INVALID_QUERY' })
+      if (importing && (!token || !await authenticateUser(token))) return reply(401, { error: 'LOGIN_REQUIRED' })
       if (importing ? !mbidPattern.test(body.id ?? '') : typeof body.query !== 'string' || body.query.trim().length < 2 || body.query.length > 100) return reply(400, { error: 'INVALID_QUERY' })
       const term = importing ? `id:${body.id}` : `query:${body.query.trim().normalize('NFKC').toLowerCase()}`
       let result = await cache('get', term)
@@ -40,7 +39,7 @@ export function createArtistSearchHandler({ authenticateAdmin, cache, importArti
         if (result.length !== 1 || !result[0].country) return reply(422, { error: 'COUNTRY_REQUIRED' })
         const bandId = await importArtist(result[0])
         if (!bandId) return reply(409, { error: 'IDENTITY_CONFLICT' })
-        return reply(200, { band_id: bandId })
+        return reply(200, { band_id: bandId, band: await loadBand(bandId) })
       }
       return reply(200, { artists: result })
     } catch { return reply(503, { error: 'ARTIST_SEARCH_FAILED' }) }

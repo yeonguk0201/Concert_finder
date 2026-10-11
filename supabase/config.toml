@@ -8,5 +8,5 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.artist-search]
-# Handler verifies the Auth user and current database admin membership.
+# Search is public; import verifies the Auth user before any registration.
 verify_jwt = false

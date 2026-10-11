@@ -112,6 +112,13 @@ test('new ingestion retains unresolved candidates and registers a discovered ext
     assert.equal(candidate.revision, 2)
     const runsBefore = (await db.query('select count(*)::int as count from public.collection_runs')).rows[0].count
     assert.equal((await db.query('select public.service_import_artist($1) as id', [identities[0]])).rows[0].id, candidate.payload.band_ids[0])
+    // A provider registration has no dependency on a published concert or ticket.
+    const follower = '00000000-0000-4000-8000-000000000099'
+    await db.query('insert into auth.users(id) values ($1)', [follower])
+    await db.query('insert into public.band_follows(user_id,band_id) values ($1,$2)', [follower, candidate.payload.band_ids[0]])
+    await db.query('select public.service_import_artist($1)', [identities[0]])
+    assert.equal((await db.query('select count(*)::int as count from public.band_follows where user_id=$1 and band_id=$2', [follower,candidate.payload.band_ids[0]])).rows[0].count, 1)
+    assert.equal((await db.query('select count(*)::int as count from public.concerts')).rows[0].count, 0)
     assert.equal((await db.query('select count(*)::int as count from public.collection_runs')).rows[0].count, runsBefore)
     await assert.rejects(db.query('select public.service_import_artist($1)', [{ ...identities[0], evidence: 'https://evil.test/' }]), /INVALID_IDENTITY/)
     assert.equal((await db.query("select public.service_artist_search_cache('get','query:new',null) as result")).rows[0].result, null)

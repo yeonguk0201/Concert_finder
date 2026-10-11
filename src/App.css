@@ -51,3 +51,11 @@ section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
 .poster.poster-image{padding:0;height:auto;min-height:0;display:flex;align-items:center;justify-content:center;background:#151a13;overflow:visible}
 .poster.poster-image img{display:block;width:100%;height:auto;object-fit:contain;border-radius:inherit}
 .detail-content .poster.poster-image{height:auto;min-height:0;align-self:start}
+.external-artists { margin-top: 32px; }
+.external-artists > p { color: var(--muted, #6e736b); line-height: 1.6; }
+.external-artist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.external-artist-card { min-width: 0; padding: 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel, #20261d); overflow-wrap: anywhere; }
+.external-artist-card h3 { margin: 0 0 10px; }
+.external-artist-card p { font-size: 14px; line-height: 1.6; }
+.external-artist-card a { display: block; margin-bottom: 16px; font-size: 13px; }
+.external-artist-card .outline { width: 100%; white-space: normal; }
