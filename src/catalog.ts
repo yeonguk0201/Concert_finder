@@ -9,6 +9,7 @@ function artworkIndex(value: string) {
 export type BandRow = { id: string; name: string; aliases: string[]; country_code: string; description: string | null }
 type TicketRow = { id: string; opens_at: string | null; price_description: string | null; booking_url: string | null }
 export type ConcertRow = {
+  artwork?: import('./adminApi').Artwork | null;
   id: string; title: string; format: string; city: string | null; venue: string | null;
   starts_on: string | null; ends_on: string | null; announced_on: string | null; cancelled: boolean;
   concert_bands: { band_id: string }[];
@@ -24,7 +25,7 @@ export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {
   return rows.map(row => {
     const ticket = Array.isArray(row.ticket_schedules) ? row.ticket_schedules[0] : row.ticket_schedules
     const bandIds = row.concert_bands.map(item => item.band_id)
-    return { id: row.id, title: row.title, bandIds,
+    return { id: row.id, title: row.title, bandIds, artwork: row.artwork ?? undefined,
       type: row.format === 'festival' ? '페스티벌' : bands.some(b => bandIds.includes(b.id) && b.countryCode !== 'KR') ? '내한' : '국내',
       date: row.starts_on ?? '', endsOn: row.ends_on ?? undefined, venue: row.venue ?? '장소 미정', city: row.city ?? '지역 미정',
       announcedAt: row.announced_on ?? '', ticketAt: ticket?.opens_at ?? '', price: ticket?.price_description ?? '미정',

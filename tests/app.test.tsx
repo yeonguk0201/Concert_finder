@@ -6,13 +6,13 @@ import { mapBands, mapConcerts } from '../src/catalog'
 
 const mocks = vi.hoisted(() => ({
   session: null as null | { user: { id: string; email: string } },
-  toggle: vi.fn(), reload: vi.fn(),
+  toggle: vi.fn(), reload: vi.fn(), addBand: vi.fn(), invoke: vi.fn(),
   adminAllowed: false,
   bands: [] as unknown[], concerts: [] as unknown[], follows: [] as string[], saves: [] as string[],
 }))
-vi.mock('../src/backend', () => ({ accountMode: true, backend: {}, configurationError: '' }))
+vi.mock('../src/backend', () => ({ accountMode: true, backend: { functions: { invoke: mocks.invoke } }, configurationError: '' }))
 vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: false, error: '', busy: false, message: '', requestLink: vi.fn(), signOut: vi.fn() }) }))
-vi.mock('../src/useCatalog', () => ({ useCatalog: () => ({ bands: mocks.bands, concerts: mocks.concerts, loading: false, error: '', reload: mocks.reload }) }))
+vi.mock('../src/useCatalog', () => ({ useCatalog: () => ({ bands: mocks.bands, concerts: mocks.concerts, loading: false, error: '', reload: mocks.reload, addBand: mocks.addBand }) }))
 vi.mock('../src/useAccountStorage', () => ({ useAccountStorage: () => ({ bands: mocks.follows, schedules: mocks.saves, loading: false, error: '', pending: [], toggle: mocks.toggle, reload: mocks.reload }) }))
 vi.mock('../src/useAdminAccess', () => ({ useAdminAccess: () => ({ allowed: mocks.adminAllowed, error: '', reload: vi.fn() }) }))
 vi.mock('../src/AdminPanel', () => ({ AdminPanel: () => <section aria-label="관리자 공연 검수">관리자 편집기</section> }))
@@ -29,6 +29,29 @@ beforeEach(() => {
   history.replaceState(null, '', '/')
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
+
+test('ordinary search registers and follows an external artist with no concerts', async () => {
+  mocks.session = { user: { id: 'ordinary-user', email: 'user@example.test' } }
+  mocks.concerts = []
+  const row = { id: 'external-band', name: 'New artist', country_code: 'JP', aliases: [], description: '장르 미검수' }
+  mocks.invoke.mockResolvedValueOnce({ data: { artists: [{ key: 'mb:provider-id', name: row.name, country: 'JP', aliases: [], evidence: 'https://musicbrainz.org/artist/provider-id', type: 'Person', disambiguation: 'Japanese singer' }] } }).mockResolvedValueOnce({ data: { band_id: row.id, band: row } })
+  mocks.toggle.mockResolvedValue(true)
+  render(<App />)
+  fireEvent.change(screen.getByRole('textbox', { name: '밴드 또는 공연 검색' }), { target: { value: 'New artist' } })
+  fireEvent.click(await screen.findByRole('button', { name: /New artist .*등록하고 찜하기/ }))
+  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', row.id))
+  expect(mocks.addBand).toHaveBeenCalledWith(expect.objectContaining({ id: row.id, name: row.name }))
+  expect(mocks.adminAllowed).toBe(false)
+  await screen.findByText('아티스트를 찜했어요. 공연이 없어도 찜 목록에 보관됩니다.')
+})
+
+test('home discovers upcoming domestic performances as well as overseas bands', () => {
+  mocks.bands = mapBands([{id:'kr',name:'국내 밴드',country_code:'KR',aliases:[],description:'록'}])
+  mocks.concerts = [{ ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), title:'국내 밴드 공연', bandIds:['kr'], type:'국내' }]
+  render(<App />)
+  expect(screen.getByRole('button',{name:'국내 밴드 공연 상세 보기'})).toBeTruthy()
+  expect(screen.getByText('최근 공연 소식')).toBeTruthy()
+})
 
 test('settings and admin editors stay out of the feed, including after account changes', () => {
   const view = render(<App />)

@@ -48,3 +48,24 @@ section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
 .search-box button{align-items:center;justify-content:center}.topbar .settings-link{display:flex;align-items:center;gap:5px;font-size:12px}
 
 .top-calendar.settings-link>span{position:static;background:none;color:inherit;border-radius:0;font-size:12px;min-width:0}
+.poster.poster-image{padding:0;height:auto;min-height:0;display:flex;align-items:center;justify-content:center;background:#151a13;overflow:visible}
+.poster.poster-image img{display:block;width:100%;height:auto;object-fit:contain;border-radius:inherit}
+.detail-content .poster.poster-image{height:auto;min-height:0;align-self:start}
+.external-artists { margin-top: 32px; }
+.external-artists > p { color: var(--muted, #6e736b); line-height: 1.6; }
+.external-artist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.external-artist-card { min-width: 0; padding: 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel, #20261d); overflow-wrap: anywhere; }
+.external-artist-card h3 { margin: 0 0 10px; }
+.external-artist-card p { font-size: 14px; line-height: 1.6; }
+.external-artist-card a { display: block; margin-bottom: 16px; font-size: 13px; }
+.external-artist-card .outline { width: 100%; white-space: normal; }
+.artist-photo { flex: 0 0 80px; width: 80px; max-width: 100%; margin: 0 0 14px; }
+.artist-photo img, .artist-photo-fallback { width: 80px; height: 80px; border-radius: 12px; }
+.artist-photo img { display: block; object-fit: cover; object-position: center; background: #161916; }
+.artist-photo-fallback { display: grid; place-items: center; color: #242a23; font-size: 28px; font-weight: 700; }
+.artist-photo figcaption { position: relative; margin-top: 5px; font-size: 10px; line-height: 1.5; color: var(--muted); }
+.artist-photo summary { cursor: pointer; font-size: 10px; white-space: nowrap; }
+.artist-photo-credits { position: absolute; z-index: 4; top: 24px; left: 0; display: grid; gap: 8px; width: min(280px, calc(100vw - 70px)); max-height: 240px; overflow-y: auto; overflow-wrap: anywhere; padding: 14px; border: 1px solid var(--border); border-radius: 8px; background: #161916; box-shadow: 0 8px 24px #0006; font-size: 12px; }
+.artist-photo figcaption a { margin: 0; font-size: inherit; color: inherit; text-decoration: underline; }
+.band-card .artist-photo { margin: 0; }
+@media(max-width:580px) { .band-card { flex-wrap: wrap; }.band-card .artist-photo { flex-basis: 60px; width: 60px; }.band-card .artist-photo img, .band-card .artist-photo-fallback { width: 60px; height: 60px; }.band-card .follow-button { margin-left: auto; } }
