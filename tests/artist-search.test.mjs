@@ -41,6 +41,7 @@ test('short names exclude unknown countries, nonperformer types and unrelated na
   const row = { key: `mb:${id}`, name: 'Ado', country: 'JP', type: 'Person', aliases: [], score: 100 }
   const candidates = [
     { ...row, key: 'unknown', country: null }, { ...row, key: 'ai', type: 'Other' },
+    { ...row, key: 'cn', country: 'CN', score: 100 },
     { ...row, key: 'unknown-type', type: '' }, { ...row, key: 'longer', name: 'Ado Barker' },
     { ...row, key: 'prefix', name: 'Adonis' }, { ...row, key: 'namesake', country: 'GB', score: 80 },
     { ...row, key: 'alias', name: '別名', aliases: ['Ａｄｏ'], score: 99 }, row,
@@ -60,13 +61,14 @@ test('long queries match whole phrases and aliases, prioritize exact names and c
   const query = new URL(artistQuery('Ado')).searchParams.get('query')
   assert.ok(query.includes('artist:"Ado" OR alias:"Ado"'))
   assert.ok(query.includes('country:*'))
+  assert.ok(query.includes('-country:CN'))
 })
 
 test('server cache hits also pass relevance filtering and use a new query namespace', async () => {
   const row = { key: `mb:${id}`, name: 'Ado', country: 'JP', type: 'Person', aliases: [], score: 100 }
   let fetched = false
   const handler = createArtistSearchHandler({ authenticateUser: async () => false,
-    cache: async (action, term) => { assert.equal(action, 'get'); assert.equal(term, 'query:v2:ado'); return [row, { ...row, country: null }, { ...row, name: 'Ado Barker' }] },
+    cache: async (action, term) => { assert.equal(action, 'get'); assert.equal(term, 'query:v3:ado'); return [row, { ...row, country: null }, { ...row, country: 'CN' }, { ...row, name: 'Ado Barker' }] },
     fetcher: async () => { fetched = true }, importArtist: async () => {} })
   const response = await handler(request({ action: 'search', query: 'ado' }))
   assert.deepEqual((await response.json()).artists, [row])

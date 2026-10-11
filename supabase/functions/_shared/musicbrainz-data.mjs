@@ -21,12 +21,12 @@ export function relevantArtists(artists, query) {
     if (!term.includes(' ') && [name, ...aliases].some(n => n.startsWith(term))) return 1
     return 0
   }
-  return artists.filter(a => a.country && ['Person', 'Group'].includes(a.type))
+  return artists.filter(a => a.country && a.country !== 'CN' && ['Person', 'Group'].includes(a.type))
     .map(artist => ({ artist, rank: rank(artist) })).filter(a => a.rank > 0)
     .sort((a, b) => b.rank - a.rank || (b.artist.score ?? 0) - (a.artist.score ?? 0) || a.artist.name.localeCompare(b.artist.name))
     .slice(0, 10).map(a => a.artist)
 }
 export function artistQuery(name) {
   const escaped = name.replace(/[\\"]/g, '\\$&')
-  return `https://musicbrainz.org/ws/2/artist/?query=${encodeURIComponent(`(artist:"${escaped}" OR alias:"${escaped}") AND country:* AND (type:person OR type:group)`)}&fmt=json&limit=25`
+  return `https://musicbrainz.org/ws/2/artist/?query=${encodeURIComponent(`(artist:"${escaped}" OR alias:"${escaped}") AND country:* AND -country:CN AND (type:person OR type:group)`)}&fmt=json&limit=25`
 }

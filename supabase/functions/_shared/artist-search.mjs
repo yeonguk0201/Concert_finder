@@ -15,7 +15,7 @@ export function createArtistSearchHandler({ authenticateUser, cache, importArtis
       if (!importing && body.action !== 'search') return reply(400, { error: 'INVALID_QUERY' })
       if (importing && (!token || !await authenticateUser(token))) return reply(401, { error: 'LOGIN_REQUIRED' })
       if (importing ? !mbidPattern.test(body.id ?? '') : typeof body.query !== 'string' || body.query.trim().length < 2 || body.query.length > 100) return reply(400, { error: 'INVALID_QUERY' })
-      const term = importing ? `id:${body.id}` : `query:v2:${body.query.trim().normalize('NFKC').toLowerCase()}`
+      const term = importing ? `id:${body.id}` : `query:v3:${body.query.trim().normalize('NFKC').toLowerCase()}`
       let result = await cache('get', term)
       if (!result) {
         if (!await cache('reserve', term)) return reply(429, { error: 'SEARCH_BUSY' })
