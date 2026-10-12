@@ -52,17 +52,29 @@ test('database publication enforces approval, leases, deduplication, overrides a
     await db.query("select public.admin_collection_policy('yes24',true,true,false)")
     token=await begin(); assert.equal((await finish(token)).review,1)
     assert.equal((await db.query('select reason from public.collection_decisions order by decided_at desc limit 1')).rows[0].reason,'ARTIST_OR_GENRE_UNVERIFIED')
-    await db.query('select public.admin_approve_artist($1,$2)',[identity.key,'https://official.example/biography'])
+    await db.query('select public.admin_approve_band($1,$2)',[band,'https://official.example/biography'])
     token=await begin(); assert.equal((await finish(token)).published,1)
     assert.equal((await finish(token)).published,1) // lost response replay
     assert.equal((await db.query('select count(*)::int as n from public.concerts')).rows[0].n,1)
     assert.equal((await db.query('select initial_import from private.publication_changes')).rows[0].initial_import,true)
+    // Live mode still suppresses old announcements, while verified new dates queue once per device.
+    await db.query("update public.collection_policies set live_after=now()-interval '2 days' where source='yes24'")
+    for(const suffix of ['one','two']) await db.query('insert into private.push_devices(user_id,endpoint,p256dh,auth_key,label) values ($1,$2,$3,$4,$5)',[user,`https://fcm.googleapis.com/fcm/send/auto-${suffix}`,'A'.repeat(87),'B'.repeat(22),'auto'])
     token=await begin(); assert.deepEqual(await finish(token),{published:0,review:0})
+    const fresh=structuredClone(row)
+    fresh.source_url='https://ticket.yes24.com/Perf/789'; fresh.payload.title='Different verified performance'
+    fresh.payload.starts_on='2028-01-01'; fresh.payload.ends_on='2028-01-01'
+    fresh.payload.sources=[{url:fresh.source_url,verified_at:new Date().toISOString()}]
+    batch.candidates=[fresh]
+    token=await begin();assert.equal((await finish(token)).published,1);await finish(token)
+    assert.equal((await db.query('select count(*)::int as n from private.notification_deliveries')).rows[0].n,2)
+    assert.equal((await db.query('select count(*)::int as n from private.publication_changes where not initial_import')).rows[0].n,1)
+    batch.candidates=[row]
     // Important changes and administrator withdrawals never overwrite the existing concert.
     row.payload.starts_on='2027-12-02'; row.payload.ends_on='2027-12-02'; row.content_hash='b'.repeat(64)
     token=await begin(); assert.equal((await finish(token)).review,1)
     assert.equal((await db.query('select starts_on::text as day from public.concerts')).rows[0].day,'2027-12-01')
-    const candidate=(await db.query('select id,revision from public.collection_candidates')).rows[0]
+    const candidate=(await db.query('select id,revision from public.collection_candidates where source_url=$1',[row.source_url])).rows[0]
     await db.query("select public.admin_resolve_candidate($1,$2,'dismissed')",[candidate.id,candidate.revision])
     row.content_hash='c'.repeat(64)
     token=await begin(); await finish(token)
@@ -84,10 +96,14 @@ test('database publication enforces approval, leases, deduplication, overrides a
     await db.query("select public.service_fail_collection($1,3,'FAILED')",[replacement])
     await db.query("select public.admin_collection_policy('ualive',false,false,false)")
     assert.equal(await begin('ualive'),null)
+    const health=(await db.query('select public.admin_collection_health() as data')).rows[0].data
+    assert.equal(health.find(row=>row.source==='ualive').attention_required,false)
+    assert.equal(health.find(row=>row.source==='radwimps').attention_required,true)
     await db.exec('delete from private.admins; set role authenticated')
     await assert.rejects(begin(),/permission denied/)
     await assert.rejects(db.query("select public.admin_collection_policy('yes24',true,true,true)"),/ADMIN_REQUIRED/)
     await assert.rejects(db.query('select public.admin_approve_artist($1,$2)',[identity.key,'https://evil.example']),/ADMIN_REQUIRED/)
+    await assert.rejects(db.query('select public.admin_approve_band($1,$2)',[band,'https://evil.example']),/ADMIN_REQUIRED/)
     assert.equal((await db.query('select * from public.collection_decisions')).rows.length,0)
   } finally { await db.close() }
 })

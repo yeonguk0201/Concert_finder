@@ -10,6 +10,7 @@ create table public.collection_policies (
 insert into public.collection_policies(source) values ('ualive'),('mintpaper'),('radwimps'),('yes24');
 alter table public.collection_policies enable row level security;
 grant select on public.collection_policies to authenticated;
+grant select on public.collection_policies, public.collection_runs to service_role;
 create policy admin_policy_read on public.collection_policies for select to authenticated using (private.is_admin());
 
 alter table public.collection_runs add column scheduled_at timestamptz;
@@ -214,3 +215,17 @@ begin
 end $$;
 revoke all on function public.admin_collection_health() from public;
 grant execute on function public.admin_collection_health() to authenticated;
+
+-- Existing W21 identities use profile keys as well as MBIDs.
+create function public.admin_approve_band(band_id uuid, evidence_url text) returns void
+language plpgsql security definer set search_path='' as $$
+declare key text;
+begin
+  if not private.is_admin() then raise exception 'ADMIN_REQUIRED'; end if;
+  if not exists(select 1 from private.artist_identities i where i.band_id=admin_approve_band.band_id) then raise exception 'IDENTITY_REQUIRED'; end if;
+  for key in select i.identity_key from private.artist_identities i where i.band_id=admin_approve_band.band_id loop
+    perform public.admin_approve_artist(key,evidence_url);
+  end loop;
+end $$;
+revoke all on function public.admin_approve_band(uuid,text) from public;
+grant execute on function public.admin_approve_band(uuid,text) to authenticated;
