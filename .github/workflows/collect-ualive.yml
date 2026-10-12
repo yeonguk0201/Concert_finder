@@ -2,16 +2,16 @@ name: Collect official concert candidates
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 * * * *'
 permissions:
   contents: read
 concurrency:
-  group: collect-ualive
+  group: collect-official-catalog
   cancel-in-progress: false
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 45
     environment: catalog-ingestion
     steps:
       - uses: actions/checkout@v4
@@ -24,4 +24,11 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: node scripts/collect-ualive.mjs --upload
+        run: node scripts/collect-catalog.mjs --upload --output=collection-report.local
+      - name: Preserve collection report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collection-report
+          path: collection-report.local
+          retention-days: 7

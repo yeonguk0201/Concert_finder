@@ -8,6 +8,7 @@ import { readFile } from 'node:fs/promises'
 import { collectYes24 } from './yes24.mjs'
 import { createArtistResolver, enrichArtists } from './artist-discovery.mjs'
 import { filterPastCandidates } from './candidate-policy.mjs'
+import { runSource } from './collection-runner.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
@@ -27,11 +28,13 @@ try {
   for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'yes24'] : [selected]) {
     console.error(`[${source}] 공개 공연 목록 수집 시작`)
     try {
+      let discoveredIdentities = []
+      const result = await runSource({ client, source, collect: async () => {
       const result = source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
       result.excluded ??= []
       filterPastCandidates(result, { includePast })
       console.error(`[${source}] 후보 ${result.candidates.length}개 · 제외 ${result.excluded.length}개 · 실패 ${result.failures.length}개; 아티스트 보완 중`)
-      const discoveredIdentities = skipArtistLookup ? [] : await enrichArtists(result, resolveArtist)
+      discoveredIdentities = skipArtistLookup ? [] : await enrichArtists(result, resolveArtist)
       for (const row of result.candidates) {
         if (row.payload.artwork) {
           const discovered = row.payload.artwork
@@ -43,10 +46,18 @@ try {
         if (stable.artwork_probe) delete stable.artwork_probe.checked_at
         row.content_hash = createHash('sha256').update(JSON.stringify(stable)).digest('hex')
       }
-      if (client) {
-        const { error } = await client.rpc('admin_ingest_catalog', { source, batch: result, identities: [...artists, ...discoveredIdentities] })
-        if (error) throw new Error(`Upload failed: ${error.code ?? 'RPC'}`)
-      }
+      return result
+      }, upload: async (batch, runToken, attempts) => {
+        let lastError
+        for (let attempt = 1; attempt <= 3; attempt++) {
+          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: [...artists, ...discoveredIdentities], attempt_count: attempts, adapter_version: 'catalog-v1' })
+          if (!error) return data
+          lastError = error
+          if (attempt < 3) await new Promise(resolve => setTimeout(resolve, attempt * 5000))
+        }
+        throw new Error(`Upload failed: ${lastError.code ?? 'RPC'}`)
+      } })
+      if (result.skipped) { results.push({ source, ...result }); await writeReport(); continue }
       results.push({ source, ...result, artist_identity_count: discoveredIdentities.length, uploaded: upload })
       console.error(`[${source}] 완료 · 새 식별 정보 ${discoveredIdentities.length}개 · 업로드 ${upload}`)
       if (result.failures.length) process.exitCode = 1
