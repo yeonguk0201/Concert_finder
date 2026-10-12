@@ -1,0 +1,553 @@
+{
+  "checked_at": "2026-10-12T13:57:11.567Z",
+  "identities": [
+    {
+      "key": "mb:77191d5f-1045-4b3b-ad7f-12ea398db929",
+      "name": "DAY6",
+      "aliases": [
+        "데이식스",
+        "데이6"
+      ],
+      "country": "KR",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/77191d5f-1045-4b3b-ad7f-12ea398db929",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "pop rock",
+        "k-pop",
+        "boy group"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:2c8b5bb2-6110-488d-bc15-abb08379d3c6",
+      "name": "Silica Gel",
+      "aliases": [
+        "실리카겔"
+      ],
+      "country": "KR",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/2c8b5bb2-6110-488d-bc15-abb08379d3c6",
+      "disambiguation": "Korean band",
+      "type": "Group",
+      "tags": [
+        "indie rock"
+      ],
+      "score": 98,
+      "truncated": false
+    },
+    {
+      "key": "mb:4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad",
+      "name": "SURL",
+      "aliases": [
+        "설"
+      ],
+      "country": "KR",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "indie"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:6b5f4f28-6359-48ae-9eee-4cf020ea3062",
+      "name": "Thornapple",
+      "aliases": [
+        "쏜애플",
+        "THORNAPPLE"
+      ],
+      "country": "KR",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/6b5f4f28-6359-48ae-9eee-4cf020ea3062",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:969c0579-d5fb-4576-8eb3-dea777d396c2",
+      "name": "TOUCHED",
+      "aliases": [
+        "터치드"
+      ],
+      "country": "KR",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2",
+      "disambiguation": "South Korean band",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "k-rock"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+      "name": "Mrs. GREEN APPLE",
+      "aliases": [
+        "ミセス",
+        "미세스 그린 애플",
+        "미세스그린애플"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "j-pop",
+        "j-rock",
+        "pop rock",
+        "emi",
+        "mrs. green apple"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+      "name": "ONE OK ROCK",
+      "aliases": [
+        "원오크록",
+        "원오케이락",
+        "ワンオクロック"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "alternative rock",
+        "j-rock",
+        "post-hardcore",
+        "fixme label mess"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:6f500293-7396-4903-b4fd-118127d06f9e",
+      "name": "RADWIMPS",
+      "aliases": [
+        "ラッドウインプス",
+        "ラッドウィンプス",
+        "래드윔프스"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "alternative rock",
+        "j-rock",
+        "pop rock",
+        "likedis auto"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:338f5d97-3133-4bf8-a58e-068ff9b5405d",
+      "name": "King Gnu",
+      "aliases": [
+        "Srv.Vinci",
+        "Mrs.Vinci",
+        "キングヌー",
+        "킹누"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/338f5d97-3133-4bf8-a58e-068ff9b5405d",
+      "disambiguation": "fka Srv.Vinci",
+      "type": "Group",
+      "tags": [
+        "j-pop",
+        "pop rock"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:d9dbfe6a-8346-4337-8614-fe96aab63927",
+      "name": "SEKAI NO OWARI",
+      "aliases": [
+        "SekaOwa",
+        "世界の終わり",
+        "End of the World",
+        "세카이노오와리"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "pop",
+        "j-pop",
+        "indie",
+        "jpop",
+        "j-rock"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:dfc6a151-3792-4695-8fda-f64723eaa788",
+      "name": "ヨルシカ",
+      "aliases": [
+        "YORUSHIKA",
+        "Yorushika",
+        "요루시카"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/dfc6a151-3792-4695-8fda-f64723eaa788",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "j-pop",
+        "j-rock",
+        "pop rock",
+        "yakousei"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:33ff8a92-2f3b-4cac-8ea0-5eebfa995626",
+      "name": "KANA-BOON",
+      "aliases": [
+        "카나분"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/33ff8a92-2f3b-4cac-8ea0-5eebfa995626",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "j-pop",
+        "j-rock",
+        "pop rock",
+        "likedis auto"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:923158cf-9d21-4bce-8040-41e7a497c1c9",
+      "name": "ELLEGARDEN",
+      "aliases": [
+        "エルレガーデン",
+        "엘르가든"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "j-rock",
+        "alternative rock",
+        "pop punk"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:a74b1b7f-71a5-4011-9441-d0b5e4122711",
+      "name": "Radiohead",
+      "aliases": [
+        "r/head",
+        "电台司令",
+        "レディオヘッド",
+        "Radiohead & Thom Yorke",
+        "Radio Head",
+        "라디오헤드"
+      ],
+      "country": "GB",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "electronic",
+        "post-rock",
+        "alternative rock",
+        "experimental",
+        "british",
+        "grunge",
+        "idm",
+        "uk",
+        "britannique",
+        "indie rock",
+        "electronica",
+        "alternative",
+        "britpop",
+        "art rock",
+        "post-grunge",
+        "experimental rock",
+        "english",
+        "chamber pop",
+        "parlophone"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+      "name": "Coldplay",
+      "aliases": [
+        "Coolplay",
+        "콜드플레이",
+        "コールドプレイ",
+        "Cold Play",
+        "The Coldplay"
+      ],
+      "country": "GB",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "pop",
+        "alternative rock",
+        "british",
+        "uk",
+        "britannique",
+        "indie rock",
+        "britpop",
+        "indie pop",
+        "pop rock",
+        "piano pop",
+        "dream pop",
+        "piano rock",
+        "english",
+        "parlophone",
+        "rock and indie",
+        "ambient pop",
+        "pop/rock",
+        "art pop",
+        "chapel"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:67f66c07-6e61-4026-ade5-7e782fad3a5d",
+      "name": "Foo Fighters",
+      "aliases": [
+        "Foofighters",
+        "フー・ファイター",
+        "푸 파이터스"
+      ],
+      "country": "US",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "alternative rock",
+        "american",
+        "grunge",
+        "hard rock",
+        "indie rock",
+        "alternative",
+        "post-grunge",
+        "acoustic rock",
+        "pop rock",
+        "us",
+        "rock and indie",
+        "everlong",
+        "nuno"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
+      "name": "Arctic Monkeys",
+      "aliases": [
+        "The Arctic Monkeys",
+        "Artic Monkeys",
+        "악틱 몽키즈"
+      ],
+      "country": "GB",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "pop",
+        "alternative rock",
+        "dance",
+        "house",
+        "british",
+        "uk",
+        "britannique",
+        "2007",
+        "indie rock",
+        "indie",
+        "electronica",
+        "alternative",
+        "psychedelic rock",
+        "art rock",
+        "baroque pop",
+        "soft rock",
+        "psychedelic pop",
+        "garage rock revival",
+        "post-punk revival"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:f59c5520-5f46-4d2c-b2c4-822eabf53419",
+      "name": "Linkin Park",
+      "aliases": [
+        "Lincoln Park",
+        "聯合公園",
+        "Xero",
+        "Limkin Park",
+        "Hybrid Theory",
+        "린킨 파크"
+      ],
+      "country": "US",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/f59c5520-5f46-4d2c-b2c4-822eabf53419",
+      "disambiguation": "American rock band",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "alternative rock",
+        "industrial rock",
+        "metal",
+        "american",
+        "hip hop",
+        "usa",
+        "nu metal",
+        "electropop",
+        "new metal",
+        "américain",
+        "art rock",
+        "alternative metal",
+        "pop rock",
+        "rapcore",
+        "rap metal",
+        "rap rock",
+        "alt rock",
+        "nu-metal",
+        "rock and indie"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:c07f0676-9143-4217-8a9f-4c26bd636f13",
+      "name": "My Chemical Romance",
+      "aliases": [
+        "MCR",
+        "My Chem",
+        "마이 케미컬 로맨스"
+      ],
+      "country": "US",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/c07f0676-9143-4217-8a9f-4c26bd636f13",
+      "disambiguation": "",
+      "type": "Group",
+      "tags": [
+        "rock",
+        "alternative rock",
+        "hardcore",
+        "punk",
+        "punk rock",
+        "hard rock",
+        "indie rock",
+        "power pop",
+        "emo",
+        "alternative",
+        "post-punk revival",
+        "pop punk",
+        "post-hardcore",
+        "rock opera",
+        "pop and chart",
+        "emo pop",
+        "scene",
+        "alternative/indie",
+        "matthew edward hall",
+        "pop screamo"
+      ],
+      "score": 100,
+      "truncated": false
+    },
+    {
+      "key": "mb:e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+      "name": "Ado",
+      "aliases": [
+        "아도"
+      ],
+      "country": "JP",
+      "genre": "장르 미검수",
+      "evidence": "https://musicbrainz.org/artist/e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+      "disambiguation": "Japanese vocalist",
+      "type": "Person",
+      "tags": [
+        "pop",
+        "alternative rock",
+        "vocalist",
+        "indie rock",
+        "j-pop",
+        "j-rock",
+        "edm",
+        "utaite",
+        "asian pop",
+        "2020s"
+      ],
+      "score": 100,
+      "truncated": false
+    }
+  ],
+  "unresolved": [
+    {
+      "name": "JANNABI",
+      "country": "KR",
+      "reason": "IDENTITY_AMBIGUOUS"
+    },
+    {
+      "name": "HYUKOH",
+      "country": "KR",
+      "reason": "IDENTITY_AMBIGUOUS"
+    },
+    {
+      "name": "YdBB",
+      "country": "KR",
+      "reason": "IDENTITY_AMBIGUOUS"
+    },
+    {
+      "name": "Muse",
+      "country": "GB",
+      "reason": "fetch failed"
+    },
+    {
+      "name": "Oasis",
+      "country": "GB",
+      "reason": "IDENTITY_AMBIGUOUS"
+    }
+  ]
+}

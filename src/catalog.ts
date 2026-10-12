@@ -6,7 +6,7 @@ function artworkIndex(value: string) {
   return Array.from(value).reduce((hash, letter) => (hash * 31 + letter.codePointAt(0)!) >>> 0, 0) % palettes.length
 }
 
-export type BandRow = { id: string; name: string; aliases: string[]; country_code: string; description: string | null }
+export type BandRow = { id: string; name: string; aliases: string[]; country_code: string; description: string | null; musicbrainz_id?: string | null; representative_photo?: import('./artistPhotoTypes').ArtistPhotoData | null; photo_mode?: 'auto' | 'manual' | 'hidden' }
 type TicketRow = { id: string; opens_at: string | null; price_description: string | null; booking_url: string | null }
 export type ConcertRow = {
   artwork?: import('./adminApi').Artwork | null;
@@ -18,7 +18,7 @@ export type ConcertRow = {
 }
 export function mapBands(rows: BandRow[]): Band[] {
   const regions = new Intl.DisplayNames(['ko'], { type: 'region' })
-  return rows.map(row => ({ id: row.id, name: row.name, aliases: row.aliases, countryCode: row.country_code,
+  return rows.map(row => ({ id: row.id, name: row.name, aliases: row.aliases, countryCode: row.country_code, musicbrainzId: row.musicbrainz_id ?? undefined, representativePhoto: row.representative_photo, photoMode: row.photo_mode,
     country: regions.of(row.country_code) ?? row.country_code, genre: row.description?.startsWith('공식 사이트:') ? '밴드' : row.description ?? '밴드', color: colors[artworkIndex(row.id)], initials: Array.from(row.name).slice(0, 2).join('') }))
 }
 export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {

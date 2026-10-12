@@ -1,6 +1,6 @@
 import { backend } from './backend'
 
-export type AdminBand = { id: string; name: string; country_code: string; aliases: string[] }
+export type AdminBand = { id: string; name: string; country_code: string; aliases: string[]; musicbrainz_id?: string | null; updated_at?: string; representative_photo?: import('./artistPhotoTypes').ArtistPhotoData | null; photo_mode?: 'auto' | 'manual' | 'hidden' }
 export type Source = { url: string; label: string; verified_at: string | null }
 export type SessionRow = { label: string; starts_on: string | null; starts_at: string | null }
 export type Artwork = { url: string; source_url: string; selection_reason: string; display_approved: boolean; checked_at?: string }

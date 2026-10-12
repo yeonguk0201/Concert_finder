@@ -19,7 +19,7 @@ Deno.serve(createArtistSearchHandler({
     return data
   },
   loadBand: async (id: string) => {
-    const { data, error } = await service.from('bands').select('id,name,aliases,country_code,description').eq('id', id).single()
+    const { data, error } = await service.from('bands').select('id,name,aliases,country_code,description,musicbrainz_id,representative_photo,photo_mode').eq('id', id).single()
     if (error) throw error
     return data
   },

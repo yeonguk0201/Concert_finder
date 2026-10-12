@@ -1,4 +1,4 @@
-export type Band = { id: string; name: string; country: string; genre: string; color: string; initials: string; aliases?: string[]; countryCode?: string }
+export type Band = { id: string; name: string; country: string; genre: string; color: string; initials: string; aliases?: string[]; countryCode?: string; musicbrainzId?: string; representativePhoto?: import('./artistPhotoTypes').ArtistPhotoData | null; photoMode?: 'auto' | 'manual' | 'hidden' }
 export type Concert = { id: string; title: string; bandIds: string[]; type: '내한' | '국내' | '페스티벌'; date: string; venue: string; city: string; announcedAt: string; ticketAt: string; price: string; palette: string; headline: string; description: string; endsOn?: string; ticketScheduleId?: string; cancelled?: boolean; unavailable?: boolean; sources?: { url: string; label: string }[]; bookingUrl?: string; artwork?: import('./adminApi').Artwork }
 
 // Fictional preview data: these are not verified concert announcements.

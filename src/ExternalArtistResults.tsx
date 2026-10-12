@@ -26,9 +26,10 @@ function errorMessage(error: unknown) {
   return '외부 아티스트 검색을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.'
 }
 
-export function ExternalArtistResults({ query, userId, disabled, onLogin, onSelected }: {
+export function ExternalArtistResults({ query, userId, disabled, onLogin, onSelected, registeredIds = [] }: {
   query: string; userId: string | null; disabled: boolean; onLogin: () => void;
   onSelected: (band: BandRow) => Promise<void>;
+  registeredIds?: string[];
 }) {
   const term = query.trim()
   const [revision, setRevision] = useState(0)
@@ -78,12 +79,14 @@ export function ExternalArtistResults({ query, userId, disabled, onLogin, onSele
     }
   }
 
+  const registered = new Set(registeredIds)
+  const visibleArtists = state.artists.filter(artist => !registered.has(artist.key.slice(3)))
   return <section aria-label="외부 아티스트 검색 결과" className="external-artists">
     <div className="section-heading"><h2>외부 아티스트</h2></div>
     <p>이름·별칭이 일치하고 국적이 확인된 가수·그룹을 찾습니다. 소개를 확인해 선택하면 공연이 없어도 찜할 수 있습니다.</p>
     {term.length < 2 ? <p>두 글자 이상 입력해 주세요.</p> : term.length > 100 ? <p>검색어는 100자 이내로 입력해 주세요.</p> : state.term !== term || state.loading ? <p role="status">외부 아티스트 검색 중…</p> : <>
-      {state.error ? <p role="alert">{state.error} <button className="outline" onClick={() => setRevision(r => r + 1)}>다시 검색</button></p> : !state.artists.length && <p role="status">일치하는 외부 아티스트가 없습니다. 원어 이름이나 다른 별칭으로 검색해 보세요.</p>}
-      <div className="external-artist-grid">{state.artists.map(artist => {
+      {state.error ? <p role="alert">{state.error} <button className="outline" onClick={() => setRevision(r => r + 1)}>다시 검색</button></p> : !visibleArtists.length && <p role="status">{state.artists.length ? '등록된 아티스트는 위 DB 결과에서 확인하세요. 추가 외부 결과가 없습니다.' : '일치하는 외부 아티스트가 없습니다. 원어 이름이나 다른 별칭으로 검색해 보세요.'}</p>}
+      <div className="external-artist-grid">{visibleArtists.map(artist => {
         const saved = selection.saved.includes(`${userId}:${artist.key}`)
         return <article key={artist.key} className="external-artist-card">
           <ArtistPhoto name={artist.name} mbid={artist.key.slice(3)} />

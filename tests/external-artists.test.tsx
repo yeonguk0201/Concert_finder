@@ -10,6 +10,14 @@ const band = { id: 'new-band', name: 'FLOW', country_code: 'JP', aliases: ['フ�
 const props = { query: 'FLOW', userId: 'user-a', disabled: false, onLogin: vi.fn(), onSelected: vi.fn() }
 afterEach(() => { cleanup(); vi.resetAllMocks() })
 
+test('DB results suppress only the same external identity and retain namesakes', async () => {
+  mock.invoke.mockResolvedValue({data:{artists:[artist,{...artist,key:'mb:second-id',country:'GB',disambiguation:'Different artist'}]}})
+  render(<ExternalArtistResults {...props} registeredIds={['first-id']} />)
+  await screen.findByText('Different artist')
+  expect(screen.queryByText('Japanese rock band')).toBeNull()
+  expect(screen.getAllByRole('button',{name:/등록하고 찜하기/})).toHaveLength(1)
+})
+
 test('debounced public search distinguishes namesakes and imports only the selected ID', async () => {
   mock.invoke.mockResolvedValueOnce({ data: { artists: [artist, { ...artist, key: 'mb:second-id', country: 'GB', disambiguation: 'British band' }] } }).mockResolvedValueOnce({ data: { band_id: band.id, band } })
   props.onSelected.mockResolvedValue(undefined)
