@@ -15,6 +15,21 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.resetAllMocks(); vi.unstubAllGlobals() })
 
+test('DB photo takes precedence without provider work, replacement and deletion reset the display', async () => {
+  const view=render(<ArtistPhoto name="Ado" bandId="00000000-0000-4000-8000-000000000009" photoMode="manual" representativePhoto={{...photo,retrievedAt:''}} />)
+  let img=screen.getByRole('img')
+  expect(img.getAttribute('src')).toBe(photo.url)
+  expect(mock.invoke).not.toHaveBeenCalled()
+  fireEvent.error(img)
+  expect(screen.getByLabelText('Ado 이니셜')).toBeTruthy()
+  view.rerender(<ArtistPhoto name="Ado" photoMode="manual" representativePhoto={{...photo,url:'https://images.example.com/replacement.jpg',retrievedAt:''}} />)
+  img=screen.getByRole('img')
+  expect(img.getAttribute('src')).toContain('replacement')
+  view.rerender(<ArtistPhoto name="Ado" photoMode="hidden" />)
+  expect(screen.queryByRole('img')).toBeNull()
+  expect(mock.invoke).not.toHaveBeenCalled()
+})
+
 test('photo loads after initials; attribution expands on request and failed images return to initials', async () => {
   mock.invoke.mockResolvedValue({ data: { photo } })
   render(<ArtistPhoto name="Test Artist" mbid="00000000-0000-4000-8000-000000000001" />)

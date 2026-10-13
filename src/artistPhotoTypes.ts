@@ -1,0 +1,1 @@
+export type ArtistPhotoData = { url: string; source: string; author: string; credit: string; license: string; licenseUrl: string; usageBasis?: string; identity: string; wikidata?: string; retrievedAt: string }

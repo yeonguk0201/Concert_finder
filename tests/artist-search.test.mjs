@@ -37,6 +37,13 @@ test('cache hits do not call provider; rate limiting and provider failure remain
   assert.equal((await failing(request({action:'search',query:'New'}))).status,503)
 })
 
+test('held and excluded imports return an actionable conflict without loading a public band', async () => {
+  const handler = createArtistSearchHandler({authenticateUser:async()=>true,cache:async()=>[{key:`mb:${id}`,country:'JP'}],importArtist:async()=>{throw new Error('ARTIST_NOT_AVAILABLE')},loadBand:async()=>assert.fail('hidden artist must not be returned')})
+  const response = await handler(request({action:'import',id}))
+  assert.equal(response.status,409)
+  assert.deepEqual(await response.json(),{error:'ARTIST_NOT_AVAILABLE'})
+})
+
 test('short names exclude unknown countries, nonperformer types and unrelated names while preserving namesakes', () => {
   const row = { key: `mb:${id}`, name: 'Ado', country: 'JP', type: 'Person', aliases: [], score: 100 }
   const candidates = [

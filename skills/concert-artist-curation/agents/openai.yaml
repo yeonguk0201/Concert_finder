@@ -1,0 +1,4 @@
+interface:
+  display_name: "공연 아티스트 자동 검수"
+  short_description: "J-pop·록 아티스트를 검증하고 대상 밖 항목을 제외합니다"
+  default_prompt: "$concert-artist-curation으로 concert-finder의 미검수 아티스트를 조사해서 J-pop·록 밴드·록 솔로는 유지하고, 대상 밖은 제외하고, 불확실하면 보류해줘."

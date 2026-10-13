@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { backend } from './backend'
 
-type Photo = { url: string; source: string; author: string; credit: string; license: string; licenseUrl: string; identity: string; wikidata: string; retrievedAt: string }
+import type { ArtistPhotoData as Photo } from './artistPhotoTypes'
 const uuid = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/
 const cache = new Map<string, { photo: Photo | null; expires: number }>()
 const pending = new Map<string, { promise: Promise<Photo | null>; wanted: Set<() => boolean> }>()
@@ -50,13 +50,13 @@ function loadArtistPhoto(key: string, body: { id?: string; band_id?: string }, i
   return task
 }
 
-export function ArtistPhoto({ name, mbid, bandId, color = '#a8c0ab' }: { name: string; mbid?: string; bandId?: string; color?: string }) {
+export function ArtistPhoto({ name, mbid, bandId, color = '#a8c0ab', representativePhoto, photoMode = 'auto' }: { name: string; mbid?: string; bandId?: string; color?: string; representativePhoto?: Photo | null; photoMode?: 'auto' | 'manual' | 'hidden' }) {
   const key = mbid ? `mb:${mbid}` : `band:${bandId}`
   const element = useRef<HTMLElement>(null)
   const [state, setState] = useState<{ key: string; photo: Photo | null; failed: boolean }>({ key: '', photo: null, failed: false })
   useEffect(() => {
     const id = mbid ?? bandId
-    if (!id || !uuid.test(id) || !backend || typeof IntersectionObserver === 'undefined') return
+    if (photoMode !== 'auto' || !id || !uuid.test(id) || !backend || typeof IntersectionObserver === 'undefined') return
     let active = true, started = false
     const observer = new IntersectionObserver(entries => {
       if (started || !entries.some(entry => entry.isIntersecting)) return
@@ -67,10 +67,12 @@ export function ArtistPhoto({ name, mbid, bandId, color = '#a8c0ab' }: { name: s
     }, { rootMargin: '100px' })
     if (element.current) observer.observe(element.current)
     return () => { active = false; observer.disconnect() }
-  }, [key, mbid, bandId])
-  const photo = state.key === key && !state.failed ? state.photo : null
+  }, [key, mbid, bandId, photoMode])
+  const [failedUrl, setFailedUrl] = useState('')
+  const selectedPhoto = photoMode === 'hidden' ? null : photoMode === 'manual' ? representativePhoto : state.key === key && !state.failed ? state.photo : null
+  const photo = selectedPhoto?.url !== failedUrl ? selectedPhoto : null
   return <figure ref={element} className="artist-photo">
-    {photo ? <img src={photo.url} alt={`${name} 프로필`} width={80} height={80} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setState(s => ({ ...s, failed: true }))} /> : <span className="artist-photo-fallback" style={{ background: color }} aria-label={`${name} 이니셜`}>{Array.from(name).slice(0, 2).join('')}</span>}
+    {photo ? <img src={photo.url} alt={`${name} 프로필`} width={80} height={80} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailedUrl(photo.url)} /> : <span className="artist-photo-fallback" style={{ background: color }} aria-label={`${name} 이니셜`}>{Array.from(name).slice(0, 2).join('')}</span>}
     {photo && <figcaption><details><summary aria-label={`${name} 사진 출처`}>사진 출처</summary><div className="artist-photo-credits"><a href={photo.source} target="_blank" rel="noopener noreferrer">사진: {photo.author}</a>{photo.credit && <span>{photo.credit}</span>}<a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a><span>정사각형으로 잘라 표시</span></div></details></figcaption>}
   </figure>
 }

@@ -18,7 +18,7 @@
 .notification-devices li > div { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* W19: reflow, visible keyboard access and touch targets. */
-body{min-width:320px}
+body{min-width:min(320px,100%)}
 summary{cursor:pointer}summary:focus-visible{outline:2px solid #c6f18b;outline-offset:4px}
 .skip-link{position:fixed;top:8px;left:8px;transform:translateY(-150%);z-index:30;background:#c5f28b;color:#111;padding:12px 18px;border-radius:6px}
 .skip-link:focus{transform:none}
@@ -69,3 +69,6 @@ section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
 .artist-photo figcaption a { margin: 0; font-size: inherit; color: inherit; text-decoration: underline; }
 .band-card .artist-photo { margin: 0; }
 @media(max-width:580px) { .band-card { flex-wrap: wrap; }.band-card .artist-photo { flex-basis: 60px; width: 60px; }.band-card .artist-photo img, .band-card .artist-photo-fallback { width: 60px; height: 60px; }.band-card .follow-button { margin-left: auto; } }
+
+.catalog-sync { min-height: 2.8em; line-height: 1.4; }
+.account-sync > [role="status"] { min-height: 2.8em; line-height: 1.4; }

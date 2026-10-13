@@ -5,6 +5,8 @@ import type { AdminCatalog, AdminConcert } from './adminApi'
 import './AdminPanel.css'
 import { CollectionPanel } from './CollectionPanel'
 import { ArtistLookup } from './ArtistLookup'
+import { ArtistManagement } from './ArtistManagement'
+import { CollectionOperations } from './CollectionOperations'
 
 const statusLabels = { draft: '초안', review: '검수 대기', published: '공개', withdrawn: '공개 중단' }
 export function AdminPanel({ onSaved }: { onSaved: () => void }) {
@@ -147,6 +149,8 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
         </>}
       </div>
     </form>
+    <CollectionOperations />
+    <ArtistManagement bands={catalog.bands} onSaved={() => { reload(); onSaved() }} />
     <ArtistLookup onImported={() => { reload(); onSaved() }} />
     <details className="admin-band"><summary>밴드 직접 등록</summary><form onSubmit={addBand}><fieldset disabled={busy || loading}><div className="admin-fields"><label>밴드 공식 이름<input required value={bandName} onChange={e => setBandName(e.target.value)} /></label><label>국가 코드<input required pattern="[A-Za-z]{2}" maxLength={2} value={country} onChange={e => setCountry(e.target.value)} /></label><label className="wide">검색 별칭 · 쉼표로 구분<input value={aliases} onChange={e => setAliases(e.target.value)} /></label></div><button className="outline">밴드 등록</button></fieldset>
       {feedbackTarget === 'band' && <div className="admin-save-feedback" aria-label="밴드 등록 결과">{error && <p role="alert" className="admin-feedback-error">{error}</p>}{message && <p role="status" className="admin-feedback-success">{message}</p>}</div>}
