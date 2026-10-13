@@ -18,7 +18,7 @@
 .notification-devices li > div { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* W19: reflow, visible keyboard access and touch targets. */
-body{min-width:320px}
+body{min-width:min(320px,100%)}
 summary{cursor:pointer}summary:focus-visible{outline:2px solid #c6f18b;outline-offset:4px}
 .skip-link{position:fixed;top:8px;left:8px;transform:translateY(-150%);z-index:30;background:#c5f28b;color:#111;padding:12px 18px;border-radius:6px}
 .skip-link:focus{transform:none}
