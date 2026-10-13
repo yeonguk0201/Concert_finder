@@ -13,3 +13,19 @@
 .admin-save-feedback .admin-feedback-success { color: var(--accent); background: #1d2a18; }
 .admin-panel input[aria-invalid=true] { border-color: #e98d80; }
 .admin-save-feedback .outline { margin: 8px 0 0 12px; }
+.artist-lookup { margin-block: 2rem; }
+.artist-lookup form { display: flex; align-items: end; gap: .75rem; flex-wrap: wrap; }
+.artist-lookup label { flex: 1 1 14rem; display: grid; gap: .5rem; }
+.artist-lookup li { margin-block: 1rem; overflow-wrap: anywhere; }
+.collection-panel article { overflow-wrap: anywhere; }
+.collection-panel > label { display: inline-flex; align-items: center; gap: .5rem; margin: .75rem; }
+.artist-editor { margin-block: 1rem 2rem; overflow-wrap: anywhere; }
+.artist-editor textarea { width: 100%; min-height: 6rem; resize: vertical; background: #1d211b; color: inherit; border: 1px solid var(--border); padding: 10px; font: inherit; }
+.artist-editor form + form { margin-top: 1rem; }
+.artist-editor fieldset label { margin-bottom: 12px; }
+.artist-editor .admin-history { margin-top: 1rem; }
+.artist-editor .artist-photo { margin: 1rem 0; }
+.artist-editor button, .collection-operations button { white-space: normal; min-height: 44px; max-width: 100%; }
+.collection-operations { margin-block: 2rem; overflow-wrap: anywhere; }
+.collection-operations article { border-top: 1px solid var(--border); padding-block: 1rem; }
+@media(max-width:650px) { .artist-editor input, .artist-editor select, .artist-editor textarea { font-size: 16px; } }

@@ -52,6 +52,10 @@ test('register, test and revoke use the correct account/device; request success 
   expect(api.test).toHaveBeenCalledWith('device-a')
   fireEvent.click(screen.getByRole('button',{name:'기기 해제'}))
   await screen.findByText('내 휴대폰 · 해제됨')
+  const history = screen.getByText('해제된 기기 기록 · 1').closest('details')!
+  expect(history.open).toBe(false)
+  expect(screen.queryByRole('button', { name: '테스트 알림 요청' })).toBeNull()
+  expect(screen.queryByRole('button', { name: '기기 해제' })).toBeNull()
   expect(api.remove).toHaveBeenCalledWith('device-a')
 })
 test('a previous account response cannot overwrite a newly mounted account panel', async () => {

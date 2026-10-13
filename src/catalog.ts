@@ -1,8 +1,15 @@
 import type { Band, Concert } from './data'
 
-export type BandRow = { id: string; name: string; aliases: string[]; country_code: string; description: string | null }
+const palettes = ['lime', 'coral', 'blue', 'violet', 'sand', 'sage']
+const colors = ['#c1d895', '#e78969', '#9fbfcd', '#afabe2', '#d5c3a3', '#a8c0ab']
+function artworkIndex(value: string) {
+  return Array.from(value).reduce((hash, letter) => (hash * 31 + letter.codePointAt(0)!) >>> 0, 0) % palettes.length
+}
+
+export type BandRow = { id: string; name: string; aliases: string[]; country_code: string; description: string | null; category?: import('./adminApi').ArtistCategory; curation_status?: import('./adminApi').ArtistStatus; musicbrainz_id?: string | null; representative_photo?: import('./artistPhotoTypes').ArtistPhotoData | null; photo_mode?: 'auto' | 'manual' | 'hidden' }
 type TicketRow = { id: string; opens_at: string | null; price_description: string | null; booking_url: string | null }
 export type ConcertRow = {
+  artwork?: import('./adminApi').Artwork | null;
   id: string; title: string; format: string; city: string | null; venue: string | null;
   starts_on: string | null; ends_on: string | null; announced_on: string | null; cancelled: boolean;
   concert_bands: { band_id: string }[];
@@ -11,18 +18,18 @@ export type ConcertRow = {
 }
 export function mapBands(rows: BandRow[]): Band[] {
   const regions = new Intl.DisplayNames(['ko'], { type: 'region' })
-  return rows.map(row => ({ id: row.id, name: row.name, aliases: row.aliases, countryCode: row.country_code,
-    country: regions.of(row.country_code) ?? row.country_code, genre: row.description ?? '밴드', color: '#cde99c', initials: row.name.slice(0, 2) }))
+  return rows.map(row => ({ id: row.id, name: row.name, aliases: row.aliases, countryCode: row.country_code, musicbrainzId: row.musicbrainz_id ?? undefined, representativePhoto: row.representative_photo, photoMode: row.photo_mode,
+    country: regions.of(row.country_code) ?? row.country_code, genre: row.category && row.category !== 'unclassified' ? ({ domestic_rock: '국내 록', overseas_rock: '해외 록', jpop: 'J-pop' }[row.category]) : row.description?.startsWith('공식 사이트:') ? '밴드' : row.description ?? '밴드', color: colors[artworkIndex(row.id)], initials: Array.from(row.name).slice(0, 2).join('') }))
 }
 export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {
   return rows.map(row => {
     const ticket = Array.isArray(row.ticket_schedules) ? row.ticket_schedules[0] : row.ticket_schedules
     const bandIds = row.concert_bands.map(item => item.band_id)
-    return { id: row.id, title: row.title, bandIds,
+    return { id: row.id, title: row.title, bandIds, artwork: row.artwork ?? undefined,
       type: row.format === 'festival' ? '페스티벌' : bands.some(b => bandIds.includes(b.id) && b.countryCode !== 'KR') ? '내한' : '국내',
       date: row.starts_on ?? '', endsOn: row.ends_on ?? undefined, venue: row.venue ?? '장소 미정', city: row.city ?? '지역 미정',
       announcedAt: row.announced_on ?? '', ticketAt: ticket?.opens_at ?? '', price: ticket?.price_description ?? '미정',
-      ticketScheduleId: ticket?.id, cancelled: row.cancelled, palette: 'lime', headline: row.title,
+      ticketScheduleId: ticket?.id, cancelled: row.cancelled, palette: palettes[artworkIndex(row.id)], headline: bands.find(b => b.id === bandIds[0])?.name ?? row.title,
       description: row.cancelled ? '취소된 공연입니다. 공식 출처에서 변경 내용을 확인해 주세요.' : '공식 출처에서 최신 공연 정보를 확인해 주세요.',
       sources: row.concert_sources.filter(s => s.verified_at).map(s => ({ url: s.url, label: s.label })), bookingUrl: ticket?.booking_url ?? undefined,
     }

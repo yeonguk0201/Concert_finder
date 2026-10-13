@@ -4,6 +4,9 @@ import { adminError, announcementDateError, emptyConcert, kstInput, kstTimestamp
 import type { AdminCatalog, AdminConcert } from './adminApi'
 import './AdminPanel.css'
 import { CollectionPanel } from './CollectionPanel'
+import { ArtistLookup } from './ArtistLookup'
+import { ArtistManagement } from './ArtistManagement'
+import { CollectionOperations } from './CollectionOperations'
 
 const statusLabels = { draft: '초안', review: '검수 대기', published: '공개', withdrawn: '공개 중단' }
 export function AdminPanel({ onSaved }: { onSaved: () => void }) {
@@ -68,13 +71,14 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
   const historyFields = [
     ['title', '공연 제목'], ['format', '형식'], ['status', '공개 상태'], ['city', '도시'], ['venue', '공연장'],
     ['starts_on', '공연 시작일'], ['ends_on', '공연 종료일'], ['announced_on', '발표일'], ['announced_at', '발표 시각'],
-    ['announcement_verified', '발표 확인'], ['cancelled', '공연 취소'], ['sources', '공식 출처'], ['band_ids', '출연 밴드'], ['sessions', '회차'], ['ticket', '일반 예매'],
+    ['announcement_verified', '발표 확인'], ['cancelled', '공연 취소'], ['sources', '공식 출처'], ['band_ids', '출연 밴드'], ['sessions', '회차'], ['ticket', '일반 예매'], ['artwork','공식 포스터'],
   ] as const
   const describe = (record: AdminConcert | null, field: typeof historyFields[number][0]): string => {
     if (!record) return '등록 전'
     if (field === 'status') return statusLabels[record.status]
     if (field === 'format') return record.format === 'solo' ? '단독 공연' : '페스티벌'
     if (field === 'sources') return record.sources.map(s => `${s.label}: ${s.url} (${s.verified_at ? '확인 완료' : '미확인'})`).join('\n') || '없음'
+    if (field === 'artwork') return record.artwork ? `${record.artwork.url}\n${record.artwork.source_url}\n${record.artwork.selection_reason}\n표시 ${record.artwork.display_approved ? '승인' : '보류'} · ${record.artwork.checked_at ?? '확인 시각 미기록'}` : '없음'
     if (field === 'band_ids') return record.band_ids.map(id => catalog.bands.find(b => b.id === id)?.name ?? '삭제된 밴드').join(', ') || '없음'
     if (field === 'sessions') return record.sessions.map(s => `${s.label}: ${s.starts_on ?? '미정'} ${kstInput(s.starts_at) || '시각 미정'}`).join('\n') || '없음'
     if (field === 'ticket') return record.ticket ? `오픈: ${kstInput(record.ticket.opens_at) || '미정'}\n예매처: ${record.ticket.booking_url || '미정'}\n가격: ${record.ticket.price_description || '미정'}` : '없음'
@@ -108,8 +112,10 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
       <label className="admin-check"><input type="checkbox" checked={form.cancelled} onChange={e => edit({ cancelled: e.target.checked })} />공식 취소 안내를 확인했습니다</label>
       <label className="admin-check"><input type="checkbox" checked={form.initial_import ?? false} onChange={e => edit({ initial_import: e.target.checked })} />기존 정보 보완 등록 · 이번 공개/라인업 추가 알림 보내지 않기</label>
       <h2>출연 밴드</h2><div className="admin-lineup">{catalog.bands.map(b => <label className="admin-check" key={b.id}><input type="checkbox" checked={form.band_ids.includes(b.id)} onChange={e => edit({ band_ids: e.target.checked ? [...form.band_ids, b.id] : form.band_ids.filter(id => id !== b.id) })} />{b.name} ({b.country_code})</label>)}</div>
+      {form.discovered_artists && <p>수집 원문 출연진: {form.discovered_artists.map(a => a.name ?? '이름 미확인').join(', ')}. 출연진의 신원과 대상 장르를 확인하고 연결하세요.</p>}
       {!catalog.bands.length && <p>아래에서 밴드를 먼저 등록하세요.</p>}
       <h2>공식 출처</h2>
+      {form.artwork && <fieldset><legend>공식 포스터</legend><p><a href={form.artwork.url} target="_blank" rel="noopener noreferrer">이미지 원문 ↗</a> · {form.artwork.selection_reason}</p><p>이미지 발견만으로 이용 허락이 확인되지는 않습니다. 원문과 같은 공연인지, 외부 표시 조건을 확인하세요.</p><label className="admin-check"><input type="checkbox" checked={form.artwork.display_approved} onChange={e => edit({ artwork: { ...form.artwork!, display_approved: e.target.checked, checked_at: new Date().toISOString() } })} />공연 매칭과 이미지 이용 조건을 확인하여 외부 표시 승인</label><button type="button" className="outline" onClick={() => edit({ artwork: null })}>포스터 연결 제거</button></fieldset>}
       {form.sources.map((s, index) => <div className="admin-repeat" key={index}>
         <label>출처 이름<input required value={s.label} onChange={e => edit({ sources: form.sources.map((v, i) => i === index ? { ...v, label: e.target.value } : v) })} /></label>
         <label>공식 HTTPS 링크<input required type="url" pattern="https://.+" value={s.url} onChange={e => edit({ sources: form.sources.map((v, i) => i === index ? { ...v, url: e.target.value } : v) })} /></label>
@@ -143,7 +149,10 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
         </>}
       </div>
     </form>
-    <details className="admin-band"><summary>밴드 등록</summary><form onSubmit={addBand}><fieldset disabled={busy || loading}><div className="admin-fields"><label>밴드 공식 이름<input required value={bandName} onChange={e => setBandName(e.target.value)} /></label><label>국가 코드<input required pattern="[A-Za-z]{2}" maxLength={2} value={country} onChange={e => setCountry(e.target.value)} /></label><label className="wide">검색 별칭 · 쉼표로 구분<input value={aliases} onChange={e => setAliases(e.target.value)} /></label></div><button className="outline">밴드 등록</button></fieldset>
+    <CollectionOperations />
+    <ArtistManagement bands={catalog.bands} onSaved={() => { reload(); onSaved() }} />
+    <ArtistLookup onImported={() => { reload(); onSaved() }} />
+    <details className="admin-band"><summary>밴드 직접 등록</summary><form onSubmit={addBand}><fieldset disabled={busy || loading}><div className="admin-fields"><label>밴드 공식 이름<input required value={bandName} onChange={e => setBandName(e.target.value)} /></label><label>국가 코드<input required pattern="[A-Za-z]{2}" maxLength={2} value={country} onChange={e => setCountry(e.target.value)} /></label><label className="wide">검색 별칭 · 쉼표로 구분<input value={aliases} onChange={e => setAliases(e.target.value)} /></label></div><button className="outline">밴드 등록</button></fieldset>
       {feedbackTarget === 'band' && <div className="admin-save-feedback" aria-label="밴드 등록 결과">{error && <p role="alert" className="admin-feedback-error">{error}</p>}{message && <p role="status" className="admin-feedback-success">{message}</p>}</div>}
     </form></details>
     {form.id && <section className="admin-history"><h2>변경 이력</h2><p>최초 공개: {form.first_published_at ? new Date(form.first_published_at).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) : '아직 공개하지 않음'} · 예매 수정 번호: {form.ticket?.revision ?? '없음'}</p><p>관리자 화면에서 저장한 최근 100건 중 이 공연의 기록입니다.</p>

@@ -24,7 +24,7 @@ test('notification consent, targets, scheduling, leases and access control', asy
       create schema auth; create table auth.users(id uuid primary key);
       create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
       grant usage on schema auth to anon,authenticated; grant execute on function auth.uid() to anon,authenticated;`)
-    for (const file of ['202610060001_initial.sql','202610070001_admin_review.sql','202610080001_ingestion.sql','202610080002_realtime.sql','202610090001_notifications.sql']) {
+    for (const file of ['202610060001_initial.sql','202610070001_admin_review.sql','202610080001_ingestion.sql','202610080002_realtime.sql','202610090001_notifications.sql','202610110001_catalog_expansion.sql','202610110002_concert_artwork.sql']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${file}`, import.meta.url), 'utf8'))
     }
     await db.query('insert into auth.users values ($1),($2),($3)', [a,b,admin])
@@ -70,6 +70,21 @@ test('notification consent, targets, scheduling, leases and access control', asy
       assert.equal(rows.length,2)
       for (const row of rows) { assert.equal((await authorize(row)).concertId,concert); await finish(row,'sent') }
       assert.equal((await claim()).length,0)
+    })
+    await t.test('poster metadata preserves history and ticket identity without new notifications', async () => {
+      await role(admin)
+      const record=(await rpc('admin_catalog')).concerts.find(c=>c.id===concert)
+      const artwork={url:'https://resource.ualive.com/poster.jpg',source_url:'https://ualive.com/concerts/397',selection_reason:'공연 전용 본문',display_approved:true,checked_at:new Date().toISOString()}
+      await assert.rejects(rpc('admin_save_concert',[{...record,artwork},record.updated_at]),/ARTWORK_SOURCE_REQUIRED/)
+      await rpc('admin_save_concert',[{...record,artwork,sources:[...record.sources,{url:artwork.source_url,label:'ualive',verified_at:new Date().toISOString()}]},record.updated_at])
+      const updated=(await rpc('admin_catalog')).concerts.find(c=>c.id===concert)
+      assert.deepEqual(updated.artwork,artwork); assert.equal(updated.ticket.id,schedule)
+      const history=(await rpc('admin_catalog')).history.find(h=>h.concert_id===concert)
+      assert.deepEqual(history.after_record.artwork,artwork)
+      await owner(); assert.equal((await claim()).length,0)
+      await role(a)
+      assert.equal((await db.query('update public.concerts set artwork=null where id=$1 returning id',[concert])).rows.length,0)
+      assert.equal((await db.query('select artwork from public.concerts where id=$1',[concert])).rows[0].artwork.url,artwork.url)
     })
     await t.test('lineup additions notify only followers of the added band', async () => {
       await owner()
