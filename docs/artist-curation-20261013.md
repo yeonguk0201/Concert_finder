@@ -32,3 +32,11 @@
 security advisor 비교에서 anon SECURITY DEFINER 실행권한 WARN 항목은 27→24개, authenticated 항목은 27→25개로 감소했다. 새 공개 RPC에 대한 추가 경고는 없다. 기존 다른 함수 실행권한 경고, private 스키마 정책 없는 RLS INFO 13개, 유출 비밀번호 보호 비활성화 WARN은 남아 있다. 전체 보안 하드닝 완료로 표시하지 않는다. [실행권한 점검](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable) · [비밀번호 보호](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection).
 
 구현 커밋 `58968cf`, 좁은 화면 수정 `4841197`. 다음 순서는 W29 기존 54팀 대상 검수·주요 목록 확정과 W30 사진 파일 관리다. [로드맵](development-roadmap.md) · [백로그](development-backlog.md) · [카탈로그 정리 계획](catalog-curation-plan.md).
+
+## 10/13 운영 출시 진행
+
+사용자가 운영 배포·확인·로드맵 최신화와 PR 생성·main 병합을 명시적으로 요청했다. 위 배포 대기 기록은 이전 상태다. `artist-search` v8 ACTIVE 배포 후 원격 소스의 공개 행 재확인·409 분기와 로컬 파일 일치를 확인했다. 실제 HTTP 공개 Ado 검색 200, 무인증 가져오기 401 `LOGIN_REQUIRED`, 짧은 검색 400 `INVALID_QUERY`를 확인했다. 기존 JWT 설정과 함수 내부 사용자 인증을 유지했다.
+
+출시 전 재검증: Node 57개·UI 78개(135개), 가져오기 도구 18개, lint·build·diff 검사 통과. UI 검사의 Windows 샌드박스 임시 파일 ENOENT는 일반 로컬 환경에서 재실행해 해결했다. 기존 500kB 초과 번들 경고는 남는다.
+
+현재 DB 재조회: 아티스트 545팀(미검수 539·제외 6), 공연 8개. 대량 등록 후 543개 검수 보고서의 유지 533·제외 4·판단 보류 6은 DB 승인/보류 상태와 다르다. 네 출처 모두 `publication_enabled=false`다. 이번 출시는 자동 공개 활성화·가상 공연 정리·W30/W31 완료를 포함하지 않는다. 프런트 PR·main 배포 및 운영 UI 확인 결과는 후속 기록한다.
