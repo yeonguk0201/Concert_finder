@@ -1,4 +1,4 @@
 interface:
   display_name: "J-pop·록 밴드 대량 추가"
-  short_description: "MusicBrainz에서 후보를 모아 중복과 기존 검수 상태를 보존하며 DB에 추가"
-  default_prompt: "$concert-artist-import로 J-pop 솔로·그룹과 록 밴드 후보를 최대 500개 수집하고 기존 등록·보류·제외를 보존하며 DB에 추가해줘."
+  short_description: "청취자 수로 주요 후보를 선발하고 공식 계정 링크 후보와 함께 등록 준비"
+  default_prompt: "$concert-artist-import로 J-pop 솔로·그룹과 록 밴드를 청취자 수 기준으로 최대 500개 선발하고 공식 계정 링크 후보를 확보한 뒤 기존 등록·보류·제외를 보존하며 DB에 추가해줘."

@@ -34,6 +34,16 @@ export function validateManifest(manifest) {
   return manifest
 }
 
+export function requirePrepared(manifest, now = Date.now()) {
+  const age = time => now - Date.parse(time)
+  if (manifest.preparation?.method !== 'lastfm-listeners-v1' || manifest.preparation.status !== 'ready'
+    || !Number.isFinite(age(manifest.preparation.ranked_at)) || age(manifest.preparation.ranked_at) < 0 || age(manifest.preparation.ranked_at) >= 7 * 86400000
+    || manifest.candidates.some(row => row.popularity?.status !== 'ranked' || row.popularity.source !== 'lastfm'
+      || row.popularity.metric !== 'listeners' || row.popularity.mbid !== row.id
+      || !Number.isSafeInteger(row.popularity.listeners) || row.popularity.listeners < 0
+      || !Number.isFinite(age(row.popularity.checked_at)) || age(row.popularity.checked_at) < 0 || age(row.popularity.checked_at) >= 7 * 86400000)) throw new Error('PREPARATION_REQUIRED_OR_STALE')
+}
+
 async function save(path, value) {
   await mkdir(dirname(path), { recursive: true })
   await writeFile(`${path}.tmp`, `${JSON.stringify(value, null, 2)}\n`, 'utf8')
@@ -154,8 +164,9 @@ export async function importCandidates(rows, db, checkpoint) {
 
 async function main() {
   const [mode, ...args] = process.argv.slice(2)
-  if (!['collect', 'import'].includes(mode) || args.some(a => a !== '--apply' && !a.startsWith('--file=') && !a.startsWith('--limit='))) throw new Error('Use collect|import --file=path [--limit=500] [--apply]')
+  if (!['collect', 'import'].includes(mode) || args.some(a => !['--apply', '--allow-unranked'].includes(a) && !a.startsWith('--file=') && !a.startsWith('--limit='))) throw new Error('Use collect|import --file=path [--limit=500] [--apply] [--allow-unranked]')
   if (mode === 'collect' && args.includes('--apply')) throw new Error('COLLECT_IS_READ_ONLY')
+  if (mode === 'collect' && args.includes('--allow-unranked')) throw new Error('INVALID_COLLECT_OPTION')
   const file = resolve(args.find(a => a.startsWith('--file='))?.slice(7) ?? '.local/artist-import/candidates.json')
   const limit = Number(args.find(a => a.startsWith('--limit='))?.slice(8) ?? 500)
   if (!Number.isInteger(limit) || limit < 1 || limit > 50000) throw new Error('LIMIT_MUST_BE_1_TO_50000')
@@ -169,6 +180,7 @@ async function main() {
     text(await collect(manifest, limit, url => musicbrainz(url, { db }), value => save(file, value)))
   } else if (!args.includes('--apply')) text({ candidates: manifest.candidates.length, apply: false })
   else {
+    if (!args.includes('--allow-unranked')) requirePrepared(manifest)
     const db = database()
     if (!db) throw new Error('SERVER_CREDENTIALS_REQUIRED')
     const reportFile = `${file}.import-${new Date().toISOString().replace(/[:.]/g, '-')}.json`
@@ -181,5 +193,5 @@ async function main() {
 }
 function text(value) { console.log(JSON.stringify(value)) }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  main().catch(error => { console.error(JSON.stringify({ error: /^(INVALID_|MANIFEST_|TARGET_|SERVER_|LIMIT_|COLLECT_|SHARED_|PROVIDER_|DB_)/.test(error.message) ? error.message : 'IMPORT_FAILED' })); process.exitCode = 1 })
+  main().catch(error => { console.error(JSON.stringify({ error: /^(INVALID_|MANIFEST_|PREPARATION_|TARGET_|SERVER_|LIMIT_|COLLECT_|SHARED_|PROVIDER_|DB_)/.test(error.message) ? error.message : 'IMPORT_FAILED' })); process.exitCode = 1 })
 }
