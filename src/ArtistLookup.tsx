@@ -27,7 +27,7 @@ export function ArtistLookup({ onImported }: { onImported: () => void }) {
     try { await action() } catch (e) {
       if (active.current) {
         const code = e instanceof Error ? e.message : ''
-        setError(code === 'IDENTITY_CONFLICT' ? '같은 이름의 기존 아티스트와 신원이 충돌합니다. 공식 식별 정보를 확인하세요.' : code === 'COUNTRY_REQUIRED' ? '아티스트 국적을 확인할 수 없어 등록을 보류했습니다.' : code === 'SEARCH_BUSY' ? '다른 검색을 처리 중입니다. 잠시 후 다시 검색하세요.' : code === 'ADMIN_REQUIRED' ? '관리자 권한이 필요합니다.' : code === 'ARTIST_PROVIDER_UNAVAILABLE' ? '아티스트 검색 제공처가 혼잡합니다. 잠시 후 다시 시도하세요.' : '외부 검색을 사용할 수 없습니다. artist-search 함수 배포와 연결을 확인하세요.')
+        setError(code === 'ARTIST_NOT_AVAILABLE' ? '보류·제외한 아티스트입니다. DB 관리에서 상태를 검토하고 복구하세요.' : code === 'IDENTITY_CONFLICT' ? '같은 이름의 기존 아티스트와 신원이 충돌합니다. 공식 식별 정보를 확인하세요.' : code === 'COUNTRY_REQUIRED' ? '아티스트 국적을 확인할 수 없어 등록을 보류했습니다.' : code === 'SEARCH_BUSY' ? '다른 검색을 처리 중입니다. 잠시 후 다시 검색하세요.' : code === 'ADMIN_REQUIRED' ? '관리자 권한이 필요합니다.' : code === 'ARTIST_PROVIDER_UNAVAILABLE' ? '아티스트 검색 제공처가 혼잡합니다. 잠시 후 다시 시도하세요.' : '외부 검색을 사용할 수 없습니다. artist-search 함수 배포와 연결을 확인하세요.')
       }
     } finally { pending.current = false; if (active.current) setBusy(false) }
   }
@@ -42,7 +42,7 @@ export function ArtistLookup({ onImported }: { onImported: () => void }) {
   const add = (artist: Artist) => void run(async () => {
     await invoke({ action: 'import', id: artist.key.slice(3) })
     if (!active.current) return
-    setMessage(`${artist.name} 아티스트를 가져왔습니다. 공연이 없어도 검색하고 찜할 수 있습니다. 장르는 별도 검수하세요.`)
+    setMessage(`${artist.name} 아티스트를 가져왔습니다. DB 관리에서 분류와 노출 상태를 검수하세요.`)
     onImported()
   })
   return <section aria-label="외부 아티스트 검색" className="artist-lookup">

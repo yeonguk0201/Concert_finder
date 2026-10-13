@@ -22,6 +22,8 @@
 .artist-editor { margin-block: 1rem 2rem; overflow-wrap: anywhere; }
 .artist-editor textarea { width: 100%; min-height: 6rem; resize: vertical; background: #1d211b; color: inherit; border: 1px solid var(--border); padding: 10px; font: inherit; }
 .artist-editor form + form { margin-top: 1rem; }
+.artist-editor fieldset label { margin-bottom: 12px; }
+.artist-editor .admin-history { margin-top: 1rem; }
 .artist-editor .artist-photo { margin: 1rem 0; }
 .artist-editor button, .collection-operations button { white-space: normal; min-height: 44px; max-width: 100%; }
 .collection-operations { margin-block: 2rem; overflow-wrap: anywhere; }

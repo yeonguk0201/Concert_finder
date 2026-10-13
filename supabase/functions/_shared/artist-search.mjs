@@ -42,6 +42,9 @@ export function createArtistSearchHandler({ authenticateUser, cache, importArtis
         return reply(200, { band_id: bandId, band: await loadBand(bandId) })
       }
       return reply(200, { artists: relevantArtists(result, body.query.trim()) })
-    } catch { return reply(503, { error: 'ARTIST_SEARCH_FAILED' }) }
+    } catch (error) {
+      if (String(error?.message).includes('ARTIST_NOT_AVAILABLE')) return reply(409, { error: 'ARTIST_NOT_AVAILABLE' })
+      return reply(503, { error: 'ARTIST_SEARCH_FAILED' })
+    }
   }
 }

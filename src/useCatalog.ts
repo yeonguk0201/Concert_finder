@@ -17,7 +17,7 @@ export function useCatalog() {
     let active = true
     queueMicrotask(() => { if (active) { setLoading(true); setError('') } })
     void Promise.all([
-      backend.from('bands').select('id,name,aliases,country_code,description,musicbrainz_id,representative_photo,photo_mode').order('name'),
+      backend.from('bands').select('id,name,aliases,country_code,description,musicbrainz_id,representative_photo,photo_mode,category,curation_status').in('curation_status', ['unreviewed', 'approved']).order('name'),
       backend.from('concerts').select('id,title,format,city,venue,starts_on,ends_on,announced_on,cancelled,artwork,concert_bands(band_id),ticket_schedules(id,opens_at,price_description,booking_url),concert_sources(url,label,verified_at)').eq('status', 'published'),
     ]).then(([bandResult, concertResult]) => {
       if (!active) return

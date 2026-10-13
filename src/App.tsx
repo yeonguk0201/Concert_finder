@@ -129,6 +129,7 @@ function App() {
     </>}
     {page === 'home' && <section aria-label="예매 임박"><div className="section-heading"><h2>다가오는 예매 <span>{tickets.length}</span></h2></div>{tickets.length ? <div className="concert-grid">{tickets.map(card)}</div> : <p>확인된 다가오는 예매 일정이 없습니다.</p>}</section>}
     {page === 'search' && <><div className="page-heading"><div><h1>{query.trim() ? `“${query.trim()}” 검색 결과` : '밴드·공연 검색'}</h1><p role="status">밴드 {matchingBands.length}팀 · 공연 {upcoming.length}개</p></div></div><section aria-label="밴드 검색 결과"><div className="section-heading"><h2>밴드 <span>{matchingBands.length}</span></h2></div>{matchingBands.length ? <div className="band-grid">{matchingBands.map(bandCard)}</div> : <p>등록된 아티스트 중 일치하는 이름이 없습니다. 외부 검색에서 원하는 아티스트를 찾아보세요.</p>}</section>{accountMode && <ExternalArtistResults registeredIds={bands.flatMap(b => b.musicbrainzId ? [b.musicbrainzId] : [])} query={query} userId={auth.session?.user.id ?? null} disabled={savingDisabled} onLogin={requestLogin} onSelected={async row => {
+      if (row.curation_status === 'held' || row.curation_status === 'excluded') throw new Error('ARTIST_NOT_AVAILABLE')
       catalog.addBand(mapBands([row])[0])
       if (!followed.includes(row.id)) {
         const success = await account.toggle('bands', row.id)

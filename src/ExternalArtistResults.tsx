@@ -21,6 +21,7 @@ function errorMessage(error: unknown) {
   if (code === 'LOGIN_REQUIRED') return '아티스트를 등록하고 찜하려면 로그인해 주세요.'
   if (code === 'IDENTITY_CONFLICT') return '기존 아티스트와 신원을 확인해야 합니다. 다른 대상을 잘못 연결하지 않도록 등록을 보류했습니다.'
   if (code === 'COUNTRY_REQUIRED') return '국적을 확인할 수 없어 등록을 보류했습니다.'
+  if (code === 'ARTIST_NOT_AVAILABLE') return '관리자가 보류·제외한 아티스트여서 등록하거나 찜할 수 없습니다.'
   if (code === 'SEARCH_BUSY') return '다른 검색을 처리 중입니다. 잠시 후 다시 시도해 주세요.'
   if (code === 'SAVE_FAILED') return '아티스트는 등록됐지만 찜을 저장하지 못했습니다. 다시 시도해 주세요.'
   return '외부 아티스트 검색을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.'
