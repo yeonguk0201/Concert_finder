@@ -9,6 +9,8 @@ import { collectYes24 } from './yes24.mjs'
 import { createArtistResolver, enrichArtists } from './artist-discovery.mjs'
 import { filterPastCandidates } from './candidate-policy.mjs'
 import { runSource } from './collection-runner.mjs'
+import { collectKopis } from './kopis.mjs'
+import { collectTicketlinkEvidence, supplementBooking, ticketlinkProduct } from './booking-evidence.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
@@ -17,22 +19,52 @@ const includePast = process.argv.includes('--include-past')
 const skipArtistLookup = process.argv.includes('--skip-artist-lookup')
 const cachePath = '.artist-cache.local'
 try {
-  if (!['all', 'ualive', 'mintpaper', 'radwimps', 'yes24'].includes(selected)) throw new Error('Unknown source')
+  if (!['all', 'ualive', 'mintpaper', 'radwimps', 'yes24', 'kopis'].includes(selected)) throw new Error('Unknown source')
+  if (selected === 'kopis' && !process.env.KOPIS_SERVICE_KEY) throw new Error('KOPIS_SERVICE_KEY missing')
   if (upload && (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY)) throw new Error('Server upload environment missing')
   const client = upload ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } }) : null
   const results = []
+  const noticeFile = process.argv.find(a => a.startsWith('--notice-file='))?.slice(14)
+  const noticeUrls = JSON.parse(await readFile(noticeFile ?? new URL('./ticketlink-notices.json', import.meta.url), 'utf8'))
+  if (!Array.isArray(noticeUrls)) throw new Error('Notice allowlist must be an array')
+  const noticeCache = new Map(), noticeFailures = new Map()
+  const supplement = async result => {
+    const hasProducts = result.candidates.some(row => [row.payload.ticket.booking_url, ...(row.payload.booking_links ?? []).map(l => l.url)].some(ticketlinkProduct))
+    const urls = [...new Set([...(hasProducts ? noticeUrls : []), ...result.candidates.flatMap(row => row.payload.booking_notice_urls ?? [])])]
+    const pending = urls.filter(url => !noticeCache.has(url) && !noticeFailures.has(url))
+    if (pending.length) {
+      try {
+        const batch = await collectTicketlinkEvidence(pending)
+        for (const row of batch.evidence) noticeCache.set(row.source_url, row)
+        for (const failure of batch.failures) noticeFailures.set(failure.source_url, failure)
+      } catch (error) { for (const url of pending) noticeFailures.set(url, { source_url: url, error: error.message }) }
+    }
+    result.failures.push(...urls.flatMap(url => noticeFailures.has(url) ? [noticeFailures.get(url)] : []))
+    const official = results.flatMap(result => (result.candidates ?? []).flatMap(row =>
+      (row.payload.ticket_evidence ?? []).filter(e => e.source_url === row.source_url && e.opens_at).map(e => ({
+        source_url: e.source_url, ...row.payload.ticket, opens_at: e.opens_at,
+        starts_on: row.payload.starts_on, ends_on: row.payload.ends_on, venue: row.payload.venue, line: e.line,
+      }))))
+    for (const row of result.candidates) supplementBooking(row, [...noticeCache.values(), ...official])
+  }
   let cache = {}
   try { cache = JSON.parse(await readFile(cachePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
   const resolveArtist = createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
   const writeReport = () => output ? writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: false, results }, null, 2) + '\n', 'utf8') : Promise.resolve()
-  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'yes24'] : [selected]) {
+  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis'] : [selected]) {
+    if (source === 'kopis' && !process.env.KOPIS_SERVICE_KEY) {
+      results.push({ source, skipped: 'configuration_missing', warning: 'KOPIS_SERVICE_KEY 미등록: 공연 발견 경로 비활성', uploaded: false })
+      console.error('::warning::KOPIS_SERVICE_KEY 미등록: KOPIS 수집을 건너뜁니다. 기존 주최사 수집만 실행합니다.')
+      await writeReport(); continue
+    }
     console.error(`[${source}] 공개 공연 목록 수집 시작`)
     try {
       let discoveredIdentities = []
       const result = await runSource({ client, source, collect: async () => {
-      const result = source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
+      const result = source === 'kopis' ? await collectKopis() : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
       result.excluded ??= []
       filterPastCandidates(result, { includePast })
+      await supplement(result)
       console.error(`[${source}] 후보 ${result.candidates.length}개 · 제외 ${result.excluded.length}개 · 실패 ${result.failures.length}개; 아티스트 보완 중`)
       discoveredIdentities = skipArtistLookup ? [] : await enrichArtists(result, resolveArtist)
       for (const row of result.candidates) {
