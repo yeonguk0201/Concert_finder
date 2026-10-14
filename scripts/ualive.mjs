@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { artwork, matchArtist } from './catalog-policy.mjs'
 import { getText, checkRobots } from './collection-http.mjs'
 import { discoveredArtist } from './artist-discovery.mjs'
+import { applyOfficialOpening, noticeUrl, ticketlinkProduct } from './booking-evidence.mjs'
 
 export const origin = 'https://ualive.com'
 export function concertLinks(html) {
@@ -21,7 +22,8 @@ export function parseConcert(html, url) {
   if (sessions.some(s => !Number.isFinite(Date.parse(s.starts_at)) || new Date(s.starts_at).toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }) !== s.starts_on)) throw new Error('Invalid session date')
   sessions.sort((a, b) => a.starts_at.localeCompare(b.starts_at))
   const venue = [...document.querySelectorAll('a[href]')].find(a => a.href.startsWith('https://naver.me/'))?.textContent.replace(/↗/g, '').trim() ?? null
-  const booking = [...document.querySelectorAll('a[href]')].find(a => /^https:\/\/(?:m\.)?ticketlink\.co\.kr\/product\/\d+$/.test(a.href))?.href ?? null
+  const bookings = [...new Set([...document.querySelectorAll('a[href]')].map(a => ticketlinkProduct(a.href)).filter(Boolean))]
+  const booking = bookings.length === 1 ? bookings[0] : null
   const payload = { title, format: 'solo', city: null, venue, starts_on: sessions[0].starts_on, ends_on: sessions.at(-1).starts_on,
     announced_on: null, announced_at: null, announcement_verified: false, cancelled: false, status: 'review',
     sources: [{ url: source.href, label: 'ualive 주최사', verified_at: null }], band_ids: [], sessions,
@@ -30,6 +32,9 @@ export function parseConcert(html, url) {
   payload.discovered_artists = [...new Set([...(cast?.querySelectorAll('img[alt]') ?? [])].map(img => img.alt.trim()))].map(name => discoveredArtist(name, source.href)).filter(Boolean)
   payload.artist_keys = [...new Set([...(cast?.querySelectorAll('img[alt]') ?? [])].map(img => matchArtist(img.alt)?.key).filter(Boolean))]
   payload.review_reasons = payload.artist_keys.length ? [] : ['대상 장르/아티스트 미확정']
+  payload.booking_notice_urls = [...new Set([...document.querySelectorAll('a[href]')].map(a => noticeUrl(a.href)).filter(Boolean))]
+  const ticketSection = [...document.querySelectorAll('h2')].find(h => /예매|티켓|ticket/i.test(h.textContent))?.closest('section')
+  applyOfficialOpening(payload, ticketSection)
   const image = [...document.images].find(img => img.alt.trim() === title)
   payload.artwork = image ? artwork(image.getAttribute('src'), source.href, '공연 제목과 일치하는 본문 포스터') : null
   return { source_url: source.href, payload, content_hash: createHash('sha256').update(JSON.stringify(payload)).digest('hex') }
