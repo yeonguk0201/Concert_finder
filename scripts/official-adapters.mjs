@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { artwork, matchProfile } from './catalog-policy.mjs'
 import { getText, checkRobots, pause } from './collection-http.mjs'
 import { discoveredArtist } from './artist-discovery.mjs'
+import { applyOfficialOpening, noticeUrl, ticketlinkProduct } from './booking-evidence.mjs'
 
 export function candidate(source, payload, artistKeys = [], reasons = []) {
   return { source_url: source, payload: { ...payload, artist_keys: artistKeys, review_reasons: reasons }, content_hash: createHash('sha256').update(JSON.stringify({ ...payload, artist_keys: artistKeys, review_reasons: reasons })).digest('hex') }
@@ -41,7 +42,14 @@ export function parseMintpaper(html, url) {
       ?? { name: null, source_url: source.href, profile_url: b.link, key: reviewed?.key ?? null, reason: '원문에 이름 없음: 프로필로 신원 확인 필요' }
   }))
   payload.artwork = artwork(data[festival.coverImage?.__ref]?.url, source.href, 'Festival.coverImage: 공연 ID에 연결된 커버')
-  return candidate(source.href, payload, keys, ['혼합 페스티벌: 확인된 대상 밴드만 연결; 개별 출연일은 검수', ...(!keys.length ? ['대상 아티스트 미확정'] : [])])
+  const anchors = [...document.querySelectorAll('a[href]')]
+  payload.booking_notice_urls = [...new Set(anchors.map(a => noticeUrl(a.href)).filter(Boolean))]
+  const bookings = [...new Set(anchors.map(a => ticketlinkProduct(a.href)).filter(Boolean))]
+  if (bookings.length === 1) payload.ticket.booking_url = bookings[0]
+  payload.review_reasons = []
+  const ticketSection = [...document.querySelectorAll('h2')].find(h => /예매|티켓|ticket/i.test(h.textContent))?.closest('section')
+  applyOfficialOpening(payload, ticketSection)
+  return candidate(source.href, payload, keys, [...payload.review_reasons, '혼합 페스티벌: 확인된 대상 밴드만 연결; 개별 출연일은 검수', ...(!keys.length ? ['대상 아티스트 미확정'] : [])])
 }
 export function parseRadwimps(html, url) {
   const source = sourceUrl(url, 'https://radwimps.jp', /^\/live\/\d+\/$/)
