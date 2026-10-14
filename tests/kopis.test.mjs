@@ -33,7 +33,13 @@ test('KOPIS XML preserves cast, dates, booking links and attribution without inv
   assert.match(row.payload.sources[0].label, /예술경영지원센터.*KOPIS/)
   assert.equal(parseKopis(xml(), 'PF000001').content_hash, row.content_hash)
   assert.throws(() => parseKopis(xml().replace('2027.01.01', '2027.02.30'), 'PF000001'), /date/)
-  assert.throws(() => parseKopis(xml().replace('서울특별시', '해외'), 'PF000001'), /region/)
+  for (const region of ['충북', '충남', '전남', '경북', '경남', '전북특별자치도']) assert.equal(parseKopis(xml().replace('서울특별시', region), 'PF000001').payload.country_code, 'KR')
+  for (const region of ['해외', '서울도쿄', '미상']) {
+    const unknown = parseKopis(xml().replace('서울특별시', region), 'PF000001')
+    assert.equal(unknown.payload.country_code, null)
+    assert.equal(unknown.payload.city, region)
+    assert.ok(unknown.payload.review_reasons.some(s => s.includes(region)))
+  }
   assert.throws(() => parseKopis(xml(), 'PF000002'), /ID mismatch/)
   assert.throws(() => parseKopis('<!DOCTYPE dbs [<!ENTITY secret SYSTEM "file:///etc/passwd">]><dbs/>', 'PF000001'), /declaration/)
   assert.throws(() => parseKopis('<response>provider auth error</response>', 'PF000001'), /API error/)

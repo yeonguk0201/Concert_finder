@@ -61,7 +61,9 @@ try {
     try {
       let discoveredIdentities = []
       const result = await runSource({ client, source, collect: async () => {
-      const result = source === 'kopis' ? await collectKopis() : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
+      const slotOption = process.argv.find(a => a.startsWith('--kopis-slot='))?.slice(13)
+      const kopisOptions = slotOption === undefined ? {} : { slot: Number(slotOption) }
+      const result = source === 'kopis' ? await collectKopis(kopisOptions) : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
       result.excluded ??= []
       filterPastCandidates(result, { includePast })
       await supplement(result)

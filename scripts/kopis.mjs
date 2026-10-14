@@ -5,6 +5,13 @@ import { getText, pause } from './collection-http.mjs'
 
 // The www API host redirects to this canonical HTTPS origin.
 const api = 'https://kopis.or.kr/openApi/restful/pblprfr'
+const koreanRegions = new Set([
+  '서울', '서울특별시', '부산', '부산광역시', '대구', '대구광역시', '인천', '인천광역시',
+  '광주', '광주광역시', '대전', '대전광역시', '울산', '울산광역시', '세종', '세종특별자치시',
+  '경기', '경기도', '강원', '강원도', '강원특별자치도', '충북', '충청북도', '충남', '충청남도',
+  '전북', '전라북도', '전북특별자치도', '전남', '전라남도', '경북', '경상북도', '경남', '경상남도',
+  '제주', '제주도', '제주특별자치도',
+])
 export const kopisSource = id => {
   if (!/^PF\d{6}$/.test(id)) throw new Error('Invalid KOPIS ID')
   return `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?mt20Id=${id}`
@@ -45,11 +52,11 @@ export function parseKopis(xml, expectedId) {
   if (field(e, 'genrenm') !== '대중음악') throw new Error('Not a popular music performance')
   const title = field(e, 'prfnm'), venue = field(e, 'fcltynm'), area = field(e, 'area')
   if (!title || !venue || !area) throw new Error('KOPIS event fields missing')
-  if (!/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충청북|충청남|전라북|전북|전라남|경상북|경상남|제주)/.test(area)) throw new Error('Korean region not confirmed')
+  const koreaConfirmed = koreanRegions.has(area)
   const p = basePayload(title, source, '출처: (재)예술경영지원센터 공연예술통합전산망(KOPIS)')
   p.starts_on = day(field(e, 'prfpdfrom')); p.ends_on = day(field(e, 'prfpdto'))
   if (p.ends_on < p.starts_on) throw new Error('Invalid KOPIS date range')
-  p.venue = venue; p.city = area; p.country_code = 'KR'
+  p.venue = venue; p.city = area; p.country_code = koreaConfirmed ? 'KR' : null
   p.format = field(e, 'festival') === 'Y' ? 'festival' : 'solo'
   p.ticket.price_description = field(e, 'pcseguidance') || null
   p.booking_links = [...e.querySelectorAll('relates > relate')].map(r => ({ label: field(r, 'relatenm'), url: bookingLink(field(r, 'relateurl')) })).filter(r => r.url)
@@ -58,7 +65,8 @@ export function parseKopis(xml, expectedId) {
   p.kopis_id = id
   // API registration/update timestamps and performance times are not announcements or sale times.
   return candidate(source, p, [...new Set(p.discovered_artists.map(a => a.key).filter(Boolean))],
-    ['KOPIS 발견 후보: 대상 장르·출연진·공식 발표 검수 필요', '일반 예매 시각은 주최사·예매처 공식 공지로 보완'])
+    ['KOPIS 발견 후보: 대상 장르·출연진·공식 발표 검수 필요', '일반 예매 시각은 주최사·예매처 공식 공지로 보완',
+      ...(!koreaConfirmed ? [`한국 공연 지역 미확인: ${area} (원문 지역 보존; 검수 필요)`] : [])])
 }
 const shift = (date, days) => new Date(Date.parse(`${date}T00:00:00Z`) + days * 86400000).toISOString().slice(0, 10)
 export function kopisWindows(start, end) {

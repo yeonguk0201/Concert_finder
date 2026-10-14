@@ -1,6 +1,16 @@
 name: Collect official concert candidates
 on:
   workflow_dispatch:
+    inputs:
+      source:
+        description: Collection source
+        type: choice
+        options: [all, kopis, ualive, mintpaper, radwimps]
+        default: all
+      kopis_slot:
+        description: Optional KOPIS detail slot for a reproducible verification
+        type: string
+        default: ''
   schedule:
     - cron: '17 * * * *'
 permissions:
@@ -25,7 +35,12 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           KOPIS_SERVICE_KEY: ${{ secrets.KOPIS_SERVICE_KEY }}
-        run: node scripts/collect-catalog.mjs --upload --output=collection-report.local
+          COLLECTION_SOURCE: ${{ inputs.source || 'all' }}
+          KOPIS_SLOT: ${{ inputs.kopis_slot }}
+        run: |
+          args=("--source=$COLLECTION_SOURCE" "--upload" "--output=collection-report.local")
+          if [[ -n "$KOPIS_SLOT" ]]; then args+=("--kopis-slot=$KOPIS_SLOT"); fi
+          node scripts/collect-catalog.mjs "${args[@]}"
       - name: Preserve collection report
         if: always()
         uses: actions/upload-artifact@v4
