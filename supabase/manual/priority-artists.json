@@ -1,0 +1,297 @@
+{
+  "policy": "jpop-or-rock-v1",
+  "selectedOn": "2026-10-14",
+  "selectionBasis": "초기 핵심 검증용 20팀. 인기순이나 범주 전체 목록이 아니며 기존 10/12 신원 manifest에서 선택",
+  "artists": [
+    {
+      "name": "DAY6",
+      "musicBrainzId": "77191d5f-1045-4b3b-ad7f-12ea398db929",
+      "category": "domestic_rock",
+      "identitySource": "https://musicbrainz.org/artist/77191d5f-1045-4b3b-ad7f-12ea398db929",
+      "expectedAliases": [
+        "데이식스",
+        "데이6"
+      ]
+    },
+    {
+      "name": "Silica Gel",
+      "musicBrainzId": "2c8b5bb2-6110-488d-bc15-abb08379d3c6",
+      "category": "domestic_rock",
+      "identitySource": "https://musicbrainz.org/artist/2c8b5bb2-6110-488d-bc15-abb08379d3c6",
+      "expectedAliases": [
+        "실리카겔"
+      ]
+    },
+    {
+      "name": "SURL",
+      "musicBrainzId": "4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad",
+      "category": "domestic_rock",
+      "identitySource": "https://musicbrainz.org/artist/4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad",
+      "expectedAliases": [
+        "설"
+      ]
+    },
+    {
+      "name": "Thornapple",
+      "musicBrainzId": "6b5f4f28-6359-48ae-9eee-4cf020ea3062",
+      "category": "domestic_rock",
+      "identitySource": "https://musicbrainz.org/artist/6b5f4f28-6359-48ae-9eee-4cf020ea3062",
+      "expectedAliases": [
+        "쏜애플",
+        "THORNAPPLE"
+      ]
+    },
+    {
+      "name": "TOUCHED",
+      "musicBrainzId": "969c0579-d5fb-4576-8eb3-dea777d396c2",
+      "category": "domestic_rock",
+      "identitySource": "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2",
+      "expectedAliases": [
+        "터치드"
+      ]
+    },
+    {
+      "name": "Mrs. GREEN APPLE",
+      "musicBrainzId": "9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+      "expectedAliases": [
+        "ミセス",
+        "미세스 그린 애플",
+        "미세스그린애플"
+      ]
+    },
+    {
+      "name": "ONE OK ROCK",
+      "musicBrainzId": "6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+      "expectedAliases": [
+        "원오크록",
+        "원오케이락",
+        "ワンオクロック"
+      ]
+    },
+    {
+      "name": "RADWIMPS",
+      "musicBrainzId": "6f500293-7396-4903-b4fd-118127d06f9e",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e",
+      "expectedAliases": [
+        "ラッドウインプス",
+        "ラッドウィンプス",
+        "래드윔프스"
+      ]
+    },
+    {
+      "name": "King Gnu",
+      "musicBrainzId": "338f5d97-3133-4bf8-a58e-068ff9b5405d",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/338f5d97-3133-4bf8-a58e-068ff9b5405d",
+      "expectedAliases": [
+        "Srv.Vinci",
+        "Mrs.Vinci",
+        "キングヌー",
+        "킹누"
+      ]
+    },
+    {
+      "name": "SEKAI NO OWARI",
+      "musicBrainzId": "d9dbfe6a-8346-4337-8614-fe96aab63927",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927",
+      "expectedAliases": [
+        "SekaOwa",
+        "世界の終わり",
+        "End of the World",
+        "세카이노오와리"
+      ]
+    },
+    {
+      "name": "ヨルシカ",
+      "musicBrainzId": "dfc6a151-3792-4695-8fda-f64723eaa788",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/dfc6a151-3792-4695-8fda-f64723eaa788",
+      "expectedAliases": [
+        "YORUSHIKA",
+        "Yorushika",
+        "요루시카"
+      ]
+    },
+    {
+      "name": "KANA-BOON",
+      "musicBrainzId": "33ff8a92-2f3b-4cac-8ea0-5eebfa995626",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/33ff8a92-2f3b-4cac-8ea0-5eebfa995626",
+      "expectedAliases": [
+        "카나분"
+      ]
+    },
+    {
+      "name": "ELLEGARDEN",
+      "musicBrainzId": "923158cf-9d21-4bce-8040-41e7a497c1c9",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9",
+      "expectedAliases": [
+        "エルレガーデン",
+        "엘르가든"
+      ]
+    },
+    {
+      "name": "Radiohead",
+      "musicBrainzId": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
+      "category": "overseas_rock",
+      "identitySource": "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711",
+      "expectedAliases": [
+        "r/head",
+        "电台司令",
+        "レディオヘッド",
+        "Radiohead & Thom Yorke",
+        "Radio Head",
+        "라디오헤드"
+      ]
+    },
+    {
+      "name": "Coldplay",
+      "musicBrainzId": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+      "category": "overseas_rock",
+      "identitySource": "https://musicbrainz.org/artist/cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+      "expectedAliases": [
+        "Coolplay",
+        "콜드플레이",
+        "コールドプレイ",
+        "Cold Play",
+        "The Coldplay"
+      ]
+    },
+    {
+      "name": "Foo Fighters",
+      "musicBrainzId": "67f66c07-6e61-4026-ade5-7e782fad3a5d",
+      "category": "overseas_rock",
+      "identitySource": "https://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d",
+      "expectedAliases": [
+        "Foofighters",
+        "フー・ファイター",
+        "푸 파이터스"
+      ]
+    },
+    {
+      "name": "Arctic Monkeys",
+      "musicBrainzId": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
+      "category": "overseas_rock",
+      "identitySource": "https://musicbrainz.org/artist/ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
+      "expectedAliases": [
+        "The Arctic Monkeys",
+        "Artic Monkeys",
+        "악틱 몽키즈"
+      ]
+    },
+    {
+      "name": "Linkin Park",
+      "musicBrainzId": "f59c5520-5f46-4d2c-b2c4-822eabf53419",
+      "category": "overseas_rock",
+      "identitySource": "https://musicbrainz.org/artist/f59c5520-5f46-4d2c-b2c4-822eabf53419",
+      "expectedAliases": [
+        "Lincoln Park",
+        "聯合公園",
+        "Xero",
+        "Limkin Park",
+        "Hybrid Theory",
+        "린킨 파크"
+      ]
+    },
+    {
+      "name": "My Chemical Romance",
+      "musicBrainzId": "c07f0676-9143-4217-8a9f-4c26bd636f13",
+      "category": "overseas_rock",
+      "identitySource": "https://musicbrainz.org/artist/c07f0676-9143-4217-8a9f-4c26bd636f13",
+      "expectedAliases": [
+        "MCR",
+        "My Chem",
+        "마이 케미컬 로맨스"
+      ]
+    },
+    {
+      "name": "Ado",
+      "musicBrainzId": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+      "category": "jpop",
+      "identitySource": "https://musicbrainz.org/artist/e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+      "expectedAliases": [
+        "아도"
+      ]
+    }
+  ],
+  "gapCandidates": [
+    {
+      "category": "domestic_rock",
+      "names": [
+        "NELL",
+        "넬"
+      ]
+    },
+    {
+      "category": "domestic_rock",
+      "names": [
+        "YB",
+        "윤도현밴드"
+      ]
+    },
+    {
+      "category": "domestic_rock",
+      "names": [
+        "Guckkasten",
+        "국카스텐"
+      ]
+    },
+    {
+      "category": "domestic_rock",
+      "names": [
+        "HYUKOH",
+        "혁오"
+      ]
+    },
+    {
+      "category": "domestic_rock",
+      "names": [
+        "JANNABI",
+        "잔나비"
+      ]
+    },
+    {
+      "category": "jpop",
+      "names": [
+        "YOASOBI",
+        "요아소비"
+      ]
+    },
+    {
+      "category": "jpop",
+      "names": [
+        "Vaundy",
+        "바운디"
+      ]
+    },
+    {
+      "category": "jpop",
+      "names": [
+        "米津玄師",
+        "Kenshi Yonezu",
+        "요네즈 켄시"
+      ]
+    },
+    {
+      "category": "overseas_rock",
+      "names": [
+        "Nirvana",
+        "너바나"
+      ]
+    },
+    {
+      "category": "overseas_rock",
+      "names": [
+        "Metallica",
+        "메탈리카"
+      ]
+    }
+  ]
+}
