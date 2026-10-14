@@ -174,7 +174,11 @@ test('database accepts KOPIS batches in review, fences unauthorized writes, pres
   try {
     await db.exec(`create role anon; create role authenticated; create role service_role; create schema auth; create table auth.users(id uuid primary key);
       create function auth.uid() returns uuid language sql stable as $$ select null::uuid $$;`)
-    for (const file of ['202610060001_initial.sql', '202610070001_admin_review.sql', '202610080001_ingestion.sql', '202610090001_notifications.sql', '202610110001_catalog_expansion.sql', '20261011150237_discovered_artist_catalog.sql', '20261012134538_automated_catalog.sql', '20261014125200_kopis_discovery.sql']) await db.exec(await readFile(new URL(`../supabase/migrations/${file}`, import.meta.url), 'utf8'))
+    for (const file of ['202610060001_initial.sql', '202610070001_admin_review.sql', '202610080001_ingestion.sql', '202610090001_notifications.sql', '202610110001_catalog_expansion.sql', '20261011150237_discovered_artist_catalog.sql', '20261012134538_automated_catalog.sql', '20261012135134_artist_management.sql', '20261013070742_artist_curation.sql']) await db.exec(await readFile(new URL(`../supabase/migrations/${file}`, import.meta.url), 'utf8'))
+    // Hosted projects can have an explicit anon grant in addition to PUBLIC privileges.
+    await db.exec('grant execute on function public.admin_ingest_catalog(text,jsonb,jsonb) to anon')
+    await db.exec(await readFile(new URL('../supabase/migrations/20261014125200_kopis_discovery.sql', import.meta.url), 'utf8'))
+    assert.equal((await db.query("select has_function_privilege('anon','public.admin_ingest_catalog(text,jsonb,jsonb)','execute') as allowed")).rows[0].allowed, false)
     const row = supplementBooking(parseKopis(xml(), 'PF000001'), [parseTicketlinkNotice(notice(), noticeUrl)])
     const batch = { candidates: [row], failures: [], excluded: [] }
     await db.exec('set role authenticated')

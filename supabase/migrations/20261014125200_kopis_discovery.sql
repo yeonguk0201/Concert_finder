@@ -86,5 +86,5 @@ begin
   insert into public.collection_runs(source,candidate_count,failures,excluded)
     values(source,jsonb_array_length(batch->'candidates'),batch->'failures',coalesce(batch->'excluded','[]'));
 end $$;
-revoke all on function public.admin_ingest_catalog(text,jsonb,jsonb) from public;
+revoke all on function public.admin_ingest_catalog(text,jsonb,jsonb) from public,anon;
 grant execute on function public.admin_ingest_catalog(text,jsonb,jsonb) to authenticated,service_role;
