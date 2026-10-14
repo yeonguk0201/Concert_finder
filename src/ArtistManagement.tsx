@@ -5,6 +5,7 @@ import { adminError, artistStatusLabels, artistCategoryLabels } from './adminApi
 import type { AdminBand, ArtistCategory, ArtistStatus, ArtistHistory } from './adminApi'
 import { ArtistPhoto } from './ArtistPhoto'
 import type { ArtistPhotoData } from './artistPhotoTypes'
+import { saveArtistPhotoFile } from './artistPhotoUpload'
 
 export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSaved: () => void }) {
   const [selected, setSelected] = useState('')
@@ -38,6 +39,8 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
   const [mode, setMode] = useState<'auto' | 'manual' | 'hidden'>(band.photo_mode ?? 'auto')
   const [photo, setPhoto] = useState<ArtistPhotoData>(band.representative_photo ?? {url:'',source:'',author:'',credit:'',license:'',licenseUrl:'',usageBasis:'',identity:band.id,retrievedAt:''})
   const [approved, setApproved] = useState(false)
+  const [photoInput, setPhotoInput] = useState<'url' | 'file'>('url')
+  const [file, setFile] = useState<File | null>(null)
   const [busy, setBusy] = useState(false), [message, setMessage] = useState(''), [error, setError] = useState('')
   const active = useRef(true), pending = useRef(false)
   useEffect(() => { active.current=true; return () => { active.current=false } }, [])
@@ -52,8 +55,14 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
     if (mode==='manual' && !approved) return
     void run(async () => {
       if (!backend || !band.updated_at) throw new Error('MIGRATION_REQUIRED')
-      const {error}=await backend.rpc('admin_update_artist',{band_id:band.id,expected_updated_at:band.updated_at,aliases:aliases.split(',').map(s=>s.trim()).filter(Boolean),photo:mode==='manual'?photo:null,mode})
-      if(error) throw error
+      const values = aliases.split(',').map(s=>s.trim()).filter(Boolean)
+      if (mode === 'manual' && photoInput === 'file') {
+        if (!file) throw new Error('PHOTO_FILE_INVALID')
+        await saveArtistPhotoFile(band, values, photo, file)
+      } else {
+        const {error}=await backend.rpc('admin_update_artist',{band_id:band.id,expected_updated_at:band.updated_at,aliases:values,photo:mode==='manual'?photo:null,mode})
+        if(error) throw error
+      }
       if(active.current) {setNeedsRefresh(true); onSaved(`${band.name} 별칭·대표 이미지를 저장했습니다.`)}
     })
   }
@@ -91,12 +100,16 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
     {band.musicbrainz_id && <p><a href={`https://musicbrainz.org/artist/${band.musicbrainz_id}`} target="_blank" rel="noopener noreferrer">검증된 외부 신원 ↗</a></p>}
     <label>검색 별칭 · 쉼표로 구분<textarea value={aliases} onChange={e=>setAliases(e.target.value)} /></label>
     <label>대표 이미지 방식<select value={mode} onChange={e=>{setMode(e.target.value as typeof mode);setApproved(false)}}><option value="auto">외부 사진 자동 연결</option><option value="manual">관리자 지정 이미지</option><option value="hidden">이미지 삭제 · 이니셜 표시</option></select></label>
-    {mode==='manual' && <><div className="admin-fields">{([
+    {mode==='manual' && <>
+      <label>이미지 입력 방식<select value={photoInput} onChange={e=>{setPhotoInput(e.target.value as 'url' | 'file');setApproved(false)}}><option value="url">HTTPS URL 지정</option><option value="file">파일 업로드 · 저장소 보관</option></select></label>
+      {photoInput === 'file' && <><label>대표 사진 파일<input type="file" required accept="image/jpeg,image/png,image/webp" onChange={e=>{setFile(e.target.files?.[0] ?? null);setApproved(false)}} /></label><p>JPEG·PNG·WebP, 최대 2MiB·2,400만 화소. 최대 1024px PNG로 변환해 보관하며 파일의 위치·촬영 메타데이터를 제거합니다. 저장한 사진은 공개 URL로 제공됩니다.</p>{file && <p>선택한 파일: {file.name}</p>}</>}
+      <div className="admin-fields">{([
       ['url','대표 이미지 HTTPS URL'],['source','이미지 원본 출처 HTTPS URL'],['author','사진 저작자'],['license','라이선스 / 허락 명칭'],['licenseUrl','이용 조건 / 허락 근거 HTTPS URL'],['usageBasis','사용 근거 · 허락 범위'],['credit','추가 크레딧'],
-    ] as const).map(([field,label])=><label key={field}>{label}<input required={field!=='credit'} type={['url','source','licenseUrl'].includes(field)?'url':'text'} pattern={['url','source','licenseUrl'].includes(field)?'https://.+':undefined} value={photo[field]??''} onChange={e=>{setPhoto(p=>({...p,[field]:e.target.value}));setApproved(false)}} /></label>)}</div>
+    ] as const).filter(([field])=>field !== 'url' || photoInput === 'url').map(([field,label])=><label key={field}>{label}<input required={field!=='credit'} maxLength={2000} type={['url','source','licenseUrl'].includes(field)?'url':'text'} pattern={['url','source','licenseUrl'].includes(field)?'https://.+':undefined} value={photo[field]??''} onChange={e=>{setPhoto(p=>({...p,[field]:e.target.value}));setApproved(false)}} /></label>)}</div>
       <label className="admin-check"><input type="checkbox" required checked={approved} onChange={e=>setApproved(e.target.checked)} />대상 아티스트와 이미지 이용 조건을 확인했습니다</label></>}
-    <p>저장 전 미리보기</p><ArtistPhoto name={band.name} bandId={band.id} photoMode={mode} representativePhoto={photo} />
-    <button className="outline" disabled={mode==='manual'&&!approved}>별칭·대표 이미지 저장</button>
+    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} bandId={band.id} photoMode={mode} representativePhoto={photo} /></>}
+    <p>이미지 삭제는 표시를 중단합니다. 교체 전 보관 파일은 변경 이력 확인을 위해 유지됩니다.</p>
+    <button className="outline" disabled={mode==='manual'&&(!approved || (photoInput === 'file' && !file))}>{busy && photoInput === 'file' ? '사진 검증·저장 중…' : '별칭·대표 이미지 저장'}</button>
     </fieldset></form>
     {needsRefresh && <p role="status">저장 완료 · 최신 버전을 불러오는 중입니다. 갱신되지 않으면 상단의 목록 다시 불러오기를 눌러 주세요.</p>}
     <ArtistChangeHistory bandId={band.id} />

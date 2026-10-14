@@ -3,10 +3,35 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 import { afterEach, expect, test, vi } from 'vitest'
 import { ArtistManagement } from '../src/ArtistManagement'
 import { CollectionOperations } from '../src/CollectionOperations'
-const mock=vi.hoisted(()=>({rpc:vi.fn()}))
+const mock=vi.hoisted(()=>({rpc:vi.fn(),upload:vi.fn()}))
 vi.mock('../src/backend',()=>({backend:{rpc:mock.rpc}}))
+vi.mock('../src/artistPhotoUpload',()=>({saveArtistPhotoFile:mock.upload}))
 const band={id:'band',name:'Ado',country_code:'JP',aliases:['아도'],updated_at:'v1',musicbrainz_id:'mbid'}
 afterEach(()=>{cleanup();vi.resetAllMocks()})
+
+test('file upload requires rights, preserves selection on failure, and saves without sending the old URL RPC', async () => {
+  mock.upload.mockRejectedValueOnce(new Error('PHOTO_FILE_INVALID')).mockResolvedValue(undefined)
+  const onSaved = vi.fn()
+  render(<ArtistManagement bands={[band]} onSaved={onSaved} />)
+  fireEvent.change(screen.getByLabelText('관리할 아티스트'),{target:{value:'band'}})
+  fireEvent.change(screen.getByLabelText('대표 이미지 방식'),{target:{value:'manual'}})
+  fireEvent.change(screen.getByLabelText('이미지 입력 방식'),{target:{value:'file'}})
+  const file = new File(['png'], 'artist.png', {type:'image/png'})
+  fireEvent.change(screen.getByLabelText('대표 사진 파일'),{target:{files:[file]}})
+  for (const [label,value] of Object.entries({'이미지 원본 출처 HTTPS URL':'https://artist.example.com/photo','사진 저작자':'Author','라이선스 / 허락 명칭':'Permission','이용 조건 / 허락 근거 HTTPS URL':'https://artist.example.com/terms','사용 근거 · 허락 범위':'Display and resize'})) fireEvent.change(screen.getByLabelText(label),{target:{value}})
+  expect(screen.queryByLabelText('대표 이미지 HTTPS URL')).toBeNull()
+  expect(screen.getByRole('button',{name:'별칭·대표 이미지 저장'}).matches(':disabled')).toBe(true)
+  fireEvent.click(screen.getByLabelText('대상 아티스트와 이미지 이용 조건을 확인했습니다'))
+  // jsdom has no native file chooser; submit the form with the selected File.
+  fireEvent.submit(screen.getByLabelText('대표 사진 파일').closest('form')!)
+  await screen.findByText(/이미지를 읽을 수 없습니다/)
+  expect(screen.getByText('선택한 파일: artist.png')).toBeTruthy()
+  expect(onSaved).not.toHaveBeenCalled()
+  fireEvent.submit(screen.getByLabelText('대표 사진 파일').closest('form')!)
+  await waitFor(()=>expect(onSaved).toHaveBeenCalledOnce())
+  expect(mock.upload).toHaveBeenLastCalledWith(band,['아도'],expect.objectContaining({author:'Author',usageBasis:'Display and resize'}),file)
+  expect(mock.rpc).not.toHaveBeenCalled()
+})
 
 test('editor sends optimistic version and complete image rights; failed saves preserve edits', async()=>{
   mock.rpc.mockRejectedValueOnce({message:'EDIT_CONFLICT'}).mockResolvedValue({error:null})
