@@ -14,3 +14,7 @@ verify_jwt = false
 [functions.artist-photo]
 # Public metadata only; fixed provider URLs and server-only identity/cache RPCs.
 verify_jwt = false
+
+[functions.artist-photo-upload]
+# Auth getUser + caller-scoped is_catalog_admin and update RPC validate each write.
+verify_jwt = false
