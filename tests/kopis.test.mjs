@@ -33,7 +33,7 @@ test('KOPIS XML preserves cast, dates, booking links and attribution without inv
   assert.match(row.payload.sources[0].label, /예술경영지원센터.*KOPIS/)
   assert.equal(parseKopis(xml(), 'PF000001').content_hash, row.content_hash)
   assert.throws(() => parseKopis(xml().replace('2027.01.01', '2027.02.30'), 'PF000001'), /date/)
-  for (const region of ['충북', '충남', '전남', '경북', '경남', '전북특별자치도']) assert.equal(parseKopis(xml().replace('서울특별시', region), 'PF000001').payload.country_code, 'KR')
+  for (const region of ['충북', '충남', '전남', '경북', '경남', '전북특별자치도', '전남광주통합특별시']) assert.equal(parseKopis(xml().replace('서울특별시', region), 'PF000001').payload.country_code, 'KR')
   for (const region of ['해외', '서울도쿄', '미상']) {
     const unknown = parseKopis(xml().replace('서울특별시', region), 'PF000001')
     assert.equal(unknown.payload.country_code, null)
@@ -77,9 +77,23 @@ test('KOPIS paginates, deduplicates, rotates bounded detail batches and never fe
 
 test('KOPIS rejects missing keys, API errors and truncated listing budgets; network errors never leak keys', async () => {
   await assert.rejects(collectKopis({ serviceKey: '', fetcher: () => assert.fail('no requests') }), /missing/)
-  await assert.rejects(collectKopis({ serviceKey: 'secret-test', sleep: async () => {}, fetcher: async url => { throw new Error(url) } }), error => !error.message.includes('secret-test') && /request failed/.test(error.message))
+  await assert.rejects(collectKopis({ serviceKey: 'secret-test', sleep: async () => {}, fetcher: async url => { throw new Error(url) } }), error => !error.message.includes('secret-test') && /network\/response/.test(error.message))
   await assert.rejects(collectKopis({ serviceKey: 'test', sleep: async () => {}, fetcher: async () => new Response('<error>key invalid</error>') }), /API error/)
   await assert.rejects(collectKopis({ serviceKey: 'test', sleep: async () => {}, fetcher: async () => new Response('<dbs/>'), maxListRequests: 1 }), /budget exceeded/)
+})
+
+test('KOPIS retries temporary HTTP/network failures with pacing, while permanent errors stop without leaking URLs', async () => {
+  const sleeps = []; let calls = 0
+  const result = await collectKopis({ serviceKey: 'secret-test', today: '2027-01-01', end: '2027-01-01', sleep: async ms => sleeps.push(ms), fetcher: async () => {
+    if (++calls === 1) return new Response('', { status: 503 })
+    if (calls === 2) throw Object.assign(new Error('https://key-containing-url'), { cause: { code: 'ECONNRESET' } })
+    return new Response('<dbs/>')
+  } })
+  assert.equal(result.candidates.length, 0); assert.equal(calls, 3)
+  assert.deepEqual(sleeps, [1000, 2000, 1000, 4000, 1000])
+  calls = 0
+  await assert.rejects(collectKopis({ serviceKey: 'secret-test', sleep: async () => {}, fetcher: async () => { calls++; return new Response('', { status: 403 }) } }), /KOPIS HTTP 403/)
+  assert.equal(calls, 1)
 })
 
 test('KOPIS records detail failures and stops a failing provider after three consecutive errors', async () => {

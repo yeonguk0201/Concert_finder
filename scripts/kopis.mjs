@@ -10,7 +10,7 @@ const koreanRegions = new Set([
   '광주', '광주광역시', '대전', '대전광역시', '울산', '울산광역시', '세종', '세종특별자치시',
   '경기', '경기도', '강원', '강원도', '강원특별자치도', '충북', '충청북도', '충남', '충청남도',
   '전북', '전라북도', '전북특별자치도', '전남', '전라남도', '경북', '경상북도', '경남', '경상남도',
-  '제주', '제주도', '제주특별자치도',
+  '제주', '제주도', '제주특별자치도', '전남광주통합특별시',
 ])
 export const kopisSource = id => {
   if (!/^PF\d{6}$/.test(id)) throw new Error('Invalid KOPIS ID')
@@ -86,10 +86,21 @@ export async function collectKopis({ serviceKey = process.env.KOPIS_SERVICE_KEY,
   const get = async (id, params = {}) => {
     const url = new URL(id ? `${api}/${id}` : api)
     url.search = new URLSearchParams({ service: serviceKey, ...params }).toString()
-    await sleep(1000)
-    // Sanitize provider/network errors: URLs contain the secret key.
-    try { return await getText(url.href, (u, options) => fetcher(u, { ...options, signal: AbortSignal.timeout(10000) })) }
-    catch { throw new Error('KOPIS request failed (network/HTTP/response limit)') }
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      await sleep(1000)
+      try { return await getText(url.href, (u, options) => fetcher(u, { ...options, signal: AbortSignal.timeout(10000) })) }
+      catch (error) {
+        // Report only fixed error categories/codes, never a URL containing the key.
+        const status = /^HTTP (\d{3})$/.exec(error.message)?.[1]
+        const code = /^[A-Z][A-Z0-9_]{0,50}$/.test(error.cause?.code ?? error.code ?? '') ? error.cause?.code ?? error.code : null
+        const timeout = error.name === 'TimeoutError' || error.name === 'AbortError'
+        const size = error.message === 'Response too large'
+        const retryable = status ? Number(status) === 429 || Number(status) >= 500 : !size && !code?.startsWith('ERR_ENCODING')
+        const message = status ? `KOPIS HTTP ${status}` : size ? 'KOPIS response too large' : timeout ? 'KOPIS request timeout' : `KOPIS network/response error${code ? ` (${code})` : ''}`
+        if (attempt === 3 || !retryable) throw new Error(message)
+        await sleep(attempt * 2000)
+      }
+    }
   }
   for (const window of kopisWindows(today, end)) {
     for (let page = 1; ; page++) {
