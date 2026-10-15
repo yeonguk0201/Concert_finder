@@ -37,17 +37,19 @@ test('official profiles enforce identities, optimistic edits, grants, locks, exp
     await assert.rejects(save(),/EDIT_CONFLICT/)
     const source=await manifest(), row=source.artists[0]
     const checkedAt=new Date().toISOString()
-    const result={...row,status:'refreshed',reason:'',cache:{channelId:id,title:'Channel',channelUrl:channel,checkedAt,thumbnails:{high:{url:'https://yt3.googleusercontent.com/avatar=s800',width:800,height:800}}}}
+    const result={...row,runStartedAt:checkedAt,status:'refreshed',reason:'',cache:{channelId:id,title:'Channel',channelUrl:channel,checkedAt,thumbnails:{high:{url:'https://yt3.googleusercontent.com/avatar=s800',width:800,height:800}}}}
     const apply=(value=result,expected=row.profileVersion)=>db.query('select public.service_apply_artist_channel($1,$2)',[value,expected])
     await assert.rejects(apply({...result,cache:{...result.cache,thumbnails:{high:{url:'https://evil.example.com/image'}}}}),/INVALID_CHANNEL_CACHE/)
     await db.exec('set role service_role')
     await apply()
+    await assert.rejects(apply({...result,runStartedAt:new Date(Date.now()-60000).toISOString(),status:'failed',cache:null}),/EDIT_CONFLICT/)
     await assert.rejects(db.query('select * from private.artist_channel_cache'),/permission denied/)
     await db.exec('reset role; set role anon')
     let visible=await publicRows()
     assert.equal(visible[0].photo.url,result.cache.thumbnails.high.url)
     assert.equal(visible[0].photo.channelUrl,channel)
     assert.equal(visible[0].website_url,profile.websiteUrl)
+    assert.equal(Date.parse(visible[0].photo.expiresAt)-Date.parse(visible[0].photo.checkedAt),29*86400000)
     await assert.rejects(db.query('select public.service_artist_channel_manifest()'),/permission denied/)
     await assert.rejects(db.query('select public.admin_artist_channel($1)',[bandId]),/permission denied/)
     await db.exec('reset role')
@@ -75,5 +77,22 @@ test('official profiles enforce identities, optimistic edits, grants, locks, exp
     await db.exec("select set_config('test.uid','',false); set role authenticated")
     await assert.rejects(db.query('select public.admin_artist_channel($1)',[bandId]),/ADMIN_REQUIRED/)
     await assert.rejects(db.query('select public.service_apply_artist_channel($1,$2)',[result,row.profileVersion]),/permission denied/)
+    // A shared label channel hides both identities and stale concurrent workers cannot republish it.
+    await db.exec('reset role')
+    await db.query("select set_config('test.uid',$1,false)",[admin])
+    await db.query("update public.bands set curation_status='unreviewed' where id=$1",[bandId])
+    await save(profile,stored.profile.updated_at)
+    const secondMbid='00000000-0000-4000-8000-000000000003'
+    const secondId=(await db.query('select public.service_import_artist($1) as id',[{key:`mb:${secondMbid}`,name:'Other Artist',country:'JP',aliases:[],genre:'Unknown',evidence:`https://musicbrainz.org/artist/${secondMbid}`}])).rows[0].id
+    const secondVersion=(await db.query("select to_jsonb(b)->>'updated_at' as v from public.bands b where id=$1",[secondId])).rows[0].v
+    await db.query('select public.admin_save_artist_channel($1,$2,null,$3)',[secondId,secondVersion,{...profile,musicBrainzId:secondMbid}])
+    const pair=(await manifest()).artists
+    const first=pair.find(r=>r.bandId===bandId), second=pair.find(r=>r.bandId===secondId)
+    const recentResult=source=>({...source,status:'refreshed',reason:'',cache:result.cache,runStartedAt:new Date().toISOString()})
+    await db.query('select public.service_apply_artist_channel($1,$2)',[recentResult(first),first.profileVersion])
+    await db.query('select public.service_apply_artist_channel($1,$2)',[recentResult(second),second.profileVersion])
+    assert.deepEqual(await publicRows(),[])
+    assert.equal((await db.query('select count(*)::int as n from private.artist_channel_cache')).rows[0].n,0)
+    await assert.rejects(db.query('select public.service_apply_artist_channel($1,$2)',[recentResult(first),first.profileVersion]),/CHANNEL_REVIEW_REQUIRED/)
   } finally { await db.close() }
 })

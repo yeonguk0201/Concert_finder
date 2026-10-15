@@ -11,7 +11,8 @@ create table private.artist_channels (
   updated_at timestamptz not null default clock_timestamp(),
   last_status text not null default 'pending',
   last_reason text not null default '',
-  last_attempt_at timestamptz
+  last_attempt_at timestamptz,
+  last_run_started_at timestamptz
 );
 create table private.artist_channel_cache (
   band_id uuid primary key references private.artist_channels(band_id) on delete cascade,
@@ -49,7 +50,7 @@ language sql stable set search_path='' as $$
 $$;
 create function private.channel_profile_snapshot(profile private.artist_channels) returns jsonb
 language sql immutable set search_path='' as $$
-  select to_jsonb(profile)-array['last_status','last_reason','last_attempt_at'];
+  select to_jsonb(profile)-array['last_status','last_reason','last_attempt_at','last_run_started_at'];
 $$;
 
 -- Both administrator edits and reviewed bulk manifests use this identity/version fence.
@@ -97,7 +98,7 @@ begin
   insert into private.artist_channels select next.* on conflict (band_id) do update set
     musicbrainz_id=excluded.musicbrainz_id,website_url=excluded.website_url,channel_url=excluded.channel_url,
     verification=excluded.verification,evidence=excluded.evidence,locked=excluded.locked,previous_channel_id=excluded.previous_channel_id,
-    updated_at=excluded.updated_at,last_status='pending',last_reason='',last_attempt_at=null;
+    updated_at=excluded.updated_at,last_status='pending',last_reason='',last_attempt_at=null,last_run_started_at=null;
   delete from private.artist_channel_cache where band_id=target_band_id;
   insert into private.artist_channel_history(band_id,actor_id,before_record,after_record)
     values(target_band_id,case when from_service then null else auth.uid() end,
@@ -145,7 +146,7 @@ end $$;
 
 create function public.service_apply_artist_channel(result jsonb, expected_profile_updated_at timestamptz) returns void
 language plpgsql security definer set search_path='' as $$
-declare band public.bands; profile private.artist_channels; cached jsonb; stamp timestamptz; image jsonb;
+declare band public.bands; profile private.artist_channels; cached jsonb; stamp timestamptz; image jsonb; run_started timestamptz;
 begin
   if coalesce(nullif(current_setting('request.jwt.claims',true),'')::jsonb->>'role','')<>'service_role' then raise exception 'SERVICE_REQUIRED'; end if;
   select * into band from public.bands where id=(result->>'bandId')::uuid for update;
@@ -154,17 +155,25 @@ begin
   if profile.updated_at is distinct from expected_profile_updated_at or band.updated_at is distinct from (result->>'identityVersion')::timestamptz
     or band.musicbrainz_id::text is distinct from result->>'musicBrainzId'
     or profile.channel_url is distinct from result->>'channelUrl' then raise exception 'EDIT_CONFLICT'; end if;
+  run_started:=(result->>'runStartedAt')::timestamptz;
+  if run_started is null or run_started>clock_timestamp()+interval '1 minute' then raise exception 'INVALID_CHANNEL_CACHE'; end if;
+  if profile.last_run_started_at>run_started then raise exception 'EDIT_CONFLICT'; end if;
+  if profile.last_status='needs_review' and profile.last_reason in ('CHANNEL_SHARED_ACROSS_IDENTITIES','CHANNEL_ID_CHANGED','CHANNEL_AMBIGUOUS')
+    and result->>'status'<>'needs_review' then raise exception 'CHANNEL_REVIEW_REQUIRED'; end if;
   cached:=nullif(result->'cache','null'::jsonb);
   if band.curation_status in ('held','excluded') or not private.channel_evidence_valid(profile)
     or result->>'status' in ('needs_review','unavailable','candidate','skipped') then cached:=null; end if;
   if cached is not null then
     stamp:=(cached->>'checkedAt')::timestamptz;
-    if stamp is null or stamp<=now()-interval '30 days' or stamp>now()+interval '1 minute'
+    if stamp is null or stamp<=now()-interval '29 days' then cached:=null;
+    elsif stamp>now()+interval '1 minute'
       or coalesce(cached->>'channelId','') !~ '^UC[A-Za-z0-9_-]{22}$'
       or length(cached::text)>12000 or jsonb_typeof(cached->'thumbnails') is distinct from 'object'
       or (profile.previous_channel_id is not null and profile.previous_channel_id is distinct from cached->>'channelId')
       or (private.channel_key(profile.channel_url) like 'channel/%' and private.channel_key(profile.channel_url) is distinct from 'channel/'||(cached->>'channelId'))
       then raise exception 'INVALID_CHANNEL_CACHE'; end if;
+  end if;
+  if cached is not null then
     for image in select value from jsonb_each(cached->'thumbnails') loop
       if coalesce(image->>'url','') !~ '^https://([A-Za-z0-9_-]+[.])*(ggpht[.]com|googleusercontent[.]com|ytimg[.]com)/[^[:space:]]+$' then raise exception 'INVALID_CHANNEL_CACHE'; end if;
     end loop;
@@ -176,13 +185,14 @@ begin
       update public.catalog_signal set revision=revision+1 where id=1;
       return;
     end if;
-    insert into private.artist_channel_cache values(band.id,cached,stamp,stamp+interval '30 days')
+    -- A one-day margin lets the daily cleanup delete before the 30-day limit.
+    insert into private.artist_channel_cache values(band.id,cached,stamp,stamp+interval '29 days')
       on conflict (band_id) do update set cache=excluded.cache,checked_at=excluded.checked_at,expires_at=excluded.expires_at;
     update private.artist_channels set previous_channel_id=coalesce(previous_channel_id,cached->>'channelId') where band_id=band.id;
   else delete from private.artist_channel_cache where band_id=band.id;
   end if;
   update private.artist_channels set last_status=left(coalesce(result->>'status','failed'),40),
-    last_reason=left(coalesce(result->>'reason',''),100),last_attempt_at=clock_timestamp() where band_id=band.id;
+    last_reason=left(coalesce(result->>'reason',''),100),last_attempt_at=clock_timestamp(),last_run_started_at=run_started where band_id=band.id;
   update public.catalog_signal set revision=revision+1 where id=1;
 end $$;
 

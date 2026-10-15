@@ -3,7 +3,7 @@ import { pathToFileURL } from 'node:url'
 import { createClient } from '@supabase/supabase-js'
 import { refreshManifest } from './youtube-channels.mjs'
 
-const safeError = error => /^(EDIT_CONFLICT|CHANNEL_LOCKED|IDENTITY_REQUIRED|ARTIST_NOT_AVAILABLE|OFFICIAL_EVIDENCE_REQUIRED)$/.test(error?.message ?? '') ? error.message : 'CHANNEL_DB_FAILED'
+const safeError = error => /^(EDIT_CONFLICT|CHANNEL_LOCKED|CHANNEL_REVIEW_REQUIRED|IDENTITY_REQUIRED|ARTIST_NOT_AVAILABLE|OFFICIAL_EVIDENCE_REQUIRED)$/.test(error?.message ?? '') ? error.message : 'CHANNEL_DB_FAILED'
 
 export async function runRefresh(client, { key = '', manifest = null, fetcher = fetch, pause, now = Date.now() } = {}) {
   const summary = { imported: 0, importFailures: 0, artists: 0, applied: 0, writeFailures: 0, apiCalls: 0, counts: {}, errors: {}, ok: false }
@@ -36,7 +36,7 @@ export async function runRefresh(client, { key = '', manifest = null, fetcher = 
         const fingerprint = JSON.stringify([row.status, row.reason, row.cache])
         if (applied.get(row.bandId) === fingerprint) continue
         const { error } = await client.rpc('service_apply_artist_channel', {
-          result: row, expected_profile_updated_at: versions.get(row.bandId),
+          result: { ...row, runStartedAt: new Date(now).toISOString() }, expected_profile_updated_at: versions.get(row.bandId),
         })
         // Don't loop on a conflicting edit or an uncertain network response.
         applied.set(row.bandId, fingerprint)
