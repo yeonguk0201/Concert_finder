@@ -1,0 +1,36 @@
+name: Refresh official artist channels
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily retry/expiry sweep; valid metadata is refreshed only after seven days.
+    - cron: '43 19 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: artist-channel-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: catalog-ingestion
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Refresh verified channels and purge expired metadata
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/refresh-artist-channels.mjs --upload --output=artist-channel-report.local
+      - name: Preserve counts and error codes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: artist-channel-report
+          path: artist-channel-report.local
+          retention-days: 7
