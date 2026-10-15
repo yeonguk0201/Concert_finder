@@ -6,6 +6,7 @@ import type { AdminBand, ArtistCategory, ArtistStatus, ArtistHistory } from './a
 import { ArtistPhoto } from './ArtistPhoto'
 import type { ArtistPhotoData } from './artistPhotoTypes'
 import { saveArtistPhotoFile } from './artistPhotoUpload'
+import { ArtistChannelEditor } from './ArtistChannelEditor'
 
 export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSaved: () => void }) {
   const [selected, setSelected] = useState('')
@@ -113,6 +114,7 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
     </fieldset></form>
     {needsRefresh && <p role="status">저장 완료 · 최신 버전을 불러오는 중입니다. 갱신되지 않으면 상단의 목록 다시 불러오기를 눌러 주세요.</p>}
     <ArtistChangeHistory bandId={band.id} />
+    <ArtistChannelEditor band={band} onSaved={onSaved} />
     {error&&<p role="alert">{error}</p>}{message&&<p role="status">{message}</p>}
   </div>
 }
