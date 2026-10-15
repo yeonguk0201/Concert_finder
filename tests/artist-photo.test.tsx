@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 import { ArtistPhoto } from '../src/ArtistPhoto'
 const mock = vi.hoisted(() => ({ invoke: vi.fn() }))
@@ -63,4 +63,41 @@ test('changing artist while a photo is pending cannot show the previous artist i
   resolve({ data: { photo } })
   await waitFor(() => expect(screen.getByLabelText('New Artist 이니셜')).toBeTruthy())
   expect(screen.queryByRole('img')).toBeNull()
+})
+
+const youtube = () => ({url:'https://yt3.googleusercontent.com/avatar=s800',channelUrl:`https://www.youtube.com/channel/UC${'a'.repeat(22)}`,checkedAt:new Date(Date.now()-1000).toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()})
+
+test('YouTube photo has visible linked original branding, skips per-card lookup, and manual/hidden choices win', () => {
+  const official=youtube()
+  const view=render(<ArtistPhoto name="Ado" bandId="00000000-0000-4000-8000-000000000009" youtubePhoto={official} />)
+  expect(screen.getByRole('img',{name:'Ado YouTube 채널 사진'}).getAttribute('src')).toBe(official.url)
+  expect(screen.getByRole('link',{name:'Ado 사진 출처 · YouTube 채널'}).getAttribute('href')).toBe(official.channelUrl)
+  expect(screen.getByRole('img',{name:'YouTube'}).closest('details')).toBeNull()
+  expect(mock.invoke).not.toHaveBeenCalled()
+  view.rerender(<ArtistPhoto name="Ado" photoMode="manual" youtubePhoto={official} representativePhoto={{...photo,retrievedAt:''}} />)
+  expect(screen.getByRole('img',{name:'Ado 프로필'}).getAttribute('src')).toBe(photo.url)
+  expect(screen.queryByRole('img',{name:'YouTube'})).toBeNull()
+  view.rerender(<ArtistPhoto name="Ado" photoMode="hidden" youtubePhoto={official} />)
+  expect(screen.queryByRole('img')).toBeNull()
+})
+
+test('failed and expired YouTube images show initials and do not retain their source branding', () => {
+  const official=youtube()
+  const view=render(<ArtistPhoto name="Ado" youtubePhoto={official} />)
+  fireEvent.error(screen.getByRole('img',{name:'Ado YouTube 채널 사진'}))
+  expect(screen.getByLabelText('Ado 이니셜')).toBeTruthy()
+  expect(screen.queryByRole('link')).toBeNull()
+  view.rerender(<ArtistPhoto name="Ado" youtubePhoto={{...official,url:'https://yt3.googleusercontent.com/expired',expiresAt:new Date(Date.now()-1).toISOString()}} />)
+  expect(screen.queryByRole('img')).toBeNull()
+})
+
+test('YouTube photo is removed when its expiry passes while the page remains open', async () => {
+  vi.useFakeTimers()
+  try {
+    const official={...youtube(),expiresAt:new Date(Date.now()+1000).toISOString()}
+    render(<ArtistPhoto name="Ado" youtubePhoto={official} />)
+    expect(screen.getByRole('img',{name:'Ado YouTube 채널 사진'})).toBeTruthy()
+    await act(async () => { await vi.advanceTimersByTimeAsync(1100) })
+    expect(screen.queryByRole('img')).toBeNull()
+  } finally {vi.useRealTimers()}
 })

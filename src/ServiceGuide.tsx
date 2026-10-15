@@ -16,6 +16,7 @@ export function ServiceGuide() {
       <p>공식 출처의 수집 후보를 검수한 뒤 공개합니다. 모든 공연 수집이나 변경·취소 즉시 반영을 보장하지 않습니다. 상세의 공식 출처와 예매처를 우선 확인해 주세요. 프리뷰 공연은 가상 샘플입니다.</p>
       <p>웹앱은 Vercel, 인증·DB·자동 알림은 Supabase로 처리합니다. 로그인 이메일과 푸시는 각각 전달 제공자를 거칩니다. 외부 출처·예매처를 열면 해당 사이트의 안내가 적용됩니다.</p>
       <p>화면 폰트는 Google Fonts에서 불러오므로 폰트 요청 시 해당 제공자에 접속 정보가 전달될 수 있습니다.</p>
+      <p>일부 아티스트 사진은 YouTube Data API에서 조회한 채널 사진입니다. 사진 아래의 YouTube 표시에서 해당 채널을 열 수 있습니다. 사진을 불러오면 Google 이미지 서버에 접속 정보가 전달될 수 있습니다. 공연·장르 정보는 YouTube에서 제공한 정보가 아닙니다. <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube 이용약관</a> · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a></p>
       <p>운영자: 김영욱 · 문의: <a href="mailto:yeongukb@gmail.com">yeongukb@gmail.com</a></p>
       <p>문의 시 발생 시각(KST), 기기·OS·브라우저 버전, 재현 순서와 화면 오류를 준비해 주세요. 인증번호·로그인 링크·토큰·푸시 구독 키는 보내지 마세요.</p>
       <p>공개 전 확정 필요: 제공자별 처리 지역·보관 기간·백업 삭제 정책. 현재 구현 범위를 설명하는 안내이며 개인정보 처리방침 공개 준비는 진행 중입니다.</p>

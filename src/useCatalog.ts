@@ -19,10 +19,12 @@ export function useCatalog() {
     void Promise.all([
       backend.from('bands').select('id,name,aliases,country_code,description,musicbrainz_id,representative_photo,photo_mode,category,curation_status').in('curation_status', ['unreviewed', 'approved']).order('name'),
       backend.from('concerts').select('id,title,format,city,venue,starts_on,ends_on,announced_on,cancelled,artwork,concert_bands(band_id),ticket_schedules(id,opens_at,price_description,booking_url),concert_sources(url,label,verified_at)').eq('status', 'published'),
-    ]).then(([bandResult, concertResult]) => {
+      // Optional enrichment can roll out after the core catalog without hiding it.
+      backend.rpc('artist_official_profiles').then(result => result.error ? [] : result.data ?? [], () => []),
+    ]).then(([bandResult, concertResult, profiles]) => {
       if (!active) return
       if (bandResult.error || concertResult.error) throw new Error('catalog')
-      const bands = mapBands(bandResult.data as BandRow[])
+      const bands = mapBands(bandResult.data as BandRow[], profiles)
       setData({ bands, concerts: mapConcerts(concertResult.data as ConcertRow[], bands) }); setLoading(false); setInitialized(true)
     }).catch(() => { if (active) { setError('공연 정보를 불러오지 못했습니다. 연결을 확인하고 다시 시도해 주세요.'); setLoading(false) } })
     return () => { active = false }
