@@ -16,10 +16,11 @@ export type ConcertRow = {
   ticket_schedules: TicketRow | TicketRow[] | null;
   concert_sources: { url: string; label: string; verified_at: string | null }[];
 }
-export function mapBands(rows: BandRow[]): Band[] {
+export function mapBands(rows: BandRow[], profiles: import('./artistChannels').OfficialProfileRow[] = []): Band[] {
   const regions = new Intl.DisplayNames(['ko'], { type: 'region' })
+  const official = new Map(profiles.map(p => [p.band_id, { websiteUrl: p.website_url, channelUrl: p.channel_url, photo: p.photo }]))
   return rows.map(row => ({ id: row.id, name: row.name, aliases: row.aliases, countryCode: row.country_code, musicbrainzId: row.musicbrainz_id ?? undefined, representativePhoto: row.representative_photo, photoMode: row.photo_mode,
-    country: regions.of(row.country_code) ?? row.country_code, genre: row.category && row.category !== 'unclassified' ? ({ domestic_rock: '국내 록', overseas_rock: '해외 록', jpop: 'J-pop' }[row.category]) : row.description?.startsWith('공식 사이트:') ? '밴드' : row.description ?? '밴드', color: colors[artworkIndex(row.id)], initials: Array.from(row.name).slice(0, 2).join('') }))
+    officialProfile: official.get(row.id), country: regions.of(row.country_code) ?? row.country_code, genre: row.category && row.category !== 'unclassified' ? ({ domestic_rock: '국내 록', overseas_rock: '해외 록', jpop: 'J-pop' }[row.category]) : row.description?.startsWith('공식 사이트:') ? '밴드' : row.description ?? '밴드', color: colors[artworkIndex(row.id)], initials: Array.from(row.name).slice(0, 2).join('') }))
 }
 export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {
   return rows.map(row => {
