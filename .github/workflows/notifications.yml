@@ -1,48 +1,29 @@
-name: Verify rotated server keys (read only)
+name: Deliver concert notifications
 on:
   workflow_dispatch:
+# Automatic delivery is owned by Supabase Cron. Keep this as a manual fallback.
 permissions:
   contents: read
+concurrency:
+  group: notification-delivery
+  cancel-in-progress: false
 jobs:
-  verify:
+  deliver:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
-    strategy:
-      fail-fast: false
-      matrix:
-        target: [catalog-ingestion, notification-delivery]
-    environment: ${{ matrix.target }}
+    timeout-minutes: 10
+    environment: notification-delivery
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Check key fingerprint and privileged read access
+          cache: npm
+      - run: npm ci
+      - name: Dispatch eligible notifications
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          VERIFICATION_ENVIRONMENT: ${{ matrix.target }}
-        shell: bash
-        run: |
-          node --input-type=module <<'JS'
-          import { createHash } from 'node:crypto'
-          const key = process.env.SUPABASE_SERVICE_ROLE_KEY
-          const url = process.env.SUPABASE_URL
-          if (!key || !url || new URL(url).hostname !== 'czjrzylvnewfjnfwjhwf.supabase.co') {
-            console.error('Required credentials missing or project mismatch')
-            process.exit(1)
-          }
-          try {
-            const response = await fetch(new URL('/rest/v1/rpc/service_artist_photo_identity', url), {
-              method: 'POST',
-              headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-              body: JSON.stringify({ band: '34ad608e-4a36-4097-913d-e9631c87d550' }),
-              signal: AbortSignal.timeout(20000),
-            })
-            if (!response.ok) throw new Error(`HTTP_${response.status}`)
-            if (await response.json() !== '6ef00829-fa94-4fee-a5a6-b28e1208e96a') throw new Error('RPC_RESULT_MISMATCH')
-            console.log(JSON.stringify({ environment: process.env.VERIFICATION_ENVIRONMENT, keyType: key.startsWith('sb_secret_') ? 'secret' : 'legacy', fingerprint: createHash('sha256').update(key).digest('hex'), privilegedRead: 'ok' }))
-          } catch (error) {
-            console.error(/^HTTP_\d+$|^RPC_RESULT_MISMATCH$/.test(error.message) ? error.message : 'AUTHENTICATION_PROBE_FAILED')
-            process.exit(1)
-          }
-          JS
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+        run: node scripts/notification-worker.mjs
