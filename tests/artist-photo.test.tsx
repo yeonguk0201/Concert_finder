@@ -67,12 +67,13 @@ test('changing artist while a photo is pending cannot show the previous artist i
 
 const youtube = () => ({url:'https://yt3.googleusercontent.com/avatar=s800',channelUrl:`https://www.youtube.com/channel/UC${'a'.repeat(22)}`,checkedAt:new Date(Date.now()-1000).toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()})
 
-test('YouTube photo has visible linked original branding, skips per-card lookup, and manual/hidden choices win', () => {
+test('YouTube photo keeps its visible compact source link, skips per-card lookup, and manual/hidden choices win', () => {
   const official=youtube()
   const view=render(<ArtistPhoto name="Ado" bandId="00000000-0000-4000-8000-000000000009" youtubePhoto={official} />)
   expect(screen.getByRole('img',{name:'Ado YouTube 채널 사진'}).getAttribute('src')).toBe(official.url)
   expect(screen.getByRole('link',{name:'Ado 사진 출처 · YouTube 채널'}).getAttribute('href')).toBe(official.channelUrl)
-  expect(screen.getByRole('img',{name:'YouTube'}).closest('details')).toBeNull()
+  expect(screen.getByRole('link',{name:'Ado 사진 출처 · YouTube 채널'}).textContent).toBe('YouTube ↗')
+  expect(screen.queryByRole('img',{name:'YouTube'})).toBeNull()
   expect(mock.invoke).not.toHaveBeenCalled()
   view.rerender(<ArtistPhoto name="Ado" photoMode="manual" youtubePhoto={official} representativePhoto={{...photo,retrievedAt:''}} />)
   expect(screen.getByRole('img',{name:'Ado 프로필'}).getAttribute('src')).toBe(photo.url)
