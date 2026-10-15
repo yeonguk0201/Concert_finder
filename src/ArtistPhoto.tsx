@@ -4,7 +4,6 @@ import { backend } from './backend'
 import type { ArtistPhotoData as Photo } from './artistPhotoTypes'
 import type { YouTubePhoto } from './artistChannels'
 import { validYouTubePhoto } from './artistChannels'
-import youtubeIcon from './assets/youtube-icon-white.png'
 const uuid = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/
 const cache = new Map<string, { photo: Photo | null; expires: number }>()
 const pending = new Map<string, { promise: Promise<Photo | null>; wanted: Set<() => boolean> }>()
@@ -92,8 +91,8 @@ export function ArtistPhoto({ name, mbid, bandId, color = '#a8c0ab', representat
   const photo = selectedPhoto?.url !== failedUrl ? selectedPhoto : null
   const visibleYouTube = official?.url !== failedUrl ? official : null
   return <figure ref={element} className={`artist-photo${visibleYouTube ? ' artist-photo-youtube' : ''}`}>
-    {visibleYouTube ? <><img className="youtube-profile-image" src={visibleYouTube.url} alt={`${name} YouTube 채널 사진`} width={160} height={160} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailedUrl(visibleYouTube.url)} />
-      <figcaption className="youtube-photo-source"><a href={visibleYouTube.channelUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} 사진 출처 · YouTube 채널`}><img className="youtube-brand-icon" src={youtubeIcon} alt="YouTube" width={217} height={186} /><span>채널 사진 · 공식 채널 ↗</span></a></figcaption></> : <>
+    {visibleYouTube ? <><img className="youtube-profile-image" src={visibleYouTube.url} alt={`${name} YouTube 채널 사진`} width={80} height={80} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailedUrl(visibleYouTube.url)} />
+      <figcaption className="youtube-photo-source"><a href={visibleYouTube.channelUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} 사진 출처 · YouTube 채널`}>YouTube ↗</a></figcaption></> : <>
     {photo ? <img src={photo.url} alt={`${name} 프로필`} width={80} height={80} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailedUrl(photo.url)} /> : <span className="artist-photo-fallback" style={{ background: color }} aria-label={`${name} 이니셜`}>{Array.from(name).slice(0, 2).join('')}</span>}
     {photo && <figcaption><details><summary aria-label={`${name} 사진 출처`}>사진 출처</summary><div className="artist-photo-credits"><a href={photo.source} target="_blank" rel="noopener noreferrer">사진: {photo.author}</a>{photo.credit && <span>{photo.credit}</span>}<a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a><span>정사각형으로 잘라 표시</span></div></details></figcaption>}</>}
   </figure>

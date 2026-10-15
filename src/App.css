@@ -70,16 +70,17 @@ section[aria-label="밴드 검색 결과"]{margin-bottom:32px}
 .band-card .artist-photo { margin: 0; }
 .artist-official-links { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-top: 12px; }
 .artist-official-links a { color: #c4d5b6; font-size: 12px; line-height: 1.6; text-underline-offset: 3px; }
-.band-card:has(.artist-photo-youtube) { flex-wrap: wrap; align-items: flex-start; }
-.band-card:has(.artist-photo-youtube) .artist-info { flex: 1; min-width: 100px; }
-.band-card:has(.artist-photo-youtube) .follow-button { margin-left: auto; }
-.artist-photo.artist-photo-youtube, .band-card .artist-photo.artist-photo-youtube { width: 220px; flex-basis: 220px; }
-.artist-photo.artist-photo-youtube .youtube-profile-image { width: 160px; height: 160px; object-fit: contain; margin-inline: auto; border-radius: 8px; }
-.artist-photo .youtube-photo-source { margin-top: 12px; background: #161916; border-radius: 8px; }
-.artist-photo .youtube-photo-source a { display: flex; flex-direction: column; align-items: center; padding: 0 0 12px; text-decoration: none; }
+.band-card .artist-info { flex: 1; min-width: 0; }
+.artist-photo .youtube-profile-image { object-fit: contain; }
+.artist-photo .youtube-photo-source { margin-top: 4px; }
+.artist-photo .youtube-photo-source a { display: inline-flex; align-items: center; min-height: 28px; font-size: 10px; text-decoration: none; white-space: nowrap; }
+.artist-photo .youtube-photo-source a:hover { text-decoration: underline; }
+.youtube-attribution { display: flex; align-items: center; gap: 16px; margin-top: 24px; border-top: 1px solid var(--border); }
+.youtube-attribution a { flex-shrink: 0; }
 /* Official PNG includes clear space: 579/1075 of its height is visible artwork. */
-.artist-photo .youtube-photo-source .youtube-brand-icon { height: 186px; width: auto; max-width: none; border-radius: 0; object-fit: contain; background: transparent; }
-.youtube-photo-source span { font-size: 11px; line-height: 1.6; }
+.youtube-attribution img { display: block; width: 217px; height: 186px; object-fit: contain; }
+.youtube-attribution p { font-size: 11px; line-height: 1.8; color: var(--muted); }
+@media(max-width:580px) { .youtube-attribution { flex-wrap: wrap; gap: 0; }.youtube-attribution p { margin: 0 0 16px; } }
 .artist-channel-editor { margin-block: 24px; border-top: 1px solid var(--border); padding-top: 18px; }
 .artist-channel-editor > summary { cursor: pointer; font-size: 15px; }
 .artist-channel-editor form { margin-top: 16px; }
