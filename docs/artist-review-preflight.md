@@ -1,6 +1,6 @@
 # 자동 검수 운영 전 검증
 
-현재 상태: 직접 승인 후 운영 DB migration·Edge v1 배포 및 두 팀 활성화를 완료했다. 소량 검증은 서버 YouTube 키 누락으로 action_required이며 예약은 아직 없다. [운영 배포 결과](artist-review-deployment-20261016.md)를 먼저 읽는다. 아래 내용과 마지막 검증 목록은 운영 적용 전 시점의 기록이며, migration 검토에는 최신 브랜치의 파일을 사용한다.
+현재 상태: 운영 DB migration·Edge v1 배포 및 사용자 관리자 재개 뒤 두 팀의 실제 YouTube 검증·검수 완료 저장까지 통과했다. [성공 기록](curation-runs/20261017-0048-KST-runner-success.json)을 먼저 읽는다. 반복 예약은 아직 없다. 최초 키 누락 이력은 [운영 배포 결과](artist-review-deployment-20261016.md)에 있다. 아래 내용과 마지막 검증 목록은 운영 적용 전 시점의 기록이며, migration 검토에는 최신 브랜치의 파일을 사용한다.
 
 ## 예약 UI에서 사용자가 확인할 항목
 
