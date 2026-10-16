@@ -129,10 +129,10 @@ test('review worker fences roles, targets, versions, manual decisions and leases
       assert.equal(summary.complete, 2); assert.equal(summary.failed, 1); assert.equal(summary.actionRequired, 7)
       assert.equal(summary.notify, true); assert.equal((await finish(run)).notify, false)
       assert.equal((await begin(randomUUID())).state, 'idle') // Delayed duplicate cannot start another batch.
-      await owner(); await db.exec("update private.artist_review_runs set started_at=now()-interval '6 hours'"); await service()
+      await owner(); await db.exec("update private.artist_review_lock set anchor_at=anchor_at-interval '6 hours'"); await service()
       const next = await begin(randomUUID())
       assert.equal(next.targets.length, 3) // Cached keep and pending failures were not researched again.
-      await owner(); await db.exec("update private.artist_review_runs set lease_until=now()-interval '1 minute',started_at=now()-interval '6 hours' where finished_at is null")
+      await owner(); await db.exec("update private.artist_review_runs set lease_until=now()-interval '1 minute' where finished_at is null; update private.artist_review_lock set anchor_at=anchor_at-interval '6 hours'")
       await service()
       await assert.rejects(checkpoint(next.runId, next.targets[0], result()), /LEASE_LOST/)
       assert.equal((await begin(randomUUID())).state, 'idle') // Crash recovery delays unfinished work.
@@ -158,7 +158,7 @@ test('review worker fences roles, targets, versions, manual decisions and leases
       await db.query('insert into private.artist_channel_history(band_id,actor_id,before_record,after_record) values($1,$2,$3,$3)', [row.snapshot.id, admin, { verification: 'verified' }])
       await db.query('update private.artist_channel_history set actor_id=null where band_id=$1', [row.snapshot.id]) // Deleted actor must not erase manual provenance.
       await db.query("select set_config('test.uid','',false)")
-      await db.exec("update private.artist_review_runs set started_at=now()-interval '6 hours'")
+      await db.exec("update private.artist_review_lock set anchor_at=anchor_at-interval '6 hours'")
       await service()
       const again = await begin(randomUUID())
       assert.equal(again.targets.length, 1)
@@ -176,7 +176,7 @@ test('review worker fences roles, targets, versions, manual decisions and leases
       await db.exec('update private.artist_review_targets set enabled=false')
       await db.query('update private.artist_review_targets set enabled=true where band_id=$1', [id])
       for (const count of [2, 3]) {
-        await db.exec("update private.artist_review_runs set started_at=now()-interval '6 hours'")
+        await db.exec("update private.artist_review_lock set anchor_at=anchor_at-interval '6 hours'")
         await db.query("update private.artist_review_state set next_attempt_at=now()-interval '1 minute' where band_id=$1", [id])
         await service(); const next = await begin(randomUUID())
         assert.equal(next.targets.length, 1)

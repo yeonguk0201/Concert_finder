@@ -85,6 +85,13 @@ export function createArtistReviewHandler({ secret, rpc, youtubeKey, fetcher = f
       if (input.action === 'finish' && Object.keys(input).every(k => ['action', 'runId'].includes(k))) {
         return reply(await call('service_finish_artist_review', { run_id: input.runId }))
       }
+      if (input.action === 'close' && Object.keys(input).every(k => ['action', 'runId'].includes(k))) {
+        return reply(await call('service_close_artist_review', { run_id: input.runId }))
+      }
+      if (input.action === 'queue' && (input.afterId === null || UUID.test(input.afterId ?? ''))
+        && Object.keys(input).every(k => ['action', 'runId', 'afterId'].includes(k))) {
+        return reply({ queue: await call('service_artist_review_queue', { after_id: input.afterId }), notify: false })
+      }
       if (input.action === 'notices' && Object.keys(input).every(k => ['action', 'runId', 'acknowledge'].includes(k))
         && (input.acknowledge === undefined || (Array.isArray(input.acknowledge)
           && input.acknowledge.length <= 30 && input.acknowledge.every(id => UUID.test(id))))) {

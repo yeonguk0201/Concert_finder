@@ -57,8 +57,9 @@ end $$;
 revoke all on function private.review_channel_origin() from public,anon,authenticated,service_role;
 create trigger review_channel_origin before insert on private.artist_channel_history
   for each row execute function private.review_channel_origin();
-create table private.artist_review_lock (id boolean primary key check(id), run_id uuid references private.artist_review_runs(id));
-insert into private.artist_review_lock values(true,null);
+create table private.artist_review_lock (id boolean primary key check(id), run_id uuid references private.artist_review_runs(id),
+  anchor_at timestamptz, last_slot bigint not null default -1);
+insert into private.artist_review_lock(id,run_id) values(true,null);
 alter table private.artist_review_targets enable row level security;
 alter table private.artist_review_runs enable row level security;
 alter table private.artist_review_state enable row level security;
@@ -152,10 +153,10 @@ $$;
 
 create function public.service_claim_artist_review(request_id uuid) returns jsonb
 language plpgsql security definer set search_path='' as $$
-declare active private.artist_review_runs; chosen uuid[]; result jsonb;
+declare active private.artist_review_runs; chosen uuid[]; result jsonb; gate private.artist_review_lock; slot bigint;
 begin
   perform private.review_service();
-  perform 1 from private.artist_review_lock where id for update;
+  select * into gate from private.artist_review_lock where id for update;
   select r.* into active from private.artist_review_runs r join private.artist_review_lock l on l.run_id=r.id;
   if active.finished_at is null and active.lease_until>clock_timestamp() then
     if active.id<>request_id then return jsonb_build_object('state','busy','notify',false,'targets','[]'::jsonb); end if;
@@ -177,9 +178,15 @@ begin
         on conflict do nothing;
       update private.artist_review_runs set finished_at=clock_timestamp() where id=active.id;
     end if;
-    -- A delayed duplicate invocation cannot start a second batch in the same five-hour period.
-    if active.id is not null and active.started_at>clock_timestamp()-interval '5 hours' then
-      return jsonb_build_object('state','idle','notify',false,'targets','[]'::jsonb);
+    -- Stable schedule anchor: actual start delays do not move the next eligibility time.
+    -- Thirty minutes of early jitter tolerance; missed periods are coalesced, never backfilled.
+    if gate.anchor_at>clock_timestamp()+interval '30 minutes' then
+      return jsonb_build_object('state','idle','reason','schedule_window','notify',false,'targets','[]'::jsonb);
+    end if;
+    slot:=case when gate.anchor_at is null then 0 else greatest(0,floor(extract(epoch from
+      (clock_timestamp()-gate.anchor_at+interval '30 minutes'))/18000)::bigint) end;
+    if slot<=gate.last_slot then
+      return jsonb_build_object('state','idle','reason','schedule_window','notify',false,'targets','[]'::jsonb);
     end if;
     select array_agg(id order by id) into chosen from (
       select b.id from public.bands b join private.artist_review_targets t on t.band_id=b.id and t.enabled
@@ -192,7 +199,7 @@ begin
     ) candidates;
     if chosen is null then return jsonb_build_object('state','idle','notify',false,'targets','[]'::jsonb); end if;
     insert into private.artist_review_runs(id,targets) values(request_id,chosen) returning * into active;
-    update private.artist_review_lock set run_id=active.id where id;
+    update private.artist_review_lock set run_id=active.id,anchor_at=coalesce(anchor_at,active.started_at),last_slot=slot where id;
     insert into private.artist_review_items(run_id,band_id,snapshot,channel_version)
       select active.id,b.id,private.review_snapshot(b),p.updated_at from public.bands b
         left join private.artist_channels p on p.band_id=b.id where b.id=any(chosen);
@@ -205,7 +212,7 @@ begin
       left join private.artist_channels p on p.band_id=i.band_id
       left join private.artist_review_state s on s.band_id=i.band_id
     where i.run_id=active.id and i.checkpoint is null;
-  return jsonb_build_object('state','running','runId',active.id,'leaseUntil',active.lease_until,'targets',result,'notify',false);
+  return jsonb_build_object('state','running','runId',active.id,'leaseUntil',active.lease_until,'serverNow',clock_timestamp(),'targets',result,'notify',false);
 end $$;
 
 -- Only canonical HTTPS source URLs, no credentials, query keys, fragments or arbitrary fields.
@@ -367,7 +374,7 @@ begin
   perform private.review_service();
   perform 1 from private.artist_review_lock where id for update;
   if reason not in ('SOURCE_UNAVAILABLE','INVESTIGATION_FAILED','EDIT_CONFLICT','CHANNEL_LOCKED',
-    'CHANNEL_ID_CHANGED','YOUTUBE_ACTION_REQUIRED','CONFIGURATION_REQUIRED') or reason is null then raise exception 'INVALID_RESULT'; end if;
+    'CHANNEL_ID_CHANGED','YOUTUBE_ACTION_REQUIRED','CONFIGURATION_REQUIRED','LEASE_BUDGET') or reason is null then raise exception 'INVALID_RESULT'; end if;
   if not exists(select 1 from private.artist_review_runs r where r.id=run_id and r.finished_at is null
     and r.lease_until>clock_timestamp()) then raise exception 'LEASE_LOST'; end if;
   select * into job from private.artist_review_items i where i.run_id=service_defer_artist_review.run_id
@@ -379,7 +386,7 @@ begin
     return job.checkpoint-'submitted';
   end if;
   select * into band from public.bands b where b.id=job.band_id;
-  outcome:=case when reason in ('SOURCE_UNAVAILABLE','INVESTIGATION_FAILED') then 'failed' else 'action_required' end;
+  outcome:=case when reason in ('SOURCE_UNAVAILABLE','INVESTIGATION_FAILED','LEASE_BUDGET') then 'failed' else 'action_required' end;
   select coalesce(s.failures,0) into n from private.artist_review_state s where s.band_id=job.band_id;
   n:=case when outcome='failed' then coalesce(n,0)+1 else 0 end;
   insert into private.artist_review_state(band_id,policy,snapshot,result,outcome,valid_until,next_attempt_at,failures)
@@ -416,3 +423,80 @@ begin
 end $$;
 revoke all on function public.service_artist_review_notices(uuid[]) from public,anon,authenticated,service_role;
 grant execute on function public.service_artist_review_notices(uuid[]) to service_role;
+
+-- One-shot close before the lease deadline; already committed checkpoints remain untouched.
+create function public.service_close_artist_review(run_id uuid) returns jsonb
+language plpgsql security definer set search_path='' as $$
+declare r private.artist_review_runs; item record;
+begin
+  perform private.review_service();
+  perform 1 from private.artist_review_lock where id for update;
+  select * into r from private.artist_review_runs where id=run_id for update;
+  if not found then raise exception 'RUN_NOT_FOUND'; end if;
+  if r.finished_at is not null then return jsonb_build_object('state','finished','notify',false); end if;
+  if r.lease_until<=clock_timestamp() then raise exception 'LEASE_LOST'; end if;
+  for item in select i.band_id from private.artist_review_items i where i.run_id=r.id and i.checkpoint is null loop
+    perform public.service_defer_artist_review(r.id,item.band_id,'LEASE_BUDGET');
+  end loop;
+  return public.service_finish_artist_review(r.id);
+end $$;
+revoke all on function public.service_close_artist_review(uuid) from public,anon,authenticated,service_role;
+grant execute on function public.service_close_artist_review(uuid) to service_role;
+
+-- Scoped runner can read an action list but cannot clear it or restore a hidden artist.
+create function public.service_artist_review_queue(after_id uuid default null) returns jsonb
+language plpgsql security definer set search_path='' as $$
+declare result jsonb;
+begin
+  perform private.review_service();
+  select coalesce(jsonb_agg(to_jsonb(q)),'[]'::jsonb) into result from (
+    select s.band_id,b.name,b.curation_status,b.updated_at,s.checked_at,s.result,s.failures,t.enabled as target_enabled,t.source_hosts,
+      private.review_snapshot(b) as current_snapshot
+    from private.artist_review_state s join public.bands b on b.id=s.band_id
+      join private.artist_review_targets t on t.band_id=b.id
+    where s.outcome='action_required' and (after_id is null or s.band_id>after_id)
+    order by s.band_id limit 100
+  ) q;
+  return result;
+end $$;
+create table private.artist_review_resumptions (
+  id uuid primary key default gen_random_uuid(),band_id uuid not null references public.bands(id),
+  actor_id uuid not null references auth.users(id),band_version timestamptz not null,reason text not null,previous_state jsonb not null,
+  resumed_at timestamptz not null default clock_timestamp()
+);
+alter table private.artist_review_resumptions enable row level security;
+revoke all on private.artist_review_resumptions from public,anon,authenticated,service_role;
+create function public.admin_resume_artist_review(target_band_id uuid,expected_version timestamptz,
+  expected_checked_at timestamptz,reason text) returns void
+language plpgsql security definer set search_path='' as $$
+declare b public.bands; s private.artist_review_state;
+begin
+  if not private.is_admin() then raise exception 'ADMIN_REQUIRED' using errcode='42501'; end if;
+  lock table public.bands in share row exclusive mode;
+  perform 1 from private.artist_review_lock where id for update;
+  select * into b from public.bands where id=target_band_id for update;
+  select * into s from private.artist_review_state where band_id=target_band_id for update;
+  if s.band_id is null or s.outcome<>'action_required' then raise exception 'REVIEW_NOT_PAUSED'; end if;
+  if b.updated_at is distinct from expected_version or s.checked_at is distinct from expected_checked_at then raise exception 'EDIT_CONFLICT'; end if;
+  if b.curation_status<>'unreviewed' then raise exception 'RESTORE_ARTIST_FIRST'; end if;
+  if length(trim(coalesce(reason,''))) not between 10 and 1500 then raise exception 'INVALID_RESULT'; end if;
+  if not exists(select 1 from private.artist_review_targets t where t.band_id=b.id and t.enabled) then raise exception 'TARGET_DISABLED'; end if;
+  insert into private.artist_review_resumptions(band_id,actor_id,band_version,reason,previous_state) values(b.id,auth.uid(),b.updated_at,reason,to_jsonb(s));
+  update private.artist_review_state set outcome='failed',failures=0,next_attempt_at=clock_timestamp(),valid_until=clock_timestamp()
+    where band_id=b.id;
+end $$;
+revoke all on function public.service_artist_review_queue(uuid) from public,anon,authenticated,service_role;
+grant execute on function public.service_artist_review_queue(uuid) to service_role;
+revoke all on function public.admin_resume_artist_review(uuid,timestamptz,timestamptz,text) from public,anon,authenticated,service_role;
+grant execute on function public.admin_resume_artist_review(uuid,timestamptz,timestamptz,text) to authenticated;
+
+-- An explicit administrator resumption is a new boundary. Later manual edits still block automation.
+create or replace function private.review_manual(b public.bands) returns boolean language sql stable set search_path='' as $$
+  select b.curation_status<>'unreviewed' or (b.curation_reason<>'' and not exists(
+    select 1 from private.artist_review_resumptions r where r.band_id=b.id and r.band_version=b.updated_at)) or exists(
+    select 1 from private.artist_management_history h where h.band_id=b.id and h.actor_id is not null
+      and h.changed_at>coalesce((select max(r.resumed_at) from private.artist_review_resumptions r where r.band_id=b.id),'-infinity'::timestamptz)
+      and (h.before_record->'curation_status' is distinct from h.after_record->'curation_status'
+        or h.before_record->'curation_reason' is distinct from h.after_record->'curation_reason'
+        or h.before_record->'category' is distinct from h.after_record->'category'));
+$$;
