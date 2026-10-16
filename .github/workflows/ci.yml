@@ -38,3 +38,5 @@ jobs:
           npx --yes deno@2.1.4 test --config supabase/functions/notification-delivery/deno.json supabase/functions/notification-delivery/runtime.test.ts
       - name: Build
         run: npm run build
+      - name: Artist review server runtime
+        run: npx --yes deno@2.1.4 check --frozen --config supabase/functions/artist-review-runner/deno.json supabase/functions/artist-review-runner/index.ts

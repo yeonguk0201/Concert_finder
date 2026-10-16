@@ -1,5 +1,7 @@
 # 클라우드 운영과 읽기 전용 검증
 
+후속 구현: [서버 실행기 운영 검토서](../../../docs/artist-review-runner.md)를 우선한다. 아래 개인 관리자 갱신 토큰 방식은 이전 검토 기록이며 채택하지 않았다. 현재 새 실행기는 scoped secret과 서버 내부 전용 RPC로 구현됐으나 migration·운영 배포는 아직 적용하지 않았다. 두 문서에서 과거 관측과 현재 구현/운영 상태를 구분한다.
+
 ## 범위와 현재 구현
 
 기존 등록 아티스트만 장르 검수(concert-artist-curation)·채널 검수(concert-artist-channels)한다. 신규 추가·concert-artist-import는 제외하며 LASTFM_API_KEY는 필요하지 않다. 설치나 설정은 DB 변경·반복 예약 권한이 아니다. 기존 격리 checkout을 사용하고 명시 요청 없이 worktree를 만들지 않는다.
