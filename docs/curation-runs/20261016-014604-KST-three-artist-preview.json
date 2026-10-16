@@ -1,0 +1,186 @@
+{
+  "run_id": "20261016-014604-KST",
+  "mode": "read_only_preview",
+  "scope": "existing registered artists only; no import; no schedule",
+  "policy_version": "jpop-or-rock-v1",
+  "checked_at": "2026-10-16T01:46:04.197237+09:00",
+  "db_mutations": 0,
+  "api_validation": {
+    "provider": "YouTube Data API v3 channels.list",
+    "requests": 1,
+    "part": "snippet",
+    "requested_channel_ids": 4,
+    "returned_channel_ids": 4,
+    "http_status": 200,
+    "thumbnails_requested": false,
+    "raw_api_metadata_persisted": false,
+    "key_value_logged": false
+  },
+  "results": [
+    {
+      "band_id": "ba268f6a-a4fc-4bee-9371-103143a69d1c",
+      "identity_snapshot": {
+        "id": "ba268f6a-a4fc-4bee-9371-103143a69d1c",
+        "name": "=LOVE",
+        "aliases": [
+          "イコールラブ",
+          "Equal LOVE",
+          "＝LOVE",
+          "イコラブ",
+          "= LOVE"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "28abfefb-cceb-4605-8330-a53b6d161403",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "curation_reason": "",
+        "curation_evidence_url": null,
+        "updated_at": "2026-10-13T08:18:21.208702+00:00"
+      },
+      "policy_version": "jpop-or-rock-v1",
+      "checked_at": "2026-10-16T01:46:04.197237+09:00",
+      "genre_decision": "keep",
+      "genre_summary": "공식 소개가 指原莉乃 제작 성우 아이돌 프로젝트임을 명시하고, 공식 음반 목록에서 일본어 싱글 발매 활동을 확인. J-pop 가수/그룹 범위로 유지하며 공개 승인으로 승격하지 않는다.",
+      "sources": [
+        {
+          "url": "https://equal-love.jp/feature/about",
+          "excerpt": "指原莉乃による新しいアイドルProject / 声優アイドル"
+        },
+        {
+          "url": "https://equal-love.jp/discography/",
+          "excerpt": "SINGLE RELEASE 2026.08.26 恋、はじめました。"
+        },
+        {
+          "url": "https://equal-love.jp/feature/profile",
+          "summary": "그룹명·멤버 명단 및 아티스트 전용 채널 링크 대조"
+        }
+      ],
+      "channel_review": {
+        "decision": "verified_in_preview",
+        "official_source_url": "https://equal-love.jp/feature/profile",
+        "channel_url": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A",
+        "api_id_resolved": true,
+        "db_lock_and_private_history_checked": false
+      },
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "before_version": "2026-10-13T08:18:21.208702+00:00",
+      "after_version": "2026-10-13T08:18:21.208702+00:00",
+      "applied": false
+    },
+    {
+      "band_id": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+      "identity_snapshot": {
+        "id": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+        "name": "10,000 Maniacs",
+        "aliases": [
+          "Nathalie Merchant & 10,000 Maniacs",
+          "10.000 Maniacs",
+          "Ten Thousand Maniacs",
+          "10000 Maniacs"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "b9a06530-1241-4162-836f-7b8e79deaa58",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "curation_reason": "",
+        "curation_evidence_url": null,
+        "updated_at": "2026-10-13T08:20:05.841241+00:00"
+      },
+      "policy_version": "jpop-or-rock-v1",
+      "checked_at": "2026-10-16T01:46:04.197237+09:00",
+      "genre_decision": "keep",
+      "genre_summary": "공식 소개가 alternative rock을 명시하고 1981년 Jamestown, New York 결성 및 멤버·음반 이력을 제공. DB 미국 그룹 신원과 일치.",
+      "sources": [
+        {
+          "url": "https://maniacs.com/about",
+          "excerpt": "45 years as one of alternative rock’s most influential and enduring forces"
+        },
+        {
+          "url": "https://maniacs.com/",
+          "summary": "멤버 명단·아티스트 채널 직접 링크 확인"
+        }
+      ],
+      "channel_review": {
+        "decision": "verified_in_preview",
+        "official_source_url": "https://maniacs.com/about",
+        "channel_url": "https://www.youtube.com/channel/UC_RHcSrhs0fCF1N72AXtu6g",
+        "api_id_resolved": true,
+        "musicbrainz_alternative_channel_url": "https://www.youtube.com/channel/UCUyBSAfFmOtaCYBuc7PS69Q",
+        "note": "MusicBrainz 후보는 별도 VEVO 채널이다. 공식 사이트 직접 연결 채널을 구분했으며 DB 지정/잠금을 읽지 못했으므로 자동 교체하지 않는다.",
+        "db_lock_and_private_history_checked": false
+      },
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "before_version": "2026-10-13T08:20:05.841241+00:00",
+      "after_version": "2026-10-13T08:20:05.841241+00:00",
+      "applied": false
+    },
+    {
+      "band_id": "22656510-a275-4c0d-9233-2a15434b2ce2",
+      "identity_snapshot": {
+        "id": "22656510-a275-4c0d-9233-2a15434b2ce2",
+        "name": "℃‐ute",
+        "aliases": [
+          "°C-ute",
+          "큐트",
+          "Cute",
+          "c-ute",
+          "キュート"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "98c90095-a4ee-4644-b445-ca6219f0ca00",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "curation_reason": "",
+        "curation_evidence_url": null,
+        "updated_at": "2026-10-13T08:18:41.349781+00:00"
+      },
+      "policy_version": "jpop-or-rock-v1",
+      "checked_at": "2026-10-16T01:46:04.197237+09:00",
+      "genre_decision": "failed",
+      "genre_summary": "유효한 아티스트별 공식 장르 소개와 공식 사이트→채널 링크를 확보하지 못했다. 기존 페이지는 404이며 API 자기소개만으로 공식성/장르를 확정하지 않는다.",
+      "sources": [
+        {
+          "url": "https://www.up-front-works.jp/artist/c-ute/",
+          "http_status": 404
+        },
+        {
+          "url": "https://www.helloproject.com/c-ute/",
+          "http_status": 404
+        },
+        {
+          "url": "https://www.up-front-works.jp/artist/c-ute/discography/",
+          "http_status": 404
+        }
+      ],
+      "channel_review": {
+        "decision": "candidate",
+        "channel_url": "https://www.youtube.com/channel/UCcS2E_TVMSwbN4Q5eH7F_oA",
+        "api_id_resolved": true,
+        "reason": "MBID 관계와 API 응답 후보. 공식 아티스트 페이지 역교차 링크 미확인.",
+        "db_lock_and_private_history_checked": false
+      },
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "before_version": "2026-10-13T08:18:41.349781+00:00",
+      "after_version": "2026-10-13T08:18:41.349781+00:00",
+      "applied": false
+    }
+  ],
+  "genre_counts": {
+    "keep": 2,
+    "failed": 1,
+    "exclude": 0,
+    "hold": 0
+  },
+  "channel_counts": {
+    "verified_in_preview": 2,
+    "candidate": 1
+  },
+  "limits": [
+    "현재 작업에서 재검증했으며 별도의 새 작업 생성/Republish 실행을 증명하지 않는다.",
+    "admin_catalog는 현재 서비스 인증으로 403 ADMIN_REQUIRED. 비공개 채널 이력/잠금은 확인하지 않음.",
+    "HTTP 성공과 API 자기소개만으로 검수 성공을 판정하지 않음."
+  ]
+}
