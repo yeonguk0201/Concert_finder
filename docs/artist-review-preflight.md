@@ -42,7 +42,7 @@ watchdog의 close는 20초 timeout/최대 3회이며, 근접한 CLI 호출도 �
 
 `node --use-env-proxy scripts/artist-review-runner.mjs queue`로 action_required 목록을 읽는다. band_id/name, 현재 상태/버전, 원문 checked_at, 근거/이유, 대상 활성화 여부/허용 호스트를 반환한다. 최대 100팀씩이며 다음 페이지는 `--after=마지막-band-UUID`다. CLI/서버 전용 키에는 재개 권한이 없다.
 
-관리자는 기존 로그인 세션에서 해당 기록과 최신 상태를 다시 읽고 다음 RPC를 호출한다. 토큰을 추출·장기 저장하지 않는다. 전용 UI 버튼은 아직 없고 기존 인증된 관리자 클라이언트/API 경로를 사용한다.
+관리자는 기존 로그인 세션에서 해당 기록과 최신 상태를 다시 읽고 다음 RPC를 호출한다. 토큰을 추출·장기 저장하지 않는다. [관리자 재개 화면](artist-review-admin-20261017.md)을 구현했으며, 해당 프런트엔드 버전에서 아티스트를 선택하고 `자동 검수 상태·재개`를 열어 사용할 수 있다. 화면도 같은 관리자 API를 호출하며 실행기 키에는 재개 권한을 추가하지 않았다.
 
 ```js
 await backend.rpc('admin_resume_artist_review', {
