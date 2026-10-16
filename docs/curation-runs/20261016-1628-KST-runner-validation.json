@@ -1,0 +1,104 @@
+{
+  "run_id": "d62345d4-f212-407a-b312-bbf9c9ac5729",
+  "checked_at": "2026-10-16T16:29:16.187159+09:00",
+  "mode": "production_validation",
+  "policy_version": "jpop-or-rock-v1+official-channels-v1+runner-v1",
+  "migration_applied": true,
+  "edge_version": 1,
+  "run_finished": true,
+  "complete": 0,
+  "action_required": 2,
+  "catalog_mutations": 0,
+  "channel_mutations": 0,
+  "results": [
+    {
+      "band_id": "ba268f6a-a4fc-4bee-9371-103143a69d1c",
+      "before_version": "2026-10-13T08:18:21.208702+00:00",
+      "after_version": "2026-10-13T08:18:21.208702+00:00",
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "investigation": {
+        "genre": {
+          "decision": "keep",
+          "summary": "공식 소개의 指原莉乃 제작 아이돌 프로젝트 및 공식 음반 목록의 일본어 싱글 발매 활동을 확인했다. DB의 일본 그룹 이름과 별칭이 일치하여 J-pop 활동 범위로 유지한다. 공개 승인으로 승격하지 않는다.",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://equal-love.jp/feature/about",
+              "checkedAt": "2026-10-16T07:27:51.680671+00:00",
+              "excerpt": "指原莉乃による新しいアイドルProject"
+            },
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://equal-love.jp/discography/",
+              "checkedAt": "2026-10-16T07:27:51.680671+00:00",
+              "excerpt": "恋、はじめました。[CD Only/Type-F]"
+            }
+          ]
+        },
+        "channel": {
+          "decision": "verified",
+          "summary": "정확한 그룹 신원이 확인된 공식 아티스트 소개 페이지가 해당 아티스트 전용 YouTube 채널을 a href로 직접 연결한다. 기존 지정 채널과 잠금 및 수동 이력이 없는 할당 스냅샷을 확인했다.",
+          "url": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://equal-love.jp/feature/about",
+              "checkedAt": "2026-10-16T07:27:51.680671+00:00",
+              "excerpt": "指原莉乃による新しいアイドルProject",
+              "linkedChannelUrl": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A"
+            }
+          ]
+        }
+      },
+      "outcome": "action_required",
+      "server_error": "YOUTUBE_KEY_REQUIRED",
+      "defer_reason": "YOUTUBE_ACTION_REQUIRED",
+      "applied": false
+    },
+    {
+      "band_id": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+      "before_version": "2026-10-13T08:20:05.841241+00:00",
+      "after_version": "2026-10-13T08:20:05.841241+00:00",
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "investigation": {
+        "genre": {
+          "decision": "keep",
+          "summary": "공식 소개가 alternative rock 활동과 1981년 Jamestown, New York 결성 및 멤버 이력을 명시한다. DB의 미국 그룹 이름 및 MusicBrainz 신원과 일치하므로 록 활동 범위로 유지한다. 공개 승인으로 승격하지 않는다.",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://maniacs.com/about",
+              "checkedAt": "2026-10-16T07:27:51.680671+00:00",
+              "excerpt": "45 years as one of alternative rock’s most influential and enduring forces"
+            }
+          ]
+        },
+        "channel": {
+          "decision": "verified",
+          "summary": "정확한 그룹 신원이 확인된 공식 아티스트 소개 페이지가 해당 아티스트 전용 YouTube 채널을 a href로 직접 연결한다. 기존 지정 채널과 잠금 및 수동 이력이 없는 할당 스냅샷을 확인했다.",
+          "url": "https://www.youtube.com/channel/UC_RHcSrhs0fCF1N72AXtu6g",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://maniacs.com/about",
+              "checkedAt": "2026-10-16T07:27:51.680671+00:00",
+              "excerpt": "45 years as one of alternative rock’s most influential and enduring forces",
+              "linkedChannelUrl": "https://www.youtube.com/channel/UC_RHcSrhs0fCF1N72AXtu6g"
+            }
+          ]
+        }
+      },
+      "outcome": "action_required",
+      "server_error": "not_submitted_after_shared_configuration_failure",
+      "defer_reason": "YOUTUBE_ACTION_REQUIRED",
+      "applied": false
+    }
+  ]
+}

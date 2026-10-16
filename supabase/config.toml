@@ -18,3 +18,7 @@ verify_jwt = false
 [functions.artist-photo-upload]
 # Auth getUser + caller-scoped is_catalog_admin and update RPC validate each write.
 verify_jwt = false
+
+[functions.artist-review-runner]
+# Dedicated >=32 character runner secret; never a personal/admin login token.
+verify_jwt = false

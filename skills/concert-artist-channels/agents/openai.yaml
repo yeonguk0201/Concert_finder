@@ -1,0 +1,4 @@
+interface:
+  display_name: "아티스트 공식 채널·사진 검수"
+  short_description: "공식 사이트와 외부 ID를 대조해 채널을 일괄 검수하고 사진 URL을 갱신합니다"
+  default_prompt: "$concert-artist-channels로 concert-finder 아티스트의 공식 YouTube 채널을 일괄 찾아 검수하고 사진 URL의 갱신 상태를 정리해줘."
