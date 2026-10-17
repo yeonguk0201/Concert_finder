@@ -79,6 +79,9 @@ export function createArtistReviewHandler({ secret, rpc, youtubeKey, fetcher = f
     try {
       const input = JSON.parse(await boundedText(request.body, 30000))
       if (!UUID.test(input.runId ?? '')) return reply({ error: 'INVALID_BODY' }, 400)
+      if (input.action === 'readiness' && Object.keys(input).every(k => ['action', 'runId'].includes(k))) {
+        return reply(await call('service_artist_review_readiness', {}))
+      }
       if (input.action === 'begin' && Object.keys(input).every(k => ['action', 'runId'].includes(k))) {
         return reply(await call('service_claim_artist_review', { request_id: input.runId }))
       }
