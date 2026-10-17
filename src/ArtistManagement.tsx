@@ -8,6 +8,7 @@ import type { ArtistPhotoData } from './artistPhotoTypes'
 import { saveArtistPhotoFile } from './artistPhotoUpload'
 import { ArtistChannelEditor } from './ArtistChannelEditor'
 import { ArtistReviewControl } from './ArtistReviewControl'
+import { ArtistReviewReadiness } from './ArtistReviewReadiness'
 
 export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSaved: () => void }) {
   const [selected, setSelected] = useState('')
@@ -18,6 +19,7 @@ export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSav
   const filtered = bands.filter(b => (status === 'all' || (b.curation_status ?? 'unreviewed') === status) &&
     [b.name, b.country_code, ...b.aliases].some(value => value.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())))
   return <section aria-label="아티스트 DB 관리"><h2>아티스트 DB·대표 이미지</h2>
+    <ArtistReviewReadiness />
     <p>이름·국적·분류·노출 상태와 사진을 관리합니다. 보류·제외는 일반 목록과 자동 공개를 차단하며 기존 공연·찜 관계는 보존합니다. 제외 후 복구할 때 승인 근거를 다시 검토하세요.</p>
     <div className="admin-fields"><label>DB 이름·별칭·국가 검색<input type="search" value={query} onChange={e => setQuery(e.target.value)} /></label>
       <label>관리 상태 필터<select value={status} onChange={e => setStatus(e.target.value)}><option value="all">전체</option>{Object.entries(artistStatusLabels).map(([value,label]) => <option key={value} value={value}>{label}</option>)}</select></label></div>
