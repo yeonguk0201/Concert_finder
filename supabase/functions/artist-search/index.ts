@@ -4,9 +4,13 @@ import { createArtistSearchHandler } from '../_shared/artist-search.mjs'
 const url = Deno.env.get('SUPABASE_URL')!
 const service = createClient(url, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false, autoRefreshToken: false } })
 Deno.serve(createArtistSearchHandler({
-  authenticateUser: async (token: string) => {
-    const { data, error } = await service.auth.getUser(token)
-    return !error && Boolean(data.user)
+  authorize: async (token: string) => {
+    const caller = createClient(url, Deno.env.get('SUPABASE_ANON_KEY')!, { global: { headers: { Authorization: `Bearer ${token}` } }, auth: { persistSession: false, autoRefreshToken: false } })
+    const { data, error } = await caller.auth.getUser(token)
+    if (error || !data.user) return null
+    const access = await caller.rpc('is_catalog_admin')
+    if (access.error) throw access.error
+    return { admin: access.data === true }
   },
   cache: async (action: string, term: string, value: unknown = null) => {
     const { data, error } = await service.rpc('service_artist_search_cache', { action, term, value })

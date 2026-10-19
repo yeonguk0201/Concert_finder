@@ -1,6 +1,6 @@
 import { artistQuery, mbidPattern, musicbrainzArtist, relevantArtists } from './musicbrainz-data.mjs'
 
-export function createArtistSearchHandler({ authenticateUser, cache, importArtist, loadBand, fetcher = fetch }) {
+export function createArtistSearchHandler({ authorize, cache, importArtist, loadBand, fetcher = fetch }) {
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }
   const reply = (status, body) => new Response(JSON.stringify(body), { status, headers })
   return async request => {
@@ -13,7 +13,9 @@ export function createArtistSearchHandler({ authenticateUser, cache, importArtis
       if (!body || typeof body !== 'object' || Array.isArray(body)) return reply(400, { error: 'INVALID_QUERY' })
       const importing = body.action === 'import'
       if (!importing && body.action !== 'search') return reply(400, { error: 'INVALID_QUERY' })
-      if (importing && (!token || !await authenticateUser(token))) return reply(401, { error: 'LOGIN_REQUIRED' })
+      const access = token ? await authorize(token) : null
+      if (!access) return reply(401, { error: 'LOGIN_REQUIRED' })
+      if (!access.admin) return reply(403, { error: 'ADMIN_REQUIRED' })
       if (importing ? !mbidPattern.test(body.id ?? '') : typeof body.query !== 'string' || body.query.trim().length < 2 || body.query.length > 100) return reply(400, { error: 'INVALID_QUERY' })
       const term = importing ? `id:${body.id}` : `query:v3:${body.query.trim().normalize('NFKC').toLowerCase()}`
       let result = await cache('get', term)
