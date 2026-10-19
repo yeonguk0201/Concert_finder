@@ -5,7 +5,7 @@ description: "concert-finder 아티스트의 공식 YouTube 채널·공식 사�
 
 # 공식 채널과 프로필 이미지 일괄 검수
 
-로컬·클라우드 교대 통합 검수는 [교대 실행 절차](../../docs/artist-review-handoff.md)를 따른다. `scripts/refresh-artist-channels.mjs`에는 공통 `batch.json`을 `--selection`으로 반드시 전달한다. 장르 조사와 별개로 20팀을 추가 선택하지 않는다. 기존 전체 채널 갱신 경로는 별도 작업이다.
+로컬·클라우드 교대 통합 검수는 [교대 실행 절차](../../docs/artist-review-handoff.md)를 따른다. `scripts/refresh-artist-channels.mjs`에는 공통 `batch.json`을 `--selection`으로 반드시 전달한다. 장르 조사와 별개로 40팀을 추가 선택하지 않는다. 기존 전체 채널 갱신 경로는 별도 작업이다.
 
 승인된 클라우드 자동 검수 실행기는 [운영 검토서](../../docs/artist-review-runner.md)와 [실행 절차](../concert-artist-curation/references/runner.md)를 따른다. 이 실행기는 공식 링크/근거만 기록하며 API 이미지 캐시를 만들지 않는다. 기존 이미지 갱신 workflow와 별개다. 운영 적용 전에는 실행기 RPC를 호출하지 않는다.
 

@@ -4,13 +4,13 @@
 
 ## 구현 범위
 
-`scripts/artist-review-queue.mjs`와 `scripts/lib/artist-review-queue.mjs`는 기존 카탈로그의 신원·장르/분류·승인/채널·사진에 **하나의 최대 20팀 목록**을 사용한다. 오류·보류·권한 대기도 선택 수에 포함하고 실패한 팀 대신 새 팀을 넣지 않는다. 같은 상태 파일의 begin 재호출은 기존 batch를 반환한다. 첫 선정 이후 5시간 안에는 새 batch를 만들지 않으며 이 시각은 인계 시에도 보존한다.
+`scripts/artist-review-queue.mjs`와 `scripts/lib/artist-review-queue.mjs`는 기존 카탈로그의 신원·장르/분류·승인/채널·사진에 **하나의 최대 40팀 목록**을 사용한다. 오류·보류·권한 대기도 선택 수에 포함하고 실패한 팀 대신 새 팀을 넣지 않는다. 같은 상태 파일의 begin 재호출은 기존 batch를 반환한다. 첫 선정 이후 5시간 안에는 새 batch를 만들지 않으며 이 시각은 인계 시에도 보존한다.
 
 우선순위는 신원·장르 → 완료 근거가 있는 분류·승인 → 채널·사진이다. 같은 우선순위는 대기 시작 시각, 이름·ID 순으로 처리한다. `--direction=reverse`는 대기 시각까지 같은 항목의 이름·ID 순서만 반대로 한다. 날짜가 된 재시도보다 역순 이름을 우선하지 않는다. 수동 보류/제외는 선택하지 않고 기존 승인 팀은 채널 단계만 선택한다.
 
 이 코드는 조사 모델이나 새 인증 시스템이 아니다. 예약의 Codex가 스킬로 근거를 조사하고 checkpoint한다. 모델 API를 추가하지 않았다. 정상 인증된 관리자가 있는 경우 `apply`는 기존 `admin_curate_artist`만 호출하며, 최신 스냅샷·신원·별칭·상태·필수 승인 요건을 검사한다. 실제 사용자 확인, DB 재조회, 해당 actor의 이력, 공연·찜 관계 수 보존을 확인한 경우만 applied=true다. 공개 승인은 기존 관리자 RPC가 외부 신원별로 부여한다. 인증이 없으면 RPC 입력을 갖춘 authority_wait만 저장한다. 기존 웹 브라우저의 로그인은 CLI에 자동 전달되지 않는다. 새 관리자나 토큰을 생성/추출하지 않는다.
 
-기존 dedicated 서버 실행기의 10팀·사전 등록·출처 호스트 제한은 변경하지 않았다. 새 통합 대기열은 사용자에게 승인된 기존 카탈로그 읽기/관리자 RPC/채널 서비스 RPC를 조합하는 별도 경로다. 기존 10팀 runner에 20팀을 주입하거나 begin을 반복해 우회하지 않는다. begin은 기존 서버 readiness도 조회해 진행 중/만료 미정리 실행이 있으면 중단한다. 이 읽기는 새로운 전역 분산 잠금을 생성하지 않는다.
+기존 dedicated 서버 실행기의 10팀·사전 등록·출처 호스트 제한은 변경하지 않았다. 새 통합 대기열은 사용자에게 승인된 기존 카탈로그 읽기/관리자 RPC/채널 서비스 RPC를 조합하는 별도 경로다. 기존 10팀 runner에 40팀을 주입하거나 begin을 반복해 우회하지 않는다. begin은 기존 서버 readiness도 조회해 진행 중/만료 미정리 실행이 있으면 중단한다. 이 읽기는 새로운 전역 분산 잠금을 생성하지 않는다.
 
 ## 첫 준비와 정상 실행
 
@@ -62,9 +62,9 @@ node --use-env-proxy scripts/artist-review-queue.mjs apply --owner=local --input
 node --use-env-proxy scripts/refresh-artist-channels.mjs --upload --selection=.local/artist-review-queue/batch.json --manifest=.local/artist-review-queue/channels.json --output=.local/artist-review-queue/channel-summary.json
 ```
 
-API 조회·결과 저장은 선택된 최대 20팀으로 제한한다. 기존 manifest RPC는 전체 만료 캐시 정리도 수행하며 공유 채널 충돌 처리도 기존 서버 규칙을 유지한다. 스키마/RPC를 바꾸지 않아 이 전역 정리 동작은 남아 있다. `applied`는 선택 모드에서 저장 후 상태·신원 버전·캐시 ID/시각이 재조회로 확인된 수다. 오류 상태 저장을 공식 채널 확인/사진 확보 성공으로 세지 않는다. API 제목·사진 URL을 보고서/Git에 누적하지 않는다.
+API 조회·결과 저장은 선택된 최대 40팀으로 제한한다. 기존 manifest RPC는 전체 만료 캐시 정리도 수행하며 공유 채널 충돌 처리도 기존 서버 규칙을 유지한다. 스키마/RPC를 바꾸지 않아 이 전역 정리 동작은 남아 있다. `applied`는 선택 모드에서 저장 후 상태·신원 버전·캐시 ID/시각이 재조회로 확인된 수다. 오류 상태 저장을 공식 채널 확인/사진 확보 성공으로 세지 않는다. API 제목·사진 URL을 보고서/Git에 누적하지 않는다.
 
-채널 작업 후 같은 20팀의 channels 단계를 checkpoint하고 finish한다. 조회·저장 건수와 실제 요청 수를 누락하지 않는다. 완성 보고서를 검토해 API 캐시·키 없이 docs/curation-runs에 KST 실행 시각으로 저장하고 로컬 커밋한다. 이 보고서는 전체 카탈로그 완료를 뜻하지 않는다.
+채널 작업 후 같은 40팀의 channels 단계를 checkpoint하고 finish한다. 조회·저장 건수와 실제 요청 수를 누락하지 않는다. 완성 보고서를 검토해 API 캐시·키 없이 docs/curation-runs에 KST 실행 시각으로 저장하고 로컬 커밋한다. 이 보고서는 전체 카탈로그 완료를 뜻하지 않는다.
 
 ```sh
 node scripts/artist-review-queue.mjs finish --owner=local

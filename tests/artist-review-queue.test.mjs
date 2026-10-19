@@ -18,7 +18,7 @@ const record = (queue, batch, bandId, stage, extra = {}) => recordStage(queue, {
 const proposal = b => ({ target_band_id: b.id, expected_updated_at: b.updated_at, artist_name: b.name,
   country: b.country_code, artist_category: 'jpop', artist_aliases: b.aliases, review_status: 'approved', reason: 'Verified actual J-pop activity', evidence_url: 'https://official.example/artist' })
 
-test('one frozen list caps ALL work at 20, including failures; resume never refills it', () => {
+test('one frozen list caps ALL work at 40, including failures; resume never refills it', () => {
   const q = newQueue('cloud', now), catalog = bands()
   const batch = beginBatch(q, { lane: 'cloud', bands: catalog, now })
   assert.equal(batch.artists.length, MAX_ARTISTS)
@@ -30,8 +30,8 @@ test('one frozen list caps ALL work at 20, including failures; resume never refi
   finishBatch(q, { lane: 'cloud', runId: batch.runId, now, deferPending: true })
   assert.equal(beginBatch(q, { lane: 'cloud', bands: catalog, now: now + hour }).reason, 'schedule_window')
   const next = beginBatch(q, { lane: 'cloud', bands: catalog, now: now + 5 * hour })
-  assert.equal(next.artists.length, 20)
-  assert.deepEqual(next.artists.map(r => r.bandId), catalog.slice(20, 40).map(r => r.id))
+  assert.equal(next.artists.length, 5)
+  assert.deepEqual(next.artists.map(r => r.bandId), catalog.slice(40, 45).map(r => r.id))
 })
 
 test('due failures get first priority, wait age beats reverse name order, protected states stay untouched', () => {
@@ -84,7 +84,7 @@ test('checkpoint retries are idempotent, malformed proof/proposals cannot fake c
 })
 
 test('handoff revokes source, requires ended batch, preserves five-hour gate and rejects stale re-import', () => {
-  const q = newQueue('local', now), catalog = bands(25), batch = beginBatch(q, { lane: 'local', bands: catalog, now })
+  const q = newQueue('local', now), catalog = bands(45), batch = beginBatch(q, { lane: 'local', bands: catalog, now })
   assert.throws(() => offerHandoff(q, { lane: 'local', to: 'cloud', now }), /BATCH_INCOMPLETE/)
   finishBatch(q, { lane: 'local', runId: batch.runId, now, deferPending: true })
   const packet = offerHandoff(q, { lane: 'local', to: 'cloud', now })
@@ -111,7 +111,7 @@ test('CLI persists/reloads frozen batches and handoff; handles a pre-existing lo
   await cmd(['init', '--owner=local'])
   const first = await cmd(['begin', '--owner=local', '--input=.local/artist-review-queue/catalog.json'])
   const second = await cmd(['begin', '--owner=local'])
-  assert.equal(first.runId, second.runId); assert.equal(second.selected, 20)
+  assert.equal(first.runId, second.runId); assert.equal(second.selected, 40)
   await assert.rejects(cmd(['handoff', '--owner=local', '--to=cloud']), /BATCH_INCOMPLETE/)
   await cmd(['finish', '--owner=local', '--defer-pending'])
   await cmd(['handoff', '--owner=local', '--to=cloud'])
@@ -153,7 +153,7 @@ test('loads UTF-8 env fallback once without replacing existing bindings; wrong p
   assert.equal((await readReviewCatalog({ env, fetcher: async () => new Response(JSON.stringify(bands())) })).length, 45)
 })
 
-test('channel refresh uses the same 20 selected IDs and rejects out-of-batch imports before RPC/API writes', async () => {
+test('channel refresh uses the same 40 selected IDs and rejects out-of-batch imports before RPC/API writes', async () => {
   const q = newQueue('local', now), catalog = bands(45), selection = beginBatch(q, { lane: 'local', bands: catalog, now })
   const manifest = { version: 1, artists: catalog.map(b => ({ bandId: b.id, musicBrainzId: b.musicbrainz_id,
     name: b.name, identityVersion: b.updated_at, curationStatus: b.curation_status, channelUrl: 'https://www.youtube.com/channel/UC' + 'a'.repeat(22),
@@ -166,9 +166,9 @@ test('channel refresh uses the same 20 selected IDs and rejects out-of-batch imp
   await assert.rejects(runRefresh(client, { selection, manifest, now }), /TARGET_NOT_SELECTED/)
   assert.equal(calls.length, 0)
   const report = await runRefresh(client, { selection, now })
-  assert.equal(report.artists, 20); assert.equal(report.apiCalls, 0)
-  assert.equal(report.readBack, 20)
-  assert.equal(calls.filter(c => c.name === 'service_apply_artist_channel').length, 20)
+  assert.equal(report.artists, 40); assert.equal(report.apiCalls, 0)
+  assert.equal(report.readBack, 40)
+  assert.equal(calls.filter(c => c.name === 'service_apply_artist_channel').length, 40)
   assert.ok(calls.filter(c => c.name === 'service_apply_artist_channel').every(c => selection.artists.some(row => row.bandId === c.args.result.bandId)))
   await assert.rejects(runRefresh(client, { selection: { ...selection, artists: [...selection.artists, { ...selection.artists[0], bandId: id(44) }] }, now }), /SELECTION_INVALID/)
 })

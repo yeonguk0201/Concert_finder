@@ -31,7 +31,7 @@ export async function runRefresh(client, { key = '', manifest = null, selection 
   const { data, error } = await client.rpc('service_artist_channel_manifest')
   if (error) throw new Error('CHANNEL_DB_READ_FAILED')
   if (!data || data.version !== 1 || !Array.isArray(data.artists)) throw new Error('CHANNEL_DB_READ_FAILED')
-  // Use the SAME frozen selection for channel/photo work; no second set of 20 or refill after failures.
+  // Use the SAME frozen selection for channel/photo work; no second set of 40 or refill after failures.
   if (selected) {
     const conflicts = data.artists.filter(row => selected.has(row.bandId) && selected.get(row.bandId) !== row.identityVersion)
     summary.writeFailures += conflicts.length

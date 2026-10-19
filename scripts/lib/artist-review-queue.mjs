@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from 'node:crypto'
 
 export const PROJECT = 'czjrzylvnewfjnfwjhwf'
-export const MAX_ARTISTS = 20
+export const MAX_ARTISTS = 40
 export const POLICY = 'jpop-or-rock-v1+official-channels-v1+integrated-queue-v1'
 const DAY = 86400000
 const STAGES = ['research', 'approval', 'channels']
