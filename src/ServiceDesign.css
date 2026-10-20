@@ -44,3 +44,7 @@ body{--border:var(--line);--panel:var(--surface)}
 .artist-bio{min-height:3.9em}.calendar-download{padding:0;display:grid;place-items:center;flex-shrink:0}.calendar-download svg{width:14px;height:14px}
 .artist-open-caption{display:flex;align-items:center;gap:6px;font-size:10px;margin-top:13px;color:#5874b0}.artist-open-caption svg{width:13px}
 @media(max-width:760px){.artist-open-caption{font-size:9px;margin-top:8px}}
+/* Artist labels use names; biography placeholder stays until Wikipedia integration. */
+.related-profile .profile-name strong{font-size:18px;line-height:1.5;overflow-wrap:anywhere}
+.artist-banner-copy>.artist-live-summary{font-family:inherit;font-size:16px;font-stretch:normal;letter-spacing:0;line-height:1.7;transform:none}
+@media(max-width:760px){.related-profile .profile-name strong{font-size:15px}.artist-banner-copy>.artist-live-summary{font-size:12px;max-width:250px}}

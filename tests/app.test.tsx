@@ -296,3 +296,17 @@ test('home search keeps the input mounted while typing and navigates on submit, 
   fireEvent.submit(screen.getByRole('search'))
   expect(screen.getByRole('heading', { name: '“Verified” 검색 결과' })).toBeTruthy()
 })
+
+test('artist cards omit country and review metadata while the biography placeholder remains available', () => {
+  mocks.bands = mapBands([{ id:'real-band', name:'Verified band', country_code:'JP', aliases:['Other name'], description:'장르 미검수' }])
+  render(<App />)
+  const cards = document.querySelector('.artist-list')!
+  expect(cards.textContent).not.toContain('일본')
+  expect(cards.textContent).not.toContain('장르 미검수')
+  fireEvent.click(screen.getByRole('button', {name:'Verified band 아티스트 상세'}))
+  expect(document.querySelector('#artist-bio')?.textContent).toContain('다른 이름: Other name')
+  expect(document.querySelector('#artist-bio')?.textContent).toContain('공식 채널에서 음악과 최근 소식을 만나보세요.')
+  expect(document.querySelector('.artist-live-summary')?.textContent).toContain('예정된 공연 1개')
+  expect(document.querySelector('.artist-banner')?.textContent).not.toContain('장르 미검수')
+  expect(document.querySelector('.artist-banner')?.textContent).not.toContain('음악에서 발견하고, 라이브에서 만나요.')
+})

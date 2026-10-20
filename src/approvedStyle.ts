@@ -6,3 +6,10 @@ export function artistStyle(band?: Band) {
   if (band?.countryCode === 'JP' || band?.country === '일본') return 'rock'
   return 'gel'
 }
+
+/** Each concert keeps its visual identity across cards, detail and reloads. */
+export function concertArtworkStyle(id: string) {
+  let hash = 2166136261
+  for (const character of id) hash = Math.imul(hash ^ character.codePointAt(0)!, 16777619) >>> 0
+  return (['gel', 'rock', 'wave', 'festival'] as const)[hash % 4]
+}
