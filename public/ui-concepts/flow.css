@@ -425,3 +425,24 @@ button.artist-cover { display: block; width: 100%; text-align: left; }
   .detail-artist-profile strong { font-size: 12px; }
   .detail-artist-profile .avatar { width: 40px; height: 40px; }
 }
+.artist-media .media-controls { display: flex; align-items: center; gap: 9px; }
+.media-more { font-size: 12px; padding: 6px 15px; margin-right: 5px; border: 1px solid var(--line); border-radius: 25px; white-space: nowrap; }
+.media-controls > button { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; font-size: 25px; line-height: 1; }
+.media-controls > button:disabled { opacity: .3; cursor: default; }
+.artist-media .media-track { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: calc((100% - 24px)/2); gap: 24px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 3px; cursor: grab; position: relative; touch-action: pan-x pan-y; }
+.media-track::-webkit-scrollbar { display: none; }
+.media-track > .artist-video { min-width: 0; scroll-snap-align: none; }
+.media-track > .artist-video:nth-child(odd) { scroll-snap-align: start; }
+.media-track.is-dragging { cursor: grabbing; user-select: none; }
+.media-track.is-dragging .artist-video { pointer-events: none; }
+.media-track .youtube-thumbnail { user-select: none; -webkit-user-drag: none; }
+@media(max-width:760px) {
+  .media-more { font-size: 10px; padding: 5px 11px; margin-right: 0; }
+  .media-controls > button { width: 31px; height: 31px; font-size: 22px; }
+  .artist-media .media-controls { gap: 6px; }
+  .artist-media .media-track { grid-auto-columns: calc((100% - 13px)/2); gap: 13px; }
+  .media-track .artist-video h3 { font-size: 11px; }
+  .media-track .artist-video p { font-size: 9px; }
+  .media-track .video-play { width: 34px; height: 34px; font-size: 13px; }
+  .media-track .video-label { left: 7px; top: 6px; font-size: 8px; padding: 2px 5px; }
+}

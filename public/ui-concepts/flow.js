@@ -29,6 +29,7 @@ if (mode === 'combined') {
   let loginStep = 'email'
   let lastFocus = null
   let flowToastTimer
+  let disposeMedia = () => {}
   const escapeText = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]))
   const pageNames = {home:'홈', discover:'공연 둘러보기', search:'검색', artist:'아티스트 상세', artists:'찜한 아티스트', saved:'내 예매 일정', detail:'공연 상세'}
   const meta = event => event.type === '내한' ? '일본 · 얼터너티브 록' : event.style === 'gel' ? '한국 · 사이키델릭 록' : '한국 · 인디 팝'
@@ -38,6 +39,8 @@ if (mode === 'combined') {
     {english:'ONE OK ROCK', line:'이어폰에서, 무대의 한가운데로.', intro:'뜨거운 기타 사운드와 함께 부르는 순간. ONE OK ROCK의 영상과 다음 공연을 이어서 발견해 보세요.', more:'취향에 맞는 라이브를 먼저 살펴보고 다음 만남을 준비하세요. 이 소개와 배너는 디자인 확인을 위한 편집 시안입니다.', videos:[['Stand Out Fit In','IGInsosP0Ac']], live:[]},
     {english:'wave to earth', line:'잔잔한 파동이 라이브가 되는 밤.', intro:'오래 머무는 멜로디를 화면 밖에서 만나보세요. wave to earth의 영상과 다음 공연을 모았습니다.', more:'좋아하는 아티스트를 찜하고 티켓 오픈 시간을 저장해 보세요. 이 소개와 배너는 디자인 확인을 위한 편집 시안입니다.', videos:[['courage','CEfjpeSownQ'],['babo','INBhi8KuYCk'],['heaven and hell','53Ot9E5QG_I']], live:[]},
   ]
+  profiles[0].videos.push(['NO PAIN','JaIMSzE5yLA'],['APEX','VB9cyPJCtok'],['Desert Eagle · Performance Video','IWYft_hOIgo'])
+  profiles[0].live.push(['APEX · 스페이스 공감','1VXjue62OrQ'],['NO PAIN · 스페이스 공감','P-5hvP1tALs'])
 
   function flowHeader() {
     return `<header class="site-header"><a href="#home" data-page="home" class="brand" aria-label="encore 홈">encore<span>.</span></a><nav aria-label="주요 메뉴"><button data-page="discover" ${currentPage==='discover'?'aria-current="page"':''}>공연 둘러보기</button><button data-page="artists" ${currentPage==='artists'?'aria-current="page"':''}>찜한 아티스트</button><button data-page="saved" ${currentPage==='saved'?'aria-current="page"':''}>내 예매 일정</button></nav><button class="header-search" data-page="search" aria-label="검색 화면 열기">${icon('search')}</button><button class="login-button" data-login>${icon('user')}${signedIn?'내 계정':'로그인'}</button></header>`
@@ -81,7 +84,73 @@ if (mode === 'combined') {
     return `<div class="flow-page-heading"><span class="flow-kicker">당신의 다음 라이브</span><h1>공연 둘러보기</h1><p>마음이 가는 공연을 골라보세요. </p></div><div class="discover-controls"><div class="filters" aria-label="공연 분류">${['전체','내한','국내','페스티벌'].map(type=>`<button data-category="${type}" aria-pressed="${category===type}">${type}</button>`).join('')}</div><label>공연 날짜<input type="date" id="discover-date" value="${discoverDate}" aria-label="공연 날짜"></label>${discoverDate?'<button class="clear-date" data-clear-date>날짜 해제</button>':''}</div><div class="section-heading"><h2>${discoverDate?`${Number(discoverDate.slice(5,7))}월 ${Number(discoverDate.slice(8))}일 공연`:(discoverArtist ? discoverArtist+'의 공연' : '모든 공연')} <span>${list.length}</span></h2><span>공연일순</span></div>${list.length?concertCards(list):emptyState('이 날짜에 확인된 공연이 없어요.','날짜를 해제하거나 다른 날의 공연을 둘러보세요.','전체 공연 보기','discover')}`
   }
   function videoSection(title, items, event) {
-    return `<section class="artist-media"><div class="section-heading"><h2>${title}</h2><span>YouTube에서 열립니다</span></div>${items.length?`<div class="artist-video-grid">${items.map(([name,id])=>`<a class="artist-video" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer"><div class="video-thumb ${event.style}"><span class="video-graphic" aria-hidden="true">${initials(event)}</span><img class="youtube-thumbnail" src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${escapeText(name)} YouTube 썸네일" loading="lazy" referrerpolicy="no-referrer"><span class="video-play" aria-hidden="true">▶</span><span class="video-label">${title==='라이브 공연 영상'?'Live':'Music video'}</span><span class="thumbnail-fallback" hidden>썸네일을 불러오지 못했어요</span></div><h3>${name}</h3><p>${event.name} · YouTube</p></a>`).join('')}</div>`:'<div class="video-awaiting">공식 라이브 영상은 확인 후 이곳에 모을게요.</div>'}<p class="video-caption">YouTube 썸네일 · 클릭하면 YouTube에서 재생됩니다.</p></section>`
+    const query=encodeURIComponent(`${event.name} ${title==='라이브 공연 영상'?'라이브':'공식 뮤직비디오'}`)
+    const trackId=title==='라이브 공연 영상'?'artist-live-videos':'artist-music-videos'
+    return `<section class="artist-media" aria-label="${title}"><div class="section-heading"><h2>${title}</h2><div class="media-controls"><a class="media-more" href="https://www.youtube.com/results?search_query=${query}" target="_blank" rel="noopener noreferrer" aria-label="${event.name} ${title} 더보기, YouTube 새 탭">더보기</a><button data-media-step="-1" aria-controls="${trackId}" aria-label="${title} 이전 영상 2개" disabled>‹</button><button data-media-step="1" aria-controls="${trackId}" aria-label="${title} 다음 영상 2개" disabled>›</button></div></div>${items.length?`<div class="artist-video-grid media-track" id="${trackId}" role="group" aria-label="${title} 슬라이드" tabindex="0">${items.map(([name,id])=>`<a class="artist-video" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer" draggable="false"><div class="video-thumb ${event.style}"><span class="video-graphic" aria-hidden="true">${initials(event)}</span><img class="youtube-thumbnail" src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${escapeText(name)} YouTube 썸네일" loading="lazy" referrerpolicy="no-referrer" draggable="false"><span class="video-play" aria-hidden="true">▶</span><span class="video-label">${title==='라이브 공연 영상'?'Live':'Music video'}</span><span class="thumbnail-fallback" hidden>썸네일을 불러오지 못했어요</span></div><h3>${name}</h3><p>${event.name} · YouTube</p></a>`).join('')}</div>`:'<div class="video-awaiting">공식 라이브 영상은 확인 후 이곳에 모을게요.</div>'}</section>`
+  }
+  function initializeMediaCarousels() {
+    const cleanups=[]
+    document.querySelectorAll('.media-track').forEach(track=>{
+      const section=track.closest('.artist-media')
+      const controls=section.querySelectorAll('[data-media-step]')
+      const pitch=()=>track.children.length>1?track.children[1].offsetLeft-track.children[0].offsetLeft:track.clientWidth
+      const update=()=>{
+        controls[0].disabled=track.scrollLeft<2
+        controls[1].disabled=track.scrollWidth-track.clientWidth-track.scrollLeft<2
+      }
+      const moveTo=index=>{
+        const last=Math.max(0,track.children.length-2)
+        track.scrollTo({left:Math.max(0,Math.min(last,index))*pitch(),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})
+      }
+      controls.forEach(button=>button.addEventListener('click',()=>moveTo(Math.round(track.scrollLeft/pitch())+Number(button.dataset.mediaStep)*2)))
+      track.addEventListener('scroll',update,{passive:true})
+      track.addEventListener('keydown',event=>{
+        if(event.target!==track) return
+        if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) {
+          event.preventDefault()
+          moveTo(event.key==='Home'?0:event.key==='End'?track.children.length:Math.round(track.scrollLeft/pitch())+(event.key==='ArrowRight'?2:-2))
+        }
+      })
+      let pointer=null
+      let suppressClickUntil=0
+      track.addEventListener('pointerdown',event=>{
+        if(event.pointerType==='touch'||event.button!==0) return
+        pointer={id:event.pointerId,x:event.clientX,y:event.clientY,left:track.scrollLeft,dragging:false}
+      })
+      track.addEventListener('pointermove',event=>{
+        if(!pointer||event.pointerId!==pointer.id) return
+        const dx=event.clientX-pointer.x
+        if(!pointer.dragging&&Math.abs(dx)>7&&Math.abs(dx)>Math.abs(event.clientY-pointer.y)) {
+          pointer.dragging=true
+          track.setPointerCapture(event.pointerId)
+          track.classList.add('is-dragging')
+          track.style.scrollSnapType='none'
+        }
+        if(pointer.dragging) {event.preventDefault();track.scrollLeft=pointer.left-dx}
+      })
+      const release=event=>{
+        if(!pointer||event.pointerId!==pointer.id) return
+        const finished=pointer
+        pointer=null
+        if(finished.dragging) {
+          suppressClickUntil=Date.now()+450
+          track.classList.remove('is-dragging')
+          track.style.scrollSnapType=''
+          const distance=event.type==='pointercancel'?0:event.clientX-finished.x
+          moveTo(Math.round(finished.left/pitch())+(Math.abs(distance)>35?(distance<0?2:-2):0))
+        }
+        if(track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId)
+      }
+      track.addEventListener('pointerup',release)
+      track.addEventListener('pointercancel',release)
+      track.addEventListener('click',event=>{if(Date.now()<suppressClickUntil){event.preventDefault();event.stopPropagation()}},true)
+      track.addEventListener('dragstart',event=>event.preventDefault())
+      const observer=new ResizeObserver(update)
+      observer.observe(track)
+      cleanups.push(()=>observer.disconnect())
+      update()
+    })
+    disposeMedia=()=>cleanups.forEach(cleanup=>cleanup())
   }
   function artistPage() {
     const event=artistEvents[activeArtist]
@@ -123,6 +192,7 @@ if (mode === 'combined') {
   }
   let previousPage='home'
   function render(page=currentPage, focusHeading=true) {
+    disposeMedia()
     if(page!==currentPage) {
       clearTimeout(flowToastTimer)
       document.querySelector('#toast').classList.remove('show')
@@ -161,6 +231,7 @@ if (mode === 'combined') {
       }
     }
     syncFollows()
+    initializeMediaCarousels()
     if (focusHeading) {
       window.scrollTo({top:0,behavior:'instant'})
       const title=document.querySelector('h1')
