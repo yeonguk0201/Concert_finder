@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>encore. UI 시안</title>
+  <link rel="stylesheet" href="./preview.css" />
+  <script src="./preview.js" defer></script>
+</head>
+<body>
+  <div id="app"></div>
+  <dialog id="login" aria-labelledby="login-title"><form method="dialog"><button class="close" aria-label="로그인 시안 닫기">×</button></form><span class="brand">encore.</span><h2 id="login-title">좋아하는 공연을<br>한곳에 모아두세요.</h2><p>로그인하면 찜한 아티스트와 예매 일정을<br>다른 기기에서도 이어서 볼 수 있어요.</p><label for="email">이메일</label><input id="email" type="email" placeholder="you@example.com" autocomplete="off"><button class="primary" id="demo-login">이메일로 계속하기</button><small>디자인 확인용 화면입니다. 이메일은 전송·저장되지 않습니다.</small><p id="login-status" role="status"></p></dialog>
+  <dialog id="detail" aria-labelledby="detail-title"><form method="dialog"><button class="close" aria-label="공연 상세 닫기">×</button></form><span class="badge">가상 공연 샘플</span><h2 id="detail-title"></h2><p id="detail-meta"></p><p>시안에 사용한 가상 공연입니다.<br>실제 공연 발표나 예매 정보가 아닙니다.</p><button class="primary" id="detail-save" aria-pressed="false">예매 일정 저장 체험</button><small>시안 화면에서만 저장 상태가 바뀝니다. 알림은 예약되지 않습니다.</small></dialog>
+  <div id="toast" role="status"></div>
+</body>
+</html>
