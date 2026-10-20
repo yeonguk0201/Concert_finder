@@ -2,6 +2,7 @@ const concept = new URLSearchParams(location.search).get('concept')
 const mode = ['combined', 'poster', 'night', 'personal'].includes(concept) ? concept : 'combined'
 document.body.className = mode
 const icons = {
+  home: '<path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
   heart: '<path d="M20.5 5.5a5 5 0 0 0-7 0L12 7l-1.5-1.5a5 5 0 0 0-7 7L12 21l8.5-8.5a5 5 0 0 0 0-7Z"/>',
   calendar: '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6M17 2v6M3 11h18"/>',
@@ -46,21 +47,7 @@ if (mode === 'combined') {
     .replace('</section><section class="join-banner">', '</section></div><section class="join-banner">')
 }
 document.querySelector('#app').innerHTML = content
-if (mode === 'combined') {
-  const disclosure = document.querySelector('.calendar-disclosure')
-  const narrow = matchMedia('(max-width: 760px)')
-  const resizeCalendar = () => { disclosure.open = !narrow.matches }
-  resizeCalendar()
-  narrow.addEventListener('change', resizeCalendar)
-  function selectDay(day) {
-    document.querySelectorAll('[data-day]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.day === day)))
-    document.querySelectorAll('[data-open-day]').forEach(button => { button.hidden = Boolean(day) && button.dataset.openDay !== day })
-    document.querySelector('#upcoming-title').textContent = day ? `10월 ${day}일 티켓 오픈` : '다가오는 티켓 오픈'
-    document.querySelector('.calendar-reset').hidden = !day
-  }
-  document.querySelectorAll('[data-day]').forEach(button => button.addEventListener('click', () => selectDay(button.dataset.day)))
-  document.querySelector('.calendar-reset').addEventListener('click', () => selectDay(''))
-}
+if (mode !== 'combined') {
 document.querySelectorAll('[data-login]').forEach(button => button.addEventListener('click', () => document.querySelector('#login').showModal()))
 document.querySelector('#demo-login').addEventListener('click', () => { document.querySelector('#login-status').textContent='로그인 화면 시안입니다. 실제 인증 메일은 발송하지 않습니다.' })
 let toastTimer
@@ -129,3 +116,4 @@ saveButton.addEventListener('click', () => {
   updateSave()
   notify(saved.has(selected)?'시안에서 일정을 저장했어요.':'시안에서 일정 저장을 해제했어요.')
 })
+}
