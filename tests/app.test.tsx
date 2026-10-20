@@ -20,6 +20,7 @@ beforeEach(() => {
   HTMLDialogElement.prototype.showModal = function () { this.setAttribute('open', '') }
   HTMLDialogElement.prototype.close = function () { this.removeAttribute('open') }
   Element.prototype.scrollIntoView = vi.fn()
+  window.scrollTo = vi.fn()
   mocks.bands = mapBands([{ id: 'real-band', name: 'Verified band', country_code: 'GB', aliases: [], description: null }])
   mocks.concerts = mapConcerts([{ id: 'real-concert', title: 'Verified concert', format: 'solo', city: '서울', venue: null, starts_on: '2026-12-12', ends_on: null, announced_on: '2026-10-06', cancelled: false,
     concert_bands: [{ band_id: 'real-band' }], ticket_schedules: { id: 'real-ticket', opens_at: null, price_description: null, booking_url: null }, concert_sources: [] }], mocks.bands as ReturnType<typeof mapBands>)
@@ -30,25 +31,19 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
 
-test('ordinary search uses DB only and never invokes external discovery for an unknown artist', async () => {
+test('ordinary search registers and follows an external artist with no concerts', async () => {
   mocks.session = { user: { id: 'ordinary-user', email: 'user@example.test' } }
   mocks.concerts = []
+  const row = { id: 'external-band', name: 'New artist', country_code: 'JP', aliases: [], description: '장르 미검수' }
+  mocks.invoke.mockResolvedValueOnce({ data: { artists: [{ key: 'mb:provider-id', name: row.name, country: 'JP', aliases: [], evidence: 'https://musicbrainz.org/artist/provider-id', type: 'Person', disambiguation: 'Japanese singer' }] } }).mockResolvedValueOnce({ data: { band_id: row.id, band: row } })
+  mocks.toggle.mockResolvedValue(true)
   render(<App />)
-  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), {target:{value:'Unknown artist'}})
-  expect(screen.queryByRole('region',{name:'외부 아티스트 검색 결과'})).toBeNull()
-  expect(screen.getByText(/검수가 완료된 아티스트 중 일치하는 이름이 없습니다/)).toBeTruthy()
-  expect(screen.queryByRole('button',{name:'관리자 아티스트 검색·가져오기'})).toBeNull()
-  expect(mocks.invoke).not.toHaveBeenCalled()
-})
-
-test('administrator search provides a route to the protected import editor', () => {
-  mocks.session = {user:{id:'admin',email:'admin@example.test'}}
-  mocks.adminAllowed = true
-  render(<App />)
-  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'),{target:{value:'Unknown'}})
-  fireEvent.click(screen.getByRole('button',{name:'관리자 아티스트 검색·가져오기'}))
-  expect(screen.getByText('관리자 편집기')).toBeTruthy()
-  expect(mocks.invoke).not.toHaveBeenCalled()
+  fireEvent.change(screen.getByRole('textbox', { name: '밴드 또는 공연 검색' }), { target: { value: 'New artist' } })
+  fireEvent.click(await screen.findByRole('button', { name: /New artist .*등록하고 찜하기/ }))
+  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', row.id))
+  expect(mocks.addBand).toHaveBeenCalledWith(expect.objectContaining({ id: row.id, name: row.name }))
+  expect(mocks.adminAllowed).toBe(false)
+  await screen.findByText('아티스트를 찜했어요. 공연이 없어도 찜 목록에 보관됩니다.')
 })
 
 test('home discovers upcoming domestic performances as well as overseas bands', () => {
@@ -128,7 +123,7 @@ test('band search finds aliases and supports following without concerts', async 
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '공연 없는' } })
   fireEvent.click(screen.getByRole('button', { name: 'Only band 찜하기' }))
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', 'only-band'))
-  fireEvent.click(screen.getAllByRole('button', { name: /찜한 밴드/ })[0])
+  fireEvent.click(screen.getAllByRole('button', { name: /찜한 아티스트/ })[0])
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '없는 이름' } })
   expect(screen.getByRole('heading', { name: '“없는 이름” 검색 결과' })).toBeTruthy()
   expect(screen.queryByRole('button', { name: 'Only band 찜하기' })).toBeNull()
@@ -139,7 +134,7 @@ test('an empty followed list points to artist search', () => {
   mocks.bands = []; mocks.concerts = []
   history.replaceState(null, '', '/?page=bands')
   render(<App />)
-  expect(screen.getByRole('heading', { name: '아직 찜한 밴드가 없어요.' })).toBeTruthy()
+  expect(screen.getByRole('heading', { name: '아직 찜한 아티스트가 없어요.' })).toBeTruthy()
 })
 test('account mode excludes local samples and login prompt keeps the original event URL', async () => {
   render(<App />)
@@ -195,7 +190,7 @@ test('followed artists excludes unfollowed artists and updates after unfollowing
   mocks.follows = []
   view.rerender(<App />)
   expect(screen.queryByRole('heading',{name:'Followed artist'})).toBeNull()
-  expect(screen.getByText('아직 찜한 밴드가 없어요.')).toBeTruthy()
+  expect(screen.getByText('아직 찜한 아티스트가 없어요.')).toBeTruthy()
 })
 
 test('a visible login button opens the email form directly', () => {
@@ -215,12 +210,42 @@ test('background catalog refresh preserves content without inserting a loading r
   expect(screen.getByRole('button',{name:'Verified concert 상세 보기'})).toBeTruthy()
 })
 
-
-test('artists hidden by approval policy keep their saved relation visible as a count', () => {
-  mocks.session={user:{id:'user',email:'user@example.test'}}
-  mocks.follows=['hidden-band']
-  history.replaceState(null,'','/?page=bands')
+test('concert discovery contains only concerts and artist identity opens a deep-linkable detail', async () => {
+  history.replaceState(null, '', '/?page=discover')
   render(<App />)
-  expect(screen.getByText('검수 중이거나 비공개인 아티스트 1팀의 찜은 계정에 보관되어 있습니다. 승인 후 다시 표시됩니다.')).toBeTruthy()
-  expect(mocks.toggle).not.toHaveBeenCalled()
+  expect(screen.queryByRole('button', { name: 'Verified band 아티스트 상세' })).toBeNull()
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
+  fireEvent.click(await screen.findByRole('button', { name: 'Verified band 아티스트 상세' }))
+  expect(screen.getByRole('heading', { name: '아티스트 소개' })).toBeTruthy()
+  expect(new URLSearchParams(location.search).get('artist')).toBe('real-band')
+  fireEvent.click(screen.getByRole('button', { name: '더보기', exact: true }))
+  expect(screen.getByRole('button', { name: '간략히 보기' }).getAttribute('aria-expanded')).toBe('true')
+  expect(screen.getAllByRole('link', { name: '더보기 ↗' })).toHaveLength(2)
+})
+
+test('selected calendar date filters ticket opens in KST and recommends at most three performances', () => {
+  mocks.session = { user: { id: 'account', email: 'account@example.test' } }
+  const base = mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]
+  mocks.concerts = Array.from({ length: 4 }, (_, i) => ({ ...base, id: `concert-${i}`, title: `Concert ${i}`, date: '2026-10-24', ticketScheduleId: `ticket-${i}`, ticketAt: '2026-10-22T15:00:00Z' }))
+  mocks.saves = ['ticket-0']
+  history.replaceState(null, '', '/?page=saved')
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: '2026년 10월 23일 예매 일정 있음' }))
+  expect(screen.getByRole('button', { name: 'Concert 0', exact: true })).toBeTruthy()
+  fireEvent.click(screen.getByRole('button', { name: '2026년 10월 24일 공연 있음' }))
+  expect(screen.getAllByRole('button', { name: /Concert \d 상세 보기/ })).toHaveLength(3)
+  fireEvent.click(screen.getByRole('button', { name: '공연 4개 모두 보기 →' }))
+  expect(new URLSearchParams(location.search).get('date')).toBe('2026-10-24')
+  expect(screen.getAllByRole('button', { name: /Concert \d 상세 보기/ })).toHaveLength(4)
+})
+
+test('browser back restores search and artist context', () => {
+  render(<App />)
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: 'Verified' } })
+  fireEvent.click(screen.getByRole('button', { name: 'Verified band 아티스트 상세' }))
+  expect(screen.getByRole('heading', { name: '아티스트 소개' })).toBeTruthy()
+  history.replaceState(null, '', '/?page=search&q=Verified')
+  fireEvent.popState(window)
+  expect(screen.getByRole('heading', { name: '“Verified” 검색 결과' })).toBeTruthy()
+  expect(screen.queryByRole('heading', { name: '아티스트 소개' })).toBeNull()
 })
