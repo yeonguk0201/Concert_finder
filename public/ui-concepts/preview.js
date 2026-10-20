@@ -1,5 +1,5 @@
 const concept = new URLSearchParams(location.search).get('concept')
-const mode = ['poster', 'night', 'personal'].includes(concept) ? concept : 'poster'
+const mode = ['combined', 'poster', 'night', 'personal'].includes(concept) ? concept : 'combined'
 document.body.className = mode
 const icons = {
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
@@ -26,13 +26,41 @@ const footer = '<footer><span class="brand">encore.</span><p>다음 라이브에
 const heading = (title,sub='') => `<div class="section-heading"><div><h2>${title}</h2>${sub ? `<p>${sub}</p>`:''}</div><a href="#concerts">공연 둘러보기 ${icon('arrow')}</a></div>`
 const header = `<header class="site-header"><a href="#" class="brand" aria-label="encore 홈">encore<span>.</span></a>${nav}${loginButton}</header>`
 let content = ''
-if (mode === 'poster') content = `${header}<main class="page">${notice}<section class="poster-hero"><div class="hero-copy"><div class="intro-line"><span class="little-cross">✳</span> 당신의 다음 라이브를 찾아서</div><h1>좋아하는 음악,<br>직접 만나는 순간.</h1><p>국내 밴드부터 기다리던 내한 공연까지.<br>플레이리스트 다음은, 라이브.</p>${search}<div class="popular">지금 많이 찾는 <button data-search="실리카겔">실리카겔</button><button data-search="ONE OK ROCK">ONE OK ROCK</button></div></div><div class="poster-installation" aria-label="라이브 공연을 표현한 그래픽 포스터"><div class="floating-ticket"><span>당신의 다음 라이브</span><strong>SEE<br>YOU<br>THERE<span>✳</span></strong><div>음악이 시작되는 곳에서 만나요.<br>encore. live in your city</div><div class="barcode"></div></div><div class="ticket-sticker">음악은<br>계속된다.</div><div class="ticket-shadow"></div></div></section><section id="concerts">${heading('다음 공연은 여기서', '마음이 가는 공연을 골라보세요.')}${filters}${cards()}</section><section class="join-banner"><div><h2>좋아하는 밴드가 있다면.</h2><p>로그인하고 나만의 공연 목록을 시작하세요.</p></div><button class="primary" data-login>로그인하고 찜하기 ${icon('arrow')}</button></section>${footer}</main>`
+if (mode === 'poster' || mode === 'combined') content = `${header}<main class="page">${notice}<section class="poster-hero"><div class="hero-copy"><div class="intro-line"><span class="little-cross">✳</span> 당신의 다음 라이브를 찾아서</div><h1>좋아하는 음악,<br>직접 만나는 순간.</h1><p>국내 밴드부터 기다리던 내한 공연까지.<br>플레이리스트 다음은, 라이브.</p>${search}<div class="popular">지금 많이 찾는 <button data-search="실리카겔">실리카겔</button><button data-search="ONE OK ROCK">ONE OK ROCK</button></div></div><div class="poster-installation" aria-label="라이브 공연을 표현한 그래픽 포스터"><div class="floating-ticket"><span>당신의 다음 라이브</span><strong>SEE<br>YOU<br>THERE<span>✳</span></strong><div>음악이 시작되는 곳에서 만나요.<br>encore. live in your city</div><div class="barcode"></div></div><div class="ticket-sticker">음악은<br>계속된다.</div><div class="ticket-shadow"></div></div></section><section id="concerts">${heading('다음 공연은 여기서', '마음이 가는 공연을 골라보세요.')}${filters}${cards()}</section><section class="join-banner"><div><h2>좋아하는 밴드가 있다면.</h2><p>로그인하고 나만의 공연 목록을 시작하세요.</p></div><button class="primary" data-login>로그인하고 찜하기 ${icon('arrow')}</button></section>${footer}</main>`
 if (mode === 'night') content = `${header}<main class="page">${notice}<section class="night-hero"><div class="stage-art" aria-hidden="true"><div class="beam beam-one"></div><div class="beam beam-two"></div><div class="stage-rings"></div><span class="stage-type">LIVE<br>LOUD.</span><div class="stage-floor"></div></div><div class="night-copy"><span class="live-tag"><span></span>라이브가 필요한 밤</span><h1>오늘의 재생목록을<br>내일의 함성으로.</h1><p>같은 음악을 좋아하는 우리가 만나는 곳.<br>다음 라이브의 첫 장면을 찾아보세요.</p><a class="primary" href="#concerts">공연 둘러보기 ${icon('arrow')}</a></div><div class="hero-caption"><span>이어폰을 벗고, 무대 앞으로.</span><span>Seoul & beyond</span></div></section><section class="night-search">${search}<span>록 · J-pop · 인디 · 페스티벌</span></section><section id="concerts">${heading('곧, 이 무대에서', '당신의 취향을 더 크게 틀어보세요.')}${filters}${cards()}</section><section class="night-ticket"><div class="ticket-notch"></div><span class="ticket-symbol">✳</span><div><h2>당신의 취향에도, 맨 앞자리.</h2><p>좋아하는 아티스트를 찜하고 공연 소식을 모아보세요.</p></div><button class="primary" data-login>로그인 ${icon('arrow')}</button><div class="barcode"></div></section>${footer}</main>`
 if (mode === 'personal') {
   const days = Array.from({length:35},(_,i)=> { const d=i-3; return d>0 && d<=31 ? `<span class="${[23,24,27,28].includes(d)?'has-event':''} ${d===20?'today':''}">${d}${[23,24,27,28].includes(d)?'<b></b>':''}</span>`:'<span></span>' }).join('')
   content = `${header}<main class="page">${notice}<div class="personal-layout"><div class="personal-main"><section class="personal-intro"><span class="date-label">2026년 10월 20일 화요일</span><h1>취향은 모으고,<br>라이브는 가까이.</h1><p>좋아하는 아티스트의 다음 무대를 찾아보세요.</p>${search}</section><section class="artist-section"><div class="section-heading"><h2>요즘, 이 아티스트</h2><span>먼저 찜해보세요</span></div><div class="artist-list">${events.slice(0,3).map(e=>`<button class="artist-item" data-follow="${e.name}" aria-label="${e.name} 찜하기" aria-pressed="false"><span class="avatar ${e.style}">${e.name==='실리카겔'?'SG':e.name==='ONE OK ROCK'?'OR':'we'}</span><strong>${e.name}</strong><span class="artist-add">+</span></button>`).join('')}</div></section><section id="concerts">${heading('새롭게 만날 공연')}${filters}${cards()}</section></div><aside class="personal-side"><section class="account-card"><div class="account-icon">${icon('heart')}</div><h2>나의 라이브 컬렉션</h2><p>찜한 아티스트와 저장한 일정을<br>한곳에서 이어서 보세요.</p><button class="primary" data-login>로그인하고 시작하기</button></section><section class="calendar"><div class="calendar-heading"><h2>10월 예매 캘린더</h2>${icon('calendar')}</div><div class="week">${['일','월','화','수','목','금','토'].map(d=>`<span>${d}</span>`).join('')}</div><div class="days">${days}</div><p><b></b> 예매 오픈일 · 가상 샘플</p></section><section class="upcoming"><h2>다가오는 티켓 오픈</h2>${events.slice(0,3).map((e,i)=>`<button data-event="${i}"><span class="open-date">${e.open.split(' ')[0]}</span><span><strong>${e.name}</strong><small>${e.open.split(' ').slice(1).join(' ')} 오픈</small></span>${icon('arrow')}</button>`).join('')}<p>일정 저장과 알림 수신은 별개예요.</p></section></aside></div>${footer}</main>`
 }
+if (mode === 'combined') {
+  const artists = `<section class="artist-section"><div class="section-heading"><div><h2>요즘, 이 아티스트</h2><p>좋아하는 이름을 발견하면, 먼저 찜해두세요.</p></div><button class="artist-manage" data-login>내 아티스트 ${icon('arrow')}</button></div><div class="artist-list">${events.slice(0,3).map(event => `<button class="artist-item" data-follow="${event.name}" aria-label="${event.name} 찜하기" aria-pressed="false"><span class="avatar ${event.style}">${event.name === '실리카겔' ? 'SG' : event.name === 'ONE OK ROCK' ? 'OR' : 'we'}</span><span class="artist-text"><strong>${event.name}</strong><small>${event.type === '내한' ? '일본 · 얼터너티브 록' : event.style === 'gel' ? '한국 · 사이키델릭 록' : '한국 · 인디 팝'}</small></span><span class="artist-add">+</span></button>`).join('')}</div></section>`
+  const days = Array.from({length:35}, (_,index) => {
+    const day = index - 3
+    if (day < 1 || day > 31) return '<span></span>'
+    const event = events.find(item => Number(item.open.slice(3,5)) === day)
+    if (event) return `<button data-day="${day}" aria-label="10월 ${day}일 ${event.name} 티켓 오픈" aria-pressed="false">${day}<b></b></button>`
+    return `<span${day === 20 ? ' class="today" aria-current="date"' : ''}>${day}</span>`
+  }).join('')
+  const calendar = `<aside class="combined-calendar" aria-label="예매 일정"><details class="calendar-disclosure" open><summary><span>${icon('calendar')}10월 예매 캘린더</span><span class="calendar-expand">펼치기 +</span></summary><div class="calendar"><div class="calendar-month"><span>2026년 10월</span><span>오늘 20일</span></div><div class="week">${['일','월','화','수','목','금','토'].map(day => `<span>${day}</span>`).join('')}</div><div class="days">${days}</div><p><b></b> 티켓 오픈일 · 날짜를 눌러보세요</p></div></details><section class="upcoming"><div class="upcoming-heading"><h2 id="upcoming-title" aria-live="polite">다가오는 티켓 오픈</h2><button class="calendar-reset" hidden>전체 보기</button></div><div class="ticket-open-list">${events.map((event,index) => `<button data-event="${index}" data-open-day="${Number(event.open.slice(3,5))}"><span class="open-date">${event.open.slice(0,5)}</span><span><strong>${event.name}</strong><small>${event.open.slice(6)} 오픈</small></span>${icon('arrow')}</button>`).join('')}</div><p>가상 예매 일정입니다.<br>일정 저장만으로 알림이 켜지지 않아요.</p></section><div class="collection-invite"><h3>나만의 라이브 컬렉션</h3><p>찜한 아티스트와 저장한 일정을<br>다른 기기에서도 이어서 보세요.</p><button data-login>로그인하고 시작하기 ${icon('arrow')}</button></div></aside>`
+  content = content.replace('<section id="concerts">', `<div class="combined-layout">${artists}${calendar}<section id="concerts">`)
+    .replace('</section><section class="join-banner">', '</section></div><section class="join-banner">')
+}
 document.querySelector('#app').innerHTML = content
+if (mode === 'combined') {
+  const disclosure = document.querySelector('.calendar-disclosure')
+  const narrow = matchMedia('(max-width: 760px)')
+  const resizeCalendar = () => { disclosure.open = !narrow.matches }
+  resizeCalendar()
+  narrow.addEventListener('change', resizeCalendar)
+  function selectDay(day) {
+    document.querySelectorAll('[data-day]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.day === day)))
+    document.querySelectorAll('[data-open-day]').forEach(button => { button.hidden = Boolean(day) && button.dataset.openDay !== day })
+    document.querySelector('#upcoming-title').textContent = day ? `10월 ${day}일 티켓 오픈` : '다가오는 티켓 오픈'
+    document.querySelector('.calendar-reset').hidden = !day
+  }
+  document.querySelectorAll('[data-day]').forEach(button => button.addEventListener('click', () => selectDay(button.dataset.day)))
+  document.querySelector('.calendar-reset').addEventListener('click', () => selectDay(''))
+}
 document.querySelectorAll('[data-login]').forEach(button => button.addEventListener('click', () => document.querySelector('#login').showModal()))
 document.querySelector('#demo-login').addEventListener('click', () => { document.querySelector('#login-status').textContent='로그인 화면 시안입니다. 실제 인증 메일은 발송하지 않습니다.' })
 let toastTimer
@@ -45,10 +73,13 @@ function notify(message) {
 }
 document.querySelectorAll('[data-follow]').forEach(button => button.addEventListener('click', () => {
   const active = button.getAttribute('aria-pressed') !== 'true'
-  button.setAttribute('aria-pressed', String(active))
-  button.setAttribute('aria-label', `${button.dataset.follow} ${active?'찜 해제':'찜하기'}`)
-  const add = button.querySelector('.artist-add')
-  if (add) add.textContent = active?'✓':'+'
+  document.querySelectorAll('[data-follow]').forEach(item => {
+    if (item.dataset.follow !== button.dataset.follow) return
+    item.setAttribute('aria-pressed', String(active))
+    item.setAttribute('aria-label', `${item.dataset.follow} ${active?'찜 해제':'찜하기'}`)
+    const add = item.querySelector('.artist-add')
+    if (add) add.textContent = active?'✓':'+'
+  })
   notify(active?'시안에서 아티스트를 찜했어요.':'시안에서 찜을 해제했어요.')
 }))
 let filter='전체'

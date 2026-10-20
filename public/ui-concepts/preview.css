@@ -12,3 +12,108 @@ dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);b
 @media(max-width:760px){.site-header{height:73px;padding:0 6%;gap:20px}.brand{font-size:31px}.site-header nav{display:none}.login-button{min-width:93px;min-height:41px;font-size:12px}.page{width:88%}.notice{font-size:9px;line-height:1.7;align-items:flex-start;padding:15px 0}.notice-dot{margin-top:5px;flex-shrink:0}.poster-hero{grid-template-columns:1fr;gap:32px;padding:20px 0 40px}.intro-line{font-size:11px}.hero-copy h1{font-size:40px;letter-spacing:-2px;margin:17px 0}.hero-copy>p{font-size:12px}.poster-installation{min-height:310px;margin:4px 12px 0}.floating-ticket{width:190px;padding:18px 22px;transform:rotate(7deg)}.floating-ticket strong{font-size:44px;margin:16px 0}.floating-ticket strong span{font-size:39px;top:38px}.floating-ticket>div:not(.barcode){font-size:8px;padding-bottom:13px}.floating-ticket .barcode{height:20px}.ticket-sticker{width:78px;height:78px;font-size:13px;bottom:30px;right:0}.section-heading{margin-bottom:18px}.section-heading h2{font-size:21px}.section-heading p{font-size:11px}.section-heading>a{font-size:10px;gap:4px}.section-heading>a svg{width:14px}.filters{gap:6px;margin-bottom:19px}.filters button{padding:6px 14px;font-size:11px;min-height:34px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 14px}.artwork{height:235px;padding:14px}.artwork strong{font-size:48px;letter-spacing:-2px}.artwork.rock strong{font-size:50px}.artwork.wave strong{font-size:35px}.artwork.festival strong{font-size:35px}.art-top,.art-bottom{font-size:7px}.art-bottom>span{display:none}.event-info{padding:9px 0}.event-name{font-size:13px;overflow-wrap:anywhere}.event-info>p{font-size:10px;margin-bottom:7px}.event-meta{font-size:10px}.badge{font-size:9px}.heart{width:30px;height:30px}.heart svg{width:18px}.join-banner{padding:24px;flex-direction:column;align-items:flex-start;margin-top:28px;gap:18px}.join-banner h2{font-size:20px}.join-banner p{font-size:11px}.join-banner .primary{width:100%;font-size:12px}footer{flex-wrap:wrap;gap:12px;font-size:10px;margin-top:35px;padding:25px 0}footer>span:last-child{width:100%;margin-left:0}.night .notice{padding-top:15px}.night-hero{min-height:560px;align-items:flex-start;border-radius:10px}.night-copy{max-width:none;padding:28px 24px;z-index:2}.night-copy h1{font-size:34px;letter-spacing:-1.8px}.night-copy p{font-size:11px;line-height:1.8}.night-copy .primary{font-size:12px}.stage-type{font-size:92px;top:auto;bottom:50px;right:35px;letter-spacing:-5px}.stage-rings{width:220px;height:220px;top:auto;bottom:8px;right:-5px}.beam{right:100px;opacity:.6}.hero-caption{left:24px;right:24px;font-size:8px}.hero-caption span:last-child{display:none}.night-search{margin:20px 0 32px;display:block}.night-search>span{display:block;font-size:10px;margin-top:12px}.night-ticket{padding:24px;gap:15px;flex-wrap:wrap}.night-ticket h2{font-size:18px}.night-ticket p{font-size:11px}.ticket-symbol{font-size:42px}.night-ticket .primary{width:100%;margin:5px 0 0}.night-ticket .barcode,.night-ticket:after,.night-ticket .ticket-notch{display:none}.personal-layout{grid-template-columns:1fr;padding-top:0;gap:26px}.personal-intro{padding:15px 0 28px}.personal-intro h1{font-size:37px}.personal .personal-side{grid-row:2;display:grid;grid-template-columns:1fr;gap:20px}.account-card{padding:25px}.personal .artwork{height:245px}.personal .artwork strong{font-size:50px}.personal .artwork.wave strong{font-size:34px}.personal .artwork.festival strong{font-size:34px}.personal .section-heading h2{font-size:20px}.artist-list{gap:9px}.artist-item{padding-top:22px}.artist-item strong{font-size:9px}.avatar{width:56px;height:56px;font-size:21px}.artist-section{margin-bottom:30px}.personal .calendar{padding:24px}.days>span{height:35px}.personal .upcoming{padding:10px 4px}.upcoming strong{font-size:12px}.search input{font-size:16px}.search{padding:7px 8px 7px 12px;gap:8px}.search>svg{width:17px}.search input::placeholder{font-size:11px}dialog{padding:30px}dialog input{font-size:16px}}
 @media(max-width:390px){.page{width:90%}.hero-copy h1{font-size:35px}.night-copy{padding:28px 20px}.night-copy h1{font-size:30px}.artwork,.personal .artwork{height:210px}.artwork strong,.personal .artwork strong{font-size:42px}.artwork.rock strong{font-size:46px}.artwork.wave strong,.personal .artwork.wave strong{font-size:31px}.artwork.festival strong,.personal .artwork.festival strong{font-size:30px}.section-heading>a{font-size:9px}.search input{width:0}.personal-intro h1{font-size:34px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Selected direction: the cobalt poster wall with artists and an everyday calendar. */
+.combined .poster-hero { min-height: 385px; padding: 20px 0 45px; }
+.combined .hero-copy h1 { font-size: clamp(36px, 3.8vw, 51px); margin: 16px 0; }
+.combined .hero-copy > p { margin-bottom: 20px; }
+.combined .poster-installation { min-height: 310px; margin: 0 25px; }
+.combined .floating-ticket { width: 205px; padding: 18px 22px 15px; }
+.combined .floating-ticket strong { font-size: 49px; margin: 17px 0; }
+.combined .floating-ticket strong span { font-size: 40px; top: 33px; }
+.combined .floating-ticket > div:not(.barcode) { padding-bottom: 14px; margin-bottom: 10px; }
+.combined .ticket-sticker { width: 80px; height: 80px; font-size: 14px; right: -12px; bottom: 30px; }
+.combined-layout { display: grid; grid-template-columns: minmax(0, 1fr) 292px; gap: 30px 34px; align-items: start; }
+.combined .artist-section { grid-column: 1; grid-row: 1; margin: 0; }
+.combined #concerts { grid-column: 1; grid-row: 2; min-width: 0; }
+.combined .section-heading h2 { font-size: 22px; }
+.combined .artist-list { gap: 12px; }
+.combined .artist-item { flex-direction: row; text-align: left; gap: 11px; padding: 20px 14px; border-radius: 10px; }
+.combined .avatar { width: 47px; height: 47px; flex-shrink: 0; font-size: 21px; }
+.combined .artist-text { min-width: 0; }
+.combined .artist-text strong { font-size: 12px; display: block; overflow-wrap: anywhere; }
+.combined .artist-text small { font-size: 9px; color: var(--muted); display: block; margin-top: 4px; }
+.combined .artist-add { width: 19px; height: 19px; top: 5px; right: 5px; color: #3258cb; background: #edf2ff; font-size: 15px; }
+.combined .artist-item[aria-pressed=true] { background: #edf2ff; border-color: #7c99ef; }
+.artist-manage { display: flex; align-items: center; gap: 6px; padding: 5px 0; font-size: 11px; white-space: nowrap; color: var(--muted); }
+.artist-manage svg { width: 15px; }
+.combined .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+.combined .artwork { height: 290px; }
+.combined-calendar { grid-column: 2; grid-row: 1 / span 2; border: 1px solid var(--line); border-radius: 13px; background: #fff; overflow: hidden; }
+.calendar-disclosure > summary { list-style: none; cursor: pointer; padding: 21px 22px 0; font-size: 14px; font-weight: 700; }
+.calendar-disclosure > summary::-webkit-details-marker { display: none; }
+.calendar-disclosure > summary > span:first-child { display: flex; align-items: center; gap: 9px; }
+.calendar-disclosure > summary svg { color: var(--accent); width: 17px; }
+.calendar-expand { display: none; }
+.calendar-disclosure > summary:focus-visible { outline: 3px solid #f19a37; outline-offset: -4px; }
+.combined .calendar { border: 0; border-radius: 0; padding: 18px 20px 23px; }
+.calendar-month { display: flex; justify-content: space-between; color: var(--muted); font-size: 10px; margin-bottom: 20px; }
+.calendar-month > span:last-child { color: var(--accent); }
+.combined .days { gap: 3px; }
+.combined .days > span, .combined .days > button { height: 31px; width: 31px; font: 11px Arial, sans-serif; display: grid; place-items: center; position: relative; border-radius: 50%; }
+.combined .days > button { background: #edf2ff; color: #3457c6; }
+.combined .days > button b { position: absolute; bottom: 3px; width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
+.combined .days > button[aria-pressed=true] { background: var(--accent); color: white; }
+.combined .days .today { background: transparent; color: var(--ink); border: 1px solid #b5c3e6; }
+.combined .calendar > p b { background: var(--accent); }
+.combined .upcoming { padding: 20px; border-top: 1px solid var(--line); }
+.upcoming-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.upcoming-heading h2 { font-size: 13px; margin: 0; }
+.calendar-reset { font-size: 10px; color: var(--accent); padding: 4px 0; }
+.ticket-open-list > button { display: flex; align-items: center; gap: 11px; width: 100%; text-align: left; padding: 16px 0; border-bottom: 1px solid #eef1f7; }
+.ticket-open-list > button[hidden] { display: none; }
+.combined .open-date { color: var(--accent); border: 0; background: #edf2ff; border-radius: 6px; padding: 10px 6px; }
+.combined .upcoming > p { line-height: 1.8; font-size: 10px; }
+.collection-invite { padding: 23px 20px; background: #f1f5ff; border-top: 1px solid var(--line); }
+.collection-invite h3 { font-size: 13px; }
+.collection-invite p { margin: 8px 0 14px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.collection-invite button { display: flex; align-items: center; justify-content: space-between; width: 100%; color: var(--accent); font-weight: 700; font-size: 11px; padding: 4px 0; }
+.collection-invite svg { width: 15px; }
+.combined .join-banner { margin-top: 38px; }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .combined-layout { grid-template-columns: minmax(0, 1fr) 260px; gap: 26px 22px; }
+  .combined .artist-item { flex-direction: column; text-align: center; padding: 18px 5px 12px; }
+  .combined .artist-text strong { font-size: 10px; }
+  .combined .artist-text small { font-size: 8px; }
+  .combined .artwork { height: 260px; }
+  .combined .days > span, .combined .days > button { width: 27px; height: 29px; }
+}
+@media (max-width: 760px) {
+  .combined .poster-hero { grid-template-columns: 1fr; min-height: 0; padding: 13px 0 32px; gap: 22px; }
+  .combined .hero-copy h1 { font-size: 37px; }
+  .combined .poster-installation { min-height: 175px; margin: 0; border-radius: 10px; overflow: hidden; }
+  .combined .floating-ticket { width: 240px; padding: 15px 20px; transform: rotate(-7deg); margin: -14px 0; }
+  .combined .floating-ticket strong { font-size: 26px; line-height: 1; letter-spacing: -1.5px; margin: 12px 0; }
+  .combined .floating-ticket strong br { display: none; }
+  .combined .floating-ticket strong span { position: static; font-size: 25px; margin-left: 5px; }
+  .combined .floating-ticket > div:not(.barcode) { font-size: 8px; padding-bottom: 9px; }
+  .combined .floating-ticket .barcode { height: 17px; }
+  .combined .ticket-sticker { right: 12px; bottom: 13px; width: 65px; height: 65px; font-size: 12px; }
+  .combined-layout { display: flex; flex-direction: column; gap: 26px; }
+  .combined-layout > * { width: 100%; }
+  .combined .section-heading h2 { font-size: 20px; }
+  .combined .section-heading p { font-size: 10px; }
+  .combined .artist-list { gap: 8px; }
+  .combined .artist-item { flex-direction: column; text-align: center; gap: 9px; padding: 20px 5px 15px; }
+  .combined .artist-text strong { font-size: 10px; }
+  .combined .artist-text small { display: none; }
+  .combined .avatar { width: 52px; height: 52px; }
+  .artist-manage { font-size: 10px; }
+  .calendar-disclosure > summary { padding: 17px 18px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  .calendar-expand { display: block; font-size: 10px; font-weight: 400; color: var(--muted); }
+  .calendar-disclosure[open] .calendar-expand { font-size: 0; }
+  .calendar-disclosure[open] .calendar-expand::after { content: '접기 −'; font-size: 10px; }
+  .combined .calendar { padding: 0 20px 20px; }
+  .combined .days > span, .combined .days > button { width: 100%; height: 34px; border-radius: 6px; }
+  .combined .upcoming { padding: 18px; }
+  .ticket-open-list > button { padding: 12px 0; }
+  .combined .collection-invite { display: none; }
+  .combined .artwork { height: 235px; }
+  .combined .join-banner { margin-top: 28px; }
+}
+@media (max-width: 390px) {
+  .combined .hero-copy h1 { font-size: 34px; }
+  .combined .artwork { height: 210px; }
+  .combined .floating-ticket { width: 215px; }
+  .combined .floating-ticket strong { font-size: 24px; }
+}
