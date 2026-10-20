@@ -8,9 +8,15 @@
 
 우선순위는 신원·장르 → 완료 근거가 있는 분류·승인 → 채널·사진이다. 같은 우선순위는 대기 시작 시각, 이름·ID 순으로 처리한다. `--direction=reverse`는 대기 시각까지 같은 항목의 이름·ID 순서만 반대로 한다. 날짜가 된 재시도보다 역순 이름을 우선하지 않는다. 수동 보류/제외는 선택하지 않고 기존 승인 팀은 채널 단계만 선택한다.
 
-이 코드는 조사 모델이나 새 인증 시스템이 아니다. 예약의 Codex가 스킬로 근거를 조사하고 checkpoint한다. 모델 API를 추가하지 않았다. 정상 인증된 관리자가 있는 경우 `apply`는 기존 `admin_curate_artist`만 호출하며, 최신 스냅샷·신원·별칭·상태·필수 승인 요건을 검사한다. 실제 사용자 확인, DB 재조회, 해당 actor의 이력, 공연·찜 관계 수 보존을 확인한 경우만 applied=true다. 공개 승인은 기존 관리자 RPC가 외부 신원별로 부여한다. 인증이 없으면 RPC 입력을 갖춘 authority_wait만 저장한다. 기존 웹 브라우저의 로그인은 CLI에 자동 전달되지 않는다. 새 관리자나 토큰을 생성/추출하지 않는다.
+예약의 Codex가 스킬로 근거를 조사하고 checkpoint한다. 모델 API는 추가하지 않았다. 서버 키가 설정되어 있고 새 RPC 설치가 읽기 전용 검사로 확인되면 `apply`는 `service_apply_integrated_review`를 사용하며 사람의 로그인 세션이 필요 없다. 서버 키는 기존 서버 전용 환경 파일에서 로드하고 출력하지 않는다. 새 RPC가 아직 없으면 기존 경로를 유지한다. 정식 관리자 토큰이 있으면 `admin_curate_artist`를 사용하고, 없으면 authority_wait로 보존한다. 새 관리자나 사용자 토큰을 만들거나 추출하지 않는다. 설치 후에는 새 service authority 식별값으로 이전 권한 대기 항목도 다음 정상 batch에서 다시 선택한다.
 
-기존 dedicated 서버 실행기의 10팀·사전 등록·출처 호스트 제한은 변경하지 않았다. 새 통합 대기열은 사용자에게 승인된 기존 카탈로그 읽기/관리자 RPC/채널 서비스 RPC를 조합하는 별도 경로다. 기존 10팀 runner에 40팀을 주입하거나 begin을 반복해 우회하지 않는다. begin은 기존 서버 readiness도 조회해 진행 중/만료 미정리 실행이 있으면 중단한다. 이 읽기는 새로운 전역 분산 잠금을 생성하지 않는다.
+2026-10-20 구현 시 원격 마이그레이션 적용은 자동 승인 검토에서 차단되어 설치 승인을 기다린다. 새 RPC는 실제 REST 조회에서 PGRST202(미설치)로 확인했다. 기존 아티스트 상태·승인 데이터에는 이 변경을 적용하지 않았다. 예약 지시문은 설치 여부를 확인해 새 경로를 사용하도록 수정했고 기존 5시간 일정·활성 상태·대기열은 유지했다.
+
+`begin`은 로컬 고정 목록을 저장한 뒤 `service_begin_integrated_review`에 동일 최대 40팀과 원본 버전을 등록한다. 서버도 5시간 간격·대상 불변·대상별 버전·수동 결정 보호를 검사한다. 등록 실패 시 로컬 batch를 보존하므로 같은 begin으로 재시도한다. 등록한 실행의 쓰기 유효시간은 5시간이다. `LEASE_LOST`면 미완료 작업을 finish --defer-pending으로 보존하고 다음 정규 batch에서 새 스냅샷을 확인한다. 등록 후 채널 작업으로 bands 버전이 바뀌지 않도록 분류·승인을 먼저 수행한다.
+
+서버는 승인 요건별 근거, 최근 90일 출처, 판정 일치, DB의 외부 신원 연결을 검사한다. 승인 시 category와 curation_status를 한 트랜잭션에서 저장하고 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체는 이 RPC에서 공개하지 않으며 기존 수집기의 나머지 공개 요건도 유지된다. 사람 대신 실행 ID를 publication approval 및 private.integrated_review_receipts에 남긴다. 이 receipt는 기존 bands 변경 이력과 별도로 원본·결과·조사·요건별 근거·관계 수를 보존한다. CLI는 receipt, 최신 bands, 공개 승인 연결, 공연·찜 관계 수를 재조회한 경우만 applied=true로 기록한다. 같은 입력 재전송은 새 변경을 만들지 않는다.
+
+기존 dedicated 서버 실행기의 10팀·사전 등록·출처 호스트 제한은 변경하지 않았다. 통합 대기열은 별도의 service RPC를 사용하며 기존 10팀 runner에 40팀을 주입하지 않는다. begin과 적용 RPC는 기존 서버 readiness를 확인해 진행 중/만료 미정리 실행이 있으면 중단한다. 기존 dedicated runner는 통합 실행 등록을 읽지 않으므로 두 예약을 병행 활성화하지 않는다. 통합 경로끼리는 서버 등록의 5시간 제한과 버전 검사도 적용되지만 파일 인계 운영을 대체하지 않는다.
 
 ## 첫 준비와 정상 실행
 
@@ -50,7 +56,15 @@ node scripts/artist-review-queue.mjs checkpoint --owner=local --input=.local/art
 
 stage는 research/approval/channels이며 complete/deferred/exception/authority_wait를 구분한다. deferred는 24시간 뒤 재시도하며 완료 근거를 만들지 않는다. 판단이 필요한 구체적 예외만 exception이다. 완료 research는 동일 신원·상태·버전·정책에서 90일, channels는 7일 재사용한다. 마지막 성공 시각을 실패로 앞으로 밀지 않고 보존한다. 90일은 실제 출처 확인 시각에서 계산하므로 오래된 근거를 불러온 날로 유효기간을 연장하지 않는다. verified 채널의 verification에는 실제 API 캐시 checkedAt도 넣어 7일 기준을 보존한다. 같은 체크포인트의 재전송은 API 건수를 중복 가산하지 않는다. 다른 결과로 덮어쓰려면 새 검수가 필요하다.
 
-`apply` 입력은 runId, bandId, proposal(기존 admin_curate_artist의 정확한 입력), requirements다. 승인 requirements는 identityMatched/countryMatched/genreMatched/classificationMatched/externalIdentityLinked/publicationEffectUnderstood의 실제 확인 결과다. keep를 approved와 동일하게 취급하지 않는다. 이 플래그는 출처 조사와 신원 연결 확인을 대신하지 않는다.
+`apply` 입력은 runId, bandId, proposal(기존 admin_curate_artist와 같은 입력), requirements, approvalEvidence다. 승인 requirements는 identityMatched/countryMatched/genreMatched/classificationMatched/externalIdentityLinked/publicationEffectUnderstood의 실제 확인 결과다. approvalEvidence에는 같은 여섯 키마다 `{ "summary": "해당 요건을 확인한 구체적 설명", "sourceUrls": ["research proof에 포함된 실제 출처 URL"] }`을 기록한다. 공개 효과의 summary에는 분류 승인으로 외부 신원별 공연 자동 공개 승인이 생기며 기존 이벤트 공개 조건도 필요함을 명시한다. keep를 approved와 동일하게 취급하지 않고, readyToApply=false 또는 requirements=false를 인증 복구만으로 true로 바꾸지 않는다. 미확인 요건은 공식 자료를 보완한 뒤에만 제출한다. 조사 출처에는 승인 proposal의 evidence_url도 포함한다. 제외·보류는 기존 category를 보존한다.
+
+외부 신원 연결은 선택된 팀의 서버 context로 확인한다. `{ "bandId": "선택된 UUID" }` 입력으로 다음 명령을 실행하면 현재 band와 연결된 외부 key/evidenceUrl이 context.json에 저장된다. 공식 프로필과 실제 신원을 별도로 대조한다. 서버는 승인 시 band.musicbrainz_id와 일치하는 기존 mb 신원 연결도 검사한다. 연결 누락을 임의의 새 ID 생성으로 해결하지 않는다.
+
+기존 research가 재사용되어 approval만 선택된 팀에도 새 출처 보완이 가능하다. `apply` 입력의 선택 필드 `approvalProof`에 기존 proof와 같은 `{decision, summary, sources}` 형식으로 승인에 사용한 전체 근거를 제출한다. sourceUrls와 evidence_url은 이 proof에 있는 출처를 가리킨다. 원래 조사 결과는 보존하고 서버 receipt에 보완 근거를 함께 남긴다. 판정을 바꾸거나 실제 확인 시각을 꾸미는 용도로 쓰지 않는다. 기존 연구의 유효기간과 현재 신원 버전 검사도 유지한다.
+
+```sh
+node --use-env-proxy scripts/artist-review-queue.mjs context --owner=local --input=.local/artist-review-queue/context-input.json
+```
 
 ```sh
 node --use-env-proxy scripts/artist-review-queue.mjs apply --owner=local --input=.local/artist-review-queue/proposal.json
@@ -96,4 +110,4 @@ PC를 켤 때는 반대로 클라우드 예약 중지 → 진행 작업 종료 �
 
 로컬 전용 파일은 클라우드에서 접근할 수 없다. 양쪽에 동일 코드 배치와 최신 packet 전달이 필요하며, 자동 파일 동기화/공통 DB 대기열/예약 토글 연동은 구현하지 않았다. 오래된 상태 파일 복사본을 두 컴퓨터에서 동시에 쓰는 것을 파일 잠금으로 막을 수는 없다. 사용자가 한쪽만 활성화하고 종료·인계를 확인하는 운영 방식이 전제다. 클라우드 환경 재생성 시에도 최신 packet을 복구해야 하며, 상태가 없으면 자동 초기화하지 않고 중단한다.
 
-기존 로컬 40팀 JSON 원본과 대기열은 이 checkout에 없다. 사용자가 전달한 Danzig/한로로 위치만으로 전체 완료를 추측하거나 40팀의 전체 단계를 완료 처리하지 않는다. 과거 기록은 정확한 신원·버전·실제 완료 근거가 확인된 것만 재사용한다. 이 작업은 DB 스키마/권한/배포와 push/PR/merge를 수행하지 않는다.
+기존 로컬 40팀 JSON 원본과 대기열은 이 checkout에 없다. 사용자가 전달한 Danzig/한로로 위치만으로 전체 완료를 추측하거나 40팀의 전체 단계를 완료 처리하지 않는다. 과거 기록은 정확한 신원·버전·실제 완료 근거가 확인된 것만 재사용한다. 예약 실행 중에는 DB 스키마/권한/배포와 push/PR/merge를 수행하지 않는다. 서버 적용 경로 설치는 20261020051940_integrated_artist_approval 마이그레이션으로 별도 관리한다.

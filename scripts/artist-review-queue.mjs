@@ -5,7 +5,7 @@ import { parseEnv } from 'node:util'
 import { createHash, randomUUID } from 'node:crypto'
 import { PROJECT, newQueue, validateQueue, beginBatch, recordStage, finishBatch,
   offerHandoff, acceptHandoff } from './lib/artist-review-queue.mjs'
-import { applyQueuedCuration } from './lib/artist-review-apply.mjs'
+import { applyQueuedCuration, registerServiceBatch, SERVICE_AUTHORITY } from './lib/artist-review-apply.mjs'
 
 export async function loadReviewEnvironment(env = process.env, root = process.cwd(), { requireProject = true } = {}) {
   // Load just these server keys. Do not load arbitrary configuration or replace an injected proxy binding.
@@ -55,6 +55,15 @@ export async function checkLegacyReviewIdle(env, fetcher = fetch) {
   if (result.state === 'busy' || result.reason === 'lease_recovery') throw new Error('LEGACY_REVIEW_NOT_FINISHED')
 }
 
+export async function integratedServiceAvailable(client) {
+  // Read-only probe: a missing deployment must preserve the existing queue/auth path.
+  const zero = '00000000-0000-0000-0000-000000000000'
+  const { error } = await client.rpc('service_integrated_review_receipt', { run_id: zero, band_id: zero })
+  if (!error) return true
+  if (['PGRST202', '42883'].includes(error.code)) return false
+  throw new Error('SERVICE_READINESS_FAILED')
+}
+
 function noSecrets(value, env) {
   const body = JSON.stringify(value)
   if (Object.entries(env).some(([key, secret]) => /SECRET|TOKEN|API_KEY|SERVICE_ROLE_KEY/.test(key)
@@ -73,7 +82,7 @@ function noSecrets(value, env) {
 export async function runQueueCommand(args, { cwd = process.cwd(), env = process.env, output = console.log,
   now = Date.now(), fetcher = fetch, serverGuard = checkLegacyReviewIdle } = {}) {
   const [command, ...options] = args
-  if (!['init', 'begin', 'checkpoint', 'apply', 'finish', 'status', 'handoff', 'accept', 'snapshot'].includes(command)
+  if (!['init', 'begin', 'context', 'checkpoint', 'apply', 'finish', 'status', 'handoff', 'accept', 'snapshot'].includes(command)
     || options.some(arg => !/^--(owner|input|state|output|to|direction|authority-key)=.+$/.test(arg) && arg !== '--defer-pending')
     || new Set(options.map(arg => arg.split('=')[0])).size !== options.length) throw new Error('ARGUMENT_INVALID')
   const opt = (key, fallback) => options.find(arg => arg.startsWith(`--${key}=`))?.slice(key.length + 3) ?? fallback
@@ -81,6 +90,14 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
   if (!['local', 'cloud'].includes(lane)) throw new Error('OWNER_REQUIRED')
   // Redaction also covers checkpoint/handoff commands launched in a fresh local process.
   await loadReviewEnvironment(env, cwd, { requireProject: false })
+  const serviceClient = async () => {
+    await loadReviewEnvironment(env, cwd)
+    const { createClient } = await import('@supabase/supabase-js')
+    const client = createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
+      auth: { persistSession: false, autoRefreshToken: false }, global: { fetch: fetcher },
+    })
+    return await integratedServiceAvailable(client) ? client : null
+  }
   const root = resolve(cwd, '.local/artist-review-queue')
   const local = name => {
     const file = resolve(cwd, name), rel = relative(root, file)
@@ -140,11 +157,14 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
         const batchPath = out('batch.json')
         await serverGuard(await loadReviewEnvironment(env, cwd), fetcher)
         const bands = queue.active ? [] : await input()
-        const authorityKey = opt('authority-key', env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN
+        const service = env.SUPABASE_SERVICE_ROLE_KEY ? await serviceClient() : null
+        const authorityKey = opt('authority-key', service ? SERVICE_AUTHORITY : env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN
           ? createHash('sha256').update(env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN).digest('hex') : null)
         result = beginBatch(queue, { lane, bands, now, direction: opt('direction', 'forward'), authorityKey })
         // State is authoritative if writing the convenience batch file fails.
-        await save(statePath, queue); await save(batchPath, result)
+        await save(statePath, queue)
+        if (service) await registerServiceBatch(service, queue)
+        await save(batchPath, result)
         result = { state: result.state, runId: result.runId, selected: result.artists?.length ?? 0, reason: result.reason, resumed: result.resumed ?? false }
       }
       if (command === 'checkpoint') {
@@ -152,6 +172,16 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
         if (record.stage === 'approval' && record.status === 'complete') throw new Error('APPLY_COMMAND_REQUIRED')
         result = recordStage(queue, { ...record, lane, now })
         await save(statePath, queue); result = { status: result.status, applied: result.applied }
+      }
+      if (command === 'context') {
+        const { bandId } = await input()
+        if (queue.owner !== lane || queue.transfer || !queue.active?.artists.some(row => row.bandId === bandId)) throw new Error('TARGET_NOT_SELECTED')
+        const client = await serviceClient()
+        if (!client) throw new Error('SERVICE_PATH_NOT_INSTALLED')
+        await registerServiceBatch(client, queue)
+        const { data, error } = await client.rpc('service_integrated_review_context', { run_id: queue.active.runId, band_id: bandId })
+        if (error || !data?.band) throw new Error('REVIEW_CONTEXT_FAILED')
+        await save(out('context.json'), data); result = { bandId, identities: data.identities.length }
       }
       if (command === 'apply') {
         const record = await input()
@@ -169,8 +199,11 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
             auth: { persistSession: false, autoRefreshToken: false },
           })
         }
-        const outcome = await applyQueuedCuration(queue, { ...record, lane, now, adminClient, relationReader, accessToken })
-        await save(statePath, queue); result = { status: outcome.status, applied: outcome.applied }
+        const service = env.SUPABASE_SERVICE_ROLE_KEY ? await serviceClient() : null
+        if (service) await registerServiceBatch(service, queue)
+        const outcome = await applyQueuedCuration(queue, { ...record, lane, now, adminClient, relationReader, accessToken, serviceClient: service })
+        await save(statePath, queue); await save(out('batch.json'), queue.active)
+        result = { status: outcome.status, applied: outcome.applied }
       }
       if (command === 'finish') {
         const report = finishBatch(queue, { lane, runId: queue.active?.runId, deferPending: options.includes('--defer-pending'), now })

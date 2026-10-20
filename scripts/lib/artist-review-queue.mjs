@@ -109,7 +109,7 @@ export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey 
   return batch
 }
 
-function safeProof(proof, now) {
+export function safeProof(proof, now) {
   if (!proof || !['keep', 'exclude', 'hold', 'verified', 'no_official_channel'].includes(proof.decision)
     || typeof proof.summary !== 'string' || !proof.summary.trim() || proof.summary.length > 2000
     || !Array.isArray(proof.sources) || !proof.sources.length || proof.sources.length > 10) fail('PROOF_REQUIRED')
@@ -118,9 +118,11 @@ function safeProof(proof, now) {
     try { u = new URL(source.url) } catch { fail('SOURCE_INVALID') }
     if (u.protocol !== 'https:' || u.username || u.password || u.search || u.hash) fail('SOURCE_INVALID')
     const checked = stamp(source.checkedAt)
-    if (checked > now || now - checked >= 90 * DAY || typeof source.excerpt !== 'string'
-      || !source.excerpt.trim() || source.excerpt.length > 1000) fail('SOURCE_INVALID')
-    return { url: u.href, checkedAt: source.checkedAt, excerpt: source.excerpt }
+    const field = source.excerpt === undefined ? 'summary' : 'excerpt'
+    const evidence = source[field]
+    if (checked > now || now - checked >= 90 * DAY || typeof evidence !== 'string'
+      || !evidence.trim() || evidence.length > 1000) fail('SOURCE_INVALID')
+    return { url: u.href, checkedAt: source.checkedAt, [field]: evidence }
   }) }
 }
 

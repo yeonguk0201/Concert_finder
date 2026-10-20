@@ -5,9 +5,9 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { newQueue, beginBatch, recordStage, finishBatch, offerHandoff, acceptHandoff,
   MAX_ARTISTS, PROJECT } from '../scripts/lib/artist-review-queue.mjs'
-import { runQueueCommand, loadReviewEnvironment, readReviewCatalog, checkLegacyReviewIdle } from '../scripts/artist-review-queue.mjs'
+import { runQueueCommand, loadReviewEnvironment, readReviewCatalog, checkLegacyReviewIdle, integratedServiceAvailable } from '../scripts/artist-review-queue.mjs'
 import { runRefresh } from '../scripts/refresh-artist-channels.mjs'
-import { applyQueuedCuration } from '../scripts/lib/artist-review-apply.mjs'
+import { applyQueuedCuration, registerServiceBatch, SERVICE_AUTHORITY } from '../scripts/lib/artist-review-apply.mjs'
 
 const now = Date.parse('2026-10-19T00:00:00Z'), hour = 3600000, day = 24 * hour
 const id = i => `00000000-0000-4000-8000-${String(i).padStart(12, '0')}`
@@ -184,6 +184,12 @@ test('legacy server lease check blocks active/expired runs and never claims a ne
   await checkLegacyReviewIdle(env, async () => new Response(JSON.stringify({ state: 'idle', reason: 'no_work' })))
 })
 
+test('missing service migration keeps legacy authorization available; other failures are surfaced', async () => {
+  assert.equal(await integratedServiceAvailable({ rpc: async () => ({ data: null, error: null }) }), true)
+  assert.equal(await integratedServiceAvailable({ rpc: async () => ({ error: { code: 'PGRST202' } }) }), false)
+  await assert.rejects(integratedServiceAvailable({ rpc: async () => ({ error: { code: '42501' } }) }), /SERVICE_READINESS_FAILED/)
+})
+
 test('authenticated apply preserves names, verifies current version and actual actor history; no auth saves proposal only', async () => {
   const setup = () => {
     const q = newQueue('local', now), catalog = bands(1), batch = beginBatch(q, { lane: 'local', bands: catalog, now })
@@ -224,6 +230,64 @@ test('scoped channel writes without matching read-back are never reported as app
   const result = await runRefresh(client, { selection, now })
   assert.equal(result.applied, 0); assert.equal(result.readBack, 0); assert.equal(result.ok, false)
   assert.equal(result.errors.CHANNEL_READBACK_FAILED, 1); assert.equal(result.photosAvailable, 0)
+})
+
+test('service apply needs per-requirement evidence, verifies receipt and publication, and keeps registration immutable', async () => {
+  const q = newQueue('local', now), catalog = bands(1)
+  const batch = beginBatch(q, { lane: 'local', bands: catalog, now, authorityKey: SERVICE_AUTHORITY })
+  record(q, batch, id(0), 'research', { status: 'complete', proof })
+  const p = proposal(catalog[0]), args = { lane: 'local', runId: batch.runId, bandId: id(0), proposal: p, now }
+  const keys = ['identityMatched','countryMatched','genreMatched','classificationMatched','externalIdentityLinked','publicationEffectUnderstood']
+  const requirements = Object.fromEntries(keys.map(key => [key, true]))
+  const approvalEvidence = Object.fromEntries(keys.map(key => [key, { summary: `Verified ${key}`, sourceUrls: [proof.sources[0].url] }]))
+  const after = { ...catalog[0], curation_status: 'approved', category: 'jpop', curation_reason: p.reason,
+    curation_evidence_url: p.evidence_url, updated_at: '2026-10-19T00:00:00.000001Z' }
+  let publicationApproved = false
+  const registrations = [], writes = []
+  const serviceClient = {
+    rpc: async (name, input) => {
+      if (name === 'service_begin_integrated_review') { registrations.push(input); return { error: null } }
+      if (name === 'service_apply_integrated_review') { writes.push(input); return { data: { runId: batch.runId, after } } }
+      return { data: { runId: batch.runId, before: catalog[0], after, relations: [2,2], publicationApproved } }
+    },
+    from: table => ({ select: () => ({ eq: () => table === 'bands' ? { single: async () => ({ data: after }) } : Promise.resolve({ count: 2 }) }) }),
+  }
+  await registerServiceBatch(serviceClient, q)
+  await assert.rejects(applyQueuedCuration(q, { ...args, requirements, serviceClient }), /APPROVAL_REQUIREMENTS_REQUIRED/)
+  assert.equal(writes.length, 0)
+  await assert.rejects(applyQueuedCuration(q, { ...args, requirements, approvalEvidence, serviceClient }), /CURATION_WRITE_UNCONFIRMED/)
+  assert.equal(q.entries[id(0)].stages.approval.status, 'pending')
+  publicationApproved = true
+  assert.equal((await applyQueuedCuration(q, { ...args, requirements, approvalEvidence, serviceClient })).applied, true)
+  assert.equal(q.active.artists[0].identityVersion, after.updated_at)
+  await registerServiceBatch(serviceClient, q)
+  assert.deepEqual(registrations[0], registrations[1])
+  assert.equal((await applyQueuedCuration(q, { ...args, requirements, approvalEvidence, serviceClient })).applied, true)
+  assert.equal(writes.length, 2) // Failed read-back retried; completed local checkpoint did not write again.
+})
+
+test('approval-only batch accepts fresh supplemental sources while preserving reused investigation', async () => {
+  const q = newQueue('local', now), catalog = bands(1)
+  const first = beginBatch(q, { lane: 'local', bands: catalog, now })
+  record(q, first, id(0), 'research', { status: 'complete', proof })
+  record(q, first, id(0), 'approval', { status: 'authority_wait', proposal: proposal(catalog[0]) })
+  record(q, first, id(0), 'channels', { status: 'complete', proof: { ...proof, decision: 'no_official_channel' } })
+  finishBatch(q, { lane: 'local', runId: first.runId, now })
+  const batch = beginBatch(q, { lane: 'local', bands: catalog, now: now + 5*hour, authorityKey: SERVICE_AUTHORITY })
+  assert.deepEqual(batch.artists[0].tasks, ['approval'])
+  const url = 'https://label.example/profile'
+  const approvalProof = { ...proof, sources: [...proof.sources, { url, checkedAt: new Date(now).toISOString(), summary: 'Country and identity verified.' }] }
+  const keys = ['identityMatched','countryMatched','genreMatched','classificationMatched','externalIdentityLinked','publicationEffectUnderstood']
+  const requirements = Object.fromEntries(keys.map(key => [key,true]))
+  const approvalEvidence = Object.fromEntries(keys.map(key => [key,{summary:'Actually verified',sourceUrls:[url]}]))
+  const args = { lane:'local',runId:batch.runId,bandId:id(0),proposal:proposal(catalog[0]),requirements,approvalEvidence,approvalProof,now:now+5*hour }
+  const serviceClient = { rpc: async (name,input) => {
+    assert.equal(name,'service_apply_integrated_review'); assert.equal(input.proof.sources[1].url,url)
+    return {error:{message:'EDIT_CONFLICT'}}
+  } }
+  await assert.rejects(applyQueuedCuration(q,{...args,serviceClient}),/EDIT_CONFLICT/)
+  assert.deepEqual(q.entries[id(0)].stages.research.proof,proof)
+  await assert.rejects(applyQueuedCuration(q,{...args,serviceClient,approvalProof:{...approvalProof,decision:'hold'}}),/DECISION_CONFLICT/)
 })
 
 test('reusing old proof never extends its original 90-day expiration', () => {
