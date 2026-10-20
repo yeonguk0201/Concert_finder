@@ -40,13 +40,15 @@ MCR 상세에는 My Chemical Romance와 Oasis가 함께 연결돼 있다. [주�
 
 `scripts/catalog-health.mjs`는 출처별 최신 두 실행과 마지막 성공을 각각 조회하도록 보완했다. 공통 200개 제한에 다른 출처 기록이 밀리는 문제를 제거하고 legacy를 제외한다. 60분 초과 시작 지연·연속 두 번 실패/부분 실패·2시간 초과 성공 지연·누락 시각·조회 오류를 감지하며 비활성 출처는 경고에서 제외한다. 독립 호스트에 연결하기 전까지 감시 운영 완료는 아니다.
 
-운영 DB의 `service_begin_collection`·`service_fail_collection`에는 anon/authenticated의 명시적 실행 grant가 남아 있다. `service_complete_collection`은 이미 서비스 전용이다. 세 함수 내부는 모두 `SERVICE_REQUIRED`로 서비스 역할을 검사하므로 일반 역할이 실제 수집을 수행할 수 있다는 뜻은 아니다.
+적용 전 운영 DB의 `service_begin_collection`·`service_fail_collection`에는 anon/authenticated의 명시적 실행 grant가 남아 있었다. `service_complete_collection`은 이미 서비스 전용이었다. 세 함수 내부는 모두 `SERVICE_REQUIRED`로 서비스 역할을 검사하므로 일반 역할이 실제 수집을 수행할 수 있었다는 뜻은 아니다.
 
 [`권한 수정안`](../supabase/migrations/20261020055804_collection_worker_permissions.sql)은 PUBLIC·anon·authenticated 실행 권한을 제거하고 service_role 권한을 유지한다. PUBLIC만 revoke하면 명시적 grant가 남는 현상을 재현했다. GitHub 수집은 서버용 service key를 사용한다. 관리자 정책/상태 조회·검수, 일반 공연 조회·찜·저장, 알림 RPC는 변경하지 않는다.
 
-운영 적용은 자동 승인 검토에서 “검증 요청만으로 영구 권한 변경이 명시적으로 승인되지 않았고 수집 중단 가능성이 있다”는 이유로 거절됐다. 우회하지 않았으며 사용자의 영향 질문에 답하고 **명시적 적용 승인 대기**다. 운영 DB는 변경하지 않았다. 승인 후 같은 SQL 적용·실행 권한 재조회·다음 정상 수집 확인이 필요하다.
+첫 운영 적용은 자동 승인 검토에서 명시적 승인 부족을 이유로 거절됐다. 영향 설명 후 사용자가 “그럼 적용해봐”라고 승인해 10/20 15:14 KST에 적용했다. 원격 이력은 `20261020061435_collection_worker_permissions`이며 로컬 파일과 SQL 내용은 같다. 적용 후 세 RPC 모두 anon/authenticated 실행 false·service_role 실행 true를 확인했다.
 
-알림 Cron 명령은 변경할 세 수집 RPC를 참조하지 않는다. 최근 3회(10/20 14:59·15:00·15:01 KST) DB Cron 실행은 `succeeded`다. 이는 HTTP 작업 제출 성공이며 Edge 응답·기기 수신과 구분한다. 예약의 동의·저장 해제·시간 변경·취소·중복 방지는 로컬 검사에서 통과했다. 권한 수정 후 운영 검증은 아직 수행하지 않았다.
+기존 main workflow를 UALIVE 한 출처로 수동 재실행한 [실행 39379311054](https://github.com/yeonguk0201/Concert_finder/actions/runs/39379311054)이 32초에 성공했다. DB 실행 `aef3f0ae-e821-460b-ab60-12aa2dddb5ba`는 15:15:21~15:15:43 KST, success·후보 2·검수 2·공개 0·실패 0이다. 기존 서버 키의 실제 시작→수집→후보 저장 경로가 권한 수정 후 정상임을 확인했다. 모든 공개 정책 OFF·초기 채움 상태와 공개 공연 8개를 유지했다. 이 한 번의 수동 검증은 매시간 자동 운영 기준을 충족한 관측이 아니다.
+
+알림 Cron 명령은 변경한 세 수집 RPC를 참조하지 않는다. 적용 후 최근 3회(10/20 15:14·15:15·15:16 KST) DB Cron 실행은 `succeeded`이고 매분 활성 설정을 유지했다. 이는 HTTP 작업 제출 성공이며 Edge 응답·기기 수신과 구분한다. 예약의 동의·저장 해제·시간 변경·취소·중복 방지는 앞선 로컬 검사에서 통과했다. 실제 기기 수신 재검사는 하지 않았다.
 
 ## 검사 결과
 
@@ -55,11 +57,11 @@ MCR 상세에는 My Chemical Romance와 Oasis가 함께 연결돼 있다. [주�
 - 실패 2개는 `artist-review-runner.mjs`의 `root + '/'` 검사로 Windows에서 `IGNORED_PATH_REQUIRED` 발생. origin/dev의 동일 코드를 대조했고 권한을 높인 재실행에서도 같다. 샌드박스 문제로 처리하지 않으며 이번 수정 범위 밖의 기존 문제로 남긴다.
 - UI 22개 파일·100개 검사 통과. 첫 샌드박스의 임시 변환 파일 ENOENT 후 `npx vitest run --maxWorkers=1`을 샌드박스 밖에서 실행했다.
 - lint·build·`git diff --check` 통과. 기존 500kB 초과 청크 경고 유지. 전체 `npm test` 통과로 표기하지 않는다.
-- 원격 security advisors 조회 완료. 기존 private RLS·함수 권한 경고는 별도이며 미적용 수정안으로 해소됐다고 주장하지 않는다. [함수 권한 안내](https://supabase.com/docs/guides/database/functions#function-privileges).
+- 적용 후 원격 security advisors 재조회 완료. 변경한 세 RPC는 anon/authenticated 실행 경고에 포함되지 않았다. 기존 private RLS·다른 함수 권한·유출 암호 보호 경고는 별도다. [함수 권한 안내](https://supabase.com/docs/guides/database/functions#function-privileges).
 
 ## 다음 완료 조건
 
-1. 수집 권한 수정 승인·적용 후 실제 정상 수집 확인.
+1. 수집 권한 수정 승인·운영 적용·실제 UALIVE 수집 검증 완료. 나머지 출처의 후속 정기 실행은 계속 별도 관측한다.
 2. GitHub 예약 지연과 독립적인 Node 호스트/스케줄러·상태 검사·실패 통지를 연결하고 실제 시작 기준 24시간 재관측. Cron 문자열 변경으로 대체하지 않는다.
 3. KOPIS HTTP 400의 실제 원문/API 응답과 누락 슬롯·상세 갱신 범위 재검증.
 4. 필수 발표 근거를 자동 검증하는 실제 어댑터/공연 사례를 확보한 뒤 출처별 공개 활성화. 검수·제외·중복·중요 변경 보호·초기 무알림 유지.
