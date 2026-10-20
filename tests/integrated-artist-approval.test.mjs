@@ -11,7 +11,7 @@ test('scheduled approval uses a service actor, checks evidence and selection, pr
       create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('test.uid',true),'')::uuid $$;`)
     for (const name of ['202610060001_initial','202610070001_admin_review','202610080001_ingestion','202610090001_notifications',
       '202610110001_catalog_expansion','20261011150237_discovered_artist_catalog','20261012134538_automated_catalog',
-      '20261012135134_artist_management','20261013070742_artist_curation','20261020051940_integrated_artist_approval']) {
+      '20261012135134_artist_management','20261013070742_artist_curation','20261020053150_integrated_artist_approval']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
     await db.exec(`select set_config('request.jwt.claims','{"role":"service_role"}',false)`)
