@@ -111,7 +111,7 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
       ['url','대표 이미지 HTTPS URL'],['source','이미지 원본 출처 HTTPS URL'],['author','사진 저작자'],['license','라이선스 / 허락 명칭'],['licenseUrl','이용 조건 / 허락 근거 HTTPS URL'],['usageBasis','사용 근거 · 허락 범위'],['credit','추가 크레딧'],
     ] as const).filter(([field])=>field !== 'url' || photoInput === 'url').map(([field,label])=><label key={field}>{label}<input required={field!=='credit'} maxLength={2000} type={['url','source','licenseUrl'].includes(field)?'url':'text'} pattern={['url','source','licenseUrl'].includes(field)?'https://.+':undefined} value={photo[field]??''} onChange={e=>{setPhoto(p=>({...p,[field]:e.target.value}));setApproved(false)}} /></label>)}</div>
       <label className="admin-check"><input type="checkbox" required checked={approved} onChange={e=>setApproved(e.target.checked)} />대상 아티스트와 이미지 이용 조건을 확인했습니다</label></>}
-    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} bandId={band.id} photoMode={mode} representativePhoto={photo} /></>}
+    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} photoMode={mode} representativePhoto={photo} /></>}
     <p>이미지 삭제는 표시를 중단합니다. 교체 전 보관 파일은 변경 이력 확인을 위해 유지됩니다.</p>
     <button className="outline" disabled={mode==='manual'&&(!approved || (photoInput === 'file' && !file))}>{busy && photoInput === 'file' ? '사진 검증·저장 중…' : '별칭·대표 이미지 저장'}</button>
     </fieldset></form>

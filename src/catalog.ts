@@ -27,7 +27,8 @@ export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {
     const ticket = Array.isArray(row.ticket_schedules) ? row.ticket_schedules[0] : row.ticket_schedules
     const bandIds = row.concert_bands.map(item => item.band_id)
     return { id: row.id, title: row.title, bandIds, artwork: row.artwork ?? undefined,
-      type: row.format === 'festival' ? '페스티벌' : bands.some(b => bandIds.includes(b.id) && b.countryCode !== 'KR') ? '내한' : '국내',
+      type: row.format === 'festival' ? '페스티벌' : bands.some(b => bandIds.includes(b.id) && b.countryCode !== 'KR') ? '내한'
+        : bandIds.length && bandIds.every(id => bands.some(b => b.id === id && b.countryCode === 'KR')) ? '국내' : '분류 미정',
       date: row.starts_on ?? '', endsOn: row.ends_on ?? undefined, venue: row.venue ?? '장소 미정', city: row.city ?? '지역 미정',
       announcedAt: row.announced_on ?? '', ticketAt: ticket?.opens_at ?? '', price: ticket?.price_description ?? '미정',
       ticketScheduleId: ticket?.id, cancelled: row.cancelled, palette: palettes[artworkIndex(row.id)], headline: bands.find(b => b.id === bandIds[0])?.name ?? row.title,
