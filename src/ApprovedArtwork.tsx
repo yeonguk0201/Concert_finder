@@ -2,8 +2,8 @@ import { useState } from 'react'
 import type { Band, Concert } from './data'
 import { concertArtworkStyle } from './approvedStyle'
 
-export function ApprovedArtwork({ concert, bands }: { concert: Concert; bands: Band[] }) {
-  const image = concert.artwork?.display_approved ? concert.artwork.url : null
+export function ApprovedArtwork({ concert, bands, showPhoto = false }: { concert: Concert; bands: Band[]; showPhoto?: boolean }) {
+  const image = showPhoto && concert.artwork?.display_approved ? concert.artwork.url : null
   const [failed, setFailed] = useState<string | null>(null)
   const band = bands.find(b => b.id === concert.bandIds[0])
   const style = concertArtworkStyle(concert.id)
