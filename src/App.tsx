@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { bands as fixtureBands, concerts as fixtureConcerts } from './data'
 import type { Band, Concert } from './data'
 import { calendarFile, formatDate, readIds } from './lib'
@@ -64,6 +64,12 @@ function App() {
   const savingDisabled = accountMode && (auth.loading || Boolean(auth.session && (account.loading || account.error)))
   const pending = (collection: 'bands' | 'schedules', id: string) => accountMode && account.pending.includes(`${collection}:${id}`)
   const [selected, setSelected] = useState<Concert | null>(null)
+  useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }) }, [page, artistId, selected?.id])
+  useEffect(() => {
+    const previous = history.scrollRestoration
+    history.scrollRestoration = 'manual'
+    return () => { history.scrollRestoration = previous }
+  }, [])
   const [toast, setToast] = useState('')
   const [loginOpen, setLoginOpen] = useState(false)
   useEffect(() => {
@@ -89,8 +95,8 @@ function App() {
   useEffect(() => { if (accountMode) return; try { localStorage.setItem('encore.bands', JSON.stringify(localFollowed)); localStorage.setItem('encore.saved', JSON.stringify(localSaved)) } catch { queueMicrotask(() => setToast('브라우저 저장 공간을 사용할 수 없어 이번 방문에만 저장됩니다.')) } }, [localFollowed, localSaved])
   useEffect(() => { if (!toast) return; const timer = setTimeout(() => setToast(''), 4000); return () => clearTimeout(timer) }, [toast])
   const updateUrl = (nextPage: Page, event?: string, searchQuery = query, push = false) => { const url = new URL(location.href); url.searchParams.set('page', nextPage); if (event) url.searchParams.set('event', event); else url.searchParams.delete('event'); if (nextPage === 'search' && searchQuery.trim()) url.searchParams.set('q', searchQuery); else url.searchParams.delete('q'); if (nextPage !== 'artist') url.searchParams.delete('artist'); url.searchParams.delete('date'); history[push ? 'pushState' : 'replaceState']({ encore: true }, '', url) }
-  const navigate = (value: Page) => { setPage(value); setDateFilter(''); setSearchTab('전체'); setQuery(''); setFilter('전체'); setCity('전국'); setOrder('performance'); updateUrl(value, undefined, '', true); window.scrollTo({ top: 0, behavior: 'instant' }) }
-  const search = (value: string) => { setQuery(value); setSearchTab('전체'); setDateFilter(''); setPage('search'); setFilter('전체'); setCity('전국'); setOrder('performance'); updateUrl('search', undefined, value, page !== 'search') }
+  const navigate = (value: Page) => { setSelected(null); setPage(value); setDateFilter(''); setSearchTab('전체'); setQuery(''); setFilter('전체'); setCity('전국'); setOrder('performance'); updateUrl(value, undefined, '', true); window.scrollTo({ top: 0, behavior: 'instant' }) }
+  const search = (value: string) => { setSelected(null); window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setQuery(value); setSearchTab('전체'); setDateFilter(''); setPage('search'); setFilter('전체'); setCity('전국'); setOrder('performance'); updateUrl('search', undefined, value, page !== 'search') }
   useEffect(() => {
     const event = new URLSearchParams(location.search).get('event')
     const target = concerts.find(c => c.id === event)
@@ -117,7 +123,7 @@ function App() {
     setToast(success ? exists ? '예매 일정에서 삭제했어요.' : '계정에 일정을 저장했어요. 알림 수신은 별도 동의·기기 등록이 필요합니다.' : '일정을 저장하지 못했습니다. 다시 시도해 주세요.')
   }
   const openDetails = (concert: Concert) => { opener.current = document.activeElement as HTMLElement; setSelected(concert); updateUrl(page, concert.id) }
-  const closeDetails = () => { setSelected(null); updateUrl(page); opener.current?.focus() }
+  const closeDetails = () => { setSelected(null); updateUrl(page); opener.current?.focus({ preventScroll: true }) }
   const matches = (concert: Concert) => (filter === '전체' || (filter === '페스티벌' ? concert.type === '페스티벌' : concert.bandIds.some(id => { const b = bands.find(b => b.id === id); return b && (filter === '국내' ? b.country === '한국' || b.countryCode === 'KR' : b.country !== '한국' && b.countryCode !== 'KR') }))) && (city === '전국' || concert.city === city) && `${concert.title} ${concert.venue} ${concert.bandIds.map(id => bands.find(b => b.id === id) ? [bands.find(b => b.id === id)?.name, ...(bands.find(b => b.id === id)?.aliases ?? [])].join(' ') : '').join(' ')}`.toLowerCase().includes(query.trim().toLowerCase())
   const matchingBands = bands.filter(b => [b.name, ...(b.aliases ?? [])].join(' ').toLowerCase().includes(query.trim().toLowerCase()))
   const followedBands = bands.filter(b => followed.includes(b.id))

@@ -48,3 +48,7 @@ body{--border:var(--line);--panel:var(--surface)}
 .related-profile .profile-name strong{font-size:18px;line-height:1.5;overflow-wrap:anywhere}
 .artist-banner-copy>.artist-live-summary{font-family:inherit;font-size:16px;font-stretch:normal;letter-spacing:0;line-height:1.7;transform:none}
 @media(max-width:760px){.related-profile .profile-name strong{font-size:15px}.artist-banner-copy>.artist-live-summary{font-size:12px;max-width:250px}}
+
+/* Keep concert content clear of the header, including direct event links. */
+.flow-page:has(> .flow-detail){padding-top:32px}
+@media(max-width:760px){.flow-page:has(> .flow-detail){padding-top:16px}}
