@@ -1,0 +1,4052 @@
+{
+  "version": 1,
+  "runId": "718ad688-9f77-4744-ab0d-0e660b50f63d",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "owner": "cloud",
+  "revision": 571,
+  "startedAt": "2026-10-20T21:27:10.193Z",
+  "finishedAt": "2026-10-20T21:37:52.417Z",
+  "timeZone": "Asia/Seoul",
+  "catalogCount": 625,
+  "selected": 40,
+  "limit": 40,
+  "outcome": {
+    "newResearchCompleted": 4,
+    "researchDeferred": 32,
+    "approvalAppliedAndReadBack": 7,
+    "approvalDeferred": 33,
+    "channelSavedAndReadBack": 0,
+    "channelsDeferred": 40,
+    "newHumanJudgmentExceptions": 0
+  },
+  "requests": {
+    "supabaseRestObserved": 200,
+    "components": {
+      "snapshot": 2,
+      "begin": 3,
+      "initialContexts": 120,
+      "musicBrainzSharedGate": 2,
+      "approvalContextsAndApplyReadBack": 70,
+      "channelManifest": 1,
+      "finalCatalog": 2
+    },
+    "musicBrainz": 2,
+    "musicBrainzResponses": [
+      200,
+      503
+    ],
+    "youtube": 0,
+    "officialDirectFetchAttempts": 4,
+    "officialDirectHttpResponses": 0,
+    "webToolActions": {
+      "searchQueries": 46,
+      "open": 21,
+      "find": 4
+    },
+    "webToolUnderlyingHttpRequests": null,
+    "notes": [
+      "Queue apiCalls=2 counts only stage-attributed MusicBrainz requests; Supabase REST calls are recorded separately.",
+      "Web tool internal HTTP request counts are not exposed; action counts are not presented as HTTP totals.",
+      "YOUTUBE_API_KEY binding exists but was not API-validated: no officially confirmed channel ID was available for lookup."
+    ]
+  },
+  "currentQueue": {
+    "stageCounts": {
+      "research": {
+        "complete": 546,
+        "pending": 7,
+        "deferred": 70,
+        "exception": 2
+      },
+      "approval": {
+        "pending": 475,
+        "deferred": 71,
+        "complete": 13,
+        "authority_wait": 66
+      },
+      "channels": {
+        "pending": 466,
+        "deferred": 145,
+        "complete": 13,
+        "exception": 1
+      }
+    },
+    "incompleteArtists": 624,
+    "dueByFinishWithNullAuthority": 493,
+    "legacyAuthorityWaiting": 66,
+    "notes": [
+      "493 is the scheduler due count with null authority, not the total unfinished catalogue.",
+      "66 authority_wait entries are inherited unselected records; installed service path is available. They require their own actual approval-requirement verification, not automatic flag conversion.",
+      "Historical completion counts are preserved records and are not new cloud-run accomplishments."
+    ]
+  },
+  "technicalDeferrals": {
+    "musicBrainz": "HTTP 503 after one successful identity response; remaining requests stopped, provider cooldown 24h.",
+    "antenna": "HTTP 403 on official profile retry, cooldown 24h.",
+    "allMusic": "HTTP 403 on alternate album source, cooldown 24h.",
+    "tangerineDream": {
+      "bandId": "3d66c0d6-40fc-488a-9b45-1a519ae53fa4",
+      "decision": "keep",
+      "reason": "SOURCE_URL_VALIDATOR_QUERY_UNSUPPORTED",
+      "checkedAt": "2026-10-20T21:37:44.124Z",
+      "sourceUrl": "https://www.tangerinedreammusic.com/en/music/detail.asp?id=17&tit=Force+Majeure",
+      "excerpt": "in the tradition of progressive rock",
+      "summary": "1979 Force Majeure 공식 음반 소개가 드럼·일렉트릭 기타를 이용한 progressive rock 작업을 설명한다. 추가 proof는 제출하지 않았으며 원래 research 완료 시각과 유효기간을 연장하지 않았다.",
+      "proposal": {
+        "artist_category": "overseas_rock",
+        "review_status": "approved"
+      },
+      "applied": false,
+      "nextAction": "기존 proof 입력 경로가 실제 query 출처를 안전하게 지원한 후 최신 신원·버전을 재확인하여 승인 요건별 입력을 완성한다."
+    },
+    "channelManifest": {
+      "restCalls": 1,
+      "imported": 0,
+      "importFailures": 0,
+      "artists": 0,
+      "applied": 0,
+      "writeFailures": 0,
+      "apiCalls": 0,
+      "counts": {},
+      "errors": {},
+      "ok": true,
+      "officiallyVerified": 0,
+      "photosAvailable": 0
+    },
+    "directOfficialLinks": [
+      {
+        "url": "https://www.thesweet.com/",
+        "status": "FETCH_FAILED",
+        "checkedAt": "2026-10-20T21:36:37.213Z",
+        "candidates": []
+      },
+      {
+        "url": "https://thedoors.com/",
+        "status": "FETCH_FAILED",
+        "checkedAt": "2026-10-20T21:36:37.220Z",
+        "candidates": []
+      },
+      {
+        "url": "https://thelemonheads.net/",
+        "status": "FETCH_FAILED",
+        "checkedAt": "2026-10-20T21:36:37.225Z",
+        "candidates": []
+      },
+      {
+        "url": "https://www.tangerinedreammusic.com/en/",
+        "status": "FETCH_FAILED",
+        "checkedAt": "2026-10-20T21:36:37.235Z",
+        "candidates": []
+      }
+    ]
+  },
+  "validation": {
+    "allSelectedTasksCheckpointed": true,
+    "activeRunCleared": true,
+    "catalogChangedOnlyAppliedSeven": true,
+    "receiptAndPublicationAndRelationsVerifiedByApply": true,
+    "latestBandVersionCategoryApprovalAliasesRechecked": true,
+    "noSourceCodeOrSchemaChanges": true
+  },
+  "nextBatchNotBefore": "2026-10-21T02:27:10.193Z",
+  "artists": [
+    {
+      "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+      "name": "이선정",
+      "musicBrainzId": "26731ddd-4bab-4ef5-854c-ce467be8403f",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+        "name": "이선정",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "26731ddd-4bab-4ef5-854c-ce467be8403f",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.313519+00:00"
+      },
+      "identityAfter": {
+        "id": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+        "name": "이선정",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "26731ddd-4bab-4ef5-854c-ce467be8403f",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.313519+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "MB 응답은 한국 바이올리니스트로 표시되지만 URL 관계가 없었다. 강남문화재단 동명 연주자 후보와 기존 외부 신원의 작품 연결이 미완성이다. 이름·MB 설명만으로 제외하지 않는다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:44.126Z",
+        "waitingSince": "2026-10-20T21:37:44.126Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.126Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.208Z",
+        "waitingSince": "2026-10-20T21:37:44.208Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.208Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.266Z",
+        "waitingSince": "2026-10-20T21:37:44.266Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.266Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+        "name": "이선정",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://www.gangnam.go.kr/office/gfac/board/gfac_artmember01/3/view.do?mid=gfac_orchestra_member"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "MB 응답은 한국 바이올리니스트로 표시되지만 URL 관계가 없었다. 강남문화재단 동명 연주자 후보와 기존 외부 신원의 작품 연결이 미완성이다. 이름·MB 설명만으로 제외하지 않는다."
+      }
+    },
+    {
+      "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+      "name": "이성호",
+      "musicBrainzId": "b31d0d8e-3b56-4413-8517-2ea36d1262e6",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+        "name": "이성호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "b31d0d8e-3b56-4413-8517-2ea36d1262e6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.934799+00:00"
+      },
+      "identityAfter": {
+        "id": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+        "name": "이성호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "b31d0d8e-3b56-4413-8517-2ea36d1262e6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.934799+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "두 번째 MB 요청이 503으로 실패해 추가 외부 ID 관계 조회를 중단했다. 동명 음악인과 작품·공식 소개 연결이 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:44.318Z",
+        "waitingSince": "2026-10-20T21:37:44.318Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.318Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.367Z",
+        "waitingSince": "2026-10-20T21:37:44.367Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.367Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.414Z",
+        "waitingSince": "2026-10-20T21:37:44.414Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.414Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+        "name": "이성호",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "두 번째 MB 요청이 503으로 실패해 추가 외부 ID 관계 조회를 중단했다. 동명 음악인과 작품·공식 소개 연결이 미완성이다."
+      }
+    },
+    {
+      "bandId": "2bde29a8-f641-4c07-80ad-74ed61158a88",
+      "name": "이은미",
+      "musicBrainzId": "657e1d87-31a4-43bc-87fb-c64aff7578a3",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "2bde29a8-f641-4c07-80ad-74ed61158a88",
+        "name": "이은미",
+        "aliases": [
+          "Lee Eun Mee",
+          "Lee Eun Mi"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "657e1d87-31a4-43bc-87fb-c64aff7578a3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.942568+00:00"
+      },
+      "identityAfter": {
+        "id": "2bde29a8-f641-4c07-80ad-74ed61158a88",
+        "name": "이은미",
+        "aliases": [
+          "Lee Eun Mee",
+          "Lee Eun Mi"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "657e1d87-31a4-43bc-87fb-c64aff7578a3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.942568+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "록 공연 관련 음악 기사 후보를 발견했으나 공식 경력·작품 및 현재 외부 신원의 교차 검증이 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:44.465Z",
+        "waitingSince": "2026-10-20T21:37:44.465Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.465Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.513Z",
+        "waitingSince": "2026-10-20T21:37:44.513Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.513Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.563Z",
+        "waitingSince": "2026-10-20T21:37:44.563Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.563Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "2bde29a8-f641-4c07-80ad-74ed61158a88",
+        "name": "이은미",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://www.hankyung.com/article/1999060303021"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "록 공연 관련 음악 기사 후보를 발견했으나 공식 경력·작품 및 현재 외부 신원의 교차 검증이 미완성이다."
+      }
+    },
+    {
+      "bandId": "f7216f6b-058b-449c-9ad4-9335cbde4e0d",
+      "name": "장필순",
+      "musicBrainzId": "00b885c5-92b2-4413-8dc2-af6f218c57d2",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "f7216f6b-058b-449c-9ad4-9335cbde4e0d",
+        "name": "장필순",
+        "aliases": [
+          "Jang Pill Soon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "00b885c5-92b2-4413-8dc2-af6f218c57d2",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.922955+00:00"
+      },
+      "identityAfter": {
+        "id": "f7216f6b-058b-449c-9ad4-9335cbde4e0d",
+        "name": "장필순",
+        "aliases": [
+          "Jang Pill Soon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "00b885c5-92b2-4413-8dc2-af6f218c57d2",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.922955+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "Soony Seven 음반의 포크·전자 음악 소개 후보를 발견했다. 실제 록 활동과 외부 신원 연결을 더 확인해야 하며 혼합 장르를 임의 제외하지 않는다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:44.609Z",
+        "waitingSince": "2026-10-20T21:37:44.609Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.609Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.657Z",
+        "waitingSince": "2026-10-20T21:37:44.657Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.657Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.707Z",
+        "waitingSince": "2026-10-20T21:37:44.707Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.707Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "f7216f6b-058b-449c-9ad4-9335cbde4e0d",
+        "name": "장필순",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://m.yes24.com/goods/detail/9435435"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "Soony Seven 음반의 포크·전자 음악 소개 후보를 발견했다. 실제 록 활동과 외부 신원 연결을 더 확인해야 하며 혼합 장르를 임의 제외하지 않는다."
+      }
+    },
+    {
+      "bandId": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+      "name": "조장혁",
+      "musicBrainzId": "79cbeeec-0aa4-4273-a97e-1718788ca2e5",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+        "name": "조장혁",
+        "aliases": [
+          "Cho Jang Hyuck"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "79cbeeec-0aa4-4273-a97e-1718788ca2e5",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T06:57:47.368417+00:00"
+      },
+      "identityAfter": {
+        "id": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+        "name": "조장혁",
+        "aliases": [
+          "Cho Jang Hyuck"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "79cbeeec-0aa4-4273-a97e-1718788ca2e5",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T06:57:47.368417+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 음반·록 활동 자료를 검색했으나 현재 MBID와 연결된 구체적인 공식 소개·작품 검증이 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:44.756Z",
+        "waitingSince": "2026-10-20T21:37:44.756Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.756Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.809Z",
+        "waitingSince": "2026-10-20T21:37:44.809Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.809Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.856Z",
+        "waitingSince": "2026-10-20T21:37:44.856Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.856Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+        "name": "조장혁",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 음반·록 활동 자료를 검색했으나 현재 MBID와 연결된 구체적인 공식 소개·작품 검증이 미완성이다."
+      }
+    },
+    {
+      "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+      "name": "최재호",
+      "musicBrainzId": "968c57d8-ec41-4d0d-8c67-1a960c3fea00",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+        "name": "최재호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "968c57d8-ec41-4d0d-8c67-1a960c3fea00",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.277146+00:00"
+      },
+      "identityAfter": {
+        "id": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+        "name": "최재호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "968c57d8-ec41-4d0d-8c67-1a960c3fea00",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.277146+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "성우·음악 관계자 동명 후보가 섞여 있다. 현재 MBID와 공식 음악 경력 연결을 확인하지 못해 기술적 신원 조회 재개 후 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:44.906Z",
+        "waitingSince": "2026-10-20T21:37:44.906Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.906Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:44.956Z",
+        "waitingSince": "2026-10-20T21:37:44.956Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:44.956Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.004Z",
+        "waitingSince": "2026-10-20T21:37:45.004Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.004Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+        "name": "최재호",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "성우·음악 관계자 동명 후보가 섞여 있다. 현재 MBID와 공식 음악 경력 연결을 확인하지 못해 기술적 신원 조회 재개 후 조사한다."
+      }
+    },
+    {
+      "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+      "name": "최정인",
+      "musicBrainzId": "88aae8ce-aab8-4926-9172-c0a4955e4e97",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+        "name": "최정인",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "88aae8ce-aab8-4926-9172-c0a4955e4e97",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T11:36:58.700358+00:00"
+      },
+      "identityAfter": {
+        "id": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+        "name": "최정인",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "88aae8ce-aab8-4926-9172-c0a4955e4e97",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T11:36:58.700358+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "작곡가·다른 저자 동명 후보가 있다. OST 및 외부 ID 교차 검증이 미완료다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.050Z",
+        "waitingSince": "2026-10-20T21:37:45.050Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.050Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.096Z",
+        "waitingSince": "2026-10-20T21:37:45.096Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.096Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.145Z",
+        "waitingSince": "2026-10-20T21:37:45.145Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.145Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+        "name": "최정인",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "작곡가·다른 저자 동명 후보가 있다. OST 및 외부 ID 교차 검증이 미완료다."
+      }
+    },
+    {
+      "bandId": "5739b0f3-9ada-4141-82f4-a0d130219f7f",
+      "name": "이승기",
+      "musicBrainzId": "aff0405a-9f74-48b0-b5fe-acfc138624f8",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "5739b0f3-9ada-4141-82f4-a0d130219f7f",
+        "name": "이승기",
+        "aliases": [
+          "Lee Seung Gi",
+          "Lee Seung Ki",
+          "Lee Seung-gi",
+          "Lee Seung-ki"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "aff0405a-9f74-48b0-b5fe-acfc138624f8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.9126+00:00"
+      },
+      "identityAfter": {
+        "id": "5739b0f3-9ada-4141-82f4-a0d130219f7f",
+        "name": "이승기",
+        "aliases": [
+          "Lee Seung Gi",
+          "Lee Seung Ki",
+          "Lee Seung-gi",
+          "Lee Seung-ki"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "aff0405a-9f74-48b0-b5fe-acfc138624f8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.9126+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.192Z",
+        "waitingSince": "2026-10-20T21:37:45.192Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.192Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.240Z",
+        "waitingSince": "2026-10-20T21:37:45.240Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.240Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.287Z",
+        "waitingSince": "2026-10-20T21:37:45.287Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.287Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "5739b0f3-9ada-4141-82f4-a0d130219f7f",
+        "name": "이승기",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+      "name": "정재환",
+      "musicBrainzId": "e64c4995-8948-438f-8988-3240dc2c7ab4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+        "name": "정재환",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "e64c4995-8948-438f-8988-3240dc2c7ab4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.917823+00:00"
+      },
+      "identityAfter": {
+        "id": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+        "name": "정재환",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "e64c4995-8948-438f-8988-3240dc2c7ab4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.917823+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.337Z",
+        "waitingSince": "2026-10-20T21:37:45.337Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.337Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.384Z",
+        "waitingSince": "2026-10-20T21:37:45.384Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.384Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.440Z",
+        "waitingSince": "2026-10-20T21:37:45.440Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.440Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+        "name": "정재환",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "37f2a6ca-e9ed-4541-88c8-8a1024959a71",
+      "name": "이찬혁",
+      "musicBrainzId": "810a4fc2-e368-4212-8494-a3934be6973d",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "37f2a6ca-e9ed-4541-88c8-8a1024959a71",
+        "name": "이찬혁",
+        "aliases": [
+          "LEE CHANHYUK",
+          "Lee Chanhyeok"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "810a4fc2-e368-4212-8494-a3934be6973d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.924819+00:00"
+      },
+      "identityAfter": {
+        "id": "37f2a6ca-e9ed-4541-88c8-8a1024959a71",
+        "name": "이찬혁",
+        "aliases": [
+          "LEE CHANHYUK",
+          "Lee Chanhyeok"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "810a4fc2-e368-4212-8494-a3934be6973d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.924819+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.490Z",
+        "waitingSince": "2026-10-20T21:37:45.490Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.490Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.535Z",
+        "waitingSince": "2026-10-20T21:37:45.535Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.535Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.582Z",
+        "waitingSince": "2026-10-20T21:37:45.582Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.582Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "37f2a6ca-e9ed-4541-88c8-8a1024959a71",
+        "name": "이찬혁",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "c2455b58-e10c-4959-85e8-3f36c7221267",
+      "name": "권진아",
+      "musicBrainzId": "4951cd19-8dd8-4cec-965e-675c4cf184a4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "c2455b58-e10c-4959-85e8-3f36c7221267",
+        "name": "권진아",
+        "aliases": [
+          "Kwon Jin Ah",
+          "Kwon Jina"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "4951cd19-8dd8-4cec-965e-675c4cf184a4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.941923+00:00"
+      },
+      "identityAfter": {
+        "id": "c2455b58-e10c-4959-85e8-3f36c7221267",
+        "name": "권진아",
+        "aliases": [
+          "Kwon Jin Ah",
+          "Kwon Jina"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "4951cd19-8dd8-4cec-965e-675c4cf184a4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.941923+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 Antenna 프로필 재시도는 403이었다. 2026년 록 음반 기사 후보가 있어 단순 발라드 분류로 제외하지 않고 원음반·공식 소개 보완을 남긴다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.639Z",
+        "waitingSince": "2026-10-20T21:37:45.639Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.639Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.688Z",
+        "waitingSince": "2026-10-20T21:37:45.688Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.688Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.733Z",
+        "waitingSince": "2026-10-20T21:37:45.733Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.733Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "c2455b58-e10c-4959-85e8-3f36c7221267",
+        "name": "권진아",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://antenna.co.kr/KwonJinAh",
+          "https://digitalchosun.dizzo.com/site/data/html_dir/2026/07/15/2026071580162.html"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 Antenna 프로필 재시도는 403이었다. 2026년 록 음반 기사 후보가 있어 단순 발라드 분류로 제외하지 않고 원음반·공식 소개 보완을 남긴다."
+      }
+    },
+    {
+      "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+      "name": "남성모",
+      "musicBrainzId": "9e955360-4301-4444-bad3-56aa91051753",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+        "name": "남성모",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "9e955360-4301-4444-bad3-56aa91051753",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.943628+00:00"
+      },
+      "identityAfter": {
+        "id": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+        "name": "남성모",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "9e955360-4301-4444-bad3-56aa91051753",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.943628+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "Bugs의 82MAJOR 멤버 프로필을 열었다. 현재 외부 ID와 실제 록/J-pop 활동을 연결하는 검증은 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.779Z",
+        "waitingSince": "2026-10-20T21:37:45.779Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.779Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.844Z",
+        "waitingSince": "2026-10-20T21:37:45.844Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.844Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:45.890Z",
+        "waitingSince": "2026-10-20T21:37:45.890Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.890Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+        "name": "남성모",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://music.bugs.co.kr/artist/80386575"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "Bugs의 82MAJOR 멤버 프로필을 열었다. 현재 외부 ID와 실제 록/J-pop 활동을 연결하는 검증은 미완성이다."
+      }
+    },
+    {
+      "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+      "name": "황성빈",
+      "musicBrainzId": "c04d9626-83b7-4159-8ed4-3e954ed906a9",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+        "name": "황성빈",
+        "aliases": [
+          "HWANG SEONG BIN"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c04d9626-83b7-4159-8ed4-3e954ed906a9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.945385+00:00"
+      },
+      "identityAfter": {
+        "id": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+        "name": "황성빈",
+        "aliases": [
+          "HWANG SEONG BIN"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c04d9626-83b7-4159-8ed4-3e954ed906a9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.945385+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "82MAJOR 멤버와 야구 선수 동명 후보가 섞인다. 외부 ID와 공식 작품 연결 및 실제 대상 장르 확인이 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:45.939Z",
+        "waitingSince": "2026-10-20T21:37:45.939Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:45.939Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.067Z",
+        "waitingSince": "2026-10-20T21:37:46.067Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.067Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.306Z",
+        "waitingSince": "2026-10-20T21:37:46.306Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.306Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+        "name": "황성빈",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "82MAJOR 멤버와 야구 선수 동명 후보가 섞인다. 외부 ID와 공식 작품 연결 및 실제 대상 장르 확인이 미완성이다."
+      }
+    },
+    {
+      "bandId": "b54ca30c-d111-42d6-a479-83b79837fae8",
+      "name": "백예린",
+      "musicBrainzId": "d598652a-b64a-4e21-b607-bcec71698731",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "b54ca30c-d111-42d6-a479-83b79837fae8",
+        "name": "백예린",
+        "aliases": [
+          "Yerin Baek",
+          "Baek Ye-rin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d598652a-b64a-4e21-b607-bcec71698731",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.636672+00:00"
+      },
+      "identityAfter": {
+        "id": "b54ca30c-d111-42d6-a479-83b79837fae8",
+        "name": "백예린",
+        "aliases": [
+          "Yerin Baek",
+          "Baek Ye-rin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d598652a-b64a-4e21-b607-bcec71698731",
+        "category": "domestic_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:38.655208+00:00"
+      },
+      "research": {
+        "status": "complete",
+        "reason": "공연 주최사 The Volunteers 소개의 Yerin Baek 백예린(vocal and guitar) 및 정규 음반·활동 경력과 현재 별칭 Yerin Baek/Baek Ye-rin을 대조했다. 밴드 자체와 개인 카탈로그는 구분했다. 실제 얼터너티브 록 밴드의 보컬·기타로 참여한 정규 음반·공연 활동을 확인했다. 개인의 다른 혼합 장르 활동은 유지 판정과 충돌하지 않는다.",
+        "checkedAt": "2026-10-20T21:33:37.893Z",
+        "waitingSince": "2026-10-20T21:33:37.893Z",
+        "applied": false,
+        "lastSuccessfulAt": "2026-10-20T21:33:27.759Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:27.759Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "공연 주최사 The Volunteers 소개의 Yerin Baek 백예린(vocal and guitar) 및 정규 음반·활동 경력과 현재 별칭 Yerin Baek/Baek Ye-rin을 대조했다. 밴드 자체와 개인 카탈로그는 구분했다. 실제 얼터너티브 록 밴드의 보컬·기타로 참여한 정규 음반·공연 활동을 확인했다. 개인의 다른 혼합 장르 활동은 유지 판정과 충돌하지 않는다.",
+          "sources": [
+            {
+              "url": "https://www.f7live.ca/tm-attraction/the-volunteers/",
+              "checkedAt": "2026-10-20T21:33:27.759Z",
+              "excerpt": "Yerin Baek 백예린 (vocal and guitar)"
+            },
+            {
+              "url": "https://music.bugs.co.kr/artist/20134881",
+              "checkedAt": "2026-10-20T21:33:27.759Z",
+              "excerpt": "멤버 백예린, Jonny, 김치헌"
+            },
+            {
+              "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+              "checkedAt": "2026-10-20T21:33:37.893Z",
+              "excerpt": "mb:d598652a-b64a-4e21-b607-bcec71698731"
+            }
+          ]
+        }
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:37.944Z",
+        "waitingSince": "2026-10-20T21:33:37.944Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:37.944Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:37.944Z",
+        "proposal": {
+          "target_band_id": "b54ca30c-d111-42d6-a479-83b79837fae8",
+          "expected_updated_at": "2026-10-18T04:29:55.636672+00:00",
+          "artist_name": "백예린",
+          "country": "KR",
+          "artist_category": "domestic_rock",
+          "artist_aliases": [
+            "Yerin Baek",
+            "Baek Ye-rin"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공연 주최사 The Volunteers 소개의 Yerin Baek 백예린(vocal and guitar) 및 정규 음반·활동 경력과 현재 별칭 Yerin Baek/Baek Ye-rin을 대조했다. 밴드 자체와 개인 카탈로그는 구분했다. 실제 얼터너티브 록 밴드의 보컬·기타로 참여한 정규 음반·공연 활동을 확인했다. 개인의 다른 혼합 장르 활동은 유지 판정과 충돌하지 않는다.",
+          "evidence_url": "https://www.f7live.ca/tm-attraction/the-volunteers/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:38.655208+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공연 주최사 The Volunteers 소개의 Yerin Baek 백예린(vocal and guitar) 및 정규 음반·활동 경력과 현재 별칭 Yerin Baek/Baek Ye-rin을 대조했다. 밴드 자체와 개인 카탈로그는 구분했다.",
+          "sourceUrls": [
+            "https://www.f7live.ca/tm-attraction/the-volunteers/",
+            "https://music.bugs.co.kr/artist/20134881"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공연 주최사와 음반 플랫폼이 The Volunteers를 Seoul, South Korea 기반으로 소개하고 개인 백예린을 구성원으로 명시했다.",
+          "sourceUrls": [
+            "https://www.f7live.ca/tm-attraction/the-volunteers/",
+            "https://music.bugs.co.kr/artist/20134881"
+          ]
+        },
+        "genreMatched": {
+          "summary": "실제 얼터너티브 록 밴드의 보컬·기타로 참여한 정규 음반·공연 활동을 확인했다. 개인의 다른 혼합 장르 활동은 유지 판정과 충돌하지 않는다.",
+          "sourceUrls": [
+            "https://www.f7live.ca/tm-attraction/the-volunteers/",
+            "https://music.bugs.co.kr/artist/20134881"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "공연 주최사와 음반 플랫폼이 The Volunteers를 Seoul, South Korea 기반으로 소개하고 개인 백예린을 구성원으로 명시했다. 실제 얼터너티브 록 밴드의 보컬·기타로 참여한 정규 음반·공연 활동을 확인했다. 개인의 다른 혼합 장르 활동은 유지 판정과 충돌하지 않는다. 따라서 기존 정책의 domestic_rock에 해당한다.",
+          "sourceUrls": [
+            "https://www.f7live.ca/tm-attraction/the-volunteers/",
+            "https://music.bugs.co.kr/artist/20134881"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:d598652a-b64a-4e21-b607-bcec71698731가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://www.f7live.ca/tm-attraction/the-volunteers/",
+            "https://music.bugs.co.kr/artist/20134881"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공연 주최사 The Volunteers 소개의 Yerin Baek 백예린(vocal and guitar) 및 정규 음반·활동 경력과 현재 별칭 Yerin Baek/Baek Ye-rin을 대조했다. 밴드 자체와 개인 카탈로그는 구분했다. 실제 얼터너티브 록 밴드의 보컬·기타로 참여한 정규 음반·공연 활동을 확인했다. 개인의 다른 혼합 장르 활동은 유지 판정과 충돌하지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.f7live.ca/tm-attraction/the-volunteers/",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "Yerin Baek 백예린 (vocal and guitar)"
+          },
+          {
+            "url": "https://music.bugs.co.kr/artist/20134881",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "멤버 백예린, Jonny, 김치헌"
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:37.893Z",
+            "excerpt": "mb:d598652a-b64a-4e21-b607-bcec71698731"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.355Z",
+        "waitingSince": "2026-10-20T21:37:46.355Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.355Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "b54ca30c-d111-42d6-a479-83b79837fae8",
+        "name": "백예린",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    },
+    {
+      "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+      "name": "윤석철",
+      "musicBrainzId": "c3237f6e-14b2-4c6a-936e-32ef519348e4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+        "name": "윤석철",
+        "aliases": [
+          "Seokcheol Yun",
+          "Yun Seok Cheol"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c3237f6e-14b2-4c6a-936e-32ef519348e4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.646252+00:00"
+      },
+      "identityAfter": {
+        "id": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+        "name": "윤석철",
+        "aliases": [
+          "Seokcheol Yun",
+          "Yun Seok Cheol"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c3237f6e-14b2-4c6a-936e-32ef519348e4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.646252+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "재즈 음악인 자료 후보를 찾았으나 실제 록 활동과 외부 ID를 함께 검증하지 못했다. 재즈 태그만으로 제외하지 않는다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:46.401Z",
+        "waitingSince": "2026-10-20T21:37:46.401Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.401Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.459Z",
+        "waitingSince": "2026-10-20T21:37:46.459Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.459Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.705Z",
+        "waitingSince": "2026-10-20T21:37:46.705Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.705Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+        "name": "윤석철",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "재즈 음악인 자료 후보를 찾았으나 실제 록 활동과 외부 ID를 함께 검증하지 못했다. 재즈 태그만으로 제외하지 않는다."
+      }
+    },
+    {
+      "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+      "name": "이찬원",
+      "musicBrainzId": "61981bcc-25e5-40ec-970d-8998494af238",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+        "name": "이찬원",
+        "aliases": [
+          "Lee Chanwon",
+          "Lee Chan Won"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "61981bcc-25e5-40ec-970d-8998494af238",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.660248+00:00"
+      },
+      "identityAfter": {
+        "id": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+        "name": "이찬원",
+        "aliases": [
+          "Lee Chanwon",
+          "Lee Chan Won"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "61981bcc-25e5-40ec-970d-8998494af238",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.660248+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "트로트 활동 자료 후보만으로 대상 밖 판정하지 않는다. 공식 경력 및 실제 대상 장르 활동 검증이 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:46.771Z",
+        "waitingSince": "2026-10-20T21:37:46.771Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.771Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.819Z",
+        "waitingSince": "2026-10-20T21:37:46.819Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.819Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.866Z",
+        "waitingSince": "2026-10-20T21:37:46.866Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.866Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+        "name": "이찬원",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "트로트 활동 자료 후보만으로 대상 밖 판정하지 않는다. 공식 경력 및 실제 대상 장르 활동 검증이 미완성이다."
+      }
+    },
+    {
+      "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+      "name": "서림",
+      "musicBrainzId": "a78361b4-d3eb-4928-8125-c988045074a6",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "586f6cb8-d286-413c-9adf-9185a423e201",
+        "name": "서림",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a78361b4-d3eb-4928-8125-c988045074a6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.664288+00:00"
+      },
+      "identityAfter": {
+        "id": "586f6cb8-d286-413c-9adf-9185a423e201",
+        "name": "서림",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a78361b4-d3eb-4928-8125-c988045074a6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.664288+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:46.913Z",
+        "waitingSince": "2026-10-20T21:37:46.913Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.913Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:46.966Z",
+        "waitingSince": "2026-10-20T21:37:46.966Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:46.966Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.015Z",
+        "waitingSince": "2026-10-20T21:37:47.015Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.015Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+        "name": "서림",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+      "name": "진원",
+      "musicBrainzId": "6b239332-5e1b-47e4-8dcd-1b654a4ab1e7",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+        "name": "진원",
+        "aliases": [
+          "진대원"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "6b239332-5e1b-47e4-8dcd-1b654a4ab1e7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.672954+00:00"
+      },
+      "identityAfter": {
+        "id": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+        "name": "진원",
+        "aliases": [
+          "진대원"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "6b239332-5e1b-47e4-8dcd-1b654a4ab1e7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.672954+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:47.062Z",
+        "waitingSince": "2026-10-20T21:37:47.062Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.062Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.111Z",
+        "waitingSince": "2026-10-20T21:37:47.111Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.111Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.266Z",
+        "waitingSince": "2026-10-20T21:37:47.266Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.266Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+        "name": "진원",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+      "name": "박소현",
+      "musicBrainzId": "21170f37-04cf-4b52-949f-518323da3d8b",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+        "name": "박소현",
+        "aliases": [
+          "Park Sohyun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "21170f37-04cf-4b52-949f-518323da3d8b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.62144+00:00"
+      },
+      "identityAfter": {
+        "id": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+        "name": "박소현",
+        "aliases": [
+          "Park Sohyun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "21170f37-04cf-4b52-949f-518323da3d8b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.62144+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "Bugs 두 동명 프로필(66510, 20054298)을 열어 작품 차이를 확인했다. 현재 MBID와 어느 프로필이 연결되는지 확인하지 못했으며 이름만으로 통합하지 않는다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:47.312Z",
+        "waitingSince": "2026-10-20T21:37:47.312Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.312Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.363Z",
+        "waitingSince": "2026-10-20T21:37:47.363Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.363Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.410Z",
+        "waitingSince": "2026-10-20T21:37:47.410Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.410Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+        "name": "박소현",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://music.bugs.co.kr/artist/66510",
+          "https://music.bugs.co.kr/artist/20054298"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "Bugs 두 동명 프로필(66510, 20054298)을 열어 작품 차이를 확인했다. 현재 MBID와 어느 프로필이 연결되는지 확인하지 못했으며 이름만으로 통합하지 않는다."
+      }
+    },
+    {
+      "bandId": "36d0874b-e0e5-4140-8202-b53eb2c18952",
+      "name": "이무진",
+      "musicBrainzId": "b0e4a01c-d035-4fe6-8683-617a0798e473",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "36d0874b-e0e5-4140-8202-b53eb2c18952",
+        "name": "이무진",
+        "aliases": [
+          "Lee Mujin",
+          "Lee Mu-jin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "b0e4a01c-d035-4fe6-8683-617a0798e473",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.629337+00:00"
+      },
+      "identityAfter": {
+        "id": "36d0874b-e0e5-4140-8202-b53eb2c18952",
+        "name": "이무진",
+        "aliases": [
+          "Lee Mujin",
+          "Lee Mu-jin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "b0e4a01c-d035-4fe6-8683-617a0798e473",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.629337+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:47.464Z",
+        "waitingSince": "2026-10-20T21:37:47.464Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.464Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.511Z",
+        "waitingSince": "2026-10-20T21:37:47.511Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.511Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.564Z",
+        "waitingSince": "2026-10-20T21:37:47.564Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.564Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "36d0874b-e0e5-4140-8202-b53eb2c18952",
+        "name": "이무진",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+      "name": "조성일",
+      "musicBrainzId": "9c534bd7-aba0-435b-9ac3-0f34919570da",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+        "name": "조성일",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "9c534bd7-aba0-435b-9ac3-0f34919570da",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T14:03:04.442816+00:00"
+      },
+      "identityAfter": {
+        "id": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+        "name": "조성일",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "9c534bd7-aba0-435b-9ac3-0f34919570da",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T14:03:04.442816+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:47.613Z",
+        "waitingSince": "2026-10-20T21:37:47.613Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.613Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.689Z",
+        "waitingSince": "2026-10-20T21:37:47.689Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.689Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.739Z",
+        "waitingSince": "2026-10-20T21:37:47.739Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.739Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+        "name": "조성일",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+      "name": "마이진",
+      "musicBrainzId": "a30f6c0f-9d2c-4765-8541-b5bd17c31044",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "6746b89a-cb43-4846-925a-fef34cb44750",
+        "name": "마이진",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a30f6c0f-9d2c-4765-8541-b5bd17c31044",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T17:24:12.848175+00:00"
+      },
+      "identityAfter": {
+        "id": "6746b89a-cb43-4846-925a-fef34cb44750",
+        "name": "마이진",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a30f6c0f-9d2c-4765-8541-b5bd17c31044",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T17:24:12.848175+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "트로트 음반 소개 후보를 발견했다. 이름·장르 태그만으로 제외하지 않고 공식 신원 및 대상 장르 활동 검증을 남긴다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:47.794Z",
+        "waitingSince": "2026-10-20T21:37:47.794Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.794Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.843Z",
+        "waitingSince": "2026-10-20T21:37:47.843Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.843Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.895Z",
+        "waitingSince": "2026-10-20T21:37:47.895Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.895Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+        "name": "마이진",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "트로트 음반 소개 후보를 발견했다. 이름·장르 태그만으로 제외하지 않고 공식 신원 및 대상 장르 활동 검증을 남긴다."
+      }
+    },
+    {
+      "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+      "name": "김영하",
+      "musicBrainzId": "5b149009-adf1-4722-aef4-25dabf5824d0",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "3bc78b16-802b-405b-80ff-567157b0fa90",
+        "name": "김영하",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "5b149009-adf1-4722-aef4-25dabf5824d0",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T20:41:49.755716+00:00"
+      },
+      "identityAfter": {
+        "id": "3bc78b16-802b-405b-80ff-567157b0fa90",
+        "name": "김영하",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "5b149009-adf1-4722-aef4-25dabf5824d0",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T20:41:49.755716+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "동명 작가 공식 홈페이지를 열었으나 DB 아티스트와 동일 신원임을 확인하지 못했다. 작가 이름 일치만으로 제외하지 않는다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:47.947Z",
+        "waitingSince": "2026-10-20T21:37:47.947Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.947Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:47.999Z",
+        "waitingSince": "2026-10-20T21:37:47.999Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:47.999Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.052Z",
+        "waitingSince": "2026-10-20T21:37:48.052Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.052Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+        "name": "김영하",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://kimyoungha.net/"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "동명 작가 공식 홈페이지를 열었으나 DB 아티스트와 동일 신원임을 확인하지 못했다. 작가 이름 일치만으로 제외하지 않는다."
+      }
+    },
+    {
+      "bandId": "7c23cd06-5727-450f-957c-90437f647372",
+      "name": "이승철",
+      "musicBrainzId": "f2ba0737-6707-4051-935d-26b6cfb4d2a3",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "7c23cd06-5727-450f-957c-90437f647372",
+        "name": "이승철",
+        "aliases": [
+          "李承哲",
+          "Lee Seung Chul",
+          "Lee Seungcheol",
+          "Lee Seungchul",
+          "Lee Seung Cheol"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f2ba0737-6707-4051-935d-26b6cfb4d2a3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.985232+00:00"
+      },
+      "identityAfter": {
+        "id": "7c23cd06-5727-450f-957c-90437f647372",
+        "name": "이승철",
+        "aliases": [
+          "李承哲",
+          "Lee Seung Chul",
+          "Lee Seungcheol",
+          "Lee Seungchul",
+          "Lee Seung Cheol"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f2ba0737-6707-4051-935d-26b6cfb4d2a3",
+        "category": "domestic_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:41.016066+00:00"
+      },
+      "research": {
+        "status": "complete",
+        "reason": "기획사 Stone Music Entertainment가 제공한 부활 Live & Unplugged 음반 소개에서 부활 출신 보컬 이승철을 명시한 경력과 기존 개인 별칭·신원을 대조했다. 한국 록 음악의 자존심 부활이 배출한 보컬 이승철이라는 직접 음반 소개를 확인했다. 현재 발라드 활동만으로 과거 실제 록 활동을 제외하지 않는다.",
+        "checkedAt": "2026-10-20T21:33:40.265Z",
+        "waitingSince": "2026-10-20T21:33:40.265Z",
+        "applied": false,
+        "lastSuccessfulAt": "2026-10-20T21:33:27.759Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:27.759Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "기획사 Stone Music Entertainment가 제공한 부활 Live & Unplugged 음반 소개에서 부활 출신 보컬 이승철을 명시한 경력과 기존 개인 별칭·신원을 대조했다. 한국 록 음악의 자존심 부활이 배출한 보컬 이승철이라는 직접 음반 소개를 확인했다. 현재 발라드 활동만으로 과거 실제 록 활동을 제외하지 않는다.",
+          "sources": [
+            {
+              "url": "https://music.bugs.co.kr/album/8019198",
+              "checkedAt": "2026-10-20T21:33:27.759Z",
+              "excerpt": "김종서, 이승철, 박완규 등 한국을 대표하는 걸출한 보컬리스트"
+            },
+            {
+              "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+              "checkedAt": "2026-10-20T21:33:40.264Z",
+              "excerpt": "mb:f2ba0737-6707-4051-935d-26b6cfb4d2a3"
+            }
+          ]
+        }
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:40.312Z",
+        "waitingSince": "2026-10-20T21:33:40.312Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:40.312Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:40.312Z",
+        "proposal": {
+          "target_band_id": "7c23cd06-5727-450f-957c-90437f647372",
+          "expected_updated_at": "2026-10-18T23:12:30.985232+00:00",
+          "artist_name": "이승철",
+          "country": "KR",
+          "artist_category": "domestic_rock",
+          "artist_aliases": [
+            "李承哲",
+            "Lee Seung Chul",
+            "Lee Seungcheol",
+            "Lee Seungchul",
+            "Lee Seung Cheol"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기획사 Stone Music Entertainment가 제공한 부활 Live & Unplugged 음반 소개에서 부활 출신 보컬 이승철을 명시한 경력과 기존 개인 별칭·신원을 대조했다. 한국 록 음악의 자존심 부활이 배출한 보컬 이승철이라는 직접 음반 소개를 확인했다. 현재 발라드 활동만으로 과거 실제 록 활동을 제외하지 않는다.",
+          "evidence_url": "https://music.bugs.co.kr/album/8019198"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:41.016066+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "기획사 Stone Music Entertainment가 제공한 부활 Live & Unplugged 음반 소개에서 부활 출신 보컬 이승철을 명시한 경력과 기존 개인 별칭·신원을 대조했다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/8019198"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 유통 음반 소개에서 한국 록 밴드 부활과 한국 보컬리스트 이승철의 활동을 명시한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/8019198"
+          ]
+        },
+        "genreMatched": {
+          "summary": "한국 록 음악의 자존심 부활이 배출한 보컬 이승철이라는 직접 음반 소개를 확인했다. 현재 발라드 활동만으로 과거 실제 록 활동을 제외하지 않는다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/8019198"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "공식 유통 음반 소개에서 한국 록 밴드 부활과 한국 보컬리스트 이승철의 활동을 명시한다. 한국 록 음악의 자존심 부활이 배출한 보컬 이승철이라는 직접 음반 소개를 확인했다. 현재 발라드 활동만으로 과거 실제 록 활동을 제외하지 않는다. 따라서 기존 정책의 domestic_rock에 해당한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/8019198"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:f2ba0737-6707-4051-935d-26b6cfb4d2a3가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://music.bugs.co.kr/album/8019198"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "기획사 Stone Music Entertainment가 제공한 부활 Live & Unplugged 음반 소개에서 부활 출신 보컬 이승철을 명시한 경력과 기존 개인 별칭·신원을 대조했다. 한국 록 음악의 자존심 부활이 배출한 보컬 이승철이라는 직접 음반 소개를 확인했다. 현재 발라드 활동만으로 과거 실제 록 활동을 제외하지 않는다.",
+        "sources": [
+          {
+            "url": "https://music.bugs.co.kr/album/8019198",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "김종서, 이승철, 박완규 등 한국을 대표하는 걸출한 보컬리스트"
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:40.264Z",
+            "excerpt": "mb:f2ba0737-6707-4051-935d-26b6cfb4d2a3"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.104Z",
+        "waitingSince": "2026-10-20T21:37:48.104Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.104Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "7c23cd06-5727-450f-957c-90437f647372",
+        "name": "이승철",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    },
+    {
+      "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+      "name": "최정윤",
+      "musicBrainzId": "74a06b20-ccd9-4cdf-9539-2db7b527f225",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+        "name": "최정윤",
+        "aliases": [
+          "Choi Jung Yoon",
+          "Choi Jungyoon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "74a06b20-ccd9-4cdf-9539-2db7b527f225",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.998391+00:00"
+      },
+      "identityAfter": {
+        "id": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+        "name": "최정윤",
+        "aliases": [
+          "Choi Jung Yoon",
+          "Choi Jungyoon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "74a06b20-ccd9-4cdf-9539-2db7b527f225",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.998391+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:48.191Z",
+        "waitingSince": "2026-10-20T21:37:48.191Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.191Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.239Z",
+        "waitingSince": "2026-10-20T21:37:48.239Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.239Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.288Z",
+        "waitingSince": "2026-10-20T21:37:48.288Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.288Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+        "name": "최정윤",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+      "name": "정승원",
+      "musicBrainzId": "d798ffea-df3f-404f-a4a2-c22bc33e6992",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+        "name": "정승원",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "d798ffea-df3f-404f-a4a2-c22bc33e6992",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:31.005542+00:00"
+      },
+      "identityAfter": {
+        "id": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+        "name": "정승원",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "d798ffea-df3f-404f-a4a2-c22bc33e6992",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:31.005542+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:48.337Z",
+        "waitingSince": "2026-10-20T21:37:48.337Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.337Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.390Z",
+        "waitingSince": "2026-10-20T21:37:48.390Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.390Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.440Z",
+        "waitingSince": "2026-10-20T21:37:48.440Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.440Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+        "name": "정승원",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "a0c97a82-beb1-4aba-b594-d000fd3d190e",
+      "name": "류진",
+      "musicBrainzId": "d9c9d459-f412-425a-9bac-fe7b1312cd74",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "a0c97a82-beb1-4aba-b594-d000fd3d190e",
+        "name": "류진",
+        "aliases": [
+          "신류진",
+          "Ryujin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d9c9d459-f412-425a-9bac-fe7b1312cd74",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T01:14:52.195037+00:00"
+      },
+      "identityAfter": {
+        "id": "a0c97a82-beb1-4aba-b594-d000fd3d190e",
+        "name": "류진",
+        "aliases": [
+          "신류진",
+          "Ryujin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d9c9d459-f412-425a-9bac-fe7b1312cd74",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T01:14:52.195037+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:48.490Z",
+        "waitingSince": "2026-10-20T21:37:48.490Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.490Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.539Z",
+        "waitingSince": "2026-10-20T21:37:48.539Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.539Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.607Z",
+        "waitingSince": "2026-10-20T21:37:48.607Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.607Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "a0c97a82-beb1-4aba-b594-d000fd3d190e",
+        "name": "류진",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+      "name": "조윤성",
+      "musicBrainzId": "6a0edcd4-bf70-4864-9bb2-6757c863a9c7",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+        "name": "조윤성",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6a0edcd4-bf70-4864-9bb2-6757c863a9c7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T06:15:03.110412+00:00"
+      },
+      "identityAfter": {
+        "id": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+        "name": "조윤성",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6a0edcd4-bf70-4864-9bb2-6757c863a9c7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T06:15:03.110412+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "재즈 피아니스트와 다른 분야 동명 후보가 있다. 현재 외부 신원 연결 및 실제 록 활동 검증을 보완해야 한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:48.668Z",
+        "waitingSince": "2026-10-20T21:37:48.668Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.668Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.716Z",
+        "waitingSince": "2026-10-20T21:37:48.716Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.716Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.763Z",
+        "waitingSince": "2026-10-20T21:37:48.763Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.763Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+        "name": "조윤성",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "재즈 피아니스트와 다른 분야 동명 후보가 있다. 현재 외부 신원 연결 및 실제 록 활동 검증을 보완해야 한다."
+      }
+    },
+    {
+      "bandId": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+      "name": "정준영",
+      "musicBrainzId": "f08998b7-4e52-4f05-b942-48f136271917",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+        "name": "정준영",
+        "aliases": [
+          "Jung Joon Young"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f08998b7-4e52-4f05-b942-48f136271917",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T19:22:26.979528+00:00"
+      },
+      "identityAfter": {
+        "id": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+        "name": "정준영",
+        "aliases": [
+          "Jung Joon Young"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f08998b7-4e52-4f05-b942-48f136271917",
+        "category": "domestic_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:45.75461+00:00"
+      },
+      "research": {
+        "status": "complete",
+        "reason": "Kakao Entertainment 발매 공감의 공식 음반 소개에서 정준영·서영은 참여와 2016년 실제 발매 작품을 기존 개인 신원·별칭과 대조했다. 음반 소개가 락을 바탕으로 한 발라드 및 실제 정준영의 록 활동을 직접 명시한다. 이름이나 장르 태그만으로 판단하지 않았다.",
+        "checkedAt": "2026-10-20T21:33:44.950Z",
+        "waitingSince": "2026-10-20T21:33:44.950Z",
+        "applied": false,
+        "lastSuccessfulAt": "2026-10-20T21:33:27.759Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:27.759Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "Kakao Entertainment 발매 공감의 공식 음반 소개에서 정준영·서영은 참여와 2016년 실제 발매 작품을 기존 개인 신원·별칭과 대조했다. 음반 소개가 락을 바탕으로 한 발라드 및 실제 정준영의 록 활동을 직접 명시한다. 이름이나 장르 태그만으로 판단하지 않았다.",
+          "sources": [
+            {
+              "url": "https://www.yes24.com/product/goods/24514997",
+              "checkedAt": "2026-10-20T21:33:27.759Z",
+              "excerpt": "고집 있는 가수 정준영은 늘 ROCK(樂) 일방통행이다."
+            },
+            {
+              "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+              "checkedAt": "2026-10-20T21:33:44.950Z",
+              "excerpt": "mb:f08998b7-4e52-4f05-b942-48f136271917"
+            }
+          ]
+        }
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:45.002Z",
+        "waitingSince": "2026-10-20T21:33:45.002Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:45.002Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:45.002Z",
+        "proposal": {
+          "target_band_id": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+          "expected_updated_at": "2026-10-19T19:22:26.979528+00:00",
+          "artist_name": "정준영",
+          "country": "KR",
+          "artist_category": "domestic_rock",
+          "artist_aliases": [
+            "Jung Joon Young"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Kakao Entertainment 발매 공감의 공식 음반 소개에서 정준영·서영은 참여와 2016년 실제 발매 작품을 기존 개인 신원·별칭과 대조했다. 음반 소개가 락을 바탕으로 한 발라드 및 실제 정준영의 록 활동을 직접 명시한다. 이름이나 장르 태그만으로 판단하지 않았다.",
+          "evidence_url": "https://www.yes24.com/product/goods/24514997"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:45.75461+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Kakao Entertainment 발매 공감의 공식 음반 소개에서 정준영·서영은 참여와 2016년 실제 발매 작품을 기존 개인 신원·별칭과 대조했다.",
+          "sourceUrls": [
+            "https://www.yes24.com/product/goods/24514997"
+          ]
+        },
+        "countryMatched": {
+          "summary": "국내 유통사의 가요 음반 및 한국어 아티스트·참여 작품과 현재 KR 개인 신원을 대조했다.",
+          "sourceUrls": [
+            "https://www.yes24.com/product/goods/24514997"
+          ]
+        },
+        "genreMatched": {
+          "summary": "음반 소개가 락을 바탕으로 한 발라드 및 실제 정준영의 록 활동을 직접 명시한다. 이름이나 장르 태그만으로 판단하지 않았다.",
+          "sourceUrls": [
+            "https://www.yes24.com/product/goods/24514997"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "국내 유통사의 가요 음반 및 한국어 아티스트·참여 작품과 현재 KR 개인 신원을 대조했다. 음반 소개가 락을 바탕으로 한 발라드 및 실제 정준영의 록 활동을 직접 명시한다. 이름이나 장르 태그만으로 판단하지 않았다. 따라서 기존 정책의 domestic_rock에 해당한다.",
+          "sourceUrls": [
+            "https://www.yes24.com/product/goods/24514997"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:f08998b7-4e52-4f05-b942-48f136271917가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://www.yes24.com/product/goods/24514997"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Kakao Entertainment 발매 공감의 공식 음반 소개에서 정준영·서영은 참여와 2016년 실제 발매 작품을 기존 개인 신원·별칭과 대조했다. 음반 소개가 락을 바탕으로 한 발라드 및 실제 정준영의 록 활동을 직접 명시한다. 이름이나 장르 태그만으로 판단하지 않았다.",
+        "sources": [
+          {
+            "url": "https://www.yes24.com/product/goods/24514997",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "고집 있는 가수 정준영은 늘 ROCK(樂) 일방통행이다."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:44.950Z",
+            "excerpt": "mb:f08998b7-4e52-4f05-b942-48f136271917"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.834Z",
+        "waitingSince": "2026-10-20T21:37:48.834Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.834Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+        "name": "정준영",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    },
+    {
+      "bandId": "2c14f8a0-b844-4318-9910-16b2e9843f65",
+      "name": "구창모",
+      "musicBrainzId": "38d5cd9e-8a82-404b-a7bd-fd993b4d26b8",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "2c14f8a0-b844-4318-9910-16b2e9843f65",
+        "name": "구창모",
+        "aliases": [
+          "GU Chang Mo",
+          "KOO Chang Mo",
+          "구 창모",
+          "Koo Chang Mo"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "38d5cd9e-8a82-404b-a7bd-fd993b4d26b8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.9324+00:00"
+      },
+      "identityAfter": {
+        "id": "2c14f8a0-b844-4318-9910-16b2e9843f65",
+        "name": "구창모",
+        "aliases": [
+          "GU Chang Mo",
+          "KOO Chang Mo",
+          "구 창모",
+          "Koo Chang Mo"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "38d5cd9e-8a82-404b-a7bd-fd993b4d26b8",
+        "category": "domestic_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:43.419078+00:00"
+      },
+      "research": {
+        "status": "complete",
+        "reason": "유통 음반 Tribute To Songolmae With Originals의 1981년 구창모 영입과 대표작 어쩌다 마주친 그대·모두 다 사랑하리 경력을 개인 신원과 대조했다. 공식 음반 설명이 구창모의 송골매 참여와 실제 록 밴드 작품 활동을 명시한다. 솔로의 다른 장르와 함께 존재하는 록 활동을 인정한다.",
+        "checkedAt": "2026-10-20T21:33:42.685Z",
+        "waitingSince": "2026-10-20T21:33:42.685Z",
+        "applied": false,
+        "lastSuccessfulAt": "2026-10-20T21:33:27.759Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:27.759Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "유통 음반 Tribute To Songolmae With Originals의 1981년 구창모 영입과 대표작 어쩌다 마주친 그대·모두 다 사랑하리 경력을 개인 신원과 대조했다. 공식 음반 설명이 구창모의 송골매 참여와 실제 록 밴드 작품 활동을 명시한다. 솔로의 다른 장르와 함께 존재하는 록 활동을 인정한다.",
+          "sources": [
+            {
+              "url": "https://music.bugs.co.kr/album/16534",
+              "checkedAt": "2026-10-20T21:33:27.759Z",
+              "excerpt": "1981년 “구창모”의 영입을 계기로"
+            },
+            {
+              "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+              "checkedAt": "2026-10-20T21:33:42.684Z",
+              "excerpt": "mb:38d5cd9e-8a82-404b-a7bd-fd993b4d26b8"
+            }
+          ]
+        }
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:42.730Z",
+        "waitingSince": "2026-10-20T21:33:42.730Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:42.730Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:42.730Z",
+        "proposal": {
+          "target_band_id": "2c14f8a0-b844-4318-9910-16b2e9843f65",
+          "expected_updated_at": "2026-10-20T15:06:20.9324+00:00",
+          "artist_name": "구창모",
+          "country": "KR",
+          "artist_category": "domestic_rock",
+          "artist_aliases": [
+            "GU Chang Mo",
+            "KOO Chang Mo",
+            "구 창모",
+            "Koo Chang Mo"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 유통 음반 Tribute To Songolmae With Originals의 1981년 구창모 영입과 대표작 어쩌다 마주친 그대·모두 다 사랑하리 경력을 개인 신원과 대조했다. 공식 음반 설명이 구창모의 송골매 참여와 실제 록 밴드 작품 활동을 명시한다. 솔로의 다른 장르와 함께 존재하는 록 활동을 인정한다.",
+          "evidence_url": "https://music.bugs.co.kr/album/16534"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:43.419078+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "유통 음반 Tribute To Songolmae With Originals의 1981년 구창모 영입과 대표작 어쩌다 마주친 그대·모두 다 사랑하리 경력을 개인 신원과 대조했다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/16534"
+          ]
+        },
+        "countryMatched": {
+          "summary": "음반 소개에서 한국적인 록 밴드 송골매의 구창모 영입과 국내 활동 이력을 확인했다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/16534"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 음반 설명이 구창모의 송골매 참여와 실제 록 밴드 작품 활동을 명시한다. 솔로의 다른 장르와 함께 존재하는 록 활동을 인정한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/16534"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "음반 소개에서 한국적인 록 밴드 송골매의 구창모 영입과 국내 활동 이력을 확인했다. 공식 음반 설명이 구창모의 송골매 참여와 실제 록 밴드 작품 활동을 명시한다. 솔로의 다른 장르와 함께 존재하는 록 활동을 인정한다. 따라서 기존 정책의 domestic_rock에 해당한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/16534"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:38d5cd9e-8a82-404b-a7bd-fd993b4d26b8가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://music.bugs.co.kr/album/16534"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "유통 음반 Tribute To Songolmae With Originals의 1981년 구창모 영입과 대표작 어쩌다 마주친 그대·모두 다 사랑하리 경력을 개인 신원과 대조했다. 공식 음반 설명이 구창모의 송골매 참여와 실제 록 밴드 작품 활동을 명시한다. 솔로의 다른 장르와 함께 존재하는 록 활동을 인정한다.",
+        "sources": [
+          {
+            "url": "https://music.bugs.co.kr/album/16534",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "1981년 “구창모”의 영입을 계기로"
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:42.684Z",
+            "excerpt": "mb:38d5cd9e-8a82-404b-a7bd-fd993b4d26b8"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:48.918Z",
+        "waitingSince": "2026-10-20T21:37:48.918Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.918Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "2c14f8a0-b844-4318-9910-16b2e9843f65",
+        "name": "구창모",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    },
+    {
+      "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+      "name": "박재정",
+      "musicBrainzId": "ad88ad9e-ed16-4aa9-8b60-15a30ef9972b",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "de4633b0-050f-4448-8592-22a5b73e49fb",
+        "name": "박재정",
+        "aliases": [
+          "Parc Jae Jung"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ad88ad9e-ed16-4aa9-8b60-15a30ef9972b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T10:04:48.161815+00:00"
+      },
+      "identityAfter": {
+        "id": "de4633b0-050f-4448-8592-22a5b73e49fb",
+        "name": "박재정",
+        "aliases": [
+          "Parc Jae Jung"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ad88ad9e-ed16-4aa9-8b60-15a30ef9972b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T10:04:48.161815+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:48.965Z",
+        "waitingSince": "2026-10-20T21:37:48.965Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:48.965Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.019Z",
+        "waitingSince": "2026-10-20T21:37:49.019Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.019Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.067Z",
+        "waitingSince": "2026-10-20T21:37:49.067Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.067Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+        "name": "박재정",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+      "name": "왕세윤",
+      "musicBrainzId": "486ad71c-6574-411b-9e09-0011282ce7b8",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+        "name": "왕세윤",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "486ad71c-6574-411b-9e09-0011282ce7b8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.909771+00:00"
+      },
+      "identityAfter": {
+        "id": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+        "name": "왕세윤",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "486ad71c-6574-411b-9e09-0011282ce7b8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.909771+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "스웨덴세탁소 기타 연주 관련 후보가 있으나 해당 외부 신원 및 실제 록 활동의 공식 검증은 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:49.130Z",
+        "waitingSince": "2026-10-20T21:37:49.130Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.130Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.178Z",
+        "waitingSince": "2026-10-20T21:37:49.178Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.178Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.236Z",
+        "waitingSince": "2026-10-20T21:37:49.236Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.236Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+        "name": "왕세윤",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "스웨덴세탁소 기타 연주 관련 후보가 있으나 해당 외부 신원 및 실제 록 활동의 공식 검증은 미완성이다."
+      }
+    },
+    {
+      "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+      "name": "최시유",
+      "musicBrainzId": "314cd26e-7bf6-4a48-a962-c99187329c80",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+        "name": "최시유",
+        "aliases": [
+          "최인영"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "314cd26e-7bf6-4a48-a962-c99187329c80",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.916333+00:00"
+      },
+      "identityAfter": {
+        "id": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+        "name": "최시유",
+        "aliases": [
+          "최인영"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "314cd26e-7bf6-4a48-a962-c99187329c80",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.916333+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "Bugs에서 스웨덴세탁소 멤버 프로필을 열었다. 개인 외부 ID 연결과 실제 록 활동의 공식 근거를 보완해야 한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:49.292Z",
+        "waitingSince": "2026-10-20T21:37:49.292Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.292Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.344Z",
+        "waitingSince": "2026-10-20T21:37:49.344Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.344Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.391Z",
+        "waitingSince": "2026-10-20T21:37:49.391Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.391Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+        "name": "최시유",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://music.bugs.co.kr/artist/80203388",
+          "https://www.swedenlaundry.com/discography/forevermore"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "Bugs에서 스웨덴세탁소 멤버 프로필을 열었다. 개인 외부 ID 연결과 실제 록 활동의 공식 근거를 보완해야 한다."
+      }
+    },
+    {
+      "bandId": "b97b7a51-d6c9-4c6f-b438-af15c0c447d9",
+      "name": "최재훈",
+      "musicBrainzId": "80fc968a-e827-4dce-a046-a425a4dcc510",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "b97b7a51-d6c9-4c6f-b438-af15c0c447d9",
+        "name": "최재훈",
+        "aliases": [
+          "Choi Jae Hoon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "80fc968a-e827-4dce-a046-a425a4dcc510",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.925176+00:00"
+      },
+      "identityAfter": {
+        "id": "b97b7a51-d6c9-4c6f-b438-af15c0c447d9",
+        "name": "최재훈",
+        "aliases": [
+          "Choi Jae Hoon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "80fc968a-e827-4dce-a046-a425a4dcc510",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.925176+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "음반·저자 프로필 후보를 발견했으나 현재 외부 ID와 실제 록 활동을 잇는 공식 근거 확인이 미완성이다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:49.442Z",
+        "waitingSince": "2026-10-20T21:37:49.442Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.442Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.490Z",
+        "waitingSince": "2026-10-20T21:37:49.490Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.490Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.542Z",
+        "waitingSince": "2026-10-20T21:37:49.542Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.542Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "b97b7a51-d6c9-4c6f-b438-af15c0c447d9",
+        "name": "최재훈",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://www.yes24.com/product/author/112690",
+          "https://music.bugs.co.kr/album/20613562"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "음반·저자 프로필 후보를 발견했으나 현재 외부 ID와 실제 록 활동을 잇는 공식 근거 확인이 미완성이다."
+      }
+    },
+    {
+      "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+      "name": "정봉길",
+      "musicBrainzId": "aab184f4-ed37-419b-a407-194cfece1ac4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+        "name": "정봉길",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "aab184f4-ed37-419b-a407-194cfece1ac4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.928528+00:00"
+      },
+      "identityAfter": {
+        "id": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+        "name": "정봉길",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "aab184f4-ed37-419b-a407-194cfece1ac4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.928528+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:49.591Z",
+        "waitingSince": "2026-10-20T21:37:49.591Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.591Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.641Z",
+        "waitingSince": "2026-10-20T21:37:49.641Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.641Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.688Z",
+        "waitingSince": "2026-10-20T21:37:49.688Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.688Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+        "name": "정봉길",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+      "name": "최승현",
+      "musicBrainzId": "a42ff7dd-80ab-4076-bb11-9bea40da307c",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+        "name": "최승현",
+        "aliases": [
+          "Seung-Hyun Choi",
+          "Shawn Choi",
+          "Seung Hyung Choi"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "a42ff7dd-80ab-4076-bb11-9bea40da307c",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.935525+00:00"
+      },
+      "identityAfter": {
+        "id": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+        "name": "최승현",
+        "aliases": [
+          "Seung-Hyun Choi",
+          "Shawn Choi",
+          "Seung Hyung Choi"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "a42ff7dd-80ab-4076-bb11-9bea40da307c",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.935525+00:00"
+      },
+      "research": {
+        "status": "deferred",
+        "reason": "배우·TOP 외에 리도어 기타리스트 동명 후보가 있다. 기존 신원과 작품 교차 확인 없이 다른 인물로 합치거나 제외하지 않는다. MB 503 이후 추가 ID 조회를 중단했으며 24시간 후 재시도한다.",
+        "checkedAt": "2026-10-20T21:37:49.743Z",
+        "waitingSince": "2026-10-20T21:37:49.743Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.743Z",
+        "validUntil": null
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "RESEARCH_INCOMPLETE: 신원·장르와 승인 요건별 실제 검증이 남아 있다. service 인증은 준비되어 있으며 인증 문제나 사람 판단 보류로 분류하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.791Z",
+        "waitingSince": "2026-10-20T21:37:49.791Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.791Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.840Z",
+        "waitingSince": "2026-10-20T21:37:49.840Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.840Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+        "name": "최승현",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": true,
+        "candidateUrls": [
+          "https://www.starnewskorea.com/business-life/2026/07/20/2026072019013931282",
+          "https://rollingstone.co.kr/tv/tv-news/24699"
+        ],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "배우·TOP 외에 리도어 기타리스트 동명 후보가 있다. 기존 신원과 작품 교차 확인 없이 다른 인물로 합치거나 제외하지 않는다."
+      }
+    },
+    {
+      "bandId": "ed1d19da-2a7f-487a-a37e-a3c7eab1b05f",
+      "name": "Sweet",
+      "musicBrainzId": "dc73bb40-b697-4df9-a2ec-0555bebdba75",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "ed1d19da-2a7f-487a-a37e-a3c7eab1b05f",
+        "name": "Sweet",
+        "aliases": [
+          "Sweetshop",
+          "The Sweet",
+          "Sweet, The"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "dc73bb40-b697-4df9-a2ec-0555bebdba75",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:49.876506+00:00"
+      },
+      "identityAfter": {
+        "id": "ed1d19da-2a7f-487a-a37e-a3c7eab1b05f",
+        "name": "Sweet",
+        "aliases": [
+          "Sweetshop",
+          "The Sweet",
+          "Sweet, The"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "dc73bb40-b697-4df9-a2ec-0555bebdba75",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:31.033603+00:00"
+      },
+      "research": {
+        "reused": true,
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.003Z",
+        "waitingSince": "2026-10-13T09:01:44.003Z",
+        "lastSuccessfulAt": "2026-10-13T09:01:44.003Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:01:44.003Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.thesweet.com/Band/",
+              "checkedAt": "2026-10-13T09:01:44.003Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:29.823Z",
+        "waitingSince": "2026-10-20T21:33:29.823Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:29.823Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:29.823Z",
+        "proposal": {
+          "target_band_id": "ed1d19da-2a7f-487a-a37e-a3c7eab1b05f",
+          "expected_updated_at": "2026-10-13T08:20:49.876506+00:00",
+          "artist_name": "Sweet",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Sweetshop",
+            "The Sweet",
+            "Sweet, The"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 Band 페이지의 Andy Scott·The Sweet 고전 라인업·작품 연속성과 현재 aliases The Sweet/Sweetshop를 대조했다. 기존 동일 MBID 완료 기록을 재사용했다. 공식 신보 자료의 Sweet Classic Rock tracks 및 hard rock 설명과 기존 작품 활동을 확인했다.",
+          "evidence_url": "https://www.thesweet.com/Band/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:31.033603+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Band 페이지의 Andy Scott·The Sweet 고전 라인업·작품 연속성과 현재 aliases The Sweet/Sweetshop를 대조했다. 기존 동일 MBID 완료 기록을 재사용했다.",
+          "sourceUrls": [
+            "https://www.thesweet.com/Band/",
+            "https://www.thesweet.com/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Wrexham North Wales 출신 Andy Scott 및 London·UK 첫 활동/공연 이력을 공식 Band 자료에서 확인해 한국 밖 영국 신원과 대조했다.",
+          "sourceUrls": [
+            "https://www.thesweet.com/Band/",
+            "https://www.thesweet.com/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 신보 자료의 Sweet Classic Rock tracks 및 hard rock 설명과 기존 작품 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.thesweet.com/Band/",
+            "https://www.thesweet.com/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "Wrexham North Wales 출신 Andy Scott 및 London·UK 첫 활동/공연 이력을 공식 Band 자료에서 확인해 한국 밖 영국 신원과 대조했다. 공식 신보 자료의 Sweet Classic Rock tracks 및 hard rock 설명과 기존 작품 활동을 확인했다. 따라서 기존 정책의 overseas_rock에 해당한다.",
+          "sourceUrls": [
+            "https://www.thesweet.com/Band/",
+            "https://www.thesweet.com/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:dc73bb40-b697-4df9-a2ec-0555bebdba75가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://www.thesweet.com/Band/",
+            "https://www.thesweet.com/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Band 페이지의 Andy Scott·The Sweet 고전 라인업·작품 연속성과 현재 aliases The Sweet/Sweetshop를 대조했다. 기존 동일 MBID 완료 기록을 재사용했다. 공식 신보 자료의 Sweet Classic Rock tracks 및 hard rock 설명과 기존 작품 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://www.thesweet.com/Band/",
+            "checkedAt": "2026-10-13T09:01:44.003Z",
+            "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+          },
+          {
+            "url": "https://www.thesweet.com/",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "a magnificent slice of hard rock"
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:29.822Z",
+            "excerpt": "mb:dc73bb40-b697-4df9-a2ec-0555bebdba75"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.888Z",
+        "waitingSince": "2026-10-20T21:37:49.888Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.888Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "ed1d19da-2a7f-487a-a37e-a3c7eab1b05f",
+        "name": "Sweet",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": false,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    },
+    {
+      "bandId": "3d66c0d6-40fc-488a-9b45-1a519ae53fa4",
+      "name": "Tangerine Dream",
+      "musicBrainzId": "23d8426c-18c7-46e6-a51d-7395bd43c641",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "3d66c0d6-40fc-488a-9b45-1a519ae53fa4",
+        "name": "Tangerine Dream",
+        "aliases": [
+          "Tangerine Dream with Kathleen Turner",
+          "탠저린 드림",
+          "タンジェリン・ドリーム",
+          "Franke, Froese, Schmoelling",
+          "Tangeine Dream"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "23d8426c-18c7-46e6-a51d-7395bd43c641",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:17.29183+00:00"
+      },
+      "identityAfter": {
+        "id": "3d66c0d6-40fc-488a-9b45-1a519ae53fa4",
+        "name": "Tangerine Dream",
+        "aliases": [
+          "Tangerine Dream with Kathleen Turner",
+          "탠저린 드림",
+          "タンジェリン・ドリーム",
+          "Franke, Froese, Schmoelling",
+          "Tangeine Dream"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "23d8426c-18c7-46e6-a51d-7395bd43c641",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:17.29183+00:00"
+      },
+      "research": {
+        "reused": true,
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.005Z",
+        "waitingSince": "2026-10-13T09:01:44.005Z",
+        "lastSuccessfulAt": "2026-10-13T09:01:44.005Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:01:44.005Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.tangerinedreammusic.com/en/biography/index.asp",
+              "checkedAt": "2026-10-13T09:01:44.005Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "SOURCE_URL_VALIDATOR_QUERY_UNSUPPORTED: 공식 Force Majeure 음반 설명에서 progressive rock 활동을 확인했다. 실제 출처 detail.asp?id=17&tit=Force+Majeure의 query URL을 기존 로컬 proof 검증기가 허용하지 않아 제출·적용하지 않았다. 원래 유지 근거를 보존하고 URL을 임의 변형하지 않는다. 인증/장르 불확실성과 구분한 적용 준비 지연이다.",
+        "checkedAt": "2026-10-20T21:37:49.940Z",
+        "waitingSince": "2026-10-20T21:37:49.940Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.940Z",
+        "validUntil": null
+      },
+      "requirements": null,
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:49.993Z",
+        "waitingSince": "2026-10-20T21:37:49.993Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:49.993Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "3d66c0d6-40fc-488a-9b45-1a519ae53fa4",
+        "name": "Tangerine Dream",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": false,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": true,
+        "note": "공식 프로필·음반·록 활동 후보를 검색했으나 현재 외부 ID와 작품 및 대상 장르 활동의 교차 검증이 미완성이다. 검색 스니펫·국적·이름만으로 판정하지 않으며 공식 대체 출처를 더 조사한다."
+      }
+    },
+    {
+      "bandId": "0651b3a4-69e7-4610-a960-0289800ec857",
+      "name": "The Doors",
+      "musicBrainzId": "9efff43b-3b29-4082-824e-bc82f646f93d",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "0651b3a4-69e7-4610-a960-0289800ec857",
+        "name": "The Doors",
+        "aliases": [
+          "Jim Morrison & the Doors",
+          "Doors"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "9efff43b-3b29-4082-824e-bc82f646f93d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:12.354586+00:00"
+      },
+      "identityAfter": {
+        "id": "0651b3a4-69e7-4610-a960-0289800ec857",
+        "name": "The Doors",
+        "aliases": [
+          "Jim Morrison & the Doors",
+          "Doors"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "9efff43b-3b29-4082-824e-bc82f646f93d",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:33.540638+00:00"
+      },
+      "research": {
+        "reused": true,
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.006Z",
+        "waitingSince": "2026-10-13T09:01:44.006Z",
+        "lastSuccessfulAt": "2026-10-13T09:01:44.006Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:01:44.006Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://thedoors.com/",
+              "checkedAt": "2026-10-13T09:01:44.006Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:32.784Z",
+        "waitingSince": "2026-10-20T21:33:32.784Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:32.784Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:32.784Z",
+        "proposal": {
+          "target_band_id": "0651b3a4-69e7-4610-a960-0289800ec857",
+          "expected_updated_at": "2026-10-13T08:19:12.354586+00:00",
+          "artist_name": "The Doors",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Jim Morrison & the Doors",
+            "Doors"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 The Band 소개의 Jim Morrison·Ray Manzarek·Robby Krieger·John Densmore 및 1965 결성, 1967 데뷔 작품을 기존 동일 신원 완료 기록과 대조했다. 공식 소개의 rock scene 진입과 baroque art-rock 활동 및 Elektra 정규 음반을 확인했다.",
+          "evidence_url": "https://thedoors.com/the-band"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:33.540638+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 The Band 소개의 Jim Morrison·Ray Manzarek·Robby Krieger·John Densmore 및 1965 결성, 1967 데뷔 작품을 기존 동일 신원 완료 기록과 대조했다.",
+          "sourceUrls": [
+            "https://thedoors.com/the-band",
+            "https://thedoors.com/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개의 Los Angeles quartet 및 Venice, CA 결성 자료로 미국 활동 신원을 확인했다.",
+          "sourceUrls": [
+            "https://thedoors.com/the-band",
+            "https://thedoors.com/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개의 rock scene 진입과 baroque art-rock 활동 및 Elektra 정규 음반을 확인했다.",
+          "sourceUrls": [
+            "https://thedoors.com/the-band",
+            "https://thedoors.com/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "공식 소개의 Los Angeles quartet 및 Venice, CA 결성 자료로 미국 활동 신원을 확인했다. 공식 소개의 rock scene 진입과 baroque art-rock 활동 및 Elektra 정규 음반을 확인했다. 따라서 기존 정책의 overseas_rock에 해당한다.",
+          "sourceUrls": [
+            "https://thedoors.com/the-band",
+            "https://thedoors.com/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:9efff43b-3b29-4082-824e-bc82f646f93d가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://thedoors.com/the-band",
+            "https://thedoors.com/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 The Band 소개의 Jim Morrison·Ray Manzarek·Robby Krieger·John Densmore 및 1965 결성, 1967 데뷔 작품을 기존 동일 신원 완료 기록과 대조했다. 공식 소개의 rock scene 진입과 baroque art-rock 활동 및 Elektra 정규 음반을 확인했다.",
+        "sources": [
+          {
+            "url": "https://thedoors.com/",
+            "checkedAt": "2026-10-13T09:01:44.006Z",
+            "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+          },
+          {
+            "url": "https://thedoors.com/the-band",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "From baroque art-rock to jazz-infused pop"
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:32.783Z",
+            "excerpt": "mb:9efff43b-3b29-4082-824e-bc82f646f93d"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:50.044Z",
+        "waitingSince": "2026-10-20T21:37:50.044Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:50.044Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "0651b3a4-69e7-4610-a960-0289800ec857",
+        "name": "The Doors",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": false,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    },
+    {
+      "bandId": "db3732b6-cc77-4d46-8ad6-85b4c3ebe311",
+      "name": "The Lemonheads",
+      "musicBrainzId": "58a53082-a629-4ff1-a44d-7492d6f6e8fb",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "identityBefore": {
+        "id": "db3732b6-cc77-4d46-8ad6-85b4c3ebe311",
+        "name": "The Lemonheads",
+        "aliases": [
+          "Lemonheads",
+          "Lemonhead"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "58a53082-a629-4ff1-a44d-7492d6f6e8fb",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:40.432515+00:00"
+      },
+      "identityAfter": {
+        "id": "db3732b6-cc77-4d46-8ad6-85b4c3ebe311",
+        "name": "The Lemonheads",
+        "aliases": [
+          "Lemonheads",
+          "Lemonhead"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "58a53082-a629-4ff1-a44d-7492d6f6e8fb",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T21:33:36.252561+00:00"
+      },
+      "research": {
+        "reused": true,
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.007Z",
+        "waitingSince": "2026-10-13T09:01:44.007Z",
+        "lastSuccessfulAt": "2026-10-13T09:01:44.007Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:01:44.007Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://thelemonheads.net/",
+              "checkedAt": "2026-10-13T09:01:44.007Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-20T21:33:35.463Z",
+        "waitingSince": "2026-10-20T21:33:35.463Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T21:33:35.463Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-18T21:33:35.463Z",
+        "proposal": {
+          "target_band_id": "db3732b6-cc77-4d46-8ad6-85b4c3ebe311",
+          "expected_updated_at": "2026-10-13T08:20:40.432515+00:00",
+          "artist_name": "The Lemonheads",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Lemonheads",
+            "Lemonhead"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 아티스트와 Fire Records 소개의 Evan Dando·1986 Boston 결성·Taang/Atlantic 음반 및 Love Chant 경력을 같은 MBID의 완료 기록과 대조했다. 공식 사이트의 alternative rock 소개와 레이블의 punk 기반 음반 변천을 확인했다. 혼합 country 성향만으로 제외하지 않는다.",
+          "evidence_url": "https://www.firerecords.com/artists/the-lemonheads/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T21:33:36.252561+00:00"
+        }
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 아티스트와 Fire Records 소개의 Evan Dando·1986 Boston 결성·Taang/Atlantic 음반 및 Love Chant 경력을 같은 MBID의 완료 기록과 대조했다.",
+          "sourceUrls": [
+            "https://www.firerecords.com/artists/the-lemonheads/",
+            "https://thelemonheads.net/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 Fire Records 소개의 Boston, Mass 결성 이력으로 미국 신원을 확인했다.",
+          "sourceUrls": [
+            "https://www.firerecords.com/artists/the-lemonheads/",
+            "https://thelemonheads.net/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 사이트의 alternative rock 소개와 레이블의 punk 기반 음반 변천을 확인했다. 혼합 country 성향만으로 제외하지 않는다.",
+          "sourceUrls": [
+            "https://www.firerecords.com/artists/the-lemonheads/",
+            "https://thelemonheads.net/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "공식 Fire Records 소개의 Boston, Mass 결성 이력으로 미국 신원을 확인했다. 공식 사이트의 alternative rock 소개와 레이블의 punk 기반 음반 변천을 확인했다. 혼합 country 성향만으로 제외하지 않는다. 따라서 기존 정책의 overseas_rock에 해당한다.",
+          "sourceUrls": [
+            "https://www.firerecords.com/artists/the-lemonheads/",
+            "https://thelemonheads.net/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "선정 팀 service context에서 mb:58a53082-a629-4ff1-a44d-7492d6f6e8fb가 현재 band.musicbrainz_id 및 band ID와 연결되어 있음을 재조회했다. 공식 경력·이름/별칭 대조 및 기존 자료와 충돌 없음. 이번 MusicBrainz 장애 후 외부 API를 재요청하지 않았다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://www.firerecords.com/artists/the-lemonheads/",
+            "https://thelemonheads.net/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인은 외부 신원별 공연 자동 공개 승인을 부여한다. 공연 자체를 직접 공개하는 작업은 아니며 기존 이벤트 수집·공개 조건도 모두 충족해야 한다. 사람 actor 대신 실행 ID receipt로 검증한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 아티스트와 Fire Records 소개의 Evan Dando·1986 Boston 결성·Taang/Atlantic 음반 및 Love Chant 경력을 같은 MBID의 완료 기록과 대조했다. 공식 사이트의 alternative rock 소개와 레이블의 punk 기반 음반 변천을 확인했다. 혼합 country 성향만으로 제외하지 않는다.",
+        "sources": [
+          {
+            "url": "https://thelemonheads.net/",
+            "checkedAt": "2026-10-13T09:01:44.007Z",
+            "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+          },
+          {
+            "url": "https://www.firerecords.com/artists/the-lemonheads/",
+            "checkedAt": "2026-10-20T21:33:27.759Z",
+            "excerpt": "formed in Boston, Mass, in 1986 by Evan Dando"
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-20T21:33:35.463Z",
+            "excerpt": "mb:58a53082-a629-4ff1-a44d-7492d6f6e8fb"
+          }
+        ]
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공통 고정 목록의 저장된 채널 manifest는 0팀이었다. 직접 공식 채널 링크와 API 해석 ID의 교차 확인이 없어 신규 채널·사진을 저장하지 않았다. MB 503 제공처 대기와 공식 사이트 직접 연결 조회 실패를 보존한다. 이름·Topic·팬 채널로 대체하지 않는다.",
+        "checkedAt": "2026-10-20T21:37:50.093Z",
+        "waitingSince": "2026-10-20T21:37:50.093Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T21:37:50.093Z",
+        "validUntil": null,
+        "officiallyVerified": false,
+        "photoStored": false
+      },
+      "discovery": {
+        "bandId": "db3732b6-cc77-4d46-8ad6-85b4c3ebe311",
+        "name": "The Lemonheads",
+        "checkedAt": "2026-10-20T21:37:44.124Z",
+        "searchAttempted": false,
+        "candidateUrls": [],
+        "decisionFromSearchSnippet": false,
+        "discoveryOnly": false,
+        "note": "실제 열람 근거와 6개 승인 요건은 apply 입력에 별도 보존했다."
+      }
+    }
+  ]
+}
