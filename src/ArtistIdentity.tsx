@@ -1,12 +1,15 @@
 import type { Band } from './data'
 import { ArtistPhoto } from './ArtistPhoto'
+import { artistStyle } from './approvedStyle'
+import { Icon } from './UiIcon'
 
 /** Photo credits remain separate links rather than nesting them inside a button. */
-export function ArtistIdentity({ band, onOpen }: { band: Band; onOpen: () => void }) {
-  return <div className="service-artist-identity">
-    <div className="identity-photo"><ArtistPhoto name={band.name} bandId={band.id} color={band.color} representativePhoto={band.representativePhoto} photoMode={band.photoMode} youtubePhoto={band.officialProfile?.photo} />
-      <button className="identity-photo-target" onClick={onOpen} aria-label={`${band.name} 아티스트 상세`} />
-    </div>
-    <div className="identity-info"><h2><button className="identity-name" onClick={onOpen}>{band.name}</button></h2><span>{band.country} · {band.genre}</span></div>
+export function ArtistAvatar({ band }: { band: Band }) {
+  return <div className={`approved-avatar ${artistStyle(band)}`}><ArtistPhoto name={band.name} initials={band.initials} bandId={band.id} color="transparent" representativePhoto={band.representativePhoto} photoMode={band.photoMode} youtubePhoto={band.officialProfile?.photo} /></div>
+}
+export function ArtistIdentity({ band, onOpen, variant = 'detail' }: { band: Band; onOpen: () => void; variant?: 'home' | 'result' | 'detail' }) {
+  return <div className={`approved-identity ${variant === 'home' ? 'home-artist-profile' : variant === 'result' ? 'artist-identity' : 'detail-artist-profile'}`}>
+    <div className="profile-picture-target"><ArtistAvatar band={band} /><button className="photo-hit-target" aria-label={`${band.name} 아티스트 상세`} onClick={onOpen} /></div>
+    <button className={variant === 'home' ? 'artist-text profile-name' : 'profile-name'} onClick={onOpen}><strong>{band.name}</strong>{variant !== 'detail' && <small>{band.country} · {band.genre}</small>}{variant === 'result' && <span className="artist-open-caption">아티스트 보기 <Icon name="arrow" /></span>}</button>
   </div>
 }

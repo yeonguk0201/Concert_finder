@@ -6,12 +6,12 @@ import { mapBands, mapConcerts } from '../src/catalog'
 
 const mocks = vi.hoisted(() => ({
   session: null as null | { user: { id: string; email: string } },
-  toggle: vi.fn(), reload: vi.fn(), addBand: vi.fn(), invoke: vi.fn(),
+  toggle: vi.fn(), reload: vi.fn(), addBand: vi.fn(), invoke: vi.fn(), requestLink: vi.fn(), verifyCode: vi.fn(), pendingEmail: '',
   adminAllowed: false, catalogLoading: false, catalogInitialized: true,
   bands: [] as unknown[], concerts: [] as unknown[], follows: [] as string[], saves: [] as string[],
 }))
 vi.mock('../src/backend', () => ({ accountMode: true, backend: { functions: { invoke: mocks.invoke } }, configurationError: '' }))
-vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: false, error: '', busy: false, message: '', requestLink: vi.fn(), signOut: vi.fn() }) }))
+vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: false, error: '', busy: false, message: '', pendingEmail: mocks.pendingEmail, requestLink: mocks.requestLink, verifyCode: mocks.verifyCode, signOut: vi.fn() }) }))
 vi.mock('../src/useCatalog', () => ({ useCatalog: () => ({ bands: mocks.bands, concerts: mocks.concerts, loading: mocks.catalogLoading, initialized: mocks.catalogInitialized, error: '', reload: mocks.reload, addBand: mocks.addBand }) }))
 vi.mock('../src/useAccountStorage', () => ({ useAccountStorage: () => ({ bands: mocks.follows, schedules: mocks.saves, loading: false, error: '', pending: [], toggle: mocks.toggle, reload: mocks.reload }) }))
 vi.mock('../src/useAdminAccess', () => ({ useAdminAccess: () => ({ allowed: mocks.adminAllowed, error: '', reload: vi.fn() }) }))
@@ -25,6 +25,7 @@ beforeEach(() => {
   mocks.concerts = mapConcerts([{ id: 'real-concert', title: 'Verified concert', format: 'solo', city: '서울', venue: null, starts_on: '2026-12-12', ends_on: null, announced_on: '2026-10-06', cancelled: false,
     concert_bands: [{ band_id: 'real-band' }], ticket_schedules: { id: 'real-ticket', opens_at: null, price_description: null, booking_url: null }, concert_sources: [] }], mocks.bands as ReturnType<typeof mapBands>)
   mocks.session = null; mocks.follows = []; mocks.saves = []
+  mocks.pendingEmail = ''; mocks.requestLink.mockResolvedValue(undefined); mocks.verifyCode.mockResolvedValue(undefined)
   mocks.adminAllowed = false; mocks.catalogLoading = false; mocks.catalogInitialized = true
   localStorage.setItem('encore.bands', '["oasis"]'); localStorage.setItem('encore.saved', '["oasis-seoul"]')
   history.replaceState(null, '', '/')
@@ -39,6 +40,7 @@ test('ordinary search registers and follows an external artist with no concerts'
   mocks.toggle.mockResolvedValue(true)
   render(<App />)
   fireEvent.change(screen.getByRole('textbox', { name: '밴드 또는 공연 검색' }), { target: { value: 'New artist' } })
+  fireEvent.submit(screen.getByRole('search'))
   fireEvent.click(await screen.findByRole('button', { name: /New artist .*등록하고 찜하기/ }))
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', row.id))
   expect(mocks.addBand).toHaveBeenCalledWith(expect.objectContaining({ id: row.id, name: row.name }))
@@ -51,7 +53,7 @@ test('home discovers upcoming domestic performances as well as overseas bands', 
   mocks.concerts = [{ ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), title:'국내 밴드 공연', bandIds:['kr'], type:'국내' }]
   render(<App />)
   expect(screen.getByRole('button',{name:'국내 밴드 공연 상세 보기'})).toBeTruthy()
-  expect(screen.getByText('최근 공연 소식')).toBeTruthy()
+  expect(screen.getByText('다음 공연은 여기서')).toBeTruthy()
 })
 
 test('settings and admin editors stay out of the feed, including after account changes', () => {
@@ -121,27 +123,31 @@ test('band search finds aliases and supports following without concerts', async 
   mocks.concerts = []; mocks.toggle.mockResolvedValue(true)
   render(<App />)
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '공연 없는' } })
+  fireEvent.submit(screen.getByRole('search'))
   fireEvent.click(screen.getByRole('button', { name: 'Only band 찜하기' }))
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', 'only-band'))
   fireEvent.click(screen.getAllByRole('button', { name: /찜한 아티스트/ })[0])
+  fireEvent.click(screen.getByRole('button', { name: '검색 열기' }))
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '없는 이름' } })
+  fireEvent.submit(screen.getByRole('search'))
   expect(screen.getByRole('heading', { name: '“없는 이름” 검색 결과' })).toBeTruthy()
   expect(screen.queryByRole('button', { name: 'Only band 찜하기' })).toBeNull()
-  fireEvent.click(screen.getByRole('button', { name: '검색 지우기' }))
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: '' } })
+  fireEvent.submit(screen.getByRole('search'))
   expect(screen.getByRole('button', { name: 'Only band 찜하기' })).toBeTruthy()
 })
 test('an empty followed list points to artist search', () => {
   mocks.bands = []; mocks.concerts = []
   history.replaceState(null, '', '/?page=bands')
   render(<App />)
-  expect(screen.getByRole('heading', { name: '아직 찜한 아티스트가 없어요.' })).toBeTruthy()
+  expect(screen.getByRole('heading', { name: '처음으로 찜할 아티스트는 누구인가요?' })).toBeTruthy()
 })
 test('account mode excludes local samples and login prompt keeps the original event URL', async () => {
   render(<App />)
   expect(document.querySelector('.demo-notice')).toBeNull()
   expect(screen.queryByText('Oasis')).toBeNull()
   fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
-  await waitFor(() => expect(screen.getByRole('dialog').hasAttribute('open')).toBe(true))
+  await waitFor(() => expect(document.querySelector('.flow-detail')).toBeTruthy())
   fireEvent.click(screen.getByRole('button', { name: '예매 일정 저장', exact: true }))
   await waitFor(() => expect(screen.getByLabelText('이메일')).toBeTruthy())
   expect(new URLSearchParams(location.search).get('event')).toBe('real-concert')
@@ -163,10 +169,13 @@ test('search has an explicit result page, resets stale filters and restores its 
   const view = render(<App />)
   expect((screen.getByLabelText('밴드 또는 공연 검색') as HTMLInputElement).value).toBe('Verified')
   expect(screen.getByRole('heading', { name: '“Verified” 검색 결과' })).toBeTruthy()
+  fireEvent.click(screen.getAllByRole('button', { name: '공연 둘러보기', exact: true })[0])
   fireEvent.click(screen.getByRole('button', { name: '국내', exact: true }))
   expect(screen.queryByRole('button', { name: 'Verified concert 상세 보기' })).toBeNull()
+  fireEvent.click(screen.getByRole('button', { name: '검색 열기' }))
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: 'band' } })
-  expect(screen.getByRole('button', { name: 'Verified band 찜하기' })).toBeTruthy()
+  fireEvent.submit(screen.getByRole('search'))
+  expect(screen.getAllByRole('button', { name: 'Verified band 찜하기' }).length).toBeGreaterThan(0)
   expect(screen.getByRole('button', { name: 'Verified concert 상세 보기' })).toBeTruthy()
   expect(location.search).toBe('?page=search&q=band')
   fireEvent.submit(screen.getByRole('search'))
@@ -190,14 +199,15 @@ test('followed artists excludes unfollowed artists and updates after unfollowing
   mocks.follows = []
   view.rerender(<App />)
   expect(screen.queryByRole('heading',{name:'Followed artist'})).toBeNull()
-  expect(screen.getByText('아직 찜한 아티스트가 없어요.')).toBeTruthy()
+  expect(screen.getByText('처음으로 찜할 아티스트는 누구인가요?')).toBeTruthy()
 })
 
 test('a visible login button opens the email form directly', () => {
   render(<App />)
   fireEvent.click(screen.getByRole('button',{name:'로그인',exact:true}))
   expect(screen.getByLabelText('이메일')).toBeTruthy()
-  expect(new URLSearchParams(location.search).get('page')).toBe('settings')
+  expect(screen.getByRole('dialog').hasAttribute('open')).toBe(true)
+  expect(new URLSearchParams(location.search).get('page')).not.toBe('settings')
 })
 
 test('background catalog refresh preserves content without inserting a loading row', () => {
@@ -219,8 +229,8 @@ test('concert discovery contains only concerts and artist identity opens a deep-
   expect(screen.getByRole('heading', { name: '아티스트 소개' })).toBeTruthy()
   expect(new URLSearchParams(location.search).get('artist')).toBe('real-band')
   fireEvent.click(screen.getByRole('button', { name: '더보기', exact: true }))
-  expect(screen.getByRole('button', { name: '간략히 보기' }).getAttribute('aria-expanded')).toBe('true')
-  expect(screen.getAllByRole('link', { name: '더보기 ↗' })).toHaveLength(2)
+  expect(screen.getByRole('button', { name: '접기' }).getAttribute('aria-expanded')).toBe('true')
+  expect(screen.getAllByRole('link', { name: /더보기, YouTube 새 탭/ })).toHaveLength(2)
 })
 
 test('selected calendar date filters ticket opens in KST and recommends at most three performances', () => {
@@ -234,7 +244,7 @@ test('selected calendar date filters ticket opens in KST and recommends at most 
   expect(screen.getByRole('button', { name: 'Concert 0', exact: true })).toBeTruthy()
   fireEvent.click(screen.getByRole('button', { name: '2026년 10월 24일 공연 있음' }))
   expect(screen.getAllByRole('button', { name: /Concert \d 상세 보기/ })).toHaveLength(3)
-  fireEvent.click(screen.getByRole('button', { name: '공연 4개 모두 보기 →' }))
+  fireEvent.click(screen.getByRole('button', { name: '이날 공연 4개 모두 보기' }))
   expect(new URLSearchParams(location.search).get('date')).toBe('2026-10-24')
   expect(screen.getAllByRole('button', { name: /Concert \d 상세 보기/ })).toHaveLength(4)
 })
@@ -242,10 +252,47 @@ test('selected calendar date filters ticket opens in KST and recommends at most 
 test('browser back restores search and artist context', () => {
   render(<App />)
   fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), { target: { value: 'Verified' } })
+  fireEvent.submit(screen.getByRole('search'))
   fireEvent.click(screen.getByRole('button', { name: 'Verified band 아티스트 상세' }))
   expect(screen.getByRole('heading', { name: '아티스트 소개' })).toBeTruthy()
   history.replaceState(null, '', '/?page=search&q=Verified')
   fireEvent.popState(window)
   expect(screen.getByRole('heading', { name: '“Verified” 검색 결과' })).toBeTruthy()
   expect(screen.queryByRole('heading', { name: '아티스트 소개' })).toBeNull()
+})
+
+test('approved login modal sends the real auth request and verifies the returned code', async () => {
+  const view = render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: '로그인', exact: true }))
+  fireEvent.change(screen.getByLabelText('이메일'), { target: { value: 'listener@example.test' } })
+  fireEvent.submit(screen.getByRole('dialog').querySelector('form')!)
+  await waitFor(() => expect(mocks.requestLink).toHaveBeenCalledWith('listener@example.test'))
+  mocks.pendingEmail = 'listener@example.test'
+  view.rerender(<App />)
+  fireEvent.change(screen.getByLabelText('이메일 인증번호'), { target: { value: '123456' } })
+  fireEvent.submit(screen.getByRole('dialog').querySelector('form')!)
+  await waitFor(() => expect(mocks.verifyCode).toHaveBeenCalledWith('123456'))
+  mocks.session = { user: { id: 'listener', email: 'listener@example.test' } }
+  view.rerender(<App />)
+  expect(document.querySelector('.flow-login')?.hasAttribute('open')).toBe(false)
+})
+
+test('production feed contains approved layout and no beta or background sync copy', () => {
+  render(<App />)
+  expect(document.querySelector('.poster-hero .hero-copy')).toBeTruthy()
+  expect(document.querySelector('.combined-layout .combined-calendar')).toBeTruthy()
+  expect(document.querySelector('.artist-item .artist-add')).toBeTruthy()
+  expect(screen.queryByText(/베타 검증 중|공연 정보 · 실시간 연결됨|계정 저장 · 실시간 연결됨/)).toBeNull()
+  expect(document.querySelector('.catalog-sync,.account-sync,.service-app')).toBeNull()
+})
+
+test('home search keeps the input mounted while typing and navigates on submit, like the approved design', () => {
+  render(<App />)
+  const input = screen.getByLabelText('밴드 또는 공연 검색')
+  fireEvent.change(input, { target: { value: 'V' } })
+  expect(document.querySelector('.poster-hero')).toBeTruthy()
+  expect(screen.getByLabelText('밴드 또는 공연 검색')).toBe(input)
+  fireEvent.change(input, { target: { value: 'Verified' } })
+  fireEvent.submit(screen.getByRole('search'))
+  expect(screen.getByRole('heading', { name: '“Verified” 검색 결과' })).toBeTruthy()
 })
