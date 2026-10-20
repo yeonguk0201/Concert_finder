@@ -32,20 +32,24 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks() })
 
-test('ordinary search registers and follows an external artist with no concerts', async () => {
-  mocks.session = { user: { id: 'ordinary-user', email: 'user@example.test' } }
+test('ordinary search stays in the approved DB catalog', () => {
   mocks.concerts = []
-  const row = { id: 'external-band', name: 'New artist', country_code: 'JP', aliases: [], description: '장르 미검수' }
-  mocks.invoke.mockResolvedValueOnce({ data: { artists: [{ key: 'mb:provider-id', name: row.name, country: 'JP', aliases: [], evidence: 'https://musicbrainz.org/artist/provider-id', type: 'Person', disambiguation: 'Japanese singer' }] } }).mockResolvedValueOnce({ data: { band_id: row.id, band: row } })
-  mocks.toggle.mockResolvedValue(true)
   render(<App />)
-  fireEvent.change(screen.getByRole('textbox', { name: '밴드 또는 공연 검색' }), { target: { value: 'New artist' } })
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), {target:{value:'Unknown artist'}})
   fireEvent.submit(screen.getByRole('search'))
-  fireEvent.click(await screen.findByRole('button', { name: /New artist .*등록하고 찜하기/ }))
-  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('bands', row.id))
-  expect(mocks.addBand).toHaveBeenCalledWith(expect.objectContaining({ id: row.id, name: row.name }))
-  expect(mocks.adminAllowed).toBe(false)
-  await screen.findByText('아티스트를 찜했어요. 공연이 없어도 찜 목록에 보관됩니다.')
+  expect(screen.queryByRole('region',{name:'외부 아티스트 검색 결과'})).toBeNull()
+  expect(screen.queryByRole('button',{name:'관리자 아티스트 검색·가져오기'})).toBeNull()
+  expect(mocks.invoke).not.toHaveBeenCalled()
+})
+test('administrators can open the protected import editor from empty search', () => {
+  mocks.session = {user:{id:'admin',email:'admin@example.test'}}
+  mocks.adminAllowed = true
+  render(<App />)
+  fireEvent.change(screen.getByLabelText('밴드 또는 공연 검색'), {target:{value:'Unknown'}})
+  fireEvent.submit(screen.getByRole('search'))
+  fireEvent.click(screen.getByRole('button',{name:'관리자 아티스트 검색·가져오기'}))
+  expect(screen.getByText('관리자 편집기')).toBeTruthy()
+  expect(mocks.invoke).not.toHaveBeenCalled()
 })
 
 test('home discovers upcoming domestic performances as well as overseas bands', () => {

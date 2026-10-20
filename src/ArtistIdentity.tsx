@@ -9,7 +9,7 @@ export function GraphicAvatar({ name, initials, tone = 'gel' }: { name: string; 
 }
 export function ArtistAvatar({ band, showPhoto = false }: { band: Band; showPhoto?: boolean }) {
   if (!showPhoto) return <GraphicAvatar name={band.name} initials={band.initials} tone={artistStyle(band)} />
-  return <div className={`approved-avatar ${artistStyle(band)}`}><ArtistPhoto name={band.name} initials={band.initials} bandId={band.id} color="transparent" representativePhoto={band.representativePhoto} photoMode={band.photoMode} youtubePhoto={band.officialProfile?.photo} /></div>
+  return <div className={`approved-avatar ${artistStyle(band)}`}><ArtistPhoto name={band.name} initials={band.initials} color="transparent" representativePhoto={band.representativePhoto} photoMode={band.photoMode} youtubePhoto={band.officialProfile?.photo} /></div>
 }
 export function ArtistIdentity({ band, onOpen, variant = 'detail' }: { band: Band; onOpen: () => void; variant?: 'home' | 'result' | 'detail' }) {
   return <div className={`approved-identity ${variant === 'home' ? 'home-artist-profile' : variant === 'result' ? 'artist-identity' : 'detail-artist-profile'}`}>
