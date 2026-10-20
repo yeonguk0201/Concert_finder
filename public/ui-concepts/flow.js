@@ -18,6 +18,8 @@ if (mode === 'combined') {
   let category = '전체'
   let activeEvent = 0
   let activeArtist = 0
+  let bioExpanded = false
+  let artistTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   let resultType = '전체'
   let discoverDate = ''
   let discoverArtist = ''
@@ -32,7 +34,7 @@ if (mode === 'combined') {
   const meta = event => event.type === '내한' ? '일본 · 얼터너티브 록' : event.style === 'gel' ? '한국 · 사이키델릭 록' : '한국 · 인디 팝'
   const initials = event => event.style === 'gel' ? 'SG' : event.style === 'rock' ? 'OR' : 'we'
   const profiles = [
-    {english:'Silica Gel', line:'익숙한 플레이리스트 밖으로.', intro:'선명한 기타와 전자음, 무대에서 더 크게 번지는 사운드. 실리카겔의 음악과 다음 공연을 한곳에서 만나보세요.', more:'좋아하는 곡을 영상으로 다시 듣고, 기다리는 무대의 예매 시간을 모아두세요. 이 소개와 배너는 디자인 확인을 위한 편집 시안입니다.', videos:[['T + Tik Tak Tok (feat. So!YoON!)','DIPxnt5vnhU']], live:[['NO PAIN · YES24 LIVE HALL','qg40imnWXG8'],['NO PAIN · Syn.THE.Size X','KaYT_O0CwLE']]},
+    {english:'Silica Gel', line:'익숙한 플레이리스트 밖으로.', intro:'선명한 기타와 전자음, 무대에서 더 크게 번지는 사운드. 실리카겔의 음악과 다음 공연을 한곳에서 만나보세요.', more:'기타와 신시사이저가 겹쳐 만드는 질감부터 곡이 끝난 뒤에도 남는 여운까지, 한 가지 표정으로 설명하기보다 여러 곡을 이어 들으며 만나게 되는 음악입니다. 음원에서 발견한 소리가 라이브에서 어떻게 달라지는지, 공식 뮤직비디오와 공연 영상을 통해 먼저 살펴보세요. 이 소개와 배너는 디자인 확인을 위한 편집 시안입니다.', videos:[['T + Tik Tak Tok (feat. So!YoON!)','DIPxnt5vnhU']], live:[['NO PAIN · YES24 LIVE HALL','qg40imnWXG8'],['NO PAIN · Syn.THE.Size X','KaYT_O0CwLE']]},
     {english:'ONE OK ROCK', line:'이어폰에서, 무대의 한가운데로.', intro:'뜨거운 기타 사운드와 함께 부르는 순간. ONE OK ROCK의 영상과 다음 공연을 이어서 발견해 보세요.', more:'취향에 맞는 라이브를 먼저 살펴보고 다음 만남을 준비하세요. 이 소개와 배너는 디자인 확인을 위한 편집 시안입니다.', videos:[['Stand Out Fit In','IGInsosP0Ac']], live:[]},
     {english:'wave to earth', line:'잔잔한 파동이 라이브가 되는 밤.', intro:'오래 머무는 멜로디를 화면 밖에서 만나보세요. wave to earth의 영상과 다음 공연을 모았습니다.', more:'좋아하는 아티스트를 찜하고 티켓 오픈 시간을 저장해 보세요. 이 소개와 배너는 디자인 확인을 위한 편집 시안입니다.', videos:[['courage','CEfjpeSownQ'],['babo','INBhi8KuYCk'],['heaven and hell','53Ot9E5QG_I']], live:[]},
   ]
@@ -76,16 +78,16 @@ if (mode === 'combined') {
   }
   function discoverPage() {
     const list=events.filter(event=>(category==='전체'||event.type===category)&&(!discoverDate||event.date.replaceAll('.','-')===discoverDate)&&(!discoverArtist||event.name===discoverArtist)).sort((a,b)=>a.date.localeCompare(b.date))
-    return `<div class="flow-page-heading"><span class="flow-kicker">당신의 다음 라이브</span><h1>공연 둘러보기</h1><p>마음이 가는 공연을 골라보세요. 아티스트는 ${'<button class="inline-search" data-page="search">검색에서 찾아보세요.</button>'}</p></div><div class="discover-controls"><div class="filters" aria-label="공연 분류">${['전체','내한','국내','페스티벌'].map(type=>`<button data-category="${type}" aria-pressed="${category===type}">${type}</button>`).join('')}</div><label>공연 날짜<input type="date" id="discover-date" value="${discoverDate}" aria-label="공연 날짜"></label>${discoverDate?'<button class="clear-date" data-clear-date>날짜 해제</button>':''}</div><div class="section-heading"><h2>${discoverDate?`${Number(discoverDate.slice(5,7))}월 ${Number(discoverDate.slice(8))}일 공연`:(discoverArtist ? discoverArtist+'의 공연' : '모든 공연')} <span>${list.length}</span></h2><span>공연일순</span></div>${list.length?concertCards(list):emptyState('이 날짜에 확인된 공연이 없어요.','날짜를 해제하거나 다른 날의 공연을 둘러보세요.','전체 공연 보기','discover')}`
+    return `<div class="flow-page-heading"><span class="flow-kicker">당신의 다음 라이브</span><h1>공연 둘러보기</h1><p>마음이 가는 공연을 골라보세요. </p></div><div class="discover-controls"><div class="filters" aria-label="공연 분류">${['전체','내한','국내','페스티벌'].map(type=>`<button data-category="${type}" aria-pressed="${category===type}">${type}</button>`).join('')}</div><label>공연 날짜<input type="date" id="discover-date" value="${discoverDate}" aria-label="공연 날짜"></label>${discoverDate?'<button class="clear-date" data-clear-date>날짜 해제</button>':''}</div><div class="section-heading"><h2>${discoverDate?`${Number(discoverDate.slice(5,7))}월 ${Number(discoverDate.slice(8))}일 공연`:(discoverArtist ? discoverArtist+'의 공연' : '모든 공연')} <span>${list.length}</span></h2><span>공연일순</span></div>${list.length?concertCards(list):emptyState('이 날짜에 확인된 공연이 없어요.','날짜를 해제하거나 다른 날의 공연을 둘러보세요.','전체 공연 보기','discover')}`
   }
   function videoSection(title, items, event) {
-    return `<section class="artist-media"><div class="section-heading"><h2>${title}</h2><span>YouTube에서 열립니다</span></div>${items.length?`<div class="artist-video-grid">${items.map(([name,id],index)=>`<a class="artist-video" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer"><div class="video-thumb ${event.style} video-tone-${index}"><span class="video-graphic" aria-hidden="true">${initials(event)}</span><span class="video-play" aria-hidden="true">▶</span><span class="video-label">${title==='라이브 공연 영상'?'Live':'Music video'}</span></div><h3>${name}</h3><p>${event.name} · YouTube</p></a>`).join('')}</div>`:'<div class="video-awaiting">공식 라이브 영상은 확인 후 이곳에 모을게요.</div>'}<p class="video-caption">그래픽 썸네일은 시안입니다. 영상 링크는 확인한 공식 출처로 연결합니다.</p></section>`
+    return `<section class="artist-media"><div class="section-heading"><h2>${title}</h2><span>YouTube에서 열립니다</span></div>${items.length?`<div class="artist-video-grid">${items.map(([name,id])=>`<a class="artist-video" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer"><div class="video-thumb ${event.style}"><span class="video-graphic" aria-hidden="true">${initials(event)}</span><img class="youtube-thumbnail" src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${escapeText(name)} YouTube 썸네일" loading="lazy" referrerpolicy="no-referrer"><span class="video-play" aria-hidden="true">▶</span><span class="video-label">${title==='라이브 공연 영상'?'Live':'Music video'}</span><span class="thumbnail-fallback" hidden>썸네일을 불러오지 못했어요</span></div><h3>${name}</h3><p>${event.name} · YouTube</p></a>`).join('')}</div>`:'<div class="video-awaiting">공식 라이브 영상은 확인 후 이곳에 모을게요.</div>'}<p class="video-caption">YouTube 썸네일 · 클릭하면 YouTube에서 재생됩니다.</p></section>`
   }
   function artistPage() {
     const event=artistEvents[activeArtist]
     const profile=profiles[activeArtist]
     const next=events.filter(item=>item.name===event.name).sort((a,b)=>a.date.localeCompare(b.date))
-    return `<button class="flow-back" data-back>${icon('arrow')} 이전 화면</button><section class="artist-banner ${event.style}"><div class="artist-banner-art" aria-hidden="true"><span>${initials(event)}</span><i></i></div><div class="artist-banner-copy"><span class="artist-country">${meta(event)}</span><h1>${event.name}</h1><p>${profile.english}</p><strong>${profile.line}</strong>${followButton(event)}</div></section><section class="artist-about"><div><h2>아티스트 소개</h2><p>${profile.intro}</p><details><summary>더보기</summary><p>${profile.more}</p></details></div><div class="artist-profile-note"><span>다음 라이브</span><strong>${next[0].date}</strong><span>공연 정보 · 가상 샘플</span></div></section><section class="artist-concerts"><div class="section-heading"><h2>예정된 공연 <span>${next.length}</span></h2><button class="artist-manage" data-artist-concerts>공연 전체 보기 ${icon('arrow')}</button></div>${concertCards(next.slice(0,3))}</section>${videoSection('동영상',profile.videos,event)}${videoSection('라이브 공연 영상',profile.live,event)}<section class="related-artists"><div class="section-heading"><div><h2>함께 발견할 아티스트</h2><p>이런 음악도 만나보세요. 추천 구성은 시안입니다.</p></div></div><div class="related-artist-list">${artistEvents.filter(item=>item!==event).map(item=>`<button data-artist="${artistEvents.indexOf(item)}"><span class="avatar ${item.style}">${initials(item)}</span><strong>${item.name}</strong><small>${meta(item)}</small></button>`).join('')}</div></section>`
+    return `<button class="flow-back" data-back aria-label="이전 화면">${icon('arrow')}</button><section class="artist-banner ${event.style}">${notice}<button class="artist-theme-toggle" data-artist-theme aria-label="${artistTheme==='dark'?'라이트':'다크'} 배너 미리보기">${artistTheme==='dark'?'라이트':'다크'} 미리보기</button><div class="artist-banner-art" aria-hidden="true"><span>${initials(event)}</span><i></i></div><div class="artist-banner-copy"><span class="artist-country">${meta(event)}</span><h1>${event.name}</h1><p>${profile.english}</p><strong>${profile.line}</strong>${followButton(event)}</div></section><section class="artist-about"><div><h2>아티스트 소개</h2><p id="artist-bio" class="artist-bio ${bioExpanded?'expanded':''}">${profile.intro} ${profile.more}</p><button class="bio-toggle" data-bio-toggle aria-controls="artist-bio" aria-expanded="${bioExpanded}">${bioExpanded?'접기':'더보기'}</button></div><div class="artist-profile-note"><span>다음 라이브</span><strong>${next[0].date}</strong><span>공연 정보 · 가상 샘플</span></div></section><section class="artist-concerts"><div class="section-heading"><h2>예정된 공연 <span>${next.length}</span></h2><button class="artist-manage" data-artist-concerts>공연 전체 보기 ${icon('arrow')}</button></div>${concertCards(next.slice(0,3))}</section>${videoSection('동영상',profile.videos,event)}${videoSection('라이브 공연 영상',profile.live,event)}<section class="related-artists"><div class="section-heading"><div><h2>함께 발견할 아티스트</h2><p>이런 음악도 만나보세요. 추천 구성은 시안입니다.</p></div></div><div class="related-artist-list">${artistEvents.filter(item=>item!==event).map(item=>`<button data-artist="${artistEvents.indexOf(item)}"><span class="avatar ${item.style}">${initials(item)}</span><strong>${item.name}</strong><small>${meta(item)}</small></button>`).join('')}</div></section>`
   }
   function artistsPage() {
     const list=artistEvents.filter(event=>follows.has(event.name))
@@ -117,7 +119,7 @@ if (mode === 'combined') {
   function detailPage() {
     const event=events[activeEvent]
     const active=schedules.has(activeEvent)
-    return `<button class="flow-back" data-back>${icon('arrow')} 이전 화면</button><section class="flow-detail"><div class="detail-poster">${artwork(event)}<p>디자인 시안용 그래픽 포스터</p></div><div class="detail-main"><div class="detail-badges"><span class="badge">${event.type}</span><span>가상 공연 샘플</span></div><h1>${event.name}</h1><p class="detail-subtitle">${event.sub}</p><div class="detail-artist">아티스트 ${followButton(event)}</div><dl><div><dt>공연 날짜</dt><dd>${event.date}</dd></div><div><dt>공연 장소</dt><dd>${event.venue}</dd></div><div><dt>티켓 오픈</dt><dd>2026.${event.open}</dd></div><div><dt>예매 정보</dt><dd>공식 예매 정보 연결 전</dd></div></dl><div class="ticket-save-panel"><div><span>${icon('calendar')} 기다리는 무대, 잊지 않도록</span><p>티켓 오픈 시간을 내 예매 일정에 모아두세요.</p></div><button class="primary" data-save="${activeEvent}" aria-pressed="${active}">${icon('calendar')}${active?'저장한 일정 해제':'예매 일정 저장'}</button><small>일정 저장만으로 푸시 알림이 예약되지 않습니다.</small></div><p class="detail-disclosure">이 화면의 공연·일정은 UI 확인을 위한 가상 샘플이며 실제 공연 발표가 아닙니다.</p></div></section><section class="flow-detail-bottom"><h2>같은 취향으로 발견하기</h2><p>다른 아티스트의 다음 무대도 살펴보세요.</p>${concertCards(events.filter((_,index)=>index!==activeEvent).slice(0,3))}</section>`
+    return `<button class="flow-back" data-back aria-label="이전 화면">${icon('arrow')}</button><section class="flow-detail"><div class="detail-poster">${artwork(event)}<p>디자인 시안용 그래픽 포스터</p></div><div class="detail-main"><div class="detail-badges"><span class="badge">${event.type}</span><span>가상 공연 샘플</span></div><h1>${event.name}</h1><p class="detail-subtitle">${event.sub}</p><div class="detail-artist">아티스트 ${followButton(event)}</div><dl><div><dt>공연 날짜</dt><dd>${event.date}</dd></div><div><dt>공연 장소</dt><dd>${event.venue}</dd></div><div><dt>티켓 오픈</dt><dd>2026.${event.open}</dd></div><div><dt>예매 정보</dt><dd>공식 예매 정보 연결 전</dd></div></dl><div class="ticket-save-panel"><div><span>${icon('calendar')} 기다리는 무대, 잊지 않도록</span><p>티켓 오픈 시간을 내 예매 일정에 모아두세요.</p></div><button class="primary" data-save="${activeEvent}" aria-pressed="${active}">${icon('calendar')}${active?'저장한 일정 해제':'예매 일정 저장'}</button><small>일정 저장만으로 푸시 알림이 예약되지 않습니다.</small></div><p class="detail-disclosure">이 화면의 공연·일정은 UI 확인을 위한 가상 샘플이며 실제 공연 발표가 아닙니다.</p></div></section><section class="flow-detail-bottom"><h2>같은 취향으로 발견하기</h2><p>다른 아티스트의 다음 무대도 살펴보세요.</p>${concertCards(events.filter((_,index)=>index!==activeEvent).slice(0,3))}</section>`
   }
   let previousPage='home'
   function render(page=currentPage, focusHeading=true) {
@@ -130,6 +132,8 @@ if (mode === 'combined') {
     const focusValue=focusAttribute?focused.getAttribute(focusAttribute):null
     if (page!==currentPage && (page==='detail'||page==='artist')) previousPage=currentPage
     currentPage=page
+    document.body.classList.toggle('artist-screen',page==='artist')
+    document.body.dataset.previewTheme=artistTheme
     if(['file:','http:','https:'].includes(location.protocol) && location.hash!==`#${page}`) history.pushState(null,'',`#${page}`)
     document.title=`${pageNames[page]} · encore. 디자인 시안`
     if (page==='home') {
@@ -143,7 +147,7 @@ if (mode === 'combined') {
       })
     } else {
       const body=page==='discover'?discoverPage():page==='search'?searchPage():page==='artist'?artistPage():page==='artists'?artistsPage():page==='saved'?savedPage():detailPage()
-      flowRoot.innerHTML=`${flowHeader()}${previewBar()}<main class="page flow-page">${notice}${body}${footer}</main>${mobileNav()}`
+      flowRoot.innerHTML=`${flowHeader()}${previewBar()}<main class="page flow-page ${page==='artist'?'artist-flow-page':''}">${page==='artist'?'':notice}${body}${footer}</main>${mobileNav()}`
       if(page==='artists') document.querySelectorAll('.flow-followed-card').forEach(card=>{
         const title=card.querySelector('h2')
         const index=artistEvents.findIndex(event=>event.name===title.textContent)
@@ -153,7 +157,7 @@ if (mode === 'combined') {
       })
       if(page==='detail'&&activeEvent!==3&&events[activeEvent].name!=='Autumn Sound') {
         const index=artistEvents.findIndex(event=>event.name===events[activeEvent].name)
-        document.querySelector('.detail-artist').insertAdjacentHTML('afterbegin',`<button class="inline-search" data-artist="${index}">${events[activeEvent].name} 아티스트 보기 ${icon('arrow')}</button>`)
+        document.querySelector('.detail-artist').innerHTML=`<button class="detail-artist-profile" data-artist="${index}" aria-label="${events[activeEvent].name} 아티스트 상세"><span class="avatar ${artistEvents[index].style}" role="img" aria-label="${events[activeEvent].name} 프로필 대체 이미지">${initials(artistEvents[index])}</span><strong>${events[activeEvent].name}</strong></button>${followButton(events[activeEvent])}`
       }
     }
     syncFollows()
@@ -219,6 +223,21 @@ if (mode === 'combined') {
   document.addEventListener('click',event=>{
     const button=event.target.closest('button, a')
     if(!button) return
+    if(button.hasAttribute('data-bio-toggle')) {
+      bioExpanded=!bioExpanded
+      document.querySelector('#artist-bio').classList.toggle('expanded',bioExpanded)
+      button.setAttribute('aria-expanded',String(bioExpanded))
+      button.textContent=bioExpanded?'접기':'더보기'
+      if(!bioExpanded) button.scrollIntoView({block:'nearest',behavior:'instant'})
+      return
+    }
+    if(button.hasAttribute('data-artist-theme')) {
+      artistTheme=artistTheme==='dark'?'light':'dark'
+      document.body.dataset.previewTheme=artistTheme
+      button.textContent=artistTheme==='dark'?'라이트 미리보기':'다크 미리보기'
+      button.setAttribute('aria-label',`${artistTheme==='dark'?'라이트':'다크'} 배너 미리보기`)
+      return
+    }
     if(button.hasAttribute('data-page')) {
       event.preventDefault()
       if(button.dataset.page==='search') {searchTerm='';category='전체';resultType='전체'}
@@ -233,7 +252,7 @@ if (mode === 'combined') {
     if(button.hasAttribute('data-search')) {searchTerm=button.dataset.search;category='전체';resultType='전체';render('search');return}
     if(button.hasAttribute('data-category')) {category=button.dataset.category;render(currentPage,false);return}
     if(button.hasAttribute('data-searchtype')) {resultType=button.dataset.searchtype;render('search',false);return}
-    if(button.hasAttribute('data-artist')) {activeArtist=Number(button.dataset.artist);render('artist');return}
+    if(button.hasAttribute('data-artist')) {activeArtist=Number(button.dataset.artist);bioExpanded=false;render('artist');return}
     if(button.hasAttribute('data-artist-concerts')) {discoverArtist=artistEvents[activeArtist].name;discoverDate='';category='전체';render('discover');return}
     if(button.hasAttribute('data-clear-date')) {discoverDate='';discoverArtist='';render('discover',false);return}
     if(button.hasAttribute('data-date-discover')) {discoverDate=button.dataset.dateDiscover;discoverArtist='';category='전체';render('discover');return}
@@ -271,6 +290,12 @@ if (mode === 'combined') {
     }
     if(button.getAttribute('href')==='#concerts') {event.preventDefault();discoverDate='';discoverArtist='';category='전체';render('discover')}
   })
+  document.addEventListener('error',event=>{
+    if(event.target.matches?.('.youtube-thumbnail')) {
+      event.target.hidden=true
+      event.target.parentElement.querySelector('.thumbnail-fallback').hidden=false
+    }
+  },true)
   matchMedia('(max-width:760px)').addEventListener('change',event=>{
     const disclosure=document.querySelector('.calendar-disclosure')
     if(disclosure) disclosure.open=!event.matches

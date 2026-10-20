@@ -377,3 +377,51 @@ button.artist-cover { display: block; width: 100%; text-align: left; }
   .flow-preview-bar > button { font-size: 8px; padding: 9px 5px; }
   .combined .saved-calendar .calendar-help { font-size: 9px; }
 }
+/* Review refinements: continuous artist backdrop and one expanding biography. */
+.youtube-thumbnail { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.artist-video .video-thumb { height: auto; aspect-ratio: 16/9; }
+.youtube-thumbnail[hidden] { display: none; }
+.video-label { padding: 3px 7px; border-radius: 4px; background: #142035b8; color: white; }
+.thumbnail-fallback { position: absolute; bottom: 12px; left: 12px; right: 12px; color: currentColor; font-size: 10px; }
+.thumbnail-fallback[hidden] { display: none; }
+.artist-bio { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.artist-bio.expanded { display: block; overflow: visible; }
+.bio-toggle { display: block; padding: 8px 0; margin-top: 6px; color: var(--accent); font-size: 11px; }
+.detail-artist-profile { display: flex; gap: 12px; align-items: center; padding: 0; min-width: 0; text-align: left; }
+.detail-artist-profile .avatar { width: 45px; height: 45px; flex-shrink: 0; font-size: 19px; }
+.detail-artist-profile strong { color: var(--ink); font-size: 13px; }
+.flow-back { display: none; }
+.artist-screen { --artist-page-bg: #fff; background: var(--artist-page-bg); }
+.artist-flow-page { width: 100%; max-width: none; padding-top: 0; position: relative; }
+.artist-flow-page > section:not(.artist-banner), .artist-flow-page > footer { width: 90%; max-width: 1250px; margin-left: auto; margin-right: auto; }
+.artist-screen .artist-banner { --artist-banner-color: #253b86; border-radius: 0; min-height: 470px; padding: 0 0 100px; background: linear-gradient(180deg,var(--artist-banner-color) 0%,var(--artist-banner-color) 48%,var(--artist-page-bg) 100%); }
+.artist-screen .artist-banner.rock { --artist-banner-color: #813e4e; }
+.artist-screen .artist-banner.wave { --artist-banner-color: #365f7a; }
+.artist-banner > .notice { width: 90%; max-width: 1250px; margin: 0 auto; padding: 17px 0; color: #d7e0f5; }
+.artist-banner > .notice .notice-dot { background: #d7e0f5; }
+.artist-screen .artist-banner-copy { width: 90%; max-width: 1250px; margin: 30px auto 0; }
+.artist-screen .artist-banner-art { mask-image: linear-gradient(#000 0%,#000 45%,transparent 95%); }
+.artist-theme-toggle { position: absolute; top: 13px; right: 5%; z-index: 2; color: #e7edff; border: 1px solid #ffffff4a; border-radius: 20px; padding: 6px 12px; font-size: 10px; }
+.artist-screen .artist-about { padding-top: 20px; }
+.artist-screen .artist-banner .follow-control { background: #fff; color: #3154b8; border-color: #b7c8ed; }
+.artist-screen[data-preview-theme=dark] { --artist-page-bg: #000; --ink: #edf1fb; --muted: #a6b3cb; --surface: #111723; --line: #293143; --accent: #9db7ff; color: var(--ink); color-scheme: dark; }
+.artist-screen[data-preview-theme=dark] .site-header { background: #000; }
+.artist-screen[data-preview-theme=dark] .artist-about p { color: #a6b3cb; }
+.artist-screen[data-preview-theme=dark] .artist-profile-note strong { color: #a6beff; }
+.artist-screen[data-preview-theme=dark] .artist-theme-toggle { color: #e7edff; }
+.artist-screen[data-preview-theme=dark] .flow-preview-bar { background: #111723f2; border-color: #293143; }
+.artist-screen[data-preview-theme=dark] .flow-preview-bar > button[aria-pressed=true] { background: #253350; }
+@media(max-width:760px) {
+  .flow-back { display: flex; align-items: center; justify-content: center; padding: 0; width: 42px; height: 42px; margin: 5px 0 15px; }
+  .flow-back svg { width: 21px; height: 21px; }
+  .artist-screen .flow-preview-bar { display: none; }
+  .artist-flow-page > .flow-back { position: absolute; top: 48px; left: 4%; z-index: 3; color: white; margin: 0; }
+  .artist-screen .artist-banner { min-height: 475px; padding-bottom: 90px; }
+  .artist-screen .artist-banner-copy { margin-top: 60px; }
+  .artist-theme-toggle { top: 54px; }
+  .artist-banner > .notice { font-size: 8px; padding: 15px 0; }
+  .artist-screen .artist-banner-art > span { top: 170px; }
+  .artist-screen[data-preview-theme=dark] .flow-mobile-nav { background: #111723f5; }
+  .detail-artist-profile strong { font-size: 12px; }
+  .detail-artist-profile .avatar { width: 40px; height: 40px; }
+}
