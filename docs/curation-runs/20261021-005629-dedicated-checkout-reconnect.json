@@ -1,0 +1,3871 @@
+{
+  "state": "finished",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "fc59dd2f-a702-4bea-a53e-071cd162deb6",
+  "owner": "local",
+  "startedAt": "2026-10-20T15:48:09.169Z",
+  "authorityKey": "integrated-service-approval-v1",
+  "apiCalls": 2,
+  "artists": [
+    {
+      "bandId": "81031092-2c98-4c63-b349-0753ad3dfa83",
+      "name": "Ленинград",
+      "identityVersion": "2026-10-20T15:50:20.493434+00:00",
+      "key": "8d939df9be577584f91b50aed92db03c22a2de6a75944fdeccf7fc8e313d8cf0",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "기존 MB 연결 sosimc.ru가 관련 없는 도박 사이트로 바뀌어 공식 근거에서 배제했다. 다른 공식 후보로 신원·장르를 재확인해야 한다. 사이트 실패를 제외/보류로 적용하지 않는다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "complete",
+          "reason": "OFFICIAL_ALTERNATIVE_SOURCES_AND_IDENTITY_CONFIRMED",
+          "checkedAt": "2026-10-20T15:50:19.232Z",
+          "waitingSince": "2026-10-20T15:50:19.232Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-20T15:50:19.163Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-18T15:50:19.163Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "공식 소개의 러시아·상트페테르부르크 그룹, Сергей Шнуров 및 록 공연 활동을 Afisha의 1997년 결성·데뷔작 Пуля 설명과 대조했다. Wikidata의 동일 MBID와 서버 context의 기존 mb 신원 연결도 일치한다. 오래된 sosimc.ru는 근거에서 제외했다.",
+            "sources": [
+              {
+                "url": "https://leningrad.top/about/",
+                "checkedAt": "2026-10-20T15:50:19.163Z",
+                "summary": "공식 소개가 러시아 그룹, 상트페테르부르크 활동과 Шнуров, 록 공연 및 공식 YouTube 직접 링크를 확인한다."
+              },
+              {
+                "url": "https://www.afisha.ru/people/leningrad-303051/",
+                "checkedAt": "2026-10-20T15:50:19.163Z",
+                "summary": "편집부 소개에서 러시아 록 그룹, Сергей Шнуров, 1997년 상트페테르부르크 결성과 Пуля 음반을 확인하고 leningrad.top을 공식 사이트로 연결한다."
+              },
+              {
+                "url": "https://www.wikidata.org/wiki/Q909810",
+                "checkedAt": "2026-10-20T15:50:19.163Z",
+                "summary": "Leningrad Q909810의 MusicBrainz 식별자 2bf704b3-4c05-441f-ad54-52722c1bdba9를 신원 보조 자료로 대조했다. 장르 판정의 단독 근거로 쓰지 않았다."
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-20T15:50:19.349Z",
+          "waitingSince": "2026-10-20T15:50:19.349Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-20T15:50:19.349Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-18T15:50:19.349Z",
+          "proposal": {
+            "target_band_id": "81031092-2c98-4c63-b349-0753ad3dfa83",
+            "expected_updated_at": "2026-10-13T08:20:30.18524+00:00",
+            "artist_name": "Ленинград",
+            "country": "RU",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Ëåíèíãðàä",
+              "Leningrad"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 러시아 상트페테르부르크의 Ленинград 신원과 실제 록 활동을 공식 소개 및 Afisha의 결성·음반 설명으로 확인. 기존 MB 신원 연결을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://leningrad.top/about/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-20T15:50:20.493434+00:00"
+          }
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "OFFICIAL_FORWARD_LINK_API_AND_DB_READBACK_VERIFIED",
+          "checkedAt": "2026-10-20T15:55:06.645Z",
+          "waitingSince": "2026-10-20T15:55:06.645Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-20T15:51:40.975Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-10-27T15:51:40.975Z",
+          "proof": {
+            "decision": "verified",
+            "summary": "공식 소개에 직접 연결된 @Leningrad_top/shorts의 동일 handle을 API로 해석했다. 이전 미확정 후보와 같은 UCY0C6A3t3RTUN3BB65rWAgQ이며 기존 서비스 RPC 저장 후 공식 검증·사진 캐시 상태를 재조회했다.",
+            "sources": [
+              {
+                "url": "https://leningrad.top/about/",
+                "checkedAt": "2026-10-20T15:51:03.655Z",
+                "summary": "공식 아티스트 소개가 https://www.youtube.com/@Leningrad_top/shorts를 직접 연결하며 채널 탭 경로만 제거해 동일 handle을 API에서 해석했다."
+              }
+            ]
+          },
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-20T15:51:27.380454+00:00",
+            "checkedAt": "2026-10-20T15:51:40.975Z"
+          }
+        }
+      },
+      "receipts": {
+        "research": "60b5dd5d1bc41260eef9adeea2e2b7731db720c6fbeec566cd41722b58a1bdeb",
+        "approval": "8fe04717e7a327f4c593d7e75f1806e64f54c14c00654a80ddc5fb1840fdc592",
+        "channels": "0914997b311ef86c2627f19bb5508dea9c655cb4782c6d79e3fdfe08cdc2e1a5"
+      },
+      "originalIdentityVersion": "2026-10-13T08:20:30.18524+00:00"
+    },
+    {
+      "bandId": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+      "name": "강건후",
+      "identityVersion": "2026-10-14T13:24:32.435618+00:00",
+      "key": "79ccd1d16d3816b7b21a985faf580ec83f009b32748f896cfe9e8cc6095b978a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "MB 신원은 한국 기타 연주자로 연결되지만 공식 활동·음반 자료로 해당 인물의 록 활동을 확인하지 못했다. 악기·MB 설명만으로 승인/제외하지 않는다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "포크라노스 Kochere 공식 소개에서 실제 작곡·연주 참여를 확인했다. 여러 장르의 컴필레이션 설명을 개인의 록 활동으로 자동 전환하지 않으며 해당 트랙의 장르 근거를 더 보완해야 한다.",
+          "checkedAt": "2026-10-20T15:56:24.966Z",
+          "waitingSince": "2026-10-20T15:56:24.966Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:24.966Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.018Z",
+          "waitingSince": "2026-10-20T15:56:25.018Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.018Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.064Z",
+          "waitingSince": "2026-10-20T15:56:25.064Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.064Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "9b9125b07d54c58a756553dd98eb5ecdfb318ec0169d26fc7e05a5f74701cdde",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+      "name": "김경태",
+      "identityVersion": "2026-10-15T07:26:59.702286+00:00",
+      "key": "9be27b875b2dead44d26569f97e14885acb332fc2f846b1970fd74774d4e28c6",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "MBID의 설명은 enginner이며 동명 가수로 연결할 공식 신원 자료를 확보하지 못했다. 엔지니어 설명만으로 대상 밖으로 확정하지 않는다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 검색에서 음반 녹음 엔지니어 크레딧과 여러 동명 인물이 발견됐다. 기존 MB 엔지니어 신원과 연결되는 본인 록/J-pop 아티스트 활동의 근거는 아직 미완성이다.",
+          "checkedAt": "2026-10-20T15:56:25.101Z",
+          "waitingSince": "2026-10-20T15:56:25.101Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.101Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.140Z",
+          "waitingSince": "2026-10-20T15:56:25.140Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.140Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.180Z",
+          "waitingSince": "2026-10-20T15:56:25.180Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.180Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "6a3b655498b0c80946b358b8f6cb3b60eedc4dbabafe36e3a7b987b7b668ae0a",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+      "name": "김수희",
+      "identityVersion": "2026-10-12T14:24:09.149317+00:00",
+      "key": "0ad4d889dd7e6f3789548f7f1fdf88e6144852a96664638907bce7acd0724b2c",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "당사자 인터뷰에서 블랙캣츠 리드보컬과 트로트/팝·국악 혼합 경력을 확인했다. 과거 밴드의 실제 록 활동을 추가 확인하기 전 트로트라는 이유만으로 제외하지 않는다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "성인가요 프로필 후보를 발견했으나 기존 블랙캣츠 경력과 실제 록 활동 가능성을 해소하지 못했다. 트로트 이름표로 제외하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.218Z",
+          "waitingSince": "2026-10-20T15:56:25.218Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.218Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.257Z",
+          "waitingSince": "2026-10-20T15:56:25.257Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.257Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.295Z",
+          "waitingSince": "2026-10-20T15:56:25.295Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.295Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "6486824c9b5159b12ffba60b3b111f8e806920f6db6d413bf401c42cac9b5acc",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "a58f9f27-653f-4abf-a623-9bb2e653bc30",
+      "name": "김장훈",
+      "identityVersion": "2026-10-14T13:24:32.441579+00:00",
+      "key": "9d6b6b7472998419c09afc051578c4694434384ae806374b4b23425fe6abf390",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "기존 공식 홈페이지 403 접근 실패. 대체 공식 음반/소속사 출처를 확보하지 못해 다음 재시도 대상으로 남긴다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:25.334Z",
+          "waitingSince": "2026-10-20T15:56:25.334Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.334Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.374Z",
+          "waitingSince": "2026-10-20T15:56:25.374Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.374Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.413Z",
+          "waitingSince": "2026-10-20T15:56:25.413Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.413Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "810b1871-70ab-4563-8703-747012ea6f1d",
+      "name": "김조한",
+      "identityVersion": "2026-10-15T01:30:28.913689+00:00",
+      "key": "42ddfc950f85b1095e1cce3cacf76a9343a98c12ed190c02de5e43f481a131fa",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "Solid 멤버 MB 신원을 기존 자료와 대조했으나 록 활동 또는 대상 밖 판정을 뒷받침할 공식 음반 근거는 미완성이다. R&B 이름표만으로 제외하지 않는다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:25.453Z",
+          "waitingSince": "2026-10-20T15:56:25.453Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.453Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.493Z",
+          "waitingSince": "2026-10-20T15:56:25.493Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.493Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.533Z",
+          "waitingSince": "2026-10-20T15:56:25.533Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.533Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+      "name": "김종국",
+      "identityVersion": "2026-10-15T01:30:28.899139+00:00",
+      "key": "68b87a256e93710387e6a55bb1eb7090ccdcd561f3aeca2239b6506482c1771b",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "공식 홈페이지가 해외 접속 차단을 표시했다. 대체 공식 자료의 신원·실제 활동 확인이 끝나지 않아 현재 상태를 보존한다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:25.571Z",
+          "waitingSince": "2026-10-20T15:56:25.571Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.571Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.611Z",
+          "waitingSince": "2026-10-20T15:56:25.611Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.611Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.647Z",
+          "waitingSince": "2026-10-20T15:56:25.647Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.647Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "7c7c9818-2fd7-445e-94cd-43d9a73480be",
+      "name": "다양성",
+      "identityVersion": "2026-10-20T15:55:04.999805+00:00",
+      "key": "5ff9912673728e94b37db2e83a39a6838f4068e914137cf20e9a186ceca3b457",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "MBID와 @Dayangsung API 후보는 확보했으나 공식 아티스트별 페이지의 직접 연결 및 실제 록 활동의 공식 근거는 미확보다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "complete",
+          "reason": "OFFICIAL_EVENT_AND_RELEASE_IDENTITY_CONFIRMED",
+          "checkedAt": "2026-10-20T15:55:04.172Z",
+          "waitingSince": "2026-10-20T15:55:04.172Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-17T05:07:08.509Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "서울시 공식 공연 소개의 다양성과 EP 언제나 단순하게·부산국제록페스티벌 활동을 동일 EP의 발매사 뮤직앤뉴/기획사 다양성·인디 록 음반 자료 및 대한민국 아티스트 프로필과 대조했다. 기존 MB 신원 캐시 및 현재 DB 외부 연결과 일치한다.",
+            "sources": [
+              {
+                "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S221215184828812613",
+                "checkedAt": "2026-10-20T15:55:04.167Z",
+                "summary": "서울시 공식 공연 페이지가 다양성의 두 번째 EP 언제나 단순하게와 2022 부산국제록페스티벌 활동을 설명한다."
+              },
+              {
+                "url": "https://music.bugs.co.kr/album/20529899",
+                "checkedAt": "2026-10-20T15:55:04.167Z",
+                "summary": "동일 EP의 아티스트 다양성, 인디 록, 2022-11-28 발매, 유통사 뮤직앤뉴, 기획사 다양성을 확인했다."
+              },
+              {
+                "url": "https://music.bugs.co.kr/artist/20132442?wl_ref=S_ab_01_02",
+                "checkedAt": "2026-10-20T15:55:04.167Z",
+                "summary": "음원 서비스 아티스트 정보의 대한민국 그룹과 동일 음반 이력을 대조했다."
+              },
+              {
+                "url": "https://musicbrainz.org/artist/61477599-9e76-49d1-b3a1-8c3b4b1fdea9",
+                "checkedAt": "2026-10-19T05:07:08.509Z",
+                "summary": "기존 실제 조회 캐시의 이름 다양성, 국가 KR, MBID 61477599-9e76-49d1-b3a1-8c3b4b1fdea9를 재사용했다. 현재 새 요청은 제공처 cooldown 때문에 하지 않았다."
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-20T15:55:04.231Z",
+          "waitingSince": "2026-10-20T15:55:04.231Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-20T15:55:04.231Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-18T15:55:04.231Z",
+          "proposal": {
+            "target_band_id": "7c7c9818-2fd7-445e-94cd-43d9a73480be",
+            "expected_updated_at": "2026-10-12T14:24:09.14928+00:00",
+            "artist_name": "다양성",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [
+              "DAYANGSUNG"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 서울시 공식 아티스트 공연 소개와 언제나 단순하게 음반의 실제 인디 록 활동, 대한민국 프로필 및 기존 MB 신원을 대조하여 domestic_rock 분류·승인.",
+            "evidence_url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S221215184828812613"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-20T15:55:04.999805+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.686Z",
+          "waitingSince": "2026-10-20T15:56:25.686Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.686Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "1af820abcfcf51d1a27da83ec55e74f2865184ee5083a7551a95cdd9d2f5e765",
+        "approval": "98a87800b51d05ab81dbe904867a08e8ed9821aab8d32c2f12eba15016f9315a",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      },
+      "originalIdentityVersion": "2026-10-12T14:24:09.14928+00:00"
+    },
+    {
+      "bandId": "59786668-4c4f-4568-8928-034dc1706ac2",
+      "name": "박성현",
+      "identityVersion": "2026-10-14T19:24:49.220714+00:00",
+      "key": "37ae6d0a6abd104c1ad075f5a60c1ce082b213f48ff61dc01a3e49c7ccaaf526",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": "2026-10-19T05:07:08.509Z",
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "MB 멤버 관계의 영턱스클럽 인물과 기존 신원을 대조했지만 동명 인물 혼동을 막을 공식 활동·음반 자료가 부족하다. 그룹 형식만으로 제외하지 않는다.",
+          "importedFrom": "docs/curation-runs/20261019-135556-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "deferred",
+          "waitingSince": "2026-10-16T11:17:58.682Z",
+          "checkedAt": null,
+          "nextAttemptAt": "2026-10-20T05:07:08.509Z",
+          "reason": "LEGACY_CHANNEL_RETRY"
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:25.723Z",
+          "waitingSince": "2026-10-20T15:56:25.723Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.723Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.759Z",
+          "waitingSince": "2026-10-20T15:56:25.759Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.759Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.800Z",
+          "waitingSince": "2026-10-20T15:56:25.800Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.800Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+      "name": "변진섭",
+      "identityVersion": "2026-10-12T14:24:09.149204+00:00",
+      "key": "35b9626ff06bba8f483d2b0943bacbcb2636d045bd28acb5981efc99ea0e183a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:11.129Z",
+          "waitingSince": "2026-10-19T15:00:11.129Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.129Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:11.180Z",
+          "waitingSince": "2026-10-19T15:00:11.180Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.180Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:11.223Z",
+          "waitingSince": "2026-10-19T15:00:11.223Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.223Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:25.837Z",
+          "waitingSince": "2026-10-20T15:56:25.837Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.837Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.875Z",
+          "waitingSince": "2026-10-20T15:56:25.875Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.875Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:25.912Z",
+          "waitingSince": "2026-10-20T15:56:25.912Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.912Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+      "name": "심규선",
+      "identityVersion": "2026-10-14T19:24:49.232495+00:00",
+      "key": "2986f753dd7e209a476a210315fe564e275461f4f16a8f532924b371fda8c721",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (Korean singer-songwriter) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:11.267Z",
+          "waitingSince": "2026-10-19T15:00:11.267Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.267Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:11.308Z",
+          "waitingSince": "2026-10-19T15:00:11.308Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.308Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:11.348Z",
+          "waitingSince": "2026-10-19T15:00:11.348Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.348Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:25.952Z",
+          "waitingSince": "2026-10-20T15:56:25.952Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.952Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:25.989Z",
+          "waitingSince": "2026-10-20T15:56:25.989Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:25.989Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.028Z",
+          "waitingSince": "2026-10-20T15:56:26.028Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.028Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+      "name": "안다은",
+      "identityVersion": "2026-10-14T15:10:08.930152+00:00",
+      "key": "8d8060d0349d7198752d11e8cec67f5d3e97c0944a4f1581f60944046072383b",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:11.520Z",
+          "waitingSince": "2026-10-19T15:00:11.520Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.520Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:11.557Z",
+          "waitingSince": "2026-10-19T15:00:11.557Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.557Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:11.604Z",
+          "waitingSince": "2026-10-19T15:00:11.604Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.604Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:26.065Z",
+          "waitingSince": "2026-10-20T15:56:26.065Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.065Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.109Z",
+          "waitingSince": "2026-10-20T15:56:26.109Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.109Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.147Z",
+          "waitingSince": "2026-10-20T15:56:26.147Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.147Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+      "name": "양다일",
+      "identityVersion": "2026-10-12T14:24:09.149229+00:00",
+      "key": "17301b2ca3ef243dd9fd1156f5656b4968f9440c2dbe338b6f649f0f1c6730f5",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:11.642Z",
+          "waitingSince": "2026-10-19T15:00:11.642Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.642Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:11.681Z",
+          "waitingSince": "2026-10-19T15:00:11.681Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.681Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:11.722Z",
+          "waitingSince": "2026-10-19T15:00:11.722Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.722Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:26.184Z",
+          "waitingSince": "2026-10-20T15:56:26.184Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.184Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.220Z",
+          "waitingSince": "2026-10-20T15:56:26.220Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.220Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.258Z",
+          "waitingSince": "2026-10-20T15:56:26.258Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.258Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "92a5e91a-3527-418b-b804-309bada7a55c",
+      "name": "우수현",
+      "identityVersion": "2026-10-15T07:26:59.692357+00:00",
+      "key": "05c6f669072e1bbda3484a3ad3932b2808e113354f56972ae17bc0956ba0a48d",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (South Korean singer-songwriter) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:11.758Z",
+          "waitingSince": "2026-10-19T15:00:11.758Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.758Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:11.800Z",
+          "waitingSince": "2026-10-19T15:00:11.800Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.800Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:11.836Z",
+          "waitingSince": "2026-10-19T15:00:11.836Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:11.836Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:26.296Z",
+          "waitingSince": "2026-10-20T15:56:26.296Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.296Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.336Z",
+          "waitingSince": "2026-10-20T15:56:26.336Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.336Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.372Z",
+          "waitingSince": "2026-10-20T15:56:26.372Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.372Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "c886c37a-7c62-4494-8a29-a198f0d5da03",
+      "name": "윤종신",
+      "identityVersion": "2026-10-12T14:24:09.149305+00:00",
+      "key": "a7a26358cf37728f8769da7ba7f6e4339844e2b4989730f46d3fbe65a1bd7cb4",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.005Z",
+          "waitingSince": "2026-10-19T15:00:12.005Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.005Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.042Z",
+          "waitingSince": "2026-10-19T15:00:12.042Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.042Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.087Z",
+          "waitingSince": "2026-10-19T15:00:12.087Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.087Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:26.414Z",
+          "waitingSince": "2026-10-20T15:56:26.414Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.414Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.457Z",
+          "waitingSince": "2026-10-20T15:56:26.457Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.457Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.497Z",
+          "waitingSince": "2026-10-20T15:56:26.497Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.497Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+      "name": "이기환",
+      "identityVersion": "2026-10-15T01:30:28.907801+00:00",
+      "key": "4a23122a0e9b0a23436c25350a7788fcbfbb883b90779d27b75c3955f0a0b70a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (composer, KIPLE) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.131Z",
+          "waitingSince": "2026-10-19T15:00:12.131Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.131Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.171Z",
+          "waitingSince": "2026-10-19T15:00:12.171Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.171Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.214Z",
+          "waitingSince": "2026-10-19T15:00:12.214Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.214Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:26.533Z",
+          "waitingSince": "2026-10-20T15:56:26.533Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.533Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.572Z",
+          "waitingSince": "2026-10-20T15:56:26.572Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.572Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.611Z",
+          "waitingSince": "2026-10-20T15:56:26.611Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.611Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+      "name": "이동민",
+      "identityVersion": "2026-10-15T07:26:59.695783+00:00",
+      "key": "9129615ef7bf84a7b3d9e745a46373f847c00242c187c20ec8e52f2d06d5ce3d",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.260Z",
+          "waitingSince": "2026-10-19T15:00:12.260Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.260Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.302Z",
+          "waitingSince": "2026-10-19T15:00:12.302Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.302Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.352Z",
+          "waitingSince": "2026-10-19T15:00:12.352Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.352Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:26.655Z",
+          "waitingSince": "2026-10-20T15:56:26.655Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.655Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.692Z",
+          "waitingSince": "2026-10-20T15:56:26.692Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.692Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.730Z",
+          "waitingSince": "2026-10-20T15:56:26.730Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.730Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+      "name": "이루다",
+      "identityVersion": "2026-10-12T14:24:09.148752+00:00",
+      "key": "33f5ec8aff3da9a6f600ec86f1b7b8d6ff0566f343584a03eebc4d57952d30c8",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.391Z",
+          "waitingSince": "2026-10-19T15:00:12.391Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.391Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.430Z",
+          "waitingSince": "2026-10-19T15:00:12.430Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.430Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.465Z",
+          "waitingSince": "2026-10-19T15:00:12.465Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.465Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "검색에서 서로 다른 밴드·무용가·솔로 신원이 발견됐다. 대상 MBID와 실제 작품을 연결할 공식 신원 확인이 더 필요하다.",
+          "checkedAt": "2026-10-20T15:56:26.769Z",
+          "waitingSince": "2026-10-20T15:56:26.769Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.769Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.812Z",
+          "waitingSince": "2026-10-20T15:56:26.812Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.812Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.849Z",
+          "waitingSince": "2026-10-20T15:56:26.849Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.849Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "e658d18feb93a617ae2c1b509fdf476a035d75cc937d68b3d15ce4cf785ad464",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+      "name": "이설아",
+      "identityVersion": "2026-10-14T23:14:17.350309+00:00",
+      "key": "6c9c07fd3975ae52b5b9f6706bb5857f8f4718af56ec9fe306a4f7d21386b47b",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (singer-songwriter) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.500Z",
+          "waitingSince": "2026-10-19T15:00:12.500Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.500Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.548Z",
+          "waitingSince": "2026-10-19T15:00:12.548Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.548Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.594Z",
+          "waitingSince": "2026-10-19T15:00:12.594Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.594Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "언어도단의 공식 유통 음반 자료에서 락/가요·제작/보컬 크레딧을 확인했다. 승인 요건 전체에 필요한 정확한 외부 신원·국가 대조가 아직 미완성이다.",
+          "checkedAt": "2026-10-20T15:56:26.886Z",
+          "waitingSince": "2026-10-20T15:56:26.886Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.886Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:26.923Z",
+          "waitingSince": "2026-10-20T15:56:26.923Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.923Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:26.965Z",
+          "waitingSince": "2026-10-20T15:56:26.965Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:26.965Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "af1f6b521dd1af8b69a28f8410b8cd2e569aad08185a85532de864f88b0c71a9",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+      "name": "이연재",
+      "identityVersion": "2026-10-15T21:28:34.358536+00:00",
+      "key": "1fd57caf929ad60b5f5cc6cd4799b53ace1ee3bab3f3e88c49caca91a9ba6654",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (brass) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.645Z",
+          "waitingSince": "2026-10-19T15:00:12.645Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.645Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.685Z",
+          "waitingSince": "2026-10-19T15:00:12.685Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.685Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.724Z",
+          "waitingSince": "2026-10-19T15:00:12.724Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.724Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.002Z",
+          "waitingSince": "2026-10-20T15:56:27.002Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.002Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.039Z",
+          "waitingSince": "2026-10-20T15:56:27.039Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.039Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.076Z",
+          "waitingSince": "2026-10-20T15:56:27.076Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.076Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "79ff01b9-d43c-4e09-aff1-21b5e1200ad8",
+      "name": "이주헌",
+      "identityVersion": "2026-10-15T18:19:45.51196+00:00",
+      "key": "15f4580e51f9052873ae09b91df211bdb075932b4aea1216d04c32d72cd28649",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (KR producer, The Muze) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:12.895Z",
+          "waitingSince": "2026-10-19T15:00:12.895Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.895Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:12.933Z",
+          "waitingSince": "2026-10-19T15:00:12.933Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.933Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:12.974Z",
+          "waitingSince": "2026-10-19T15:00:12.974Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:12.974Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.113Z",
+          "waitingSince": "2026-10-20T15:56:27.113Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.113Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.154Z",
+          "waitingSince": "2026-10-20T15:56:27.154Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.154Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.192Z",
+          "waitingSince": "2026-10-20T15:56:27.192Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.192Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+      "name": "전상근",
+      "identityVersion": "2026-10-14T19:24:49.212607+00:00",
+      "key": "e6ae6417beccaa6f664b3d55b85bd7afe1951b733415b6f7a844b2d9c11360fe",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:13.133Z",
+          "waitingSince": "2026-10-19T15:00:13.133Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.133Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:13.171Z",
+          "waitingSince": "2026-10-19T15:00:13.171Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.171Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:13.207Z",
+          "waitingSince": "2026-10-19T15:00:13.207Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.207Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.230Z",
+          "waitingSince": "2026-10-20T15:56:27.230Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.230Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.267Z",
+          "waitingSince": "2026-10-20T15:56:27.267Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.267Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.310Z",
+          "waitingSince": "2026-10-20T15:56:27.310Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.310Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "90dcb73c-7d12-4524-b48f-70c3bdb0c4fd",
+      "name": "정동환",
+      "identityVersion": "2026-10-12T14:24:09.149216+00:00",
+      "key": "cf06f8dcdf8c821426c60f9d41905ad6038d2ed3e44355ca6ba596484c394f60",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (keyboardist) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:13.245Z",
+          "waitingSince": "2026-10-19T15:00:13.245Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.245Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:13.282Z",
+          "waitingSince": "2026-10-19T15:00:13.282Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.282Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:13.318Z",
+          "waitingSince": "2026-10-19T15:00:13.318Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.318Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.349Z",
+          "waitingSince": "2026-10-20T15:56:27.349Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.349Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.386Z",
+          "waitingSince": "2026-10-20T15:56:27.386Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.386Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.423Z",
+          "waitingSince": "2026-10-20T15:56:27.423Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.423Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+      "name": "최규민",
+      "identityVersion": "2026-10-15T07:26:59.680884+00:00",
+      "key": "528916e00601a7563775842e99cfd92ad58290c61cca3f1ecbdd35d545f6b43a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (trumpeter) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:13.478Z",
+          "waitingSince": "2026-10-19T15:00:13.478Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.478Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:13.514Z",
+          "waitingSince": "2026-10-19T15:00:13.514Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.514Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:13.557Z",
+          "waitingSince": "2026-10-19T15:00:13.557Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.557Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.465Z",
+          "waitingSince": "2026-10-20T15:56:27.465Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.465Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.502Z",
+          "waitingSince": "2026-10-20T15:56:27.502Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.502Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.540Z",
+          "waitingSince": "2026-10-20T15:56:27.540Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.540Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "2e93c4ed-2a32-43d0-9b29-2682b41213ea",
+      "name": "효정",
+      "identityVersion": "2026-10-12T14:24:09.148807+00:00",
+      "key": "64dda7d218988253ccaafcb07d62bebd95438b563c8de96b30c2490087a83766",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (OH MY GIRL) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:13.726Z",
+          "waitingSince": "2026-10-19T15:00:13.726Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.726Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:13.764Z",
+          "waitingSince": "2026-10-19T15:00:13.764Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.764Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:13.800Z",
+          "waitingSince": "2026-10-19T15:00:13.800Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.800Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.578Z",
+          "waitingSince": "2026-10-20T15:56:27.578Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.578Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.615Z",
+          "waitingSince": "2026-10-20T15:56:27.615Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.615Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.656Z",
+          "waitingSince": "2026-10-20T15:56:27.656Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.656Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "3efe2cd9-2fb1-414f-9cb7-6ac8a7bbe128",
+      "name": "ドレスコード",
+      "identityVersion": "2026-10-13T08:19:01.238714+00:00",
+      "key": "e915e2d6d5ec83203135b41ebf7388c685667cdefa9aa4c8855953f6173b1fd4",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "드레스コード MB 멤버 신원과 ドレスコーズ/MyDresscode 검색 결과가 서로 다르다. 다른 팀의 록/J-pop 근거를 전용하지 않고 해당 팀의 공식 출처 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:13.837Z",
+          "waitingSince": "2026-10-19T15:00:13.837Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.837Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:13.875Z",
+          "waitingSince": "2026-10-19T15:00:13.875Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.875Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:13.918Z",
+          "waitingSince": "2026-10-19T15:00:13.918Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.918Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "일본어 후보 검색에서도 ドレスコーズ·MyDresscode·동명 곡 등이 혼재했다. 대상 MBID와 다른 이름을 동일 아티스트로 연결하지 않고 추가 공식 신원 조사를 남긴다.",
+          "checkedAt": "2026-10-20T15:56:27.695Z",
+          "waitingSince": "2026-10-20T15:56:27.695Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.695Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.733Z",
+          "waitingSince": "2026-10-20T15:56:27.733Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.733Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.770Z",
+          "waitingSince": "2026-10-20T15:56:27.770Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.770Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "90c799377d846f3918445ab0e73df7f06f1ee624ca2e0a5a90485ee86f7919e8",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+      "name": "王菲",
+      "identityVersion": "2026-10-13T08:18:50.504389+00:00",
+      "key": "17f3b7079495473b4897ceb704110c665008eb7e6b4a83a93acd22c0d9e386b4",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "王菲/Faye Wong 신원은 대조했지만 실제 록/J-pop 활동의 공식 음반 근거 확인이 미완성이다. 국적·팝 표지만으로 제외하지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:13.956Z",
+          "waitingSince": "2026-10-19T15:00:13.956Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.956Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:13.992Z",
+          "waitingSince": "2026-10-19T15:00:13.992Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:13.992Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.029Z",
+          "waitingSince": "2026-10-19T15:00:14.029Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.029Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.813Z",
+          "waitingSince": "2026-10-20T15:56:27.813Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.813Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.852Z",
+          "waitingSince": "2026-10-20T15:56:27.852Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.852Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:27.890Z",
+          "waitingSince": "2026-10-20T15:56:27.890Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.890Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "c41979bf-5bca-44c8-bea6-874d472fa581",
+      "name": "강민경",
+      "identityVersion": "2026-10-16T16:39:22.94667+00:00",
+      "key": "8809be3d657c3235a2fac3d9709a031cbc8f34df0aadddb58034093f5f873fb7",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (Davichi) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:14.222Z",
+          "waitingSince": "2026-10-19T15:00:14.222Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.222Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.264Z",
+          "waitingSince": "2026-10-19T15:00:14.264Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.264Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.304Z",
+          "waitingSince": "2026-10-19T15:00:14.304Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.304Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:27.929Z",
+          "waitingSince": "2026-10-20T15:56:27.929Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.929Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:27.983Z",
+          "waitingSince": "2026-10-20T15:56:27.983Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:27.983Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.021Z",
+          "waitingSince": "2026-10-20T15:56:28.021Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.021Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "17a01f0f-2a9b-43d9-b812-4e74848dcd20",
+      "name": "강혜미",
+      "identityVersion": "2026-10-17T11:36:58.67961+00:00",
+      "key": "1c15c85fb5395670f753a77270a1321ee2c04a7e87d9f6be10dd521e083758ae",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:14.342Z",
+          "waitingSince": "2026-10-19T15:00:14.342Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.342Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.380Z",
+          "waitingSince": "2026-10-19T15:00:14.380Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.380Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.418Z",
+          "waitingSince": "2026-10-19T15:00:14.418Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.418Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:28.059Z",
+          "waitingSince": "2026-10-20T15:56:28.059Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.059Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.097Z",
+          "waitingSince": "2026-10-20T15:56:28.097Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.097Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.135Z",
+          "waitingSince": "2026-10-20T15:56:28.135Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.135Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "c94dfe45-e1c4-4b0a-ad09-779847b5e42c",
+      "name": "곽푸른하늘",
+      "identityVersion": "2026-10-16T22:53:23.310525+00:00",
+      "key": "61d62b06a66b085baf015e9521a6a33e2e24f3bffbf0d187a7ebb083b696ab00",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:14.463Z",
+          "waitingSince": "2026-10-19T15:00:14.463Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.463Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.501Z",
+          "waitingSince": "2026-10-19T15:00:14.501Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.501Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.539Z",
+          "waitingSince": "2026-10-19T15:00:14.539Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.539Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:28.187Z",
+          "waitingSince": "2026-10-20T15:56:28.187Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.187Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.234Z",
+          "waitingSince": "2026-10-20T15:56:28.234Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.234Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.291Z",
+          "waitingSince": "2026-10-20T15:56:28.291Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.291Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "8901374c-104e-4aff-b920-3f0974648314",
+      "name": "김기태",
+      "identityVersion": "2026-10-17T11:36:58.696605+00:00",
+      "key": "ac2fa3b9a47dfc81b8f7a2fbe60ca27ced9a72553112e71ba6ccc29008cf9ace",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (Korean singer) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:14.588Z",
+          "waitingSince": "2026-10-19T15:00:14.588Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.588Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.630Z",
+          "waitingSince": "2026-10-19T15:00:14.630Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.630Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.668Z",
+          "waitingSince": "2026-10-19T15:00:14.668Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.668Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:28.339Z",
+          "waitingSince": "2026-10-20T15:56:28.339Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.339Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.377Z",
+          "waitingSince": "2026-10-20T15:56:28.377Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.377Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.415Z",
+          "waitingSince": "2026-10-20T15:56:28.415Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.415Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "884697bf-3242-445d-963a-5834a3281775",
+      "name": "김리다",
+      "identityVersion": "2026-10-16T22:53:23.296571+00:00",
+      "key": "fdf0b15d782ecd4d8d4ba3f1edfec87c4580cfef290b2a27f0b76c34b0a0573a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (Hwanho) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:14.709Z",
+          "waitingSince": "2026-10-19T15:00:14.709Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.709Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.751Z",
+          "waitingSince": "2026-10-19T15:00:14.751Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.751Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "API_CANDIDATE_RESOLVED_OFFICIAL_FORWARD_LINK_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.794Z",
+          "waitingSince": "2026-10-19T15:00:14.794Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.794Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "멜론 본인 인터뷰에서 화노 기타·리더 신원을, Action 음반에서 보컬·기타 크레딧과 팝 락 활동을 확인했다. 동명 솔로와 구분해 개별 MBID와 본인 활동 범위를 추가 대조해야 한다.",
+          "checkedAt": "2026-10-20T15:56:28.458Z",
+          "waitingSince": "2026-10-20T15:56:28.458Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.458Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.496Z",
+          "waitingSince": "2026-10-20T15:56:28.496Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.496Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.534Z",
+          "waitingSince": "2026-10-20T15:56:28.534Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.534Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "ff654e57f6edde6c6759f58fafa9a0d3d43382df1891a6288f77fd437f9580b1",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "e0a8a0c9-b150-4e69-a1b4-6acff2610bc1",
+      "name": "김수찬",
+      "identityVersion": "2026-10-16T22:53:23.306904+00:00",
+      "key": "845ef43b5c18aaa1cc446d7acd37effa525f57436bbf0609344725c87746cd5a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "이전 소속사 접근 실패 후 음반사 제공 수찬노래방 후보 등 대체 출처를 찾았지만 공식 원문과 전체 활동 대조가 미완성이다. 이전 실패를 새 완료로 세지 않는다.",
+          "checkedAt": "2026-10-19T15:00:14.833Z",
+          "waitingSince": "2026-10-19T15:00:14.833Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.833Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.871Z",
+          "waitingSince": "2026-10-19T15:00:14.871Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.871Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:14.909Z",
+          "waitingSince": "2026-10-19T15:00:14.909Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.909Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:28.572Z",
+          "waitingSince": "2026-10-20T15:56:28.572Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.572Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.610Z",
+          "waitingSince": "2026-10-20T15:56:28.610Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.610Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.652Z",
+          "waitingSince": "2026-10-20T15:56:28.652Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.652Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "40f19eb7-0fe5-448c-a38e-3d6e2311330a",
+      "name": "김윤성",
+      "identityVersion": "2026-10-16T22:53:23.26836+00:00",
+      "key": "43056939902c511acea125f62cc1fad8076f4d84b38cba861a22202f6ca94700",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:14.947Z",
+          "waitingSince": "2026-10-19T15:00:14.947Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.947Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:14.998Z",
+          "waitingSince": "2026-10-19T15:00:14.998Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:14.998Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.039Z",
+          "waitingSince": "2026-10-19T15:00:15.039Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.039Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "화노 Action 음반 편곡 크레딧에서 이름을 확인했다. 이름 일치·작업 참여만으로 본인 록 솔로 신원이나 장르 승인을 확정하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.690Z",
+          "waitingSince": "2026-10-20T15:56:28.690Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.690Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.729Z",
+          "waitingSince": "2026-10-20T15:56:28.729Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.729Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.766Z",
+          "waitingSince": "2026-10-20T15:56:28.766Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.766Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7159cab9a78ed723eabfd879d46268964f9cc6104901c6df984ddcac52d5130f",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "aeafb3eb-9427-4378-9fe1-6753f011df38",
+      "name": "박서준",
+      "identityVersion": "2026-10-16T22:53:23.30398+00:00",
+      "key": "fe446de9329fe6af4cb2c561d07f83ede7c2e0915d948e8005c54c9df46f8294",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:15.253Z",
+          "waitingSince": "2026-10-19T15:00:15.253Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.253Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:15.292Z",
+          "waitingSince": "2026-10-19T15:00:15.292Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.292Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.330Z",
+          "waitingSince": "2026-10-19T15:00:15.330Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.330Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:28.810Z",
+          "waitingSince": "2026-10-20T15:56:28.810Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.810Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.848Z",
+          "waitingSince": "2026-10-20T15:56:28.848Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.848Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:28.886Z",
+          "waitingSince": "2026-10-20T15:56:28.886Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.886Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+      "name": "박승화",
+      "identityVersion": "2026-10-16T16:39:22.929322+00:00",
+      "key": "802c3d6ef4af0ca08398bf6bc611ff341cecd987dbfa81013a1e1d40756ff06d",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:15.369Z",
+          "waitingSince": "2026-10-19T15:00:15.369Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.369Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:15.436Z",
+          "waitingSince": "2026-10-19T15:00:15.436Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.436Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.479Z",
+          "waitingSince": "2026-10-19T15:00:15.479Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.479Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:28.929Z",
+          "waitingSince": "2026-10-20T15:56:28.929Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.929Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:28.971Z",
+          "waitingSince": "2026-10-20T15:56:28.971Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:28.971Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:29.009Z",
+          "waitingSince": "2026-10-20T15:56:29.009Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.009Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+      "name": "박학기",
+      "identityVersion": "2026-10-17T06:57:47.359495+00:00",
+      "key": "87e1dcdd9bd3bbeba66c3660d6f8386a3e641ec67f3405ce48318f62f7fd944a",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:15.517Z",
+          "waitingSince": "2026-10-19T15:00:15.517Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.517Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:15.555Z",
+          "waitingSince": "2026-10-19T15:00:15.555Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.555Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.595Z",
+          "waitingSince": "2026-10-19T15:00:15.595Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.595Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:29.048Z",
+          "waitingSince": "2026-10-20T15:56:29.048Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.048Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:29.091Z",
+          "waitingSince": "2026-10-20T15:56:29.091Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.091Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:29.131Z",
+          "waitingSince": "2026-10-20T15:56:29.131Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.131Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "ce20750c-76b2-43e9-b915-4295022ecb0e",
+      "name": "유준열",
+      "identityVersion": "2026-10-16T16:39:22.913584+00:00",
+      "key": "edbbf9af3b4549629a0b219ef414e739f6e4b102778b386c8d7805c1427c8205",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:15.643Z",
+          "waitingSince": "2026-10-19T15:00:15.643Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.643Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:15.687Z",
+          "waitingSince": "2026-10-19T15:00:15.687Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.687Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.741Z",
+          "waitingSince": "2026-10-19T15:00:15.741Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.741Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 후보 검색은 수행했지만 정확한 외부 신원과 실제 J-pop/록 활동을 연결하는 공식 원문 근거 보완이 끝나지 않았다. 검색 스니펫·이전 미조사를 검수 완료로 세지 않고 기존 상태를 보존한다.",
+          "checkedAt": "2026-10-20T15:56:29.171Z",
+          "waitingSince": "2026-10-20T15:56:29.171Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.171Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:29.228Z",
+          "waitingSince": "2026-10-20T15:56:29.228Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.228Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:29.266Z",
+          "waitingSince": "2026-10-20T15:56:29.266Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.266Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "7b1a2bc5ac4da12a64804a7dbc83f8013fbe006839b460f1b0e9939705d6f704",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "ef5d80b0-0e00-405e-a772-988be5c8faa7",
+      "name": "유환주",
+      "identityVersion": "2026-10-16T22:53:23.288158+00:00",
+      "key": "4e7039511908559418d7b2f2d2213391b0c6e962eeed5467323f016456a2bc92",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (Hwanho) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:15.788Z",
+          "waitingSince": "2026-10-19T15:00:15.788Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.788Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:15.842Z",
+          "waitingSince": "2026-10-19T15:00:15.842Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.842Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.881Z",
+          "waitingSince": "2026-10-19T15:00:15.881Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.881Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "화노 본인 인터뷰의 메인보컬·기타와 Action 음반 보컬/편곡 크레딧을 확인했다. 개별 외부 신원과 승인 요건을 더 보완해야 한다.",
+          "checkedAt": "2026-10-20T15:56:29.310Z",
+          "waitingSince": "2026-10-20T15:56:29.310Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.310Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:29.349Z",
+          "waitingSince": "2026-10-20T15:56:29.349Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.349Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:29.387Z",
+          "waitingSince": "2026-10-20T15:56:29.387Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.387Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "848124c8611a7805f5896480bbca93d4de5a01cd1eb2ce100f0f52a48f102e0a",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    },
+    {
+      "bandId": "5be986bb-68bb-4f56-8c14-f3493aaab349",
+      "name": "이강산",
+      "identityVersion": "2026-10-16T22:53:23.298307+00:00",
+      "key": "81c0ccb9eb9589bc3144beb5ce0bc432855ce5a983fb1c7cb0870e8cea5e64c2",
+      "priority": 1,
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 신원 대조 (Hwanho) 후 공식 홈페이지/음반 대체 출처를 조사했으나 정확한 신원과 실제 J-pop/록 활동을 연결하는 근거가 미완성이다. 완료·제외·보류로 세지 않고 추가 조사 대기.",
+          "checkedAt": "2026-10-19T15:00:15.919Z",
+          "waitingSince": "2026-10-19T15:00:15.919Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.919Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_NOT_COMPLETE_NO_CURATION_CHANGE",
+          "checkedAt": "2026-10-19T15:00:15.957Z",
+          "waitingSince": "2026-10-19T15:00:15.957Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.957Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_SOURCE_NOT_CONFIRMED",
+          "checkedAt": "2026-10-19T15:00:15.996Z",
+          "waitingSince": "2026-10-19T15:00:15.996Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T15:00:15.996Z",
+          "validUntil": null
+        }
+      },
+      "recorded": {
+        "research": {
+          "status": "deferred",
+          "reason": "화노 Action 음반 드럼·편곡 크레딧 및 팝 락 활동을 확인했으나 동명 작곡가와 구별되는 개별 MBID 연결을 추가 대조해야 한다.",
+          "checkedAt": "2026-10-20T15:56:29.425Z",
+          "waitingSince": "2026-10-20T15:56:29.425Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.425Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_NOT_FULLY_VERIFIED: 조사·국가·분류·외부 신원 요건이 모두 확인되지 않아 적용하지 않았다. 서비스 인증은 정상이며 권한 대기나 관리자 판단 예외로 분류하지 않는다.",
+          "checkedAt": "2026-10-20T15:56:29.469Z",
+          "waitingSince": "2026-10-20T15:56:29.469Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.469Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_FORWARD_CHANNEL_LINK_NOT_CONFIRMED: 기존 후보를 보존했다. 이름 검색이나 음반의 공통 레이블 채널을 공식 채널로 확정하지 않으며 추가 API 요청·저장은 하지 않았다.",
+          "checkedAt": "2026-10-20T15:56:29.509Z",
+          "waitingSince": "2026-10-20T15:56:29.509Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-21T15:56:29.509Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "research": "a6afae7ad2288239d604b1f229b79c4c5649c72fad5b7273cdf16ccd092dbed4",
+        "approval": "3ba142e10f886601b1651e4504d92a169d46103aa540358f721376635d26eac8",
+        "channels": "769393b19270489147b653520ba244617bc24c69a6a95e2377f31c7ea569591b"
+      }
+    }
+  ],
+  "finishedAt": "2026-10-20T15:56:29.552Z",
+  "selected": 40,
+  "remaining": 493,
+  "authorityWaiting": 66,
+  "executionRoot": "C:\\Users\\yeonguk\\.codex\\worktrees\\artist-review-automation\\concert-finder",
+  "reconnection": {
+    "originalRoot": "C:/Users/yeonguk/Desktop/Coding/project/concert-finder",
+    "originalBranch": "codex/feat-encore-ui-pr",
+    "sourceCodeBranch": "codex/fix-scheduled-artist-approval",
+    "originalCheckpointRevision": 329,
+    "queueMovedWithoutContentChange": true,
+    "environmentLoadedKeys": [
+      "SUPABASE_URL",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "YOUTUBE_API_KEY"
+    ],
+    "validation": {
+      "queueTestsPassed": 19,
+      "catalogRead": 623,
+      "serviceApprovalAndReceipt": true,
+      "channelReadback": true
+    }
+  },
+  "summary": {
+    "selected": 40,
+    "newCompletedResearch": 2,
+    "classificationApprovalApplied": 2,
+    "officialChannelAndPhotoApplied": 1,
+    "incompleteResearch": 38,
+    "approvalDeferred": 38,
+    "channelsDeferred": 39,
+    "youtubeApiCalls": 2,
+    "catalogComplete": false,
+    "initialChannelImportFailureRecovered": true
+  },
+  "discovery": [
+    {
+      "name": "강건후",
+      "query": "\"강건후\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.ichart.kr/artist/30248",
+        "https://www.youtube.com/watch?v=Oo7v6tMiv6Q",
+        "https://www.youtube.com/watch?v=CGOLKBRv0MI",
+        "https://poclanos.com/genre/rock/page/117/",
+        "https://m.yes24.com/Goods/Detail/97639272"
+      ]
+    },
+    {
+      "name": "김경태",
+      "query": "\"김경태\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.youtube.com/watch?v=y7psVqpfkak",
+        "https://www.youtube.com/watch?v=fI0j6nJO4F8",
+        "https://www.cinematheque.co.kr/filmmaker/16888505",
+        "https://www.theteams.kr/profile/197351",
+        "https://www.theteams.kr/profile/178277"
+      ]
+    },
+    {
+      "name": "김수희",
+      "query": "\"김수희\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://artistxstage.co.kr/roster/kim-soohee",
+        "https://musicking.co.kr/kimsoohee/",
+        "https://artistxstage.co.kr/lineup",
+        "https://www.melon.com/artist/detail.htm?artistId=1107",
+        "https://www.soundleader.co.kr/ContV2/msheet.php?idx=125784&pap=main_msheetView"
+      ]
+    },
+    {
+      "name": "김장훈",
+      "query": "\"김장훈\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://musicking.co.kr/kimjanghoon/",
+        "https://soridata.com/ko/artists/Kim-Janghoon.html",
+        "https://www.youtube.com/watch?v=01d16VWISGk",
+        "https://www.youtube.com/watch?v=GY9kUsb-IfY",
+        "https://art.wsi.ac.kr/dept1/art/images/Brochure2026.pdf"
+      ]
+    },
+    {
+      "name": "김조한",
+      "query": "\"김조한\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.melon.com/artist/detail.htm?artistId=1574",
+        "https://musicking.co.kr/kimjohan/",
+        "https://www.youtube.com/watch?v=nV9TUVZHAOg",
+        "https://www.melon.com/artist/detail.htm?artistId=1654",
+        "https://seore.org/w/%EA%B9%80%EC%A1%B0%ED%95%9C"
+      ]
+    },
+    {
+      "name": "김종국",
+      "query": "\"김종국\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.youtube.com/watch?v=eBSUlcQzBEI",
+        "https://www.youtube.com/watch?v=z1aDltBlBxw",
+        "https://soridata.com/ko/artists/Kim-Jongkook.html",
+        "https://www.mcst.go.kr/servlets/eduport/front/upload/UplDownloadFile?pFileName=%EC%9B%94%EA%B0%84+%EC%BD%98%ED%85%90%EC%B8%A0+%EC%8B%9C%EC%9E%A5%EB%8F%99%ED%96%A5+12%EC%9B%94%ED%98%B8.pdf&pPath=0408010000&pRealName=1356679753595.pdf",
+        "https://kpop.tk.ac.kr/bbs/board.php?bo_table=professor"
+      ]
+    },
+    {
+      "name": "다양성",
+      "query": "\"다양성\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://indiebio.me/map/artist/dayangseong",
+        "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report%28KO%29.pdf",
+        "https://d.namu.moe/w/%EB%8B%A4%EC%96%91%EC%84%B1%28%EB%B0%B4%EB%93%9C%29",
+        "https://datalab.visitkorea.or.kr/common/board/Download.do?bcIdx=309196&cbIdx=1129&streFileNm=8cb650d8-5fe5-4854-9750-f5f0304ba592.pdf",
+        "https://welcon.kocca.kr/cmm/fms/FileDown.do?atchFileId=FILE_d4432f26-b532-4aae-b979-c95a7c81912f&fileSn=1&preview=Y"
+      ]
+    },
+    {
+      "name": "박성현",
+      "query": "\"박성현\" 음악 아티스트 공식 프로필 록",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.filmmakers.co.kr/%40werqkrtjdrhks",
+        "https://music.bugs.co.kr/artist/20044477/tracks",
+        "https://www.filmmakers.co.kr/actorProfiles/8425985",
+        "https://www.youtube.com/watch?v=aPN9Eg725s0",
+        "https://www.filmmakers.co.kr/actorProfiles/7276504"
+      ]
+    },
+    {
+      "name": "변진섭",
+      "query": "\"변진섭\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://artistxstage.co.kr/roster/byun-jinsub",
+        "https://m.yes24.com/author/6507",
+        "https://www.soundleader.co.kr/ContV2/msheet.php?idx=77903&pap=main_msheetView",
+        "https://d.namu.moe/w/%EB%B3%80%EC%A7%84%EC%84%AD",
+        "https://www.illustkorea.or.kr/data/file/IL_PDS/1949101446_z2qKHefg_c50e3da9a23c7584993b9af60ff94b52ede72f70.pdf"
+      ]
+    },
+    {
+      "name": "심규선",
+      "query": "\"심규선\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://m.yes24.com/author/144983",
+        "https://www.yes24.com/Product/Goods/122850384",
+        "https://www.sejongpac.or.kr/portal/bbs/B0000049/view.do?menuNo=200440&nttId=44706&pageIndex=",
+        "https://www.yes24.com/product/goods/104405731",
+        "https://musicking.co.kr/lucia/"
+      ]
+    },
+    {
+      "name": "안다은",
+      "query": "\"안다은\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://music.bugs.co.kr/artist/80184001",
+        "https://music.bugs.co.kr/artist/80184001?wl_ref=list_ar_01_ar",
+        "https://music.bugs.co.kr/artist/80184001?wl_ref=S_ab_01_02",
+        "https://www.genie.co.kr/detail/albumInfo?axnm=82542097",
+        "https://genie.co.kr/detail/albumInfo?axnm=82629952&mobile-app=true&theme=false%29"
+      ]
+    },
+    {
+      "name": "양다일",
+      "query": "\"양다일\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.ichart.kr/artist/244",
+        "https://www.stagepick.co.kr/artists/detail/WE195eT7PT2mKpjt",
+        "https://music.bugs.co.kr/album/20082727",
+        "https://music.bugs.co.kr/artist/80110772?wl_ref=list_mv_03",
+        "https://www.kcopa.or.kr/download.do?uuid=7356bb3c-47f7-4196-a795-4a846a166ac3.pdf"
+      ]
+    },
+    {
+      "name": "우수현",
+      "query": "\"우수현\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.genie.co.kr/detail/albumInfo?axnm=88049442",
+        "https://www.yes24.com/product/author/543958",
+        "https://music.bugs.co.kr/track/33313322",
+        "https://www.seoularts.ac.kr/web/cop/bbsWeb/selectBoardDetail.do?bbsId=BBSMSTR_000000000652&nttId=226861",
+        "https://musicbrainz.org/artist/9176781a-74ef-4617-ae0a-7c713b287554/aliases"
+      ]
+    },
+    {
+      "name": "윤종신",
+      "query": "\"윤종신\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.soundleader.co.kr/ContV2/msheet.php?idx=94159&pap=main_msheetView",
+        "https://www.soundleader.co.kr/ContV2/msheet.php?idx=9730&pap=main_msheetView",
+        "https://antennaofficial.imweb.me/232",
+        "https://invest.kiwoom.com/inv/resource/202203/UploadFile_20220307091052000561.pdf",
+        "https://cdn.day1company.io/prod/uploads/202605/145107-2228/-%ED%8C%A8%EC%8A%A4%ED%8A%B8%EC%BA%A0%ED%8D%BC%EC%8A%A4--%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95%EC%86%8C%EA%B0%9C%EC%84%9C-hybe%2C-sm%EC%9D%B4-%EC%84%A0%ED%83%9D%ED%95%9C-%EC%95%84%ED%8B%B0%EC%8A%A4%ED%8A%B8-%EC%88%98%EB%AA%A9%EC%9D%98-%ED%82%A4%EC%B9%98%ED%95%9C-3d-%EA%B7%B8%EB%9E%98%ED%94%BD-%EB%94%94%EC%9E%90%EC%9D%B8%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83.pdf"
+      ]
+    },
+    {
+      "name": "이기환",
+      "query": "\"이기환\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://music.bugs.co.kr/artist/80095641",
+        "https://www.genie.co.kr/detail/artistInfo?xxnm=80839302",
+        "https://www.genie.co.kr/detail/albumInfo?axnm=82998836",
+        "https://www.melon.com/album/detail.htm?albumId=14805905",
+        "https://www.genie.co.kr/detail/albumInfo?axnm=83574618"
+      ]
+    },
+    {
+      "name": "이동민",
+      "query": "\"이동민\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.yes24.com/product/author/365842",
+        "https://www.aladin.co.kr/author/wauthor_product.aspx?AuthorSearch=%402675113",
+        "https://www.genie.co.kr/detail/artistInfo?xxnm=80210528",
+        "https://indistreet.com/artists/idongmin",
+        "https://www.filmmakers.co.kr/actorProfiles/19350404"
+      ]
+    },
+    {
+      "name": "이루다",
+      "query": "\"이루다\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://music.bugs.co.kr/artist/80069182",
+        "https://music.bugs.co.kr/album/20161343?wl_ref=list_ab_01_ar",
+        "https://music.bugs.co.kr/artist/20039091?wl_ref=list_ar_01_ar",
+        "https://music.bugs.co.kr/artist/20082214",
+        "https://www.daangn.com/kr/local-profile/%EC%9D%B4%EB%A3%A8%EB%8B%A4%EC%A0%9C%EB%A9%B4%EC%86%8C-%EB%A3%A8%EC%9B%90%EC%8B%9C%ED%8B%B0%EC%A0%90-ctjmddsszdeh/"
+      ]
+    },
+    {
+      "name": "이설아",
+      "query": "\"이설아\" 공식 아티스트 록 음악",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.genie.co.kr/detail/albumInfo?axnm=86308333",
+        "https://indistreet.com/artists/iseola",
+        "https://www.genie.co.kr/detail/albumInfo?axnm=80602535",
+        "https://music.bugs.co.kr/track/30322079",
+        "https://music.bugs.co.kr/track/30322077?wl_ref=list_tr_08_mab"
+      ]
+    },
+    {
+      "name": "이연재",
+      "query": "\"이연재\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.ichart.kr/artist/15410",
+        "https://www.nowonarts.kr/channels/personal/artists/479",
+        "https://ridibooks.com/author/72650",
+        "https://www.opengallery.co.kr/artist/A1727/",
+        "https://www.theteams.kr/profile/18915"
+      ]
+    },
+    {
+      "name": "이주헌",
+      "query": "\"이주헌\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://music.bugs.co.kr/artist/80001314",
+        "https://namu.moe/w/%EC%9D%B4%EC%A3%BC%ED%97%8C%281994%29",
+        "https://patentimages.storage.googleapis.com/92/ec/a8/4a82d53ff0cec9/KR101113431B1.pdf",
+        "https://k-calc.com/celeb/p/lee-jooheon",
+        "https://www.filmmakers.co.kr/movies/dispKobisView?movieCd=20121454"
+      ]
+    },
+    {
+      "name": "전상근",
+      "query": "\"전상근\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.ichart.kr/artist/206",
+        "https://www.stagepick.co.kr/artists/detail/LnYY5sFepLLLgtej",
+        "https://soridata.com/ko/artists/Jeon-Sang-Keun.html",
+        "https://www.best-mr.com/shop/%EC%A0%84%EC%83%81%EA%B7%BC-%ED%95%98%EB%A3%A8-%EB%81%9D%EC%9D%98-%EB%84%88/",
+        "https://kpop.tk.ac.kr/bbs/board.php?bo_table=professor"
+      ]
+    },
+    {
+      "name": "정동환",
+      "query": "\"정동환\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.stagepick.co.kr/artists/detail/D2YJODPfnZN6YmYK",
+        "https://m.yes24.com/author/348852",
+        "https://soridata.com/ko/artists/jung-dong-hwan.html",
+        "https://www.genie.co.kr/detail/albumInfo?axnm=83068630",
+        "https://music.bugs.co.kr/track/6116070?wl_ref=list_tr_08_ar"
+      ]
+    },
+    {
+      "name": "최규민",
+      "query": "\"최규민\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.filmmakers.co.kr/actorProfiles/29159103?category=282",
+        "https://cging.co.kr/story-team-choigyumeen",
+        "https://www.filmmakers.co.kr/%40cgm645025",
+        "https://cging.co.kr/story-team",
+        "https://www.linkedin.com/in/gyuminericchoi/ko"
+      ]
+    },
+    {
+      "name": "효정",
+      "query": "\"효정\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://d.namu.moe/w/%ED%9A%A8%EC%A0%95",
+        "https://m.namu.moe/w/%ED%9A%A8%EC%A0%95",
+        "https://music.bugs.co.kr/album/4111903",
+        "https://www.namu.moe/w/%ED%9A%A8%EC%A0%95",
+        "https://readonly.wiki/w/%ED%9A%A8%EC%A0%95"
+      ]
+    },
+    {
+      "name": "ドレスコード",
+      "query": "\"ドレスコード\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://baycrews.jp/blog/detail/100005030",
+        "https://kotobank.jp/word/%E3%81%A9%E3%82%8C%E3%81%99%E3%81%93%E3%83%BC%E3%81%A8-2068574",
+        "https://baycrews.jp/item/detail/apstudio/blouson/26020586201010",
+        "https://www.tachikawakokusai.co.jp/wp/wp-content/uploads/2024/06/98c56fedcb6fd86d355adb2ba9957302.pdf",
+        "https://www.oricon.co.jp/prof/255314/lyrics/124700/"
+      ]
+    },
+    {
+      "name": "王菲",
+      "query": "\"王菲\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://host.cine21.com/db/person/info/?href=main&person_id=3031",
+        "https://www.yes24.com/product/goods/97680745",
+        "https://music.bugs.co.kr/artist/8938",
+        "https://bangumi.tv/person/16784",
+        "https://www.tvmao.com/star/GV8%3D"
+      ]
+    },
+    {
+      "name": "강민경",
+      "query": "\"강민경\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.stagepick.co.kr/artists/detail/8JKYNYM35oeUYFYY",
+        "https://soridata.com/ko/artists/Kang-Min-Kyung.html",
+        "https://www.mcl.or.kr/_files/ugd/de1757_0965a6efc58f45d7bce1af606fc73970.pdf",
+        "https://music.bugs.co.kr/track/31477828",
+        "https://goartist.kawfartist.kr/common/downloadFromWebPath.ws?originalFileName=%5B%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%B6%81%5D+2018_%EC%98%88%EC%88%A0%EC%9D%B8+%ED%8C%8C%EA%B2%AC%EC%A7%80%EC%9B%90+%EC%82%AC%EC%97%85_%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%B6%81%28%EC%B5%9C%EC%A2%85%29.pdf&savedPathAndFileName=%2Fftpdata2%2Fkawf_goartist%2Ffile_upload%2Fboard%2F20190410%2F0d7a3c6a-2856-4ba2-af4e-7deb7f127b46_%5B%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%B6%81%5D+2018_%EC%98%88%EC%88%A0%EC%9D%B8+%ED%8C%8C%EA%B2%AC%EC%A7%80%EC%9B%90+%EC%82%AC%EC%97%85_%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%B6%81%28%EC%B5%9C%EC%A2%85%29.pdf"
+      ]
+    },
+    {
+      "name": "강혜미",
+      "query": "\"강혜미\" 아티스트 음악 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.yes24.com/product/author/503040",
+        "https://synslab.co.kr/about",
+        "https://brunch.co.kr/%40rory/195",
+        "https://www.theteams.kr/profile/196007",
+        "https://star-it.co.kr/html/sub02_dtl.php?s_category_key=&teacher_idx=689"
+      ]
+    },
+    {
+      "name": "곽푸른하늘",
+      "query": "\"곽푸른하늘\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.genie.co.kr/detail/albumInfo?axnm=80886486",
+        "https://m.yes24.com/Goods/Detail/111418260",
+        "https://www.genie.co.kr/detail/songInfo?xgnm=96453321",
+        "https://m.yes24.com/goods/detail/111418260",
+        "https://www.sangsangmadang.com/webzine/detail/124"
+      ]
+    },
+    {
+      "name": "김기태",
+      "query": "\"김기태\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.newspim.com/news/view/20200120001080",
+        "https://www.newspim.com/news/view/20181127000496",
+        "https://music.bugs.co.kr/artist/20016400",
+        "https://music.bugs.co.kr/artist/20096030/mvs?group=REGULAR&wl_ref=S_ar_14_02",
+        "https://music.bugs.co.kr/artist/20096030/mvs?wl_ref=S_ar_01_04"
+      ]
+    },
+    {
+      "name": "김리다",
+      "query": "\"김리다\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://dark.namu.moe/w/%ED%99%94%EB%85%B8",
+        "https://music.amazon.com/tracks/B0HMJNJK29",
+        "https://www.melon.com/musicstory/detail.htm?mstoryseq=13202",
+        "https://music.bugs.co.kr/track/6306813",
+        "https://music.bugs.co.kr/track/32513983"
+      ]
+    },
+    {
+      "name": "김수찬",
+      "query": "\"김수찬\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.polymer.or.kr/e-book02/catImage/84/image/36-5-14.pdf",
+        "https://m.namu.moe/w/%EA%B9%80%EC%88%98%EC%B0%AC",
+        "https://www.namu.moe/w/%EA%B9%80%EC%88%98%EC%B0%AC%28%EB%86%8D%EA%B5%AC%EC%84%A0%EC%88%98%29",
+        "https://v.daum.net/v/jMzn5rHKsp?f=p",
+        "https://dark.namu.moe/w/%EA%B9%80%EC%88%98%EC%B0%AC"
+      ]
+    },
+    {
+      "name": "김윤성",
+      "query": "\"김윤성\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.sau.ac.kr/fpsm/information/information01.do?articleNo=17813&attachNo=16668&mode=download",
+        "https://www.namu.moe/w/%EA%B9%80%EC%9C%A4%EC%84%B1%28%EB%86%8D%EA%B5%AC%EC%84%A0%EC%88%98%29",
+        "https://www.kianaent.com/sub4/profile.php?id=12953&page=48",
+        "https://sports.khan.co.kr/article/202311170805003",
+        "https://v.daum.net/v/pXKPanTslF"
+      ]
+    },
+    {
+      "name": "박서준",
+      "query": "\"박서준\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://www.myteatime.kr/issue/?bmode=view&idx=165572106&q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&t=board",
+        "https://www.chorogusan.or.kr/news/bizView.do?bdId=20030080&bmId=10000027",
+        "https://m.namu.moe/w/FLEET%20%ED%94%8C%EB%A6%BF",
+        "https://festivalgn.com/web/assets/file/2025program_book.pdf",
+        "https://www.chorogusan.or.kr/news/bizView.do?bdId=20034282&bmId=10000027"
+      ]
+    },
+    {
+      "name": "박승화",
+      "query": "\"박승화\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://please.untaint.us/?url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%EC%9C%A0%EB%A6%AC%EC%83%81%EC%9E%90",
+        "https://imnews.imbc.com/news/2009/culture/article/2395021_30937.html",
+        "https://on.ntck.or.kr/Down/Perf/202602/%5B%EA%B5%AD%EB%A6%BD%EA%B7%B9%EB%8B%A8_%EC%98%A8%EB%9D%BC%EC%9D%B8_%EA%B7%B9%EC%9E%A5%5D%EC%A1%B0%EC%94%A8%EA%B3%A0%EC%95%84%2C_%EB%B3%B5%EC%88%98%EC%9D%98_%EC%94%A8%EC%95%97_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EB%B6%81.pdf",
+        "https://world.kbs.co.kr/service/contents_view.htm?board_code=music_news&board_seq=204523&id=&lang=k&menu_cate=enternews&page=2598",
+        "https://ent.sbs.co.kr/news/article.do?article_id=E10004074474"
+      ]
+    },
+    {
+      "name": "박학기",
+      "query": "\"박학기\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://store.kyobobook.co.kr/person/detail/1120161301",
+        "https://imnews.imbc.com/news/2009/culture/article/2395021_30937.html",
+        "https://brotherwoo.tistory.com/5594?category=950368",
+        "https://world.kbs.co.kr/service/contents_view.htm?board_code=music_news&board_seq=204523&id=&lang=k&menu_cate=enternews&page=2598",
+        "https://ch.yes24.com/article/details/80639"
+      ]
+    },
+    {
+      "name": "유준열",
+      "query": "\"유준열\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://soridata.com/ko/artists/yoo-joon-yeol.html",
+        "https://www.khan.co.kr/article/200804301449285",
+        "https://please.untaint.us/?url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%EB%8F%99%EB%AC%BC%EC%9B%90_%28%EB%B0%B4%EB%93%9C%29",
+        "https://dh.aks.ac.kr/Edu/wiki/index.php/%EB%8F%99%EB%AC%BC%EC%9B%90",
+        "https://council.icheon.go.kr/pdf_down.html?number=86"
+      ]
+    },
+    {
+      "name": "유환주",
+      "query": "\"유환주\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://dark.namu.moe/w/%ED%99%94%EB%85%B8",
+        "https://poclanos.com/album/%EC%82%AC%EB%9E%91-%EA%B0%99%EC%9D%80-%EA%B1%B8-%ED%95%B4%EC%9A%94/",
+        "https://www.melon.com/musicstory/detail.htm?mstoryseq=13202",
+        "https://www.stagepick.co.kr/artists/detail/10353",
+        "https://www.genie.co.kr/detail/albumInfo?axnm=84603218"
+      ]
+    },
+    {
+      "name": "이강산",
+      "query": "\"이강산\" 음악 밴드 공식 프로필",
+      "discoveryOnly": true,
+      "completedReview": false,
+      "candidateUrls": [
+        "https://dark.namu.moe/w/%ED%99%94%EB%85%B8",
+        "https://www.namu.moe/w/%EC%9D%B4%EA%B0%95%EC%82%B0%28%EC%9E%91%EA%B3%A1%EA%B0%80%29",
+        "https://www.snart.or.kr/ebook/2025/20250405_artview.pdf",
+        "https://www.namu.moe/w/%EC%9D%B4%EA%B0%95%EC%82%B0%28%EA%B0%81%EC%8B%9C%ED%83%88%29",
+        "https://dark.namu.moe/w/%EC%9D%B4%EA%B0%95%EC%82%B0%28%EC%9E%91%EA%B3%A1%EA%B0%80%29"
+      ]
+    }
+  ],
+  "additionalConfirmedButIncompleteSources": [
+    {
+      "url": "https://poclanos.com/download_color/green/page/34/",
+      "names": [
+        "강건후"
+      ],
+      "finding": "컴필레이션 크레딧 확인; 개인 트랙 장르는 추가 조사 필요"
+    },
+    {
+      "url": "https://www.genie.co.kr/detail/albumInfo?axnm=86308333",
+      "names": [
+        "이설아"
+      ],
+      "finding": "락 음반·제작 크레딧 확인; 개별 신원과 국가 추가 대조 필요"
+    },
+    {
+      "url": "https://www.melon.com/musicstory/detail.htm?mstoryseq=13202",
+      "names": [
+        "김리다",
+        "유환주"
+      ],
+      "finding": "본인 인터뷰의 화노 역할 확인; 개별 MBID 교차 확인 보완 필요"
+    },
+    {
+      "url": "https://music.bugs.co.kr/album/4119319",
+      "names": [
+        "김리다",
+        "김윤성",
+        "유환주",
+        "이강산"
+      ],
+      "finding": "팝 락 음반 및 크레딧 확인; 개별 MBID/독립 활동 대조 보완 필요"
+    }
+  ],
+  "queueStageCounts": {
+    "research": {
+      "complete": 542,
+      "pending": 12,
+      "deferred": 67,
+      "exception": 2
+    },
+    "approval": {
+      "pending": 484,
+      "deferred": 67,
+      "authority_wait": 66,
+      "complete": 6
+    },
+    "channels": {
+      "pending": 475,
+      "deferred": 134,
+      "complete": 13,
+      "exception": 1
+    }
+  },
+  "checkpointRevision": 451
+}
