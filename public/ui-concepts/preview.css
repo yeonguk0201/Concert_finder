@@ -13,6 +13,9 @@ dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);b
 @media(max-width:390px){.page{width:90%}.hero-copy h1{font-size:35px}.night-copy{padding:28px 20px}.night-copy h1{font-size:30px}.artwork,.personal .artwork{height:210px}.artwork strong,.personal .artwork strong{font-size:42px}.artwork.rock strong{font-size:46px}.artwork.wave strong,.personal .artwork.wave strong{font-size:31px}.artwork.festival strong,.personal .artwork.festival strong{font-size:30px}.section-heading>a{font-size:9px}.search input{width:0}.personal-intro h1{font-size:34px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+/* Right notch sits over the shadow: #2041b51a composited on #eaf0ff. */
+.floating-ticket::after { background: #d5def7; }
+
 /* Selected direction: the cobalt poster wall with artists and an everyday calendar. */
 .combined .poster-hero { min-height: 385px; padding: 20px 0 45px; }
 .combined .hero-copy h1 { font-size: clamp(36px, 3.8vw, 51px); margin: 16px 0; }
