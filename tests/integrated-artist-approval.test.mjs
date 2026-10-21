@@ -14,6 +14,7 @@ test('scheduled approval uses a service actor, checks evidence and selection, pr
       '20261012135134_artist_management','20261013070742_artist_curation','20261020053150_integrated_artist_approval']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
+    await db.exec(await readFile(new URL('../docs/sql/integrated-review-lifecycle-proposal.sql', import.meta.url), 'utf8'))
     await db.exec(`select set_config('request.jwt.claims','{"role":"service_role"}',false)`)
     const mbid = '00000000-0000-4000-8000-000000000001'
     const bandId = (await db.query('select public.service_import_artist($1) as id', [{ key: `mb:${mbid}`,
@@ -33,7 +34,7 @@ test('scheduled approval uses a service actor, checks evidence and selection, pr
     await assert.rejects(begin(runId, Array(41).fill(targets[0])), /SELECTION_INVALID/)
     await begin(); await begin()
     await assert.rejects(begin(runId, [{ ...targets[0], expectedUpdatedAt: '2020-01-01' }]), /SELECTION_CONFLICT/)
-    await assert.rejects(begin('00000000-0000-4000-8000-000000000003'), /SCHEDULE_WINDOW/)
+    await assert.rejects(begin('00000000-0000-4000-8000-000000000003'), /INTEGRATED_REVIEW_BUSY/)
     const url = 'https://official.example/biography'
     const proposal = { target_band_id: bandId, expected_updated_at: band.updated_at, artist_name: band.name,
       country: 'JP', artist_category: 'jpop', artist_aliases: [], review_status: 'approved', reason: '자동 검수 jpop-or-rock-v1: verified activity', evidence_url: url }
@@ -92,7 +93,19 @@ test('scheduled approval uses a service actor, checks evidence and selection, pr
     const manualApproval = (await db.query('select * from private.artist_publication_approvals')).rows[0]
     assert.equal(manualApproval.approved_by,userId); assert.equal(manualApproval.integrated_run_id,null)
     await db.exec("select set_config('test.uid','',false)")
-    await db.exec("update private.integrated_review_runs set started_at=clock_timestamp()-interval '6 hours'")
+    const finish = id => db.query('select public.service_finish_integrated_review($1) as r', [id])
+    const finished = (await finish(runId)).rows[0].r
+    assert.deepEqual((await finish(runId)).rows[0].r, finished)
+    // Existing receipts remain retrievable/idempotent after closure.
+    assert.deepEqual((await apply()).rows[0].result, result)
+    await assert.rejects(begin(), /RUN_FINISHED/)
+    await db.exec('set role anon')
+    await assert.rejects(finish(runId), /permission denied/)
+    await db.exec('reset role; set role authenticated')
+    await assert.rejects(finish(runId), /permission denied/)
+    await db.exec('reset role')
+    await assert.rejects(finish('00000000-0000-4000-8000-000000000077'), /RUN_NOT_FOUND/)
+
     const others = []
     for (const n of [4,5]) {
       const mid = `00000000-0000-4000-8000-00000000000${n}`
@@ -102,6 +115,9 @@ test('scheduled approval uses a service actor, checks evidence and selection, pr
     }
     const nextRun = '00000000-0000-4000-8000-000000000006'
     await begin(nextRun, others.map(b => ({bandId:b.id,expectedUpdatedAt:b.updated_at})))
+    // Four hours is not a cadence barrier, but an unfinished lease still blocks.
+    await db.exec("update private.integrated_review_runs set started_at=clock_timestamp()-interval '4 hours' where finished_at is null")
+    await assert.rejects(begin('00000000-0000-4000-8000-000000000007', others.map(b => ({bandId:b.id,expectedUpdatedAt:b.updated_at}))), /INTEGRATED_REVIEW_BUSY/)
     for (const [index,b] of others.entries()) {
       const state = index ? 'excluded' : 'held', decision = index ? 'exclude' : 'hold'
       const p = { ...proposal,target_band_id:b.id,expected_updated_at:b.updated_at,artist_name:b.name,
@@ -110,5 +126,19 @@ test('scheduled approval uses a service actor, checks evidence and selection, pr
         [nextRun,p,{...proof,decision},{},{}])).rows[0].r
       assert.equal(result.after.curation_status,state); assert.equal(result.after.category,'unclassified')
     }
+    await finish(nextRun)
+    const currentOthers = (await db.query('select * from public.bands where id=any($1::uuid[])', [others.map(b=>b.id)])).rows
+    const closedRun = '00000000-0000-4000-8000-000000000008'
+    await begin(closedRun,currentOthers.map(b=>({bandId:b.id,expectedUpdatedAt:b.updated_at})))
+    await finish(closedRun)
+    const closedTarget = currentOthers[0]
+    await assert.rejects(db.query('select public.service_apply_integrated_review($1,$2,$3,$4,$5)',
+      [closedRun,{...proposal,target_band_id:closedTarget.id,expected_updated_at:closedTarget.updated_at},proof,requirements,evidence]), /RUN_FINISHED/)
+    await assert.rejects(db.query('select public.service_integrated_review_context($1,$2)', [closedRun,closedTarget.id]), /TARGET_NOT_SELECTED/)
+    // An abandoned lease only unblocks at the existing lease expiry, without rewriting history.
+    const abandoned = '00000000-0000-4000-8000-000000000009'
+    await begin(abandoned,currentOthers.map(b=>({bandId:b.id,expectedUpdatedAt:b.updated_at})))
+    await db.query("update private.integrated_review_runs set started_at=clock_timestamp()-interval '6 hours' where id=$1",[abandoned])
+    await begin('00000000-0000-4000-8000-000000000010',currentOthers.map(b=>({bandId:b.id,expectedUpdatedAt:b.updated_at})))
   } finally { await db.close() }
 })

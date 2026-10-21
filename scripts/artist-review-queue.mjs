@@ -158,7 +158,7 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
         await serverGuard(await loadReviewEnvironment(env, cwd), fetcher)
         const bands = queue.active ? [] : await input()
         const service = env.SUPABASE_SERVICE_ROLE_KEY ? await serviceClient() : null
-        const authorityKey = opt('authority-key', service ? SERVICE_AUTHORITY : env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN
+        const authorityKey = service ? SERVICE_AUTHORITY : opt('authority-key', env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN
           ? createHash('sha256').update(env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN).digest('hex') : null)
         result = beginBatch(queue, { lane, bands, now, direction: opt('direction', 'forward'), authorityKey })
         // State is authoritative if writing the convenience batch file fails.
@@ -207,6 +207,17 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
       }
       if (command === 'finish') {
         const report = finishBatch(queue, { lane, runId: queue.active?.runId, deferPending: options.includes('--defer-pending'), now })
+        // Close the server lease before clearing local active state. An uncertain
+        // response leaves the persisted batch resumable; server finish is idempotent.
+        if (report.authorityKey === SERVICE_AUTHORITY) {
+          if (!env.SUPABASE_SERVICE_ROLE_KEY) throw new Error('PROJECT_CONFIGURATION_REQUIRED')
+          const service = await serviceClient()
+          if (!service) throw new Error('SERVICE_PATH_NOT_INSTALLED')
+          const { data, error } = await service.rpc('service_finish_integrated_review', { run_id: report.runId })
+          if (error || data?.runId !== report.runId || !Number.isFinite(Date.parse(data.finishedAt))) {
+            throw new Error('REVIEW_FINISH_UNCONFIRMED')
+          }
+        }
         // Write report before clearing the persisted active batch: safe to retry after a crash.
         await save(out('latest-report.json'), report); await save(statePath, queue)
         result = { selected: report.selected, apiCalls: report.apiCalls, remaining: report.remaining, authorityWaiting: report.authorityWaiting }

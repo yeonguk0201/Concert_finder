@@ -28,8 +28,7 @@ test('one frozen list caps ALL work at 40, including failures; resume never refi
   assert.throws(() => record(q, batch, id(40), 'research', { status: 'complete', proof }), /TARGET_NOT_SELECTED/)
   assert.throws(() => finishBatch(q, { lane: 'cloud', runId: batch.runId, now }), /BATCH_INCOMPLETE/)
   finishBatch(q, { lane: 'cloud', runId: batch.runId, now, deferPending: true })
-  assert.equal(beginBatch(q, { lane: 'cloud', bands: catalog, now: now + hour }).reason, 'schedule_window')
-  const next = beginBatch(q, { lane: 'cloud', bands: catalog, now: now + 5 * hour })
+  const next = beginBatch(q, { lane: 'cloud', bands: catalog, now: now + 4 * hour })
   assert.equal(next.artists.length, 5)
   assert.deepEqual(next.artists.map(r => r.bandId), catalog.slice(40, 45).map(r => r.id))
 })
@@ -83,15 +82,15 @@ test('checkpoint retries are idempotent, malformed proof/proposals cannot fake c
   assert.throws(() => record(q, batch, id(0), 'approval', { status: 'authority_wait', proposal: { ...proposal(catalog[0]), artist_aliases: ['changed'] } }), /PROPOSAL_INVALID/)
 })
 
-test('handoff revokes source, requires ended batch, preserves five-hour gate and rejects stale re-import', () => {
+test('handoff revokes source, requires ended batch, preserves history without an extra cadence gate and rejects stale re-import', () => {
   const q = newQueue('local', now), catalog = bands(45), batch = beginBatch(q, { lane: 'local', bands: catalog, now })
   assert.throws(() => offerHandoff(q, { lane: 'local', to: 'cloud', now }), /BATCH_INCOMPLETE/)
   finishBatch(q, { lane: 'local', runId: batch.runId, now, deferPending: true })
   const packet = offerHandoff(q, { lane: 'local', to: 'cloud', now })
   assert.throws(() => beginBatch(q, { lane: 'local', bands: catalog, now: now + 5 * hour }), /HANDOFF_REQUIRED/)
   const cloud = acceptHandoff(packet, { lane: 'cloud' })
-  assert.equal(beginBatch(cloud, { lane: 'cloud', bands: catalog, now: now + hour }).reason, 'schedule_window')
-  const next = beginBatch(cloud, { lane: 'cloud', bands: catalog, now: now + 5 * hour })
+  assert.equal(cloud.lastStartedAt, q.lastStartedAt)
+  const next = beginBatch(cloud, { lane: 'cloud', bands: catalog, now: now + hour })
   assert.equal(next.artists.length, 5)
   assert.throws(() => acceptHandoff(packet, { lane: 'cloud', previous: cloud }), /HANDOFF_STALE/)
   assert.throws(() => acceptHandoff(packet, { lane: 'local' }), /HANDOFF_INVALID/)
@@ -296,4 +295,51 @@ test('reusing old proof never extends its original 90-day expiration', () => {
   const saved = record(q, batch, id(0), 'research', { status: 'complete', proof: oldProof })
   assert.equal(Date.parse(saved.validUntil), now + 10 * day)
   assert.equal(Date.parse(saved.lastSuccessfulAt), now - 80 * day)
+})
+
+
+test('finish closes the server run before clearing local state and preserves recovery after uncertain responses', async t => {
+  const { root, cwd } = await workspace(t)
+  const q = newQueue('cloud', now), batch = beginBatch(q, {lane:'cloud',bands:bands(1),now,authorityKey:SERVICE_AUTHORITY})
+  const path = join(root,'state.json')
+  await writeFile(path, JSON.stringify(q), 'utf8')
+  let fail = true, finished = 0
+  const fetcher = async url => {
+    if (String(url).endsWith('/service_integrated_review_receipt')) return Response.json(null)
+    if (String(url).endsWith('/service_finish_integrated_review')) {
+      finished++
+      if (fail) return Response.json({message:'uncertain'}, {status:503})
+      return Response.json({runId:batch.runId,finishedAt:new Date(now).toISOString()})
+    }
+    throw new Error('UNEXPECTED_REQUEST')
+  }
+  const env = {SUPABASE_URL:`https://${PROJECT}.supabase.co`,SUPABASE_SERVICE_ROLE_KEY:'test-only-placeholder'}
+  const finish = () => runQueueCommand(['finish','--owner=cloud','--defer-pending'],{cwd,env,now,fetcher,output:()=>{}})
+  await assert.rejects(finish(), /REVIEW_FINISH_UNCONFIRMED/)
+  assert.equal(JSON.parse(await readFile(path,'utf8')).active.runId,batch.runId)
+  delete env.SUPABASE_SERVICE_ROLE_KEY
+  await assert.rejects(finish(), /PROJECT_CONFIGURATION_REQUIRED/)
+  assert.equal(JSON.parse(await readFile(path,'utf8')).active.runId,batch.runId)
+  env.SUPABASE_SERVICE_ROLE_KEY = 'test-only-placeholder'
+  fail = false
+  await finish()
+  const saved = JSON.parse(await readFile(path,'utf8'))
+  assert.equal(saved.active,null)
+  assert.equal(saved.history.length,1)
+  assert.equal(saved.lastStartedAt,q.lastStartedAt)
+  assert.equal(finished,2)
+})
+
+
+test('service registration keeps its lifecycle marker even when a caller supplies an admin authority label', async t => {
+  const { root, cwd } = await workspace(t)
+  await writeFile(join(root,'state.json'), JSON.stringify(newQueue('cloud', now)), 'utf8')
+  await writeFile(join(root,'catalog.json'), JSON.stringify(bands(1)), 'utf8')
+  const fetcher = async url => {
+    if (String(url).endsWith('/service_integrated_review_receipt') || String(url).endsWith('/service_begin_integrated_review')) return Response.json(null)
+    throw new Error('UNEXPECTED_REQUEST')
+  }
+  await runQueueCommand(['begin','--owner=cloud','--authority-key=custom-admin-label','--input=.local/artist-review-queue/catalog.json'],
+    {cwd,now,env:{SUPABASE_URL:`https://${PROJECT}.supabase.co`,SUPABASE_SERVICE_ROLE_KEY:'test-only-placeholder'},fetcher,serverGuard:async()=>{},output:()=>{}})
+  assert.equal(JSON.parse(await readFile(join(root,'state.json'),'utf8')).active.authorityKey,SERVICE_AUTHORITY)
 })

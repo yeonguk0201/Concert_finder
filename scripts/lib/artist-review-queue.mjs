@@ -89,7 +89,7 @@ export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey 
   checkOwner(queue, lane)
   if (queue.active) return { ...queue.active, resumed: true }
   if (!['forward', 'reverse'].includes(direction)) fail('DIRECTION_INVALID')
-  if (queue.lastStartedAt && now - stamp(queue.lastStartedAt) < 5 * 3600000) return { state: 'idle', reason: 'schedule_window' }
+  // The scheduler owns cadence; ownership, frozen batches and provider retry times remain enforced.
   reconcile(queue, bands, now)
   const candidates = Object.values(queue.entries).map(entry => {
     const tasks = tasksFor(entry, now, authorityKey)
