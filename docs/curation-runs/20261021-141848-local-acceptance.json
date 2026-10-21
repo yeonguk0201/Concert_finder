@@ -1,0 +1,343 @@
+{
+  "recordedAt": "2026-10-21T05:18:48.367Z",
+  "source": "cloud-to-local-20261021-141355.zip",
+  "zipSha256": "986d4c01a5bbcfbbf08bbd42768380752450d949da58e38e36f093f829bcec76",
+  "verifiedPayloadFiles": 30,
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "previousLocalRevision": 452,
+  "offeredRevision": 572,
+  "acceptedRevision": 573,
+  "owner": "local",
+  "transfer": null,
+  "activeRun": null,
+  "tracked": 625,
+  "lastStartedAt": "2026-10-20T21:27:10.193Z",
+  "initCalled": false,
+  "entriesHistoryAndTimingPreserved": true,
+  "cloudAutomationReportedPaused": {
+    "id": "6ad2484e14b8819191c9b7217bdd0572",
+    "is_enabled": false,
+    "checkedAt": "2026-10-21T14:13:55.460588+09:00"
+  },
+  "localAutomation": "ACTIVE",
+  "executionRoot": "C:\\Users\\yeonguk\\.codex\\worktrees\\artist-review-automation\\concert-finder",
+  "supportImported": [
+    "apply-0651b3a4-69e7-4610-a960-0289800ec857.json",
+    "apply-2c14f8a0-b844-4318-9910-16b2e9843f65.json",
+    "apply-7c23cd06-5727-450f-957c-90437f647372.json",
+    "apply-b54ca30c-d111-42d6-a479-83b79837fae8.json",
+    "apply-db3732b6-cc77-4d46-8ad6-85b4c3ebe311.json",
+    "apply-e887b5e9-6a0e-44a2-8f49-6d705071d882.json",
+    "apply-ed1d19da-2a7f-487a-a37e-a3c7eab1b05f.json",
+    "approval-outcomes-718ad688-9f77-4744-ab0d-0e660b50f63d.json",
+    "channel-outcomes-current.json",
+    "direct-official-channel-links-current.json",
+    "discovery-journal-current.json",
+    "handoff-preflight-current.json",
+    "latest-report.json",
+    "latest-review-report.json",
+    "latest-run-metadata.json",
+    "mb-discovery-718ad688-9f77-4744-ab0d-0e660b50f63d.json",
+    "provider-cooldowns.json",
+    "run-accounting.json",
+    "search-attempts.json",
+    "tangerine-dream-approval-supplement-pending.json"
+  ],
+  "supportUnchanged": [
+    "channel-candidates.json"
+  ],
+  "previousSupportBackedUp": [
+    "latest-report.json",
+    "latest-review-report.json",
+    "provider-cooldowns.json",
+    "run-accounting.json",
+    "search-attempts.json"
+  ],
+  "recordsImported": [
+    "20261021-022131-cloud-acceptance.json",
+    "20261021-062710-cloud-integrated-review.json",
+    "20261021-062710-cloud-integrated-review.md",
+    "20261021-141355-cloud-to-local-handoff.json"
+  ],
+  "recordConflictsPreserved": [],
+  "backup": ".local/artist-review-queue/before-cloud-return-20261021-141355/",
+  "codeCopiedOrExecutedFromArchive": false,
+  "codeComparison": [
+    {
+      "path": "AGENTS.md",
+      "status": "identical",
+      "localSha256": "8889cc6486933f4ba3d5b35474f49c4b052e057ba084c8c9ae49c35427b577e9",
+      "cloudSha256": "8889cc6486933f4ba3d5b35474f49c4b052e057ba084c8c9ae49c35427b577e9"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "status": "identical",
+      "localSha256": "b7b5766a08c8d440d0ff4e8c3648114b3ab7991c627589dcfec99b0010ba48e7",
+      "cloudSha256": "b7b5766a08c8d440d0ff4e8c3648114b3ab7991c627589dcfec99b0010ba48e7"
+    },
+    {
+      "path": "docs/artist-review-handoff.md",
+      "status": "different",
+      "localSha256": "ad01666b821714679f5ba9482bcf89bb692a868a77ecc658bb59269c729102fd",
+      "cloudSha256": "dd4a71192badbf2e3d44cea5ca57e02e5bb26bbc79f0b8acc037de06cfd4750f"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "identical",
+      "localSha256": "79a12473edc4cfa441e208b0c291d6ff3e8715e1ba8a5013185ef5b37918f1b7",
+      "cloudSha256": "79a12473edc4cfa441e208b0c291d6ff3e8715e1ba8a5013185ef5b37918f1b7"
+    },
+    {
+      "path": "package.json",
+      "status": "identical",
+      "localSha256": "5b1be11fbf8ea12cbd8591991644286293118a71c633bcbeba6d686a48935e91",
+      "cloudSha256": "5b1be11fbf8ea12cbd8591991644286293118a71c633bcbeba6d686a48935e91"
+    },
+    {
+      "path": "scripts/artist-discovery.mjs",
+      "status": "identical",
+      "localSha256": "2dad10039ea52195f4ab904009a5fbd1c10fe610dcfb8aa07ad653ee365d0705",
+      "cloudSha256": "2dad10039ea52195f4ab904009a5fbd1c10fe610dcfb8aa07ad653ee365d0705"
+    },
+    {
+      "path": "scripts/artist-readiness.mjs",
+      "status": "identical",
+      "localSha256": "afb78c1007be6358fc1f5039119a0d78ed23215433f3cca98706cf0af450514b",
+      "cloudSha256": "afb78c1007be6358fc1f5039119a0d78ed23215433f3cca98706cf0af450514b"
+    },
+    {
+      "path": "scripts/artist-review-queue.mjs",
+      "status": "different",
+      "localSha256": "b1223e27814adf075485389b1bc566377e6390c189815399541685ce15298dfb",
+      "cloudSha256": "5dd6978c6f3ab8d042656ad9cdf0073772efcf5e6ed463910c23bb3bfbe23e31"
+    },
+    {
+      "path": "scripts/artist-review-runner.mjs",
+      "status": "missing_locally"
+    },
+    {
+      "path": "scripts/audit-catalog.mjs",
+      "status": "identical",
+      "localSha256": "7fd37db0e5df5b75178c105146361c4cf7c7cb7aa824ac9dcb34a2a1aa02daf3",
+      "cloudSha256": "7fd37db0e5df5b75178c105146361c4cf7c7cb7aa824ac9dcb34a2a1aa02daf3"
+    },
+    {
+      "path": "scripts/booking-evidence.mjs",
+      "status": "identical",
+      "localSha256": "64342df9b4b40e10569e012e06b976e19a524bbd9197b7004e152a0683d60e35",
+      "cloudSha256": "64342df9b4b40e10569e012e06b976e19a524bbd9197b7004e152a0683d60e35"
+    },
+    {
+      "path": "scripts/candidate-policy.mjs",
+      "status": "identical",
+      "localSha256": "8f55347f5b7ca2502200484ef8d6754dd8f1aa648d6a3914a87bd43274836f92",
+      "cloudSha256": "8f55347f5b7ca2502200484ef8d6754dd8f1aa648d6a3914a87bd43274836f92"
+    },
+    {
+      "path": "scripts/catalog-health.mjs",
+      "status": "identical",
+      "localSha256": "7e3589eaf5ade7030de6c02cf6b8745bdce62407dae588dd2e20c2cde0ecaa94",
+      "cloudSha256": "7e3589eaf5ade7030de6c02cf6b8745bdce62407dae588dd2e20c2cde0ecaa94"
+    },
+    {
+      "path": "scripts/catalog-policy.mjs",
+      "status": "identical",
+      "localSha256": "8db0c74d5ec2513744812bac9a33964332be22457d17554643782b38d29f1c4a",
+      "cloudSha256": "8db0c74d5ec2513744812bac9a33964332be22457d17554643782b38d29f1c4a"
+    },
+    {
+      "path": "scripts/check-artist-review-work.mjs",
+      "status": "missing_locally"
+    },
+    {
+      "path": "scripts/collect-catalog.mjs",
+      "status": "identical",
+      "localSha256": "fb712a1121b0b592c7d4e02f850abf1afc934fc90ab9df01e71de58d67a5389f",
+      "cloudSha256": "fb712a1121b0b592c7d4e02f850abf1afc934fc90ab9df01e71de58d67a5389f"
+    },
+    {
+      "path": "scripts/collect-ualive.mjs",
+      "status": "identical",
+      "localSha256": "a521014664faceca490540381952340de35703da6f0fcbb03c912bfe8dba5aa8",
+      "cloudSha256": "a521014664faceca490540381952340de35703da6f0fcbb03c912bfe8dba5aa8"
+    },
+    {
+      "path": "scripts/collection-http.mjs",
+      "status": "identical",
+      "localSha256": "a561fc478726ee8a77f9f29cff7a9ee1df6f65a2bde65977176e2ab638623177",
+      "cloudSha256": "a561fc478726ee8a77f9f29cff7a9ee1df6f65a2bde65977176e2ab638623177"
+    },
+    {
+      "path": "scripts/collection-runner.mjs",
+      "status": "identical",
+      "localSha256": "fdf0f11c7b367c06c03c808980a84320a6ef5ee735d6fe99745a1aa10b6384cb",
+      "cloudSha256": "fdf0f11c7b367c06c03c808980a84320a6ef5ee735d6fe99745a1aa10b6384cb"
+    },
+    {
+      "path": "scripts/generate-vapid.mjs",
+      "status": "identical",
+      "localSha256": "cc574072508b118189e6479f318b34e2a5fc804e3fb496695257544d51796bb8",
+      "cloudSha256": "cc574072508b118189e6479f318b34e2a5fc804e3fb496695257544d51796bb8"
+    },
+    {
+      "path": "scripts/kopis.mjs",
+      "status": "identical",
+      "localSha256": "28c96b2a3c6e2faf32d4a15b7ac75bad326d56dbde4217a1958fd07237828bb3",
+      "cloudSha256": "28c96b2a3c6e2faf32d4a15b7ac75bad326d56dbde4217a1958fd07237828bb3"
+    },
+    {
+      "path": "scripts/lib/artist-review-apply.mjs",
+      "status": "identical",
+      "localSha256": "811a4bd0ab95428967c8be171d694b2b2e0854870c13b7e726748b3a88203d9b",
+      "cloudSha256": "811a4bd0ab95428967c8be171d694b2b2e0854870c13b7e726748b3a88203d9b"
+    },
+    {
+      "path": "scripts/lib/artist-review-queue.mjs",
+      "status": "different",
+      "localSha256": "d21336ba06f581fa2b651ccef0dd71ce921211b4cbbd4cf11eaaa09cb6a68eb7",
+      "cloudSha256": "ec58e65a605bfa09658c557b23555eb9a4de717cca9f2b216e21b4d2264f5d6f"
+    },
+    {
+      "path": "scripts/lib/review-lease.mjs",
+      "status": "missing_locally"
+    },
+    {
+      "path": "scripts/notification-worker.mjs",
+      "status": "identical",
+      "localSha256": "dfd83fa66fb9ea2c0675d79dca2a10fe35ddf232bcd641d1bacafe3b7adcf354",
+      "cloudSha256": "dfd83fa66fb9ea2c0675d79dca2a10fe35ddf232bcd641d1bacafe3b7adcf354"
+    },
+    {
+      "path": "scripts/official-adapters.mjs",
+      "status": "identical",
+      "localSha256": "34d50f56e3027638dc6f94d7d3ea3cf7d88fd48d6549eb0dbde6eb6d9d571797",
+      "cloudSha256": "34d50f56e3027638dc6f94d7d3ea3cf7d88fd48d6549eb0dbde6eb6d9d571797"
+    },
+    {
+      "path": "scripts/prepare-review-hosts.mjs",
+      "status": "missing_locally"
+    },
+    {
+      "path": "scripts/prepare-supabase-push.mjs",
+      "status": "identical",
+      "localSha256": "8027b9248b59f7bb86354f2e530cc22d5e174d47267dc827a68010b401eca788",
+      "cloudSha256": "8027b9248b59f7bb86354f2e530cc22d5e174d47267dc827a68010b401eca788"
+    },
+    {
+      "path": "scripts/refresh-artist-channels.mjs",
+      "status": "different",
+      "localSha256": "e101f9be471e54a1388093d7bde9432a41f1bd296e7eb845fcddbd1c1b463d43",
+      "cloudSha256": "dc854bb38bad0ed9c802750b21ea32c16f901108449c97e8eab9c00484b43996"
+    },
+    {
+      "path": "scripts/seed-artists.mjs",
+      "status": "identical",
+      "localSha256": "352c01488e27bb442d7013fe81f86d641770f93330a766984196dd07b053d311",
+      "cloudSha256": "352c01488e27bb442d7013fe81f86d641770f93330a766984196dd07b053d311"
+    },
+    {
+      "path": "scripts/ticketlink-notices.json",
+      "status": "identical",
+      "localSha256": "4f09e63c40e0be25dd13dac5abb0ed608e52703f9c29933ac59db796fcb84ca7",
+      "cloudSha256": "4f09e63c40e0be25dd13dac5abb0ed608e52703f9c29933ac59db796fcb84ca7"
+    },
+    {
+      "path": "scripts/ualive.mjs",
+      "status": "identical",
+      "localSha256": "1b771af6fbb53645c2b79760f97e83edefe66ed6a9ba35dc175d863bbb1c16a7",
+      "cloudSha256": "1b771af6fbb53645c2b79760f97e83edefe66ed6a9ba35dc175d863bbb1c16a7"
+    },
+    {
+      "path": "scripts/verify-starter-artists.mjs",
+      "status": "identical",
+      "localSha256": "b977cff53183859d2a9f6554ff38f3c653cd5326d67540d76755a6cb9972df23",
+      "cloudSha256": "b977cff53183859d2a9f6554ff38f3c653cd5326d67540d76755a6cb9972df23"
+    },
+    {
+      "path": "scripts/yes24.mjs",
+      "status": "identical",
+      "localSha256": "2905e6dd6328b0dae3ac65682148c3aefce00454a2f6ac212238a1ed4eeb692a",
+      "cloudSha256": "2905e6dd6328b0dae3ac65682148c3aefce00454a2f6ac212238a1ed4eeb692a"
+    },
+    {
+      "path": "scripts/youtube-channels.mjs",
+      "status": "identical",
+      "localSha256": "cbd9d5eddc0dd68aa1bb68442eff88a44404f031f8e1534772d6871775193603",
+      "cloudSha256": "cbd9d5eddc0dd68aa1bb68442eff88a44404f031f8e1534772d6871775193603"
+    },
+    {
+      "path": "skills/concert-artist-channels/SKILL.md",
+      "status": "different",
+      "localSha256": "caf7d0fb28356c5521d2a54c922b79797420ecf7af80b4a080e16db0f5e0180a",
+      "cloudSha256": "b18d046eb6f277cf620ec48c78e6fd227dae0d974afe1c3814b1f771bd8d1288"
+    },
+    {
+      "path": "skills/concert-artist-channels/agents/openai.yaml",
+      "status": "missing_locally"
+    },
+    {
+      "path": "skills/concert-artist-channels/references/cloud-operations.md",
+      "status": "missing_locally"
+    },
+    {
+      "path": "skills/concert-artist-channels/references/manifest.md",
+      "status": "different",
+      "localSha256": "70b1843e74ca36a9ba60b4bed49bd2b8aae2fe035412181a4cd5b3bd941c0980",
+      "cloudSha256": "7598f025ed11e29c8fd3625433f65c8c773c533b001dc669d45244e8b34c8f87"
+    },
+    {
+      "path": "skills/concert-artist-channels/references/sources.md",
+      "status": "identical",
+      "localSha256": "5686b0f7d348347410726aa45538169f39459408f5116ea829f22ada2f72a638",
+      "cloudSha256": "5686b0f7d348347410726aa45538169f39459408f5116ea829f22ada2f72a638"
+    },
+    {
+      "path": "skills/concert-artist-channels/scripts/channel-refresh.mjs",
+      "status": "missing_locally"
+    },
+    {
+      "path": "skills/concert-artist-channels/scripts/channel-refresh.test.mjs",
+      "status": "missing_locally"
+    },
+    {
+      "path": "skills/concert-artist-curation/SKILL.md",
+      "status": "different",
+      "localSha256": "5b1087fdb4dab94da705d0dfedb492a0a000344d345219f56e35a74f590402ab",
+      "cloudSha256": "bca16ad7c4e19729608998b1714f982d65b1700fd68a12c1392a3f8064935556"
+    },
+    {
+      "path": "skills/concert-artist-curation/agents/openai.yaml",
+      "status": "identical",
+      "localSha256": "89f5fbb482b5776f8a4d85375f48ab35181f7d56e7b5606e8befa1edb6b42134",
+      "cloudSha256": "89f5fbb482b5776f8a4d85375f48ab35181f7d56e7b5606e8befa1edb6b42134"
+    },
+    {
+      "path": "skills/concert-artist-curation/references/database.md",
+      "status": "identical",
+      "localSha256": "8193f6eca6cfdd4ef65322d6074824ae8f39fb39c6746d69a2bc8885cc43fa7d",
+      "cloudSha256": "8193f6eca6cfdd4ef65322d6074824ae8f39fb39c6746d69a2bc8885cc43fa7d"
+    },
+    {
+      "path": "skills/concert-artist-curation/references/runner.md",
+      "status": "different",
+      "localSha256": "fd65c4d8bb673bdf278df055543c98522a70ecef7f8455f9bcbf758690022081",
+      "cloudSha256": "97dc775ae7d4bfbacf8a13cba4d3938f7e24ec57ccadd190a616c66bb2fe14b4"
+    }
+  ],
+  "newResearch": 0,
+  "newCurationApplied": 0,
+  "newChannelsApplied": 0,
+  "pendingFollowup": "tangerine-dream-approval-supplement-pending.json is preserved as unapplied source evidence; review current safe query URL support and all approval requirements in a normal selected batch.",
+  "validation": {
+    "zipSha256AndLengths": true,
+    "strictUtf8": true,
+    "packetCompatibleWithExistingCode": true,
+    "actualAcceptReadback": true,
+    "previousHistoryContinued": true,
+    "noActiveLocalProcessOrLock": true,
+    "sourceAutomationPausedEvidence": true,
+    "credentialsAndApiCacheAbsent": true
+  },
+  "schedule": "5 hours; same maximum 40 distinct artists",
+  "automationResumedAfterSuccessfulAccept": true
+}
