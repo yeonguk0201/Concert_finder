@@ -1,6 +1,3 @@
--- REVIEW DRAFT ONLY. Not installed; requires approved migration creation and deployment.
--- Existing runs are never marked finished by this change. Live older clients remain busy
--- until they explicitly finish with the new client or their existing five-hour lease expires.
 alter table private.integrated_review_runs add column finished_at timestamptz;
 
 create or replace function public.service_begin_integrated_review(run_id uuid, targets jsonb,
