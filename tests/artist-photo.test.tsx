@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 import { ArtistPhoto } from '../src/ArtistPhoto'
 const mock = vi.hoisted(() => ({ invoke: vi.fn() }))
@@ -16,7 +16,7 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.resetAllMocks(); vi.unstubAllGlobals() })
 
 test('DB photo takes precedence without provider work, replacement and deletion reset the display', async () => {
-  const view=render(<ArtistPhoto name="Ado" bandId="00000000-0000-4000-8000-000000000009" photoMode="manual" representativePhoto={{...photo,retrievedAt:''}} />)
+  const view=render(<ArtistPhoto name="Ado" photoMode="manual" representativePhoto={{...photo,retrievedAt:''}} />)
   let img=screen.getByRole('img')
   expect(img.getAttribute('src')).toBe(photo.url)
   expect(mock.invoke).not.toHaveBeenCalled()
@@ -30,46 +30,27 @@ test('DB photo takes precedence without provider work, replacement and deletion 
   expect(mock.invoke).not.toHaveBeenCalled()
 })
 
-test('photo loads after initials; attribution expands on request and failed images return to initials', async () => {
-  mock.invoke.mockResolvedValue({ data: { photo } })
-  render(<ArtistPhoto name="Test Artist" mbid="00000000-0000-4000-8000-000000000001" />)
-  expect(screen.getByLabelText('Test Artist 이니셜')).toBeTruthy()
-  expect(mock.invoke).not.toHaveBeenCalled()
-  const image = await screen.findByRole('img', { name: 'Test Artist 프로필' }, { timeout: 4000 })
-  const details = screen.getByText('사진 출처').closest('details')!
-  expect(details.hasAttribute('open')).toBe(false)
-  fireEvent.click(screen.getByText('사진 출처'))
-  expect(details.hasAttribute('open')).toBe(true)
-  expect(screen.getByRole('link', { name: '사진: Photographer' }).getAttribute('href')).toBe(photo.source)
-  expect(screen.getByRole('link', { name: 'CC BY 4.0' }).getAttribute('href')).toBe(photo.licenseUrl)
-  fireEvent.error(image)
-  expect(screen.getByLabelText('Test Artist 이니셜')).toBeTruthy()
-})
-
-test('duplicate visible cards share one lookup and absent photos remain initials', async () => {
-  mock.invoke.mockResolvedValue({ data: { photo: null } })
-  render(<><ArtistPhoto name="No Photo" mbid="00000000-0000-4000-8000-000000000002" /><ArtistPhoto name="Same Artist" mbid="00000000-0000-4000-8000-000000000002" /></>)
-  await waitFor(() => expect(mock.invoke).toHaveBeenCalledOnce(), { timeout: 4000 })
-  expect(screen.queryByRole('img')).toBeNull()
-  expect(screen.getByLabelText('No Photo 이니셜')).toBeTruthy()
-})
-
-test('changing artist while a photo is pending cannot show the previous artist image', async () => {
-  let resolve!: (value: unknown) => void
-  mock.invoke.mockImplementationOnce(() => new Promise(done => { resolve = done })).mockResolvedValue({ data: { photo: null } })
-  const view = render(<ArtistPhoto name="Old Artist" mbid="00000000-0000-4000-8000-000000000003" />)
-  await waitFor(() => expect(mock.invoke).toHaveBeenCalledOnce(), { timeout: 4000 })
-  view.rerender(<ArtistPhoto name="New Artist" mbid="00000000-0000-4000-8000-000000000004" />)
-  resolve({ data: { photo } })
-  await waitFor(() => expect(screen.getByLabelText('New Artist 이니셜')).toBeTruthy())
-  expect(screen.queryByRole('img')).toBeNull()
+test('missing DB photos stay initials without external calls, and replacement keeps attribution', async () => {
+  vi.useFakeTimers()
+  try {
+    const view=render(<ArtistPhoto name="No Photo" />)
+    await act(async () => { await vi.advanceTimersByTimeAsync(10000) })
+    expect(screen.getByLabelText('No Photo 이니셜')).toBeTruthy()
+    expect(mock.invoke).not.toHaveBeenCalled()
+    view.rerender(<ArtistPhoto name="Saved Photo" representativePhoto={{...photo,retrievedAt:''}} />)
+    expect(screen.getByRole('img').getAttribute('loading')).toBe('lazy')
+    expect(screen.getByRole('link',{name:'사진: Photographer'}).getAttribute('href')).toBe(photo.source)
+    fireEvent.error(screen.getByRole('img'))
+    expect(screen.getByLabelText('Saved Photo 이니셜')).toBeTruthy()
+    expect(mock.invoke).not.toHaveBeenCalled()
+  } finally { vi.useRealTimers() }
 })
 
 const youtube = () => ({url:'https://yt3.googleusercontent.com/avatar=s800',channelUrl:`https://www.youtube.com/channel/UC${'a'.repeat(22)}`,checkedAt:new Date(Date.now()-1000).toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()})
 
 test('YouTube photo keeps its visible compact source link, skips per-card lookup, and manual/hidden choices win', () => {
   const official=youtube()
-  const view=render(<ArtistPhoto name="Ado" bandId="00000000-0000-4000-8000-000000000009" youtubePhoto={official} />)
+  const view=render(<ArtistPhoto name="Ado" youtubePhoto={official} />)
   expect(screen.getByRole('img',{name:'Ado YouTube 채널 사진'}).getAttribute('src')).toBe(official.url)
   expect(screen.getByRole('link',{name:'Ado 사진 출처 · YouTube 채널'}).getAttribute('href')).toBe(official.channelUrl)
   expect(screen.getByRole('link',{name:'Ado 사진 출처 · YouTube 채널'}).textContent).toBe('YouTube ↗')
@@ -101,4 +82,14 @@ test('YouTube photo is removed when its expiry passes while the page remains ope
     await act(async () => { await vi.advanceTimersByTimeAsync(1100) })
     expect(screen.queryByRole('img')).toBeNull()
   } finally {vi.useRealTimers()}
+})
+
+
+test('failure of both saved photo sources never restores a previously broken image', () => {
+  render(<ArtistPhoto name="Both failed" youtubePhoto={youtube()} representativePhoto={{...photo,retrievedAt:''}} />)
+  fireEvent.error(screen.getByRole('img'))
+  fireEvent.error(screen.getByRole('img'))
+  expect(screen.queryByRole('img')).toBeNull()
+  expect(screen.getByLabelText('Both failed 이니셜')).toBeTruthy()
+  expect(mock.invoke).not.toHaveBeenCalled()
 })

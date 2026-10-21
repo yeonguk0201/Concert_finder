@@ -28,3 +28,26 @@ test('production mapping keeps unknown times unknown and supports a mixed festiv
   expect(calendar).toContain('DTSTART:20261101T110000Z')
   expect(calendar).not.toContain('[샘플]')
 })
+
+
+test('artist search normalizes multilingual aliases and keeps namesakes as separate IDs', async () => {
+  const { matchesArtist } = await import('../src/catalogViews')
+  const bands=mapBands([
+    {id:'jp',name:'Ado',country_code:'JP',aliases:['아도','アド'],description:null},
+    {id:'gb',name:'Ado',country_code:'GB',aliases:[],description:null},
+  ])
+  for(const term of ['ＡＤＯ','ado',' 아도 ','アド']) expect(matchesArtist(bands[0],term)).toBe(true)
+  expect(bands.filter(b=>matchesArtist(b,'ado')).map(b=>b.id)).toEqual(['jp','gb'])
+  expect(matchesArtist(bands[1],'아도')).toBe(false)
+  expect(matchesArtist(bands[0],'미등록')).toBe(false)
+})
+
+
+test('missing unapproved lineups never turn an overseas performance into a domestic one', () => {
+  const row = {id:'solo',title:'Published performance',format:'solo',city:'서울',venue:null,starts_on:'2026-12-12',ends_on:null,announced_on:null,cancelled:false,concert_bands:[{band_id:'hidden'}],ticket_schedules:null,concert_sources:[]}
+  expect(mapConcerts([row],[])[0].type).toBe('분류 미정')
+  const kr=mapBands([{id:'kr',name:'한국 밴드',country_code:'KR',aliases:[],description:null}])
+  expect(mapConcerts([{...row,concert_bands:[{band_id:'kr'},{band_id:'hidden'}]}],kr)[0].type).toBe('분류 미정')
+  expect(mapConcerts([{...row,concert_bands:[{band_id:'kr'}]}],kr)[0].type).toBe('국내')
+  expect(mapConcerts([{...row,format:'festival'}],[])[0].type).toBe('페스티벌')
+})

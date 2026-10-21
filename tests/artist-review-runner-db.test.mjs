@@ -16,7 +16,7 @@ test('review worker fences roles, targets, versions, manual decisions and leases
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
     await db.exec('create table public.catalog_signal(id int primary key,revision bigint); insert into public.catalog_signal values(1,0)')
-    for (const name of ['20261015122525_artist_official_channels', '202610160001_artist_review_runner']) {
+    for (const name of ['20261015122525_artist_official_channels', '202610160001_artist_review_runner', '20261017160310_artist_review_readiness']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
     const owner = () => db.exec('reset role')
@@ -192,6 +192,107 @@ test('review worker fences roles, targets, versions, manual decisions and leases
       const notices = await call('select public.service_artist_review_notices() as value')
       assert.equal(notices.filter(x => x.kind === 'repeated_failure').length, 1)
       assert.equal((await begin(randomUUID())).state, 'idle')
+    })
+    await t.test('read-only readiness matches claim scope and preserves leases, slots, cache/backoff and notices', async () => {
+      await owner()
+      await db.exec("select set_config('test.uid','',false); update private.artist_review_targets set enabled=false; update private.artist_review_lock set run_id=null,anchor_at=null,last_slot=-1")
+      const ready = () => call('select public.service_artist_review_readiness() as value')
+      for (const role of ['anon', 'authenticated']) {
+        await db.exec(`set role ${role}`)
+        await assert.rejects(ready(), /permission denied/)
+        await owner()
+      }
+      await service()
+      await db.query(`select set_config('request.jwt.claims','{"role":"authenticated"}',false)`)
+      await assert.rejects(ready(), /SERVICE_REQUIRED/)
+      await service()
+      const empty = await ready()
+      assert.equal(empty.state, 'idle'); assert.equal(empty.eligible, 0)
+      assert.ok(empty.notices > 0) // Listing must not consume existing notices.
+      assert.deepEqual(await ready(), empty)
+      await owner()
+      const fresh = []
+      for (let n = 0; n < 11; n++) {
+        const id = randomUUID(); fresh.push(id)
+        await db.query("insert into public.bands(id,name,country_code,musicbrainz_id) values($1,'New Artist','JP',$2)", [id, randomUUID()])
+        await db.query("insert into private.artist_review_targets values($1,true,array['official.example.com'])", [id])
+      }
+      const snapshot = async () => (await db.query(`select jsonb_build_object(
+        'gate',(select to_jsonb(l) from private.artist_review_lock l),
+        'runs',(select count(*) from private.artist_review_runs),
+        'items',(select count(*) from private.artist_review_items),
+        'states',(select count(*) from private.artist_review_state),
+        'notices',(select jsonb_agg(to_jsonb(n) order by n.id) from private.artist_review_notices n)) as value`)).rows[0].value
+      const before = await snapshot()
+      await service()
+      const due = await ready()
+      assert.equal(due.state, 'ready'); assert.equal(due.eligible, 10)
+      assert.deepEqual(await ready(), due)
+      await owner(); assert.deepEqual(await snapshot(), before)
+      await service()
+      const claimed = await begin(randomUUID())
+      assert.equal(claimed.targets.length, due.eligible)
+      assert.equal((await ready()).state, 'busy')
+      await owner()
+      await db.query("update private.artist_review_runs set lease_until=clock_timestamp()-interval '1 second' where id=$1", [claimed.runId])
+      await db.exec("update private.artist_review_lock set anchor_at=anchor_at-interval '5 hours'")
+      const expiredBefore = await snapshot()
+      await service()
+      assert.equal((await ready()).reason, 'lease_recovery')
+      await owner(); assert.deepEqual(await snapshot(), expiredBefore)
+      await service()
+      // Claim performs recovery; the read-only poll did not defer or reserve any work.
+      const remaining = await begin(randomUUID())
+      assert.equal(remaining.targets.length, 1)
+      await call('select public.service_close_artist_review($1) as value', [remaining.runId])
+      await owner()
+      await db.exec('update private.artist_review_lock set run_id=null,anchor_at=null,last_slot=-1')
+      await service()
+      assert.equal((await ready()).reason, 'no_work') // All eleven failures are still in backoff.
+      assert.equal((await begin(randomUUID())).state, 'idle')
+      await owner()
+      const id = fresh[0]
+      await db.query("update private.artist_review_state set outcome='complete',snapshot=private.review_snapshot(b),valid_until=clock_timestamp()+interval '90 days' from public.bands b where artist_review_state.band_id=b.id and b.id=$1", [id])
+      await service(); assert.equal((await ready()).eligible, 0)
+      await owner()
+      await db.query("update private.artist_review_state set valid_until=clock_timestamp()-interval '1 second' where band_id=$1", [id])
+      await service(); assert.equal((await ready()).eligible, 1)
+      await owner()
+      await db.query("update private.artist_review_state set outcome='action_required' where band_id=$1", [id])
+      await service(); assert.equal((await ready()).eligible, 0)
+      await owner()
+      await db.exec('update private.artist_review_lock set anchor_at=clock_timestamp(),last_slot=0')
+      await service(); assert.equal((await ready()).reason, 'schedule_window')
+      await owner()
+      const finalBefore = await snapshot()
+      const poll = () => call('select private.poll_artist_review_readiness() as value')
+      assert.equal((await poll()).checked, true)
+      const stored = (await db.query('select to_jsonb(c) as value from private.artist_review_readiness_check c')).rows[0].value
+      assert.deepEqual(await poll(), { checked: false })
+      assert.deepEqual((await db.query('select to_jsonb(c) as value from private.artist_review_readiness_check c')).rows[0].value, stored)
+      assert.deepEqual(await snapshot(), finalBefore) // Poll status is separate from leases, items and notices.
+      await db.exec('update private.artist_review_readiness_check set slot=slot-1')
+      assert.equal((await poll()).checked, true)
+      for (const role of ['anon', 'authenticated', 'service_role']) {
+        await db.exec(`set role ${role}`)
+        await assert.rejects(poll(), /permission denied/)
+        await assert.rejects(db.exec('select * from private.artist_review_readiness_check'), /permission denied/)
+        if (role !== 'authenticated') {
+          await assert.rejects(call('select public.admin_artist_review_readiness() as value'), /permission denied/)
+        } else {
+          await assert.rejects(call('select public.admin_artist_review_readiness() as value'), /ADMIN_REQUIRED/)
+        }
+        await owner()
+      }
+      const admin = randomUUID()
+      await db.query('insert into auth.users values($1)', [admin])
+      await db.query('insert into private.admins values($1)', [admin])
+      await db.query("select set_config('test.uid',$1,false)", [admin])
+      await db.exec('set role authenticated')
+      const adminStatus = await call('select public.admin_artist_review_readiness() as value')
+      assert.equal(adminStatus.current.reason, 'schedule_window')
+      assert.ok(adminStatus.lastCheckedAt)
+      await owner()
     })
   } finally { await db.close() }
 })

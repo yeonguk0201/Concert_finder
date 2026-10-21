@@ -1,0 +1,122 @@
+{
+  "run_id": "706cb720-1b9a-4ad5-b9b3-cd7b46135800",
+  "mode": "production_validation",
+  "checked_at": "2026-10-17T00:49:31.940055+09:00",
+  "finished_at": "2026-10-16T15:48:08.816006Z",
+  "complete": 2,
+  "failed": 0,
+  "action_required": 0,
+  "channel_history_total": 2,
+  "catalog_counts": {
+    "unreviewed": 564,
+    "excluded": 6
+  },
+  "scheduled_automation_created": false,
+  "results": [
+    {
+      "band_id": "ba268f6a-a4fc-4bee-9371-103143a69d1c",
+      "name": "=LOVE",
+      "policy_version": "jpop-or-rock-v1+official-channels-v1+runner-v1",
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "before_version": "2026-10-13T08:18:21.208702+00:00",
+      "after_version": "2026-10-13T08:18:21.208702+00:00",
+      "result": {
+        "genre": {
+          "decision": "keep",
+          "summary": "공식 소개의 指原莉乃 제작 아이돌 프로젝트 및 공식 음반 목록의 일본어 싱글 발매 활동을 확인했다. DB의 일본 그룹 이름과 별칭이 일치하여 J-pop 활동 범위로 유지한다. 공개 승인으로 승격하지 않는다.",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://equal-love.jp/feature/about",
+              "checkedAt": "2026-10-16T15:47:22.737Z",
+              "excerpt": "指原莉乃による新しいアイドルProject"
+            },
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://equal-love.jp/discography/",
+              "checkedAt": "2026-10-16T15:47:22.738Z",
+              "excerpt": "恋、はじめました。[CD Only/Type-F]"
+            }
+          ]
+        },
+        "channel": {
+          "decision": "verified",
+          "summary": "정확한 그룹 신원이 확인된 공식 아티스트 소개 페이지가 해당 아티스트 전용 YouTube 채널을 a href로 직접 연결한다. 기존 지정 채널과 잠금 및 수동 이력이 없는 할당 스냅샷을 확인했다.",
+          "url": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://equal-love.jp/feature/about",
+              "checkedAt": "2026-10-16T15:47:22.738Z",
+              "excerpt": "指原莉乃による新しいアイドルProject",
+              "linkedChannelUrl": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A"
+            }
+          ]
+        }
+      },
+      "outcome": "complete",
+      "checked_at": "2026-10-16T15:47:25.910942Z",
+      "valid_until": "2027-01-14T15:47:25.910905Z",
+      "failures": 0,
+      "snapshot_matches": true,
+      "channel_verification": "verified",
+      "channel_history_for_this_run": 1,
+      "duplicate_checkpoint_verified": true,
+      "applied": true,
+      "applied_scope": "official channel and durable review completion; no publication approval or photo cache"
+    },
+    {
+      "band_id": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+      "name": "10,000 Maniacs",
+      "policy_version": "jpop-or-rock-v1+official-channels-v1+runner-v1",
+      "before_status": "unreviewed",
+      "after_status": "unreviewed",
+      "before_version": "2026-10-13T08:20:05.841241+00:00",
+      "after_version": "2026-10-13T08:20:05.841241+00:00",
+      "result": {
+        "genre": {
+          "decision": "keep",
+          "summary": "공식 소개가 alternative rock 활동과 1981년 Jamestown, New York 결성 및 멤버 이력을 명시한다. DB의 미국 그룹 이름 및 MusicBrainz 신원과 일치하므로 록 활동 범위로 유지한다. 공개 승인으로 승격하지 않는다.",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://maniacs.com/about",
+              "checkedAt": "2026-10-16T15:47:45.343Z",
+              "excerpt": "45 years as one of alternative rock’s most influential and enduring forces"
+            }
+          ]
+        },
+        "channel": {
+          "decision": "verified",
+          "summary": "정확한 그룹 신원이 확인된 공식 아티스트 소개 페이지가 해당 아티스트 전용 YouTube 채널을 a href로 직접 연결한다. 기존 지정 채널과 잠금 및 수동 이력이 없는 할당 스냅샷을 확인했다.",
+          "url": "https://www.youtube.com/channel/UC_RHcSrhs0fCF1N72AXtu6g",
+          "evidence": [
+            {
+              "kind": "official_artist_page",
+              "identityMatched": true,
+              "url": "https://maniacs.com/about",
+              "checkedAt": "2026-10-16T15:47:45.344Z",
+              "excerpt": "45 years as one of alternative rock’s most influential and enduring forces",
+              "linkedChannelUrl": "https://www.youtube.com/channel/UC_RHcSrhs0fCF1N72AXtu6g"
+            }
+          ]
+        }
+      },
+      "outcome": "complete",
+      "checked_at": "2026-10-16T15:47:47.360802Z",
+      "valid_until": "2027-01-14T15:47:47.360684Z",
+      "failures": 0,
+      "snapshot_matches": true,
+      "channel_verification": "verified",
+      "channel_history_for_this_run": 1,
+      "duplicate_checkpoint_verified": true,
+      "applied": true,
+      "applied_scope": "official channel and durable review completion; no publication approval or photo cache"
+    }
+  ]
+}

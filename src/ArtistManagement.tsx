@@ -8,6 +8,7 @@ import type { ArtistPhotoData } from './artistPhotoTypes'
 import { saveArtistPhotoFile } from './artistPhotoUpload'
 import { ArtistChannelEditor } from './ArtistChannelEditor'
 import { ArtistReviewControl } from './ArtistReviewControl'
+import { ArtistReviewReadiness } from './ArtistReviewReadiness'
 
 export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSaved: () => void }) {
   const [selected, setSelected] = useState('')
@@ -18,6 +19,7 @@ export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSav
   const filtered = bands.filter(b => (status === 'all' || (b.curation_status ?? 'unreviewed') === status) &&
     [b.name, b.country_code, ...b.aliases].some(value => value.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())))
   return <section aria-label="아티스트 DB 관리"><h2>아티스트 DB·대표 이미지</h2>
+    <ArtistReviewReadiness />
     <p>이름·국적·분류·노출 상태와 사진을 관리합니다. 보류·제외는 일반 목록과 자동 공개를 차단하며 기존 공연·찜 관계는 보존합니다. 제외 후 복구할 때 승인 근거를 다시 검토하세요.</p>
     <div className="admin-fields"><label>DB 이름·별칭·국가 검색<input type="search" value={query} onChange={e => setQuery(e.target.value)} /></label>
       <label>관리 상태 필터<select value={status} onChange={e => setStatus(e.target.value)}><option value="all">전체</option>{Object.entries(artistStatusLabels).map(([value,label]) => <option key={value} value={value}>{label}</option>)}</select></label></div>
@@ -109,7 +111,7 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
       ['url','대표 이미지 HTTPS URL'],['source','이미지 원본 출처 HTTPS URL'],['author','사진 저작자'],['license','라이선스 / 허락 명칭'],['licenseUrl','이용 조건 / 허락 근거 HTTPS URL'],['usageBasis','사용 근거 · 허락 범위'],['credit','추가 크레딧'],
     ] as const).filter(([field])=>field !== 'url' || photoInput === 'url').map(([field,label])=><label key={field}>{label}<input required={field!=='credit'} maxLength={2000} type={['url','source','licenseUrl'].includes(field)?'url':'text'} pattern={['url','source','licenseUrl'].includes(field)?'https://.+':undefined} value={photo[field]??''} onChange={e=>{setPhoto(p=>({...p,[field]:e.target.value}));setApproved(false)}} /></label>)}</div>
       <label className="admin-check"><input type="checkbox" required checked={approved} onChange={e=>setApproved(e.target.checked)} />대상 아티스트와 이미지 이용 조건을 확인했습니다</label></>}
-    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} bandId={band.id} photoMode={mode} representativePhoto={photo} /></>}
+    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} photoMode={mode} representativePhoto={photo} /></>}
     <p>이미지 삭제는 표시를 중단합니다. 교체 전 보관 파일은 변경 이력 확인을 위해 유지됩니다.</p>
     <button className="outline" disabled={mode==='manual'&&(!approved || (photoInput === 'file' && !file))}>{busy && photoInput === 'file' ? '사진 검증·저장 중…' : '별칭·대표 이미지 저장'}</button>
     </fieldset></form>
