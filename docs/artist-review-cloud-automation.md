@@ -49,3 +49,7 @@ snapshot --owner=cloud로 최신 catalog.json을 읽고 begin --owner=cloud --in
 - 운영 확인은 기존 보안 바인딩을 사용한 `service_integrated_review_receipt` 설치 검사 한 번뿐이며 결과는 설치 인식 성공이다. 운영 마이그레이션 재적용·run 등록·context 조사·아티스트 적용은 하지 않았다. SQL 동작 검증은 로컬 PGlite fixture에서 수행했다.
 - 예약 ID `6ad2484e14b8819191c9b7217bdd0572`의 지시문을 위 본문과 일치시켰다. 기존 Asia/Seoul의 5시간 일정을 보존하고 `is_enabled=false`를 확인했다.
 - 2026-10-20 코드 동기화 당시 사용자가 알린 owner는 local이었다. 이 클라우드에 남은 revision 321은 이미 발신한 cloud→local packet과 같은 동결 복사본이며 최신 local 상태로 취급하지 않는다. 두 파일의 SHA-256 동일성을 확인했다. 다음 실행은 로컬 중지와 최신 local→cloud handoff 수락 뒤에만 가능하다. 기존 조사 결과나 false 승인 초안을 이번 동기화에서 변경하지 않았다.
+
+## 최신 적용 상태 (2026-10-22 KST)
+
+사용자 추가 승인으로 lifecycle migration 20261021165010을 설치하고 기존 checkout 실행기를 전환했다. 앱 예약은 기존 INTERVAL=4를 유지하고 is_enabled=true를 확인했다. 위 본문과 운영 예약 지시문이 일치하며, lastStartedAt으로 추가 대기하지 않는다. 과거 5시간 일정/PAUSED 기록은 당시 상태다. 로컬 PC 코드에는 동기화가 필요하다.
