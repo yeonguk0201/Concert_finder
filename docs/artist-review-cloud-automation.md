@@ -33,9 +33,19 @@ snapshot --owner=cloud로 최신 catalog.json을 읽고 begin --owner=cloud --in
 
 신원·근거가 같은 유효 캐시는 재사용한다. API 캐시는 7일 갱신/30일 이내 갱신 또는 삭제 원칙을 따르며 실패 시 마지막 성공 시각을 갱신하지 않는다. 채널 ID 묶음 조회와 handle 해석을 쓰고 이름 검색을 반복하지 않는다. 키·권한·쿼터 오류가 지속되면 요청을 중단하고 체크포인트를 남긴다. API 이미지 URL 변형·다운로드·영구 재업로드·YouTube 페이지/비공식 YouTube Music API 스크래핑을 하지 않는다. 공식성 근거와 API 캐시를 분리하고 원본 HTML·API 원문·API 제목·사진 URL·비밀값을 Git 결과에 누적하지 않는다.
 
-모든 팀의 선택된 tasks를 checkpoint하고 finish한다. finish는 service_finish_integrated_review의 종료 확인 후에만 로컬 active를 해제한다. 종료 응답이 불확실하면 active를 보존하고 같은 finish를 재시도한다. INTEGRATED_REVIEW_BUSY면 새 batch를 겹쳐 실행하지 않는다. 제한적으로만 재시도하고 이유·다음 시각을 보존한다. 같은 제공처 반복 실패는 기본 24시간 이후 재시도하며 새 공식 대체 출처가 있으면 먼저 조사한다. 기술 지연·적용만 남은 항목·사람 판단 예외를 구분한다. 관리자 예외 목록에는 구체적인 신원/분류/채널 충돌만 넣는다. docs/curation-runs에는 KST 실행 시각의 UTF-8 결과를, .local에는 최신 대기열·manifest·체크포인트를 저장한다. 선택 ID·신원·출처·요건별 검증·제안과 실제 적용 전후·채널/사진 저장 및 재조회·실패/예외·실제 API 요청 수·현재 남은 작업 수를 기록한다. 실제 변경 파일에 필요한 검증 후 저장소 지침대로 로컬 커밋한다. 신규 아티스트 가져오기·앱 기능/별칭 수정 구현·새 스키마/권한/인증체계 변경·배포·push/PR/merge·로컬 cron·별도 모델 API는 범위 밖이다.
+모든 팀의 선택된 tasks를 checkpoint하고 finish한다. finish는 service_finish_integrated_review의 종료 확인 후에만 로컬 active를 해제한다. 종료 응답이 불확실하면 active를 보존하고 같은 finish를 재시도한다. INTEGRATED_REVIEW_BUSY면 새 batch를 겹쳐 실행하지 않는다. 제한적으로만 재시도하고 이유·다음 시각을 보존한다. 같은 제공처 반복 실패는 기본 24시간 이후 재시도하며 새 공식 대체 출처가 있으면 먼저 조사한다. 기술 지연·적용만 남은 항목·사람 판단 예외를 구분한다. 관리자 예외 목록에는 구체적인 신원/분류/채널 충돌만 넣는다. docs/curation-runs에는 KST 실행 시각의 UTF-8 결과를, .local에는 최신 대기열·manifest·체크포인트를 저장한다. 선택 ID·신원·출처·요건별 검증·제안과 실제 적용 전후·채널/사진 저장 및 재조회·실패/예외·실제 API 요청 수·현재 남은 작업 수를 기록한다. 실제 변경 파일에 필요한 검증 후 저장소 지침대로 로컬 커밋한다. 핵심 목록 목적 외 신규 가져오기·별칭 수정, 새 스키마/권한/인증체계 운영 변경·배포·push/PR/merge·로컬 cron·별도 모델 API는 범위 밖이다. 아래 사용자 승인 확장을 함께 적용한다.
 
 전환 시 현재 예약을 먼저 중지하고 실제 작업 종료를 확인한다. 필요하면 finish --defer-pending으로 미완료를 보존한 뒤 handoff --owner=cloud --to=local을 실행한다. 최신 packet의 상대방 accept 성공 후에만 상대 예약을 켠다. 예약 중지가 현재 실행 취소나 파일 동기화를 뜻하지 않는다. 의미 있는 실제 적용·완료·반복 실패·새 사용자 조치만 간단히 알리고 동일한 설정 문제를 반복 알리지 않는다. 새 성과가 없거나 idle/busy이면 조용히 종료한다. 전체 카탈로그 검수·사진 확보가 끝나기 전에는 전체 완료로 보고하지 않는다.
+
+
+2026-10-22 사용자 범위 확장: docs/artist-core-rollout.md와 skills/concert-artist-import/SKILL.md도 읽는다. 핵심 200팀은 일본 솔로·유닛 80/일본 록밴드 60/해외 록·메탈밴드 60 편성안이며 검증된 세계 인기 상위 200위가 아니다. BMTH/Bring Me the Horizon, Ado, UVERworld, 요네즈 켄시/米津玄師/Kenshi Yonezu를 필수 목록으로 유지한다. 사진은 후순위다. 사용자 지명과 Last.fm listeners 순위 선발을 구분하며 지표 누락만으로 필수 팀을 버리지 않는다. geo 차트는 청취 지역이고 tag 차트는 태그 수다. Last.fm global/국가별 차트와 이용 조건이 확인된 일본 현지 차트에서 후보를 찾고 공식 신원·국가·실제 장르를 검증한 뒤 기존 artist.getInfo 정렬을 재사용한다. LASTFM_API_KEY는 승인된 보안 바인딩만 사용하고 없으면 지표 미확인으로 남긴다. Billboard 등 접근·이용 조건 미확인 출처를 자동 수집하지 않는다.
+
+snapshot 후 새 batch 전에 node scripts/artist-core.mjs plan --catalog=.local/artist-review-queue/catalog.json --output=.local/artist-review-queue/core-plan.json으로 필수 목록을 현재 DB와 대조한다. 검증된 후보 파일이 있으면 --candidates를 지정한다. begin에는 --priority-file=.local/artist-review-queue/core-plan.json을 전달한다. 기존 active batch는 변경하지 않고 이어가며 새 경계에서만 우선순위를 반영한다. 기본 상한은 같은 고정 40팀이며 오류·보류·신규·별칭 작업도 이 공통 상한에 포함해야 한다. 핵심 팀이라도 수동 결정·잠금·cooldown을 우회하지 않는다.
+
+신규 등록과 동일 신원 별칭 보완은 위 핵심 목표에 한해 승인된 범위다. 다만 현재 통합 lease/40팀 등록·영수증·버전 검사를 함께 보장하는 신규 등록 및 별칭 저장 경로는 아직 구현되지 않았다. 기존 import/seed RPC를 별도 쓰기 실행기로 호출해 한도를 우회하지 않는다. 부족한 신원 ID를 생성하거나 상태 JSON을 조작해 완료를 만들지 않는다. 지원 경로·필요 코드·검증을 준비하고 운영 스키마/권한 변경·배포·push/PR/merge는 별도 승인 뒤에만 수행한다. 등록 수만으로 완료라 하지 말고 실제 승인 및 한국어/영어/일본어/약칭 공개 검색이 같은 ID를 반환하는지 확인한다. 국내 록 목록·원래 이름·별칭·수동 결정을 보존한다.
+
+공연은 공식 공지→일반/선예매별 정확한 절대 예매 시각→조건 충족 공개→기존 찜/일정/알림 동의→기존 매분 발송 워커 순서로 감시한다. 시간 민감한 수집·발송은 서버 정기 작업이 담당하고 본 예약은 예외·누락·실패 점검을 맡는다. 매분 워커/스케줄러를 중복 생성하지 않는다. 요네즈 켄시 2026-10-22 KST 누락을 첫 진단 사례로 기록했으며 공식 Reissue/NOL 지원 경로 부재와 source publication OFF를 발견했다. 기존 수동 OFF는 임의 해제하지 않는다. scripts/nol.mjs는 읽기 전용 후보 파서이며 운영 수집 연결·실제 페이지 통합 검증·정책 활성화가 완료된 것으로 취급하지 않는다. 초기 채움 무알림, 취소/동의 철회/중복/중요 변경 검수와 기존 공연 공개 조건을 유지한다. 찜·동의를 만들거나 기기 권한을 바꾸지 않는다. 서버 수락·발송 성공·실제 기기 수신을 구분하고 관측 없이 수신 완료를 주장하지 않는다. 동일 미변경 키/정책 차단은 반복 통지하지 않는다.
+
 <!-- automation-prompt:end -->
 
 ## 동기화 확인 기록
@@ -53,3 +63,7 @@ snapshot --owner=cloud로 최신 catalog.json을 읽고 begin --owner=cloud --in
 ## 최신 적용 상태 (2026-10-22 KST)
 
 사용자 추가 승인으로 lifecycle migration 20261021165010을 설치하고 기존 checkout 실행기를 전환했다. 앱 예약은 기존 INTERVAL=4를 유지하고 is_enabled=true를 확인했다. 위 본문과 운영 예약 지시문이 일치하며, lastStartedAt으로 추가 대기하지 않는다. 과거 5시간 일정/PAUSED 기록은 당시 상태다. 로컬 PC 코드에는 동기화가 필요하다.
+
+## 핵심 목록 확대 적용 기록 (2026-10-22 KST)
+
+사용자 위임 요청으로 핵심 200팀 목적의 신규 등록·동일 신원 별칭 보완을 범위에 추가했다. 위 본문을 실제 예약 ID `6ad2484e14b8819191c9b7217bdd0572`에 갱신하고 prompt 완전 일치, is_enabled=true, 기존 INTERVAL=4 보존을 확인했다. 지원되지 않은 통합 신규/별칭 쓰기는 임의 실행하지 않는다. 준비 코드와 운영 연결 전 필요한 작업은 `docs/artist-core-rollout.md`, 실제 승인 2팀·새 채널 저장 0 및 차단 원인 기록은 `docs/curation-runs/20261022-163835-core-readiness.md`에 있다. 이 checkout의 로컬 커밋이 사용자 PC나 운영 배포에 자동 반영되지는 않는다.
