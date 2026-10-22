@@ -104,6 +104,23 @@ async function workspace(t) {
   return { cwd, root, cmd }
 }
 
+test('CLI accepts bounded core priority only at a new batch boundary', async t => {
+  const { root, cmd } = await workspace(t)
+  const catalog = bands()
+  await writeFile(join(root, 'catalog.json'), JSON.stringify(catalog), 'utf8')
+  await cmd(['init', '--owner=local'])
+  const file = '.local/artist-review-queue/core-plan.json'
+  await writeFile(join(root, 'core-plan.json'), JSON.stringify({ policy: 'core200-v1', version: 1 }), 'utf8')
+  await assert.rejects(cmd(['begin', '--owner=local', '--input=.local/artist-review-queue/catalog.json', `--priority-file=${file}`, '--limit=2']), /CORE_PRIORITY_INVALID/)
+  await writeFile(join(root, 'core-plan.json'), JSON.stringify({ policy: 'core200-v1', version: 1, priorityMusicBrainzIds: [catalog.at(-1).musicbrainz_id] }), 'utf8')
+  const result = await cmd(['begin', '--owner=local', '--input=.local/artist-review-queue/catalog.json', `--priority-file=${file}`, '--limit=2'])
+  assert.equal(result.selected, 2)
+  const batch = JSON.parse(await readFile(join(root, 'batch.json'), 'utf8'))
+  assert.equal(batch.artists[0].bandId, catalog.at(-1).id)
+  const resumed = await cmd(['begin', '--owner=local', '--limit=40'])
+  assert.equal(resumed.runId, result.runId); assert.equal(resumed.selected, 2)
+})
+
 test('CLI persists/reloads frozen batches and handoff; handles a pre-existing lock without doing work', async t => {
   const { root, cmd } = await workspace(t)
   await writeFile(join(root, 'catalog.json'), JSON.stringify(bands()), 'utf8')

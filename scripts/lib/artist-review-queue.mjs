@@ -85,23 +85,28 @@ function tasksFor(entry, now, authorityKey) {
     ...(needed(stages.channels, now) ? ['channels'] : [])]
 }
 
-export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey = null, direction = 'forward' }) {
+export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey = null, direction = 'forward', priorityMusicBrainzIds = [], limit = MAX_ARTISTS }) {
   checkOwner(queue, lane)
   if (queue.active) return { ...queue.active, resumed: true }
   if (!['forward', 'reverse'].includes(direction)) fail('DIRECTION_INVALID')
+  if (!Number.isInteger(limit) || limit < 1 || limit > MAX_ARTISTS) fail('SELECTION_LIMIT_INVALID')
+  if (!Array.isArray(priorityMusicBrainzIds) || priorityMusicBrainzIds.length > 200
+    || priorityMusicBrainzIds.some(id => !ID.test(id)) || new Set(priorityMusicBrainzIds).size !== priorityMusicBrainzIds.length) fail('CORE_PRIORITY_INVALID')
+  const coreOrder = new Map(priorityMusicBrainzIds.map((id, index) => [id, index]))
   // The scheduler owns cadence; ownership, frozen batches and provider retry times remain enforced.
   reconcile(queue, bands, now)
   const candidates = Object.values(queue.entries).map(entry => {
     const tasks = tasksFor(entry, now, authorityKey)
     const priority = tasks.includes('research') ? 1 : tasks.includes('approval') ? 2 : 3
     const since = Math.min(...tasks.map(stage => stamp(entry.stages[stage].waitingSince)))
-    return { entry, tasks, priority, since }
+    return { entry, tasks, priority, since, core: coreOrder.get(entry.band.musicbrainz_id) ?? Infinity }
   }).filter(row => row.tasks.length)
-  candidates.sort((a, b) => a.priority - b.priority || a.since - b.since
+  candidates.sort((a, b) => (Number.isFinite(a.core) ? 0 : 1) - (Number.isFinite(b.core) ? 0 : 1)
+    || a.priority - b.priority || a.since - b.since || (Number.isFinite(a.core) && Number.isFinite(b.core) ? a.core - b.core : 0)
     || (direction === 'reverse' ? -1 : 1) * (a.entry.band.name.localeCompare(b.entry.band.name, 'en') || a.entry.band.id.localeCompare(b.entry.band.id)))
   if (!candidates.length) return { state: 'idle', reason: 'no_work' }
   const batch = { state: 'running', project: PROJECT, runId: randomUUID(), owner: lane, startedAt: iso(now),
-    authorityKey, apiCalls: 0, artists: candidates.slice(0, MAX_ARTISTS).map(({ entry, tasks, priority }) => ({
+    authorityKey, apiCalls: 0, artists: candidates.slice(0, limit).map(({ entry, tasks, priority }) => ({
       bandId: entry.band.id, name: entry.band.name, identityVersion: entry.band.updated_at, key: entry.key,
       priority, tasks, stages: structuredClone(entry.stages), recorded: {}, receipts: {},
     })) }

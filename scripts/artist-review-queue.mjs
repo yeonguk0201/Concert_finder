@@ -83,7 +83,7 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
   now = Date.now(), fetcher = fetch, serverGuard = checkLegacyReviewIdle } = {}) {
   const [command, ...options] = args
   if (!['init', 'begin', 'context', 'checkpoint', 'apply', 'finish', 'status', 'handoff', 'accept', 'snapshot'].includes(command)
-    || options.some(arg => !/^--(owner|input|state|output|to|direction|authority-key)=.+$/.test(arg) && arg !== '--defer-pending')
+    || options.some(arg => !/^--(owner|input|state|output|to|direction|authority-key|priority-file|limit)=.+$/.test(arg) && arg !== '--defer-pending')
     || new Set(options.map(arg => arg.split('=')[0])).size !== options.length) throw new Error('ARGUMENT_INVALID')
   const opt = (key, fallback) => options.find(arg => arg.startsWith(`--${key}=`))?.slice(key.length + 3) ?? fallback
   const lane = opt('owner')
@@ -160,7 +160,14 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
         const service = env.SUPABASE_SERVICE_ROLE_KEY ? await serviceClient() : null
         const authorityKey = service ? SERVICE_AUTHORITY : opt('authority-key', env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN
           ? createHash('sha256').update(env.ARTIST_REVIEW_ADMIN_ACCESS_TOKEN).digest('hex') : null)
-        result = beginBatch(queue, { lane, bands, now, direction: opt('direction', 'forward'), authorityKey })
+        let priorityMusicBrainzIds = []
+        if (opt('priority-file') && !queue.active) {
+          const core = await read(local(opt('priority-file')))
+          if (core.policy !== 'core200-v1' || core.version !== 1 || !Array.isArray(core.priorityMusicBrainzIds)) throw new Error('CORE_PRIORITY_INVALID')
+          priorityMusicBrainzIds = core.priorityMusicBrainzIds
+        }
+        result = beginBatch(queue, { lane, bands, now, direction: opt('direction', 'forward'), authorityKey,
+          priorityMusicBrainzIds, limit: Number(opt('limit', '40')) })
         // State is authoritative if writing the convenience batch file fails.
         await save(statePath, queue)
         if (service) await registerServiceBatch(service, queue)
