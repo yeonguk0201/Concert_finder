@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { bands as fixtureBands, concerts as fixtureConcerts } from './data'
 import type { Band, Concert } from './data'
 import { calendarFile, formatDate, readIds } from './lib'
+import { matchesArtistSearch } from './artistSearch'
 import './App.css'
 import { useAuth } from './useAuth'
 import { AccountPanel } from './AccountPanel'
@@ -98,7 +99,7 @@ function App() {
   const openDetails = (concert: Concert) => { opener.current = document.activeElement as HTMLElement; setSelected(concert); updateUrl(page, concert.id) }
   const closeDetails = () => { detailDialog.current?.close(); setSelected(null); updateUrl(page); opener.current?.focus() }
   const matches = (concert: Concert) => (filter === '전체' || (filter === '페스티벌' ? concert.type === '페스티벌' : concert.bandIds.some(id => { const b = bands.find(b => b.id === id); return b && (filter === '국내' ? b.country === '한국' || b.countryCode === 'KR' : b.country !== '한국' && b.countryCode !== 'KR') }))) && (city === '전국' || concert.city === city) && `${concert.title} ${concert.venue} ${concert.bandIds.map(id => bands.find(b => b.id === id) ? [bands.find(b => b.id === id)?.name, ...(bands.find(b => b.id === id)?.aliases ?? [])].join(' ') : '').join(' ')}`.toLowerCase().includes(query.trim().toLowerCase())
-  const matchingBands = bands.filter(b => [b.name, ...(b.aliases ?? [])].join(' ').toLowerCase().includes(query.trim().toLowerCase()))
+  const matchingBands = bands.filter(b => matchesArtistSearch(b, query))
   const followedBands = bands.filter(b => followed.includes(b.id))
   const attributedPhoto = (page === 'search' ? matchingBands : page === 'bands' ? followedBands : []).find(b => (b.photoMode ?? 'auto') === 'auto' && validYouTubePhoto(b.officialProfile?.photo))?.officialProfile?.photo
   const upcoming = sortConcerts(concerts.filter(c => matches(c) && (page !== 'home' || isUpcoming(c))), order)
