@@ -97,7 +97,12 @@ export async function collectKopis({ serviceKey = process.env.KOPIS_SERVICE_KEY,
         const size = error.message === 'Response too large'
         const retryable = status ? Number(status) === 429 || Number(status) >= 500 : !size && !code?.startsWith('ERR_ENCODING')
         const message = status ? `KOPIS HTTP ${status}` : size ? 'KOPIS response too large' : timeout ? 'KOPIS request timeout' : `KOPIS network/response error${code ? ` (${code})` : ''}`
-        if (attempt === 3 || !retryable) throw new Error(message)
+        if (attempt === 3 || !retryable) {
+          // Preserve a safe request location across the outer source retry/report
+          // boundary. Never attach the URL, original error, response, or key.
+          const location = id ? `detail ${id}` : `list ${params.stdate}-${params.eddate} page=${params.cpage}`
+          throw Object.assign(new Error(`${message} [${location}]`), { retryable })
+        }
         await sleep(attempt * 2000)
       }
     }
