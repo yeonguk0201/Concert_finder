@@ -36,7 +36,8 @@ function pickRow(row) {
     channelUrl:row.channelUrl,verification:row.verification,evidence:row.evidence.map(e=>({kind:e.kind,url:e.url,linkedChannelUrl:e.linkedChannelUrl,identityMatched:e.identityMatched===true,checkedAt:e.checkedAt})),
     previousChannelId:CHANNEL.test(row.previousChannelId??'')?row.previousChannelId:null,locked:row.locked===true}
 }
-const fingerprint=row=>JSON.stringify([row.musicBrainzId,row.identityVersion,row.channelUrl,row.verification,row.evidence,row.previousChannelId,row.locked])
+const fingerprint=row=>JSON.stringify([row.musicBrainzId,row.identityVersion,row.channelUrl,row.verification,
+  row.evidence.map(e=>[e.kind,e.url,e.linkedChannelUrl,e.identityMatched===true,e.checkedAt]),row.previousChannelId,row.locked])
 function markSharedChannels(artists) {
   const channels=new Map()
   for(const row of artists)if(row.cache){const id=row.cache.channelId;if(!channels.has(id))channels.set(id,[]);channels.get(id).push(row)}

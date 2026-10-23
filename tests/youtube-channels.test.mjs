@@ -61,6 +61,23 @@ test('fresh cache avoids API work; changes require new resolution; expiration pu
   assert.equal(stale.artists[0].status,'key_required');assert.equal(stale.artists[0].displayable,true)
   assert.equal(stale.artists[0].cache.checkedAt,new Date(now).toISOString())
 })
+test('database JSONB evidence ordering and extra citations preserve fresh cache reuse',async()=>{
+  const input={version:1,artists:[row()]}
+  const previous=await refreshManifest(input,{now,key:'key',fetcher:async()=>json({items:[item()]})})
+  const evidence=previous.artists[0].evidence[0]
+  const persisted={...evidence,excerpt:'Original official citation'}
+  previous.artists[0].evidence=[Object.fromEntries(Object.entries(persisted).sort(([a],[b])=>a.localeCompare(b)))]
+  const databaseManifest={version:1,artists:previous.artists}
+  const result=await refreshManifest(databaseManifest,{now:now+DAY,previous:databaseManifest,key:'key',fetcher:()=>{throw Error('Fresh database cache must not call API')}})
+  assert.equal(result.artists[0].status,'reused')
+  assert.equal(result.apiCalls,0)
+  assert.equal(result.artists[0].cache.checkedAt,new Date(now).toISOString())
+  const changed=structuredClone(databaseManifest)
+  changed.artists[0].evidence[0].url='https://official.example/changed-profile'
+  const invalidated=await refreshManifest(changed,{now:now+DAY,previous:databaseManifest})
+  assert.equal(invalidated.artists[0].status,'key_required')
+  assert.equal(invalidated.artists[0].cache,null)
+})
 test('handle refresh remembers the previous resolved ID even if the caller omitted previousChannelId',async()=>{
   const input={version:1,artists:[row(1,'https://youtube.com/@Artist')]}
   const previous=await refreshManifest(input,{now,key:'key',fetcher:async()=>json({items:[item()]})})
