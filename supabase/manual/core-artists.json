@@ -1,0 +1,10 @@
+{
+  "policy": "core200-v1",
+  "selectionBasis": "2026-10-22 사용자 지명 필수 점검 4팀. 인기순 200팀 확정 목록이 아님. 미확인 외부 ID를 생성하지 않음.",
+  "artists": [
+    {"name":"Bring Me the Horizon","musicBrainzId":null,"bucket":"overseas_rock_band","expectedAliases":["BMTH","Bring Me the Horizon","브링 미 더 호라이즌","ブリング・ミー・ザ・ホライズン"],"identitySource":"https://www.sonymusic.co.jp/artist/bringmethehorizon/profile/"},
+    {"name":"Ado","musicBrainzId":"e134b52f-2e9e-4734-9bc3-bea9648d1fa1","bucket":"japanese_solo_unit","expectedAliases":["Ado","아도","アド"],"identitySource":"https://www.universal-music.co.jp/ado/biography/"},
+    {"name":"UVERworld","musicBrainzId":"a107bff6-58da-4302-83ad-317e86a1811c","bucket":"japanese_rock_band","expectedAliases":["UVERworld","우버월드","ウーバーワールド"],"identitySource":"https://www.sonymusic.co.jp/artist/UVERworld/profile/"},
+    {"name":"米津玄師","musicBrainzId":null,"bucket":"japanese_solo_unit","expectedAliases":["요네즈 켄시","米津玄師","Kenshi Yonezu"],"identitySource":"https://reissuerecords.net/profile/"}
+  ]
+}
