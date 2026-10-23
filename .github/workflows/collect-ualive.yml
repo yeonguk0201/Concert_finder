@@ -5,7 +5,7 @@ on:
       source:
         description: Collection source
         type: choice
-        options: [all, kopis, ualive, mintpaper, radwimps]
+        options: [all, kopis, ualive, mintpaper, radwimps, reissue_nol]
         default: all
       kopis_slot:
         description: Optional KOPIS detail slot for a reproducible verification

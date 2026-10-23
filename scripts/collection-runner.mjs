@@ -1,7 +1,7 @@
 // Fixed codes only: error messages can contain credential-bearing provider URLs.
 function collectionFailure(error, phase) {
   const message = error?.message ?? ''
-  const status = /^(?:KOPIS )?HTTP ([45]\d{2})$/.exec(message)?.[1]
+  const status = /^(?:KOPIS )?HTTP ([45]\d{2})(?: \[(?:list \d{8}-\d{8} page=\d+|detail PF\d{6})\])?$/.exec(message)?.[1]
   if (phase === 'upload') return { code: 'COLLECTION_UPLOAD_FAILED', retryable: false }
   if (status) return { code: `COLLECTION_HTTP_${status}`, retryable: status === '429' || Number(status) >= 500 }
   if (message === 'KOPIS_SERVICE_KEY missing') return { code: 'COLLECTION_CONFIGURATION_MISSING', retryable: false }
@@ -27,7 +27,7 @@ export async function runSource({ client, source, collect, upload, sleep = ms =>
     let result
     for (attempts = 1; attempts <= 3; attempts++) {
       try { result = await collect(); break } catch (error) {
-        if (attempts === 3 || !collectionFailure(error, phase).retryable) throw error
+        if (error.retryable === false || attempts === 3 || !collectionFailure(error, phase).retryable) throw error
         await sleep(attempts * 5000)
       }
     }
@@ -41,6 +41,8 @@ export async function runSource({ client, source, collect, upload, sleep = ms =>
       const finished = await client.rpc('service_fail_collection', { run_token: token, attempt_count: attempts, failure_code: failure.code })
       if (finished.error) throw new Error(`Failure recording failed: ${finished.error.code ?? 'RPC'}`)
     }
+    // Only the adapter's fixed, credential-free request context may cross this boundary.
+    if (phase === 'collect' && /^KOPIS HTTP [45]\d{2} \[(?:list \d{8}-\d{8} page=\d+|detail PF\d{6})\]$/.test(error?.message ?? '')) throw error
     throw new Error(failure.code)
   }
 }
