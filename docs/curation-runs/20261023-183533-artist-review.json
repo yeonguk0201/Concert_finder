@@ -1,0 +1,3293 @@
+{
+  "policy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+  "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+  "checkedAt": "2026-10-23T09:35:33.130824+00:00",
+  "kst": "2026-10-23T18:35:33.130824+09:00",
+  "environmentId": "ccarenv_b64_Y2NhcmVudl8yMmMyZGVkZTM3NDQ4MTkxYmVjNmI3NTFjNjMzMGYxZg",
+  "codePath": "/workspace/Concert_finder",
+  "gitBase": "1289205",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 1609,
+    "active": null,
+    "transfer": null,
+    "lastStartedAt": "2026-10-23T09:24:51.321Z",
+    "stateSha256": "0c59311b7dcab32d671c34e447a0632efa0fa8d53722b57ff736b7471db970bf"
+  },
+  "run": {
+    "id": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+    "selected": 40,
+    "startedAt": "2026-10-23T09:24:51.321+00:00",
+    "finishedAt": "2026-10-23T09:33:52.237533+00:00"
+  },
+  "selected": 40,
+  "tasks": 75,
+  "approvalTasks": 38,
+  "channelTasks": 37,
+  "newApprovals": 0,
+  "approvalDeferred": 38,
+  "newResearchComplete": 0,
+  "officialChannelSaved": 3,
+  "photoCacheSaved": 3,
+  "channelComplete": 3,
+  "channelDeferred": 34,
+  "validChannelCacheUntouched": [
+    "MyGO!!!!!",
+    "RADWIMPS",
+    "Rain Tree"
+  ],
+  "apiRequests": {
+    "youtube": 2,
+    "musicBrainz": 0,
+    "lastfm": 0,
+    "officialHtmlChannelLinkReads": 3,
+    "meaning": "YouTube ID 묶음 미리보기1+기존 service 갱신1. MusicBrainz cooldown 보존. 웹 조사 도구 호출과 Supabase RPC/SQL 전체 전송 수는 별도이며 계측되지 않은 정확한 전체 수를 주장하지 않음"
+  },
+  "readback": {
+    "run": {
+      "id": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+      "selected": 40,
+      "startedAt": "2026-10-23T09:24:51.321+00:00",
+      "finishedAt": "2026-10-23T09:33:52.237533+00:00"
+    },
+    "checkedAt": "2026-10-23T09:34:21.783095+00:00",
+    "bandsByStatus": {
+      "approved": 153,
+      "excluded": 6,
+      "unreviewed": 471
+    },
+    "approvalReceipts": 0,
+    "liveLegacyLeases": 0,
+    "liveIntegratedLeases": 0
+  },
+  "channelUploadSummary": {
+    "imported": 3,
+    "importFailures": 0,
+    "artists": 3,
+    "applied": 3,
+    "writeFailures": 0,
+    "apiCalls": 1,
+    "counts": {
+      "refreshed": 3
+    },
+    "errors": {},
+    "ok": true,
+    "officiallyVerified": 3,
+    "photosAvailable": 3,
+    "readBack": 3
+  },
+  "bandsByStatus": {
+    "approved": 153,
+    "excluded": 6,
+    "unreviewed": 471
+  },
+  "workflowSummary": {
+    "remaining": 373,
+    "authorityWaitingPreserved": 66,
+    "meaning": "기존 finish가 반환한 스케줄러 집계. 기술 지연·현재 DB 미검수 수와 별개이며 전체 잔여 수로 대체하지 않음"
+  },
+  "approvalAutoReview": {
+    "rejected": true,
+    "affectedNames": [
+      "mihimaru GT",
+      "MUCC",
+      "SCANDAL",
+      "SEKAI NO OWARI",
+      "THE ALFEE",
+      "the pillows",
+      "いきものがかり",
+      "スキマスイッチ",
+      "ばってん少女隊",
+      "ももいろクローバーZ"
+    ],
+    "affectedCount": 10,
+    "writeExecuted": false,
+    "reason": "승인/publication에 영향을 주는 10팀 쓰기에서 모든 요건 true를 로컬 요약으로 작성했지만 정확한 신원·분류·근거의 충분성을 독립적으로 입증하지 않았다는 자동 승인 검토 거절. 다른 실행 방식으로 우회하지 않음.",
+    "followup": "구체 관측과 미확인 요건을 readyToApply=false 초안으로 보존. 특히 현재 MBID와 외부 작품/공식 링크의 추가 대조가 남으며 인증/사용자 추가 승인만으로 false를 true로 바꾸지 않음."
+  },
+  "manualJudgmentExceptions": [],
+  "fullCatalogComplete": false,
+  "core200Complete": false,
+  "limitations": [
+    "보존된 research 완료와 이번 새 조사 완료를 혼동하지 않음. 기존 research 확인 시각/유효기간을 연장하지 않았고 승인 초안/검색 시도는 완료 증거가 아님.",
+    "보완 자료 checkedAt은 실제 페이지를 읽고 기록한 관측 시각이며 원본 HTTP 요청 로그 시각을 주장하지 않음.",
+    "현재 MusicBrainz cooldown을 지켜 새 API 호출을 하지 않았고 선택 ID에 대한 재사용 가능한 로컬 상세 메타데이터도 없었다.",
+    "HelloProject 각 아티스트 페이지의 직접 채널 ID를 실제 읽고 Google API ID와 일치 확인. 공통/별도 hapisugo 채널은 선택하지 않음. API 캐시 사진 URL/제목/원문을 이 보고서에 기록하지 않음.",
+    "미선정 channels task의 MyGO/RADWIMPS/RainTree 기존 캐시를 그대로 두었다. Ado/UVERworld는 새 공식 직접 링크와 API ID 검증 미완료로 저장하지 않음.",
+    "identity-work 파일은 receipt 복구 준비이며 identity CLI/고정 journal 쓰기는 아직 미연결. 신규 등록·별칭 쓰기 없음.",
+    "LASTFM 바인딩은 미관측. 인기 지표·신규 후보 완료로 보고하지 않으며 기존 DB 검수는 계속했다.",
+    "공연 수집/운영 감시/공개 ON/알림 발송/운영 마이그레이션·권한/배포·push/PR/merge 없음.",
+    "현재 환경의 기록/로컬 커밋이며 다른 환경·원격에 자동 동기화됐다는 뜻이 아님."
+  ],
+  "artists": [
+    {
+      "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+      "name": "Ado",
+      "aliases": [
+        "아도"
+      ],
+      "country": "JP",
+      "musicBrainzId": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+      "originalVersion": "2026-10-22T07:39:53.54295+00:00",
+      "beforeStatus": "approved",
+      "beforeCategory": "jpop",
+      "approvalApplied": false,
+      "approvalDraft": null,
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:48.787Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+      "name": "UVERworld",
+      "aliases": [
+        "SOUND極ROAD",
+        "ウーバーワールド"
+      ],
+      "country": "JP",
+      "musicBrainzId": "a107bff6-58da-4302-83ad-317e86a1811c",
+      "originalVersion": "2026-10-22T07:39:56.317829+00:00",
+      "beforeStatus": "approved",
+      "beforeCategory": "overseas_rock",
+      "approvalApplied": false,
+      "approvalDraft": null,
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:48.880Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "cf677a0c-a5ab-4075-8cd7-f0c8e39a3744",
+      "name": "m‐flo",
+      "aliases": [
+        "mflo",
+        "えむふろう",
+        "m-flow",
+        "m-flo♥STAR TREK™",
+        "エムフロウ",
+        "meteorite-flow crew",
+        "mediarite-flow crew",
+        "エム・フロウ",
+        "エム・フロー",
+        "えむ ふろう"
+      ],
+      "country": "JP",
+      "musicBrainzId": "22dd2db3-88ea-4428-a7a8-5cd3acf23175",
+      "originalVersion": "2026-10-13T08:18:54.713588+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "cf677a0c-a5ab-4075-8cd7-f0c8e39a3744",
+        "name": "m‐flo",
+        "readyToApply": false,
+        "reason": "기존 avex URL은 placeholder 형식. 대체 공식 m-flo.com/profile 접근 불가. 실제 그룹 프로필·국가·작품 근거 재확인 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "기존 avex URL은 placeholder 형식. 대체 공식 m-flo.com/profile 접근 불가. 실제 그룹 프로필·국가·작품 근거 재확인 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "기존 avex URL은 placeholder 형식. 대체 공식 m-flo.com/profile 접근 불가. 실제 그룹 프로필·국가·작품 근거 재확인 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "기존 avex URL은 placeholder 형식. 대체 공식 m-flo.com/profile 접근 불가. 실제 그룹 프로필·국가·작품 근거 재확인 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 기존 avex URL은 placeholder 형식. 대체 공식 m-flo.com/profile 접근 불가. 실제 그룹 프로필·국가·작품 근거 재확인 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:22dd2db3-88ea-4428-a7a8-5cd3acf23175가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "기존 avex URL은 placeholder 형식. 대체 공식 m-flo.com/profile 접근 불가. 실제 그룹 프로필·국가·작품 근거 재확인 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "cf677a0c-a5ab-4075-8cd7-f0c8e39a3744",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:48.945Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "f9d7e9f3-bca1-4f0a-b437-21b8a44f25b4",
+      "name": "May J.",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "ec7e4f26-cddb-4e91-9f08-5f2f12da5f36",
+      "originalVersion": "2026-10-13T08:18:37.748662+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "f9d7e9f3-bca1-4f0a-b437-21b8a44f25b4",
+        "name": "May J.",
+        "readyToApply": false,
+        "reason": "공식 영문 소개에서 J-pop 가수 및 Family/for you 확인. 복합 배경을 일본 국적/출신과 혼동하지 않고 JP 국가 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 영문 소개에서 J-pop 가수 및 Family/for you 확인. 복합 배경을 일본 국적/출신과 혼동하지 않고 JP 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 영문 소개에서 J-pop 가수 및 Family/for you 확인. 복합 배경을 일본 국적/출신과 혼동하지 않고 JP 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 영문 소개에서 J-pop 가수 및 Family/for you 확인. 복합 배경을 일본 국적/출신과 혼동하지 않고 JP 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 영문 소개에서 J-pop 가수 및 Family/for you 확인. 복합 배경을 일본 국적/출신과 혼동하지 않고 JP 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:ec7e4f26-cddb-4e91-9f08-5f2f12da5f36가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 영문 소개에서 J-pop 가수 및 Family/for you 확인. 복합 배경을 일본 국적/출신과 혼동하지 않고 JP 국가 신원 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "f9d7e9f3-bca1-4f0a-b437-21b8a44f25b4",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.008Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+      "name": "mihimaru GT",
+      "aliases": [
+        "mihimaruGT"
+      ],
+      "country": "JP",
+      "musicBrainzId": "6011bcce-9f6b-4aae-adae-68727eaef7e0",
+      "originalVersion": "2026-10-13T08:18:26.892363+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+        "name": "mihimaru GT",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "hiroko(阿久津博子)/miyake(三宅光幸), 2003년 결성; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.mihimaru-gt.com/profile/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "효고·오카야마 출신 및 시부야 기반 활동",
+            "sourceUrls": [
+              "https://www.mihimaru-gt.com/profile/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "HIP!POP!·Pops/Hip-Hop 혼합 원작 활동과 인디 음반/메이저 데뷔",
+            "sourceUrls": [
+              "https://www.mihimaru-gt.com/profile/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.mihimaru-gt.com/profile/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:6011bcce-9f6b-4aae-adae-68727eaef7e0가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.mihimaru-gt.com/profile/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.mihimaru-gt.com/profile/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "hiroko(阿久津博子)/miyake(三宅光幸), 2003년 결성; 효고·오카야마 출신 및 시부야 기반 활동; HIP!POP!·Pops/Hip-Hop 혼합 원작 활동과 인디 음반/메이저 데뷔",
+          "sources": [
+            {
+              "url": "https://www.mihimaru-gt.com/profile/",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "hiroko(阿久津博子)/miyake(三宅光幸), 2003년 결성; 효고·오카야마 출신 및 시부야 기반 활동; HIP!POP!·Pops/Hip-Hop 혼합 원작 활동과 인디 음반/메이저 데뷔"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+          "expected_updated_at": "2026-10-13T08:18:26.892363+00:00",
+          "artist_name": "mihimaru GT",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "mihimaruGT"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: hiroko(阿久津博子)/miyake(三宅光幸), 2003년 결성; 효고·오카야마 출신 및 시부야 기반 활동; HIP!POP!·Pops/Hip-Hop 혼합 원작 활동과 인디 음반/메이저 데뷔",
+          "evidence_url": "https://www.mihimaru-gt.com/profile/"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.069Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "5a62a979-cc6b-4966-b726-fc4fcbb5ecc5",
+      "name": "MINMI",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "0a2d8d95-9cb1-48da-927c-613b4e12ae72",
+      "originalVersion": "2026-10-13T08:18:56.084155+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "5a62a979-cc6b-4966-b726-fc4fcbb5ecc5",
+        "name": "MINMI",
+        "readyToApply": false,
+        "reason": "공식/Universal 소개에서 오사카 출신, The Perfect Vision·MOTHER, 레게/힙합·혼합 음악 활동 확인. 실제 J-pop/록 활동을 구체 음반 근거로 추가 확인; 레게만으로 제외하지 않음.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식/Universal 소개에서 오사카 출신, The Perfect Vision·MOTHER, 레게/힙합·혼합 음악 활동 확인. 실제 J-pop/록 활동을 구체 음반 근거로 추가 확인; 레게만으로 제외하지 않음.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식/Universal 소개에서 오사카 출신, The Perfect Vision·MOTHER, 레게/힙합·혼합 음악 활동 확인. 실제 J-pop/록 활동을 구체 음반 근거로 추가 확인; 레게만으로 제외하지 않음.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식/Universal 소개에서 오사카 출신, The Perfect Vision·MOTHER, 레게/힙합·혼합 음악 활동 확인. 실제 J-pop/록 활동을 구체 음반 근거로 추가 확인; 레게만으로 제외하지 않음.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식/Universal 소개에서 오사카 출신, The Perfect Vision·MOTHER, 레게/힙합·혼합 음악 활동 확인. 실제 J-pop/록 활동을 구체 음반 근거로 추가 확인; 레게만으로 제외하지 않음.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:0a2d8d95-9cb1-48da-927c-613b4e12ae72가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식/Universal 소개에서 오사카 출신, The Perfect Vision·MOTHER, 레게/힙합·혼합 음악 활동 확인. 실제 J-pop/록 활동을 구체 음반 근거로 추가 확인; 레게만으로 제외하지 않음."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "5a62a979-cc6b-4966-b726-fc4fcbb5ecc5",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.130Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "aa9b7177-897d-41ce-9ed1-f845be2720b2",
+      "name": "miwa",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "a83e47fb-d486-4c15-9919-ed8351cc395c",
+      "originalVersion": "2026-10-13T08:18:44.959031+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "aa9b7177-897d-41ce-9ed1-f845be2720b2",
+        "name": "miwa",
+        "readyToApply": false,
+        "reason": "Sony503, 대체 공식 bio는 이미지 위주라 실제 소개 본문 미확보. 다른 공식 음반/국가 자료 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Sony503, 대체 공식 bio는 이미지 위주라 실제 소개 본문 미확보. 다른 공식 음반/국가 자료 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "Sony503, 대체 공식 bio는 이미지 위주라 실제 소개 본문 미확보. 다른 공식 음반/국가 자료 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "Sony503, 대체 공식 bio는 이미지 위주라 실제 소개 본문 미확보. 다른 공식 음반/국가 자료 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: Sony503, 대체 공식 bio는 이미지 위주라 실제 소개 본문 미확보. 다른 공식 음반/국가 자료 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:a83e47fb-d486-4c15-9919-ed8351cc395c가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "Sony503, 대체 공식 bio는 이미지 위주라 실제 소개 본문 미확보. 다른 공식 음반/국가 자료 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "aa9b7177-897d-41ce-9ed1-f845be2720b2",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.192Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "0f8a5a78-942a-47a0-9d34-e7eeaf40bd8a",
+      "name": "moumoon",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "391c42b9-1f4b-4d2d-be6f-dc823db7dd60",
+      "originalVersion": "2026-10-13T08:18:16.149699+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "0f8a5a78-942a-47a0-9d34-e7eeaf40bd8a",
+        "name": "moumoon",
+        "readyToApply": false,
+        "reason": "기존 avex placeholder URL 대신 공식 profile/biography 대체 경로를 시도했으나 접근 불가.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "기존 avex placeholder URL 대신 공식 profile/biography 대체 경로를 시도했으나 접근 불가.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "기존 avex placeholder URL 대신 공식 profile/biography 대체 경로를 시도했으나 접근 불가.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "기존 avex placeholder URL 대신 공식 profile/biography 대체 경로를 시도했으나 접근 불가.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 기존 avex placeholder URL 대신 공식 profile/biography 대체 경로를 시도했으나 접근 불가.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:391c42b9-1f4b-4d2d-be6f-dc823db7dd60가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "기존 avex placeholder URL 대신 공식 profile/biography 대체 경로를 시도했으나 접근 불가."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "0f8a5a78-942a-47a0-9d34-e7eeaf40bd8a",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.271Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "b55ca720-67aa-4f50-a656-7318f906e9ca",
+      "name": "MUCC",
+      "aliases": [
+        "ムック"
+      ],
+      "country": "JP",
+      "musicBrainzId": "0da0f48c-3689-4c38-bf4a-c5b50d516689",
+      "originalVersion": "2026-10-13T08:19:52.351633+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b55ca720-67aa-4f50-a656-7318f906e9ca",
+        "name": "MUCC",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "overseas_rock",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "逹瑯/ミヤ/YUKKE, 1997년 결성, 新世界/是空/朽木の灯; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+            ]
+          },
+          "countryMatched": {
+            "summary": "일본 국내 활동과 유럽·미국 등 해외 공연 구분",
+            "sourceUrls": [
+              "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+            ]
+          },
+          "genreMatched": {
+            "summary": "공식 록 밴드 및 록·메탈·펑크 활동 명시",
+            "sourceUrls": [
+              "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 overseas_rock; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:0da0f48c-3689-4c38-bf4a-c5b50d516689가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "逹瑯/ミヤ/YUKKE, 1997년 결성, 新世界/是空/朽木の灯; 일본 국내 활동과 유럽·미국 등 해외 공연 구분; 공식 록 밴드 및 록·메탈·펑크 활동 명시",
+          "sources": [
+            {
+              "url": "https://www.tkma.co.jp/jpop_profile/MUCC.html",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "逹瑯/ミヤ/YUKKE, 1997년 결성, 新世界/是空/朽木の灯; 일본 국내 활동과 유럽·미국 등 해외 공연 구분; 공식 록 밴드 및 록·메탈·펑크 활동 명시"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "b55ca720-67aa-4f50-a656-7318f906e9ca",
+          "expected_updated_at": "2026-10-13T08:19:52.351633+00:00",
+          "artist_name": "MUCC",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ムック"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: 逹瑯/ミヤ/YUKKE, 1997년 결성, 新世界/是空/朽木の灯; 일본 국내 활동과 유럽·미국 등 해외 공연 구분; 공식 록 밴드 및 록·메탈·펑크 활동 명시",
+          "evidence_url": "https://www.tkma.co.jp/jpop_profile/MUCC.html"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b55ca720-67aa-4f50-a656-7318f906e9ca",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.334Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "f95cc1b6-a8de-43c9-94e9-897f4c08df48",
+      "name": "MyGO!!!!!",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "be91faa6-5277-4b73-b97c-10786db10598",
+      "originalVersion": "2026-10-12T14:24:09.149148+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "f95cc1b6-a8de-43c9-94e9-897f4c08df48",
+        "name": "MyGO!!!!!",
+        "readyToApply": false,
+        "reason": "공식 artist/mygo와 mygo 경로 모두503. 실제 연주자 신원과 캐릭터를 구분하여 공식 레이블·원작 근거 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 artist/mygo와 mygo 경로 모두503. 실제 연주자 신원과 캐릭터를 구분하여 공식 레이블·원작 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 artist/mygo와 mygo 경로 모두503. 실제 연주자 신원과 캐릭터를 구분하여 공식 레이블·원작 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 artist/mygo와 mygo 경로 모두503. 실제 연주자 신원과 캐릭터를 구분하여 공식 레이블·원작 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 artist/mygo와 mygo 경로 모두503. 실제 연주자 신원과 캐릭터를 구분하여 공식 레이블·원작 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:be91faa6-5277-4b73-b97c-10786db10598가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 artist/mygo와 mygo 경로 모두503. 실제 연주자 신원과 캐릭터를 구분하여 공식 레이블·원작 근거 보완 필요."
+      },
+      "channelCheckpoint": null,
+      "channelReadback": null,
+      "channelTaskSelected": false,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "9beceb4d-6524-473f-943c-34c41227fc6d",
+      "name": "NMB48",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "e3e715b3-2e88-4902-869c-131f4e9a5c01",
+      "originalVersion": "2026-10-13T08:18:48.568041+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "9beceb4d-6524-473f-943c-34c41227fc6d",
+        "name": "NMB48",
+        "readyToApply": false,
+        "reason": "吉本 공식 소개에서 2010년 결성·현재 멤버 확인. query URL을 유효 queryless 출처로 바꾸어 원작 J-pop 음반과 그룹 국가 신원을 보완. 대체 Universal/NMB공식 경로 접근 불가.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "吉本 공식 소개에서 2010년 결성·현재 멤버 확인. query URL을 유효 queryless 출처로 바꾸어 원작 J-pop 음반과 그룹 국가 신원을 보완. 대체 Universal/NMB공식 경로 접근 불가.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "吉本 공식 소개에서 2010년 결성·현재 멤버 확인. query URL을 유효 queryless 출처로 바꾸어 원작 J-pop 음반과 그룹 국가 신원을 보완. 대체 Universal/NMB공식 경로 접근 불가.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "吉本 공식 소개에서 2010년 결성·현재 멤버 확인. query URL을 유효 queryless 출처로 바꾸어 원작 J-pop 음반과 그룹 국가 신원을 보완. 대체 Universal/NMB공식 경로 접근 불가.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 吉本 공식 소개에서 2010년 결성·현재 멤버 확인. query URL을 유효 queryless 출처로 바꾸어 원작 J-pop 음반과 그룹 국가 신원을 보완. 대체 Universal/NMB공식 경로 접근 불가.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:e3e715b3-2e88-4902-869c-131f4e9a5c01가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "吉本 공식 소개에서 2010년 결성·현재 멤버 확인. query URL을 유효 queryless 출처로 바꾸어 원작 J-pop 음반과 그룹 국가 신원을 보완. 대체 Universal/NMB공식 경로 접근 불가."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "9beceb4d-6524-473f-943c-34c41227fc6d",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.389Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "2c8565b4-bf7f-4544-80a2-015bb16e1aa1",
+      "name": "Poppin'Party",
+      "aliases": [
+        "ポピパ",
+        "PoPiPa",
+        "Popping Party",
+        "Poppin Party"
+      ],
+      "country": "JP",
+      "musicBrainzId": "9cacc8a5-fb40-4584-aea2-591172da6e84",
+      "originalVersion": "2026-10-13T08:18:46.350594+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "2c8565b4-bf7f-4544-80a2-015bb16e1aa1",
+        "name": "Poppin'Party",
+        "readyToApply": false,
+        "reason": "BangDream 공식 artist 페이지503. 실제 연주자 신원·국가·음반 근거를 다른 공식 자료로 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "BangDream 공식 artist 페이지503. 실제 연주자 신원·국가·음반 근거를 다른 공식 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "BangDream 공식 artist 페이지503. 실제 연주자 신원·국가·음반 근거를 다른 공식 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "BangDream 공식 artist 페이지503. 실제 연주자 신원·국가·음반 근거를 다른 공식 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: BangDream 공식 artist 페이지503. 실제 연주자 신원·국가·음반 근거를 다른 공식 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:9cacc8a5-fb40-4584-aea2-591172da6e84가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "BangDream 공식 artist 페이지503. 실제 연주자 신원·국가·음반 근거를 다른 공식 자료로 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "2c8565b4-bf7f-4544-80a2-015bb16e1aa1",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.454Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "8b091a38-1fb6-4bde-8da8-fa2410fa914b",
+      "name": "RADWIMPS",
+      "aliases": [
+        "라드윔프스",
+        "ラッドウィンプス",
+        "래드윔프스",
+        "ラッドウインプス"
+      ],
+      "country": "JP",
+      "musicBrainzId": "6f500293-7396-4903-b4fd-118127d06f9e",
+      "originalVersion": "2026-10-12T14:45:04.815757+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "8b091a38-1fb6-4bde-8da8-fa2410fa914b",
+        "name": "RADWIMPS",
+        "readyToApply": false,
+        "reason": "공식 일·영문에서 野田洋次郎/武田祐介/山口智史, FOREVER DAZE/Anew 및 신카이 영화 원작 음악/일본·해외 투어 확인. 실제 록 장르와 원래 국가 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 일·영문에서 野田洋次郎/武田祐介/山口智史, FOREVER DAZE/Anew 및 신카이 영화 원작 음악/일본·해외 투어 확인. 실제 록 장르와 원래 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 일·영문에서 野田洋次郎/武田祐介/山口智史, FOREVER DAZE/Anew 및 신카이 영화 원작 음악/일본·해외 투어 확인. 실제 록 장르와 원래 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 일·영문에서 野田洋次郎/武田祐介/山口智史, FOREVER DAZE/Anew 및 신카이 영화 원작 음악/일본·해외 투어 확인. 실제 록 장르와 원래 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 일·영문에서 野田洋次郎/武田祐介/山口智史, FOREVER DAZE/Anew 및 신카이 영화 원작 음악/일본·해외 투어 확인. 실제 록 장르와 원래 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:6f500293-7396-4903-b4fd-118127d06f9e가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 일·영문에서 野田洋次郎/武田祐介/山口智史, FOREVER DAZE/Anew 및 신카이 영화 원작 음악/일본·해외 투어 확인. 실제 록 장르와 원래 국가 신원 보완 필요."
+      },
+      "channelCheckpoint": null,
+      "channelReadback": null,
+      "channelTaskSelected": false,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "6e5101d2-abcd-4796-8b3f-c1c6428b116a",
+      "name": "Rain Tree",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "0e05481c-61c4-4ca0-903c-f1fbe0cb8457",
+      "originalVersion": "2026-10-12T14:24:09.148764+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "6e5101d2-abcd-4796-8b3f-c1c6428b116a",
+        "name": "Rain Tree",
+        "readyToApply": false,
+        "reason": "공식 홈페이지에서 멤버·일정과 台風の夜 등 작품 제목 확인. 실제 원작 J-pop 활동·그룹 국가 및 정확한 외부 신원 보완 필요. 채널 cache는 유효하여 이번 채널 task 없음.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 홈페이지에서 멤버·일정과 台風の夜 등 작품 제목 확인. 실제 원작 J-pop 활동·그룹 국가 및 정확한 외부 신원 보완 필요. 채널 cache는 유효하여 이번 채널 task 없음.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 홈페이지에서 멤버·일정과 台風の夜 등 작품 제목 확인. 실제 원작 J-pop 활동·그룹 국가 및 정확한 외부 신원 보완 필요. 채널 cache는 유효하여 이번 채널 task 없음.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 홈페이지에서 멤버·일정과 台風の夜 등 작품 제목 확인. 실제 원작 J-pop 활동·그룹 국가 및 정확한 외부 신원 보완 필요. 채널 cache는 유효하여 이번 채널 task 없음.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 홈페이지에서 멤버·일정과 台風の夜 등 작품 제목 확인. 실제 원작 J-pop 활동·그룹 국가 및 정확한 외부 신원 보완 필요. 채널 cache는 유효하여 이번 채널 task 없음.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:0e05481c-61c4-4ca0-903c-f1fbe0cb8457가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 홈페이지에서 멤버·일정과 台風の夜 등 작품 제목 확인. 실제 원작 J-pop 활동·그룹 국가 및 정확한 외부 신원 보완 필요. 채널 cache는 유효하여 이번 채널 task 없음."
+      },
+      "channelCheckpoint": null,
+      "channelReadback": null,
+      "channelTaskSelected": false,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+      "name": "SCANDAL",
+      "aliases": [
+        "スキャンダル",
+        "斯坎朵"
+      ],
+      "country": "JP",
+      "musicBrainzId": "d4c7c69d-a1f9-4717-a409-0346fd90d517",
+      "originalVersion": "2026-10-13T08:19:45.128318+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+        "name": "SCANDAL",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "HARUNA/MAMI/TOMOMI/RINA, DOLL/少女S/BEST SCANDAL; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/scandal/profile/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "Osaka, Japan에서 같은 학교 학생들의 2006년 결성 명시",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/scandal/profile/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "공격적인 사운드·팝 음악성과 원작 싱글/음반 발매 활동",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/scandal/profile/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/scandal/profile/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:d4c7c69d-a1f9-4717-a409-0346fd90d517가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/scandal/profile/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/scandal/profile/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "HARUNA/MAMI/TOMOMI/RINA, DOLL/少女S/BEST SCANDAL; Osaka, Japan에서 같은 학교 학생들의 2006년 결성 명시; 공격적인 사운드·팝 음악성과 원작 싱글/음반 발매 활동",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/scandal/profile/",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "HARUNA/MAMI/TOMOMI/RINA, DOLL/少女S/BEST SCANDAL; Osaka, Japan에서 같은 학교 학생들의 2006년 결성 명시; 공격적인 사운드·팝 음악성과 원작 싱글/음반 발매 활동"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+          "expected_updated_at": "2026-10-13T08:19:45.128318+00:00",
+          "artist_name": "SCANDAL",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "スキャンダル",
+            "斯坎朵"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: HARUNA/MAMI/TOMOMI/RINA, DOLL/少女S/BEST SCANDAL; Osaka, Japan에서 같은 학교 학생들의 2006년 결성 명시; 공격적인 사운드·팝 음악성과 원작 싱글/음반 발매 활동",
+          "evidence_url": "https://www.sonymusic.co.jp/artist/scandal/profile/"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.507Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+      "name": "SEKAI NO OWARI",
+      "aliases": [
+        "End of the World",
+        "세카이노오와리",
+        "世界の終わり",
+        "SekaOwa"
+      ],
+      "country": "JP",
+      "musicBrainzId": "d9dbfe6a-8346-4337-8614-fe96aab63927",
+      "originalVersion": "2026-10-12T14:45:05.178638+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+        "name": "SEKAI NO OWARI",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "EARTH/2011년 메이저 데뷔/Twilight City/INSOMNIA TRAIN/scent of memory; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.universal-music.co.jp/sekainoowari/biography/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "일본 전국 기반 투어와 일본 음악 장면 활동",
+            "sourceUrls": [
+              "https://www.universal-music.co.jp/sekainoowari/biography/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "팝부터 어두운 음악까지 혼합 음악성과 실제 정규 음반·공연 활동",
+            "sourceUrls": [
+              "https://www.universal-music.co.jp/sekainoowari/biography/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.universal-music.co.jp/sekainoowari/biography/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:d9dbfe6a-8346-4337-8614-fe96aab63927가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.universal-music.co.jp/sekainoowari/biography/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.universal-music.co.jp/sekainoowari/biography/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "EARTH/2011년 메이저 데뷔/Twilight City/INSOMNIA TRAIN/scent of memory; 일본 전국 기반 투어와 일본 음악 장면 활동; 팝부터 어두운 음악까지 혼합 음악성과 실제 정규 음반·공연 활동",
+          "sources": [
+            {
+              "url": "https://www.universal-music.co.jp/sekainoowari/biography/",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "EARTH/2011년 메이저 데뷔/Twilight City/INSOMNIA TRAIN/scent of memory; 일본 전국 기반 투어와 일본 음악 장면 활동; 팝부터 어두운 음악까지 혼합 음악성과 실제 정규 음반·공연 활동"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+          "expected_updated_at": "2026-10-12T14:45:05.178638+00:00",
+          "artist_name": "SEKAI NO OWARI",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "End of the World",
+            "세카이노오와리",
+            "世界の終わり",
+            "SekaOwa"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: EARTH/2011년 메이저 데뷔/Twilight City/INSOMNIA TRAIN/scent of memory; 일본 전국 기반 투어와 일본 음악 장면 활동; 팝부터 어두운 음악까지 혼합 음악성과 실제 정규 음반·공연 활동",
+          "evidence_url": "https://www.universal-music.co.jp/sekainoowari/biography/"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.566Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "b159ad20-2dfe-4ef8-ba32-44370dc3e1b0",
+      "name": "SixTONES",
+      "aliases": [
+        "STONES",
+        "SixTONES(ストーンズ)"
+      ],
+      "country": "JP",
+      "musicBrainzId": "47a3fb29-e36b-440b-9d3c-3a68cec34396",
+      "originalVersion": "2026-10-13T08:18:39.062402+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b159ad20-2dfe-4ef8-ba32-44370dc3e1b0",
+        "name": "SixTONES",
+        "readyToApply": false,
+        "reason": "공식 홈페이지에서 一秒/Rebellion·원작 음반/영상 확인. 멤버별 프로필·그룹 국가 및 실제 J-pop 활동 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 홈페이지에서 一秒/Rebellion·원작 음반/영상 확인. 멤버별 프로필·그룹 국가 및 실제 J-pop 활동 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 홈페이지에서 一秒/Rebellion·원작 음반/영상 확인. 멤버별 프로필·그룹 국가 및 실제 J-pop 활동 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 홈페이지에서 一秒/Rebellion·원작 음반/영상 확인. 멤버별 프로필·그룹 국가 및 실제 J-pop 활동 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 홈페이지에서 一秒/Rebellion·원작 음반/영상 확인. 멤버별 프로필·그룹 국가 및 실제 J-pop 활동 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:47a3fb29-e36b-440b-9d3c-3a68cec34396가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 홈페이지에서 一秒/Rebellion·원작 음반/영상 확인. 멤버별 프로필·그룹 국가 및 실제 J-pop 활동 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b159ad20-2dfe-4ef8-ba32-44370dc3e1b0",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.622Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "d268aafc-3f8f-4557-95fc-001e817fe77b",
+      "name": "Snow Man",
+      "aliases": [
+        "SnowMan"
+      ],
+      "country": "JP",
+      "musicBrainzId": "1322f39c-cea6-42aa-aa98-3b6b5043b07d",
+      "originalVersion": "2026-10-13T08:18:30.283233+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "d268aafc-3f8f-4557-95fc-001e817fe77b",
+        "name": "Snow Man",
+        "readyToApply": false,
+        "reason": "MENT 공식 프로필에서 岩本照/深澤辰哉/ラウール 등9인 확인. 작품·국가·정확한 외부 신원 대조 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "MENT 공식 프로필에서 岩本照/深澤辰哉/ラウール 등9인 확인. 작품·국가·정확한 외부 신원 대조 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "MENT 공식 프로필에서 岩本照/深澤辰哉/ラウール 등9인 확인. 작품·국가·정확한 외부 신원 대조 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "MENT 공식 프로필에서 岩本照/深澤辰哉/ラウール 등9인 확인. 작품·국가·정확한 외부 신원 대조 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: MENT 공식 프로필에서 岩本照/深澤辰哉/ラウール 등9인 확인. 작품·국가·정확한 외부 신원 대조 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:1322f39c-cea6-42aa-aa98-3b6b5043b07d가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "MENT 공식 프로필에서 岩本照/深澤辰哉/ラウール 등9인 확인. 작품·국가·정확한 외부 신원 대조 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "d268aafc-3f8f-4557-95fc-001e817fe77b",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.681Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "31cf2bdb-339b-49f3-b2bd-c58d57da7260",
+      "name": "SUPER☆GiRLS",
+      "aliases": [
+        "SUPER?GiRLS"
+      ],
+      "country": "JP",
+      "musicBrainzId": "4d49e67b-1746-48ac-9eac-9ebabc595486",
+      "originalVersion": "2026-10-13T08:18:18.715369+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "31cf2bdb-339b-49f3-b2bd-c58d57da7260",
+        "name": "SUPER☆GiRLS",
+        "readyToApply": false,
+        "reason": "공식 프로필에서 avex2010오디션·超絶少女/女子力パラダイス/プリプリSUMMERキッス 원작 발매 확인. 그룹 국가 신원 근거 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 프로필에서 avex2010오디션·超絶少女/女子力パラダイス/プリプリSUMMERキッス 원작 발매 확인. 그룹 국가 신원 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 프로필에서 avex2010오디션·超絶少女/女子力パラダイス/プリプリSUMMERキッス 원작 발매 확인. 그룹 국가 신원 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 프로필에서 avex2010오디션·超絶少女/女子力パラダイス/プリプリSUMMERキッス 원작 발매 확인. 그룹 국가 신원 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 프로필에서 avex2010오디션·超絶少女/女子力パラダイス/プリプリSUMMERキッス 원작 발매 확인. 그룹 국가 신원 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:4d49e67b-1746-48ac-9eac-9ebabc595486가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 프로필에서 avex2010오디션·超絶少女/女子力パラダイス/プリプリSUMMERキッス 원작 발매 확인. 그룹 국가 신원 근거 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "31cf2bdb-339b-49f3-b2bd-c58d57da7260",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.739Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "984b4d94-076e-47da-8d98-6cfc81125cd6",
+      "name": "T.M.Revolution",
+      "aliases": [
+        "Takanori Makes Revolution",
+        "TM Revolution",
+        "TMR",
+        "TMRevolution",
+        "ティー・エム・レボリューション",
+        "西川贵教"
+      ],
+      "country": "JP",
+      "musicBrainzId": "7dea80e3-0861-4c9c-86df-eec42fc2c5a8",
+      "originalVersion": "2026-10-13T08:18:49.582853+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "984b4d94-076e-47da-8d98-6cfc81125cd6",
+        "name": "T.M.Revolution",
+        "readyToApply": false,
+        "reason": "공식 bio는 이미지로 실제 본문이 읽히지 않음. 西川貴教의 솔로 프로젝트와 다른 밴드 신원을 섞지 않도록 공식 자료 보완.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 bio는 이미지로 실제 본문이 읽히지 않음. 西川貴教의 솔로 프로젝트와 다른 밴드 신원을 섞지 않도록 공식 자료 보완.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 bio는 이미지로 실제 본문이 읽히지 않음. 西川貴教의 솔로 프로젝트와 다른 밴드 신원을 섞지 않도록 공식 자료 보완.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 bio는 이미지로 실제 본문이 읽히지 않음. 西川貴教의 솔로 프로젝트와 다른 밴드 신원을 섞지 않도록 공식 자료 보완.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 bio는 이미지로 실제 본문이 읽히지 않음. 西川貴教의 솔로 프로젝트와 다른 밴드 신원을 섞지 않도록 공식 자료 보완.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:7dea80e3-0861-4c9c-86df-eec42fc2c5a8가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 bio는 이미지로 실제 본문이 읽히지 않음. 西川貴教의 솔로 프로젝트와 다른 밴드 신원을 섞지 않도록 공식 자료 보완."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "984b4d94-076e-47da-8d98-6cfc81125cd6",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.794Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "25930c68-731d-40f8-95a3-a0d70a324b12",
+      "name": "t+pazolite",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "d72ae77d-ca32-498d-870e-8204165b8ee4",
+      "originalVersion": "2026-10-13T08:18:51.177283+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "25930c68-731d-40f8-95a3-a0d70a324b12",
+        "name": "t+pazolite",
+        "readyToApply": false,
+        "reason": "TuneCore에서 OMOIDE Patchwork/NGHTSHFT2 등 실제 발매 확인. 게임/전자음악 활동을 이름·국가만으로 J-pop/록으로 판정하지 않고 국가·장르 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "TuneCore에서 OMOIDE Patchwork/NGHTSHFT2 등 실제 발매 확인. 게임/전자음악 활동을 이름·국가만으로 J-pop/록으로 판정하지 않고 국가·장르 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "TuneCore에서 OMOIDE Patchwork/NGHTSHFT2 등 실제 발매 확인. 게임/전자음악 활동을 이름·국가만으로 J-pop/록으로 판정하지 않고 국가·장르 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "TuneCore에서 OMOIDE Patchwork/NGHTSHFT2 등 실제 발매 확인. 게임/전자음악 활동을 이름·국가만으로 J-pop/록으로 판정하지 않고 국가·장르 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: TuneCore에서 OMOIDE Patchwork/NGHTSHFT2 등 실제 발매 확인. 게임/전자음악 활동을 이름·국가만으로 J-pop/록으로 판정하지 않고 국가·장르 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:d72ae77d-ca32-498d-870e-8204165b8ee4가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "TuneCore에서 OMOIDE Patchwork/NGHTSHFT2 등 실제 발매 확인. 게임/전자음악 활동을 이름·국가만으로 J-pop/록으로 판정하지 않고 국가·장르 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "25930c68-731d-40f8-95a3-a0d70a324b12",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.858Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+      "name": "THE ALFEE",
+      "aliases": [
+        "アルフィー",
+        "Alfie",
+        "ALFEE"
+      ],
+      "country": "JP",
+      "musicBrainzId": "db855eff-9d28-4bd7-ab2c-7301495b4669",
+      "originalVersion": "2026-10-13T08:21:01.44472+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+        "name": "THE ALFEE",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "overseas_rock",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "1973년 明治学院大学 결성, 夏しぐれ/メリーアン/Crossroad; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.alfee.com/profile/s_main.html"
+            ]
+          },
+          "countryMatched": {
+            "summary": "일본 아티스트로 명시하고 뉴욕/베를린 해외 공연 구분",
+            "sourceUrls": [
+              "https://www.alfee.com/profile/s_main.html"
+            ]
+          },
+          "genreMatched": {
+            "summary": "문화청 표창 첫 록 밴드 명시 및 원작 싱글/투어 활동",
+            "sourceUrls": [
+              "https://www.alfee.com/profile/s_main.html"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 overseas_rock; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.alfee.com/profile/s_main.html"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:db855eff-9d28-4bd7-ab2c-7301495b4669가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.alfee.com/profile/s_main.html"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.alfee.com/profile/s_main.html"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "1973년 明治学院大学 결성, 夏しぐれ/メリーアン/Crossroad; 일본 아티스트로 명시하고 뉴욕/베를린 해외 공연 구분; 문화청 표창 첫 록 밴드 명시 및 원작 싱글/투어 활동",
+          "sources": [
+            {
+              "url": "https://www.alfee.com/profile/s_main.html",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "1973년 明治学院大学 결성, 夏しぐれ/メリーアン/Crossroad; 일본 아티스트로 명시하고 뉴욕/베를린 해외 공연 구분; 문화청 표창 첫 록 밴드 명시 및 원작 싱글/투어 활동"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+          "expected_updated_at": "2026-10-13T08:21:01.44472+00:00",
+          "artist_name": "THE ALFEE",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "アルフィー",
+            "Alfie",
+            "ALFEE"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: 1973년 明治学院大学 결성, 夏しぐれ/メリーアン/Crossroad; 일본 아티스트로 명시하고 뉴욕/베를린 해외 공연 구분; 문화청 표창 첫 록 밴드 명시 및 원작 싱글/투어 활동",
+          "evidence_url": "https://www.alfee.com/profile/s_main.html"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.912Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "567c8a12-5450-45ed-8aaa-b82ce886b9e4",
+      "name": "the pillows",
+      "aliases": [
+        "The Pillows",
+        "ザ・ピロウズ"
+      ],
+      "country": "JP",
+      "musicBrainzId": "e69c8ccb-25b1-4c4a-89c6-8fdad1172951",
+      "originalVersion": "2026-10-13T08:19:54.041796+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "567c8a12-5450-45ed-8aaa-b82ce886b9e4",
+        "name": "the pillows",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "overseas_rock",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "山中さわお/真鍋吉明/シンイチロウ, 1989년 결성/雨に唄えば; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+            ]
+          },
+          "countryMatched": {
+            "summary": "홋카이도/이바라키 출신과 일본 레이블·첫 해외 런던 공연 구분",
+            "sourceUrls": [
+              "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+            ]
+          },
+          "genreMatched": {
+            "summary": "방송사 공식 출연자 소개가 기타 록 밴드 명시",
+            "sourceUrls": [
+              "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 overseas_rock; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:e69c8ccb-25b1-4c4a-89c6-8fdad1172951가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "山中さわお/真鍋吉明/シンイチロウ, 1989년 결성/雨に唄えば; 홋카이도/이바라키 출신과 일본 레이블·첫 해외 런던 공연 구분; 방송사 공식 출연자 소개가 기타 록 밴드 명시",
+          "sources": [
+            {
+              "url": "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "山中さわお/真鍋吉明/シンイチロウ, 1989년 결성/雨に唄えば; 홋카이도/이바라키 출신과 일본 레이블·첫 해외 런던 공연 구분; 방송사 공식 출연자 소개가 기타 록 밴드 명시"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "567c8a12-5450-45ed-8aaa-b82ce886b9e4",
+          "expected_updated_at": "2026-10-13T08:19:54.041796+00:00",
+          "artist_name": "the pillows",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Pillows",
+            "ザ・ピロウズ"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: 山中さわお/真鍋吉明/シンイチロウ, 1989년 결성/雨に唄えば; 홋카이도/이바라키 출신과 일본 레이블·첫 해외 런던 공연 구분; 방송사 공식 출연자 소개가 기타 록 밴드 명시",
+          "evidence_url": "https://www.fujitv.co.jp/FACTORY/CS0149/0004pro.html"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "567c8a12-5450-45ed-8aaa-b82ce886b9e4",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:49.971Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "8ae2f62a-0de3-433f-9784-a4f8c7920669",
+      "name": "TOKIO",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "d210bd3e-68db-4987-a714-0214449e361d",
+      "originalVersion": "2026-10-13T08:18:40.322501+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "8ae2f62a-0de3-433f-9784-a4f8c7920669",
+        "name": "TOKIO",
+        "readyToApply": false,
+        "reason": "공식 Storm profile이 다른 URL로 리디렉션된 뒤 접근 불가. 원래 신원/국가/실제 밴드 음악 근거 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 Storm profile이 다른 URL로 리디렉션된 뒤 접근 불가. 원래 신원/국가/실제 밴드 음악 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 Storm profile이 다른 URL로 리디렉션된 뒤 접근 불가. 원래 신원/국가/실제 밴드 음악 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 Storm profile이 다른 URL로 리디렉션된 뒤 접근 불가. 원래 신원/국가/실제 밴드 음악 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 Storm profile이 다른 URL로 리디렉션된 뒤 접근 불가. 원래 신원/국가/실제 밴드 음악 근거 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:d210bd3e-68db-4987-a714-0214449e361d가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 Storm profile이 다른 URL로 리디렉션된 뒤 접근 불가. 원래 신원/국가/실제 밴드 음악 근거 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "8ae2f62a-0de3-433f-9784-a4f8c7920669",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.049Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "5c04e4b3-6f1e-48b6-a4a0-4398b8f2220e",
+      "name": "TЁЯRA",
+      "aliases": [
+        "TËЯRA",
+        "TЁЯRA BAND",
+        "TЁЯRA WORKS",
+        "TEЯRA",
+        "TERRA"
+      ],
+      "country": "JP",
+      "musicBrainzId": "a8faaecc-e2d6-4c61-a0aa-9f6743ee61a7",
+      "originalVersion": "2026-10-13T08:18:55.754758+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "5c04e4b3-6f1e-48b6-a4a0-4398b8f2220e",
+        "name": "TЁЯRA",
+        "readyToApply": false,
+        "reason": "AppleMusic에서 2002년 결성·J-Pop 분류만 확인. storefront US를 아티스트 국적으로 사용하지 않음. 실제 작품·구성원·국가 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "AppleMusic에서 2002년 결성·J-Pop 분류만 확인. storefront US를 아티스트 국적으로 사용하지 않음. 실제 작품·구성원·국가 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "AppleMusic에서 2002년 결성·J-Pop 분류만 확인. storefront US를 아티스트 국적으로 사용하지 않음. 실제 작품·구성원·국가 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "AppleMusic에서 2002년 결성·J-Pop 분류만 확인. storefront US를 아티스트 국적으로 사용하지 않음. 실제 작품·구성원·국가 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: AppleMusic에서 2002년 결성·J-Pop 분류만 확인. storefront US를 아티스트 국적으로 사용하지 않음. 실제 작품·구성원·국가 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:a8faaecc-e2d6-4c61-a0aa-9f6743ee61a7가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "AppleMusic에서 2002년 결성·J-Pop 분류만 확인. storefront US를 아티스트 국적으로 사용하지 않음. 실제 작품·구성원·국가 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "5c04e4b3-6f1e-48b6-a4a0-4398b8f2220e",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.110Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "10275fc7-6a31-41d2-b7b4-aa2affc9ae08",
+      "name": "UCHUSENTAI:NOIZ",
+      "aliases": [
+        "Imitation PoPs NOIZ",
+        "宇宙戦隊NOIZ",
+        "NOIZ",
+        "Imitation PoPs 宇宙戦隊NOIZ",
+        "うちゅうせんたい ノイズ",
+        "uchusentai NOIZ",
+        "uchūsentai NOIZ",
+        "Imitation PoPs宇宙戦隊NOIZ",
+        "宇宙戦隊 NOIZ"
+      ],
+      "country": "JP",
+      "musicBrainzId": "ee78d12d-1752-42b4-9f92-9407f9312843",
+      "originalVersion": "2026-10-13T08:18:59.183379+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "10275fc7-6a31-41d2-b7b4-aa2affc9ae08",
+        "name": "UCHUSENTAI:NOIZ",
+        "readyToApply": false,
+        "reason": "AppleMusic EGO-style·실제 곡 목록 확인했지만 공식 소개 접근 불가. 국가·구체 록 활동과 DB 별칭 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "AppleMusic EGO-style·실제 곡 목록 확인했지만 공식 소개 접근 불가. 국가·구체 록 활동과 DB 별칭 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "AppleMusic EGO-style·실제 곡 목록 확인했지만 공식 소개 접근 불가. 국가·구체 록 활동과 DB 별칭 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "AppleMusic EGO-style·실제 곡 목록 확인했지만 공식 소개 접근 불가. 국가·구체 록 활동과 DB 별칭 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: AppleMusic EGO-style·실제 곡 목록 확인했지만 공식 소개 접근 불가. 국가·구체 록 활동과 DB 별칭 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:ee78d12d-1752-42b4-9f92-9407f9312843가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "AppleMusic EGO-style·실제 곡 목록 확인했지만 공식 소개 접근 불가. 국가·구체 록 활동과 DB 별칭 신원 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "10275fc7-6a31-41d2-b7b4-aa2affc9ae08",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.177Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "9b5a6cf2-bfee-45ca-8030-00dcf982a192",
+      "name": "WEST.",
+      "aliases": [
+        "ジャニーズWEST",
+        "Johnny's WEST"
+      ],
+      "country": "JP",
+      "musicBrainzId": "44017d4d-a289-45a2-a9b6-816313a7fa45",
+      "originalVersion": "2026-10-13T08:18:24.618536+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "9b5a6cf2-bfee-45ca-8030-00dcf982a192",
+        "name": "WEST.",
+        "readyToApply": false,
+        "reason": "ELOV 공식 멤버 및 효고·오사카 출신 확인. 원작 음악·개명 전후 같은 신원을 공식 음반 자료로 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "ELOV 공식 멤버 및 효고·오사카 출신 확인. 원작 음악·개명 전후 같은 신원을 공식 음반 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "ELOV 공식 멤버 및 효고·오사카 출신 확인. 원작 음악·개명 전후 같은 신원을 공식 음반 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "ELOV 공식 멤버 및 효고·오사카 출신 확인. 원작 음악·개명 전후 같은 신원을 공식 음반 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: ELOV 공식 멤버 및 효고·오사카 출신 확인. 원작 음악·개명 전후 같은 신원을 공식 음반 자료로 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:44017d4d-a289-45a2-a9b6-816313a7fa45가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "ELOV 공식 멤버 및 효고·오사카 출신 확인. 원작 음악·개명 전후 같은 신원을 공식 음반 자료로 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "9b5a6cf2-bfee-45ca-8030-00dcf982a192",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.248Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "7b2f5ef9-a848-46db-8ced-37b84fa172bc",
+      "name": "YUKI",
+      "aliases": [
+        "ユキ",
+        "くらもち ゆき",
+        "くらもちゆき",
+        "Kuramochi Yuki",
+        "倉持 有希",
+        "磯谷有希",
+        "ＹＵＫＩ",
+        "倉持有希"
+      ],
+      "country": "JP",
+      "musicBrainzId": "c45f4716-448b-42ef-8e56-1d711672077b",
+      "originalVersion": "2026-10-13T08:18:36.131215+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "7b2f5ef9-a848-46db-8ced-37b84fa172bc",
+        "name": "YUKI",
+        "readyToApply": false,
+        "reason": "Sony에서 JUDY AND MARY 보컬·2002년 the end of shite 솔로 데뷔·원작 앨범/공연 확인. 국가/정확한 외부 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Sony에서 JUDY AND MARY 보컬·2002년 the end of shite 솔로 데뷔·원작 앨범/공연 확인. 국가/정확한 외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "Sony에서 JUDY AND MARY 보컬·2002년 the end of shite 솔로 데뷔·원작 앨범/공연 확인. 국가/정확한 외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "Sony에서 JUDY AND MARY 보컬·2002년 the end of shite 솔로 데뷔·원작 앨범/공연 확인. 국가/정확한 외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: Sony에서 JUDY AND MARY 보컬·2002년 the end of shite 솔로 데뷔·원작 앨범/공연 확인. 국가/정확한 외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:c45f4716-448b-42ef-8e56-1d711672077b가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "Sony에서 JUDY AND MARY 보컬·2002년 the end of shite 솔로 데뷔·원작 앨범/공연 확인. 국가/정확한 외부 신원 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "7b2f5ef9-a848-46db-8ced-37b84fa172bc",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.315Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "e4692842-398d-4085-9e56-dc8c7492f6d8",
+      "name": "ZAZEN BOYS",
+      "aliases": [
+        "Zazen Boys (자젠보이즈)"
+      ],
+      "country": "JP",
+      "musicBrainzId": "3d2cd44b-9e77-4249-9d37-d8028e756693",
+      "originalVersion": "2026-10-12T14:24:09.149368+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "e4692842-398d-4085-9e56-dc8c7492f6d8",
+        "name": "ZAZEN BOYS",
+        "readyToApply": false,
+        "reason": "Fuji 공식에서 向井秀徳/日向秀和/吉兼聡/松下敦·NUMBER GIRL 이후 결성 및 록 페스티벌 활동 확인. 그룹 국가·구체 원작/현재 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Fuji 공식에서 向井秀徳/日向秀和/吉兼聡/松下敦·NUMBER GIRL 이후 결성 및 록 페스티벌 활동 확인. 그룹 국가·구체 원작/현재 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "Fuji 공식에서 向井秀徳/日向秀和/吉兼聡/松下敦·NUMBER GIRL 이후 결성 및 록 페스티벌 활동 확인. 그룹 국가·구체 원작/현재 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "Fuji 공식에서 向井秀徳/日向秀和/吉兼聡/松下敦·NUMBER GIRL 이후 결성 및 록 페스티벌 활동 확인. 그룹 국가·구체 원작/현재 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: Fuji 공식에서 向井秀徳/日向秀和/吉兼聡/松下敦·NUMBER GIRL 이후 결성 및 록 페스티벌 활동 확인. 그룹 국가·구체 원작/현재 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:3d2cd44b-9e77-4249-9d37-d8028e756693가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "Fuji 공식에서 向井秀徳/日向秀和/吉兼聡/松下敦·NUMBER GIRL 이후 결성 및 록 페스티벌 활동 확인. 그룹 국가·구체 원작/현재 신원 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "e4692842-398d-4085-9e56-dc8c7492f6d8",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.373Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "953d5262-db0d-4ca2-a002-4fc9337f4771",
+      "name": "アンジュルム",
+      "aliases": [
+        "ANGERME",
+        "スマイレージ",
+        "Smileage",
+        "S/mileage"
+      ],
+      "country": "JP",
+      "musicBrainzId": "1283f619-2789-4892-af46-29a13e5cca5b",
+      "originalVersion": "2026-10-13T08:18:47.53745+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "953d5262-db0d-4ca2-a002-4fc9337f4771",
+        "name": "アンジュルム",
+        "readyToApply": false,
+        "reason": "HelloProject 공식 スマイレージ→ANGERME 개명·夢見る15歳·노래/댄스 음악 활동 확인. 국가/외부 신원 보완 필요. 공식 채널 직접 링크와 API ID 검증 별도 진행.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "HelloProject 공식 スマイレージ→ANGERME 개명·夢見る15歳·노래/댄스 음악 활동 확인. 국가/외부 신원 보완 필요. 공식 채널 직접 링크와 API ID 검증 별도 진행.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "HelloProject 공식 スマイレージ→ANGERME 개명·夢見る15歳·노래/댄스 음악 활동 확인. 국가/외부 신원 보완 필요. 공식 채널 직접 링크와 API ID 검증 별도 진행.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "HelloProject 공식 スマイレージ→ANGERME 개명·夢見る15歳·노래/댄스 음악 활동 확인. 국가/외부 신원 보완 필요. 공식 채널 직접 링크와 API ID 검증 별도 진행.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: HelloProject 공식 スマイレージ→ANGERME 개명·夢見る15歳·노래/댄스 음악 활동 확인. 국가/외부 신원 보완 필요. 공식 채널 직접 링크와 API ID 검증 별도 진행.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:1283f619-2789-4892-af46-29a13e5cca5b가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "HelloProject 공식 スマイレージ→ANGERME 개명·夢見る15歳·노래/댄스 음악 활동 확인. 국가/외부 신원 보완 필요. 공식 채널 직접 링크와 API ID 검증 별도 진행."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "953d5262-db0d-4ca2-a002-4fc9337f4771",
+        "stage": "channels",
+        "status": "complete",
+        "reason": "공식 아티스트별 페이지 직접 채널 링크와 Google channels.list ID 일치. 기존 service 저장 경로의 verified/refreshed 상태·ID·실제 캐시 시각을 DB에서 재조회.",
+        "applied": true,
+        "apiCalls": 2,
+        "proof": {
+          "decision": "verified",
+          "summary": "원래 공식 아티스트별 페이지의 직접 채널 링크를 실제 확인하고 API ID 및 저장 결과를 대조함",
+          "sources": [
+            {
+              "url": "https://www.helloproject.com/angerme/",
+              "checkedAt": "2026-10-23T09:26:48.994Z",
+              "summary": "이 아티스트의 페이지에 연결된 https://www.youtube.com/channel/UCDwcZ85zjLKD-3-jqlv1wQQ가 API에서 해석한 기존 채널 ID와 일치. 공통 레이블/공유 hapisugo 채널은 선택하지 않음"
+            }
+          ]
+        },
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-13T08:18:47.53745+00:00",
+          "checkedAt": "2026-10-23T09:32:09.693Z"
+        }
+      },
+      "channelReadback": {
+        "id": "953d5262-db0d-4ca2-a002-4fc9337f4771",
+        "name": "アンジュルム",
+        "updated_at": "2026-10-13 08:18:47.53745+00",
+        "verification": "verified",
+        "last_status": "refreshed",
+        "channel_id": "UCDwcZ85zjLKD-3-jqlv1wQQ",
+        "checked_at": "2026-10-23 09:32:09.693+00",
+        "expires_at": "2026-11-21 09:32:09.693+00",
+        "cache_present": true
+      },
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "c237073f-d3e2-4297-9a25-451a02c6bc36",
+      "name": "いきものがかり",
+      "aliases": [
+        "Ikimonogakari",
+        "Ikimono Gakari",
+        "生物股長",
+        "生物股长",
+        "이키모노가카리"
+      ],
+      "country": "JP",
+      "musicBrainzId": "18191eea-369f-42e8-96ab-c1c24e4d0011",
+      "originalVersion": "2026-10-13T08:18:31.633599+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "c237073f-d3e2-4297-9a25-451a02c6bc36",
+        "name": "いきものがかり",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "水野良樹/山下穂尊의 1999년 결성, 吉岡聖恵 합류, 2021년 2인 체제; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://ikimonogakari.com/profile/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "고향 厚木·海老名/小田急沿線 거리 공연 활동",
+            "sourceUrls": [
+              "https://ikimonogakari.com/profile/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "SAKURA/ありがとう/YELL/ブルーバード 원작 싱글·투어 활동",
+            "sourceUrls": [
+              "https://ikimonogakari.com/profile/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://ikimonogakari.com/profile/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:18191eea-369f-42e8-96ab-c1c24e4d0011가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://ikimonogakari.com/profile/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://ikimonogakari.com/profile/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "水野良樹/山下穂尊의 1999년 결성, 吉岡聖恵 합류, 2021년 2인 체제; 고향 厚木·海老名/小田急沿線 거리 공연 활동; SAKURA/ありがとう/YELL/ブルーバード 원작 싱글·투어 활동",
+          "sources": [
+            {
+              "url": "https://ikimonogakari.com/profile/",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "水野良樹/山下穂尊의 1999년 결성, 吉岡聖恵 합류, 2021년 2인 체제; 고향 厚木·海老名/小田急沿線 거리 공연 활동; SAKURA/ありがとう/YELL/ブルーバード 원작 싱글·투어 활동"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "c237073f-d3e2-4297-9a25-451a02c6bc36",
+          "expected_updated_at": "2026-10-13T08:18:31.633599+00:00",
+          "artist_name": "いきものがかり",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Ikimonogakari",
+            "Ikimono Gakari",
+            "生物股長",
+            "生物股长",
+            "이키모노가카리"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: 水野良樹/山下穂尊의 1999년 결성, 吉岡聖恵 합류, 2021년 2인 체제; 고향 厚木·海老名/小田急沿線 거리 공연 활동; SAKURA/ありがとう/YELL/ブルーバード 원작 싱글·투어 활동",
+          "evidence_url": "https://ikimonogakari.com/profile/"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "c237073f-d3e2-4297-9a25-451a02c6bc36",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.502Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "3ab0b753-3139-4881-b422-7a6f606944ac",
+      "name": "いとうかなこ",
+      "aliases": [
+        "Kanako Ito",
+        "ITO KANAKO",
+        "Kanako Itō",
+        "威闘華鳴乎",
+        "Itoukanako",
+        "いとう かなこ",
+        "Itou Kanako"
+      ],
+      "country": "JP",
+      "musicBrainzId": "eee65fbc-ead0-4c01-b385-a6f563c418d3",
+      "originalVersion": "2026-10-13T08:18:45.293379+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "3ab0b753-3139-4881-b422-7a6f606944ac",
+        "name": "いとうかなこ",
+        "readyToApply": false,
+        "reason": "TuneCore에서 우츠노미야 출신·鬼哭街/과학ADV 주제가·ありがとう/Beginning 확인. 공식 queryless 근거 및 정확한 외부 신원·분류 보완. 대체 공식 profile 접근 불가.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "TuneCore에서 우츠노미야 출신·鬼哭街/과학ADV 주제가·ありがとう/Beginning 확인. 공식 queryless 근거 및 정확한 외부 신원·분류 보완. 대체 공식 profile 접근 불가.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "TuneCore에서 우츠노미야 출신·鬼哭街/과학ADV 주제가·ありがとう/Beginning 확인. 공식 queryless 근거 및 정확한 외부 신원·분류 보완. 대체 공식 profile 접근 불가.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "TuneCore에서 우츠노미야 출신·鬼哭街/과학ADV 주제가·ありがとう/Beginning 확인. 공식 queryless 근거 및 정확한 외부 신원·분류 보완. 대체 공식 profile 접근 불가.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: TuneCore에서 우츠노미야 출신·鬼哭街/과학ADV 주제가·ありがとう/Beginning 확인. 공식 queryless 근거 및 정확한 외부 신원·분류 보완. 대체 공식 profile 접근 불가.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:eee65fbc-ead0-4c01-b385-a6f563c418d3가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "TuneCore에서 우츠노미야 출신·鬼哭街/과학ADV 주제가·ありがとう/Beginning 확인. 공식 queryless 근거 및 정확한 외부 신원·분류 보완. 대체 공식 profile 접근 불가."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "3ab0b753-3139-4881-b422-7a6f606944ac",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.561Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "3941edc5-274e-4a6e-86c0-9c891c009f12",
+      "name": "スキマスイッチ",
+      "aliases": [
+        "Sukima Switch",
+        "無限開關",
+        "sukimaswitch"
+      ],
+      "country": "JP",
+      "musicBrainzId": "d7e28bb6-366a-46d8-92a9-ae574375c75d",
+      "originalVersion": "2026-10-13T08:18:29.268164+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "3941edc5-274e-4a6e-86c0-9c891c009f12",
+        "name": "スキマスイッチ",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "大橋卓弥/常田真太郎, 1999년 결성, view/君の話; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "신주쿠·시부야 기반 본격 활동과 일본 Augusta 발매 이력",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "두 작곡자의 원작 싱글 view·미니앨범 君の話 및 팝 공연 활동",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:d7e28bb6-366a-46d8-92a9-ae574375c75d가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "大橋卓弥/常田真太郎, 1999년 결성, view/君の話; 신주쿠·시부야 기반 본격 활동과 일본 Augusta 발매 이력; 두 작곡자의 원작 싱글 view·미니앨범 君の話 및 팝 공연 활동",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "大橋卓弥/常田真太郎, 1999년 결성, view/君の話; 신주쿠·시부야 기반 본격 활동과 일본 Augusta 발매 이력; 두 작곡자의 원작 싱글 view·미니앨범 君の話 및 팝 공연 활동"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "3941edc5-274e-4a6e-86c0-9c891c009f12",
+          "expected_updated_at": "2026-10-13T08:18:29.268164+00:00",
+          "artist_name": "スキマスイッチ",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Sukima Switch",
+            "無限開關",
+            "sukimaswitch"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: 大橋卓弥/常田真太郎, 1999년 결성, view/君の話; 신주쿠·시부야 기반 본격 활동과 일본 Augusta 발매 이력; 두 작곡자의 원작 싱글 view·미니앨범 君の話 및 팝 공연 활동",
+          "evidence_url": "https://www.sonymusic.co.jp/artist/sukimaswitch/profile/"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "3941edc5-274e-4a6e-86c0-9c891c009f12",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.617Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "63ad7194-cb67-463c-b130-ae3506a68df0",
+      "name": "つばきファクトリー",
+      "aliases": [
+        "Tsubaki Factory",
+        "Camellia Factory"
+      ],
+      "country": "JP",
+      "musicBrainzId": "e032efb2-5751-4da9-b598-56b15f3f49f5",
+      "originalVersion": "2026-10-13T08:18:35.802437+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "63ad7194-cb67-463c-b130-ae3506a68df0",
+        "name": "つばきファクトリー",
+        "readyToApply": false,
+        "reason": "HelloProject 공식 그룹명·Berryz공방 계보와 FireWorks/まっぴらだってば/愛＝運+縁+恩 원작 활동 확인. 일본 원산 꽃의 설명을 그룹 국가 근거로 대신하지 않음. 국가 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "HelloProject 공식 그룹명·Berryz공방 계보와 FireWorks/まっぴらだってば/愛＝運+縁+恩 원작 활동 확인. 일본 원산 꽃의 설명을 그룹 국가 근거로 대신하지 않음. 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "HelloProject 공식 그룹명·Berryz공방 계보와 FireWorks/まっぴらだってば/愛＝運+縁+恩 원작 활동 확인. 일본 원산 꽃의 설명을 그룹 국가 근거로 대신하지 않음. 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "HelloProject 공식 그룹명·Berryz공방 계보와 FireWorks/まっぴらだってば/愛＝運+縁+恩 원작 활동 확인. 일본 원산 꽃의 설명을 그룹 국가 근거로 대신하지 않음. 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: HelloProject 공식 그룹명·Berryz공방 계보와 FireWorks/まっぴらだってば/愛＝運+縁+恩 원작 활동 확인. 일본 원산 꽃의 설명을 그룹 국가 근거로 대신하지 않음. 국가 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:e032efb2-5751-4da9-b598-56b15f3f49f5가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "HelloProject 공식 그룹명·Berryz공방 계보와 FireWorks/まっぴらだってば/愛＝運+縁+恩 원작 활동 확인. 일본 원산 꽃의 설명을 그룹 국가 근거로 대신하지 않음. 국가 신원 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "63ad7194-cb67-463c-b130-ae3506a68df0",
+        "stage": "channels",
+        "status": "complete",
+        "reason": "공식 아티스트별 페이지 직접 채널 링크와 Google channels.list ID 일치. 기존 service 저장 경로의 verified/refreshed 상태·ID·실제 캐시 시각을 DB에서 재조회.",
+        "applied": true,
+        "apiCalls": 0,
+        "proof": {
+          "decision": "verified",
+          "summary": "원래 공식 아티스트별 페이지의 직접 채널 링크를 실제 확인하고 API ID 및 저장 결과를 대조함",
+          "sources": [
+            {
+              "url": "https://www.helloproject.com/tsubakifactory/",
+              "checkedAt": "2026-10-23T09:26:50.619Z",
+              "summary": "이 아티스트의 페이지에 연결된 https://www.youtube.com/channel/UCXTsCXNGHmePgo3a47hnsAA가 API에서 해석한 기존 채널 ID와 일치. 공통 레이블/공유 hapisugo 채널은 선택하지 않음"
+            }
+          ]
+        },
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-13T08:18:35.802437+00:00",
+          "checkedAt": "2026-10-23T09:32:09.693Z"
+        }
+      },
+      "channelReadback": {
+        "id": "63ad7194-cb67-463c-b130-ae3506a68df0",
+        "name": "つばきファクトリー",
+        "updated_at": "2026-10-13 08:18:35.802437+00",
+        "verification": "verified",
+        "last_status": "refreshed",
+        "channel_id": "UCXTsCXNGHmePgo3a47hnsAA",
+        "checked_at": "2026-10-23 09:32:09.693+00",
+        "expires_at": "2026-11-21 09:32:09.693+00",
+        "cache_present": true
+      },
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "ec007bff-2180-4545-bba1-6b51d54ec9af",
+      "name": "ナノ",
+      "aliases": [
+        "NANO",
+        "nano",
+        "Hana Ishiyama Ohara"
+      ],
+      "country": "JP",
+      "musicBrainzId": "8b089567-8879-4d0e-bf24-6f8352b63a16",
+      "originalVersion": "2026-10-13T08:18:58.851078+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "ec007bff-2180-4545-bba1-6b51d54ec9af",
+        "name": "ナノ",
+        "readyToApply": false,
+        "reason": "Columbia가 미국 뉴욕 출신 및 nanoir/Rock on/J-pop 활동을 명시. 출생지를 국적과 동일시하거나 DB JP를 자동 US로 바꾸지 않고 국가 신원을 추가 대조.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Columbia가 미국 뉴욕 출신 및 nanoir/Rock on/J-pop 활동을 명시. 출생지를 국적과 동일시하거나 DB JP를 자동 US로 바꾸지 않고 국가 신원을 추가 대조.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "Columbia가 미국 뉴욕 출신 및 nanoir/Rock on/J-pop 활동을 명시. 출생지를 국적과 동일시하거나 DB JP를 자동 US로 바꾸지 않고 국가 신원을 추가 대조.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "Columbia가 미국 뉴욕 출신 및 nanoir/Rock on/J-pop 활동을 명시. 출생지를 국적과 동일시하거나 DB JP를 자동 US로 바꾸지 않고 국가 신원을 추가 대조.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: Columbia가 미국 뉴욕 출신 및 nanoir/Rock on/J-pop 활동을 명시. 출생지를 국적과 동일시하거나 DB JP를 자동 US로 바꾸지 않고 국가 신원을 추가 대조.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:8b089567-8879-4d0e-bf24-6f8352b63a16가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "Columbia가 미국 뉴욕 출신 및 nanoir/Rock on/J-pop 활동을 명시. 출생지를 국적과 동일시하거나 DB JP를 자동 US로 바꾸지 않고 국가 신원을 추가 대조."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "ec007bff-2180-4545-bba1-6b51d54ec9af",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.742Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "677a012a-aa20-4b36-8c01-361ecfa191ca",
+      "name": "なの小夕子",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "49617fba-e09d-4218-9312-70339125102e",
+      "originalVersion": "2026-10-13T08:18:59.870205+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "677a012a-aa20-4b36-8c01-361ecfa191ca",
+        "name": "なの小夕子",
+        "readyToApply": false,
+        "reason": "TuneCore의 Heart Neon/東京アンダーグラウンド/結婚 등 발매 확인. 국가와 실제 장르를 배급 목록만으로 확정하지 않음.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "TuneCore의 Heart Neon/東京アンダーグラウンド/結婚 등 발매 확인. 국가와 실제 장르를 배급 목록만으로 확정하지 않음.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "TuneCore의 Heart Neon/東京アンダーグラウンド/結婚 등 발매 확인. 국가와 실제 장르를 배급 목록만으로 확정하지 않음.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "TuneCore의 Heart Neon/東京アンダーグラウンド/結婚 등 발매 확인. 국가와 실제 장르를 배급 목록만으로 확정하지 않음.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: TuneCore의 Heart Neon/東京アンダーグラウンド/結婚 등 발매 확인. 국가와 실제 장르를 배급 목록만으로 확정하지 않음.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:49617fba-e09d-4218-9312-70339125102e가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "TuneCore의 Heart Neon/東京アンダーグラウンド/結婚 등 발매 확인. 국가와 실제 장르를 배급 목록만으로 확정하지 않음."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "677a012a-aa20-4b36-8c01-361ecfa191ca",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.798Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "72342e9f-7d47-4adf-80c2-c9de5862bee7",
+      "name": "ばってん少女隊",
+      "aliases": [
+        "ばっしょー",
+        "Batten Show Jo Tai",
+        "Batten Shoujo-tai",
+        "Batten Shojo~Tai",
+        "BATTEN GIRLS"
+      ],
+      "country": "JP",
+      "musicBrainzId": "26255a7e-a93d-4f20-82fc-4c210d6dcebf",
+      "originalVersion": "2026-10-13T08:18:57.838244+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "72342e9f-7d47-4adf-80c2-c9de5862bee7",
+        "name": "ばってん少女隊",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "STAR PLANET 소속, 希山愛 등 현재 멤버; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://battengirls.com/profiles"
+            ]
+          },
+          "countryMatched": {
+            "summary": "九州와 일본 전국을 잇는 활동 및 후쿠오카 등 멤버 출신",
+            "sourceUrls": [
+              "https://battengirls.com/profiles"
+            ]
+          },
+          "genreMatched": {
+            "summary": "공식 discography의 九伝/ちゅぴ/メロきゅんほりっく/森羅ばっしょー 발매·공연",
+            "sourceUrls": [
+              "https://battengirls.com/profiles"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://battengirls.com/profiles"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:26255a7e-a93d-4f20-82fc-4c210d6dcebf가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://battengirls.com/profiles"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://battengirls.com/profiles"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "STAR PLANET 소속, 希山愛 등 현재 멤버; 九州와 일본 전국을 잇는 활동 및 후쿠오카 등 멤버 출신; 공식 discography의 九伝/ちゅぴ/メロきゅんほりっく/森羅ばっしょー 발매·공연",
+          "sources": [
+            {
+              "url": "https://battengirls.com/profiles",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "STAR PLANET 소속, 希山愛 등 현재 멤버; 九州와 일본 전국을 잇는 활동 및 후쿠오카 등 멤버 출신; 공식 discography의 九伝/ちゅぴ/メロきゅんほりっく/森羅ばっしょー 발매·공연"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "72342e9f-7d47-4adf-80c2-c9de5862bee7",
+          "expected_updated_at": "2026-10-13T08:18:57.838244+00:00",
+          "artist_name": "ばってん少女隊",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "ばっしょー",
+            "Batten Show Jo Tai",
+            "Batten Shoujo-tai",
+            "Batten Shojo~Tai",
+            "BATTEN GIRLS"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: STAR PLANET 소속, 希山愛 등 현재 멤버; 九州와 일본 전국을 잇는 활동 및 후쿠오카 등 멤버 출신; 공식 discography의 九伝/ちゅぴ/メロきゅんほりっく/森羅ばっしょー 발매·공연",
+          "evidence_url": "https://battengirls.com/profiles"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "72342e9f-7d47-4adf-80c2-c9de5862bee7",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.857Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "67240b2d-93d0-4f0b-85ac-db5c0640f4d0",
+      "name": "ポルノグラフィティ",
+      "aliases": [
+        "Porno Graffiti",
+        "PornoGraffitti",
+        "ポルノ・グラフィティ",
+        "Porno Grafiti",
+        "Porno Grafitty",
+        "Porno Grafitti",
+        "Porno Graffitty",
+        "Porno Grafity",
+        "Porno Graffity",
+        "pornograffiti"
+      ],
+      "country": "JP",
+      "musicBrainzId": "95de09ab-3142-4798-9c70-c2e8e1d7374d",
+      "originalVersion": "2026-10-13T08:18:35.466976+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "67240b2d-93d0-4f0b-85ac-db5c0640f4d0",
+        "name": "ポルノグラフィティ",
+        "readyToApply": false,
+        "reason": "Sony 공식 소개에서 히로시마 인노시마 출신·오사카 활동 및 アポロ/ミュージック・アワー/サウダージ/サボテン 원작 발매 확인. 정확한 외부 신원 및 실제 장르 분류를 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Sony 공식 소개에서 히로시마 인노시마 출신·오사카 활동 및 アポロ/ミュージック・アワー/サウダージ/サボテン 원작 발매 확인. 정확한 외부 신원 및 실제 장르 분류를 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "Sony 공식 소개에서 히로시마 인노시마 출신·오사카 활동 및 アポロ/ミュージック・アワー/サウダージ/サボテン 원작 발매 확인. 정확한 외부 신원 및 실제 장르 분류를 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "Sony 공식 소개에서 히로시마 인노시마 출신·오사카 활동 및 アポロ/ミュージック・アワー/サウダージ/サボテン 원작 발매 확인. 정확한 외부 신원 및 실제 장르 분류를 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: Sony 공식 소개에서 히로시마 인노시마 출신·오사카 활동 및 アポロ/ミュージック・アワー/サウダージ/サボテン 원작 발매 확인. 정확한 외부 신원 및 실제 장르 분류를 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:95de09ab-3142-4798-9c70-c2e8e1d7374d가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "Sony 공식 소개에서 히로시마 인노시마 출신·오사카 활동 및 アポロ/ミュージック・アワー/サウダージ/サボテン 원작 발매 확인. 정확한 외부 신원 및 실제 장르 분류를 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "67240b2d-93d0-4f0b-85ac-db5c0640f4d0",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:50.919Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "b1879383-a526-464a-bbf8-f46f35a9743f",
+      "name": "モーニング娘。",
+      "aliases": [
+        "早安少女組。",
+        "모닝구무스메",
+        "Morning Musume",
+        "Morning Musume.",
+        "Momusu",
+        "モーニング娘",
+        "モー娘",
+        "モーニング 娘 。",
+        "모닝구 무스메",
+        "モーニング娘。'14"
+      ],
+      "country": "JP",
+      "musicBrainzId": "9bffb20c-dd17-4895-9fd1-4e73e888d799",
+      "originalVersion": "2026-10-13T08:18:10.929222+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b1879383-a526-464a-bbf8-f46f35a9743f",
+        "name": "モーニング娘。",
+        "readyToApply": false,
+        "reason": "공식 ASAYAN 결성·愛の種/モーニングコーヒー/LOVEマシーン 및 매년 연도 표기 설명 확인. 원래 DB 이름을 현재 연도 표기로 덮어쓰지 않음. 국가·외부 신원 보완 필요.",
+        "proposedCategory": null,
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 ASAYAN 결성·愛の種/モーニングコーヒー/LOVEマシーン 및 매년 연도 표기 설명 확인. 원래 DB 이름을 현재 연도 표기로 덮어쓰지 않음. 국가·외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "countryMatched": {
+            "summary": "공식 ASAYAN 결성·愛の種/モーニングコーヒー/LOVEマシーン 및 매년 연도 표기 설명 확인. 원래 DB 이름을 현재 연도 표기로 덮어쓰지 않음. 국가·외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "genreMatched": {
+            "summary": "공식 ASAYAN 결성·愛の種/モーニングコーヒー/LOVEマシーン 및 매년 연도 표기 설명 확인. 원래 DB 이름을 현재 연도 표기로 덮어쓰지 않음. 국가·외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "classificationMatched": {
+            "summary": "분류 미완료: 공식 ASAYAN 결성·愛の種/モーニングコーヒー/LOVEマシーン 및 매년 연도 표기 설명 확인. 원래 DB 이름을 현재 연도 표기로 덮어쓰지 않음. 국가·외부 신원 보완 필요.",
+            "sourceUrls": []
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:9bffb20c-dd17-4895-9fd1-4e73e888d799가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": []
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": []
+          }
+        },
+        "approvalProof": null,
+        "observations": "공식 ASAYAN 결성·愛の種/モーニングコーヒー/LOVEマシーン 및 매년 연도 표기 설명 확인. 원래 DB 이름을 현재 연도 표기로 덮어쓰지 않음. 국가·외부 신원 보완 필요."
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b1879383-a526-464a-bbf8-f46f35a9743f",
+        "stage": "channels",
+        "status": "complete",
+        "reason": "공식 아티스트별 페이지 직접 채널 링크와 Google channels.list ID 일치. 기존 service 저장 경로의 verified/refreshed 상태·ID·실제 캐시 시각을 DB에서 재조회.",
+        "applied": true,
+        "apiCalls": 0,
+        "proof": {
+          "decision": "verified",
+          "summary": "원래 공식 아티스트별 페이지의 직접 채널 링크를 실제 확인하고 API ID 및 저장 결과를 대조함",
+          "sources": [
+            {
+              "url": "https://www.helloproject.com/morningmusume/",
+              "checkedAt": "2026-10-23T09:26:51.945Z",
+              "summary": "이 아티스트의 페이지에 연결된 https://www.youtube.com/channel/UCoKXb95K5h3sME3c9OCBaeA가 API에서 해석한 기존 채널 ID와 일치. 공통 레이블/공유 hapisugo 채널은 선택하지 않음"
+            }
+          ]
+        },
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-13T08:18:10.929222+00:00",
+          "checkedAt": "2026-10-23T09:32:09.693Z"
+        }
+      },
+      "channelReadback": {
+        "id": "b1879383-a526-464a-bbf8-f46f35a9743f",
+        "name": "モーニング娘。",
+        "updated_at": "2026-10-13 08:18:10.929222+00",
+        "verification": "verified",
+        "last_status": "refreshed",
+        "channel_id": "UCoKXb95K5h3sME3c9OCBaeA",
+        "checked_at": "2026-10-23 09:32:09.693+00",
+        "expires_at": "2026-11-21 09:32:09.693+00",
+        "cache_present": true
+      },
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    },
+    {
+      "bandId": "b8e5a9f2-34b7-459b-8e86-c16408b976f4",
+      "name": "ももいろクローバーZ",
+      "aliases": [
+        "ももクロ",
+        "ももいろクローバー",
+        "Momoiro Clover Z"
+      ],
+      "country": "JP",
+      "musicBrainzId": "3862143a-a878-4176-88d5-a0cfae83cdf6",
+      "originalVersion": "2026-10-13T08:18:48.207048+00:00",
+      "beforeStatus": "unreviewed",
+      "beforeCategory": "unclassified",
+      "approvalApplied": false,
+      "approvalDraft": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b8e5a9f2-34b7-459b-8e86-c16408b976f4",
+        "name": "ももいろクローバーZ",
+        "readyToApply": false,
+        "reason": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposedCategory": "jpop",
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": false,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "百田夏菜子/玉井詩織/佐々木彩夏/高城れに, 2011년 Z 개명; 현재 MBID의 구체 외부 작품/공식 링크 대조는 미완료",
+            "sourceUrls": [
+              "https://www.momoclo.net/profile"
+            ]
+          },
+          "countryMatched": {
+            "summary": "시즈오카·가나가와 출신 멤버 및 일본 기반 그룹 활동",
+            "sourceUrls": [
+              "https://www.momoclo.net/profile"
+            ]
+          },
+          "genreMatched": {
+            "summary": "行くぜっ！怪盗少女/AMARANTHUS/白金の夜明け/祝典 원작 발매·공연",
+            "sourceUrls": [
+              "https://www.momoclo.net/profile"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "제안 jpop; 최종 신원·분류 검토 전 적용하지 않음",
+            "sourceUrls": [
+              "https://www.momoclo.net/profile"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 service context에서 기존 mb:3862143a-a878-4176-88d5-a0cfae83cdf6가 이 band ID에 연결됨. 새 ID를 생성하거나 새로운 MB 응답을 읽었다고 주장하지 않음",
+            "sourceUrls": [
+              "https://www.momoclo.net/profile"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "외부 신원별 공연 자동 공개 승인이 생기되 기존 이벤트 공개 조건·수동 publication OFF·초기 무알림 조건도 충족해야 함",
+            "sourceUrls": [
+              "https://www.momoclo.net/profile"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "百田夏菜子/玉井詩織/佐々木彩夏/高城れに, 2011년 Z 개명; 시즈오카·가나가와 출신 멤버 및 일본 기반 그룹 활동; 行くぜっ！怪盗少女/AMARANTHUS/白金の夜明け/祝典 원작 발매·공연",
+          "sources": [
+            {
+              "url": "https://www.momoclo.net/profile",
+              "checkedAt": "2026-10-23T09:32:24.568357+00:00",
+              "summary": "百田夏菜子/玉井詩織/佐々木彩夏/高城れに, 2011년 Z 개명; 시즈오카·가나가와 출신 멤버 및 일본 기반 그룹 활동; 行くぜっ！怪盗少女/AMARANTHUS/白金の夜明け/祝典 원작 발매·공연"
+            }
+          ]
+        },
+        "observations": "AUTO_REVIEW_BLOCKED: 공식 자료 관측은 보존하되 정확한 외부 신원/분류/공연 공개 승인 근거 충분성에 대한 자동 승인 검토 거절. 이번 적용은 실행되지 않음.",
+        "proposal": {
+          "target_band_id": "b8e5a9f2-34b7-459b-8e86-c16408b976f4",
+          "expected_updated_at": "2026-10-13T08:18:48.207048+00:00",
+          "artist_name": "ももいろクローバーZ",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "ももクロ",
+            "ももいろクローバー",
+            "Momoiro Clover Z"
+          ],
+          "review_status": "approved",
+          "reason": "검토용 미적용 초안: 百田夏菜子/玉井詩織/佐々木彩夏/高城れに, 2011년 Z 개명; 시즈오카·가나가와 출신 멤버 및 일본 기반 그룹 활동; 行くぜっ！怪盗少女/AMARANTHUS/白金の夜明け/祝典 원작 발매·공연",
+          "evidence_url": "https://www.momoclo.net/profile"
+        }
+      },
+      "channelCheckpoint": {
+        "runId": "573f7fc2-961a-4682-816e-c92f1d7d883e",
+        "bandId": "b8e5a9f2-34b7-459b-8e86-c16408b976f4",
+        "stage": "channels",
+        "status": "deferred",
+        "reason": "OFFICIAL_CHANNEL_EVIDENCE_INCOMPLETE: 현재 선택 팀에 대해 공식 직접 채널 링크·API ID 일치와 기존 유효 캐시를 검증하지 못해 저장하지 않음. 제공처 cooldown은 보존하고 이름 검색·Topic·공통 레이블 채널로 대신하지 않음. 기존 유효 Rain Tree/MyGO/RADWIMPS 캐시는 이번 channels task가 아니므로 갱신하지 않음.",
+        "apiCalls": 0,
+        "nextAttemptAt": "2026-10-24T09:33:51.036Z"
+      },
+      "channelReadback": null,
+      "channelTaskSelected": true,
+      "researchPreserved": true
+    }
+  ]
+}
