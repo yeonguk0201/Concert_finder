@@ -8,7 +8,9 @@ import { loadReviewEnvironment } from './artist-review-queue.mjs'
 const safeError = error => /^(EDIT_CONFLICT|CHANNEL_LOCKED|CHANNEL_REVIEW_REQUIRED|IDENTITY_REQUIRED|ARTIST_NOT_AVAILABLE|OFFICIAL_EVIDENCE_REQUIRED)$/.test(error?.message ?? '') ? error.message : 'CHANNEL_DB_FAILED'
 
 export async function runRefresh(client, { key = '', manifest = null, selection = null, fetcher = fetch, pause, now = Date.now() } = {}) {
-  const selected = selection ? new Map(validateSelection(selection).artists.map(row => [row.bandId, row.identityVersion])) : null
+  const selected = selection ? new Map(validateSelection(selection).artists
+    .filter(row => Array.isArray(row.tasks) && row.tasks.includes('channels'))
+    .map(row => [row.bandId, row.identityVersion])) : null
   if (selected && manifest?.artists?.some(row => !selected.has(row.bandId)
     || selected.get(row.bandId) !== row.identityVersion)) throw new Error('TARGET_NOT_SELECTED')
   const summary = { imported: 0, importFailures: 0, artists: 0, applied: 0, writeFailures: 0, apiCalls: 0, counts: {}, errors: {}, ok: false }

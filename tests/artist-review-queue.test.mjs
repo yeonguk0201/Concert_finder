@@ -189,6 +189,25 @@ test('channel refresh uses the same 40 selected IDs and rejects out-of-batch imp
   await assert.rejects(runRefresh(client, { selection: { ...selection, artists: [...selection.artists, { ...selection.artists[0], bandId: id(44) }] }, now }), /SELECTION_INVALID/)
 })
 
+test('channel refresh skips approval-only targets and rejects their imports before mutation', async () => {
+  const q = newQueue('local', now), catalog = bands(2)
+  const selection = beginBatch(q, { lane: 'local', bands: catalog, now })
+  selection.artists[0].tasks = ['approval']
+  const manifest = { version: 1, artists: catalog.map(b => ({ bandId: b.id, musicBrainzId: b.musicbrainz_id,
+    name: b.name, identityVersion: b.updated_at, curationStatus: b.curation_status, profileVersion: 'v1',
+    channelUrl: 'https://www.youtube.com/channel/UC' + 'a'.repeat(22), verification: 'candidate', evidence: [] })) }
+  const calls = [], client = { rpc: async (name, args) => {
+    calls.push({ name, args })
+    if (name === 'service_apply_artist_channel') Object.assign(manifest.artists.find(r => r.bandId === args.result.bandId), args.result)
+    return name === 'service_artist_channel_manifest' ? { data: structuredClone(manifest) } : { error: null }
+  } }
+  await assert.rejects(runRefresh(client, { selection, manifest, now }), /TARGET_NOT_SELECTED/)
+  assert.equal(calls.length, 0)
+  const result = await runRefresh(client, { selection, now })
+  assert.equal(result.artists, 1)
+  assert.equal(result.readBack, 1)
+  assert.deepEqual(calls.filter(c => c.name === 'service_apply_artist_channel').map(c => c.args.result.bandId), [catalog[1].id])
+})
 test('legacy server lease check blocks active/expired runs and never claims a new legacy batch', async () => {
   const env = { SUPABASE_URL: `https://${PROJECT}.supabase.co`, SUPABASE_SERVICE_ROLE_KEY: 'test' }
   for (const result of [{ state: 'busy', reason: 'lease_active' }, { state: 'ready', reason: 'lease_recovery' }]) {

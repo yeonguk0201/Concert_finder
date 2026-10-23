@@ -74,7 +74,7 @@ node --use-env-proxy scripts/artist-review-queue.mjs context --owner=local --inp
 node --use-env-proxy scripts/artist-review-queue.mjs apply --owner=local --input=.local/artist-review-queue/proposal.json
 ```
 
-채널 manifest는 동일 batch의 ID와 identityVersion만 포함한다. 공식성·신원·API 검증은 기존 채널 스킬을 따른다. 다음 명령은 실제 저장이므로 조사 근거가 갖춰졌을 때만 사용한다. `--selection`을 생략하면 기존 전체 갱신 동작이므로 이 예약에서는 반드시 지정한다.
+채널 manifest는 동일 batch에서 tasks에 channels가 있는 팀의 ID와 identityVersion만 포함한다. 승인만 남은 팀은 채널 가져오기·갱신에서 제외한다. 공식성·신원·API 검증은 기존 채널 스킬을 따른다. 같은 신원·근거의 유효 캐시는 JSON 속성 순서나 인용문 추가 여부와 관계없이 재사용하되 공식 링크·확인 시각 등 검증 필드가 바뀌면 다시 대조한다. 다음 명령은 실제 저장이므로 조사 근거가 갖춰졌을 때만 사용한다. `--selection`을 생략하면 기존 전체 갱신 동작이므로 이 예약에서는 반드시 지정한다.
 
 ```sh
 node --use-env-proxy scripts/refresh-artist-channels.mjs --upload --selection=.local/artist-review-queue/batch.json --manifest=.local/artist-review-queue/channels.json --output=.local/artist-review-queue/channel-summary.json
