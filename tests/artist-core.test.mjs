@@ -60,3 +60,19 @@ test('core priority applies only at new boundary, never bypasses deferred/manual
   assert.equal(two.artists.length, 2)
   assert.equal(beginBatch(small, { lane: 'cloud', bands, now, limit: 40 }).artists.length, 2)
 })
+
+test('chart discovery uses the accepted Korean geo parameter while retaining listening-region provenance', async () => {
+  const requests = []
+  const rows = await discoverCharts('test-key', { pages: 1, pause: async () => {}, fetcher: async url => {
+    requests.push(new URL(url))
+    const country = url.searchParams.get('country')
+    if (country === 'South Korea') return Response.json({ error: 6, message: 'country param invalid' })
+    const artist = [{ name: 'Candidate', mbid: id(1), image: 'raw-image' }]
+    return Response.json(country ? { topartists: { artist } } : { artists: { artist } })
+  } })
+  assert.deepEqual(requests.map(url => url.searchParams.get('country')), [null, 'Japan', 'Korea, Republic of'])
+  assert.deepEqual(rows.map(row => row.discovery.listeningRegion), [null, 'Japan', 'South Korea'])
+  assert.ok(rows.every(row => row.identityVerified === false && row.popularity.status === 'not_checked'))
+  assert.equal(JSON.stringify(rows).includes('test-key'), false)
+  assert.equal(JSON.stringify(rows).includes('raw-image'), false)
+})

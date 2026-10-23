@@ -32,7 +32,10 @@ export async function discoverCharts(key, { fetcher = fetch, pause = ms => new P
   for (const country of [null, 'Japan', 'South Korea']) for (let page = 1; page <= pages; page++) {
     const method = country ? 'geo.getTopArtists' : 'chart.getTopArtists'
     const url = new URL('https://ws.audioscrobbler.com/2.0/')
-    url.search = new URLSearchParams({ method, api_key: key, format: 'json', limit: '100', page: String(page), ...(country ? { country } : {}) }).toString()
+    // Last.fm rejects "South Korea"; its geo API uses the ISO country name.
+    // Keep the listening-region label independent from the provider parameter.
+    const providerCountry = country === 'South Korea' ? 'Korea, Republic of' : country
+    url.search = new URLSearchParams({ method, api_key: key, format: 'json', limit: '100', page: String(page), ...(country ? { country: providerCountry } : {}) }).toString()
     await pause(1100)
     let response
     try { response = await fetcher(url, { redirect: 'error', signal: AbortSignal.timeout(15000) }) } catch { throw Error('LASTFM_NETWORK_FAILED') }
