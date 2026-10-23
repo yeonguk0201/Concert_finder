@@ -62,6 +62,21 @@ test('uncertain upload failure is recorded separately and never recollects or re
   assert.equal(calls[1].args.failure_code, 'COLLECTION_UPLOAD_FAILED')
 })
 
+test('KOPIS safe request context survives permanent failure without losing server diagnostic codes', async () => {
+  const calls = []
+  const message = 'KOPIS HTTP 400 [list 20270124-20270223 page=1]'
+  await assert.rejects(runSource({
+    client: { rpc: async (name, args) => { calls.push({ name, args }); return { data: 'fixed-run' } } },
+    source: 'kopis',
+    collect: async () => { throw Object.assign(new Error(message), { retryable: false }) },
+    sleep: () => assert.fail('permanent failure must not retry'),
+    upload: () => assert.fail('failed collection must not upload'),
+  }), error => error.message === message)
+  assert.deepEqual(calls.map(c => c.name), ['service_begin_collection', 'service_fail_collection'])
+  assert.equal(calls[1].args.failure_code, 'COLLECTION_HTTP_400')
+  assert.equal(calls[1].args.attempt_count, 1)
+})
+
 test('database publication enforces approval, leases, deduplication, overrides and historical silence', async () => {
   const db = new PGlite()
   try {
