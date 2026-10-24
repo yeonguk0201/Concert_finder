@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>encore. — UI 디자인 스튜디오</title>
+  <link rel="stylesheet" href="./studio.css" />
+  <script src="./studio.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#preview">시안으로 건너뛰기</a>
+  <header class="studio">
+    <a class="studio-brand" href="/">encore.<span>디자인 스튜디오</span></a>
+    <nav aria-label="디자인 시안 선택">
+      <button data-concept="combined" aria-pressed="true">A+C <span>통합 시안</span></button>
+      <button data-concept="poster" aria-pressed="false">A <span>포스터 월</span></button>
+      <button data-concept="night" aria-pressed="false">B <span>애프터 다크</span></button>
+      <button data-concept="personal" aria-pressed="false">C <span>마이 라이브</span></button>
+    </nav>
+    <div class="sizes" aria-label="미리보기 크기"><button data-size="desktop" aria-pressed="true" aria-label="데스크톱 미리보기">데스크톱</button><button data-size="mobile" aria-pressed="false" aria-label="모바일 미리보기">모바일</button></div>
+  </header>
+  <div class="direction"><div><strong id="direction-title">A + C. 라이브 컬렉션</strong><span id="direction-description">밝은 포스터 월에 아티스트 발견과 예매 캘린더를 더했습니다.</span></div><span class="prototype">UI 시안 · 실제 계정과 연결되지 않습니다</span></div>
+  <main id="preview" tabindex="-1"><iframe id="concept-frame" title="A + C 통합 UI 시안" src="./preview.html?concept=combined"></iframe></main>
+</body>
+</html>
