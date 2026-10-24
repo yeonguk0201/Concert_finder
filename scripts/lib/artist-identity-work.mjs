@@ -1,8 +1,44 @@
 import { validateIdentityMutation, verifyIdentityReceipt } from './artist-identity-contract.mjs'
+import { validateIdentityJournal } from './artist-identity-journal.mjs'
+
+// Read-only recovery of a previously frozen journal. Validate ALL selected IDs
+// and original versions before the first RPC reader, including ordinary review
+// targets that have no identity mutation. A receipt never authorizes a new write.
+export async function recoverIdentityJournal({ journal, queue, lane, now = Date.now(), ...readers }) {
+  const frozen = validateIdentityJournal(journal, now)
+  const active = queue?.active
+  if (!['cloud', 'local'].includes(lane) || queue?.owner !== lane || queue.transfer
+    || !active || active.runId !== frozen.runId || !Array.isArray(active.artists)
+    || active.artists.length !== frozen.targets.length
+    || new Set(active.artists.map(a => a.bandId)).size !== active.artists.length) {
+    throw Error('IDENTITY_SELECTION_INVALID')
+  }
+  const selected = new Map(active.artists.map(a => [a.bandId, a]))
+  for (const target of frozen.targets) {
+    const row = selected.get(target.bandId)
+    if (!row || (row.originalIdentityVersion ?? row.identityVersion ?? null) !== target.expectedUpdatedAt) {
+      throw Error('IDENTITY_SELECTION_INVALID')
+    }
+  }
+  const results = []
+  for (const target of frozen.targets.filter(t => t.mutation)) {
+    // Reader errors and per-target identity/search conflicts already have fixed,
+    // redacted codes in recoverIdentityWork. Keep a failure local to that target.
+    try {
+      results.push(await recoverIdentityWork({ ...readers, queue, lane, runId: frozen.runId, target, now }))
+    } catch (error) {
+      const code = /^IDENTITY_(?:RECEIPT_UNAVAILABLE|READBACK_UNAVAILABLE|READBACK_FAILED|LINK_UNCONFIRMED|SEARCH_UNAVAILABLE|READERS_REQUIRED)$/.test(error.message)
+        ? error.message : 'IDENTITY_RECOVERY_FAILED'
+      results.push({ bandId: target.bandId, state: 'recovery_failed', verified: false, code })
+    }
+  }
+  return { runId: frozen.runId, fingerprint: frozen.fingerprint,
+    selected: frozen.targets.length, complete: results.every(r => r.verified === true), results }
+}
 
 // Receipt recovery only. This module never registers a run, mutates an artist,
-// approves publication, changes a queue, or reads credentials. CLI/journal
-// integration must be completed before scheduling identity writes.
+// approves publication, changes a queue, or reads credentials. The journal
+// recovery above is read-only; mutation CLI/queue integration is still required.
 export async function recoverIdentityWork({ queue, lane, runId, target,
   receiptReader, bandReader, relationReader, identityReader, searchReader, now = Date.now() }) {
   const active = queue?.active

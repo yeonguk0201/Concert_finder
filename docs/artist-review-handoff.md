@@ -6,6 +6,8 @@
 
 ## 구현 범위
 
+신규/별칭의 호환 준비에는 `artist-identity-journal.mjs`의 불변 요청 저널과 `artist-identity-work.mjs`의 읽기 전용 `recoverIdentityJournal`이 있다. 저널의 전체 고정 목록(신원 변경 없는 검수 대상 포함)·원본 버전·실행 ID를 현재 active와 대조한 뒤에만 receipt/readback/public search를 읽는다. receipt 없음·검색 충돌·읽기 실패는 미완료로 보존하고 queue를 변경하지 않는다. 이는 mutation CLI나 신규/별칭 쓰기의 활성화가 아니며 서버 등록·동일40팀 선정·queue checkpoint/finish 통합은 여전히 필요하다.
+
 `scripts/artist-review-queue.mjs`와 `scripts/lib/artist-review-queue.mjs`는 기존 카탈로그의 신원·장르/분류·승인/채널·사진에 **하나의 최대 40팀 목록**을 사용한다. 오류·보류·권한 대기도 선택 수에 포함하고 실패한 팀 대신 새 팀을 넣지 않는다. 같은 상태 파일의 begin 재호출은 기존 batch를 반환한다. 실행 주기는 Codex 앱 예약에서만 관리한다(현재 사용자 설정: 4시간). 완료한 실행의 시작 시각으로 새 batch를 지연시키지 않는다. lastStartedAt은 이력으로 인계 시에도 보존한다. 활성 batch가 있으면 새로 선정하지 않는다.
 
 우선순위는 신원·장르 → 완료 근거가 있는 분류·승인 → 채널·사진이다. 같은 우선순위는 대기 시작 시각, 이름·ID 순으로 처리한다. `--direction=reverse`는 대기 시각까지 같은 항목의 이름·ID 순서만 반대로 한다. 날짜가 된 재시도보다 역순 이름을 우선하지 않는다. 수동 보류/제외는 선택하지 않고 기존 승인 팀은 채널 단계만 선택한다.
