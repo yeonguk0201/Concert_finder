@@ -16,7 +16,7 @@ export async function recoverIdentityJournal({ journal, queue, lane, now = Date.
   const selected = new Map(active.artists.map(a => [a.bandId, a]))
   for (const target of frozen.targets) {
     const row = selected.get(target.bandId)
-    if (!row || (row.originalIdentityVersion ?? row.identityVersion ?? null) !== target.expectedUpdatedAt) {
+    if (!row || (Object.hasOwn(row, 'originalIdentityVersion') ? row.originalIdentityVersion : row.identityVersion ?? null) !== target.expectedUpdatedAt) {
       throw Error('IDENTITY_SELECTION_INVALID')
     }
   }
@@ -38,7 +38,7 @@ export async function recoverIdentityJournal({ journal, queue, lane, now = Date.
 
 // Receipt recovery only. This module never registers a run, mutates an artist,
 // approves publication, changes a queue, or reads credentials. The journal
-// recovery above is read-only; mutation CLI/queue integration is still required.
+// recovery above remains independent of the mutation CLI/queue integration.
 export async function recoverIdentityWork({ queue, lane, runId, target,
   receiptReader, bandReader, relationReader, identityReader, searchReader, now = Date.now() }) {
   const active = queue?.active
@@ -47,7 +47,7 @@ export async function recoverIdentityWork({ queue, lane, runId, target,
     || active.artists.length < 1 || active.artists.length > 40
     || new Set(active.artists.map(a => a.bandId)).size !== active.artists.length) throw Error('IDENTITY_SELECTION_INVALID')
   const selected = active.artists.find(a => a.bandId === target?.bandId)
-  if (!selected || (selected.originalIdentityVersion ?? selected.identityVersion ?? null) !== target.expectedUpdatedAt) throw Error('IDENTITY_SELECTION_INVALID')
+  if (!selected || (Object.hasOwn(selected, 'originalIdentityVersion') ? selected.originalIdentityVersion : selected.identityVersion ?? null) !== target.expectedUpdatedAt) throw Error('IDENTITY_SELECTION_INVALID')
   validateIdentityMutation(target.mutation, now)
   if ([receiptReader, bandReader, relationReader, identityReader, searchReader].some(r => typeof r !== 'function')) throw Error('IDENTITY_READERS_REQUIRED')
   // The reader must use the installed service_integrated_identity_receipt RPC.

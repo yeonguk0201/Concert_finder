@@ -6,6 +6,8 @@
 
 ## 구현 범위
 
+2026-10-25 KST 후속: [identity 클라이언트 경로](artist-identity-client-compatibility.md)의 현재 구현 절이 아래 과거 CLI 미완료 설명보다 우선한다. `begin --identity-file`·`identity`·불변 저널·공개 검색 readback·queue/finish 연결을 격리 테스트로 구현했다. 운영 신규/별칭 쓰기 성공은 아직 미검증이다. 설치된 승인 RPC가 최초 target 버전만 받으므로 identity 변경 대상의 승인은 다음 선정 가능한 정규 batch로 defer하며, 같은 batch 재등록·별도 writer로 우회하지 않는다. 복구 환경은 `/workspace/Concert_finder-recovered-20261023`이며 기존 queue를 init/accept하지 않는다.
+
 2026-10-24 운영 `service_begin_integrated_review` 정의의 전체 대상 버전 검사와 대조해, 로컬 저널 준비도 신원 변경 없는 일반 검수 대상의 존재·원본 버전을 검사한다. 목록 마지막 대상의 누락/버전 변경/버전 없음도 저널 게시 전에 거부한다. 기존 mutation CLI·서버 등록·queue 통합의 미완료 경계는 그대로다.
 
 신규/별칭의 호환 준비에는 `artist-identity-journal.mjs`의 불변 요청 저널과 `artist-identity-work.mjs`의 읽기 전용 `recoverIdentityJournal`이 있다. 저널의 전체 고정 목록(신원 변경 없는 검수 대상 포함)·원본 버전·실행 ID를 현재 active와 대조한 뒤에만 receipt/readback/public search를 읽는다. receipt 없음·검색 충돌·읽기 실패는 미완료로 보존하고 queue를 변경하지 않는다. 이는 mutation CLI나 신규/별칭 쓰기의 활성화가 아니며 서버 등록·동일40팀 선정·queue checkpoint/finish 통합은 여전히 필요하다.

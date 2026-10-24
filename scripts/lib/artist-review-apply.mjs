@@ -1,10 +1,12 @@
 import { recordStage, snapshotKey, safeProof } from './artist-review-queue.mjs'
+import { identityRegistrationTargets } from './artist-review-identity.mjs'
 
 // Human administration and scheduled service application use separate audited RPCs.
 export async function applyQueuedCuration(queue, { lane, runId, bandId, proposal, requirements = {},
   approvalEvidence = {}, approvalProof = null, serviceClient = null, adminClient = null, relationReader = null, accessToken = null, now = Date.now() }) {
   const row = queue.active?.artists.find(row => row.bandId === bandId)
   if (!row || queue.active.runId !== runId || !row.tasks.includes('approval') || queue.owner !== lane || queue.transfer) throw new Error('TARGET_NOT_SELECTED')
+  if (row.identityMutation && row.recorded?.identity?.applied) throw new Error('IDENTITY_APPROVAL_NEXT_BATCH')
   const entry = queue.entries[bandId]
   if (row.recorded?.approval?.applied) {
     if (JSON.stringify(row.recorded.approval.proposal) !== JSON.stringify(proposal)) throw new Error('CHECKPOINT_CONFLICT')
@@ -74,9 +76,7 @@ const approvalKeys = ['identityMatched', 'countryMatched', 'genreMatched', 'clas
 export async function registerServiceBatch(client, queue) {
   if (!queue.active) return
   const { error } = await client.rpc('service_begin_integrated_review', { run_id: queue.active.runId, batch_started_at: queue.active.startedAt,
-    targets: queue.active.artists.map(row => ({ bandId: row.bandId,
-      // A verified apply changes the local version, but registration remains immutable.
-      expectedUpdatedAt: row.originalIdentityVersion ?? row.identityVersion })) })
+    targets: identityRegistrationTargets(queue.active) })
   if (error) throw new Error(/SCHEDULE_WINDOW|EDIT_CONFLICT|SELECTION_CONFLICT|LEGACY_REVIEW_NOT_FINISHED|LEASE_LOST/.exec(error.message)?.[0] ?? 'SERVICE_REGISTRATION_FAILED')
 }
 
@@ -115,7 +115,7 @@ async function applyService(queue, { lane, runId, bandId, proposal, requirements
     || JSON.stringify(relations) !== JSON.stringify(receipt.relations)) throw new Error('CURATION_WRITE_UNCONFIRMED')
   const outcome = recordStage(queue, { lane, runId, bandId, stage: 'approval', status: 'complete', reason: 'SERVICE_RPC_AND_RECEIPT_VERIFIED',
     applied: true, proposal, verification: { readBack: true, version: after.updated_at }, now })
-  row.originalIdentityVersion ??= row.identityVersion
+  if (!Object.hasOwn(row, 'originalIdentityVersion')) row.originalIdentityVersion = row.identityVersion
   entry.band = { ...entry.band, category: after.category, curation_status: after.curation_status, updated_at: after.updated_at }
   entry.key = snapshotKey(entry.band); row.identityVersion = after.updated_at; row.key = entry.key
   return outcome

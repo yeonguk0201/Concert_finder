@@ -1,0 +1,80 @@
+{
+  "kst": "2026-10-25T00:53:09+09:00",
+  "role": "identity-client-development-and-readonly-concert-link-diagnosis",
+  "baseHead": "9d21930",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 2167,
+    "active": null,
+    "transfer": null,
+    "sha256": "e08c98653b5fa0651738a4ff9f8580bb014050ebad1265945c6728133d6d3bdf",
+    "unchanged": true
+  },
+  "approvalDraftSha256": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337",
+  "implementation": [
+    "begin --identity-file freezes identity work and ordinary reviews in the same maximum forty targets",
+    "immutable UTF-8 request journal precedes server registration; missing or changed journal stops resumed work",
+    "identity command reads receipt before installed mutation RPC, then checks current band, linked mb key, aggregate relations and anonymous public search for all retained/new aliases",
+    "identity must be verified before research/approval/channel writes; verified version is passed to the same batch",
+    "register expectedUpdatedAt=null stays immutable after verified mutation; JSONB object-key order does not cause false receipt mismatch",
+    "installed approval RPC accepts only original target timestamp; identity-mutated unreviewed artists defer approval to next eligible regular batch under existing 24-hour deferred policy"
+  ],
+  "liveContractReadOnly": [
+    "service_begin_integrated_review",
+    "service_mutate_integrated_artist",
+    "service_integrated_identity_receipt",
+    "service_finish_integrated_review",
+    "service_integrated_review_context",
+    "service_apply_integrated_review",
+    "admin_ingest_catalog"
+  ],
+  "concertDiagnosis": {
+    "lookup": "artist-discovery uses a small fixed match list then bounded MusicBrainz name lookup; it does not first resolve against the current artist catalog/identity links",
+    "limits": "default twenty-five MusicBrainz requests per resolver run, temporary cache, stop after consecutive failures; skip-artist-lookup leaves incoming identities empty",
+    "storageConfirmedInLiveDefinition": "admin_ingest_catalog derives band_ids only from incoming artist_keys; on conflict replaces payload with excluded.payload even when incoming keys are empty. Previous nonempty payload may be retained as history, not restored automatically.",
+    "observationsThisSession": {
+      "kopisCandidates": 817,
+      "withoutArtistKeys": 802,
+      "castCreditReasons": {
+        "lookupFailure": 305,
+        "requestLimitReached": 250,
+        "identityCountryUnverified": 38,
+        "ambiguousName": 15
+      }
+    },
+    "countCaveat": "Reason totals count discovered cast-credit records, not distinct concerts. The mechanism can explain gaps; per-candidate cause and correctness of any previous link remain unverified.",
+    "publication": "Publication OFF is a separate release gate and does not create artist keys. NOL permission remains absent.",
+    "followup": "Coordinate current-catalog-first identity resolution and fail-closed preservation/review of existing verified candidate links with the separate collection owner; do not reconnect by name alone or replay collections here."
+  },
+  "validation": {
+    "fullSuiteBeforeFinalTwoRegressions": {
+      "nodeTestsPassed": 181,
+      "vitestTestsPassed": 101,
+      "vitestFiles": 23
+    },
+    "finalRelatedTestsPassed": 53,
+    "newIdentityTests": 9,
+    "lint": "passed",
+    "build": "passed; existing bundle-size warning",
+    "diffCheck": "passed"
+  },
+  "productionEffects": {
+    "newArtists": 0,
+    "aliases": 0,
+    "approvals": 0,
+    "concertWrites": 0,
+    "collectionRuns": 0,
+    "notificationSends": 0,
+    "ddl": 0,
+    "scheduleChanges": 0,
+    "pushPRMerge": false
+  },
+  "limitations": [
+    "No actual production mutation or end-to-end registration success claimed. First verified real identity input remains required.",
+    "No server collector/workflow or operating candidate payload changed.",
+    "No identity handoff/transfer performed; the recovered owner and latest local state remain authoritative.",
+    "Core chart discovery rows remain unverified inputs and false approval drafts were not promoted."
+  ]
+}
