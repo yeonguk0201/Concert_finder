@@ -1,0 +1,39 @@
+{
+  "kst": "2026-10-25T01:07:26+09:00",
+  "implementationCommit": "4a4caa4",
+  "automationId": "6ad2484e14b8819191c9b7217bdd0572",
+  "action": "update prompt only",
+  "readback": {
+    "promptExactMatch": true,
+    "is_enabled": false,
+    "scheduleUnchanged": true,
+    "threadUnchanged": true
+  },
+  "promptSnapshot": ".local/artist-review-queue/automation-prompt-20261025-010726.txt",
+  "promptSha256": "d00ca29528b9036f11550e11666339d07c079fbbe2a4cfd6f87db3d92cdc8ff8",
+  "queue": {
+    "revision": 2167,
+    "owner": "cloud",
+    "active": null,
+    "transfer": null,
+    "unchanged": true
+  },
+  "scope": "Use recovered checkout and implemented begin --identity-file / identity, immutable journal, one shared forty-artist selection, installed service mutation RPC, receipt/current DB/anonymous public-search readback; defer approval after identity mutation under existing retry policy.",
+  "notPerformed": [
+    "resume schedule",
+    "run now",
+    "new automation",
+    "change thread or environment binding",
+    "artist mutation",
+    "collection or notification execution",
+    "concert-link collector fix",
+    "DDL",
+    "push/PR/merge"
+  ],
+  "limitations": [
+    "Prompt update does not transfer the recovered checkout or .local to another scheduled environment. Each run must verify their actual presence and latest state.",
+    "Paused task will not execute until separately resumed.",
+    "No actual new registration/alias success is claimed.",
+    "Current-catalog-first concert matching and preservation of existing verified candidate links remain separate unfinished work."
+  ]
+}
