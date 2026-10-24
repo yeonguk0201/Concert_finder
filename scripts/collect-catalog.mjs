@@ -11,6 +11,7 @@ import { filterPastCandidates } from './candidate-policy.mjs'
 import { runSource } from './collection-runner.mjs'
 import { collectKopis } from './kopis.mjs'
 import { collectTicketlinkEvidence, supplementBooking, ticketlinkProduct } from './booking-evidence.mjs'
+import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved } from './collection-artist-links.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
@@ -49,7 +50,7 @@ try {
   }
   let cache = {}
   try { cache = JSON.parse(await readFile(cachePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
-  const resolveArtist = createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
+  const lookupArtist = skipArtistLookup ? null : createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
   const writeReport = () => output ? writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: false, results }, null, 2) + '\n', 'utf8') : Promise.resolve()
   for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis'] : [selected]) {
     if (source === 'kopis' && !process.env.KOPIS_SERVICE_KEY) {
@@ -58,6 +59,7 @@ try {
       await writeReport(); continue
     }
     console.error(`[${source}] 공개 공연 목록 수집 시작`)
+    let pendingResult = null
     try {
       let discoveredIdentities = []
       const result = await runSource({ client, source, collect: async () => {
@@ -68,7 +70,8 @@ try {
       filterPastCandidates(result, { includePast })
       await supplement(result)
       console.error(`[${source}] 후보 ${result.candidates.length}개 · 제외 ${result.excluded.length}개 · 실패 ${result.failures.length}개; 아티스트 보완 중`)
-      discoveredIdentities = skipArtistLookup ? [] : await enrichArtists(result, resolveArtist)
+      const bands = client ? await readCollectionArtists(client) : []
+      discoveredIdentities = await enrichArtists(result, createCatalogArtistResolver(bands, lookupArtist))
       for (const row of result.candidates) {
         if (row.payload.artwork) {
           const discovered = row.payload.artwork
@@ -80,10 +83,16 @@ try {
         if (stable.artwork_probe) delete stable.artwork_probe.checked_at
         row.content_hash = createHash('sha256').update(JSON.stringify(stable)).digest('hex')
       }
+      pendingResult = result
       return result
       }, upload: async (batch, runToken, attempts) => {
         let lastError
         for (let attempt = 1; attempt <= 3; attempt++) {
+          try { await assertCollectionLinksPreserved(client, batch) }
+          catch (error) {
+            if (error.message === 'COLLECTION_IDENTITY_REGRESSION') batch.identity_link_review = error.review
+            throw error
+          }
           const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: [...artists, ...discoveredIdentities], attempt_count: attempts, adapter_version: 'catalog-v1' })
           if (!error) return data
           lastError = error
@@ -95,7 +104,7 @@ try {
       results.push({ source, ...result, artist_identity_count: discoveredIdentities.length, uploaded: upload })
       console.error(`[${source}] 완료 · 새 식별 정보 ${discoveredIdentities.length}개 · 업로드 ${upload}`)
       if (result.failures.length) process.exitCode = 1
-    } catch (error) { results.push({ source, error: error.message, uploaded: false }); console.error(`[${source}] 실패: ${error.message}`); process.exitCode = 1 }
+    } catch (error) { results.push({ source, ...(pendingResult ?? {}), error: error.message, uploaded: false }); console.error(`[${source}] 실패: ${error.message}`); process.exitCode = 1 }
     await writeReport()
   }
   await writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8')

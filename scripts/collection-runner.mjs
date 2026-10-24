@@ -2,6 +2,7 @@
 function collectionFailure(error, phase) {
   const message = error?.message ?? ''
   const status = /^(?:KOPIS )?HTTP ([45]\d{2})$/.exec(message)?.[1]
+  if (['COLLECTION_IDENTITY_REGRESSION', 'COLLECTION_LINK_CONTEXT_UNAVAILABLE', 'COLLECTION_ARTIST_CONTEXT_UNAVAILABLE'].includes(message)) return { code: message, retryable: false }
   if (phase === 'upload') return { code: 'COLLECTION_UPLOAD_FAILED', retryable: false }
   if (status) return { code: `COLLECTION_HTTP_${status}`, retryable: status === '429' || Number(status) >= 500 }
   if (message === 'KOPIS_SERVICE_KEY missing') return { code: 'COLLECTION_CONFIGURATION_MISSING', retryable: false }
