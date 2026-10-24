@@ -43,6 +43,23 @@ test('new registration cannot duplicate an external ID or reuse an existing vers
   assert.throws(() => prepareIdentityTargets([{ ...t, expectedUpdatedAt: b.updated_at }], [{ bandId: t.bandId, mutation: m }], [], now), /IDENTITY_CONFLICT/)
 })
 
+test('all 40 original versions are checked even when only the first target mutates', () => {
+  const b = band(), catalog = [b, ...Array.from({ length: 39 }, (_, n) => ({ ...b,
+    id: id(n + 100), name: `Other Fixture ${n}`, aliases: [], musicbrainz_id: id(n + 200) }))]
+  const targets = catalog.map(row => ({ bandId: row.id, expectedUpdatedAt: row.updated_at }))
+  const work = [{ bandId: b.id, mutation: mutation() }]
+  const before = JSON.stringify([targets, work, catalog])
+  assert.equal(prepareIdentityTargets(targets, work, catalog, now).length, 40)
+  assert.equal(JSON.stringify([targets, work, catalog]), before)
+  for (const current of [catalog.slice(0, -1), catalog.map((row, i) => i === 39
+    ? { ...row, updated_at: '2026-10-22T11:00:00Z' } : row)]) {
+    assert.throws(() => prepareIdentityTargets(targets, work, current, now), /EDIT_CONFLICT/)
+  }
+  const missingVersion = structuredClone(targets); missingVersion[39].expectedUpdatedAt = null
+  assert.throws(() => prepareIdentityTargets(missingVersion, work, catalog, now), /EDIT_CONFLICT/)
+  assert.equal(JSON.stringify([targets, work, catalog]), before)
+})
+
 test('receipt requires current readback and preserved aliases, status, category and relations', () => {
   const b = band(), m = mutation(), after = { ...b, aliases: [...b.aliases, ...m.aliases], updated_at: '2026-10-22T12:00:00Z' }
   const target = { bandId: b.id, expectedUpdatedAt: b.updated_at, mutation: m }

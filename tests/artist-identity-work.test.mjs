@@ -74,7 +74,8 @@ async function journalFixture() {
     { bandId: id(3), expectedUpdatedAt: f.target.expectedUpdatedAt }]
   f.queue.active.artists.push({ bandId: id(3), identityVersion: f.target.expectedUpdatedAt })
   f.journal = prepareIdentityJournal({ runId: f.runId, targets,
-    work: [{ bandId: f.target.bandId, mutation: f.target.mutation }], catalog: [receipt.before], now })
+    work: [{ bandId: f.target.bandId, mutation: f.target.mutation }], catalog: [receipt.before,
+      { ...receipt.before, id: id(3), name: 'Other Fixture', aliases: [], musicbrainz_id: id(4) }], now })
   return f
 }
 test('journal recovery checks the entire frozen selection and preserves queue and journal bytes', async () => {

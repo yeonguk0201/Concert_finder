@@ -24,6 +24,7 @@ async function directory(t) {
 }
 test('preparation freezes the entire selection and never modifies source objects', () => {
   const f = fixture(); f.targets.push({ bandId: id(3), expectedUpdatedAt: f.catalog[0].updated_at })
+  f.catalog.push({ ...f.catalog[0], id: id(3), name: 'Other Fixture', aliases: [], musicbrainz_id: id(4) })
   const before = structuredClone(f), journal = prepareIdentityJournal(f)
   assert.deepEqual(f, before); assert.equal(journal.targets.length, 2)
   f.work[0].mutation.aliases.push('changed')

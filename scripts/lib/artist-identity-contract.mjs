@@ -29,7 +29,8 @@ export function validateIdentityMutation(change, now = Date.now()) {
 export function prepareIdentityTargets(targets, work, catalog, now = Date.now()) {
   if (!Array.isArray(targets) || targets.length < 1 || targets.length > 40
     || targets.some(t => !ID.test(t.bandId ?? '')) || new Set(targets.map(t => t.bandId)).size !== targets.length
-    || !Array.isArray(work) || new Set(work.map(w => w.bandId)).size !== work.length) fail('SELECTION_INVALID')
+    || !Array.isArray(work) || new Set(work.map(w => w.bandId)).size !== work.length
+    || !Array.isArray(catalog)) fail('SELECTION_INVALID')
   const selected = new Map(targets.map(t => [t.bandId, t]))
   const assigned = new Map()
   for (const item of work) {
@@ -51,6 +52,13 @@ export function prepareIdentityTargets(targets, work, catalog, now = Date.now())
       || [other.name, ...other.aliases].some(n => names.includes(searchName(n))))) fail('IDENTITY_CONFLICT')
     if (target.mutation && !same(target.mutation, change)) fail('SELECTION_CONFLICT')
     assigned.set(item.bandId, structuredClone(change))
+  }
+  // The installed begin RPC checks ordinary reviews as well as mutations.
+  // Reject incomplete/stale snapshots before publishing an immutable journal.
+  for (const target of targets.filter(t => !assigned.has(t.bandId))) {
+    const band = catalog.find(b => b.id === target.bandId)
+    if (!band || !Number.isFinite(Date.parse(target.expectedUpdatedAt))
+      || band.updated_at !== target.expectedUpdatedAt) fail('EDIT_CONFLICT')
   }
   return targets.map(t => ({ ...structuredClone(t), ...(assigned.has(t.bandId) ? { mutation: assigned.get(t.bandId) } : {}) }))
 }
