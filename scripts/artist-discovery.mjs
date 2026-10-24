@@ -45,23 +45,36 @@ export function createArtistResolver({ cache = {}, fetcher = fetch, sleep = paus
 }
 export async function enrichArtists(result, resolve) {
   const identities = new Map(), lookedUp = new Map()
-  for (const row of result.candidates) {
-    for (const credit of row.payload.discovered_artists ?? []) {
-      if (credit.key || !credit.name) continue
-      const key = normalizeName(credit.name)
-      if (!lookedUp.has(key)) {
-        try { lookedUp.set(key, { matches: await resolve(credit.name) }) }
-        catch (error) { lookedUp.set(key, { matches: [], error: error.message === 'ARTIST_LOOKUP_BUDGET' ? '이번 실행의 아티스트 조회 한도 도달: 다음 실행에서 보완' : '아티스트 검색 연결 실패' }) }
+  // Spend the unchanged shared provider budget on reviewed catalog credits
+  // first, without reordering a concert's original cast or candidate payload.
+  const credits = result.candidates.flatMap(row => (row.payload.discovered_artists ?? [])
+    .filter(credit => !credit.key && credit.name).map(credit => ({ row, credit })))
+    .sort((a, b) => (resolve.priority?.(a.credit.name) ?? 1) - (resolve.priority?.(b.credit.name) ?? 1))
+  for (const { row, credit } of credits) {
+    const key = normalizeName(credit.name)
+    if (!lookedUp.has(key)) {
+      try { lookedUp.set(key, { matches: await resolve(credit.name) }) }
+      catch (error) {
+        const reason = {
+          ARTIST_LOOKUP_BUDGET: '이번 실행의 아티스트 조회 한도 도달: 다음 실행에서 보완',
+          ARTIST_CATALOG_AMBIGUOUS: '현재 카탈로그의 동명이인: 식별자 확인 필요',
+          ARTIST_CATALOG_REVIEW_REQUIRED: '현재 카탈로그의 신원·승인 검수 필요',
+          ARTIST_CATALOG_IDENTITY_CONFLICT: '현재 카탈로그와 제공처 신원 충돌: 자동 연결 보류',
+          ARTIST_LOOKUP_SKIPPED: '외부 아티스트 조회 생략: 신원 연결 미확인',
+        }[error.message] ?? '아티스트 검색 연결 실패'
+        lookedUp.set(key, { matches: [], error: reason })
       }
-      const lookup = lookedUp.get(key)
-      credit.matches = lookup.matches
-      if (lookup.matches.length === 1 && lookup.matches[0].country && !lookup.matches[0].truncated) {
-        const identity = lookup.matches[0]
-        credit.key = identity.key
-        identities.set(identity.key, identity)
-        row.payload.artist_keys = [...new Set([...row.payload.artist_keys, identity.key])]
-      } else credit.reason = lookup.error ?? (lookup.matches.length > 1 ? '동명이인: 식별자 선택 필요' : '신원·국적 확인 필요')
     }
+    const lookup = lookedUp.get(key)
+    credit.matches = lookup.matches
+    if (lookup.matches.length === 1 && lookup.matches[0].country && !lookup.matches[0].truncated) {
+      const identity = lookup.matches[0]
+      credit.key = identity.key
+      identities.set(identity.key, identity)
+      row.payload.artist_keys = [...new Set([...row.payload.artist_keys, identity.key])]
+    } else credit.reason = lookup.error ?? (lookup.matches.length > 1 ? '동명이인: 식별자 선택 필요' : '신원·국적 확인 필요')
+  }
+  for (const row of result.candidates) {
     if (row.payload.discovered_artists?.some(a => !a.key)) row.payload.review_reasons.push('미연결 출연진이 있습니다. 이름은 보존되며 신원 확인 후 연결하세요.')
   }
   return [...identities.values()]
