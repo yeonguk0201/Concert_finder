@@ -1,0 +1,1592 @@
+{
+  "version": 10,
+  "project": "czjrzylvnewfjnfwjhwf",
+  "mode": "read-only-monitor",
+  "checkedAt": "2026-10-24 10:23:57.605046+00",
+  "completedAt": "2026-10-24T10:26:59.295297+00:00",
+  "completedAtKst": "2026-10-24T19:26:59.295297+09:00",
+  "environment": {
+    "observationsCurrent": true,
+    "phase": "running",
+    "networkPolicy": "enforced",
+    "requiredRuntimeBindings": "ready",
+    "actualCodePath": "/workspace/Concert_finder-recovered-20261023",
+    "gitHead": "ba4d86fac283027acae8881d4a34e5ce66cef4c3",
+    "requiredAncestorsPresent": [
+      "f267be1",
+      "fd45938"
+    ],
+    "checkpointContinuity": true,
+    "actualSupabaseRead": "success; current schema and aggregate SELECT only",
+    "lastfm": "current binding ready; no Last.fm candidate discovery/API calls in monitor role"
+  },
+  "database": {
+    "checkedAt": "2026-10-24 10:23:57.605046+00",
+    "policies": [
+      {
+        "source": "kopis",
+        "live_after": null,
+        "collection_enabled": true,
+        "publication_enabled": false
+      },
+      {
+        "source": "mintpaper",
+        "live_after": null,
+        "collection_enabled": true,
+        "publication_enabled": false
+      },
+      {
+        "source": "radwimps",
+        "live_after": null,
+        "collection_enabled": true,
+        "publication_enabled": false
+      },
+      {
+        "source": "ualive",
+        "live_after": null,
+        "collection_enabled": true,
+        "publication_enabled": false
+      },
+      {
+        "source": "yes24",
+        "live_after": null,
+        "collection_enabled": false,
+        "publication_enabled": false
+      }
+    ],
+    "recentRuns": [
+      {
+        "rn": 1,
+        "state": "success",
+        "source": "kopis",
+        "attempts": 1,
+        "started_at": "2026-10-24T09:48:35.00908+00:00",
+        "finished_at": "2026-10-24T09:51:59.585094+00:00",
+        "review_count": 100,
+        "scheduled_at": "2026-10-24T09:48:34.078+00:00",
+        "failure_count": 0,
+        "candidate_count": 100,
+        "published_count": 0
+      },
+      {
+        "rn": 2,
+        "state": "success",
+        "source": "kopis",
+        "attempts": 1,
+        "started_at": "2026-10-24T08:43:03.928412+00:00",
+        "finished_at": "2026-10-24T08:46:26.37712+00:00",
+        "review_count": 100,
+        "scheduled_at": "2026-10-24T08:43:03.669+00:00",
+        "failure_count": 0,
+        "candidate_count": 100,
+        "published_count": 0
+      },
+      {
+        "rn": 3,
+        "state": "partial",
+        "source": "kopis",
+        "attempts": 1,
+        "started_at": "2026-10-24T06:51:19.236606+00:00",
+        "finished_at": "2026-10-24T06:54:43.500232+00:00",
+        "review_count": 99,
+        "scheduled_at": "2026-10-24T06:51:18.975+00:00",
+        "failure_count": 1,
+        "candidate_count": 99,
+        "published_count": 0
+      },
+      {
+        "rn": 4,
+        "state": "success",
+        "source": "kopis",
+        "attempts": 1,
+        "started_at": "2026-10-24T05:49:11.98273+00:00",
+        "finished_at": "2026-10-24T05:52:22.678711+00:00",
+        "review_count": 100,
+        "scheduled_at": "2026-10-24T05:49:11.839+00:00",
+        "failure_count": 0,
+        "candidate_count": 100,
+        "published_count": 0
+      },
+      {
+        "rn": 1,
+        "state": "success",
+        "source": "mintpaper",
+        "attempts": 1,
+        "started_at": "2026-10-24T05:48:48.435901+00:00",
+        "finished_at": "2026-10-24T05:48:56.805986+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-24T05:48:47.868+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 2,
+        "state": "success",
+        "source": "mintpaper",
+        "attempts": 1,
+        "started_at": "2026-10-24T00:39:20.454191+00:00",
+        "finished_at": "2026-10-24T00:39:28.253664+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-24T00:39:19.95+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 3,
+        "state": "success",
+        "source": "mintpaper",
+        "attempts": 1,
+        "started_at": "2026-10-23T22:07:33.435121+00:00",
+        "finished_at": "2026-10-23T22:07:41.996245+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-23T22:07:32.846+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 4,
+        "state": "success",
+        "source": "mintpaper",
+        "attempts": 1,
+        "started_at": "2026-10-23T18:18:27.027419+00:00",
+        "finished_at": "2026-10-23T18:18:34.678008+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-23T18:18:26.503+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 1,
+        "state": "success",
+        "source": "radwimps",
+        "attempts": 1,
+        "started_at": "2026-10-24T05:48:57.073395+00:00",
+        "finished_at": "2026-10-24T05:49:11.721233+00:00",
+        "review_count": 2,
+        "scheduled_at": "2026-10-24T05:48:56.92+00:00",
+        "failure_count": 0,
+        "candidate_count": 2,
+        "published_count": 0
+      },
+      {
+        "rn": 2,
+        "state": "success",
+        "source": "radwimps",
+        "attempts": 1,
+        "started_at": "2026-10-24T00:39:28.480384+00:00",
+        "finished_at": "2026-10-24T00:39:53.80694+00:00",
+        "review_count": 2,
+        "scheduled_at": "2026-10-24T00:39:28.334+00:00",
+        "failure_count": 0,
+        "candidate_count": 2,
+        "published_count": 0
+      },
+      {
+        "rn": 3,
+        "state": "success",
+        "source": "radwimps",
+        "attempts": 1,
+        "started_at": "2026-10-23T22:07:42.698322+00:00",
+        "finished_at": "2026-10-23T22:07:57.742365+00:00",
+        "review_count": 2,
+        "scheduled_at": "2026-10-23T22:07:42.104+00:00",
+        "failure_count": 0,
+        "candidate_count": 2,
+        "published_count": 0
+      },
+      {
+        "rn": 4,
+        "state": "success",
+        "source": "radwimps",
+        "attempts": 1,
+        "started_at": "2026-10-23T18:18:34.887663+00:00",
+        "finished_at": "2026-10-23T18:18:48.849315+00:00",
+        "review_count": 2,
+        "scheduled_at": "2026-10-23T18:18:34.768+00:00",
+        "failure_count": 0,
+        "candidate_count": 2,
+        "published_count": 0
+      },
+      {
+        "rn": 1,
+        "state": "success",
+        "source": "ualive",
+        "attempts": 1,
+        "started_at": "2026-10-24T05:48:26.417575+00:00",
+        "finished_at": "2026-10-24T05:48:47.751502+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-24T05:48:25.595+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 2,
+        "state": "success",
+        "source": "ualive",
+        "attempts": 1,
+        "started_at": "2026-10-24T00:38:59.234101+00:00",
+        "finished_at": "2026-10-24T00:39:19.869546+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-24T00:38:58.385+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 3,
+        "state": "success",
+        "source": "ualive",
+        "attempts": 1,
+        "started_at": "2026-10-23T22:07:10.974493+00:00",
+        "finished_at": "2026-10-23T22:07:32.730833+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-23T22:07:10.2+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 4,
+        "state": "success",
+        "source": "ualive",
+        "attempts": 1,
+        "started_at": "2026-10-23T18:18:06.683111+00:00",
+        "finished_at": "2026-10-23T18:18:26.412172+00:00",
+        "review_count": 1,
+        "scheduled_at": "2026-10-23T18:18:06.333+00:00",
+        "failure_count": 0,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "rn": 1,
+        "state": "partial",
+        "source": "yes24",
+        "attempts": 1,
+        "started_at": "2026-10-14T10:10:41.901103+00:00",
+        "finished_at": "2026-10-14T10:11:39.417905+00:00",
+        "review_count": 0,
+        "scheduled_at": "2026-10-14T10:10:41.786+00:00",
+        "failure_count": 45,
+        "candidate_count": 0,
+        "published_count": 0
+      },
+      {
+        "rn": 2,
+        "state": "partial",
+        "source": "yes24",
+        "attempts": 1,
+        "started_at": "2026-10-14T04:50:09.756076+00:00",
+        "finished_at": "2026-10-14T04:51:08.540709+00:00",
+        "review_count": 0,
+        "scheduled_at": "2026-10-14T04:50:09.137+00:00",
+        "failure_count": 45,
+        "candidate_count": 0,
+        "published_count": 0
+      },
+      {
+        "rn": 3,
+        "state": "partial",
+        "source": "yes24",
+        "attempts": 1,
+        "started_at": "2026-10-13T23:44:20.274761+00:00",
+        "finished_at": "2026-10-13T23:45:19.202024+00:00",
+        "review_count": 0,
+        "scheduled_at": "2026-10-13T23:44:20.105+00:00",
+        "failure_count": 45,
+        "candidate_count": 0,
+        "published_count": 0
+      },
+      {
+        "rn": 4,
+        "state": "partial",
+        "source": "yes24",
+        "attempts": 1,
+        "started_at": "2026-10-13T19:52:36.260613+00:00",
+        "finished_at": "2026-10-13T19:53:37.914028+00:00",
+        "review_count": 0,
+        "scheduled_at": "2026-10-13T19:52:35.68+00:00",
+        "failure_count": 45,
+        "candidate_count": 0,
+        "published_count": 0
+      }
+    ],
+    "latestSuccessFailure": [
+      {
+        "state": "failed",
+        "source": "kopis",
+        "started_at": "2026-10-23T02:48:13.670161+00:00",
+        "review_count": 0,
+        "candidate_count": 0,
+        "published_count": 0
+      },
+      {
+        "state": "partial",
+        "source": "kopis",
+        "started_at": "2026-10-24T06:51:19.236606+00:00",
+        "review_count": 99,
+        "candidate_count": 99,
+        "published_count": 0
+      },
+      {
+        "state": "success",
+        "source": "kopis",
+        "started_at": "2026-10-24T09:48:35.00908+00:00",
+        "review_count": 100,
+        "candidate_count": 100,
+        "published_count": 0
+      },
+      {
+        "state": "success",
+        "source": "mintpaper",
+        "started_at": "2026-10-24T05:48:48.435901+00:00",
+        "review_count": 1,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "state": "failed",
+        "source": "radwimps",
+        "started_at": "2026-10-22T01:29:26.688377+00:00",
+        "review_count": 0,
+        "candidate_count": 0,
+        "published_count": 0
+      },
+      {
+        "state": "success",
+        "source": "radwimps",
+        "started_at": "2026-10-24T05:48:57.073395+00:00",
+        "review_count": 2,
+        "candidate_count": 2,
+        "published_count": 0
+      },
+      {
+        "state": "success",
+        "source": "ualive",
+        "started_at": "2026-10-24T05:48:26.417575+00:00",
+        "review_count": 1,
+        "candidate_count": 1,
+        "published_count": 0
+      },
+      {
+        "state": "partial",
+        "source": "yes24",
+        "started_at": "2026-10-14T10:10:41.901103+00:00",
+        "review_count": 0,
+        "candidate_count": 0,
+        "published_count": 0
+      }
+    ],
+    "liveLeases": [],
+    "worker": {
+      "runs": [
+        {
+          "status": "succeeded",
+          "end_time": "2026-10-24T10:23:00.033752+00:00",
+          "start_time": "2026-10-24T10:23:00.029872+00:00"
+        },
+        {
+          "status": "succeeded",
+          "end_time": "2026-10-24T10:22:00.136978+00:00",
+          "start_time": "2026-10-24T10:22:00.10433+00:00"
+        },
+        {
+          "status": "succeeded",
+          "end_time": "2026-10-24T10:21:00.023605+00:00",
+          "start_time": "2026-10-24T10:21:00.016393+00:00"
+        },
+        {
+          "status": "succeeded",
+          "end_time": "2026-10-24T10:20:00.026624+00:00",
+          "start_time": "2026-10-24T10:20:00.016963+00:00"
+        },
+        {
+          "status": "succeeded",
+          "end_time": "2026-10-24T10:19:00.02249+00:00",
+          "start_time": "2026-10-24T10:19:00.016653+00:00"
+        }
+      ],
+      "active": true,
+      "schedule": "* * * * *"
+    },
+    "http": [
+      {
+        "sent": "0",
+        "failed": "0",
+        "claimed": "0",
+        "created": "2026-10-24T10:23:00.033652+00:00",
+        "timed_out": false,
+        "status_code": 200
+      },
+      {
+        "sent": "0",
+        "failed": "0",
+        "claimed": "0",
+        "created": "2026-10-24T10:22:00.140544+00:00",
+        "timed_out": false,
+        "status_code": 200
+      },
+      {
+        "sent": "0",
+        "failed": "0",
+        "claimed": "0",
+        "created": "2026-10-24T10:21:00.023492+00:00",
+        "timed_out": false,
+        "status_code": 200
+      },
+      {
+        "sent": "0",
+        "failed": "0",
+        "claimed": "0",
+        "created": "2026-10-24T10:20:00.026561+00:00",
+        "timed_out": false,
+        "status_code": 200
+      },
+      {
+        "sent": "0",
+        "failed": "0",
+        "claimed": "0",
+        "created": "2026-10-24T10:19:00.022459+00:00",
+        "timed_out": false,
+        "status_code": 200
+      }
+    ],
+    "deliveries": [
+      {
+        "n": 7,
+        "status": "invalidated",
+        "latest_sent": null
+      },
+      {
+        "n": 36,
+        "status": "sent",
+        "latest_sent": "2026-10-10T08:47:01.793967+00:00"
+      }
+    ],
+    "yonezuBands": [],
+    "yonezuConcerts": [],
+    "yonezuCandidates": [
+      {
+        "id": "647835a8-7bed-4ef8-94c8-d7123c558e63",
+        "host": "www.kopis.or.kr",
+        "title": "요네즈 켄시 내한공연",
+        "status": "pending",
+        "blocked": false,
+        "country": "KR",
+        "band_ids": [],
+        "revision": 2,
+        "sessions": [],
+        "fetched_at": "2026-10-24T00:42:29.124213+00:00",
+        "artist_keys": [],
+        "announced_at": null,
+        "booking_windows": null,
+        "general_opens_at": null,
+        "announcement_verified": false
+      }
+    ]
+  },
+  "github": {
+    "checkedAt": "2026-10-24T10:24:47.773Z",
+    "http": 200,
+    "runs": [
+      {
+        "id": 40067683095,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-24T05:48:15Z",
+        "event": "schedule",
+        "head_sha": "9aa7f1ace112499fdb1b1b0801aba3cb6cf27f33"
+      },
+      {
+        "id": 40045992908,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-24T00:38:46Z",
+        "event": "schedule",
+        "head_sha": "9aa7f1ace112499fdb1b1b0801aba3cb6cf27f33"
+      },
+      {
+        "id": 40031490152,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-23T22:06:59Z",
+        "event": "schedule",
+        "head_sha": "9aa7f1ace112499fdb1b1b0801aba3cb6cf27f33"
+      },
+      {
+        "id": 40002138659,
+        "status": "completed",
+        "conclusion": "failure",
+        "created_at": "2026-10-23T18:17:54Z",
+        "event": "schedule",
+        "head_sha": "9aa7f1ace112499fdb1b1b0801aba3cb6cf27f33"
+      },
+      {
+        "id": 39960676179,
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-23T13:22:37Z",
+        "event": "schedule",
+        "head_sha": "9aa7f1ace112499fdb1b1b0801aba3cb6cf27f33"
+      }
+    ],
+    "jobsHttp": 200,
+    "jobs": [
+      {
+        "name": "collect",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect and upload candidates",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Preserve collection report",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "scheduleComparison": {
+    "declaredGithubCron": "17 * * * *",
+    "observedLatestIntervalSeconds": 18569.0,
+    "delayCause": "unverified",
+    "pr52RuntimeReflection": "unverified; runtime remains9aa7f1a",
+    "otherChatCollector": "separate code/checkpoint not available here; live shared source leases empty; do not attribute shared collection_runs to another producer without evidence",
+    "legacyRows": "state=legacy/started_at=null 행을 lifecycle 실행과 중복 집계하지 않음. 현재 조회는 시작 시각이 있는 실행만 비교함.",
+    "latestKopisIntervalSeconds": 3931.080668,
+    "latestKopisCandidateCount": 100,
+    "githubLatestObservation": "Latest successful scheduled run remains14:48:15 KST, no newer GitHub run observed at19:24 KST. Declared hourly :17 gap persists; latest execution is success, not a fresh consecutive-failure claim. Cause unverified.",
+    "kopisProducerAttribution": "KOPIS source latest18:48:35 KST success100 while other enabled sources latest14:48 KST. Additional shared source runs do not identify another chat producer. Source lease currently empty; no collection invoked."
+  },
+  "candidateDiagnostics": {
+    "samples": [
+      {
+        "id": "3315e07f-8603-4d4b-94cf-a8b7435865a2",
+        "host": "radwimps.jp",
+        "title": "RADWIMPS WORLD TOUR 2024 “The way you yawn, and the outcry of Peace” [Asia]",
+        "status": "pending",
+        "country": null,
+        "revision": 3,
+        "fetched_at": "2026-10-24T05:49:11.692487+00:00",
+        "announced_at": null,
+        "artist_count": 1,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 1,
+        "automation_blocked": false,
+        "review_reason_count": 1,
+        "announcement_verified": "false"
+      },
+      {
+        "id": "013db7aa-ab31-4ce3-8e2e-f5c863ec7394",
+        "host": "ticket.yes24.com",
+        "title": "[이천] 2026 빅3 “행복한 만남”- 강진, 김용임, 진성",
+        "status": "pending",
+        "country": null,
+        "revision": 1,
+        "fetched_at": "2026-10-11T15:58:46.69227+00:00",
+        "announced_at": null,
+        "artist_count": 2,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 2,
+        "automation_blocked": false,
+        "review_reason_count": 3,
+        "announcement_verified": "false"
+      },
+      {
+        "id": "e88a6075-30a3-4ae5-9cb4-e474ec31079a",
+        "host": "ualive.com",
+        "title": "마이 케미컬 로맨스 내한공연 (My Chemical Romance Live in Korea)",
+        "status": "pending",
+        "country": null,
+        "revision": 6,
+        "fetched_at": "2026-10-24T05:48:47.676691+00:00",
+        "announced_at": null,
+        "artist_count": 1,
+        "session_count": 1,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 1,
+        "automation_blocked": false,
+        "review_reason_count": 1,
+        "announcement_verified": "false"
+      },
+      {
+        "id": "04db041d-6818-4d98-92b2-42480e7dbbd2",
+        "host": "www.kopis.or.kr",
+        "title": "안치환 데뷔 40주년 15집 발매 기념 서울 콘서트: 더 깊이, 더 멀리, 함께 다시, 노래로",
+        "status": "pending",
+        "country": "KR",
+        "revision": 5,
+        "fetched_at": "2026-10-24T09:51:59.211206+00:00",
+        "announced_at": null,
+        "artist_count": 0,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 0,
+        "automation_blocked": false,
+        "review_reason_count": 2,
+        "announcement_verified": "false"
+      },
+      {
+        "id": "a0196989-8a45-458e-99a8-4b0d764eb895",
+        "host": "www.mintpaper.co.kr",
+        "title": "𝗖𝗢𝗨𝗡𝗧𝗗𝗢𝗪𝗡 𝗙𝗔𝗡𝗧𝗔𝗦𝗬 𝟮𝟬𝟮𝟲-𝟮𝟬𝟮𝟳",
+        "status": "pending",
+        "country": null,
+        "revision": 3,
+        "fetched_at": "2026-10-24T05:48:56.764876+00:00",
+        "announced_at": null,
+        "artist_count": 0,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 0,
+        "automation_blocked": false,
+        "review_reason_count": 2,
+        "announcement_verified": "false"
+      }
+    ],
+    "aggregate": [
+      {
+        "host": "radwimps.jp",
+        "total": 2,
+        "pending": 2,
+        "initial_import": 2,
+        "manual_blocked": 0,
+        "no_artist_keys": 0,
+        "no_exact_sessions": 2,
+        "country_unverified": 2,
+        "no_general_sale_time": 2,
+        "announcement_incomplete": 2,
+        "has_unapproved_identity": 2
+      },
+      {
+        "host": "ticket.yes24.com",
+        "total": 43,
+        "pending": 43,
+        "initial_import": 43,
+        "manual_blocked": 0,
+        "no_artist_keys": 19,
+        "no_exact_sessions": 43,
+        "country_unverified": 43,
+        "no_general_sale_time": 43,
+        "announcement_incomplete": 43,
+        "has_unapproved_identity": 17
+      },
+      {
+        "host": "ualive.com",
+        "total": 12,
+        "pending": 11,
+        "initial_import": 2,
+        "manual_blocked": 0,
+        "no_artist_keys": 11,
+        "no_exact_sessions": 0,
+        "country_unverified": 12,
+        "no_general_sale_time": 12,
+        "announcement_incomplete": 12,
+        "has_unapproved_identity": 0
+      },
+      {
+        "host": "www.kopis.or.kr",
+        "total": 817,
+        "pending": 817,
+        "initial_import": 817,
+        "manual_blocked": 1,
+        "no_artist_keys": 801,
+        "no_exact_sessions": 817,
+        "country_unverified": 5,
+        "no_general_sale_time": 817,
+        "announcement_incomplete": 817,
+        "has_unapproved_identity": 8
+      },
+      {
+        "host": "www.mintpaper.co.kr",
+        "total": 4,
+        "pending": 2,
+        "initial_import": 4,
+        "manual_blocked": 0,
+        "no_artist_keys": 2,
+        "no_exact_sessions": 4,
+        "country_unverified": 4,
+        "no_general_sale_time": 4,
+        "announcement_incomplete": 4,
+        "has_unapproved_identity": 2
+      }
+    ],
+    "identityConnectionGaps": [
+      {
+        "id": "21e9dd23-ec78-436a-99d5-0d4d5c27c14c",
+        "title": "소향 X 김기태 THE GREATEST: 전율 [고양]",
+        "revision": 5,
+        "fetched_at": "2026-10-24 04:48:29.360059+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "8901374c-104e-4aff-b920-3f0974648314",
+            "name": "김기태",
+            "status": "approved",
+            "category": "domestic_rock",
+            "approvalPresent": true
+          }
+        ]
+      },
+      {
+        "id": "2bda9f3e-678a-484c-b1be-2e6c682346df",
+        "title": "컬러풀 스테이지 #24: 동화, D.BLUE, 난파란",
+        "revision": 12,
+        "fetched_at": "2026-10-24 04:48:29.360059+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+            "name": "이성호",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "2d38c294-2f26-4b1d-aa3f-74038e684d71",
+        "title": "조장혁 30주년 소극장 투어 콘서트: ARCHIVE 30 [서울]",
+        "revision": 11,
+        "fetched_at": "2026-10-24 04:48:29.360059+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+            "name": "조장혁",
+            "status": "approved",
+            "category": "domestic_rock",
+            "approvalPresent": true
+          }
+        ]
+      },
+      {
+        "id": "2d943503-c170-41d6-bae4-095eb3a66d9f",
+        "title": "JEON SANG KEUN 10th Anniversary Concert, EPILOGUE: 그리고, 우리는",
+        "revision": 6,
+        "fetched_at": "2026-10-24 09:51:59.211206+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+            "name": "전상근",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "30c55fda-d755-468c-a9f0-800d7997f8b9",
+        "title": "BOL4 CONCERT TOUR: Red Square",
+        "revision": 11,
+        "fetched_at": "2026-10-24 04:48:29.360059+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "5ad4c175-d43b-49a0-b18a-ced82b7cbc5a",
+            "name": "안지영",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "3e79b775-8afb-4edb-a2ce-9235f88b37fa",
+        "title": "레트로 페스티벌 [대구]",
+        "revision": 6,
+        "fetched_at": "2026-10-24 09:51:59.211206+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "2c14f8a0-b844-4318-9910-16b2e9843f65",
+            "name": "구창모",
+            "status": "approved",
+            "category": "domestic_rock",
+            "approvalPresent": true
+          }
+        ]
+      },
+      {
+        "id": "6ef575e9-2394-4a0a-ad4c-84a8f9dfcdd6",
+        "title": "최재훈 콘서트: 일년에 단 한번",
+        "revision": 6,
+        "fetched_at": "2026-10-24 09:51:59.211206+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "b97b7a51-d6c9-4c6f-b438-af15c0c447d9",
+            "name": "최재훈",
+            "status": "approved",
+            "category": "domestic_rock",
+            "approvalPresent": true
+          }
+        ]
+      },
+      {
+        "id": "82078cd3-d917-41ff-97b3-f934e20e5330",
+        "title": "서리풀 재즈페스타, Timeless Jazz",
+        "revision": 5,
+        "fetched_at": "2026-10-24 09:51:59.211206+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "2cd90d1b-01ac-4879-9ef5-73ec28abd539",
+            "name": "강재욱",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "8d80e234-6194-4eb1-88e8-4b98a7cc6c25",
+        "title": "Awesome Stage Special Concert: Redoor",
+        "revision": 2,
+        "fetched_at": "2026-10-24 06:54:43.119421+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+            "name": "최승현",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "9413729a-facc-48be-a3b9-f42f33d31c4a",
+        "title": "디에이드 전국 카페 투어: 모해? 나와! #2 [전남광주]",
+        "revision": 11,
+        "fetched_at": "2026-10-24 04:48:29.360059+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+            "name": "안다은",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "a218dc56-38e6-4c8a-8be0-3a4ba02ffa72",
+        "title": "렉처 콘서트 Ⅳ. 미국 음악의 탄생 [공주]",
+        "revision": 5,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "33b22ffc-9d9b-4649-ae52-fcc5be19de4f",
+            "name": "김경희",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "a6e2e3ad-c69d-44e2-b778-5bfb17c975f7",
+        "title": "성남아트센터 오후의 콘서트: 수요재즈클럽 (11월)",
+        "revision": 4,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 2,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+            "name": "이동민",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          },
+          {
+            "id": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+            "name": "김경태",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "addabd18-b8ac-4431-9810-715a296bc022",
+        "title": "The entry to Jazz [서울 성수]",
+        "revision": 8,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 2,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+            "name": "최규민",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          },
+          {
+            "id": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+            "name": "이연재",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "bd52b04c-ef09-4597-9bf7-239d6f3f010f",
+        "title": "옥탑재즈 Ⅴ, LUCA MINOR",
+        "revision": 6,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "92a5e91a-3527-418b-b804-309bada7a55c",
+            "name": "우수현",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "e2e20f8e-3319-48fa-be44-4e8bd2c245ae",
+        "title": "KIMCHANGWAN BAND LIVE IN JAPAN: サランへ [일본 도쿄]",
+        "revision": 11,
+        "fetched_at": "2026-10-24 04:48:29.360059+00",
+        "previous_key_count": 3,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "359057a6-ad99-4fd3-84f2-2b8954060cb6",
+            "name": "최윤식",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          },
+          {
+            "id": "8df47b65-a374-46bf-8b08-dfa24df7406d",
+            "name": "강윤기",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          },
+          {
+            "id": "6b5398b6-02c9-4690-9975-40c3416b1db2",
+            "name": "김창완",
+            "status": "approved",
+            "category": "domestic_rock",
+            "approvalPresent": true
+          }
+        ]
+      },
+      {
+        "id": "f22c5b41-3785-497c-9d82-50f09467710f",
+        "title": "해바라기 콘서트: 사랑으로",
+        "revision": 5,
+        "fetched_at": "2026-10-24 09:51:59.211206+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "f93927cb-ed8e-4c08-b9c1-75265eb6e1db",
+            "name": "이주호",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      }
+    ],
+    "newlyObservedIdentityConnectionGaps": [
+      {
+        "id": "8d80e234-6194-4eb1-88e8-4b98a7cc6c25",
+        "title": "Awesome Stage Special Concert: Redoor",
+        "revision": 2,
+        "fetched_at": "2026-10-24 06:54:43.119421+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+            "name": "최승현",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "a218dc56-38e6-4c8a-8be0-3a4ba02ffa72",
+        "title": "렉처 콘서트 Ⅳ. 미국 음악의 탄생 [공주]",
+        "revision": 5,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "33b22ffc-9d9b-4649-ae52-fcc5be19de4f",
+            "name": "김경희",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "a6e2e3ad-c69d-44e2-b778-5bfb17c975f7",
+        "title": "성남아트센터 오후의 콘서트: 수요재즈클럽 (11월)",
+        "revision": 4,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 2,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+            "name": "이동민",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          },
+          {
+            "id": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+            "name": "김경태",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "addabd18-b8ac-4431-9810-715a296bc022",
+        "title": "The entry to Jazz [서울 성수]",
+        "revision": 8,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 2,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+            "name": "최규민",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          },
+          {
+            "id": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+            "name": "이연재",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      },
+      {
+        "id": "bd52b04c-ef09-4597-9bf7-239d6f3f010f",
+        "title": "옥탑재즈 Ⅴ, LUCA MINOR",
+        "revision": 6,
+        "fetched_at": "2026-10-24 08:46:25.990956+00",
+        "previous_key_count": 1,
+        "current_key_count": 0,
+        "previous_bands": [
+          {
+            "id": "92a5e91a-3527-418b-b804-309bada7a55c",
+            "name": "우수현",
+            "status": "unreviewed",
+            "category": "unclassified",
+            "approvalPresent": false
+          }
+        ]
+      }
+    ],
+    "identityConnectionGapInterpretation": "추가5후보의 이전 payload 연결은 있으나 현재 artist_keys/band_ids는 비어 있다. 발견 아티스트 이름들은 있으나 검증된 key/MBID는 없음. 기존 연결의 정확성·의도적인 오연결 제거 여부·생산 실행기·변경 발생 시각은 미확정. fetched_at을 변경 시각으로 사용하지 않으며 모든16건이 이번 발생이라고 단정하지 않는다. 자동 재연결하지 않음."
+  },
+  "officialEvidence": {
+    "reissue": {
+      "url": "https://reissuerecords.net/2026/10/22/kenshi-yonezu-2026-2027-world-tour-ghost/",
+      "checkedAt": "2026-10-24T10:26:59.295297+00:00",
+      "status": "official-page-readable",
+      "mode": "web tool read",
+      "summary": "10/22 싱가포르 추가공연 업데이트와 서울 INSPIRE ARENA 2027-01-14/16/17을 다시 읽었다. 업데이트 일자를 최초 발표 시각으로 삼지 않았으며 정확한 회차·일반/선예매 절대시각은 미확정이다."
+    },
+    "nol": {
+      "url": "https://nol.yanolja.com/ticket/products/26015024",
+      "checkedAt": "2026-10-24T10:25:26.971Z",
+      "permission": "not_obtained",
+      "robotsHttp": 200,
+      "robotsAllowed": true,
+      "http": 200,
+      "excerpts": [
+        "기간2027.01.14 ~ 2027.01.17",
+        "[휠체어석 예매 안내]",
+        "- 휠체어석 구매는 2026년 10월 22일(목) 오후 12시부터 NOL 고객센터 (1544-1555)를 통한 전화예매만 가능합니다.",
+        "- 휠체어석 예매티켓은 현장수령만 가능하며 구매자 본인 티켓 수령을 원칙으로 하고 있습니다. (대리 수령 및 양도 불가)"
+      ]
+    }
+  },
+  "sourceReadiness": [
+    {
+      "host": "radwimps.jp",
+      "status": "fail",
+      "scope": "host별 최신 후보1건의 필수값 점검과 전체 후보 누락 집계; 전수 공식 증빙 검증 아님",
+      "sample": {
+        "id": "3315e07f-8603-4d4b-94cf-a8b7435865a2",
+        "host": "radwimps.jp",
+        "title": "RADWIMPS WORLD TOUR 2024 “The way you yawn, and the outcry of Peace” [Asia]",
+        "status": "pending",
+        "country": null,
+        "revision": 3,
+        "fetched_at": "2026-10-24T05:49:11.692487+00:00",
+        "announced_at": null,
+        "artist_count": 1,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 1,
+        "automation_blocked": false,
+        "review_reason_count": 1,
+        "announcement_verified": "false"
+      },
+      "criteria": {
+        "candidateRequirements": {
+          "status": "fail",
+          "remaining": [
+            "공연 국가KR 미검증",
+            "정확한 공식 발표 절대시각 미검증",
+            "표본별 외부 신원 공개 승인 추가 검증 필요",
+            "개별 정확한 회차 미검증",
+            "일반/선예매별 절대시각 미검증",
+            "기존 검수 사유 남음"
+          ]
+        },
+        "sourceUsePermission": {
+          "status": "unverified",
+          "basis": "소스별 이용 조건/공식 근거 전수 확정 미완료. NOL 외부 서면 허가는 별도 미확보이며 접근/robots 성공이 허가를 뜻하지 않음."
+        },
+        "manualProtection": {
+          "status": "pass",
+          "basis": "현재 source publication 모두 OFF, 수동 차단1건 보존. 변경하지 않음."
+        },
+        "initialImportSilence": {
+          "status": "pass",
+          "scope": "이전 격리 fixture 통과 재사용. 이번 신규 테스트나 실제 발송 성공이 아님."
+        },
+        "duplicatesCancellationImportantChanges": {
+          "status": "unverified",
+          "basis": "이전 회귀 fixture 통과를 재사용하되 실제 후보 전체 대조 미완료"
+        },
+        "notificationConditions": {
+          "status": "unverified",
+          "basis": "개인 사용자/찜/동의/기기 행 조회 없음. 빈 worker 응답으로 실제 기기 수신을 확정하지 않음."
+        }
+      },
+      "readyForPublicationApproval": false
+    },
+    {
+      "host": "ticket.yes24.com",
+      "status": "fail",
+      "scope": "host별 최신 후보1건의 필수값 점검과 전체 후보 누락 집계; 전수 공식 증빙 검증 아님",
+      "sample": {
+        "id": "013db7aa-ab31-4ce3-8e2e-f5c863ec7394",
+        "host": "ticket.yes24.com",
+        "title": "[이천] 2026 빅3 “행복한 만남”- 강진, 김용임, 진성",
+        "status": "pending",
+        "country": null,
+        "revision": 1,
+        "fetched_at": "2026-10-11T15:58:46.69227+00:00",
+        "announced_at": null,
+        "artist_count": 2,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 2,
+        "automation_blocked": false,
+        "review_reason_count": 3,
+        "announcement_verified": "false"
+      },
+      "criteria": {
+        "candidateRequirements": {
+          "status": "fail",
+          "remaining": [
+            "공연 국가KR 미검증",
+            "정확한 공식 발표 절대시각 미검증",
+            "표본별 외부 신원 공개 승인 추가 검증 필요",
+            "개별 정확한 회차 미검증",
+            "일반/선예매별 절대시각 미검증",
+            "기존 검수 사유 남음"
+          ]
+        },
+        "sourceUsePermission": {
+          "status": "unverified",
+          "basis": "소스별 이용 조건/공식 근거 전수 확정 미완료. NOL 외부 서면 허가는 별도 미확보이며 접근/robots 성공이 허가를 뜻하지 않음."
+        },
+        "manualProtection": {
+          "status": "pass",
+          "basis": "현재 source publication 모두 OFF, 수동 차단1건 보존. 변경하지 않음."
+        },
+        "initialImportSilence": {
+          "status": "pass",
+          "scope": "이전 격리 fixture 통과 재사용. 이번 신규 테스트나 실제 발송 성공이 아님."
+        },
+        "duplicatesCancellationImportantChanges": {
+          "status": "unverified",
+          "basis": "이전 회귀 fixture 통과를 재사용하되 실제 후보 전체 대조 미완료"
+        },
+        "notificationConditions": {
+          "status": "unverified",
+          "basis": "개인 사용자/찜/동의/기기 행 조회 없음. 빈 worker 응답으로 실제 기기 수신을 확정하지 않음."
+        }
+      },
+      "readyForPublicationApproval": false
+    },
+    {
+      "host": "ualive.com",
+      "status": "fail",
+      "scope": "host별 최신 후보1건의 필수값 점검과 전체 후보 누락 집계; 전수 공식 증빙 검증 아님",
+      "sample": {
+        "id": "e88a6075-30a3-4ae5-9cb4-e474ec31079a",
+        "host": "ualive.com",
+        "title": "마이 케미컬 로맨스 내한공연 (My Chemical Romance Live in Korea)",
+        "status": "pending",
+        "country": null,
+        "revision": 6,
+        "fetched_at": "2026-10-24T05:48:47.676691+00:00",
+        "announced_at": null,
+        "artist_count": 1,
+        "session_count": 1,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 1,
+        "automation_blocked": false,
+        "review_reason_count": 1,
+        "announcement_verified": "false"
+      },
+      "criteria": {
+        "candidateRequirements": {
+          "status": "fail",
+          "remaining": [
+            "공연 국가KR 미검증",
+            "정확한 공식 발표 절대시각 미검증",
+            "일반/선예매별 절대시각 미검증",
+            "기존 검수 사유 남음"
+          ]
+        },
+        "sourceUsePermission": {
+          "status": "unverified",
+          "basis": "소스별 이용 조건/공식 근거 전수 확정 미완료. NOL 외부 서면 허가는 별도 미확보이며 접근/robots 성공이 허가를 뜻하지 않음."
+        },
+        "manualProtection": {
+          "status": "pass",
+          "basis": "현재 source publication 모두 OFF, 수동 차단1건 보존. 변경하지 않음."
+        },
+        "initialImportSilence": {
+          "status": "pass",
+          "scope": "이전 격리 fixture 통과 재사용. 이번 신규 테스트나 실제 발송 성공이 아님."
+        },
+        "duplicatesCancellationImportantChanges": {
+          "status": "unverified",
+          "basis": "이전 회귀 fixture 통과를 재사용하되 실제 후보 전체 대조 미완료"
+        },
+        "notificationConditions": {
+          "status": "unverified",
+          "basis": "개인 사용자/찜/동의/기기 행 조회 없음. 빈 worker 응답으로 실제 기기 수신을 확정하지 않음."
+        }
+      },
+      "readyForPublicationApproval": false
+    },
+    {
+      "host": "www.kopis.or.kr",
+      "status": "fail",
+      "scope": "host별 최신 후보1건의 필수값 점검과 전체 후보 누락 집계; 전수 공식 증빙 검증 아님",
+      "sample": {
+        "id": "04db041d-6818-4d98-92b2-42480e7dbbd2",
+        "host": "www.kopis.or.kr",
+        "title": "안치환 데뷔 40주년 15집 발매 기념 서울 콘서트: 더 깊이, 더 멀리, 함께 다시, 노래로",
+        "status": "pending",
+        "country": "KR",
+        "revision": 5,
+        "fetched_at": "2026-10-24T09:51:59.211206+00:00",
+        "announced_at": null,
+        "artist_count": 0,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 0,
+        "automation_blocked": false,
+        "review_reason_count": 2,
+        "announcement_verified": "false"
+      },
+      "criteria": {
+        "candidateRequirements": {
+          "status": "fail",
+          "remaining": [
+            "정확한 공식 발표 절대시각 미검증",
+            "아티스트 신원 연결 미완료",
+            "개별 정확한 회차 미검증",
+            "일반/선예매별 절대시각 미검증",
+            "기존 검수 사유 남음"
+          ]
+        },
+        "sourceUsePermission": {
+          "status": "unverified",
+          "basis": "소스별 이용 조건/공식 근거 전수 확정 미완료. NOL 외부 서면 허가는 별도 미확보이며 접근/robots 성공이 허가를 뜻하지 않음."
+        },
+        "manualProtection": {
+          "status": "pass",
+          "basis": "현재 source publication 모두 OFF, 수동 차단1건 보존. 변경하지 않음."
+        },
+        "initialImportSilence": {
+          "status": "pass",
+          "scope": "이전 격리 fixture 통과 재사용. 이번 신규 테스트나 실제 발송 성공이 아님."
+        },
+        "duplicatesCancellationImportantChanges": {
+          "status": "unverified",
+          "basis": "이전 회귀 fixture 통과를 재사용하되 실제 후보 전체 대조 미완료"
+        },
+        "notificationConditions": {
+          "status": "unverified",
+          "basis": "개인 사용자/찜/동의/기기 행 조회 없음. 빈 worker 응답으로 실제 기기 수신을 확정하지 않음."
+        }
+      },
+      "readyForPublicationApproval": false
+    },
+    {
+      "host": "www.mintpaper.co.kr",
+      "status": "fail",
+      "scope": "host별 최신 후보1건의 필수값 점검과 전체 후보 누락 집계; 전수 공식 증빙 검증 아님",
+      "sample": {
+        "id": "a0196989-8a45-458e-99a8-4b0d764eb895",
+        "host": "www.mintpaper.co.kr",
+        "title": "𝗖𝗢𝗨𝗡𝗧𝗗𝗢𝗪𝗡 𝗙𝗔𝗡𝗧𝗔𝗦𝗬 𝟮𝟬𝟮𝟲-𝟮𝟬𝟮𝟳",
+        "status": "pending",
+        "country": null,
+        "revision": 3,
+        "fetched_at": "2026-10-24T05:48:56.764876+00:00",
+        "announced_at": null,
+        "artist_count": 0,
+        "session_count": 0,
+        "initial_import": "true",
+        "general_opens_at": null,
+        "linked_band_count": 0,
+        "automation_blocked": false,
+        "review_reason_count": 2,
+        "announcement_verified": "false"
+      },
+      "criteria": {
+        "candidateRequirements": {
+          "status": "fail",
+          "remaining": [
+            "공연 국가KR 미검증",
+            "정확한 공식 발표 절대시각 미검증",
+            "아티스트 신원 연결 미완료",
+            "개별 정확한 회차 미검증",
+            "일반/선예매별 절대시각 미검증",
+            "기존 검수 사유 남음"
+          ]
+        },
+        "sourceUsePermission": {
+          "status": "unverified",
+          "basis": "소스별 이용 조건/공식 근거 전수 확정 미완료. NOL 외부 서면 허가는 별도 미확보이며 접근/robots 성공이 허가를 뜻하지 않음."
+        },
+        "manualProtection": {
+          "status": "pass",
+          "basis": "현재 source publication 모두 OFF, 수동 차단1건 보존. 변경하지 않음."
+        },
+        "initialImportSilence": {
+          "status": "pass",
+          "scope": "이전 격리 fixture 통과 재사용. 이번 신규 테스트나 실제 발송 성공이 아님."
+        },
+        "duplicatesCancellationImportantChanges": {
+          "status": "unverified",
+          "basis": "이전 회귀 fixture 통과를 재사용하되 실제 후보 전체 대조 미완료"
+        },
+        "notificationConditions": {
+          "status": "unverified",
+          "basis": "개인 사용자/찜/동의/기기 행 조회 없음. 빈 worker 응답으로 실제 기기 수신을 확정하지 않음."
+        }
+      },
+      "readyForPublicationApproval": false
+    }
+  ],
+  "publicationReadiness": "NOT_READY",
+  "yonezuComparison": {
+    "artistRegistered": false,
+    "concertPublished": false,
+    "candidateId": "647835a8-7bed-4ef8-94c8-d7123c558e63",
+    "officialDateOnly": [
+      "2027-01-14",
+      "2027-01-16",
+      "2027-01-17"
+    ],
+    "venue": "INSPIRE ARENA",
+    "absoluteSessionTimes": "unverified",
+    "firstAnnouncementAt": "unverified; current2026.10.22 is update date",
+    "generalSaleAt": "unverified; old report2026-10-22 12:00 KST is not independently established by current evidence",
+    "presaleAt": "unverified",
+    "wheelchairPhoneSaleAt": "2026-10-22T12:00:00+09:00",
+    "nolWrittenPermission": "not_obtained",
+    "remaining": [
+      "정확한 아티스트 신원 연결/승인",
+      "공식 발표 절대시각",
+      "일반/선예매별 절대시각",
+      "정확한 개별 회차 시각",
+      "공식 출처 지원·이용 조건",
+      "기존 공연 검수 및 공개 조건"
+    ],
+    "candidateRevision": 2,
+    "payloadChanges": {
+      "keys": [
+        "discovered_artists"
+      ],
+      "discoveredArtistCountBefore": 1,
+      "discoveredArtistCountAfter": 1,
+      "approvedIdentityLinkCount": 0,
+      "meaning": "발굴 메타데이터 변경이며 아티스트 등록/승인/연결 완료가 아니다. 정확한 신원·시간·공개 차단 fingerprint는 동일."
+    },
+    "currentObservation": "same candidate revision2; no registered artist/public concert; band_ids/artist_keys/sessions empty and announcement/general/presale times missing"
+  },
+  "notificationInterpretation": "매분 cron 최근5회 succeeded·HTTP200 및 claimed/sent/failed=0. 대상 없음이며 실제 기기 수신 또는 새 발송 성공을 뜻하지 않는다. 누적 sent36은10/10 과거 집계.",
+  "tests": {
+    "mode": "reuse previous passing isolated fixture results",
+    "passedFilesReused": [
+      "automated-catalog.test.mjs",
+      "collection.test.mjs",
+      "kopis.test.mjs",
+      "nol.test.mjs",
+      "notification-worker.test.mjs"
+    ],
+    "newTestRuns": 0,
+    "previousEvidence": "docs/curation-runs/20261023-233631-concert-operations.json",
+    "unchangedComparedToCommit": "9b1db14",
+    "verification": "git diff --exit-code 9b1db14 for relevant adapters/runner/booking parser/migrations and five fixtures returned0. Prior passing isolated tests reused; no new tests/lint/build claimed in monitor role."
+  },
+  "queueReadOnlyObservation": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 2084,
+    "active": null,
+    "transfer": null,
+    "sha256": "323d79372e94f380301687a61faca236b81f3be8433bd907d8e757dc058f1aa2",
+    "unchangedDuringMonitor": true
+  },
+  "changes": [
+    {
+      "kind": "additional-identity-connection-gaps-observed",
+      "source": "kopis",
+      "beforeNoArtistKeys": 800,
+      "afterNoArtistKeys": 801,
+      "candidateTotal": 817,
+      "beforePriorNonemptyToEmpty": 11,
+      "currentPriorNonemptyToEmpty": 16,
+      "newlyObservedCandidateIds": [
+        "8d80e234-6194-4eb1-88e8-4b98a7cc6c25",
+        "a218dc56-38e6-4c8a-8be0-3a4ba02ffa72",
+        "a6e2e3ad-c69d-44e2-b778-5bfb17c975f7",
+        "addabd18-b8ac-4431-9810-715a296bc022",
+        "bd52b04c-ef09-4597-9bf7-239d6f3f010f"
+      ],
+      "noLongerObservedCandidateIds": [],
+      "priorApprovedCandidates": 5,
+      "summary": "추가5후보의 이전 payload 연결은 있으나 현재 artist_keys/band_ids는 비어 있다. 발견 아티스트 이름들은 있으나 검증된 key/MBID는 없음. 기존 연결의 정확성·의도적인 오연결 제거 여부·생산 실행기·변경 발생 시각은 미확정. fetched_at을 변경 시각으로 사용하지 않으며 모든16건이 이번 발생이라고 단정하지 않는다. 자동 재연결하지 않음."
+    }
+  ],
+  "blockFingerprint": {
+    "publication": "all-off",
+    "yonezu": "candidate-present-artist-approval-announcement-sale-sessions-incomplete",
+    "kopis": "success",
+    "radwimps": "success",
+    "notificationWorker": "healthy-empty",
+    "publicationReadiness": "NOT_READY",
+    "yonezuTicketEvidence": "general-unverified-current-wheelchair-only",
+    "reissueAccess": "official-page-readable-updated-20261022",
+    "github": "latest-success-with-schedule-gap",
+    "kopisIdentityConnection": "previous-links-empty-needs-investigation",
+    "kopisIdentityConnectionDetail": "496ae0d281af72a9a2044172203ca6afaf30390e85d0005c41566ec1fc8a2489",
+    "ualiveIdentityApproval": "mcr-approved-other-event-gates-remain"
+  },
+  "limits": [
+    "운영 SELECT·공개 GitHub GET·허용 공식 자료 읽기만 수행. DB/RPC 쓰기·queue 변경·수집/발송 실행·공개ON·Cron/권한/스키마·예약 변경·배포·push/PR/merge 없음.",
+    "실제 후보 전체 공식 근거·중복/취소/중요 변경·사용자 동의/기기 수신을 검증 완료로 주장하지 않음. 출처별 sample fail/권한 및 전수 검증 unverified 보존.",
+    "다른 채팅 전용 수집기 코드/체크포인트를 공유한다고 가정하지 않았고 source lease0만 읽음.",
+    "원본HTML/API이미지/개인 행/토큰/Vault/cron command를 기록하지 않음. NOL 읽기·robots 성공은 서면 허가가 아니다.",
+    "현재 역할은 Last.fm 후보 발굴/아티스트 쓰기를 수행하지 않으며 API 키 검증을 공연 연결·공개·발송 완료로 세지 않음."
+  ],
+  "notificationDecision": {
+    "notify": true,
+    "reason": "Newly observed5 candidate identity gaps; no_artist_keys800→801/817. Prior unchanged publication OFF/NOL permission/time blockers and healthy-empty worker are not repeated as new alerts.",
+    "repeatUnchangedBlockers": false
+  },
+  "observationErrors": [
+    {
+      "scope": "initial shell availability",
+      "state": "recovered",
+      "summary": "First shell call immediately after environment-ready response reported no usable executor; subsequent current environment observation and shell succeeded. No checkout initialization or state reset."
+    }
+  ]
+}
