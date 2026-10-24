@@ -31,7 +31,10 @@ export async function recoverIdentityWork({ queue, lane, runId, target,
   // Public discovery is checked independently of receipt/DB success. No aliases
   // are inferred from translations, popularity, or a successful service login.
   const missingNames = []
-  for (const name of new Set([target.mutation.name, ...target.mutation.aliases])) {
+  // The verified current record includes retained aliases as well as the newly
+  // requested ones. A successful mutation must not hide an old public-search
+  // collision just because that alias was omitted from the additive request.
+  for (const name of new Set([currentBand.name, ...currentBand.aliases])) {
     let ids
     try { ids = await searchReader(name) }
     catch { throw Error('IDENTITY_SEARCH_UNAVAILABLE') }

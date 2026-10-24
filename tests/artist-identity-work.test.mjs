@@ -23,7 +23,7 @@ test('receipt recovery verifies names in public search without modifying the que
   const f = fixture(), original = JSON.stringify(f.queue)
   const r = await recoverIdentityWork(f)
   assert.equal(r.verified, true); assert.equal(r.publicSearchVerified, true)
-  assert.deepEqual(f.searched, ['Fixture Artist', '仮の名前'])
+  assert.deepEqual(f.searched, ['Fixture Artist', 'Original', '仮の名前'])
   assert.equal(JSON.stringify(f.queue), original)
 })
 test('wrong owner, transfer, version, missing selection and over-limit batches never call readers', async () => {
@@ -44,6 +44,15 @@ test('receipt success alone cannot hide public search failures or ambiguous alia
     const r = await recoverIdentityWork(f)
     assert.equal(r.state, 'search_pending'); assert.equal(r.verified, false); assert.equal(r.receiptVerified, true)
   }
+})
+test('retained aliases must resolve uniquely even when omitted from the additive mutation', async () => {
+  const f = fixture()
+  f.searchReader = async name => name === 'Original' ? [id(1), id(5)] : [id(1)]
+  const original = JSON.stringify(f.queue)
+  const r = await recoverIdentityWork(f)
+  assert.equal(r.state, 'search_pending'); assert.equal(r.verified, false)
+  assert.equal(r.receiptVerified, true); assert.deepEqual(r.missingNames, ['Original'])
+  assert.equal(JSON.stringify(f.queue), original)
 })
 test('readback checks preserve relationships and linked identity', async () => {
   const f = fixture(); f.relationReader = async () => [1, 3]
