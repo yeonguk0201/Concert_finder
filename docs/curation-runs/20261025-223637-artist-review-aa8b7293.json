@@ -1,0 +1,947 @@
+{
+  "observedAtKst": "2026-10-25T22:36:37.615938+09:00",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "aa8b7293-60bd-4482-b840-4ef022050d2d",
+  "headBefore": "ce532ec",
+  "queue": {
+    "id": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revisionBefore": 2534,
+    "revisionAfter": 2647,
+    "active": null,
+    "transfer": null,
+    "sha256": "37795afd58a2637a55bdee805690838bea6d7caa852acf9d024afaaf3c204c6b"
+  },
+  "budget": {
+    "adoReadOnlyPreflight": 1,
+    "frozenServerTargets": 39,
+    "totalDistinctArtists": 40,
+    "identityMutations": 0
+  },
+  "database": {
+    "total": 655,
+    "before": {
+      "approved": 302,
+      "unreviewed": 347,
+      "excluded": 6
+    },
+    "after": {
+      "approved": 308,
+      "unreviewed": 341,
+      "excluded": 6
+    }
+  },
+  "tasks": {
+    "research": 33,
+    "approval": 39,
+    "channels": 39,
+    "total": 111,
+    "complete": 7,
+    "deferred": 104,
+    "remainingQueueTasks": 402
+  },
+  "applied": [
+    {
+      "index": 28,
+      "bandId": "6045dfbc-eb42-40e6-b5a2-86b4f1382bb4",
+      "name": "신해경",
+      "before": "2026-10-25T11:23:59.94212+00:00",
+      "after": "2026-10-25T13:32:56.928615+00:00",
+      "category": "domestic_rock",
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작과 소개를 대조: 포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치.",
+          "sourceUrls": [
+            "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 KR를 출신·공식 국가 표기와 대조: 포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치.",
+          "sourceUrls": [
+            "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그나 밴드 형식 대신 실제 음악 활동을 확인: 포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치.",
+          "sourceUrls": [
+            "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 domestic_rock 정책의 록 활동에 해당: 포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치.",
+          "sourceUrls": [
+            "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:b993cda2-a9f4-4797-8943-794da21dbbc4 및 원본 버전 일치. 실제 Last.fm 요청/반환 MBID가 같고 작품 속꿈, 속꿈, 나의 가역반응, 그대의 꿈결, 나의 가역반응 My Reversible Reaction, 이상한 경치, 최저낙원, Neap Paradise, 속꿈, 속꿈 In Dreams, In Dreams을 위 공식 신원·원작과 교차. API checkedAt 2026-10-25T13:26:00.339Z",
+          "sourceUrls": [
+            "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치.",
+        "sources": [
+          {
+            "url": "https://poclanos.com/album/%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치."
+          },
+          {
+            "url": "https://koreanmusicawards.com/project/%EC%8B%A0%ED%95%B4%EA%B2%BD-%EC%86%8D%EA%BF%88-%EC%86%8D%EA%BF%88/",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "포크라노스 공식 속꿈, 속꿈 발매 자료의 Country Korea/Genre Rock 및 한국대중음악상 모던록 음반 소개를 대조. 신해경 개인의 나의 가역반응·속꿈, 속꿈·그대의 꿈결 작품과 일치."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "b993cda2-a9f4-4797-8943-794da21dbbc4",
+        "returnedMbid": "b993cda2-a9f4-4797-8943-794da21dbbc4",
+        "listeners": "1339",
+        "checkedAt": "2026-10-25T13:26:00.339Z"
+      },
+      "receiptAndReadbackVerified": true,
+      "publicationApproved": true,
+      "relationsBeforeAfter": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 34,
+      "bandId": "3bb48417-c90c-44e7-b1c4-23e728b6f579",
+      "name": "Pixies",
+      "before": "2026-10-13T08:19:20.726461+00:00",
+      "after": "2026-10-25T13:32:59.154154+00:00",
+      "category": "overseas_rock",
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작과 소개를 대조: Official Charts의 Boston 1986 결성 American alternative rock band 소개 및 Black Francis/Joey Santiago/Kim Deal/David Lovering와 Doolittle·Surfer Rosa 작품을 대조.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/16940/pixies/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 출신·공식 국가 표기와 대조: Official Charts의 Boston 1986 결성 American alternative rock band 소개 및 Black Francis/Joey Santiago/Kim Deal/David Lovering와 Doolittle·Surfer Rosa 작품을 대조.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/16940/pixies/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그나 밴드 형식 대신 실제 음악 활동을 확인: Official Charts의 Boston 1986 결성 American alternative rock band 소개 및 Black Francis/Joey Santiago/Kim Deal/David Lovering와 Doolittle·Surfer Rosa 작품을 대조.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/16940/pixies/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 록 활동에 해당: Official Charts의 Boston 1986 결성 American alternative rock band 소개 및 Black Francis/Joey Santiago/Kim Deal/David Lovering와 Doolittle·Surfer Rosa 작품을 대조.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/16940/pixies/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:b6b2bb8d-54a9-491f-9607-7b546023b433 및 원본 버전 일치. 실제 Last.fm 요청/반환 MBID가 같고 작품 Doolittle, Surfer Rosa, Death to the Pixies, Surfer Rosa (2007 Remaster), Bossanova, Head Carrier, Surfer Rosa (Remastered), Velouria을 위 공식 신원·원작과 교차. API checkedAt 2026-10-25T13:26:01.209Z",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/16940/pixies/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/16940/pixies/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Official Charts의 Boston 1986 결성 American alternative rock band 소개 및 Black Francis/Joey Santiago/Kim Deal/David Lovering와 Doolittle·Surfer Rosa 작품을 대조.",
+        "sources": [
+          {
+            "url": "https://www.officialcharts.com/artist/16940/pixies/",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "Official Charts의 Boston 1986 결성 American alternative rock band 소개 및 Black Francis/Joey Santiago/Kim Deal/David Lovering와 Doolittle·Surfer Rosa 작품을 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "b6b2bb8d-54a9-491f-9607-7b546023b433",
+        "returnedMbid": "b6b2bb8d-54a9-491f-9607-7b546023b433",
+        "listeners": "4398386",
+        "checkedAt": "2026-10-25T13:26:01.209Z"
+      },
+      "receiptAndReadbackVerified": true,
+      "publicationApproved": true,
+      "relationsBeforeAfter": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 35,
+      "bandId": "99768b41-3f2a-4ad0-9350-48e2ebbb971a",
+      "name": "Popeda",
+      "before": "2026-10-13T08:20:21.025149+00:00",
+      "after": "2026-10-25T13:33:00.57722+00:00",
+      "category": "overseas_rock",
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작과 소개를 대조: Ilosaarirock 주최자의 Popeda (FIN) 소개가 Finnish hard rock과 1977 결성을 명시. Pate Mustajärvi/Costello Hautamäki 및 Kersantti Karoliina 작품을 대조.",
+          "sourceUrls": [
+            "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 FI를 출신·공식 국가 표기와 대조: Ilosaarirock 주최자의 Popeda (FIN) 소개가 Finnish hard rock과 1977 결성을 명시. Pate Mustajärvi/Costello Hautamäki 및 Kersantti Karoliina 작품을 대조.",
+          "sourceUrls": [
+            "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그나 밴드 형식 대신 실제 음악 활동을 확인: Ilosaarirock 주최자의 Popeda (FIN) 소개가 Finnish hard rock과 1977 결성을 명시. Pate Mustajärvi/Costello Hautamäki 및 Kersantti Karoliina 작품을 대조.",
+          "sourceUrls": [
+            "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 록 활동에 해당: Ilosaarirock 주최자의 Popeda (FIN) 소개가 Finnish hard rock과 1977 결성을 명시. Pate Mustajärvi/Costello Hautamäki 및 Kersantti Karoliina 작품을 대조.",
+          "sourceUrls": [
+            "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:c03b2a7e-1938-4a8a-83af-206c2f22df4c 및 원본 버전 일치. 실제 Last.fm 요청/반환 MBID가 같고 작품 Pelkkää Juhlaa, 30-vuotinen sota (1977-2007), Hittejä, Kersantti Karoliina, Täydelliset miehet, Pohjantähden alla, Svoboda, H.Ö.N.Ö., Haista Popeda!을 위 공식 신원·원작과 교차. API checkedAt 2026-10-25T13:26:01.357Z",
+          "sourceUrls": [
+            "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Ilosaarirock 주최자의 Popeda (FIN) 소개가 Finnish hard rock과 1977 결성을 명시. Pate Mustajärvi/Costello Hautamäki 및 Kersantti Karoliina 작품을 대조.",
+        "sources": [
+          {
+            "url": "https://www.ilosaarirock.fi/2015/english/lineup/popeda.html",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "Ilosaarirock 주최자의 Popeda (FIN) 소개가 Finnish hard rock과 1977 결성을 명시. Pate Mustajärvi/Costello Hautamäki 및 Kersantti Karoliina 작품을 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "c03b2a7e-1938-4a8a-83af-206c2f22df4c",
+        "returnedMbid": "c03b2a7e-1938-4a8a-83af-206c2f22df4c",
+        "listeners": "74658",
+        "checkedAt": "2026-10-25T13:26:01.357Z"
+      },
+      "receiptAndReadbackVerified": true,
+      "publicationApproved": true,
+      "relationsBeforeAfter": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 36,
+      "bandId": "8306c435-8477-43f5-81b1-f8bcd49100b0",
+      "name": "Porcupine Tree",
+      "before": "2026-10-13T08:19:43.454971+00:00",
+      "after": "2026-10-25T13:33:01.942264+00:00",
+      "category": "overseas_rock",
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작과 소개를 대조: Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시.",
+          "sourceUrls": [
+            "https://www.sonymusic.de/artist/porcupine-tree/",
+            "https://kscopemusic.com/porcupine-tree-biography/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 출신·공식 국가 표기와 대조: Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시.",
+          "sourceUrls": [
+            "https://www.sonymusic.de/artist/porcupine-tree/",
+            "https://kscopemusic.com/porcupine-tree-biography/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그나 밴드 형식 대신 실제 음악 활동을 확인: Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시.",
+          "sourceUrls": [
+            "https://www.sonymusic.de/artist/porcupine-tree/",
+            "https://kscopemusic.com/porcupine-tree-biography/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 록 활동에 해당: Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시.",
+          "sourceUrls": [
+            "https://www.sonymusic.de/artist/porcupine-tree/",
+            "https://kscopemusic.com/porcupine-tree-biography/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:169c4c28-858e-497b-81a4-8bc15e0026ea 및 원본 버전 일치. 실제 Last.fm 요청/반환 MBID가 같고 작품 In Absentia, Deadwing, Fear of a Blank Planet, Lightbulb Sun, The Incident, Stupid Dream, Signify, In Absentia (Deluxe - Remastered)을 위 공식 신원·원작과 교차. API checkedAt 2026-10-25T13:26:01.424Z",
+          "sourceUrls": [
+            "https://www.sonymusic.de/artist/porcupine-tree/",
+            "https://kscopemusic.com/porcupine-tree-biography/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.de/artist/porcupine-tree/",
+            "https://kscopemusic.com/porcupine-tree-biography/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.de/artist/porcupine-tree/",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시."
+          },
+          {
+            "url": "https://kscopemusic.com/porcupine-tree-biography/",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "Sony Music 공식 소개는 영국 밴드로 명시하며 Kscope 레이블은 Steven Wilson과 progressive rock/metal 활동 및 In Absentia·Deadwing·Fear Of A Blank Planet 원작을 명시."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
+        "returnedMbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
+        "listeners": "1107159",
+        "checkedAt": "2026-10-25T13:26:01.424Z"
+      },
+      "receiptAndReadbackVerified": true,
+      "publicationApproved": true,
+      "relationsBeforeAfter": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 37,
+      "bandId": "c9d8659f-24ab-4728-86e2-081be5d6d230",
+      "name": "Pretty Maids",
+      "before": "2026-10-13T08:21:00.100791+00:00",
+      "after": "2026-10-25T13:33:03.309591+00:00",
+      "category": "overseas_rock",
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작과 소개를 대조: Pretty Maids 공식 2024 press PDF의 Denmark/Horsens 결성, Ronnie Atkins/Ken Hammer 및 hard rock/heavy metal 활동과 Future World·Red Hot and Heavy 작품을 대조.",
+          "sourceUrls": [
+            "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DK를 출신·공식 국가 표기와 대조: Pretty Maids 공식 2024 press PDF의 Denmark/Horsens 결성, Ronnie Atkins/Ken Hammer 및 hard rock/heavy metal 활동과 Future World·Red Hot and Heavy 작품을 대조.",
+          "sourceUrls": [
+            "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그나 밴드 형식 대신 실제 음악 활동을 확인: Pretty Maids 공식 2024 press PDF의 Denmark/Horsens 결성, Ronnie Atkins/Ken Hammer 및 hard rock/heavy metal 활동과 Future World·Red Hot and Heavy 작품을 대조.",
+          "sourceUrls": [
+            "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 록 활동에 해당: Pretty Maids 공식 2024 press PDF의 Denmark/Horsens 결성, Ronnie Atkins/Ken Hammer 및 hard rock/heavy metal 활동과 Future World·Red Hot and Heavy 작품을 대조.",
+          "sourceUrls": [
+            "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:a46a8ac0-5179-4790-ad77-1e0c1a843989 및 원본 버전 일치. 실제 Last.fm 요청/반환 MBID가 같고 작품 Future World, Red, Hot and Heavy, Pandemonium, Sin-Decade, Jump The Gun, Kingmaker, Motherland, Undress Your Madness을 위 공식 신원·원작과 교차. API checkedAt 2026-10-25T13:26:01.563Z",
+          "sourceUrls": [
+            "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Pretty Maids 공식 2024 press PDF의 Denmark/Horsens 결성, Ronnie Atkins/Ken Hammer 및 hard rock/heavy metal 활동과 Future World·Red Hot and Heavy 작품을 대조.",
+        "sources": [
+          {
+            "url": "https://prettymaids.dk/onewebmedia/08-press-tech/2024_PrettyMaids_EN.pdf",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "Pretty Maids 공식 2024 press PDF의 Denmark/Horsens 결성, Ronnie Atkins/Ken Hammer 및 hard rock/heavy metal 활동과 Future World·Red Hot and Heavy 작품을 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "a46a8ac0-5179-4790-ad77-1e0c1a843989",
+        "returnedMbid": "a46a8ac0-5179-4790-ad77-1e0c1a843989",
+        "listeners": "130605",
+        "checkedAt": "2026-10-25T13:26:01.563Z"
+      },
+      "receiptAndReadbackVerified": true,
+      "publicationApproved": true,
+      "relationsBeforeAfter": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 38,
+      "bandId": "65d41f70-b649-442a-82c7-6960586d1ae5",
+      "name": "Primal Scream",
+      "before": "2026-10-13T08:20:11.562364+00:00",
+      "after": "2026-10-25T13:33:04.610813+00:00",
+      "category": "overseas_rock",
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작과 소개를 대조: BMG 권리 취득 공식 소개의 Scottish rock band/UK, Bobby Gillespie/Andrew Innes/Robert Young 및 Screamadelica·Give Out But Don’t Give Up·XTRMNTR 작품을 대조.",
+          "sourceUrls": [
+            "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 출신·공식 국가 표기와 대조: BMG 권리 취득 공식 소개의 Scottish rock band/UK, Bobby Gillespie/Andrew Innes/Robert Young 및 Screamadelica·Give Out But Don’t Give Up·XTRMNTR 작품을 대조.",
+          "sourceUrls": [
+            "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그나 밴드 형식 대신 실제 음악 활동을 확인: BMG 권리 취득 공식 소개의 Scottish rock band/UK, Bobby Gillespie/Andrew Innes/Robert Young 및 Screamadelica·Give Out But Don’t Give Up·XTRMNTR 작품을 대조.",
+          "sourceUrls": [
+            "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 록 활동에 해당: BMG 권리 취득 공식 소개의 Scottish rock band/UK, Bobby Gillespie/Andrew Innes/Robert Young 및 Screamadelica·Give Out But Don’t Give Up·XTRMNTR 작품을 대조.",
+          "sourceUrls": [
+            "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:55704c38-224f-4b75-b29f-d43653f8bc9a 및 원본 버전 일치. 실제 Last.fm 요청/반환 MBID가 같고 작품 Screamadelica, Give Out But Don't Give Up, XTRMNTR, Riot City Blues, Vanishing Point, Dirty Hits - Limited Edition, Evil Heat, Give Out But Don't Give Up (Expanded Edition)을 위 공식 신원·원작과 교차. API checkedAt 2026-10-25T13:26:01.639Z",
+          "sourceUrls": [
+            "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "BMG 권리 취득 공식 소개의 Scottish rock band/UK, Bobby Gillespie/Andrew Innes/Robert Young 및 Screamadelica·Give Out But Don’t Give Up·XTRMNTR 작품을 대조.",
+        "sources": [
+          {
+            "url": "https://www.bmg.com/news/BMG-acquires-Primal-Scream-song-rights",
+            "checkedAt": "2026-10-25T13:31:32.343485+00:00",
+            "summary": "BMG 권리 취득 공식 소개의 Scottish rock band/UK, Bobby Gillespie/Andrew Innes/Robert Young 및 Screamadelica·Give Out But Don’t Give Up·XTRMNTR 작품을 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "55704c38-224f-4b75-b29f-d43653f8bc9a",
+        "returnedMbid": "55704c38-224f-4b75-b29f-d43653f8bc9a",
+        "listeners": "1424359",
+        "checkedAt": "2026-10-25T13:26:01.639Z"
+      },
+      "receiptAndReadbackVerified": true,
+      "publicationApproved": true,
+      "relationsBeforeAfter": [
+        0,
+        0
+      ]
+    }
+  ],
+  "selectedArtists": [
+    {
+      "i": 0,
+      "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+      "name": "이선정",
+      "notes": "현재 보존 MB violinist 신원과 Last.fm Break The Wall/그리움 록 가수 작품이 충돌할 수 있음. 벅스 이선정밴드 음반 소개는 확인했지만 동일 개인 MBID의 연결 미확정. 록 가수로 덮어쓰지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 1,
+      "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+      "name": "이성호",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 개인에 공식 관계·작품 없음. 공연 출연 문자열만으로 D.BLUE/난파란의 어느 이성호인지 현재 ID와 연결할 수 없어 공식 구성원·원작 근거 추가 필요.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 2,
+      "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+      "name": "최재호",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB는 emcee 최자 구별어를 반환하나 공식 관계·원작이 없음. 최재호 이름과 활동명 최자의 정확한 현재 ID 연결 및 실제 록/J-pop 활동을 검증할 공식 대체 자료 필요. 힙합 구별어만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 3,
+      "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+      "name": "최정인",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR composer 및 공식 관계/작품 없음. 동명 최정인 가운데 영화음악·밴드 활동 신원을 현재 ID에 연결할 실제 원작과 공식 소개 미확인.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 4,
+      "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+      "name": "정재환",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB 원작 ArchLord Sountrack 후보는 확보했으나 정재환의 공식 소개·게임 원작 크레딧과 ID 연결이 미완료. OST 작업만으로 록 또는 비대상 장르를 단정하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 5,
+      "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+      "name": "남성모",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 개인 남성모에 공식 관계·원작 없음. 현 ID와 실연/발매 작품의 독립 공식 연결이 부족하여 이름·공연 출연만으로 승인하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 6,
+      "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+      "name": "황성빈",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 개인 황성빈의 Naughty 원작 후보 확보. 공식 아티스트/레이블과 동일 작품·국가·실제 장르의 연결 미완료.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 7,
+      "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+      "name": "윤석철",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 공식 한국대중음악상 페이지에서 윤석철트리오의 나의 여름은 아직 안 끝났어/프로듀서 윤석철/안테나 제작을 확인. MB 개인 윤석철과 해당 작품은 연결되지만 개인·트리오·안녕의 온도 등 록/J-pop 활동 범위는 추가 검증 필요. 재즈 활동만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 8,
+      "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+      "name": "서림",
+      "notes": "포크라노스 공식 화전농업 上에서 Korea/Acoustic-Folk/indie 및 서림 제작·보컬 크레딧 확인. 현재 MBID와 Last.fm 작품은 맞지만 실제 록 활동 범위 근거가 부족해 국내 록 승인·제외 모두 보류.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 9,
+      "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+      "name": "진원",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. MB 진원 singer and actor/고칠게 원작 후보 확보, Last.fm error6. 같은 개인과 공식 소속사/원작·국가·실제 장르의 교차 미완료. API 조회 실패를 제외 사유로 사용하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 10,
+      "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+      "name": "박소현",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB의 박소현 구별어는 tripleS이나 Last.fm 동일 이름 응답 작품에 내일은 사랑 OST 등이 섞임. API MBID 일치만으로 그룹 멤버와 동명 과거 가수를 통합하지 않음. MODHAUS 공식 개인 신원·원작·MBID 추가 교차 필요.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 11,
+      "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+      "name": "조성일",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 조성일에 공식 관계·작품 없음. Last.fm Roadsong/가요메들리 후보가 같은 신원인지 미확인. 이름/메들리 제목만으로 실제 장르·분류 판정하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 12,
+      "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+      "name": "마이진",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 마이진에 공식 관계·작품 없음, Last.fm error6. 공식 소속사/발매 원작과 정확한 신원·장르 교차 미완료. 트로트 경력이나 API 실패만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 13,
+      "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+      "name": "김영하",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 개인 김영하에 공식 관계·원작 없음, Last.fm error6. 작가/음악인 등 동명을 구분할 외부 ID와 실제 원작의 공식 연결이 부족함.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 14,
+      "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+      "name": "최정윤",
+      "notes": "CJ문화재단 공식 지원작 소개에서 Silly Love Song/Dance with me baby 및 인디 팝, 일본 yomm 활동 확인. KR 기존 정책의 domestic_rock 또는 jpop 적용 경계는 미확정; 일본 활동만으로 국적/분류 변경하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 15,
+      "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+      "name": "정승원",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB 정승원은 아무것도 없잖어 vocalist 구별어, 공식 관계·작품 없음. Last.fm 보이스 코리아/Stay The Night 후보를 정확한 개인과 공식 발매 크레딧에 교차하지 못해 동명 가수 통합하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 16,
+      "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+      "name": "조윤성",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB Jazz Pianist 조윤성 및 공식 후보 theblueroommusic.com/YoonseungCho 확보했으나 공식 페이지 접근 실패. Nordic Chant/Latin Corea 등 Last.fm 후보와 실제 신원·국가·록/J-pop 활동의 독립 근거가 더 필요. 재즈라는 직업만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 17,
+      "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+      "name": "박재정",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB/Last.fm 박재정 Alone 원작 일치. 공식 소속사/발매 소개로 국가·실제 장르와 록/J-pop 활동을 대조할 근거 미완료. 발라드 경력만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 18,
+      "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+      "name": "왕세윤",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 왕세윤에 공식 관계·작품 없음, Last.fm error6. 개별 연주자/밴드 구성원 신원과 원작을 현재 ID에 연결하는 공식 근거 필요.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 19,
+      "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+      "name": "최시유",
+      "notes": "실제 Last.fm 동일 요청 MBID 응답 이름이 최시유 대신 최인영. 피아노, 점점 여리게/OST 작품만으로 두 이름을 동일 신원으로 통합하거나 별칭 생성하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 20,
+      "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+      "name": "정봉길",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 정봉길에 공식 관계·작품 없음. Last.fm 스물다섯 스물하나 OST 후보만으로 개인의 신원·국가·실제 장르를 확정하지 않음. 공식 크레딧 연결 필요.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 21,
+      "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+      "name": "최승현",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB film music composer/클래식 OST와 공식 후보 shawnchoimusic.com 확보했으나 접근 실패. Last.fm Old Boy 작품 후보와 정확한 공식 개인 신원·의미 있는 록 활동 교차가 미완료. 영화음악만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 22,
+      "bandId": "8df47b65-a374-46bf-8b08-dfa24df7406d",
+      "name": "강윤기",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. SDF 공식 김창완밴드 구성원에 강윤기 드럼 표기는 확인. 현재 MB의 개인 강윤기에는 공식 관계·작품이 없고 Last.fm error6이어서 단순 이름/역할을 동일 MBID의 충분 근거로 쓰지 않음. 크레딧·ID 교차 보완 필요.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 23,
+      "bandId": "5ad4c175-d43b-49a0-b18a-ced82b7cbc5a",
+      "name": "안지영",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB 개인 안지영에는 공식 관계·작품 없음. Last.fm 동일 이름의 작품에 향리트롯트/라이브 콘서트가 표시되어 BOL4의 안지영과 동명 혼재 가능성 보존. MBID 일치만으로 공식 BOL4 신원 승인하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 24,
+      "bandId": "359057a6-ad99-4fd3-84f2-2b8954060cb6",
+      "name": "최윤식",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 최윤식에 공식 관계·작품 없음, Last.fm error6. SDF 밴드의 최원식 베이스와 이름이 다르므로 같은 인물로 합치거나 별칭을 생성하지 않음. 정확한 개인/외부 ID 공식 근거 필요.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 25,
+      "bandId": "31860185-1614-4aea-a1a4-5a6cbc43b800",
+      "name": "이동휘",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB KR 이동휘 원작 내 마음에 비친 내 모습 후보와 Last.fm error6 관측. 배우/음악인의 동일 신원 및 실제 록/J-pop 활동을 공식 원작으로 대조하는 요건 미완료.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 26,
+      "bandId": "ed360568-7c2c-4c49-b76e-d91d7ca2ec9b",
+      "name": "조성우",
+      "notes": "이번 고정 목록에서 실제 Last.fm 재조회와 공식 대체 검색 시도. 현재 MB 조성우는 M & F/film composer 구별어와 M·A Normal Family 원작을 반환. 공식 chosungwoo.com 후보와 같은 개인의 국가·실제 록/J-pop 활동 소개 교차 미완료. 영화음악만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 27,
+      "bandId": "2d99c5d0-c2a2-4439-b997-063c87b9ccfd",
+      "name": "배다해",
+      "notes": "Last.fm 동일 MBID에 어떻게 니가/Love Me 작품 확인. 한국경제 본문 403, 이데일리 솔로 활동 소개 대체 열람 시도. 정확한 공식 신원·실제 록 활동의 교차는 미완료. 배우자/성악 경력으로 분류하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 28,
+      "bandId": "6045dfbc-eb42-40e6-b5a2-86b4f1382bb4",
+      "name": "신해경",
+      "notes": "실제 공식 보완 조사·정확 MBID/원작·원본 버전 대조 후 service 적용, receipt 및 bands/publication/관계 readback 통과.",
+      "approvalApplied": true,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 29,
+      "bandId": "499414ea-2eee-4564-818a-9fc6591b041a",
+      "name": "전누리",
+      "notes": "Last.fm 현재 MBID API error6. 전누리 음악/가수/기타 공식 대체 검색에서도 현재 외부 ID와 원작 연결을 확인하지 못함. 이름이나 출연만으로 승인·제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 30,
+      "bandId": "34248043-e765-4178-ab65-48f85997b8e1",
+      "name": "주현미",
+      "notes": "Last.fm 동일 MBID에 울면서 후회하네/짜라자짜 작품 확인. 공식 프로필 검색은 완료 근거가 아니며 실제 록 활동·기존 정책 범위를 확인하지 못함. 트로트 경력만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 31,
+      "bandId": "6e5c8a90-546b-4e12-b068-642ca943628b",
+      "name": "최민환",
+      "notes": "Last.fm 현재 MBID API error6. FNC FTISLAND 최민환 DRUM LIVE 공식 공지 후보 확보했으나 선택된 개인 ID/원작과의 추가 교차 미완료; 팀의 록 활동을 개인 승인으로 자동 전환하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 32,
+      "bandId": "b8c59351-002d-4352-8634-812d6d3ca4b5",
+      "name": "최인경",
+      "notes": "Last.fm 현재 MBID API error6. 재뉴어리 제공 최인경 울고 웃다 발매 기사 본문 확인; 피아노 발라드 작품을 실제 국내 록 활동/정확 MBID 신원과 교차하지 못함. 이름·발라드만으로 제외하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 33,
+      "bandId": "8a5ca2bc-7133-4642-9673-1e058b8a3d59",
+      "name": "Phillip Boa and the Voodooclub",
+      "notes": "Last.fm 현재 MBID API error6. Apple Boaphenia 원작/Universal 기록은 확인했으나 DE 국가·정확한 외부 신원의 독립 공식 연결이 미완료. 기존 자동 승인 검토 거절 요건을 true로 전환하지 않음.",
+      "approvalApplied": false,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 1
+    },
+    {
+      "i": 34,
+      "bandId": "3bb48417-c90c-44e7-b1c4-23e728b6f579",
+      "name": "Pixies",
+      "notes": "실제 공식 보완 조사·정확 MBID/원작·원본 버전 대조 후 service 적용, receipt 및 bands/publication/관계 readback 통과.",
+      "approvalApplied": true,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 35,
+      "bandId": "99768b41-3f2a-4ad0-9350-48e2ebbb971a",
+      "name": "Popeda",
+      "notes": "실제 공식 보완 조사·정확 MBID/원작·원본 버전 대조 후 service 적용, receipt 및 bands/publication/관계 readback 통과.",
+      "approvalApplied": true,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 36,
+      "bandId": "8306c435-8477-43f5-81b1-f8bcd49100b0",
+      "name": "Porcupine Tree",
+      "notes": "실제 공식 보완 조사·정확 MBID/원작·원본 버전 대조 후 service 적용, receipt 및 bands/publication/관계 readback 통과.",
+      "approvalApplied": true,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 37,
+      "bandId": "c9d8659f-24ab-4728-86e2-081be5d6d230",
+      "name": "Pretty Maids",
+      "notes": "실제 공식 보완 조사·정확 MBID/원작·원본 버전 대조 후 service 적용, receipt 및 bands/publication/관계 readback 통과.",
+      "approvalApplied": true,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    },
+    {
+      "i": 38,
+      "bandId": "65d41f70-b649-442a-82c7-6960586d1ae5",
+      "name": "Primal Scream",
+      "notes": "실제 공식 보완 조사·정확 MBID/원작·원본 버전 대조 후 service 적용, receipt 및 bands/publication/관계 readback 통과.",
+      "approvalApplied": true,
+      "channelReason": "현재 고정39팀 private.artist_channels 조회0건. 공식 개별 직접 채널 링크와 API ID를 함께 검증한 manifest 미완성. MusicBrainz 실제 cooldown 보존, 요청0. 기존 채널을 만들거나 이름/공통 레이블/임베드로 확정하지 않음.",
+      "providerCalls": 2
+    }
+  ],
+  "ado": {
+    "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+    "requestedMbid": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+    "returnedMbid": "ca195d97-30d9-4870-8a52-7fd3c2e175c3",
+    "metricEligible": false,
+    "aliasOfficialSources": [
+      "https://www.universal-music.co.jp/ado/biography/",
+      "https://www.capitolrecords.jp/"
+    ],
+    "publicSearch": {
+      "Ado": [
+        "128c696a-c3a4-4db4-b93b-1a01f47b624d",
+        "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+        "4315466f-67a7-4232-b7bd-7194f955a204"
+      ],
+      "아도": [
+        "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55"
+      ],
+      "アド": []
+    },
+    "otherEnglishResults": [
+      "The Shadows",
+      "alan"
+    ],
+    "limitation": "Ado 부분 일치 검색의 추가 결과는 잘못된 신원 연결의 증명이 아니다. アド 미저장, MBID 응답 불일치로 identity mutation을 실행하지 않았다."
+  },
+  "core": {
+    "verifiedCandidateCount": 84,
+    "selected": 68,
+    "unfilled": 132,
+    "mandatory": 4,
+    "worldTop200": false
+  },
+  "api": {
+    "lastfm": 67,
+    "frozenBatchLastfm": 65,
+    "adoPreflightLastfm": 2,
+    "getInfo": 40,
+    "topAlbums": 27,
+    "artistNotFoundResponses": 13,
+    "musicbrainz": 0,
+    "youtube": 0,
+    "charts": 0
+  },
+  "server": {
+    "finishedAt": "2026-10-25T13:34:51.767028+00:00",
+    "readbackAt": "2026-10-25T13:34:56.556428+00:00",
+    "validIntegratedLeases": 0,
+    "receipts": 6,
+    "publicationApprovals": 6,
+    "receiptCurrentVersionsMatch": true,
+    "relationsMatch": true
+  },
+  "limitations": [
+    "No new registrations or aliases",
+    "No concert collection/link/publication/delivery writes",
+    "Korean unresolved identities and genre boundaries deferred without exclusion",
+    "MB cooldown 2026-10-25T17:36:26.643009Z unchanged",
+    "No new application tests; code unchanged",
+    "Local research checkpoint first omitted reason, corrected; sandbox readiness retry used supported network permission; UTF8 sourceUrls normalized to match safeProof percent-encoded URLs before successful application; no alternate writer or manual state mutation"
+  ],
+  "preservation": {
+    "provider-cooldowns.json": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+    "approval-drafts-573f7fc2.json": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337"
+  }
+}
