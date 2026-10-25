@@ -1,0 +1,2654 @@
+{
+  "project": "czjrzylvnewfjnfwjhwf",
+  "policy": "jpop-or-rock-v1",
+  "checkedAtKst": "2026-10-26T02:37:34.655768+09:00",
+  "runId": "56a7aae6-117c-4b68-9752-332bce50a340",
+  "headBefore": "d2b6492",
+  "queue": {
+    "id": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revisionBefore": 2647,
+    "revisionAfter": 2730,
+    "active": null,
+    "transfer": null,
+    "sha256": "a3edd6412b55b10f0486fafdd8fb7b07b774cac17b549806e382280fbd330fec"
+  },
+  "budget": {
+    "frozenServerTargets": 40,
+    "selectedIdentityMutations": 0,
+    "unselectedArtistInvestigations": 0
+  },
+  "database": {
+    "total": 655,
+    "before": {
+      "approved": 308,
+      "unreviewed": 341,
+      "excluded": 6
+    },
+    "after": {
+      "approved": 326,
+      "unreviewed": 323,
+      "excluded": 6
+    }
+  },
+  "tasks": {
+    "research": 3,
+    "approval": 38,
+    "channels": 40,
+    "total": 81,
+    "completed": 18,
+    "deferred": 63,
+    "remainingQueueTasks": 402
+  },
+  "applied": [
+    {
+      "index": 6,
+      "bandId": "c77e2990-e52a-43d3-949a-c093a0683059",
+      "name": "Pulp",
+      "proposal": {
+        "target_band_id": "c77e2990-e52a-43d3-949a-c093a0683059",
+        "expected_updated_at": "2026-10-13T08:20:15.478942+00:00",
+        "artist_name": "Pulp",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "パルプ"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인.",
+        "evidence_url": "https://www.officialcharts.com/artist/29508/pulp/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/29508/pulp/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 실제 기원/국가 명시와 대조: Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/29508/pulp/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/29508/pulp/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/29508/pulp/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:76b2e842-5e85-4c97-ab62-d5bc315595b5 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Different Class, His N Hers, His 'n' Hers, This Is Hardcore, Different Class / Deluxe Edition, Hits, We Love Life, This Is Hardcore (Deluxe Edition)을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:34.789Z",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/29508/pulp/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/29508/pulp/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인.",
+        "sources": [
+          {
+            "url": "https://www.officialcharts.com/artist/29508/pulp/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Official Charts에서 Sheffield 1978 결성 English rock band, Jarvis Cocker/Candida Doyle 및 Different Class·This Is Hardcore 작품을 확인."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "76b2e842-5e85-4c97-ab62-d5bc315595b5",
+        "returnedMbid": "76b2e842-5e85-4c97-ab62-d5bc315595b5",
+        "checkedAt": "2026-10-25T17:30:34.789Z",
+        "listeners": "1896110"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "c77e2990-e52a-43d3-949a-c093a0683059",
+        "name": "Pulp",
+        "after": "2026-10-25T17:33:45.621747+00:00",
+        "before": "2026-10-13T08:20:15.478942+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:45.621747+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 8,
+      "bandId": "76ad4cf5-987e-49ff-8e95-e4b4a1fb1b13",
+      "name": "Red Hot Chili Peppers",
+      "proposal": {
+        "target_band_id": "76ad4cf5-987e-49ff-8e95-e4b4a1fb1b13",
+        "expected_updated_at": "2026-10-13T08:19:19.707957+00:00",
+        "artist_name": "Red Hot Chili Peppers",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Red Hot Chilli Peppers",
+          "The Red Hot Chili Peppers",
+          "RHCP",
+          "Red Hot Chilly Peppers",
+          "The Red Hot Chilli Peppers"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조.",
+        "evidence_url": "https://rockhall.com/inductees/red-hot-chili-peppers/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:8bfac288-ccc5-448d-9573-c33ea2aa5c30 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Stadium Arcadium, Californication, Californication (Deluxe Edition), By the Way, By the Way (Deluxe Edition), Blood Sugar Sex Magik (Deluxe Edition), Blood Sugar Sex Magik, Greatest Hits을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:35.012Z",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조.",
+        "sources": [
+          {
+            "url": "https://rockhall.com/inductees/red-hot-chili-peppers/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조."
+          },
+          {
+            "url": "https://www.officialcharts.com/artist/15644/Red-Hot-Chili-Peppers/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Rock Hall의 LA 음악 신 출발 및 funk/punk/rock 활동을 Official Charts Los Angeles 결성과 교차. Californication·By the Way·Stadium Arcadium 작품 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+        "returnedMbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+        "checkedAt": "2026-10-25T17:30:35.012Z",
+        "listeners": "7434083"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "76ad4cf5-987e-49ff-8e95-e4b4a1fb1b13",
+        "name": "Red Hot Chili Peppers",
+        "after": "2026-10-25T17:33:47.57342+00:00",
+        "before": "2026-10-13T08:19:19.707957+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:47.57342+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 9,
+      "bandId": "74a46890-2ecf-475f-82a5-883fd41a7c54",
+      "name": "REO Speedwagon",
+      "proposal": {
+        "target_band_id": "74a46890-2ecf-475f-82a5-883fd41a7c54",
+        "expected_updated_at": "2026-10-13T08:20:59.732747+00:00",
+        "artist_name": "REO Speedwagon",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "REO Speedwagaon",
+          "R E O Speedwagon"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차.",
+        "evidence_url": "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: 공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차.",
+          "sourceUrls": [
+            "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "https://roadtorock.org/artist/reo-speedwagon/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: 공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차.",
+          "sourceUrls": [
+            "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "https://roadtorock.org/artist/reo-speedwagon/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: 공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차.",
+          "sourceUrls": [
+            "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "https://roadtorock.org/artist/reo-speedwagon/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: 공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차.",
+          "sourceUrls": [
+            "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "https://roadtorock.org/artist/reo-speedwagon/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:bdc70372-7e8a-4cb9-8d33-f036b3b7cdc1 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 The Hits, Hi Infidelity (30th Anniversary Edition), Wheels Are Turnin', The Essential REO Speedwagon, Hi Infidelity, You Can Tune a Piano, But You Can't Tuna Fish, Ridin' the Storm Out, Life as We Know It을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:35.141Z",
+          "sourceUrls": [
+            "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "https://roadtorock.org/artist/reo-speedwagon/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "https://roadtorock.org/artist/reo-speedwagon/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차.",
+        "sources": [
+          {
+            "url": "https://www.caa.com/entertainmenttalent/touring/artist/REOSpeedwagon",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차."
+          },
+          {
+            "url": "https://roadtorock.org/artist/reo-speedwagon/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "공식 CAA 소개는 Champaign Illinois 결성과 Kevin Cronin을 명시. Illinois Rock & Roll Museum의 hard rock 활동과 Hi Infidelity·Wheels Are Turnin 작품을 교차."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "bdc70372-7e8a-4cb9-8d33-f036b3b7cdc1",
+        "returnedMbid": "bdc70372-7e8a-4cb9-8d33-f036b3b7cdc1",
+        "checkedAt": "2026-10-25T17:30:35.141Z",
+        "listeners": "1292521"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "74a46890-2ecf-475f-82a5-883fd41a7c54",
+        "name": "REO Speedwagon",
+        "after": "2026-10-25T17:33:49.612262+00:00",
+        "before": "2026-10-13T08:20:59.732747+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:49.612262+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 11,
+      "bandId": "56b08d08-6a43-46dd-ae34-5303d5d2f16d",
+      "name": "Rise Against",
+      "proposal": {
+        "target_band_id": "56b08d08-6a43-46dd-ae34-5303d5d2f16d",
+        "expected_updated_at": "2026-10-13T08:20:37.624378+00:00",
+        "artist_name": "Rise Against",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Transistor Revolt"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차.",
+        "evidence_url": "https://www.universal-music.co.jp/rise-against/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/rise-against/biography/",
+            "https://concord.com/artist/rise-against/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/rise-against/biography/",
+            "https://concord.com/artist/rise-against/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/rise-against/biography/",
+            "https://concord.com/artist/rise-against/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/rise-against/biography/",
+            "https://concord.com/artist/rise-against/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:606bf117-494f-4864-891f-09d63ff6aa4b 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Appeal to Reason, The Sufferer & the Witness, Siren Song of the Counter Culture, Endgame, Revolutions Per Minute, Siren Song of the Counter-Culture, The Sufferer and the Witness, The Unraveling을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:35.311Z",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/rise-against/biography/",
+            "https://concord.com/artist/rise-against/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/rise-against/biography/",
+            "https://concord.com/artist/rise-against/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.co.jp/rise-against/biography/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차."
+          },
+          {
+            "url": "https://concord.com/artist/rise-against/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Universal Japan 공식 bio에서 Chicago 출신 melodic hardcore, Tim McIlrath/Brandon Barnes 등 멤버와 Appeal To Reason·Siren Song Of The Counter Culture를 확인. Concord의 실제 punk rock 활동과 교차."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "606bf117-494f-4864-891f-09d63ff6aa4b",
+        "returnedMbid": "606bf117-494f-4864-891f-09d63ff6aa4b",
+        "checkedAt": "2026-10-25T17:30:35.311Z",
+        "listeners": "2942251"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "56b08d08-6a43-46dd-ae34-5303d5d2f16d",
+        "name": "Rise Against",
+        "after": "2026-10-25T17:33:51.003423+00:00",
+        "before": "2026-10-13T08:20:37.624378+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:51.003423+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 12,
+      "bandId": "b67d1673-418c-4fd8-b7fa-7d8ac1bb0615",
+      "name": "Saga",
+      "proposal": {
+        "target_band_id": "b67d1673-418c-4fd8-b7fa-7d8ac1bb0615",
+        "expected_updated_at": "2026-10-13T08:21:05.956253+00:00",
+        "artist_name": "Saga",
+        "country": "CA",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차.",
+        "evidence_url": "https://www.earmusic.com/sagareissues/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차.",
+          "sourceUrls": [
+            "https://www.earmusic.com/sagareissues/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 CA를 실제 기원/국가 명시와 대조: earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차.",
+          "sourceUrls": [
+            "https://www.earmusic.com/sagareissues/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차.",
+          "sourceUrls": [
+            "https://www.earmusic.com/sagareissues/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차.",
+          "sourceUrls": [
+            "https://www.earmusic.com/sagareissues/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:cc5b8e90-07fd-416d-bd90-8a524b29d1f7 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Worlds Apart, In Transit, Heads Or Tales, Silent Knight, Worlds Apart Revisited, Images At Twilight, Behaviour, Trust을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:35.794Z",
+          "sourceUrls": [
+            "https://www.earmusic.com/sagareissues/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.earmusic.com/sagareissues/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차.",
+        "sources": [
+          {
+            "url": "https://www.earmusic.com/sagareissues/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "earMUSIC 공식 재발매 소개에서 Canadian prog-rock band를 명시. Worlds Apart·In Transit·Silent Knight·Heads Or Tales 원작 목록과 현재 외부 신원을 교차."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "cc5b8e90-07fd-416d-bd90-8a524b29d1f7",
+        "returnedMbid": "cc5b8e90-07fd-416d-bd90-8a524b29d1f7",
+        "checkedAt": "2026-10-25T17:30:35.794Z",
+        "listeners": "140372"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "b67d1673-418c-4fd8-b7fa-7d8ac1bb0615",
+        "name": "Saga",
+        "after": "2026-10-25T17:33:52.343948+00:00",
+        "before": "2026-10-13T08:21:05.956253+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:52.343948+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 14,
+      "bandId": "bdf6a531-2a70-40c1-b726-db3982fe06b4",
+      "name": "Siouxsie and the Banshees",
+      "proposal": {
+        "target_band_id": "bdf6a531-2a70-40c1-b726-db3982fe06b4",
+        "expected_updated_at": "2026-10-13T08:20:33.195629+00:00",
+        "artist_name": "Siouxsie and the Banshees",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Banshees",
+          "Souixie & the Banshees",
+          "Siuoxsie & the Banshees",
+          "Siouxsie and the Bantshees",
+          "Siouxsie and the Banshee",
+          "Siouxie and the Banshees",
+          "Siouxie & the Banshees"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시.",
+        "evidence_url": "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시.",
+          "sourceUrls": [
+            "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 실제 기원/국가 명시와 대조: Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시.",
+          "sourceUrls": [
+            "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시.",
+          "sourceUrls": [
+            "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시.",
+          "sourceUrls": [
+            "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:78ea5ea1-3c4d-4b7e-ac5d-68900319ebe2 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Juju, The Scream, Tinderbox, Hyaena (Remastered And Expanded), Through The Looking Glass (Remastered And Expanded), Kaleidoscope (Remastered & Expanded), Kaleidoscope, The Best Of...을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:36.046Z",
+          "sourceUrls": [
+            "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universal-music.de/siouxsie_and_the_banshees/biografie"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.de/siouxsie_and_the_banshees/biografie",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Universal Germany bio는 London punk scene 1976/England 기원, Siouxsie와 Steven Severin 및 The Scream·Juju Gothic-rock 원작을 명시."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "78ea5ea1-3c4d-4b7e-ac5d-68900319ebe2",
+        "returnedMbid": "78ea5ea1-3c4d-4b7e-ac5d-68900319ebe2",
+        "checkedAt": "2026-10-25T17:30:36.046Z",
+        "listeners": "1762787"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "bdf6a531-2a70-40c1-b726-db3982fe06b4",
+        "name": "Siouxsie and the Banshees",
+        "after": "2026-10-25T17:33:53.713799+00:00",
+        "before": "2026-10-13T08:20:33.195629+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:53.713799+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 17,
+      "bandId": "c12ad1a3-9f78-42d1-9640-04f77f0762ca",
+      "name": "Social Distortion",
+      "proposal": {
+        "target_band_id": "c12ad1a3-9f78-42d1-9640-04f77f0762ca",
+        "expected_updated_at": "2026-10-13T08:20:34.895829+00:00",
+        "artist_name": "Social Distortion",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Social Distorsion",
+          "Social Destortion"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인.",
+        "evidence_url": "https://concord.com/artist/social-distortion/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인.",
+          "sourceUrls": [
+            "https://concord.com/artist/social-distortion/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인.",
+          "sourceUrls": [
+            "https://concord.com/artist/social-distortion/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인.",
+          "sourceUrls": [
+            "https://concord.com/artist/social-distortion/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인.",
+          "sourceUrls": [
+            "https://concord.com/artist/social-distortion/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:e1e05cce-3922-44e1-8f20-015abe5e309d 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Social Distortion, White Light, White Heat, White Trash, Somewhere Between Heaven and Hell, Sex, Love and Rock 'n' Roll, White Light White Heat White Trash, Mommy's Little Monster, Greatest Hits, Live at the Roxy을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:36.306Z",
+          "sourceUrls": [
+            "https://concord.com/artist/social-distortion/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://concord.com/artist/social-distortion/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인.",
+        "sources": [
+          {
+            "url": "https://concord.com/artist/social-distortion/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Concord는 Orange County Southern California punk-rock 기원, Mike Ness/Dennis Danell 및 Mommy’s Little Monster·Prison Bound를 명시. 혼합 rockabilly/punk 활동 확인."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "e1e05cce-3922-44e1-8f20-015abe5e309d",
+        "returnedMbid": "e1e05cce-3922-44e1-8f20-015abe5e309d",
+        "checkedAt": "2026-10-25T17:30:36.306Z",
+        "listeners": "883026"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "c12ad1a3-9f78-42d1-9640-04f77f0762ca",
+        "name": "Social Distortion",
+        "after": "2026-10-25T17:33:55.077711+00:00",
+        "before": "2026-10-13T08:20:34.895829+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:55.077711+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 21,
+      "bandId": "7eda7ff5-f95c-4002-a60c-d75762a8b6cf",
+      "name": "Sublime",
+      "proposal": {
+        "target_band_id": "7eda7ff5-f95c-4002-a60c-d75762a8b6cf",
+        "expected_updated_at": "2026-10-13T08:20:08.573272+00:00",
+        "artist_name": "Sublime",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시.",
+        "evidence_url": "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:95f5b748-d370-47fe-85bd-0af2dc450bc0 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Sublime, 40oz. To Freedom, 40 Oz. to Freedom, Jah Won't Pay the Bills, Gold, Robbin' The Hood, Sublime (Explicit Version), Greatest Hits을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:36.980Z",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시.",
+        "sources": [
+          {
+            "url": "https://concord.com/publishing-roster/marshall-goodman-sublime-long-beach-dub-allstars/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Concord는 Long Beach California garage-punk band Sublime, Bradley Nowell/Eric Wilson/Bud Gaugh 및 40 oz. to Freedom·1996 Sublime 작품과 punk/surf-rock 혼합을 명시."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "95f5b748-d370-47fe-85bd-0af2dc450bc0",
+        "returnedMbid": "95f5b748-d370-47fe-85bd-0af2dc450bc0",
+        "checkedAt": "2026-10-25T17:30:36.980Z",
+        "listeners": "3242423"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "7eda7ff5-f95c-4002-a60c-d75762a8b6cf",
+        "name": "Sublime",
+        "after": "2026-10-25T17:33:56.405223+00:00",
+        "before": "2026-10-13T08:20:08.573272+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:56.405223+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 22,
+      "bandId": "7e609dbe-06a0-4ff2-9cd4-161485a4809b",
+      "name": "Suede",
+      "proposal": {
+        "target_band_id": "7e609dbe-06a0-4ff2-9cd4-161485a4809b",
+        "expected_updated_at": "2026-10-13T08:19:45.47333+00:00",
+        "artist_name": "Suede",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The London Suede",
+          "Svede",
+          "Crushed Kid",
+          "London Suede",
+          "スウェード"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인.",
+        "evidence_url": "https://www.officialcharts.com/artist/27658/suede/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/27658/suede/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 실제 기원/국가 명시와 대조: Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/27658/suede/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/27658/suede/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/27658/suede/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:a55c2f1b-3f3f-4d6a-aa30-5e186dbadce6 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Coming Up, Suede, Singles, Dog Man Star, Coming Up - 20th Anniversary Edition (Audio Version), Coming Up (Remastered), The Best Of, Suede (Remastered)을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:37.077Z",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/27658/suede/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.officialcharts.com/artist/27658/suede/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인.",
+        "sources": [
+          {
+            "url": "https://www.officialcharts.com/artist/27658/suede/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Official Charts에서 English indie rock band/London 1989, Brett Anderson/Mat Osman/Bernard Butler와 Suede·Dog Man Star 작품을 확인."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "a55c2f1b-3f3f-4d6a-aa30-5e186dbadce6",
+        "returnedMbid": "a55c2f1b-3f3f-4d6a-aa30-5e186dbadce6",
+        "checkedAt": "2026-10-25T17:30:37.077Z",
+        "listeners": "1069292"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "7e609dbe-06a0-4ff2-9cd4-161485a4809b",
+        "name": "Suede",
+        "after": "2026-10-25T17:33:57.759811+00:00",
+        "before": "2026-10-13T08:19:45.47333+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:57.759811+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 23,
+      "bandId": "80a2bf0e-5b00-455d-a2af-636b9e23a71b",
+      "name": "Superchunk",
+      "proposal": {
+        "target_band_id": "80a2bf0e-5b00-455d-a2af-636b9e23a71b",
+        "expected_updated_at": "2026-10-13T08:20:08.222617+00:00",
+        "artist_name": "Superchunk",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Суперцчунк"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조.",
+        "evidence_url": "https://superchunk.bandcamp.com/music"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: 아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조.",
+          "sourceUrls": [
+            "https://superchunk.bandcamp.com/music"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: 아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조.",
+          "sourceUrls": [
+            "https://superchunk.bandcamp.com/music"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: 아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조.",
+          "sourceUrls": [
+            "https://superchunk.bandcamp.com/music"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: 아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조.",
+          "sourceUrls": [
+            "https://superchunk.bandcamp.com/music"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:61653550-fd9b-4401-8248-44f2d064d384 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Foolish (Remastered), Foolish, Majesty Shredding, Come Pick Me Up, Here's Where the Strings Come In, Here's Where the Strings Come In (Remastered), No Pocky For Kitty (Remastered), Here's to Shutting Up을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:37.185Z",
+          "sourceUrls": [
+            "https://superchunk.bandcamp.com/music"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://superchunk.bandcamp.com/music"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조.",
+        "sources": [
+          {
+            "url": "https://superchunk.bandcamp.com/music",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "아티스트 공식 Bandcamp 소개는 Chapel Hill North Carolina 1989 결성, Mac McCaughan/Jim Wilbur/Jon Wurster/Laura Ballance와 punk rock 활동을 명시. Foolish 작품 목록 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "61653550-fd9b-4401-8248-44f2d064d384",
+        "returnedMbid": "61653550-fd9b-4401-8248-44f2d064d384",
+        "checkedAt": "2026-10-25T17:30:37.185Z",
+        "listeners": "330269"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "80a2bf0e-5b00-455d-a2af-636b9e23a71b",
+        "name": "Superchunk",
+        "after": "2026-10-25T17:33:59.165856+00:00",
+        "before": "2026-10-13T08:20:08.222617+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:59.165856+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 24,
+      "bandId": "6e4c8d86-2437-44a7-8a36-b40a6545cf77",
+      "name": "SURL",
+      "proposal": {
+        "target_band_id": "6e4c8d86-2437-44a7-8a36-b40a6545cf77",
+        "expected_updated_at": "2026-10-12T14:45:03.95141+00:00",
+        "artist_name": "SURL",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [
+          "설"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차.",
+        "evidence_url": "https://www.mpmgmusic.com/surl"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/surl",
+            "https://music.apple.com/us/album/of-us/1650548968"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 KR를 실제 기원/국가 명시와 대조: MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/surl",
+            "https://music.apple.com/us/album/of-us/1650548968"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/surl",
+            "https://music.apple.com/us/album/of-us/1650548968"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 domestic_rock 정책의 실제 록 활동: MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/surl",
+            "https://music.apple.com/us/album/of-us/1650548968"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 I Know, Aren't You?, Don't Say No, Beside, of us, Cilla, XYRUP, Around을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:37.342Z",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/surl",
+            "https://music.apple.com/us/album/of-us/1650548968"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/surl",
+            "https://music.apple.com/us/album/of-us/1650548968"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차.",
+        "sources": [
+          {
+            "url": "https://www.mpmgmusic.com/surl",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차."
+          },
+          {
+            "url": "https://music.apple.com/us/album/of-us/1650548968",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "MPMG 공식 소개의 Korean four-member band 및 Aren’t You?/XYRUP 발매를 대조. Happy Robot Records of us 음반의 실제 Rock 장르 및 Aren’t You?·I Know 작품 목록을 교차."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad",
+        "returnedMbid": "4bb621f5-0cf1-44a5-84b6-2cbafb8f17ad",
+        "checkedAt": "2026-10-25T17:30:37.342Z",
+        "listeners": "84774"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "6e4c8d86-2437-44a7-8a36-b40a6545cf77",
+        "name": "SURL",
+        "after": "2026-10-25T17:34:00.502145+00:00",
+        "before": "2026-10-12T14:45:03.95141+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:00.502145+00:00",
+        "category": "domestic_rock",
+        "relations": [
+          1,
+          0
+        ],
+        "currentRelations": [
+          1,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 26,
+      "bandId": "90ab3299-e394-4fd0-a999-58b3cb86aff2",
+      "name": "Talking Heads",
+      "proposal": {
+        "target_band_id": "90ab3299-e394-4fd0-a999-58b3cb86aff2",
+        "expected_updated_at": "2026-10-13T08:19:29.913073+00:00",
+        "artist_name": "Talking Heads",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조.",
+        "evidence_url": "https://www.rhino.com/article/talking-heads"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/talking-heads"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/talking-heads"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/talking-heads"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/talking-heads"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:a94a7155-c79d-4409-9fcf-220cb0e4dc3a 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Talking Heads '77 (Deluxe Version), Speaking In Tongues (Deluxe Version), Remain In Light (Deluxe Version), Little Creatures, Remain in Light, Stop Making Sense, Talking Heads '77, Burning Down the House / I Get Wild / Wild Gravity을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:37.630Z",
+          "sourceUrls": [
+            "https://www.rhino.com/article/talking-heads"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/talking-heads"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조.",
+        "sources": [
+          {
+            "url": "https://www.rhino.com/article/talking-heads",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Rhino 공식 소개는 David Byrne/Tina Weymouth/Chris Frantz의 New York City 1975 결성 및 Jerry Harrison을 명시. rock 활동과 Talking Heads 77·Remain In Light 원작 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
+        "returnedMbid": "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
+        "checkedAt": "2026-10-25T17:30:37.630Z",
+        "listeners": "3348908"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "90ab3299-e394-4fd0-a999-58b3cb86aff2",
+        "name": "Talking Heads",
+        "after": "2026-10-25T17:34:01.836746+00:00",
+        "before": "2026-10-13T08:19:29.913073+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:01.836746+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 32,
+      "bandId": "562d1037-4bad-4991-ba53-68af5f6936e8",
+      "name": "The BossHoss",
+      "proposal": {
+        "target_band_id": "562d1037-4bad-4991-ba53-68af5f6936e8",
+        "expected_updated_at": "2026-10-13T08:20:31.867566+00:00",
+        "artist_name": "The BossHoss",
+        "country": "DE",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Boss Hoss",
+          "The Boss Hoss"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조.",
+        "evidence_url": "https://www.universal-music.de/bosshoss/biografie"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조.",
+          "sourceUrls": [
+            "https://www.universal-music.de/bosshoss/biografie"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DE를 실제 기원/국가 명시와 대조: Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조.",
+          "sourceUrls": [
+            "https://www.universal-music.de/bosshoss/biografie"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조.",
+          "sourceUrls": [
+            "https://www.universal-music.de/bosshoss/biografie"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조.",
+          "sourceUrls": [
+            "https://www.universal-music.de/bosshoss/biografie"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:e0ab57c6-7ba1-4dca-b36e-fae4c0c269e1 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Internashville Urban Hymns, Liberty Of Action, Rodeo Radio, Stallion Battalion, Black Is Beautiful, Dos Bros (Platinum Edition), Do Or Die, Flames of Fame을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:38.380Z",
+          "sourceUrls": [
+            "https://www.universal-music.de/bosshoss/biografie"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universal-music.de/bosshoss/biografie"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.de/bosshoss/biografie",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Universal Germany는 Berliner Boss Burns/Hoss Power와 실제 Country-Rock Crossover 활동을 명시. Liberty Of Action·Electric Horsemen 작품을 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "e0ab57c6-7ba1-4dca-b36e-fae4c0c269e1",
+        "returnedMbid": "e0ab57c6-7ba1-4dca-b36e-fae4c0c269e1",
+        "checkedAt": "2026-10-25T17:30:38.380Z",
+        "listeners": "212996"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "562d1037-4bad-4991-ba53-68af5f6936e8",
+        "name": "The BossHoss",
+        "after": "2026-10-25T17:34:03.166921+00:00",
+        "before": "2026-10-13T08:20:31.867566+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:03.166921+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 33,
+      "bandId": "ad883499-cc0e-4b36-9a18-63f184dee1d9",
+      "name": "The Cardigans",
+      "proposal": {
+        "target_band_id": "ad883499-cc0e-4b36-9a18-63f184dee1d9",
+        "expected_updated_at": "2026-10-13T08:20:07.532672+00:00",
+        "artist_name": "The Cardigans",
+        "country": "SE",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Cardinang",
+          "Cardigns",
+          "Cardigans",
+          "Cardigans, The"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조.",
+        "evidence_url": "https://www.universalmusic.fr/artistes/40017901755"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/40017901755"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 SE를 실제 기원/국가 명시와 대조: Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/40017901755"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/40017901755"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/40017901755"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:3e55d51d-687f-4a9d-af96-2fabccf802e5 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 First Band On The Moon (Remastered), First Band on the Moon, Gran Turismo, Gran Turismo (Remastered), Best Of, Life (Remastered), Long Gone Before Daylight, Life을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:38.460Z",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/40017901755"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/40017901755"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조.",
+        "sources": [
+          {
+            "url": "https://www.universalmusic.fr/artistes/40017901755",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Universal France의 Sweden/Suède·Jönköping 기원, Nina Persson/Peter Svensson/Magnus Sveningsson과 pop-rock 전환·Gran Turismo/First Band on the Moon 원작 대조."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "3e55d51d-687f-4a9d-af96-2fabccf802e5",
+        "returnedMbid": "3e55d51d-687f-4a9d-af96-2fabccf802e5",
+        "checkedAt": "2026-10-25T17:30:38.460Z",
+        "listeners": "3866505"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "ad883499-cc0e-4b36-9a18-63f184dee1d9",
+        "name": "The Cardigans",
+        "after": "2026-10-25T17:34:04.531398+00:00",
+        "before": "2026-10-13T08:20:07.532672+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:04.531398+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 36,
+      "bandId": "a63181de-3c01-4372-b2c5-537f5161d118",
+      "name": "The Cramps",
+      "proposal": {
+        "target_band_id": "a63181de-3c01-4372-b2c5-537f5161d118",
+        "expected_updated_at": "2026-10-13T08:20:27.130933+00:00",
+        "artist_name": "The Cramps",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Cramps",
+          "Cramps, the"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음.",
+        "evidence_url": "https://concord.com/publishing-roster/the-cramps/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/the-cramps/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 실제 기원/국가 명시와 대조: Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/the-cramps/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/the-cramps/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/the-cramps/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:96c1edac-1011-4cb8-882c-27248de35071 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Psychedelic Jungle, Off The Bone, Songs The Lord Taught Us, Bad Music for Bad People, Stay Sick!, A Date With Elvis, Smell of Female, Big Beat from Badsville을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:38.788Z",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/the-cramps/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/the-cramps/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음.",
+        "sources": [
+          {
+            "url": "https://concord.com/publishing-roster/the-cramps/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Concord는 American punk-rock band, Lux Interior/Poison Ivy와 punk/rockabilly 결합을 명시. Songs The Lord Taught Us·Psychedelic Jungle 원작 대조. 가사 인용 없음."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "96c1edac-1011-4cb8-882c-27248de35071",
+        "returnedMbid": "96c1edac-1011-4cb8-882c-27248de35071",
+        "checkedAt": "2026-10-25T17:30:38.788Z",
+        "listeners": "1101034"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "a63181de-3c01-4372-b2c5-537f5161d118",
+        "name": "The Cramps",
+        "after": "2026-10-25T17:34:05.879619+00:00",
+        "before": "2026-10-13T08:20:27.130933+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:05.879619+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 37,
+      "bandId": "c74c8353-c62b-4ca3-bee4-efaab960d113",
+      "name": "The Cranberries",
+      "proposal": {
+        "target_band_id": "c74c8353-c62b-4ca3-bee4-efaab960d113",
+        "expected_updated_at": "2026-10-13T08:19:39.818987+00:00",
+        "artist_name": "The Cranberries",
+        "country": "IE",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "クランベリーズ",
+          "The Cramberries",
+          "The Cranberry Saw Us",
+          "ザクランベリーズ",
+          "Cranberries",
+          "ザ・クランベリーズ"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시.",
+        "evidence_url": "https://shop.islandrecords.co.uk/collections/the-cranberries"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시.",
+          "sourceUrls": [
+            "https://shop.islandrecords.co.uk/collections/the-cranberries"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 IE를 실제 기원/국가 명시와 대조: Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시.",
+          "sourceUrls": [
+            "https://shop.islandrecords.co.uk/collections/the-cranberries"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시.",
+          "sourceUrls": [
+            "https://shop.islandrecords.co.uk/collections/the-cranberries"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시.",
+          "sourceUrls": [
+            "https://shop.islandrecords.co.uk/collections/the-cranberries"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:c98d40fd-f6cf-4b26-883e-eaa515ee2851 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Everybody Else Is Doing It, So Why Can't We?, No Need to Argue (The Complete Sessions 1994-1995), No Need to Argue, To the Faithful Departed, Bury the Hatchet, No Need To Argue (2025 Remastered), Everybody Else Is Doing It, So Why Can't We? (Remastered 2026), Stars: The Best of The Cranberries 1992-2002을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:38.858Z",
+          "sourceUrls": [
+            "https://shop.islandrecords.co.uk/collections/the-cranberries"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://shop.islandrecords.co.uk/collections/the-cranberries"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시.",
+        "sources": [
+          {
+            "url": "https://shop.islandrecords.co.uk/collections/the-cranberries",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Island Records 공식 소개에서 Irish alternative rock band와 Dolores O’Riordan 및 Everybody Else Is Doing It So Why Can’t We?·No Need To Argue 원작을 명시."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "c98d40fd-f6cf-4b26-883e-eaa515ee2851",
+        "returnedMbid": "c98d40fd-f6cf-4b26-883e-eaa515ee2851",
+        "checkedAt": "2026-10-25T17:30:38.858Z",
+        "listeners": "4928682"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "c74c8353-c62b-4ca3-bee4-efaab960d113",
+        "name": "The Cranberries",
+        "after": "2026-10-25T17:34:07.202034+00:00",
+        "before": "2026-10-13T08:19:39.818987+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:07.202034+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 38,
+      "bandId": "fc00661f-a1fe-4402-82fb-91295adbbd78",
+      "name": "The Cult",
+      "proposal": {
+        "target_band_id": "fc00661f-a1fe-4402-82fb-91295adbbd78",
+        "expected_updated_at": "2026-10-13T08:19:53.711843+00:00",
+        "artist_name": "The Cult",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Cult - Labbatt Tracks",
+          "Cult, The",
+          "Cult"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음.",
+        "evidence_url": "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음.",
+          "sourceUrls": [
+            "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 실제 기원/국가 명시와 대조: Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음.",
+          "sourceUrls": [
+            "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음.",
+          "sourceUrls": [
+            "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음.",
+          "sourceUrls": [
+            "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:8846e4ff-0c19-4af2-872b-7a8dc7497f68 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Love, Pure Cult, Sonic Temple, Electric, Love (Expanded Edition), Beyond Good and Evil, Born Into This, Ceremony을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:38.951Z",
+          "sourceUrls": [
+            "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://beggarsbanquetrecords.com/wp/artists/the-cult/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음.",
+        "sources": [
+          {
+            "url": "https://beggarsbanquetrecords.com/wp/artists/the-cult/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Beggars Banquet 공식 소개는 UK 1983 Death Cult 결성과 Ian Astbury를 명시. 실제 rock 활동 및 Love·Electric·Sonic Temple 원작 대조. 비공식 the-cult.com을 승인 근거로 사용하지 않음."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "8846e4ff-0c19-4af2-872b-7a8dc7497f68",
+        "returnedMbid": "8846e4ff-0c19-4af2-872b-7a8dc7497f68",
+        "checkedAt": "2026-10-25T17:30:38.951Z",
+        "listeners": "933645"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "fc00661f-a1fe-4402-82fb-91295adbbd78",
+        "name": "The Cult",
+        "after": "2026-10-25T17:34:08.492899+00:00",
+        "before": "2026-10-13T08:19:53.711843+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:08.492899+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    },
+    {
+      "index": 39,
+      "bandId": "acc450ca-e141-46c3-a706-d3cf906760fc",
+      "name": "The Damned",
+      "proposal": {
+        "target_band_id": "acc450ca-e141-46c3-a706-d3cf906760fc",
+        "expected_updated_at": "2026-10-13T08:20:00.016308+00:00",
+        "artist_name": "The Damned",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Dammed",
+          "Damned",
+          "The Doomed",
+          "The Damned Night"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음.",
+        "evidence_url": "https://concord.com/artist/16519/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "이름·개별 원작·멤버를 교차: Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음.",
+          "sourceUrls": [
+            "https://concord.com/artist/16519/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 실제 기원/국가 명시와 대조: Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음.",
+          "sourceUrls": [
+            "https://concord.com/artist/16519/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적 대신 실제 음악 활동 확인: Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음.",
+          "sourceUrls": [
+            "https://concord.com/artist/16519/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음.",
+          "sourceUrls": [
+            "https://concord.com/artist/16519/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context mb:77d21c13-846f-4f48-9546-873949eff6ae 원본 버전 일치. 실제 요청/반환 MBID 동일, 작품 Damned Damned Damned, Strawberries (Deluxe Edition), Machine Gun Etiquette, Phantasmagoria, Smash It Up: The Anthology 1976-1987, Damned Damned Damned (30th Anniversary Expanded Edition), Anything, Damned Damned Damned (Bonus Tracks Version)을 위 개별 자료와 교차. API checkedAt 2026-10-25T17:30:39.062Z",
+          "sourceUrls": [
+            "https://concord.com/artist/16519/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://concord.com/artist/16519/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음.",
+        "sources": [
+          {
+            "url": "https://concord.com/artist/16519/",
+            "checkedAt": "2026-10-25T17:33:44.009710+00:00",
+            "summary": "Concord는 British/UK punk band 및 1976 결성, Stiff Records 1977 Damned Damned Damned·New Rose 원작을 명시. 미국 공연 사실을 국적 근거로 쓰지 않음."
+          }
+        ]
+      },
+      "lastfm": {
+        "requestedMbid": "77d21c13-846f-4f48-9546-873949eff6ae",
+        "returnedMbid": "77d21c13-846f-4f48-9546-873949eff6ae",
+        "checkedAt": "2026-10-25T17:30:39.062Z",
+        "listeners": "810775"
+      },
+      "receiptAndCurrentReadback": {
+        "id": "acc450ca-e141-46c3-a706-d3cf906760fc",
+        "name": "The Damned",
+        "after": "2026-10-25T17:34:09.822066+00:00",
+        "before": "2026-10-13T08:20:00.016308+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:09.822066+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    }
+  ],
+  "selectedArtists": [
+    {
+      "i": 0,
+      "name": "Ado",
+      "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+      "notes": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+      "channelReason": "Universal 공식 bio의 직접 채널 URL은 /c/Ado1024로 현재 도구 미지원. MBID 응답도 불일치. 이름 검색/추정 handle/YouTube 스크래핑으로 대체하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 1,
+      "name": "UVERworld",
+      "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+      "notes": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+      "channelReason": "Sony 개별 links 페이지 접근 실패, UVERworld 공식 사이트 본문은 읽었으나 개별 직접 채널 ID 확인 미완료. API 이름 검색 없음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 2,
+      "name": "이시문",
+      "bandId": "4a703f4a-db46-4eb5-944a-61820405fc57",
+      "notes": "한국영상자료원 공식 소개에서 이시문 기타리스트/프로듀서·추다혜차지스/김오키 멤버·Scent EP를 확인. 현재 MBID Last.fm error6이며 보존 MB 원작/공식 관계가 비어 있어 정확한 개인 ID 연결 및 실제 록 원작 교차가 미완료. funk를 punk로 오역하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 1
+    },
+    {
+      "i": 3,
+      "name": "하덕규",
+      "bandId": "87aa2e7a-9a5b-4fc7-a0e1-c919f74b6cff",
+      "notes": "하덕규 동일 요청/반환 MBID에 쉼·광야·15 years 15 songs 확인. 새 시인과촌장 45주년 인터뷰/음악 칼럼 후보 확보했으나 공식 개인 원작·KR·유의미한 록 활동의 충분한 교차 미완료. CCM/포크만으로 제외하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 4,
+      "name": "함춘호",
+      "bandId": "5beec8da-e31c-4b07-a4f3-aa4d4636a57a",
+      "notes": "함춘호 동일 MBID의 가을동화/새드무비OST 작품 확인. 시인과촌장 공식/섭외 소개와 연합뉴스 인터뷰 후보는 있으나 개인 원작과 현재 MB의 독립 연결·실제 록 활동 보완 미완료.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 5,
+      "name": "Prljavo kazalište",
+      "bandId": "69bc139f-872d-4a1d-9c5a-f54b36f914e6",
+      "notes": "공식 Prljavo Kazaliste 소개에서 Zagreb 1977/rock 확인. 현재 MBID Last.fm error6, 동명 분파/현재 공식 사이트·원작의 정확한 MBID 연결은 미완료. 이전 거절 초안을 true로 변경하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 1
+    },
+    {
+      "i": 6,
+      "name": "Pulp",
+      "bandId": "c77e2990-e52a-43d3-949a-c093a0683059",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 7,
+      "name": "Rainbow",
+      "bandId": "741c46d4-61dc-4a2a-b77d-27f00ba74b2e",
+      "notes": "현재 MBID는 Ritchie Blackmore’s Rainbow/Rising/Down to Earth 원작과 일치하고 Apple 음반에서 hard rock을 확인. 독립 공식 국가·정확한 밴드 신원 대조가 부족해 GB 승인 보류. 이름이 같은 한국 그룹과 혼합하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 8,
+      "name": "Red Hot Chili Peppers",
+      "bandId": "76ad4cf5-987e-49ff-8e95-e4b4a1fb1b13",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 9,
+      "name": "REO Speedwagon",
+      "bandId": "74a46890-2ecf-475f-82a5-883fd41a7c54",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 10,
+      "name": "Ricky Ramadista",
+      "bandId": "e357179e-e679-4ea6-abfb-91f81a2a5e2d",
+      "notes": "공식 개인 Bandcamp에서 Palembang Indonesia, Saines Habitudes 기타/보컬·alternative rock·Jalani Mimpi를 확인. 현 MBID getInfo error6, 개인/밴드의 정확한 외부 ID 연결 미완료.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 1
+    },
+    {
+      "i": 11,
+      "name": "Rise Against",
+      "bandId": "56b08d08-6a43-46dd-ae34-5303d5d2f16d",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 12,
+      "name": "Saga",
+      "bandId": "b67d1673-418c-4fd8-b7fa-7d8ac1bb0615",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 13,
+      "name": "Silica Gel",
+      "bandId": "143af425-ea27-4e44-832a-c3215196d7a5",
+      "notes": "현재 DB MBID 2c8b5bb2-6110-488d-bc15-abb08379d3c6 요청에 다른 MBID 468bf9fb-72df-456d-983b-ac1cd2fee86b 반환. 동일 이름 Silica Gel만으로 신원/인기 지표 확정하지 않음. 새 한국 공식 대체 검색은 연결 근거를 확정하지 못함.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 1
+    },
+    {
+      "i": 14,
+      "name": "Siouxsie and the Banshees",
+      "bandId": "bdf6a531-2a70-40c1-b726-db3982fe06b4",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 15,
+      "name": "Slade",
+      "bandId": "3b693196-7d14-45da-a8bb-516af176b63b",
+      "notes": "Dave Hill 공식 소개는 Great Britain/Slade 초기곡·heavy rock 경력을 명시. 현재 Dave Hill’s Slade와 원래 그룹의 범위·원작을 외부 ID에 정확히 대조하는 보완이 남아 무조건 승인하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 16,
+      "name": "Slash featuring Myles Kennedy and the Conspirators",
+      "bandId": "f5ddcf26-8259-4fc4-8109-45857a69bc84",
+      "notes": "Universal Canada의 World On Fire/Apocalyptic Love/Myles Kennedy/Slash 팀 공식 활동 확인. Last.fm 현 MBID API6이며 Toronto 발행 주소를 US 프로젝트 국가로 쓰지 않음. 국가·외부 신원 미확정.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 1
+    },
+    {
+      "i": 17,
+      "name": "Social Distortion",
+      "bandId": "c12ad1a3-9f78-42d1-9640-04f77f0762ca",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 18,
+      "name": "Sonic Youth",
+      "bandId": "3fd7a891-1da0-4aa7-a86f-e47360429646",
+      "notes": "Thurston Moore 공식 bio의 Sonic Youth/Daydream Nation/alternative rock 확인. New York 기원 대체 자료 검색은 했으나 해당 공식 본문의 US Library of Congress 보존 사실을 미국 밴드 국가로 전용하지 않음. 국가 명시 출처 보완 필요.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 19,
+      "name": "SORAN",
+      "bandId": "2e9d5841-0580-442d-9bf3-0c739861ca61",
+      "notes": "MPMG 소란 소개의 고영배/현대 록 원작 근거는 보존. 현재 DB MBID null, 요청은 API6. 이름으로 외부 MBID 생성/삽입하거나 승인하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 1
+    },
+    {
+      "i": 20,
+      "name": "Soul Asylum",
+      "bandId": "0b1cf91d-1dff-4586-822a-8f7b319faf19",
+      "notes": "공식 Bandcamp/Blue Elan의 Dave Pirner·미국 록 활동 소개 후보 확인. 현 MBID Grave Dancers Union 작품 일치하나 현재 LA 프로필/Minneapolis 공연 장소만으로 결성 국가를 확정하지 않음. 명시적 공식 기원 근거 추가 필요.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 21,
+      "name": "Sublime",
+      "bandId": "7eda7ff5-f95c-4002-a60c-d75762a8b6cf",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 22,
+      "name": "Suede",
+      "bandId": "7e609dbe-06a0-4ff2-9cd4-161485a4809b",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 23,
+      "name": "Superchunk",
+      "bandId": "80a2bf0e-5b00-455d-a2af-636b9e23a71b",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 24,
+      "name": "SURL",
+      "bandId": "6e4c8d86-2437-44a7-8a36-b40a6545cf77",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 25,
+      "name": "T. Rex",
+      "bandId": "0312cf38-8934-4a09-8397-532a25d87c8b",
+      "notes": "TRO Essex 공식 Marc Bolan/1967·Electric Warrior·glam/progressive rock 확인. 영국 차트/공연 활동을 국적과 같게 사용하지 않고 GB 기원 근거 보완.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 26,
+      "name": "Talking Heads",
+      "bandId": "90ab3299-e394-4fd0-a999-58b3cb86aff2",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 27,
+      "name": "The Alan Parsons Project",
+      "bandId": "e78b7af5-d20d-490e-acf1-9188adfa80af",
+      "notes": "공식 APP 소개의 Parsons/Woolfson과 progressive rock 확인. Eye In The Sky/I Robot MBID 작품 일치. Abbey Road 녹음 장소 및 개인 출신을 그룹 GB 기원으로 확정하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 28,
+      "name": "The Band",
+      "bandId": "9a8a8234-9fba-4e95-a9f2-f662c94dd127",
+      "notes": "현재 MBID The Band/Music From Big Pink 작품 일치 및 Apple 실제 록 음반 확인. CA/미국 혼합 구성원·그룹 기원·공식 소개의 충분한 교차 미완료.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 29,
+      "name": "The Bevis Frond",
+      "bandId": "e9ddb8bd-529e-4ae2-a8bf-945a9d801bd0",
+      "notes": "공식 Bandcamp Nick Saloman/Miasma/psychedelic rock 및 Walthamstow 확인. Fire Records 대체 검색은 상품 목록으로 명시적 GB 기원 보완 미완료.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 30,
+      "name": "The Black Crowes",
+      "bandId": "381946ce-e52e-4977-a135-d1b52bde4477",
+      "notes": "공식 Black Crowes Chris/Rich Robinson·Shake Your Money Maker와 실제 rock’n’roll 확인. 국가 기원 본문이 없어 US 승인에 필요한 공식 보완 미완료.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 31,
+      "name": "The Black Keys",
+      "bandId": "1e1ae8a2-d893-453c-94aa-3cee3097fe49",
+      "notes": "이번 Nonesuch 공식 본문 접근 성공, rock duo·Brothers/El Camino/Attack & Release와 Dan Auerbach/Patrick Carney 작품 확인. 현재 페이지 Akron 기원은 찾지 못해 미국 국가 확인은 미완료. 과거 timeout을 현재 접근 결과로 재사용하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 32,
+      "name": "The BossHoss",
+      "bandId": "562d1037-4bad-4991-ba53-68af5f6936e8",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 33,
+      "name": "The Cardigans",
+      "bandId": "ad883499-cc0e-4b36-9a18-63f184dee1d9",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 34,
+      "name": "The Charlatans",
+      "bandId": "0b9dc622-45fb-416b-87a9-d6366997ee5a",
+      "notes": "Quietus 공식 개별 소개의 Tim Burgess/Martin Blunt/Mark Collins/Tony Rogers 및 Some Friendly·Wonderland/alternative rock 확인. UK에서 사랑받는 밴드 문장만으로 GB 기원 명시가 충분한지 추가 대조 필요.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 35,
+      "name": "The Corrs",
+      "bandId": "d11770cc-cdad-4a28-82bc-5a1d543794c8",
+      "notes": "Corrs 공식 소개에서 Andrea/Sharon/Caroline/Jim과 Forgiven Not Forgotten/Celtic pop-rock 확인. Irish 국가 명시 본문 보완 미완료, Celtic 표지만으로 IE 확정하지 않음.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": false,
+      "providerCalls": 2
+    },
+    {
+      "i": 36,
+      "name": "The Cramps",
+      "bandId": "a63181de-3c01-4372-b2c5-537f5161d118",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 37,
+      "name": "The Cranberries",
+      "bandId": "c74c8353-c62b-4ca3-bee4-efaab960d113",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 38,
+      "name": "The Cult",
+      "bandId": "fc00661f-a1fe-4402-82fb-91295adbbd78",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    },
+    {
+      "i": 39,
+      "name": "The Damned",
+      "bandId": "acc450ca-e141-46c3-a706-d3cf906760fc",
+      "notes": "공식 국가·장르·원작·정확 MBID를 실제 보완한 새 approvalProof로 service 적용. receipt/current bands/publication/공연·찜 관계 readback 통과.",
+      "channelReason": "현재 선정40팀의 private.artist_channels0행. 개별 공식 직접 채널 링크·API ID 검증 manifest 미완성. 이름·레이블 공유·영상 임베드로 verified 처리하거나 사진 저장하지 않음.",
+      "approvalApplied": true,
+      "providerCalls": 2
+    }
+  ],
+  "serverReadback": {
+    "run": {
+      "id": "56a7aae6-117c-4b68-9752-332bce50a340",
+      "targets": 40,
+      "startedAt": "2026-10-25T17:29:30.483+00:00",
+      "finishedAt": "2026-10-25T17:35:56.772985+00:00"
+    },
+    "checks": [
+      {
+        "id": "562d1037-4bad-4991-ba53-68af5f6936e8",
+        "name": "The BossHoss",
+        "after": "2026-10-25T17:34:03.166921+00:00",
+        "before": "2026-10-13T08:20:31.867566+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:03.166921+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "56b08d08-6a43-46dd-ae34-5303d5d2f16d",
+        "name": "Rise Against",
+        "after": "2026-10-25T17:33:51.003423+00:00",
+        "before": "2026-10-13T08:20:37.624378+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:51.003423+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "6e4c8d86-2437-44a7-8a36-b40a6545cf77",
+        "name": "SURL",
+        "after": "2026-10-25T17:34:00.502145+00:00",
+        "before": "2026-10-12T14:45:03.95141+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:00.502145+00:00",
+        "category": "domestic_rock",
+        "relations": [
+          1,
+          0
+        ],
+        "currentRelations": [
+          1,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "74a46890-2ecf-475f-82a5-883fd41a7c54",
+        "name": "REO Speedwagon",
+        "after": "2026-10-25T17:33:49.612262+00:00",
+        "before": "2026-10-13T08:20:59.732747+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:49.612262+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "76ad4cf5-987e-49ff-8e95-e4b4a1fb1b13",
+        "name": "Red Hot Chili Peppers",
+        "after": "2026-10-25T17:33:47.57342+00:00",
+        "before": "2026-10-13T08:19:19.707957+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:47.57342+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "7e609dbe-06a0-4ff2-9cd4-161485a4809b",
+        "name": "Suede",
+        "after": "2026-10-25T17:33:57.759811+00:00",
+        "before": "2026-10-13T08:19:45.47333+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:57.759811+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "7eda7ff5-f95c-4002-a60c-d75762a8b6cf",
+        "name": "Sublime",
+        "after": "2026-10-25T17:33:56.405223+00:00",
+        "before": "2026-10-13T08:20:08.573272+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:56.405223+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "80a2bf0e-5b00-455d-a2af-636b9e23a71b",
+        "name": "Superchunk",
+        "after": "2026-10-25T17:33:59.165856+00:00",
+        "before": "2026-10-13T08:20:08.222617+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:59.165856+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "90ab3299-e394-4fd0-a999-58b3cb86aff2",
+        "name": "Talking Heads",
+        "after": "2026-10-25T17:34:01.836746+00:00",
+        "before": "2026-10-13T08:19:29.913073+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:01.836746+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "a63181de-3c01-4372-b2c5-537f5161d118",
+        "name": "The Cramps",
+        "after": "2026-10-25T17:34:05.879619+00:00",
+        "before": "2026-10-13T08:20:27.130933+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:05.879619+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "acc450ca-e141-46c3-a706-d3cf906760fc",
+        "name": "The Damned",
+        "after": "2026-10-25T17:34:09.822066+00:00",
+        "before": "2026-10-13T08:20:00.016308+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:09.822066+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "ad883499-cc0e-4b36-9a18-63f184dee1d9",
+        "name": "The Cardigans",
+        "after": "2026-10-25T17:34:04.531398+00:00",
+        "before": "2026-10-13T08:20:07.532672+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:04.531398+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "b67d1673-418c-4fd8-b7fa-7d8ac1bb0615",
+        "name": "Saga",
+        "after": "2026-10-25T17:33:52.343948+00:00",
+        "before": "2026-10-13T08:21:05.956253+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:52.343948+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "bdf6a531-2a70-40c1-b726-db3982fe06b4",
+        "name": "Siouxsie and the Banshees",
+        "after": "2026-10-25T17:33:53.713799+00:00",
+        "before": "2026-10-13T08:20:33.195629+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:53.713799+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "c12ad1a3-9f78-42d1-9640-04f77f0762ca",
+        "name": "Social Distortion",
+        "after": "2026-10-25T17:33:55.077711+00:00",
+        "before": "2026-10-13T08:20:34.895829+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:55.077711+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "c74c8353-c62b-4ca3-bee4-efaab960d113",
+        "name": "The Cranberries",
+        "after": "2026-10-25T17:34:07.202034+00:00",
+        "before": "2026-10-13T08:19:39.818987+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:07.202034+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "c77e2990-e52a-43d3-949a-c093a0683059",
+        "name": "Pulp",
+        "after": "2026-10-25T17:33:45.621747+00:00",
+        "before": "2026-10-13T08:20:15.478942+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:33:45.621747+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      },
+      {
+        "id": "fc00661f-a1fe-4402-82fb-91295adbbd78",
+        "name": "The Cult",
+        "after": "2026-10-25T17:34:08.492899+00:00",
+        "before": "2026-10-13T08:19:53.711843+00:00",
+        "status": "approved",
+        "current": "2026-10-25T17:34:08.492899+00:00",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "currentRelations": [
+          0,
+          0
+        ],
+        "publicationApproved": true
+      }
+    ],
+    "counts": {
+      "approved": 326,
+      "excluded": 6,
+      "unreviewed": 323
+    },
+    "observedAt": "2026-10-25T17:36:07.585078+00:00",
+    "receiptCount": 18,
+    "validIntegrated": 0
+  },
+  "core": {
+    "verifiedCandidatesBefore": 84,
+    "verifiedCandidatesAfter": 101,
+    "selected": 68,
+    "unfilled": 132,
+    "mandatory": 4,
+    "worldTop200": false
+  },
+  "providers": {
+    "lastfmRequests": 74,
+    "getInfo": 40,
+    "topAlbums": 34,
+    "artistNotFoundResponses": 5,
+    "mbidMismatch": [
+      {
+        "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+        "name": "Ado",
+        "requested": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+        "returned": "ca195d97-30d9-4870-8a52-7fd3c2e175c3",
+        "metricEligible": false
+      },
+      {
+        "bandId": "143af425-ea27-4e44-832a-c3215196d7a5",
+        "name": "Silica Gel",
+        "requested": "2c8b5bb2-6110-488d-bc15-abb08379d3c6",
+        "returned": "468bf9fb-72df-456d-983b-ac1cd2fee86b",
+        "metricEligible": false
+      }
+    ],
+    "musicbrainzRequests": 0,
+    "youtubeRequests": 0,
+    "chartRequests": 0,
+    "existingCompleteMatchingAlbumCacheReused": 0,
+    "cooldownFileUnchanged": true
+  },
+  "writes": {
+    "newRegistrations": 0,
+    "aliases": 0,
+    "channelPhotos": 0,
+    "genreApprovals": 18,
+    "concertCollectionPublicationDelivery": 0,
+    "ddlDeployRemoteGit": 0
+  },
+  "limitations": [
+    "Ado/UVERworld selected channels only; no identity-file added after freeze. Existing identity CLI/journal supported, not receipt-only.",
+    "Ado and Silica Gel Last.fm returned different MBIDs; no ID mutation or popularity metric use.",
+    "Source research and attempts are distinguished; only18 source-qualified approvals complete. No new research completed for3 Korean personal identities.",
+    "Legacy lease query initially referenced nonexistent expires_at; actual unfinished legacy count0 then confirmed, and CLI readiness/begin/context succeeded.",
+    "No application code changes or new lint/build/test runs; documentation verification only."
+  ],
+  "preservation": {
+    "provider-cooldowns.json": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+    "approval-drafts-573f7fc2.json": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337"
+  }
+}
