@@ -1,0 +1,3131 @@
+{
+  "policy": "jpop-or-rock-v1",
+  "runId": "986301b2-1979-41ce-af57-e571f3d8e6ab",
+  "checkedAt": "2026-10-25T21:34:12.124946+00:00",
+  "checkedAtKST": "2026-10-26T06:34:12.124946+09:00",
+  "role": "artist-curation",
+  "headAtStart": "34a52d8",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "beforeRevision": 2730,
+    "revision": 2802,
+    "active": null,
+    "transfer": null,
+    "remainingEntries": 398
+  },
+  "frozenSelection": {
+    "artists": 40,
+    "researchTasks": 0,
+    "approvalTasks": 30,
+    "channelsTasks": 40,
+    "selectedTaskCheckpoints": 70
+  },
+  "result": {
+    "appliedApprovals": 15,
+    "deferredApprovals": 15,
+    "deferredChannels": 40,
+    "channelOrPhotoWrites": 0,
+    "identityMutations": 0,
+    "catalog": {
+      "total": 655,
+      "approved": 341,
+      "excluded": 6,
+      "unreviewed": 308
+    },
+    "serverFinishedAt": "2026-10-25 21:32:07.546809+00",
+    "validIntegratedLease": 0,
+    "receiptAndCurrentBandApprovalRelationsReadback": 15
+  },
+  "providers": {
+    "bindingIncludedInRequests": true,
+    "requests": 56,
+    "newArtists": 30,
+    "reusedArtists": 0,
+    "musicbrainzRequests": 0,
+    "skippedChannelsOnly": 10,
+    "getInfoRequests": 30,
+    "getTopAlbumsRequests": 26,
+    "exactMbidMatches": 25,
+    "apiError6": 4,
+    "missingReturnedMbid": 1,
+    "youtubeRequests": 0,
+    "officialShellReadAttempts": 41,
+    "officialShellReadSuccess": 0,
+    "officialShellReadLimitation": "직접 공식 페이지 읽기 40회와 비밀 없는 원인 검사 1회가 TypeError로 실패했다. 현 환경 허용 네트워크를 확장하거나 TLS/프록시 우회하지 않았으며 제공처 인증 실패로 판정하지 않았다. 공식 근거는 별도 웹 도구에서 실제 읽은 페이지를 사용했다.",
+    "musicbrainzCooldownPreserved": true
+  },
+  "core": {
+    "verifiedCandidateCount": 114,
+    "newVerifiedCandidates": 13,
+    "selected": 68,
+    "unfilled": 132,
+    "mandatory": [
+      {
+        "name": "Bring Me the Horizon",
+        "musicBrainzId": null,
+        "bucket": "overseas_rock_band",
+        "expectedAliases": [
+          "BMTH",
+          "Bring Me the Horizon",
+          "브링 미 더 호라이즌",
+          "ブリング・ミー・ザ・ホライズン"
+        ],
+        "identitySource": "https://www.sonymusic.co.jp/artist/bringmethehorizon/profile/",
+        "bandId": null,
+        "registered": false,
+        "approved": false,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "BMTH",
+          "Bring Me the Horizon",
+          "브링 미 더 호라이즌",
+          "ブリング・ミー・ザ・ホライズン"
+        ]
+      },
+      {
+        "name": "Ado",
+        "musicBrainzId": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+        "bucket": "japanese_solo_unit",
+        "expectedAliases": [
+          "Ado",
+          "아도",
+          "アド"
+        ],
+        "identitySource": "https://www.universal-music.co.jp/ado/biography/",
+        "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+        "registered": true,
+        "approved": true,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "アド"
+        ]
+      },
+      {
+        "name": "UVERworld",
+        "musicBrainzId": "a107bff6-58da-4302-83ad-317e86a1811c",
+        "bucket": "japanese_rock_band",
+        "expectedAliases": [
+          "UVERworld",
+          "우버월드",
+          "ウーバーワールド"
+        ],
+        "identitySource": "https://www.sonymusic.co.jp/artist/UVERworld/profile/",
+        "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+        "registered": true,
+        "approved": true,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "우버월드"
+        ]
+      },
+      {
+        "name": "米津玄師",
+        "musicBrainzId": null,
+        "bucket": "japanese_solo_unit",
+        "expectedAliases": [
+          "요네즈 켄시",
+          "米津玄師",
+          "Kenshi Yonezu"
+        ],
+        "identitySource": "https://reissuerecords.net/profile/",
+        "bandId": null,
+        "registered": false,
+        "approved": false,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "요네즈 켄시",
+          "米津玄師",
+          "Kenshi Yonezu"
+        ]
+      }
+    ],
+    "complete": false,
+    "meaning": "편성안 기준 후보 풀 내 Last.fm 청취자 정렬과 사용자 지명 목록. 검증된 전세계 인기 상위 200위가 아님.",
+    "noNewDiscoveryChartRequests": true,
+    "everlyDuoScopeNotAssumedForRockBandQuota": true
+  },
+  "preservedHashes": {
+    "provider-cooldowns.json": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+    "approval-drafts-573f7fc2.json": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337"
+  },
+  "limitations": [
+    "approvalProof checkedAt은 이번 웹 읽기를 확인한 뒤 입력을 작성한 시각이다. 개별 웹 HTTP 요청의 정확한 전송 시각 로그로 해석하지 않는다. 원래 research 시각/90일 근거는 변경하지 않았다.",
+    "Last.fm 26개 getInfo 성공 중 반환 MBID가 정확히 일치한 25개를 구분했다. 그중 공식 신원/국가/실제 장르/원작 확인을 마친 이번 승인 항목만 지표 검증으로 사용했다.",
+    "The Hollies는 쿼리형 공식 근거 URL을 현재 safeProof가 거부했다. 16개 입력 전체 사전 검사에서 DB 호출 전 실패해 15개 유효 입력만 실행했다. 해당 기능을 바꾸거나 writer로 우회하지 않았다.",
+    "이미 구현된 identity CLI/journal 경로를 새로 구현했다고 세지 않는다. 이번 같은40팀에는 identity task가 없어 신규/별칭 쓰기는0.",
+    "채널 DB profile0 관측. 직접 채널 URL과 API 해석 미완료를 deferred로 보존했으며 기존 승인10팀 재적용0.",
+    "운영 DDL·공연수집·공개ON·알림·배포·push/PR/merge·예약수정0. 전체 카탈로그/사진/핵심200 완료가 아니다."
+  ],
+  "artists": [
+    {
+      "index": 0,
+      "bandId": "fb964b4c-ad50-4608-9296-a343e9ec74e3",
+      "name": "10cc",
+      "musicBrainzId": "f37c537b-3557-4031-bfd6-ab63ced32854",
+      "country": "GB",
+      "aliases": [
+        "Ten CC",
+        "10 CC"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:19.051052+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:19.051052+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.10cc.world/",
+          "checkedAt": "2026-10-13T09:01:43.945Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 1,
+      "bandId": "6195f4e7-97a2-43db-831d-6d765941b48b",
+      "name": "175R",
+      "musicBrainzId": "856fd456-a940-4e12-970a-66bffaf0ffbd",
+      "country": "JP",
+      "aliases": [
+        "Inago Rider"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:20.54931+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:20.54931+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.175r.com/news/2/",
+          "checkedAt": "2026-10-13T09:01:43.946Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 2,
+      "bandId": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+      "name": "Counting Crows",
+      "musicBrainzId": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
+      "country": "US",
+      "aliases": [],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:26.263312+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:26.263312+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.countingcrows.com/band",
+          "checkedAt": "2026-10-13T09:01:43.957Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 3,
+      "bandId": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+      "name": "Do As Infinity",
+      "musicBrainzId": "b128a994-2400-432d-b26a-8feede87daa8",
+      "country": "JP",
+      "aliases": [
+        "DAI",
+        "ドゥー・アズ・インフィニティ",
+        "ドゥー・アズ",
+        "大无限乐团",
+        "大無限樂團"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:27.591177+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:27.591177+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://d-a-i.com/profile/",
+          "checkedAt": "2026-10-13T09:01:43.959Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 4,
+      "bandId": "62500607-1eef-4c81-bc44-592107bc54e9",
+      "name": "Foreigner",
+      "musicBrainzId": "160629ab-ec18-4931-8c95-02cb92d06186",
+      "country": "US",
+      "aliases": [],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:33.06938+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:33.06938+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.foreigneronline.com/the-band",
+          "checkedAt": "2026-10-13T09:01:43.965Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 5,
+      "bandId": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+      "name": "Grateful Dead",
+      "musicBrainzId": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+      "country": "US",
+      "aliases": [
+        "The Grateful Dead",
+        "Greatful Dead",
+        "Greatfull Dead"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:35.871346+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:35.871346+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.dead.net/biography",
+          "checkedAt": "2026-10-13T09:01:43.970Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 6,
+      "bandId": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+      "name": "INXS",
+      "musicBrainzId": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+      "country": "AU",
+      "aliases": [
+        "In Excess",
+        "I.N.X.S.",
+        "The Farriss Brothers"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:38.705779+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:38.705779+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.inxs.com/band/",
+          "checkedAt": "2026-10-13T09:01:43.972Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 7,
+      "bandId": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+      "name": "Jethro Tull",
+      "musicBrainzId": "ece57992-dc2e-4f67-a269-fa43626c1a3d",
+      "country": "GB",
+      "aliases": [
+        "ジェ入ロ",
+        "Jetro Tull",
+        "Tull",
+        "Jethrp Tull"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:40.179684+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:40.179684+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://jethrotull.com/",
+          "checkedAt": "2026-10-13T09:01:43.974Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 8,
+      "bandId": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+      "name": "Kansas",
+      "musicBrainzId": "69689acf-d9cd-4d20-a972-47db4ed51b1a",
+      "country": "US",
+      "aliases": [],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:42.85635+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:42.85635+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://kansasband.com/",
+          "checkedAt": "2026-10-13T09:01:43.978Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 9,
+      "bandId": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+      "name": "Lynyrd Skynyrd",
+      "musicBrainzId": "c544ed4d-2390-4442-a83e-1ea2883b09c8",
+      "country": "US",
+      "aliases": [
+        "Leonard Skinner",
+        "Lynyrd Skynyurd",
+        "Lynyrd Shynyrd",
+        "Lynrd Skynyrd",
+        "Lynyrd Skynard",
+        "Lynrd Skynrd",
+        "Lynyrd Skynrd",
+        "Lynryd Skynyrd",
+        "Lynard Skynard",
+        "Leonard Skinnerd",
+        "Lynard Skynyrd",
+        "Lynyrd Skynyd",
+        "Lenhard Skinnerd",
+        "Lyndyrd Skynyrd"
+      ],
+      "tasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-24T17:47:44.248108+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-24T17:47:44.248108+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": false,
+      "notes": "기존 승인 재적용 없이 channels task만 선정.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 0,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://lynyrdskynyrd.com/history",
+          "checkedAt": "2026-10-13T09:01:43.981Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ],
+      "approvalStatus": "not_selected"
+    },
+    {
+      "index": 10,
+      "bandId": "c4027352-c35f-43d1-9754-59a418d982fe",
+      "name": "The Dickies",
+      "musicBrainzId": "82eeb914-c61b-4477-81c2-a0bf8604f2de",
+      "country": "US",
+      "aliases": [
+        "Dickies"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:27.482904+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:49.054592+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "c4027352-c35f-43d1-9754-59a418d982fe",
+        "expected_updated_at": "2026-10-13T08:20:27.482904+00:00",
+        "artist_name": "The Dickies",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Dickies"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다.",
+        "evidence_url": "https://thedickiesnewredarchives.bandcamp.com/music"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다.",
+        "sources": [
+          {
+            "url": "https://thedickiesnewredarchives.bandcamp.com/music",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: 미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다.",
+          "sourceUrls": [
+            "https://thedickiesnewredarchives.bandcamp.com/music"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 공식 밴드 기원/국가 설명과 대조: 미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다.",
+          "sourceUrls": [
+            "https://thedickiesnewredarchives.bandcamp.com/music"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: 미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다.",
+          "sourceUrls": [
+            "https://thedickiesnewredarchives.bandcamp.com/music"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: 미국 San Fernando Valley/Los Angeles에서 1977년 결성한 punk rock band라는 New Red Archives 소개와 Stukas Over Disneyland를 확인했다.",
+          "sourceUrls": [
+            "https://thedickiesnewredarchives.bandcamp.com/music"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://thedickiesnewredarchives.bandcamp.com/music"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://thedickiesnewredarchives.bandcamp.com/music"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Dickies",
+        "bandId": "c4027352-c35f-43d1-9754-59a418d982fe",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 11,
+      "bandId": "cdf14e37-ab7c-4040-aa87-b8366bbd6b66",
+      "name": "The E Street Band",
+      "musicBrainzId": "d6652e7b-33fe-49ef-8336-4c863b4f996f",
+      "country": "US",
+      "aliases": [
+        "The E-Street Band",
+        "Bruce Springsteen and the E Street Band",
+        "Bruce Springsteen and the E-Street Band",
+        "Bruce Springsteen & The E Street Band",
+        "Bruce Springsteen & The E-Street Band"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:02.596499+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:02.596499+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Rhino에서 Asbury Park/멤버/rock 활동을 확인했지만 이번 Last.fm live 앨범들을 공식 개별 발매·현재 MBID와 충분히 교차하지 못했다. 승인 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.rhino.com/article/the-e-street-band",
+          "checkedAt": "2026-10-13T09:11:37.305Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 12,
+      "bandId": "6942e776-ca1f-415a-82ea-cd81031af70b",
+      "name": "The Everly Brothers",
+      "musicBrainzId": "091ec508-877f-4e3c-92a3-10903bbbc7ad",
+      "country": "US",
+      "aliases": [
+        "Every Brothers",
+        "The Everly Borthers",
+        "Everly Brothers, The",
+        "Everly Brothers",
+        "The Everley Brothers",
+        "Everly Brothers (The)",
+        "Everly Bros"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:18.300557+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:51.061532+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "6942e776-ca1f-415a-82ea-cd81031af70b",
+        "expected_updated_at": "2026-10-13T08:19:18.300557+00:00",
+        "artist_name": "The Everly Brothers",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Every Brothers",
+          "The Everly Borthers",
+          "Everly Brothers, The",
+          "Everly Brothers",
+          "The Everley Brothers",
+          "Everly Brothers (The)",
+          "Everly Bros"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다.",
+        "evidence_url": "https://www.rhino.com/article/the-everly-brothers"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.rhino.com/article/the-everly-brothers",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다."
+          },
+          {
+            "url": "https://everlybrothers.com/pages/history",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-everly-brothers",
+            "https://everlybrothers.com/pages/history"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 공식 밴드 기원/국가 설명과 대조: Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-everly-brothers",
+            "https://everlybrothers.com/pages/history"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-everly-brothers",
+            "https://everlybrothers.com/pages/history"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Rhino의 Don/Phil Everly·Kentucky 성장/Nashville 활동·rock and roll 설명과 공식 역사 Songs Our Daddy Taught Us를 교차했다.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-everly-brothers",
+            "https://everlybrothers.com/pages/history"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-everly-brothers",
+            "https://everlybrothers.com/pages/history"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-everly-brothers",
+            "https://everlybrothers.com/pages/history"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Everly Brothers",
+        "bandId": "6942e776-ca1f-415a-82ea-cd81031af70b",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 13,
+      "bandId": "4284a72b-e39e-4ed9-a2c1-78623f32c446",
+      "name": "The Exploited",
+      "musicBrainzId": "9876cc18-e3c4-487a-b330-e67b08eee2b2",
+      "country": "GB",
+      "aliases": [
+        "Exploited"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:28.158309+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:52.525278+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "4284a72b-e39e-4ed9-a2c1-78623f32c446",
+        "expected_updated_at": "2026-10-13T08:20:28.158309+00:00",
+        "artist_name": "The Exploited",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Exploited"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다.",
+        "evidence_url": "https://www.nuclearblast.com/pages/the-exploited"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다.",
+        "sources": [
+          {
+            "url": "https://www.nuclearblast.com/pages/the-exploited",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다.",
+          "sourceUrls": [
+            "https://www.nuclearblast.com/pages/the-exploited"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 공식 밴드 기원/국가 설명과 대조: Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다.",
+          "sourceUrls": [
+            "https://www.nuclearblast.com/pages/the-exploited"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다.",
+          "sourceUrls": [
+            "https://www.nuclearblast.com/pages/the-exploited"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Nuclear Blast가 Scotland Edinburgh 1980년 결성·Wattie Buchan·punk rock을 명시하고 Punks Not Dead와 Fuck The System을 설명한다.",
+          "sourceUrls": [
+            "https://www.nuclearblast.com/pages/the-exploited"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.nuclearblast.com/pages/the-exploited"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.nuclearblast.com/pages/the-exploited"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Exploited",
+        "bandId": "4284a72b-e39e-4ed9-a2c1-78623f32c446",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 14,
+      "bandId": "87c99609-0d83-4ed7-ad9c-ac1a9249574b",
+      "name": "The Flower Kings",
+      "musicBrainzId": "0a389268-6fd8-4f8c-ab6e-0dba5ecec66b",
+      "country": "SE",
+      "aliases": [
+        "더 플라워 킹즈",
+        "Flower Kings"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:21:08.61055+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:21:08.61055+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Glassville에서 Swedish progressive rock band와 Roine Stolt를 확인했다. Last.fm 동명 MBID는 일치하나 이번 조회 작품과 공식 개별 발매 교차가 아직 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.sonymusic.eu/artist/the-flower-kings/",
+          "checkedAt": "2026-10-13T09:11:37.313Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 15,
+      "bandId": "e7342c51-a506-432f-869b-b217759f76f0",
+      "name": "The Go‐Betweens",
+      "musicBrainzId": "2fb4db11-8349-47ab-b1a6-f04f011699ff",
+      "country": "AU",
+      "aliases": [
+        "The Go-Betweens",
+        "The GoBetweens",
+        "Go-Betweens, The",
+        "Go-Betweens"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:03.794165+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:54.011223+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "e7342c51-a506-432f-869b-b217759f76f0",
+        "expected_updated_at": "2026-10-13T08:20:03.794165+00:00",
+        "artist_name": "The Go‐Betweens",
+        "country": "AU",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Go-Betweens",
+          "The GoBetweens",
+          "Go-Betweens, The",
+          "Go-Betweens"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다.",
+        "evidence_url": "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다.",
+        "sources": [
+          {
+            "url": "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다."
+          },
+          {
+            "url": "https://www.robertforsterlive.com/bio",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다.",
+          "sourceUrls": [
+            "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "https://www.robertforsterlive.com/bio"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 AU를 공식 밴드 기원/국가 설명과 대조: Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다.",
+          "sourceUrls": [
+            "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "https://www.robertforsterlive.com/bio"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다.",
+          "sourceUrls": [
+            "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "https://www.robertforsterlive.com/bio"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Domino가 Australian group을 명시하고 Oceans Apart·The Friends Of Rachel Worth와 Forster/McLennan을 확인한다. Robert Forster 공식 소개의 pop/rock band 설명을 함께 대조했다.",
+          "sourceUrls": [
+            "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "https://www.robertforsterlive.com/bio"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "https://www.robertforsterlive.com/bio"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://news.dominomusic.com/news/us/go-betweens-final-boxset-g-stands-for-go-betweens-volume-3-announced",
+            "https://www.robertforsterlive.com/bio"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Go‐Betweens",
+        "bandId": "e7342c51-a506-432f-869b-b217759f76f0",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 16,
+      "bandId": "884697bf-3242-445d-963a-5834a3281775",
+      "name": "김리다",
+      "musicBrainzId": "193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+      "country": "KR",
+      "aliases": [],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-16T22:53:23.296571+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-16T22:53:23.296571+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "OSEN 서면 인터뷰에서 화노 기타/하드록 활동 확인. 개인 김리다의 국가 및 개인 MBID 교차·개인 분류 요건은 미완료; Last.fm error6. 과거 거절 초안 보존.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 1,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.osen.co.kr/article/G1112572672",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+        },
+        {
+          "url": "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+          "checkedAt": "2026-10-22T21:35:42.082Z",
+          "summary": "실제 API lookup의 MBID=193ff5cb-57b6-4f02-b8e0-4574a96cf5b5, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+        },
+        {
+          "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "현재 bandId=884697bf-3242-445d-963a-5834a3281775, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+        },
+        {
+          "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 17,
+      "bandId": "ef5d80b0-0e00-405e-a772-988be5c8faa7",
+      "name": "유환주",
+      "musicBrainzId": "5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+      "country": "KR",
+      "aliases": [],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-16T22:53:23.288158+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-16T22:53:23.288158+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "OSEN에서 화노 보컬/록 활동 확인. 개인 유환주의 국가·MBID·개인 분류 요건은 미완료; Last.fm error6. 과거 거절 초안 보존.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 1,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.osen.co.kr/article/G1112572672",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+        },
+        {
+          "url": "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+          "checkedAt": "2026-10-22T21:35:57.119Z",
+          "summary": "실제 API lookup의 MBID=5fa6456f-0b90-4bc0-bdf9-0e49289840c8, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+        },
+        {
+          "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "현재 bandId=ef5d80b0-0e00-405e-a772-988be5c8faa7, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+        },
+        {
+          "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 18,
+      "bandId": "5be986bb-68bb-4f56-8c14-f3493aaab349",
+      "name": "이강산",
+      "musicBrainzId": "a51f2173-58ff-4650-afe0-fe5c53bf341b",
+      "country": "KR",
+      "aliases": [],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-16T22:53:23.298307+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-16T22:53:23.298307+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "OSEN에서 화노 드럼/Action 활동 확인. 개인 이강산의 국가·MBID·개인 분류 요건은 미완료; Last.fm error6. 과거 거절 초안 보존.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 1,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.osen.co.kr/article/G1112572672",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+        },
+        {
+          "url": "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b",
+          "checkedAt": "2026-10-22T21:35:59.044Z",
+          "summary": "실제 API lookup의 MBID=a51f2173-58ff-4650-afe0-fe5c53bf341b, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+        },
+        {
+          "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "현재 bandId=5be986bb-68bb-4f56-8c14-f3493aaab349, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+        },
+        {
+          "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+          "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+          "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 19,
+      "bandId": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+      "name": "The Hold Steady",
+      "musicBrainzId": "4883523d-fc0e-4d0d-802c-91379e767083",
+      "country": "US",
+      "aliases": [
+        "Hold Steady",
+        "Hold Steady, The"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:46.482853+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:55.459385+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+        "expected_updated_at": "2026-10-13T08:19:46.482853+00:00",
+        "artist_name": "The Hold Steady",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Hold Steady",
+          "Hold Steady, The"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다.",
+        "evidence_url": "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다.",
+        "sources": [
+          {
+            "url": "https://www.frenchkissrecords.com/artist/the-hold-steady/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 공식 밴드 기원/국가 설명과 대조: Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Frenchkiss 공식 소개의 New York City 기반·Craig Finn/Tad Kubler·classic rock guitar 활동과 Separation Sunday·Almost Killed Me를 확인했다. 이전 국가/분류 공백을 실제 밴드 기원 및 음악 설명으로 보완했다.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Hold Steady",
+        "bandId": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 20,
+      "bandId": "44912d6a-52b9-43b9-a11f-6bf0d958dac1",
+      "name": "The Hollies",
+      "musicBrainzId": "d4305549-6b4e-4a57-b24d-8af0743fe191",
+      "country": "GB",
+      "aliases": [
+        "Graham Nash & the Hollies",
+        "Hollies"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:29.234991+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:29.234991+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Royal Albert Hall에서 English pop and rock group을 확인하고 Rhino Confessions Of The Mind를 교차했으나 쿼리형 근거 URL을 기존 safeProof가 SOURCE_INVALID로 거부. 다른 실제 읽기 대체 근거 없이 URL을 바꾸거나 writer 우회하지 않았다.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.rhino.com/artist/the-hollies",
+          "checkedAt": "2026-10-13T09:11:37.322Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 21,
+      "bandId": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+      "name": "The Jam",
+      "musicBrainzId": "23228f18-01d5-493e-94ce-cfcde82a8db2",
+      "country": "GB",
+      "aliases": [
+        "Jam"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:22.976912+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:56.875965+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+        "expected_updated_at": "2026-10-13T08:20:22.976912+00:00",
+        "artist_name": "The Jam",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Jam"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다.",
+        "evidence_url": "https://www.thejamofficial.com/biog/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.thejamofficial.com/biog/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다."
+          },
+          {
+            "url": "https://www.officialcharts.com/artist/14105/the-jam/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: 공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/biog/",
+            "https://www.officialcharts.com/artist/14105/the-jam/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 공식 밴드 기원/국가 설명과 대조: 공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/biog/",
+            "https://www.officialcharts.com/artist/14105/the-jam/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: 공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/biog/",
+            "https://www.officialcharts.com/artist/14105/the-jam/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: 공식 Jam biography의 Woking 출신 three-piece rock group·In The City/All Mod Cons/Sound Affects와 Official Charts의 English band·Weller/Foxton/Buckler를 교차했다.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/biog/",
+            "https://www.officialcharts.com/artist/14105/the-jam/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/biog/",
+            "https://www.officialcharts.com/artist/14105/the-jam/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/biog/",
+            "https://www.officialcharts.com/artist/14105/the-jam/"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Jam",
+        "bandId": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 22,
+      "bandId": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+      "name": "The Jesus and Mary Chain",
+      "musicBrainzId": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+      "country": "GB",
+      "aliases": [
+        "The Jesus And Mary Chain",
+        "JAMC",
+        "Jesus and Mary Chain",
+        "Jesus & Mary Chain",
+        "The Jesus & Mary Chain",
+        "The Jesus And Marychain"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:01.775929+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:58.336172+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+        "expected_updated_at": "2026-10-13T08:20:01.775929+00:00",
+        "artist_name": "The Jesus and Mary Chain",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Jesus And Mary Chain",
+          "JAMC",
+          "Jesus and Mary Chain",
+          "Jesus & Mary Chain",
+          "The Jesus & Mary Chain",
+          "The Jesus And Marychain"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다.",
+        "evidence_url": "https://concord.com/publishing-roster/jesus-and-mary-chain/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다.",
+        "sources": [
+          {
+            "url": "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다."
+          },
+          {
+            "url": "https://themarychain.com/discography",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://themarychain.com/discography"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 공식 밴드 기원/국가 설명과 대조: Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://themarychain.com/discography"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://themarychain.com/discography"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Concord가 Scotland East Kilbride 1983년 결성 alternative rock band와 Jim/William Reid를 명시한다. 공식 discography의 Psychocandy·Darklands를 현재 외부 신원과 교차했다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://themarychain.com/discography"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://themarychain.com/discography"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://themarychain.com/discography"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Jesus and Mary Chain",
+        "bandId": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 23,
+      "bandId": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+      "name": "The Jimi Hendrix Experience",
+      "musicBrainzId": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+      "country": "GB",
+      "aliases": [
+        "The Jimmy Hendrix Experience",
+        "The Jimmi Hendrix Experience"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:46.470205+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:29:59.776227+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+        "expected_updated_at": "2026-10-13T08:20:46.470205+00:00",
+        "artist_name": "The Jimi Hendrix Experience",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Jimmy Hendrix Experience",
+          "The Jimmi Hendrix Experience"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다.",
+        "evidence_url": "https://www.jimihendrix.com/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.jimihendrix.com/biography/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: 공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 공식 밴드 기원/국가 설명과 대조: 공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: 공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: 공식 Hendrix biography에서 1966년 London으로 이동해 Mitch Mitchell/Noel Redding과 Experience를 결성한 사실을 확인했다. 개인의 미국 출생과 그룹의 영국 결성을 구분하며 Are You Experienced·Axis Bold As Love·Electric Ladyland 및 rock 활동을 교차했다.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Jimi Hendrix Experience",
+        "bandId": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 24,
+      "bandId": "5119f13e-3aea-4e08-9360-c3cc9c01277e",
+      "name": "The Legendary Pink Dots",
+      "musicBrainzId": "38f0dd4f-bcbb-4e7a-afae-a41a2bbf9d74",
+      "country": "GB",
+      "aliases": [
+        "Legendary Pink Dots",
+        "Legendary Pink Dots, The"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:21:11.650838+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:21:11.650838+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Metropolis에서 Ka-Spel/Drost·goth/alternative rock·The Golden Age/Any Day Now 확인. 현재 GB를 밴드 자체의 국가/기원과 확정할 근거는 미완료; NL/UK 발매 지역을 국적으로 쓰지 않음.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.metropolis-records.com/artist/the-legendary-pink-dots",
+          "checkedAt": "2026-10-13T09:11:37.337Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 25,
+      "bandId": "d03bc45d-d2b4-42d5-9b99-33b034c3d5b9",
+      "name": "The Mission",
+      "musicBrainzId": "d85e95a3-07c7-4c04-a411-234290615113",
+      "country": "GB",
+      "aliases": [
+        "Blood Brothers",
+        "The Mission U.K.",
+        "The Mission UK",
+        "The Metal Gurus",
+        "Mission Uk",
+        "Mission U.K.",
+        "Mission"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:55.143274+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:55.143274+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "공식 Mission biography와 Demon Children/God’s Own Medicine·goth/alternative rock 확인. UK 차트·공연 장소 외 그룹 자체 국가/기원 요건은 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.demonmusicgroup.co.uk/catalogue/releases/the-mission-children-lp-mmxxvi-mwis-fan-exclusive-2/",
+          "checkedAt": "2026-10-13T09:11:37.340Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 26,
+      "bandId": "b15aa0e0-7266-4364-88e9-381edb2b7924",
+      "name": "The Monkees",
+      "musicBrainzId": "b8549efe-f4fd-4dc0-8ef1-226e9c400233",
+      "country": "US",
+      "aliases": [
+        "モンキーズ",
+        "Monkees The",
+        "Monkee's",
+        "The Monkeys",
+        "Monkees",
+        "Monkees, The"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:30.955188+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:30.955188+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Rhino에서 More Of The Monkees/Head 등 음반 확인. 이번 실제 읽기 자료의 국가·밴드 실제 록 활동 설명이 충분하지 않아 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://www.rhino.com/artist/the-monkees",
+          "checkedAt": "2026-10-13T09:11:37.342Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 27,
+      "bandId": "cb7cc1d4-1d71-4257-89e9-7e409dd768ce",
+      "name": "The Mothers of Invention",
+      "musicBrainzId": "fe98e268-4ddd-441b-95a0-b219375f9ae4",
+      "country": "US",
+      "aliases": [
+        "The Mothers",
+        "Frank Zappa & The Mothers",
+        "Frank Zappa & The Mothers of Invention",
+        "Frank Zappa and The Mothers of Invention",
+        "Ruben & The Jets",
+        "Frank Zappa / The Mothers of Invention"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:21:03.523116+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:21:03.523116+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Apple Music Freak Out! 확인. Last.fm getInfo 반환 MBID가 없어 요청 MBID와 동일 신원을 확인하지 못함; 지표를 사용하지 않았다.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://music.apple.com/us/artist/the-mothers-of-invention/148028451",
+          "checkedAt": "2026-10-13T09:11:37.345Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 28,
+      "bandId": "04eb6f86-95c1-43fc-972e-3366224d6c75",
+      "name": "The Offspring",
+      "musicBrainzId": "23a03e33-a603-404e-bcbf-2c00159d7067",
+      "country": "US",
+      "aliases": [
+        "Offspring",
+        "Off Spring"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:25.801805+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:01.207161+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "04eb6f86-95c1-43fc-972e-3366224d6c75",
+        "expected_updated_at": "2026-10-13T08:20:25.801805+00:00",
+        "artist_name": "The Offspring",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Offspring",
+          "Off Spring"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다.",
+        "evidence_url": "https://concord.com/artist/the-offspring/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://concord.com/artist/the-offspring/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다."
+          },
+          {
+            "url": "https://concord.com/publishing-roster/the-offspring/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다.",
+          "sourceUrls": [
+            "https://concord.com/artist/the-offspring/",
+            "https://concord.com/publishing-roster/the-offspring/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 공식 밴드 기원/국가 설명과 대조: Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다.",
+          "sourceUrls": [
+            "https://concord.com/artist/the-offspring/",
+            "https://concord.com/publishing-roster/the-offspring/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다.",
+          "sourceUrls": [
+            "https://concord.com/artist/the-offspring/",
+            "https://concord.com/publishing-roster/the-offspring/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Concord artist 소개의 Southern California punk rock 밴드·Dexter Holland/Noodles와 publishing 소개의 Smash·Ignition을 대조했다. 미국 기원과 실제 punk/rock 활동을 확인했다.",
+          "sourceUrls": [
+            "https://concord.com/artist/the-offspring/",
+            "https://concord.com/publishing-roster/the-offspring/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://concord.com/artist/the-offspring/",
+            "https://concord.com/publishing-roster/the-offspring/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://concord.com/artist/the-offspring/",
+            "https://concord.com/publishing-roster/the-offspring/"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Offspring",
+        "bandId": "04eb6f86-95c1-43fc-972e-3366224d6c75",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 29,
+      "bandId": "9c9a17fc-281c-4697-8d19-e15462ee9b53",
+      "name": "The Pineapple Thief",
+      "musicBrainzId": "e8f55abb-a6d5-4e5f-81b4-14f9cc320519",
+      "country": "GB",
+      "aliases": [
+        "Pineapple Thief"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:21:07.285082+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:02.682362+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "9c9a17fc-281c-4697-8d19-e15462ee9b53",
+        "expected_updated_at": "2026-10-13T08:21:07.285082+00:00",
+        "artist_name": "The Pineapple Thief",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Pineapple Thief"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다.",
+        "evidence_url": "https://kscopemusic.bandcamp.com/album/your-wilderness"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다.",
+        "sources": [
+          {
+            "url": "https://kscopemusic.bandcamp.com/album/your-wilderness",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다.",
+          "sourceUrls": [
+            "https://kscopemusic.bandcamp.com/album/your-wilderness"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 공식 밴드 기원/국가 설명과 대조: Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다.",
+          "sourceUrls": [
+            "https://kscopemusic.bandcamp.com/album/your-wilderness"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다.",
+          "sourceUrls": [
+            "https://kscopemusic.bandcamp.com/album/your-wilderness"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Kscope의 Your Wilderness 소개가 UK art rock stars임을 명시하며 Gavin Harrison·Your Wilderness·Dissolution을 설명한다. 차트의 지역을 국적으로 사용하지 않고 밴드 자체 UK 명시를 확인했다.",
+          "sourceUrls": [
+            "https://kscopemusic.bandcamp.com/album/your-wilderness"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://kscopemusic.bandcamp.com/album/your-wilderness"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://kscopemusic.bandcamp.com/album/your-wilderness"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Pineapple Thief",
+        "bandId": "9c9a17fc-281c-4697-8d19-e15462ee9b53",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 30,
+      "bandId": "9ba909bf-fe35-451a-bb78-af430449d12b",
+      "name": "The Psychedelic Furs",
+      "musicBrainzId": "9f930ddf-be2f-4de5-a39f-7ae47305752e",
+      "country": "GB",
+      "aliases": [
+        "The Psychedlic Furs",
+        "The Furs",
+        "Psychedelic Furs",
+        "Psycheldic Furs",
+        "The Psychadelic Furs",
+        "The Psychedelics Furs"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:41.760154+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:04.09146+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "9ba909bf-fe35-451a-bb78-af430449d12b",
+        "expected_updated_at": "2026-10-13T08:20:41.760154+00:00",
+        "artist_name": "The Psychedelic Furs",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Psychedlic Furs",
+          "The Furs",
+          "Psychedelic Furs",
+          "Psycheldic Furs",
+          "The Psychadelic Furs",
+          "The Psychedelics Furs"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다.",
+        "evidence_url": "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다.",
+        "sources": [
+          {
+            "url": "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: 공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다.",
+          "sourceUrls": [
+            "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 GB를 공식 밴드 기원/국가 설명과 대조: 공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다.",
+          "sourceUrls": [
+            "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: 공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다.",
+          "sourceUrls": [
+            "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: 공식 Psychedelic Furs Bandcamp 소개에서 post-punk UK rock scene 기원을 명시하고 Made of Rain 원작을 확인했다. 미국 라디오 성과와 영국 기원을 구분했다.",
+          "sourceUrls": [
+            "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://thepsychedelicfurs.bandcamp.com/album/made-of-rain"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Psychedelic Furs",
+        "bandId": "9ba909bf-fe35-451a-bb78-af430449d12b",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 31,
+      "bandId": "5211c2a8-0cde-40e0-921a-524db384ded6",
+      "name": "The Queers",
+      "musicBrainzId": "28fd67e8-573c-4cdd-a37d-8b74af74109c",
+      "country": "US",
+      "aliases": [
+        "Queers"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:29.186562+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:20:29.186562+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "공식 Queers Bandcamp에서 American punk rock band·Portsmouth New Hampshire 1981년 결성 확인. merch 페이지에서는 현재 외부 신원별 원작 교차가 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://officialthequeers.bandcamp.com/merch",
+          "checkedAt": "2026-10-13T09:11:37.354Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 32,
+      "bandId": "663cac76-27a6-413c-b748-8e37b3bc75b2",
+      "name": "The Rattles",
+      "musicBrainzId": "350df790-01d6-4459-8d0f-26abdd440b0e",
+      "country": "DE",
+      "aliases": [
+        "Our Gang",
+        "The Fixx",
+        "The In Crowd",
+        "The 'In' Crowd'",
+        "The \"In\" Crowd",
+        "Rattles"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:52.597524+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:05.484661+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "663cac76-27a6-413c-b748-8e37b3bc75b2",
+        "expected_updated_at": "2026-10-13T08:20:52.597524+00:00",
+        "artist_name": "The Rattles",
+        "country": "DE",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Our Gang",
+          "The Fixx",
+          "The In Crowd",
+          "The 'In' Crowd'",
+          "The \"In\" Crowd",
+          "Rattles"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다.",
+        "evidence_url": "https://www.rattles.de/band_bio_ENG.php"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.rattles.de/band_bio_ENG.php",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다."
+          },
+          {
+            "url": "https://www.rattles.de/band.php",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다.",
+          "sourceUrls": [
+            "https://www.rattles.de/band_bio_ENG.php",
+            "https://www.rattles.de/band.php"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DE를 공식 밴드 기원/국가 설명과 대조: Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다.",
+          "sourceUrls": [
+            "https://www.rattles.de/band_bio_ENG.php",
+            "https://www.rattles.de/band.php"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다.",
+          "sourceUrls": [
+            "https://www.rattles.de/band_bio_ENG.php",
+            "https://www.rattles.de/band.php"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Rattles 공식 biography의 Hamburg 기원·Herbert Hildebrandt/Achim Reichel·Germany beat band 및 The Witch와 공식 band 페이지의 50 Jahre Rock’n’Roll을 대조했다.",
+          "sourceUrls": [
+            "https://www.rattles.de/band_bio_ENG.php",
+            "https://www.rattles.de/band.php"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.rattles.de/band_bio_ENG.php",
+            "https://www.rattles.de/band.php"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.rattles.de/band_bio_ENG.php",
+            "https://www.rattles.de/band.php"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Rattles",
+        "bandId": "663cac76-27a6-413c-b748-8e37b3bc75b2",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 33,
+      "bandId": "35666a24-b251-40ef-b6e3-437259e0b560",
+      "name": "The Replacements",
+      "musicBrainzId": "dc0d05ce-2f47-4962-b4fa-8631a0a51987",
+      "country": "US",
+      "aliases": [
+        "Replacements",
+        "Replacements, The"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:55.936569+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:06.921994+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "35666a24-b251-40ef-b6e3-437259e0b560",
+        "expected_updated_at": "2026-10-13T08:19:55.936569+00:00",
+        "artist_name": "The Replacements",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Replacements",
+          "Replacements, The"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다.",
+        "evidence_url": "https://www.twintonedigital.com/mats-1"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다.",
+        "sources": [
+          {
+            "url": "https://www.twintonedigital.com/mats-1",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다.",
+          "sourceUrls": [
+            "https://www.twintonedigital.com/mats-1"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 US를 공식 밴드 기원/국가 설명과 대조: Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다.",
+          "sourceUrls": [
+            "https://www.twintonedigital.com/mats-1"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다.",
+          "sourceUrls": [
+            "https://www.twintonedigital.com/mats-1"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Twin/Tone 공식 페이지가 American rock band·Minneapolis 1979년 결성·Westerberg/Stinson/Mars를 명시하며 Let It Be·Sorry Ma를 확인한다.",
+          "sourceUrls": [
+            "https://www.twintonedigital.com/mats-1"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.twintonedigital.com/mats-1"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.twintonedigital.com/mats-1"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Replacements",
+        "bandId": "35666a24-b251-40ef-b6e3-437259e0b560",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 34,
+      "bandId": "4c33b9c3-4d51-4d99-9300-819c256d8692",
+      "name": "The Residents",
+      "musicBrainzId": "8c9b336e-acc8-4e20-9195-6ed0634da9fc",
+      "country": "US",
+      "aliases": [
+        "The Delta Nudes",
+        "Residents"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:27.23615+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:27.23615+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Cherry Red에서 American experimental art collective 확인. 공식 Residents about/press 페이지 접근 실패로 실제 록 활동 경계 및 현재 MBID 원작 교차 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://testing.residents.com/press/",
+          "checkedAt": "2026-10-13T09:11:37.360Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 35,
+      "bandId": "128c696a-c3a4-4db4-b93b-1a01f47b624d",
+      "name": "The Shadows",
+      "musicBrainzId": "c7cf4584-bfb1-4cf5-be41-aef384310bbb",
+      "country": "GB",
+      "aliases": [
+        "Cliff Richard & The Shadows",
+        "Shades of Grey",
+        "Shadows",
+        "Shadows, The"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:19.363508+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:19.363508+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Universal France에서 London England·Hank Marvin/Apache 계열 신원 확인. 이번 근거만으로 actual rock 및 현재 MBID 개별 원작 교차가 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://universalmusic.fr/artistes/20000157440",
+          "checkedAt": "2026-10-13T09:11:37.362Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 36,
+      "bandId": "1c32adac-300c-414d-aad0-5300ab70b67a",
+      "name": "The Smashing Pumpkins",
+      "musicBrainzId": "ba0d6274-db14-4ef5-b28d-657ebde1a396",
+      "country": "US",
+      "aliases": [
+        "Smashign Pumpkins",
+        "Smahing Pumpkins",
+        "The Smashing Pumpkinsgs",
+        "Smashing Pumpkins",
+        "Smashing Pumkins"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:05.854894+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:05.854894+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "Red Light Management에서 Chicago1988 결성과 Siamese Dream/Mellon Collie 등 확인. Napalm 및 공식 music 페이지 접근 실패로 이번 실제 장르 근거 보완 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://label.napalmrecords.com/the-smashing-pumpkins",
+          "checkedAt": "2026-10-13T09:11:37.364Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    },
+    {
+      "index": 37,
+      "bandId": "a49b7429-ea93-4d85-8b5c-e65be9f0fcfa",
+      "name": "The Tragically Hip",
+      "musicBrainzId": "e86ab653-bec8-46f3-b4b6-a1a866919ef6",
+      "country": "CA",
+      "aliases": [
+        "The Hip",
+        "Tragically Hip",
+        "The_Tragically_Hip",
+        "Th Tragically Hip"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:01.051368+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:08.314342+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "a49b7429-ea93-4d85-8b5c-e65be9f0fcfa",
+        "expected_updated_at": "2026-10-13T08:20:01.051368+00:00",
+        "artist_name": "The Tragically Hip",
+        "country": "CA",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Hip",
+          "Tragically Hip",
+          "The_Tragically_Hip",
+          "Th Tragically Hip"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다.",
+        "evidence_url": "https://mgmtrust.ca/artists/thetragicallyhip/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다.",
+        "sources": [
+          {
+            "url": "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다."
+          },
+          {
+            "url": "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다.",
+          "sourceUrls": [
+            "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 CA를 공식 밴드 기원/국가 설명과 대조: Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다.",
+          "sourceUrls": [
+            "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다.",
+          "sourceUrls": [
+            "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책의 실제 록 활동: Management Trust의 Kingston Ontario 멤버와 Canadian artist 맥락·Up To Here/Road Apples/Phantom Power를 확인했다. Canada’s Walk of Fame의 Canadian rock band 설명과 대조했다.",
+          "sourceUrls": [
+            "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://mgmtrust.ca/artists/thetragicallyhip/",
+            "https://www.canadaswalkoffame.com/inductees/the-tragically-hip/"
+          ]
+        }
+      },
+      "readback": {
+        "name": "The Tragically Hip",
+        "bandId": "a49b7429-ea93-4d85-8b5c-e65be9f0fcfa",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 38,
+      "bandId": "38ff63a7-81d4-460a-abae-f81c9a8eefe0",
+      "name": "THORNAPPLE",
+      "musicBrainzId": "6b5f4f28-6359-48ae-9eee-4cf020ea3062",
+      "country": "KR",
+      "aliases": [
+        "THORNAPPLE",
+        "쏜애플"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:45:04.129139+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:30:09.773982+00:00",
+        "category": "domestic_rock",
+        "status": "approved"
+      },
+      "applied": true,
+      "notes": "새 공식 요건별 근거로 통합 적용 및 receipt/readback 확인.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 2,
+      "originalResearchPreserved": true,
+      "proposal": {
+        "target_band_id": "38ff63a7-81d4-460a-abae-f81c9a8eefe0",
+        "expected_updated_at": "2026-10-12T14:45:04.129139+00:00",
+        "artist_name": "THORNAPPLE",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [
+          "THORNAPPLE",
+          "쏜애플"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다.",
+        "evidence_url": "https://www.mpmgmusic.com/thornapple"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.mpmgmusic.com/thornapple",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다."
+          },
+          {
+            "url": "https://music.apple.com/us/album/my-century-ep/6781202608",
+            "checkedAt": "2026-10-25T21:29:08.580992+00:00",
+            "summary": "MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "개별 이름·멤버/원작 대조: MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/thornapple",
+            "https://music.apple.com/us/album/my-century-ep/6781202608"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 KR를 공식 밴드 기원/국가 설명과 대조: MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/thornapple",
+            "https://music.apple.com/us/album/my-century-ep/6781202608"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그 대신 실제 음악 활동을 대조: MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/thornapple",
+            "https://music.apple.com/us/album/my-century-ep/6781202608"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 domestic_rock 정책의 실제 록 활동: MPMG 공식 소개가 Korean artist임을 명시하고 계몽/Enlightenment·이상기후/Strange Weather·My Century 등 발매를 설명한다. Apple Music의 My Century Rock 분류 및 공식 psychedelic sound 활동을 대조했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/thornapple",
+            "https://music.apple.com/us/album/my-century-ep/6781202608"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 정확한 MBID 및 실제 getInfo 반환 MBID 일치, 개별 원작을 공식 자료와 교차. 세부 검증 입력은 로컬에 보존.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/thornapple",
+            "https://music.apple.com/us/album/my-century-ep/6781202608"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개 ON·수집·알림 발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/thornapple",
+            "https://music.apple.com/us/album/my-century-ep/6781202608"
+          ]
+        }
+      },
+      "readback": {
+        "name": "THORNAPPLE",
+        "bandId": "38ff63a7-81d4-460a-abae-f81c9a8eefe0",
+        "status": "approved",
+        "category": "domestic_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 39,
+      "bandId": "2b9c40ae-7ace-4ff4-9744-4f4606ca0917",
+      "name": "Toad the Wet Sprocket",
+      "musicBrainzId": "f70ee0c3-8ce0-4ca6-9208-06b60bc69e27",
+      "country": "US",
+      "aliases": [
+        "Toad The Wet Sprocket",
+        "Toad The Wet Sproket"
+      ],
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:48.606555+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:48.606555+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "applied": false,
+      "notes": "공식 Toad 소개의 Santa Barbara·Glen Phillips·Fear/Pale/Bread&Circus와 alternative college rock 활동 확인. Last.fm error6로 현재 MBID 외부 교차 근거 미완료.",
+      "channels": {
+        "status": "deferred",
+        "applied": false,
+        "reason": "현재 선정 신원의 DB channel profile 0 확인. 공식 페이지의 직접 채널 URL·API 해석·최신 버전 readback을 함께 갖추지 못해 미완료. shell 공식 페이지 읽기는 현재 허용 호스트 목록에 없는 출처에서 실패했으며 정책 확장/우회 없음. 웹 자료의 watch 임베드·공통 레이블 채널로 공식성을 만들지 않았다."
+      },
+      "lastfmRequests": 1,
+      "originalResearchPreserved": true,
+      "sources": [
+        {
+          "url": "https://toadthewetsprocket.com/the-band/",
+          "checkedAt": "2026-10-13T09:11:37.383Z",
+          "summary": "외부 신원과 공식 아티스트·레이블·유통/음악 기관의 소개 및 음반을 대조하여 록/펑크/메탈 계열 활동을 확인함. 혼합 장르도 유지함."
+        }
+      ],
+      "approvalStatus": "deferred"
+    }
+  ]
+}
