@@ -1,0 +1,3036 @@
+{
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "de30ab5b-5af3-41c0-8a2b-be7d1720e47f",
+  "reportAtKST": "2026-10-25T10:41:37.286695+09:00",
+  "gitHeadBefore": "323d5a5",
+  "recoveryAncestorsVerified": [
+    "f267be1",
+    "fd45938"
+  ],
+  "environment": {
+    "observationsCurrent": true,
+    "phase": "running",
+    "networkPolicy": "enforced",
+    "requiredBindings": "ready",
+    "actualLastfmHttp": 200,
+    "actualLastfmApiSuccess": true,
+    "legacyIdleBeforeBegin": true,
+    "readOnlyReceiptInstallationProbe": true,
+    "newIdentityCli": "present; no verified identity mutation input in this frozen selection"
+  },
+  "startedAt": "2026-10-25T01:30:58.632+00:00",
+  "finishedAt": "2026-10-25T01:39:41.708614+00:00",
+  "selected": 40,
+  "taskCounts": {
+    "research": 40,
+    "approval": 40,
+    "channels": 40
+  },
+  "results": {
+    "researchCompleted": 2,
+    "approvalAppliedAndVerified": 2,
+    "researchDeferred": 38,
+    "approvalDeferred": 38,
+    "channelsDeferred": 40,
+    "registrations": 0,
+    "aliasMutations": 0,
+    "channelWrites": 0,
+    "photoWrites": 0,
+    "exclusions": 0,
+    "holds": 0
+  },
+  "catalogBefore": {
+    "total": 648,
+    "approved": 239,
+    "unreviewed": 403,
+    "excluded": 6
+  },
+  "catalogAfter": {
+    "total": 648,
+    "approved": 241,
+    "unreviewed": 401,
+    "excluded": 6
+  },
+  "serverVerification": {
+    "run": {
+      "id": "de30ab5b-5af3-41c0-8a2b-be7d1720e47f",
+      "selected": 40,
+      "startedAt": "2026-10-25T01:30:58.632+00:00",
+      "finishedAt": "2026-10-25T01:39:41.708614+00:00"
+    },
+    "catalog": {
+      "approved": 241,
+      "excluded": 6,
+      "unreviewed": 401
+    },
+    "receipts": 2,
+    "relations": [
+      {
+        "bandId": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      {
+        "bandId": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+        "relations": [
+          0,
+          0
+        ]
+      }
+    ],
+    "validUnfinished": 0,
+    "publicationLinks": 2,
+    "currentVersionsMatch": true,
+    "currentRelations": [
+      {
+        "band_id": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+        "concert_bands": 0,
+        "band_follows": 0
+      },
+      {
+        "band_id": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+        "concert_bands": 0,
+        "band_follows": 0
+      }
+    ],
+    "relationsUnchanged": true
+  },
+  "channelReadback": {
+    "selectedExistingProfiles": 0,
+    "youtubeApiRequests": 0,
+    "globalMutatingManifestRpcCalled": false,
+    "limitation": "No selected profile exists. Official per-person forward link plus API identity proof is incomplete; group or shared-label channels were not assigned."
+  },
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revisionBefore": 2245,
+    "revisionAfter": 2367,
+    "active": null,
+    "transfer": null,
+    "sha256Before": "d743a022f5928462fe68d37ffcd02b1358a36393b8b45ee286f195aa8d3f2716",
+    "sha256After": "b75f3c2c0694c9742b18fb183b842a0bbcaf5bf28cbdefa85b543f79bfcd43ef",
+    "remaining": 432,
+    "authorityWaiting": 16,
+    "meaning": "Queue remaining432 is task backlog, not DB unreviewed401."
+  },
+  "apiAccounting": {
+    "binding": 1,
+    "requests": 9,
+    "newArtists": 6,
+    "reusedArtists": 34,
+    "musicbrainzRequests": 0,
+    "lastfmTotalRequests": 10,
+    "newIdentityApiNotFound": 3,
+    "newIdentitySameMbidButNotFullProof": 3,
+    "serviceContexts": 40,
+    "youtube": 0,
+    "chartDiscovery": 0,
+    "queueApiCounter": 0,
+    "limitation": "Queue counter0 omits external research requests.34 prior observations reused without refreshing their timestamps or verification flags. Last.fm getInfo MBID equality alone is not completed identity/genre proof."
+  },
+  "musicbrainzCooldown": {
+    "lastFailureAt": "2026-10-23T05:26:38.617Z",
+    "nextAttemptAt": "2026-10-25T17:36:26.643009Z",
+    "reason": "PROVIDER_HTTP_503",
+    "lastSuccessAt": "2026-10-24T17:34:35.796Z",
+    "lastSuccessObservation": "2a run: selected existing MBIDs only; 11 successful responses followed by terminal repeated503. Further provider requests stopped. nextAttemptAt is conservatively based on checkpoint observation, not a claimed exact HTTP failure timestamp.",
+    "lastFailureObservedAt": "2026-10-24T17:36:26.643009Z"
+  },
+  "corePlan": {
+    "selected": 23,
+    "unfilled": 177,
+    "meaning": "편성안 기준 후보 풀 내 Last.fm 청취자 정렬과 사용자 지명 목록. 검증된 전세계 인기 상위 200위가 아님.",
+    "newCandidatesAddedThisRun": 0,
+    "mandatoryUnchanged": true,
+    "scope": "Fixed40 has no mandatory new/alias mutation input. No replacement artists or second begin. Verified candidate/metric cache and discovery300 rows preserved."
+  },
+  "preservation": {
+    "oldFalseDraftSha256": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337",
+    "falseDraftPromoted": false,
+    "initAcceptHandoffOrHistoricalReplay": false,
+    "schedulesChanged": false,
+    "concertCollectionOrPublicationChanges": false,
+    "notificationSends": false,
+    "ddlDeployPushPrMerge": false
+  },
+  "sourceLimitations": [
+    {
+      "host": "musicbrainz.org",
+      "status": "cooldown-preserved",
+      "nextAttemptAt": "2026-10-25T17:36:26.643009Z",
+      "requests": 0
+    },
+    {
+      "host": "ebs.co.kr",
+      "status": "robots-disallowed-nonretryable; no bypass/retries"
+    },
+    {
+      "host": "zula.link-map.jp",
+      "status": "HTTP503; product/identity evidence not completed"
+    },
+    {
+      "host": "jjticketbox.com",
+      "status": "HTTP403; searched candidate not treated as read proof"
+    },
+    {
+      "host": "brussels.korean-culture.org",
+      "status": "redirect loop; no successful document proof claimed; Park Haggi used actually read Bugs and separate institutional statement report"
+    },
+    {
+      "host": "music.bugs.co.kr",
+      "path": "/album/20138554",
+      "status": "timeout; alternative data remains discovery only"
+    }
+  ],
+  "proofBoundary": [
+    "Only2 actual completed researchs and approvals, not40 complete reviews. Search-only observations remain discovery_only with concrete missing requirements.",
+    "SOURCE_INVALID occurred before write because research proof rejects query URLs. The same trusted CLI validator was preserved. Additional actual read queryless Bugs sources/Daum report satisfy accepted proof format; no other writer or validator weakening used.",
+    "Source checkedAt represents actual review/checkpoint observation, not raw HTTP request log. Existing cached API timestamps/false drafts were preserved.",
+    "Park Seunghwa mixed folk/ballad and actual modern rock; Park Haggi folk rock corroborated by official identity/nation plus institutional appointment report. No new genre policy introduced.",
+    "Drescode Last.fm works mix several same-name entities, Kim Gwanwoo piano/compilation response does not prove LIF vocalist, Park Yeseul compilation metadata does not prove ORN; no automatic MBID/alias replacement.",
+    "No code changes in this run; UTF8/JSON/counts/version/readback/diff validation only, no app lint/build rerun.",
+    "Artist publication identity approvals do not prove concert connection/publication/delivery. Other roles were not executed."
+  ],
+  "artists": [
+    {
+      "bandId": "2cd90d1b-01ac-4879-9ef5-73ec28abd539",
+      "name": "강재욱",
+      "musicBrainzId": "429a84e1-d1b4-4990-8691-972bccba5547",
+      "country": "KR",
+      "originalVersion": "2026-10-23T13:26:40.601952+00:00",
+      "currentVersion": "2026-10-23T13:26:40.601952+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "이름 검색에서 게임 사운드 제작자·영화 음악 크레딧 동명 후보가 발견됐지만 선택 MBID와 공식 음악 신원 연결 미완료. 새 Last.fm 조회도 API6이다. 동명이인을 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:30.430Z",
+          "waitingSince": "2026-10-25T01:39:30.430Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.430Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "이름 검색에서 게임 사운드 제작자·영화 음악 크레딧 동명 후보가 발견됐지만 선택 MBID와 공식 음악 신원 연결 미완료. 새 Last.fm 조회도 API6이다. 동명이인을 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:30.550Z",
+          "waitingSince": "2026-10-25T01:39:30.550Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.550Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:30.636Z",
+          "waitingSince": "2026-10-25T01:39:30.636Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.636Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 0,
+        "bandId": "2cd90d1b-01ac-4879-9ef5-73ec28abd539",
+        "name": "강재욱",
+        "notes": "이름 검색에서 게임 사운드 제작자·영화 음악 크레딧 동명 후보가 발견됐지만 선택 MBID와 공식 음악 신원 연결 미완료. 새 Last.fm 조회도 API6이다. 동명이인을 합치지 않는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "f93927cb-ed8e-4c08-b9c1-75265eb6e1db",
+      "name": "이주호",
+      "musicBrainzId": "01e89f63-20f4-4cbd-8966-85d072a96923",
+      "country": "KR",
+      "originalVersion": "2026-10-23T13:26:40.590225+00:00",
+      "currentVersion": "2026-10-23T13:26:40.590225+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "해바라기 이주호의 포크 활동과 같은 이름의 타 작곡가 검색이 함께 존재한다. 새 Last.fm API6이며 선택 MBID/같은 솔로 작품 확인 및 록 범위가 미완료다.",
+          "checkedAt": "2026-10-25T01:39:30.721Z",
+          "waitingSince": "2026-10-25T01:39:30.721Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.721Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "해바라기 이주호의 포크 활동과 같은 이름의 타 작곡가 검색이 함께 존재한다. 새 Last.fm API6이며 선택 MBID/같은 솔로 작품 확인 및 록 범위가 미완료다.",
+          "checkedAt": "2026-10-25T01:39:30.815Z",
+          "waitingSince": "2026-10-25T01:39:30.815Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.815Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:30.900Z",
+          "waitingSince": "2026-10-25T01:39:30.900Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.900Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 1,
+        "bandId": "f93927cb-ed8e-4c08-b9c1-75265eb6e1db",
+        "name": "이주호",
+        "notes": "해바라기 이주호의 포크 활동과 같은 이름의 타 작곡가 검색이 함께 존재한다. 새 Last.fm API6이며 선택 MBID/같은 솔로 작품 확인 및 록 범위가 미완료다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+      "name": "강건후",
+      "musicBrainzId": "b599c005-877b-48e2-a82e-5a6e021054e7",
+      "country": "KR",
+      "originalVersion": "2026-10-14T13:24:32.435618+00:00",
+      "currentVersion": "2026-10-14T13:24:32.435618+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "서울문화포털의 기타 세션 강건후·공식 유통 기타 크레딧 후보를 검색했다. 이 신원이 선택 MBID인지와 독립적인 실제 록 활동이 미완료이며 이전 API6을 반복 요청하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:30.985Z",
+          "waitingSince": "2026-10-25T01:39:30.985Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:30.985Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "서울문화포털의 기타 세션 강건후·공식 유통 기타 크레딧 후보를 검색했다. 이 신원이 선택 MBID인지와 독립적인 실제 록 활동이 미완료이며 이전 API6을 반복 요청하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:31.061Z",
+          "waitingSince": "2026-10-25T01:39:31.061Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.061Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:31.144Z",
+          "waitingSince": "2026-10-25T01:39:31.144Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.144Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 2,
+        "bandId": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+        "name": "강건후",
+        "notes": "서울문화포털의 기타 세션 강건후·공식 유통 기타 크레딧 후보를 검색했다. 이 신원이 선택 MBID인지와 독립적인 실제 록 활동이 미완료이며 이전 API6을 반복 요청하지 않았다.",
+        "sourceUrls": [
+          "https://culture.seoul.go.kr/culture/culture/cultureImage/view.do?menuNo=200014&pageIndex=1286&youtubeId=6878"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+      "name": "김경태",
+      "musicBrainzId": "7fd5d6a3-8b08-469d-9119-a6f0581fb1ba",
+      "country": "KR",
+      "originalVersion": "2026-10-15T07:26:59.702286+00:00",
+      "currentVersion": "2026-10-15T07:26:59.702286+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "김경태 검색은 포크 솔로·전시 아티스트·연극인 동명이인이 섞였다. 기존 engineer MB 관측과 이 후보들을 결합할 크레딧이 없어 신원/장르 미완료다.",
+          "checkedAt": "2026-10-25T01:39:31.228Z",
+          "waitingSince": "2026-10-25T01:39:31.228Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.228Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "김경태 검색은 포크 솔로·전시 아티스트·연극인 동명이인이 섞였다. 기존 engineer MB 관측과 이 후보들을 결합할 크레딧이 없어 신원/장르 미완료다.",
+          "checkedAt": "2026-10-25T01:39:31.306Z",
+          "waitingSince": "2026-10-25T01:39:31.306Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.306Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:31.398Z",
+          "waitingSince": "2026-10-25T01:39:31.398Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.398Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 3,
+        "bandId": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+        "name": "김경태",
+        "notes": "김경태 검색은 포크 솔로·전시 아티스트·연극인 동명이인이 섞였다. 기존 engineer MB 관측과 이 후보들을 결합할 크레딧이 없어 신원/장르 미완료다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/artist/20091314"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+      "name": "김수희",
+      "musicBrainzId": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+      "country": "KR",
+      "originalVersion": "2026-10-12T14:24:09.149317+00:00",
+      "currentVersion": "2026-10-12T14:24:09.149317+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "실제 Pathos 유통 페이지의 김수희/성인가요·트로트 및 기존 일치 MBID 작품을 읽었다. 별도 취재의 나티와 헤비메탈 크로스오버 리허설도 실제 읽어 단일 트로트 태그로 제외하지 않았다. 공연의 단발 혼합 장르와 본인 지속 록 활동 범위의 판단을 보완해야 한다.",
+          "checkedAt": "2026-10-25T01:39:31.519Z",
+          "waitingSince": "2026-10-25T01:39:31.519Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.519Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "실제 Pathos 유통 페이지의 김수희/성인가요·트로트 및 기존 일치 MBID 작품을 읽었다. 별도 취재의 나티와 헤비메탈 크로스오버 리허설도 실제 읽어 단일 트로트 태그로 제외하지 않았다. 공연의 단발 혼합 장르와 본인 지속 록 활동 범위의 판단을 보완해야 한다.",
+          "checkedAt": "2026-10-25T01:39:31.726Z",
+          "waitingSince": "2026-10-25T01:39:31.726Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.726Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:31.808Z",
+          "waitingSince": "2026-10-25T01:39:31.808Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.808Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 4,
+        "bandId": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+        "name": "김수희",
+        "notes": "실제 Pathos 유통 페이지의 김수희/성인가요·트로트 및 기존 일치 MBID 작품을 읽었다. 별도 취재의 나티와 헤비메탈 크로스오버 리허설도 실제 읽어 단일 트로트 태그로 제외하지 않았다. 공연의 단발 혼합 장르와 본인 지속 록 활동 범위의 판단을 보완해야 한다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/album/807",
+          "https://v.daum.net/v/M0ND8jhnWD"
+        ],
+        "missingRequirements": [
+          "genreMatched",
+          "classificationMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "810b1871-70ab-4563-8703-747012ea6f1d",
+      "name": "김조한",
+      "musicBrainzId": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+      "country": "KR",
+      "originalVersion": "2026-10-15T01:30:28.913689+00:00",
+      "currentVersion": "2026-10-15T01:30:28.913689+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "실제 Soul Family With Johan 유통 소개는 R&B/소울이며 동일 작품을 기존 일치 MBID 캐시와 대조했다. 특정 수록곡을 얼터너티브 록이라 부르는 검색은 위키 복제여서 공식 록 검증으로 사용하지 않았다. 국적 해석도 KR와 추가 대조가 필요하다.",
+          "checkedAt": "2026-10-25T01:39:31.977Z",
+          "waitingSince": "2026-10-25T01:39:31.977Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:31.977Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "실제 Soul Family With Johan 유통 소개는 R&B/소울이며 동일 작품을 기존 일치 MBID 캐시와 대조했다. 특정 수록곡을 얼터너티브 록이라 부르는 검색은 위키 복제여서 공식 록 검증으로 사용하지 않았다. 국적 해석도 KR와 추가 대조가 필요하다.",
+          "checkedAt": "2026-10-25T01:39:32.058Z",
+          "waitingSince": "2026-10-25T01:39:32.058Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.058Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:32.165Z",
+          "waitingSince": "2026-10-25T01:39:32.165Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.165Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 5,
+        "bandId": "810b1871-70ab-4563-8703-747012ea6f1d",
+        "name": "김조한",
+        "notes": "실제 Soul Family With Johan 유통 소개는 R&B/소울이며 동일 작품을 기존 일치 MBID 캐시와 대조했다. 특정 수록곡을 얼터너티브 록이라 부르는 검색은 위키 복제여서 공식 록 검증으로 사용하지 않았다. 국적 해석도 KR와 추가 대조가 필요하다.",
+        "sourceUrls": [
+          "https://www.genie.co.kr/detail/albumInfo?axnm=53536167"
+        ],
+        "missingRequirements": [
+          "countryMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+      "name": "김종국",
+      "musicBrainzId": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+      "country": "KR",
+      "originalVersion": "2026-10-15T01:30:28.899139+00:00",
+      "currentVersion": "2026-10-15T01:30:28.899139+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "새 공식 소속사 아티스트 페이지 후보 검색으로 김종국의 음악/방송 활동을 발견했으나 실제 록/J-pop 활동의 직접 작품 근거는 미완료다. 그룹 형식과 이름/대중성으로 승인하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:32.244Z",
+          "waitingSince": "2026-10-25T01:39:32.244Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.244Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "새 공식 소속사 아티스트 페이지 후보 검색으로 김종국의 음악/방송 활동을 발견했으나 실제 록/J-pop 활동의 직접 작품 근거는 미완료다. 그룹 형식과 이름/대중성으로 승인하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:32.329Z",
+          "waitingSince": "2026-10-25T01:39:32.329Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.329Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:32.406Z",
+          "waitingSince": "2026-10-25T01:39:32.406Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.406Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 6,
+        "bandId": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+        "name": "김종국",
+        "notes": "새 공식 소속사 아티스트 페이지 후보 검색으로 김종국의 음악/방송 활동을 발견했으나 실제 록/J-pop 활동의 직접 작품 근거는 미완료다. 그룹 형식과 이름/대중성으로 승인하지 않는다.",
+        "sourceUrls": [
+          "https://insights.galaxyuniverse.ai/artists/"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "59786668-4c4f-4568-8928-034dc1706ac2",
+      "name": "박성현",
+      "musicBrainzId": "ef019f33-047a-4091-bc38-6a951856de0a",
+      "country": "KR",
+      "originalVersion": "2026-10-14T19:24:49.220714+00:00",
+      "currentVersion": "2026-10-14T19:24:49.220714+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "실제 공식 유통 꽃길인생의 포크 발라드·보컬 크레딧은 읽었지만 이 박성현과 선택 MBID의 Love Delight/영턱스클럽 신원이 같은지 미확정이다. 서로 다른 동명 가수를 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:32.483Z",
+          "waitingSince": "2026-10-25T01:39:32.483Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.483Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "실제 공식 유통 꽃길인생의 포크 발라드·보컬 크레딧은 읽었지만 이 박성현과 선택 MBID의 Love Delight/영턱스클럽 신원이 같은지 미확정이다. 서로 다른 동명 가수를 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:32.565Z",
+          "waitingSince": "2026-10-25T01:39:32.565Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.565Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:32.641Z",
+          "waitingSince": "2026-10-25T01:39:32.641Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.641Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 7,
+        "bandId": "59786668-4c4f-4568-8928-034dc1706ac2",
+        "name": "박성현",
+        "notes": "실제 공식 유통 꽃길인생의 포크 발라드·보컬 크레딧은 읽었지만 이 박성현과 선택 MBID의 Love Delight/영턱스클럽 신원이 같은지 미확정이다. 서로 다른 동명 가수를 합치지 않는다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/album/20257591"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+      "name": "변진섭",
+      "musicBrainzId": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+      "country": "KR",
+      "originalVersion": "2026-10-12T14:24:09.149204+00:00",
+      "currentVersion": "2026-10-12T14:24:09.149204+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "변진섭 직접 공식 프로필 검색은 충분한 결과를 얻지 못했다. 기존 발라드 작품 캐시는 보존하되 록/J-pop 활동을 확인하거나 단일 장르만으로 제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:32.730Z",
+          "waitingSince": "2026-10-25T01:39:32.730Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.730Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "변진섭 직접 공식 프로필 검색은 충분한 결과를 얻지 못했다. 기존 발라드 작품 캐시는 보존하되 록/J-pop 활동을 확인하거나 단일 장르만으로 제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:32.811Z",
+          "waitingSince": "2026-10-25T01:39:32.811Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.811Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:32.942Z",
+          "waitingSince": "2026-10-25T01:39:32.942Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:32.942Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 8,
+        "bandId": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+        "name": "변진섭",
+        "notes": "변진섭 직접 공식 프로필 검색은 충분한 결과를 얻지 못했다. 기존 발라드 작품 캐시는 보존하되 록/J-pop 활동을 확인하거나 단일 장르만으로 제외하지 않는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "search_inconclusive",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+      "name": "심규선",
+      "musicBrainzId": "189a3528-68c2-480f-a4e1-c4db29152398",
+      "country": "KR",
+      "originalVersion": "2026-10-14T19:24:49.232495+00:00",
+      "currentVersion": "2026-10-14T19:24:49.232495+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "소속사 발표 및 작품 후보 검색은 보완했으나 기존 요청 MBID와 반환 Lucia MBID 불일치가 해결되지 않았다. 이름과 공연 소개만으로 신원 ID를 교체하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:33.020Z",
+          "waitingSince": "2026-10-25T01:39:33.020Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.020Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "소속사 발표 및 작품 후보 검색은 보완했으나 기존 요청 MBID와 반환 Lucia MBID 불일치가 해결되지 않았다. 이름과 공연 소개만으로 신원 ID를 교체하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:33.119Z",
+          "waitingSince": "2026-10-25T01:39:33.119Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.119Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:33.219Z",
+          "waitingSince": "2026-10-25T01:39:33.219Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.219Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 9,
+        "bandId": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+        "name": "심규선",
+        "notes": "소속사 발표 및 작품 후보 검색은 보완했으나 기존 요청 MBID와 반환 Lucia MBID 불일치가 해결되지 않았다. 이름과 공연 소개만으로 신원 ID를 교체하지 않는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+      "name": "안다은",
+      "musicBrainzId": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+      "country": "KR",
+      "originalVersion": "2026-10-14T15:10:08.930152+00:00",
+      "currentVersion": "2026-10-14T15:10:08.930152+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "안다은/김규년의 디에이드 공식 유통 음반 후보를 찾았지만 소매 분류 록/인디록/메탈만으로 개인의 실제 록 활동을 확정하지 않았다. 선택 솔로와 그룹을 분리해 추가 작품 검증이 필요하다.",
+          "checkedAt": "2026-10-25T01:39:33.298Z",
+          "waitingSince": "2026-10-25T01:39:33.298Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.298Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "안다은/김규년의 디에이드 공식 유통 음반 후보를 찾았지만 소매 분류 록/인디록/메탈만으로 개인의 실제 록 활동을 확정하지 않았다. 선택 솔로와 그룹을 분리해 추가 작품 검증이 필요하다.",
+          "checkedAt": "2026-10-25T01:39:33.421Z",
+          "waitingSince": "2026-10-25T01:39:33.421Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.421Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:33.497Z",
+          "waitingSince": "2026-10-25T01:39:33.497Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.497Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 10,
+        "bandId": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+        "name": "안다은",
+        "notes": "안다은/김규년의 디에이드 공식 유통 음반 후보를 찾았지만 소매 분류 록/인디록/메탈만으로 개인의 실제 록 활동을 확정하지 않았다. 선택 솔로와 그룹을 분리해 추가 작품 검증이 필요하다.",
+        "sourceUrls": [
+          "https://www.yes24.com/product/goods/33150910"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+      "name": "양다일",
+      "musicBrainzId": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+      "country": "KR",
+      "originalVersion": "2026-10-12T14:24:09.149229+00:00",
+      "currentVersion": "2026-10-12T14:24:09.149229+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "양다일 inside의 브랜뉴뮤직 유통 후보를 대체 검색했다. 직접 Bugs 앨범 열기는 timeout으로 실패해 새 완료 근거로 세지 않았다. 기존 일치 MBID 캐시는 보존하며 실제 록/J-pop 활동은 미완료다.",
+          "checkedAt": "2026-10-25T01:39:33.578Z",
+          "waitingSince": "2026-10-25T01:39:33.578Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.578Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "양다일 inside의 브랜뉴뮤직 유통 후보를 대체 검색했다. 직접 Bugs 앨범 열기는 timeout으로 실패해 새 완료 근거로 세지 않았다. 기존 일치 MBID 캐시는 보존하며 실제 록/J-pop 활동은 미완료다.",
+          "checkedAt": "2026-10-25T01:39:33.654Z",
+          "waitingSince": "2026-10-25T01:39:33.654Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.654Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:33.745Z",
+          "waitingSince": "2026-10-25T01:39:33.745Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.745Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 11,
+        "bandId": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+        "name": "양다일",
+        "notes": "양다일 inside의 브랜뉴뮤직 유통 후보를 대체 검색했다. 직접 Bugs 앨범 열기는 timeout으로 실패해 새 완료 근거로 세지 않았다. 기존 일치 MBID 캐시는 보존하며 실제 록/J-pop 활동은 미완료다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/album/20138554"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "source_timeout",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "92a5e91a-3527-418b-b804-309bada7a55c",
+      "name": "우수현",
+      "musicBrainzId": "9176781a-74ef-4617-ae0a-7c713b287554",
+      "country": "KR",
+      "originalVersion": "2026-10-15T07:26:59.692357+00:00",
+      "currentVersion": "2026-10-15T07:26:59.692357+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "우수현 포크 가수의 KOCCA 지원 시절인연 공식 유통 후보와 동명 초등학생 바이올리니스트가 함께 검색됐다. 선택 MBID/작품 연결 없이 클래식 제외하거나 록 승인하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:33.833Z",
+          "waitingSince": "2026-10-25T01:39:33.833Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.833Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "우수현 포크 가수의 KOCCA 지원 시절인연 공식 유통 후보와 동명 초등학생 바이올리니스트가 함께 검색됐다. 선택 MBID/작품 연결 없이 클래식 제외하거나 록 승인하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:33.909Z",
+          "waitingSince": "2026-10-25T01:39:33.909Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.909Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:33.994Z",
+          "waitingSince": "2026-10-25T01:39:33.994Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:33.994Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 12,
+        "bandId": "92a5e91a-3527-418b-b804-309bada7a55c",
+        "name": "우수현",
+        "notes": "우수현 포크 가수의 KOCCA 지원 시절인연 공식 유통 후보와 동명 초등학생 바이올리니스트가 함께 검색됐다. 선택 MBID/작품 연결 없이 클래식 제외하거나 록 승인하지 않는다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/album/20844419"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+      "name": "이기환",
+      "musicBrainzId": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+      "country": "KR",
+      "originalVersion": "2026-10-15T01:30:28.907801+00:00",
+      "currentVersion": "2026-10-15T01:30:28.907801+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "이기환/KIPLE의 실제 음반 크레딧 후보를 검색했으나 선택 MBID와 본인 음악 활동·록 범위를 교차검증하지 못했다. 작곡/편곡 참여만으로 독립 록 신원을 확정하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:34.072Z",
+          "waitingSince": "2026-10-25T01:39:34.072Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.072Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "이기환/KIPLE의 실제 음반 크레딧 후보를 검색했으나 선택 MBID와 본인 음악 활동·록 범위를 교차검증하지 못했다. 작곡/편곡 참여만으로 독립 록 신원을 확정하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:34.156Z",
+          "waitingSince": "2026-10-25T01:39:34.156Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.156Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:34.235Z",
+          "waitingSince": "2026-10-25T01:39:34.235Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.235Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 13,
+        "bandId": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+        "name": "이기환",
+        "notes": "이기환/KIPLE의 실제 음반 크레딧 후보를 검색했으나 선택 MBID와 본인 음악 활동·록 범위를 교차검증하지 못했다. 작곡/편곡 참여만으로 독립 록 신원을 확정하지 않는다.",
+        "sourceUrls": [
+          "https://www.genie.co.kr/detail/albumInfo?axnm=86871325"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+      "name": "이동민",
+      "musicBrainzId": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+      "country": "KR",
+      "originalVersion": "2026-10-15T07:26:59.695783+00:00",
+      "currentVersion": "2026-10-15T07:26:59.695783+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "고등래퍼 이동민 후보가 발견됐지만 선택 MBID의 원작·크레딧과 정확히 연결되지 않았다. 동명 배우/가수의 본명과 합치지 않고 신원/범위를 미완료로 남긴다.",
+          "checkedAt": "2026-10-25T01:39:34.316Z",
+          "waitingSince": "2026-10-25T01:39:34.316Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.316Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "고등래퍼 이동민 후보가 발견됐지만 선택 MBID의 원작·크레딧과 정확히 연결되지 않았다. 동명 배우/가수의 본명과 합치지 않고 신원/범위를 미완료로 남긴다.",
+          "checkedAt": "2026-10-25T01:39:34.393Z",
+          "waitingSince": "2026-10-25T01:39:34.393Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.393Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:34.472Z",
+          "waitingSince": "2026-10-25T01:39:34.472Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.472Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 14,
+        "bandId": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+        "name": "이동민",
+        "notes": "고등래퍼 이동민 후보가 발견됐지만 선택 MBID의 원작·크레딧과 정확히 연결되지 않았다. 동명 배우/가수의 본명과 합치지 않고 신원/범위를 미완료로 남긴다.",
+        "sourceUrls": [
+          "https://www.kns.tv/news/articleView.html?idxno=328764"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+      "name": "이루다",
+      "musicBrainzId": "2045d73e-23ba-4857-90b4-4064d8a19f04",
+      "country": "KR",
+      "originalVersion": "2026-10-12T14:24:09.148752+00:00",
+      "currentVersion": "2026-10-12T14:24:09.148752+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "LEE LU DA 검색이 우주소녀 멤버 등으로 이어졌지만 현재 선택 MBID의 같은 작품/공식 신원 연결이 없다. 이름/로마자만으로 동일 신원을 확정하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:34.551Z",
+          "waitingSince": "2026-10-25T01:39:34.551Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.551Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "LEE LU DA 검색이 우주소녀 멤버 등으로 이어졌지만 현재 선택 MBID의 같은 작품/공식 신원 연결이 없다. 이름/로마자만으로 동일 신원을 확정하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:34.629Z",
+          "waitingSince": "2026-10-25T01:39:34.629Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.629Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:34.707Z",
+          "waitingSince": "2026-10-25T01:39:34.707Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.707Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 15,
+        "bandId": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+        "name": "이루다",
+        "notes": "LEE LU DA 검색이 우주소녀 멤버 등으로 이어졌지만 현재 선택 MBID의 같은 작품/공식 신원 연결이 없다. 이름/로마자만으로 동일 신원을 확정하지 않았다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+      "name": "이설아",
+      "musicBrainzId": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+      "country": "KR",
+      "originalVersion": "2026-10-14T23:14:17.350309+00:00",
+      "currentVersion": "2026-10-14T23:14:17.350309+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "POCLANOS 직접 아티스트 소개의 못다한 말들·작은 마을·신작 기록을 읽어 같은 작품을 보완했다. 포크 또는 인디라는 말만으로 록으로 바꾸지 않고 실제 록 범위는 미완료다.",
+          "checkedAt": "2026-10-25T01:39:34.783Z",
+          "waitingSince": "2026-10-25T01:39:34.783Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.783Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "POCLANOS 직접 아티스트 소개의 못다한 말들·작은 마을·신작 기록을 읽어 같은 작품을 보완했다. 포크 또는 인디라는 말만으로 록으로 바꾸지 않고 실제 록 범위는 미완료다.",
+          "checkedAt": "2026-10-25T01:39:34.865Z",
+          "waitingSince": "2026-10-25T01:39:34.865Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.865Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:34.940Z",
+          "waitingSince": "2026-10-25T01:39:34.940Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:34.940Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 16,
+        "bandId": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+        "name": "이설아",
+        "notes": "POCLANOS 직접 아티스트 소개의 못다한 말들·작은 마을·신작 기록을 읽어 같은 작품을 보완했다. 포크 또는 인디라는 말만으로 록으로 바꾸지 않고 실제 록 범위는 미완료다.",
+        "sourceUrls": [
+          "https://poclanos.com/artist/%EC%9D%B4%EC%84%A4%EC%95%84/"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+      "name": "이연재",
+      "musicBrainzId": "4e9bd85d-790c-4116-b8ab-e29f16168ac8",
+      "country": "KR",
+      "originalVersion": "2026-10-15T21:28:34.358536+00:00",
+      "currentVersion": "2026-10-15T21:28:34.358536+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "서울문화포털 직접 자료에서 나인티덕의 색소폰 이연재를 읽었다. 선택된 brass MB 신원의 정확한 작품/관계와 실제 록/J-pop 활동 검증이 남는다. 동명 기타리스트·교향악단 단원과 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:35.025Z",
+          "waitingSince": "2026-10-25T01:39:35.025Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.025Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "서울문화포털 직접 자료에서 나인티덕의 색소폰 이연재를 읽었다. 선택된 brass MB 신원의 정확한 작품/관계와 실제 록/J-pop 활동 검증이 남는다. 동명 기타리스트·교향악단 단원과 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:35.101Z",
+          "waitingSince": "2026-10-25T01:39:35.101Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.101Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:35.180Z",
+          "waitingSince": "2026-10-25T01:39:35.180Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.180Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 17,
+        "bandId": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+        "name": "이연재",
+        "notes": "서울문화포털 직접 자료에서 나인티덕의 색소폰 이연재를 읽었다. 선택된 brass MB 신원의 정확한 작품/관계와 실제 록/J-pop 활동 검증이 남는다. 동명 기타리스트·교향악단 단원과 합치지 않는다.",
+        "sourceUrls": [
+          "https://culture.seoul.go.kr/culture/culture/cultureImage/view.do?menuNo=200017&youtubeId=4306"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "79ff01b9-d43c-4e09-aff1-21b5e1200ad8",
+      "name": "이주헌",
+      "musicBrainzId": "c86ff72f-29b4-4974-b968-ca8ccd369e0e",
+      "country": "KR",
+      "originalVersion": "2026-10-15T18:19:45.51196+00:00",
+      "currentVersion": "2026-10-15T18:19:45.51196+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "The Muze 이주헌의 공식 유통 Korean Lyrics 크레딧 후보를 검색했다. 기존 캐시에 함께 들어온 Monsta X JOOHEON/DWTD와 현재 프로듀서를 구분할 작품별 대조가 남는다.",
+          "checkedAt": "2026-10-25T01:39:35.256Z",
+          "waitingSince": "2026-10-25T01:39:35.256Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.256Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "The Muze 이주헌의 공식 유통 Korean Lyrics 크레딧 후보를 검색했다. 기존 캐시에 함께 들어온 Monsta X JOOHEON/DWTD와 현재 프로듀서를 구분할 작품별 대조가 남는다.",
+          "checkedAt": "2026-10-25T01:39:35.346Z",
+          "waitingSince": "2026-10-25T01:39:35.346Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.346Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:35.429Z",
+          "waitingSince": "2026-10-25T01:39:35.429Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.429Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 18,
+        "bandId": "79ff01b9-d43c-4e09-aff1-21b5e1200ad8",
+        "name": "이주헌",
+        "notes": "The Muze 이주헌의 공식 유통 Korean Lyrics 크레딧 후보를 검색했다. 기존 캐시에 함께 들어온 Monsta X JOOHEON/DWTD와 현재 프로듀서를 구분할 작품별 대조가 남는다.",
+        "sourceUrls": [
+          "https://www.genie.co.kr/detail/albumInfo?axnm=86460181"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+      "name": "전상근",
+      "musicBrainzId": "09009fd0-e159-4fdd-8288-af17df754f05",
+      "country": "KR",
+      "originalVersion": "2026-10-14T19:24:49.212607+00:00",
+      "currentVersion": "2026-10-14T19:24:49.212607+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "전상근 소속사 자료 후보를 검색했지만 음악 범위 직접 검증으로 쓸 새 공식 작품/장르 보완을 완료하지 못했다. 기존 사랑이란 멜로는 없어 캐시만으로 록 승인하거나 발라드 제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:35.506Z",
+          "waitingSince": "2026-10-25T01:39:35.506Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.506Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "전상근 소속사 자료 후보를 검색했지만 음악 범위 직접 검증으로 쓸 새 공식 작품/장르 보완을 완료하지 못했다. 기존 사랑이란 멜로는 없어 캐시만으로 록 승인하거나 발라드 제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:35.590Z",
+          "waitingSince": "2026-10-25T01:39:35.590Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.590Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:35.669Z",
+          "waitingSince": "2026-10-25T01:39:35.669Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.669Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 19,
+        "bandId": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+        "name": "전상근",
+        "notes": "전상근 소속사 자료 후보를 검색했지만 음악 범위 직접 검증으로 쓸 새 공식 작품/장르 보완을 완료하지 못했다. 기존 사랑이란 멜로는 없어 캐시만으로 록 승인하거나 발라드 제외하지 않는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "search_inconclusive",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "90dcb73c-7d12-4524-b48f-70c3bdb0c4fd",
+      "name": "정동환",
+      "musicBrainzId": "824507e1-6eda-4526-831f-a41455fd6295",
+      "country": "KR",
+      "originalVersion": "2026-10-12T14:24:09.149216+00:00",
+      "currentVersion": "2026-10-12T14:24:09.149216+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "멜로망스 정동환의 공식 유통 피아노 작품 후보를 검색했다. 이전 getInfo 반환 MBID는 요청과 다르며 Memory만으로 같은 신원이라고 할 수 없다. 새 ID/별칭을 추가하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:35.753Z",
+          "waitingSince": "2026-10-25T01:39:35.753Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.753Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "멜로망스 정동환의 공식 유통 피아노 작품 후보를 검색했다. 이전 getInfo 반환 MBID는 요청과 다르며 Memory만으로 같은 신원이라고 할 수 없다. 새 ID/별칭을 추가하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:35.831Z",
+          "waitingSince": "2026-10-25T01:39:35.831Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.831Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:35.915Z",
+          "waitingSince": "2026-10-25T01:39:35.915Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.915Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 20,
+        "bandId": "90dcb73c-7d12-4524-b48f-70c3bdb0c4fd",
+        "name": "정동환",
+        "notes": "멜로망스 정동환의 공식 유통 피아노 작품 후보를 검색했다. 이전 getInfo 반환 MBID는 요청과 다르며 Memory만으로 같은 신원이라고 할 수 없다. 새 ID/별칭을 추가하지 않는다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/artist/80223135"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+      "name": "최규민",
+      "musicBrainzId": "bafff12b-40a0-4149-8711-1a62a824f9e8",
+      "country": "KR",
+      "originalVersion": "2026-10-15T07:26:59.680884+00:00",
+      "currentVersion": "2026-10-15T07:26:59.680884+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "서울문화포털 직접 자료의 나인티덕 트럼펫 최규민과 공식 음반 참여 후보가 있다. 선택 trumpeter MBID와 개별 크레딧 및 실제 록 활동 대조는 미완료로 남긴다.",
+          "checkedAt": "2026-10-25T01:39:35.996Z",
+          "waitingSince": "2026-10-25T01:39:35.996Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:35.996Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "서울문화포털 직접 자료의 나인티덕 트럼펫 최규민과 공식 음반 참여 후보가 있다. 선택 trumpeter MBID와 개별 크레딧 및 실제 록 활동 대조는 미완료로 남긴다.",
+          "checkedAt": "2026-10-25T01:39:36.078Z",
+          "waitingSince": "2026-10-25T01:39:36.078Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.078Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:36.156Z",
+          "waitingSince": "2026-10-25T01:39:36.156Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.156Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 21,
+        "bandId": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+        "name": "최규민",
+        "notes": "서울문화포털 직접 자료의 나인티덕 트럼펫 최규민과 공식 음반 참여 후보가 있다. 선택 trumpeter MBID와 개별 크레딧 및 실제 록 활동 대조는 미완료로 남긴다.",
+        "sourceUrls": [
+          "https://culture.seoul.go.kr/culture/culture/cultureImage/view.do?menuNo=200017&youtubeId=4306"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "3efe2cd9-2fb1-414f-9cb7-6ac8a7bbe128",
+      "name": "ドレスコード",
+      "musicBrainzId": "730340ac-b0fb-4c90-ae12-f645d18057e5",
+      "country": "JP",
+      "originalVersion": "2026-10-13T08:19:01.238714+00:00",
+      "currentVersion": "2026-10-13T08:19:01.238714+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "HEROINES 공식 profile 목록에서 ドレスコード 소속을 읽었다. 그러나 기존 Last.fm 작품 목록에 아이돌의 最カワぽっぴんプリンセス와 동명 다른 아티스트의 Mindscape/Trash 등이 섞였다. ZULA 직접 열기는503이며 국가·작품·외부 신원을 공식 개별 자료로 더 대조해야 한다. ドレスコーズ/MyDresscode와 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:36.237Z",
+          "waitingSince": "2026-10-25T01:39:36.237Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.237Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "HEROINES 공식 profile 목록에서 ドレスコード 소속을 읽었다. 그러나 기존 Last.fm 작품 목록에 아이돌의 最カワぽっぴんプリンセス와 동명 다른 아티스트의 Mindscape/Trash 등이 섞였다. ZULA 직접 열기는503이며 국가·작품·외부 신원을 공식 개별 자료로 더 대조해야 한다. ドレスコーズ/MyDresscode와 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:36.332Z",
+          "waitingSince": "2026-10-25T01:39:36.332Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.332Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:36.408Z",
+          "waitingSince": "2026-10-25T01:39:36.408Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.408Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 22,
+        "bandId": "3efe2cd9-2fb1-414f-9cb7-6ac8a7bbe128",
+        "name": "ドレスコード",
+        "notes": "HEROINES 공식 profile 목록에서 ドレスコード 소속을 읽었다. 그러나 기존 Last.fm 작품 목록에 아이돌의 最カワぽっぴんプリンセス와 동명 다른 아티스트의 Mindscape/Trash 등이 섞였다. ZULA 직접 열기는503이며 국가·작품·외부 신원을 공식 개별 자료로 더 대조해야 한다. ドレスコーズ/MyDresscode와 합치지 않는다.",
+        "sourceUrls": [
+          "https://heroines.jp/profile",
+          "https://zula.link-map.jp/links/dDvGWSsE"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "countryMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read_with_conflicting_metadata",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+      "name": "王菲",
+      "musicBrainzId": "692e367d-2846-442d-b13d-1177c3681c65",
+      "country": "HK",
+      "originalVersion": "2026-10-13T08:18:50.504389+00:00",
+      "currentVersion": "2026-10-13T08:18:50.504389+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "王菲/Faye Wong의 浮躁 실험/록 음반 자료와 공식 유통 후보를 검색했다. 현재 HK 신원·국가 해석과 실제 록 근거를 함께 직접 검증하지 못해 중국어권/일본어 표기만으로 승인·제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:36.495Z",
+          "waitingSince": "2026-10-25T01:39:36.495Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.495Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "王菲/Faye Wong의 浮躁 실험/록 음반 자료와 공식 유통 후보를 검색했다. 현재 HK 신원·국가 해석과 실제 록 근거를 함께 직접 검증하지 못해 중국어권/일본어 표기만으로 승인·제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:36.575Z",
+          "waitingSince": "2026-10-25T01:39:36.575Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.575Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:36.654Z",
+          "waitingSince": "2026-10-25T01:39:36.654Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.654Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 23,
+        "bandId": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+        "name": "王菲",
+        "notes": "王菲/Faye Wong의 浮躁 실험/록 음반 자료와 공식 유통 후보를 검색했다. 현재 HK 신원·국가 해석과 실제 록 근거를 함께 직접 검증하지 못해 중국어권/일본어 표기만으로 승인·제외하지 않는다.",
+        "sourceUrls": [
+          "https://www.hitoradio.com/newweb/2552album"
+        ],
+        "missingRequirements": [
+          "countryMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "c41979bf-5bca-44c8-bea6-874d472fa581",
+      "name": "강민경",
+      "musicBrainzId": "e2ccebd0-4c8a-4cc7-84ea-66d182a2dfad",
+      "country": "KR",
+      "originalVersion": "2026-10-16T16:39:22.94667+00:00",
+      "currentVersion": "2026-10-16T16:39:22.94667+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "소속사 인용 자료 검색의 강민경1집은 발라드/어쿠스틱 팝/얼터너티브 팝을 구분한다. 얼터너티브 팝을 얼터너티브 록으로 바꾸지 않고 실제 록/J-pop 활동 보완을 남긴다.",
+          "checkedAt": "2026-10-25T01:39:36.732Z",
+          "waitingSince": "2026-10-25T01:39:36.732Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.732Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "소속사 인용 자료 검색의 강민경1집은 발라드/어쿠스틱 팝/얼터너티브 팝을 구분한다. 얼터너티브 팝을 얼터너티브 록으로 바꾸지 않고 실제 록/J-pop 활동 보완을 남긴다.",
+          "checkedAt": "2026-10-25T01:39:36.812Z",
+          "waitingSince": "2026-10-25T01:39:36.812Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.812Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:36.893Z",
+          "waitingSince": "2026-10-25T01:39:36.893Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.893Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 24,
+        "bandId": "c41979bf-5bca-44c8-bea6-874d472fa581",
+        "name": "강민경",
+        "notes": "소속사 인용 자료 검색의 강민경1집은 발라드/어쿠스틱 팝/얼터너티브 팝을 구분한다. 얼터너티브 팝을 얼터너티브 록으로 바꾸지 않고 실제 록/J-pop 활동 보완을 남긴다.",
+        "sourceUrls": [
+          "https://enews.imbc.com/News/RetrieveNewsInfo/255127"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "17a01f0f-2a9b-43d9-b812-4e74848dcd20",
+      "name": "강혜미",
+      "musicBrainzId": "26634484-6cb6-4db1-b7c3-7f247310ecf4",
+      "country": "KR",
+      "originalVersion": "2026-10-17T11:36:58.67961+00:00",
+      "currentVersion": "2026-10-17T11:36:58.67961+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "방송사 자료에서 시와의 본명 강혜미 후보를 발견했지만 현재 선택 MBID의 동일 신원/작품을 확인하지 못했다. 별칭 시와 추가나 상태 변경 없이 신원·록 범위를 미완료로 남긴다.",
+          "checkedAt": "2026-10-25T01:39:36.972Z",
+          "waitingSince": "2026-10-25T01:39:36.972Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:36.972Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "방송사 자료에서 시와의 본명 강혜미 후보를 발견했지만 현재 선택 MBID의 동일 신원/작품을 확인하지 못했다. 별칭 시와 추가나 상태 변경 없이 신원·록 범위를 미완료로 남긴다.",
+          "checkedAt": "2026-10-25T01:39:37.054Z",
+          "waitingSince": "2026-10-25T01:39:37.054Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.054Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:37.130Z",
+          "waitingSince": "2026-10-25T01:39:37.130Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.130Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 25,
+        "bandId": "17a01f0f-2a9b-43d9-b812-4e74848dcd20",
+        "name": "강혜미",
+        "notes": "방송사 자료에서 시와의 본명 강혜미 후보를 발견했지만 현재 선택 MBID의 동일 신원/작품을 확인하지 못했다. 별칭 시와 추가나 상태 변경 없이 신원·록 범위를 미완료로 남긴다.",
+        "sourceUrls": [
+          "https://ichannela.com/news/main/news_detailPage.do?publishId=53627711-3"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "c94dfe45-e1c4-4b0a-ad09-779847b5e42c",
+      "name": "곽푸른하늘",
+      "musicBrainzId": "c49a9bcf-2e90-49ed-afbf-f4ad0f27372d",
+      "country": "KR",
+      "originalVersion": "2026-10-16T22:53:23.310525+00:00",
+      "currentVersion": "2026-10-16T22:53:23.310525+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "POCLANOS 공식 유통의 곽푸른하늘 피의 연대기 코러스/천용성 음반 참여 후보를 검색했다. Rock 장르 목록 페이지에 이름이 나온다는 이유만으로 해당 참여곡의 록/본인 활동을 확정하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:37.215Z",
+          "waitingSince": "2026-10-25T01:39:37.215Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.215Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "POCLANOS 공식 유통의 곽푸른하늘 피의 연대기 코러스/천용성 음반 참여 후보를 검색했다. Rock 장르 목록 페이지에 이름이 나온다는 이유만으로 해당 참여곡의 록/본인 활동을 확정하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:37.294Z",
+          "waitingSince": "2026-10-25T01:39:37.294Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.294Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:37.377Z",
+          "waitingSince": "2026-10-25T01:39:37.377Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.377Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 26,
+        "bandId": "c94dfe45-e1c4-4b0a-ad09-779847b5e42c",
+        "name": "곽푸른하늘",
+        "notes": "POCLANOS 공식 유통의 곽푸른하늘 피의 연대기 코러스/천용성 음반 참여 후보를 검색했다. Rock 장르 목록 페이지에 이름이 나온다는 이유만으로 해당 참여곡의 록/본인 활동을 확정하지 않았다.",
+        "sourceUrls": [
+          "https://poclanos.com/album/%ED%94%BC%EC%9D%98-%EC%97%B0%EB%8C%80%EA%B8%B0-ost/"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "e0a8a0c9-b150-4e69-a1b4-6acff2610bc1",
+      "name": "김수찬",
+      "musicBrainzId": "6576e5d1-b325-4945-affa-21e40cfbd267",
+      "country": "KR",
+      "originalVersion": "2026-10-16T22:53:23.306904+00:00",
+      "currentVersion": "2026-10-16T22:53:23.306904+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "김수찬 소속사·공식 활동 검색을 했으나 정확한 선택 MBID와 작품을 직접 연결할 새 근거가 없다. 이전 API6은 인증 실패나 제외 근거가 아니며 트로트 관측만으로 제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:37.454Z",
+          "waitingSince": "2026-10-25T01:39:37.454Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.454Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "김수찬 소속사·공식 활동 검색을 했으나 정확한 선택 MBID와 작품을 직접 연결할 새 근거가 없다. 이전 API6은 인증 실패나 제외 근거가 아니며 트로트 관측만으로 제외하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:37.537Z",
+          "waitingSince": "2026-10-25T01:39:37.537Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.537Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:37.615Z",
+          "waitingSince": "2026-10-25T01:39:37.615Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.615Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 27,
+        "bandId": "e0a8a0c9-b150-4e69-a1b4-6acff2610bc1",
+        "name": "김수찬",
+        "notes": "김수찬 소속사·공식 활동 검색을 했으나 정확한 선택 MBID와 작품을 직접 연결할 새 근거가 없다. 이전 API6은 인증 실패나 제외 근거가 아니며 트로트 관측만으로 제외하지 않는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "40f19eb7-0fe5-448c-a38e-3d6e2311330a",
+      "name": "김윤성",
+      "musicBrainzId": "883f9f3f-39a7-4e2b-82fc-b3cbe3c945a9",
+      "country": "KR",
+      "originalVersion": "2026-10-16T22:53:23.26836+00:00",
+      "currentVersion": "2026-10-16T22:53:23.26836+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "개코의 본명 김윤성 및 공식 유통 아티스트 후보를 검색했다. 같은 이름인 편곡자/베이시스트와 현재 MBID 작품을 분리할 직접 공식 자료 대조가 미완료다.",
+          "checkedAt": "2026-10-25T01:39:37.714Z",
+          "waitingSince": "2026-10-25T01:39:37.714Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.714Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "개코의 본명 김윤성 및 공식 유통 아티스트 후보를 검색했다. 같은 이름인 편곡자/베이시스트와 현재 MBID 작품을 분리할 직접 공식 자료 대조가 미완료다.",
+          "checkedAt": "2026-10-25T01:39:37.803Z",
+          "waitingSince": "2026-10-25T01:39:37.803Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.803Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:37.896Z",
+          "waitingSince": "2026-10-25T01:39:37.896Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:37.896Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 28,
+        "bandId": "40f19eb7-0fe5-448c-a38e-3d6e2311330a",
+        "name": "김윤성",
+        "notes": "개코의 본명 김윤성 및 공식 유통 아티스트 후보를 검색했다. 같은 이름인 편곡자/베이시스트와 현재 MBID 작품을 분리할 직접 공식 자료 대조가 미완료다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/artist/2916"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "aeafb3eb-9427-4378-9fe1-6753f011df38",
+      "name": "박서준",
+      "musicBrainzId": "ee5805da-1ab9-4d56-9429-e337957fe653",
+      "country": "KR",
+      "originalVersion": "2026-10-16T22:53:23.30398+00:00",
+      "currentVersion": "2026-10-16T22:53:23.30398+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "박서준 배우/음악 활동 공식 프로필을 검색했으나 현재 MBID의 구체 OST 가창과 전체 음악 범위 대조를 완료하지 못했다. 배우 직업 또는 OST 가창 하나로 제외/승인하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:38.008Z",
+          "waitingSince": "2026-10-25T01:39:38.008Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.008Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "박서준 배우/음악 활동 공식 프로필을 검색했으나 현재 MBID의 구체 OST 가창과 전체 음악 범위 대조를 완료하지 못했다. 배우 직업 또는 OST 가창 하나로 제외/승인하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:38.093Z",
+          "waitingSince": "2026-10-25T01:39:38.093Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.093Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:38.179Z",
+          "waitingSince": "2026-10-25T01:39:38.179Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.179Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 29,
+        "bandId": "aeafb3eb-9427-4378-9fe1-6753f011df38",
+        "name": "박서준",
+        "notes": "박서준 배우/음악 활동 공식 프로필을 검색했으나 현재 MBID의 구체 OST 가창과 전체 음악 범위 대조를 완료하지 못했다. 배우 직업 또는 OST 가창 하나로 제외/승인하지 않는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "search_inconclusive",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+      "name": "박승화",
+      "musicBrainzId": "f46faa51-ba65-460c-ad25-bdf3d96fcf41",
+      "country": "KR",
+      "originalVersion": "2026-10-16T16:39:22.929322+00:00",
+      "currentVersion": "2026-10-25T01:36:45.15654+00:00",
+      "currentStatus": "approved",
+      "currentCategory": "domestic_rock",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 유통 20주년 기념 앨범 소개가 타이틀 다시 한 번을 모던 락으로 명시하고 유리상자 멤버·1993년 솔로 데뷔를 설명한다. 아티스트 프로필의 대한민국 국적 및 같은 솔로 작품을 현재 DB/일치 MBID의 기존 Last.fm 응답과 대조했다. 발라드/포크 표제만으로 실제 록 활동을 누락하지 않는다.",
+          "checkedAt": "2026-10-25T01:36:43.538Z",
+          "waitingSince": "2026-10-25T01:36:43.538Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-25T01:36:23.006Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-23T01:36:23.006Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "공식 유통 20주년 기념 앨범 소개가 타이틀 다시 한 번을 모던 락으로 명시하고 유리상자 멤버·1993년 솔로 데뷔를 설명한다. 아티스트 프로필의 대한민국 국적 및 같은 솔로 작품을 현재 DB/일치 MBID의 기존 Last.fm 응답과 대조했다. 발라드/포크 표제만으로 실제 록 활동을 누락하지 않는다.",
+            "sources": [
+              {
+                "url": "https://music.bugs.co.kr/album/373680",
+                "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+                "summary": "공식 유통 20주년 기념 앨범의 타이틀 다시 한번 설명에 모던 락을 명시한다. 포크·발라드와 혼합된 실제 록 활동으로 기존 domestic_rock 기준에 해당한다."
+              },
+              {
+                "url": "https://music.bugs.co.kr/artist/1565",
+                "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+                "summary": "Bugs의 유리상자 멤버 박승화·20주년 기념 앨범·사랑해요·왕가네 식구들 OST와 기존 Last.fm 동일 MBID의 같은 작품이 일치한다."
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-25T01:36:43.643Z",
+          "waitingSince": "2026-10-25T01:36:43.643Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T01:36:43.643Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-23T01:36:43.643Z",
+          "proposal": {
+            "target_band_id": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+            "expected_updated_at": "2026-10-16T16:39:22.929322+00:00",
+            "artist_name": "박승화",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 유통 20주년 기념 앨범 소개가 타이틀 다시 한 번을 모던 락으로 명시하고 유리상자 멤버·1993년 솔로 데뷔를 설명한다. 아티스트 프로필의 대한민국 국적 및 같은 솔로 작품을 현재 DB/일치 MBID의 기존 Last.fm 응답과 대조했다. 발라드/포크 표제만으로 실제 록 활동을 누락하지 않는다.",
+            "evidence_url": "https://music.bugs.co.kr/album/373680"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-25T01:36:45.15654+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:38.293Z",
+          "waitingSince": "2026-10-25T01:39:38.293Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.293Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 30,
+        "bandId": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+        "name": "박승화",
+        "notes": "공식 유통 20주년 기념 앨범 소개가 타이틀 다시 한 번을 모던 락으로 명시하고 유리상자 멤버·1993년 솔로 데뷔를 설명한다. 아티스트 프로필의 대한민국 국적 및 같은 솔로 작품을 현재 DB/일치 MBID의 기존 Last.fm 응답과 대조했다. 발라드/포크 표제만으로 실제 록 활동을 누락하지 않는다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/album/373680",
+          "https://music.bugs.co.kr/artist/1565"
+        ],
+        "missingRequirements": [],
+        "scope": "verified",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": true,
+        "readyToApply": true,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      },
+      "proposal": {
+        "target_band_id": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+        "expected_updated_at": "2026-10-16T16:39:22.929322+00:00",
+        "artist_name": "박승화",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 유통 20주년 기념 앨범 소개가 타이틀 다시 한 번을 모던 락으로 명시하고 유리상자 멤버·1993년 솔로 데뷔를 설명한다. 아티스트 프로필의 대한민국 국적 및 같은 솔로 작품을 현재 DB/일치 MBID의 기존 Last.fm 응답과 대조했다. 발라드/포크 표제만으로 실제 록 활동을 누락하지 않는다.",
+        "evidence_url": "https://music.bugs.co.kr/album/373680"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Bugs의 유리상자 멤버 박승화·20주년 기념 앨범·사랑해요·왕가네 식구들 OST와 기존 Last.fm 동일 MBID의 같은 작품이 일치한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/373680",
+            "https://music.bugs.co.kr/artist/1565"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Bugs 박승화 아티스트 기본정보에 국적 대한민국이 명시되어 현재 KR와 일치한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/373680",
+            "https://music.bugs.co.kr/artist/1565"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 유통 20주년 기념 앨범의 타이틀 다시 한번 설명에 모던 락을 명시한다. 포크·발라드와 혼합된 실제 록 활동으로 기존 domestic_rock 기준에 해당한다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/373680",
+            "https://music.bugs.co.kr/artist/1565"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "대한민국 동일 신원의 실제 포크록/모던 록 활동으로 기존 domestic_rock 정책에 해당한다. 혼합 장르를 제외하지 않고 새 분류 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/373680",
+            "https://music.bugs.co.kr/artist/1565"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 선택된 서비스 context의 mb:f46faa51-ba65-460c-ad25-bdf3d96fcf41 연결과 기존 Last.fm 요청/반환 동일 MBID·작품·공식 신원을 대조했다. 캐시 checkedAt 2026-10-24T01:24:19.816Z를 갱신하지 않았다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/373680",
+            "https://music.bugs.co.kr/artist/1565"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인 시 해당 외부 신원별 공연 자동 공개 승인이 생기며, 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공연 공개 ON이나 발송을 실행하지 않는다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/album/373680",
+            "https://music.bugs.co.kr/artist/1565"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 유통 20주년 기념 앨범 소개가 타이틀 다시 한 번을 모던 락으로 명시하고 유리상자 멤버·1993년 솔로 데뷔를 설명한다. 아티스트 프로필의 대한민국 국적 및 같은 솔로 작품을 현재 DB/일치 MBID의 기존 Last.fm 응답과 대조했다. 발라드/포크 표제만으로 실제 록 활동을 누락하지 않는다.",
+        "sources": [
+          {
+            "url": "https://music.bugs.co.kr/album/373680",
+            "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+            "summary": "공식 유통 20주년 기념 앨범의 타이틀 다시 한번 설명에 모던 락을 명시한다. 포크·발라드와 혼합된 실제 록 활동으로 기존 domestic_rock 기준에 해당한다."
+          },
+          {
+            "url": "https://music.bugs.co.kr/artist/1565",
+            "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+            "summary": "Bugs의 유리상자 멤버 박승화·20주년 기념 앨범·사랑해요·왕가네 식구들 OST와 기존 Last.fm 동일 MBID의 같은 작품이 일치한다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+      "name": "박학기",
+      "musicBrainzId": "d82f829a-fa05-46fb-a46c-a45579505d00",
+      "country": "KR",
+      "originalVersion": "2026-10-17T06:57:47.359495+00:00",
+      "currentVersion": "2026-10-25T01:36:47.165872+00:00",
+      "currentStatus": "approved",
+      "currentCategory": "domestic_rock",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 유통 프로필의 대한민국·비타민·1989년 솔로 데뷔와 공주문화관광재단의 동일 신원/작품을 대조했다. 한예진의 교수 임용 발표를 인용한 기사에서 포크록 싱어송라이터 활동을 확인했다. 포크 전체를 자동 록으로 바꾸지 않고 이 아티스트의 구체 근거를 사용한다.",
+          "checkedAt": "2026-10-25T01:36:46.337Z",
+          "waitingSince": "2026-10-25T01:36:46.337Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-25T01:36:23.006Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-23T01:36:23.006Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "공식 유통 프로필의 대한민국·비타민·1989년 솔로 데뷔와 공주문화관광재단의 동일 신원/작품을 대조했다. 한예진의 교수 임용 발표를 인용한 기사에서 포크록 싱어송라이터 활동을 확인했다. 포크 전체를 자동 록으로 바꾸지 않고 이 아티스트의 구체 근거를 사용한다.",
+            "sources": [
+              {
+                "url": "https://music.bugs.co.kr/artist/1862",
+                "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+                "summary": "한예진 교수 임용 발표를 인용한 헤럴드경제 기사에서 박학기를 대한민국 대표 포크록 싱어송라이터로 명시한다. 공공 문화재단·공식 유통의 같은 작품/신원과 대조했다."
+              },
+              {
+                "url": "https://v.daum.net/v/20151006224609582",
+                "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+                "summary": "한예진 교수 임용 발표를 인용한 헤럴드경제 기사에서 박학기를 대한민국 대표 포크록 싱어송라이터로 명시한다. 공공 문화재단·공식 유통의 같은 작품/신원과 대조했다."
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-25T01:36:46.404Z",
+          "waitingSince": "2026-10-25T01:36:46.404Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T01:36:46.404Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-23T01:36:46.404Z",
+          "proposal": {
+            "target_band_id": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+            "expected_updated_at": "2026-10-17T06:57:47.359495+00:00",
+            "artist_name": "박학기",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [
+              "Park Hak-kee"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 유통 프로필의 대한민국·비타민·1989년 솔로 데뷔와 공주문화관광재단의 동일 신원/작품을 대조했다. 한예진의 교수 임용 발표를 인용한 기사에서 포크록 싱어송라이터 활동을 확인했다. 포크 전체를 자동 록으로 바꾸지 않고 이 아티스트의 구체 근거를 사용한다.",
+            "evidence_url": "https://music.bugs.co.kr/artist/1862"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-25T01:36:47.165872+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:38.413Z",
+          "waitingSince": "2026-10-25T01:39:38.413Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.413Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 31,
+        "bandId": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+        "name": "박학기",
+        "notes": "공식 유통 프로필의 대한민국·비타민·1989년 솔로 데뷔와 공주문화관광재단의 동일 신원/작품을 대조했다. 한예진의 교수 임용 발표를 인용한 기사에서 포크록 싱어송라이터 활동을 확인했다. 포크 전체를 자동 록으로 바꾸지 않고 이 아티스트의 구체 근거를 사용한다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/artist/1862",
+          "https://v.daum.net/v/20151006224609582"
+        ],
+        "missingRequirements": [],
+        "scope": "verified",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": true,
+        "readyToApply": true,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      },
+      "proposal": {
+        "target_band_id": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+        "expected_updated_at": "2026-10-17T06:57:47.359495+00:00",
+        "artist_name": "박학기",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [
+          "Park Hak-kee"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 유통 프로필의 대한민국·비타민·1989년 솔로 데뷔와 공주문화관광재단의 동일 신원/작품을 대조했다. 한예진의 교수 임용 발표를 인용한 기사에서 포크록 싱어송라이터 활동을 확인했다. 포크 전체를 자동 록으로 바꾸지 않고 이 아티스트의 구체 근거를 사용한다.",
+        "evidence_url": "https://music.bugs.co.kr/artist/1862"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Bugs의 1989년 데뷔·비타민·향기로운 추억 및 공주문화관광재단의 같은 신원/작품이 일치 MBID 기존 Last.fm 박학기·비타민·이미 그댄과 대조된다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/artist/1862",
+            "https://v.daum.net/v/20151006224609582"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Bugs 박학기 프로필의 국적 대한민국과 국내 공공 문화재단의 동일 활동 신원을 현재 KR와 대조했다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/artist/1862",
+            "https://v.daum.net/v/20151006224609582"
+          ]
+        },
+        "genreMatched": {
+          "summary": "한예진 교수 임용 발표를 인용한 헤럴드경제 기사에서 박학기를 대한민국 대표 포크록 싱어송라이터로 명시한다. 공공 문화재단·공식 유통의 같은 작품/신원과 대조했다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/artist/1862",
+            "https://v.daum.net/v/20151006224609582"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "대한민국 동일 신원의 실제 포크록/모던 록 활동으로 기존 domestic_rock 정책에 해당한다. 혼합 장르를 제외하지 않고 새 분류 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/artist/1862",
+            "https://v.daum.net/v/20151006224609582"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 선택된 서비스 context의 mb:d82f829a-fa05-46fb-a46c-a45579505d00 연결과 기존 Last.fm 요청/반환 동일 MBID·작품·공식 신원을 대조했다. 캐시 checkedAt 2026-10-24T01:24:20.052Z를 갱신하지 않았다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/artist/1862",
+            "https://v.daum.net/v/20151006224609582"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인 시 해당 외부 신원별 공연 자동 공개 승인이 생기며, 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건이 별도로 필요하다. 공연 공개 ON이나 발송을 실행하지 않는다.",
+          "sourceUrls": [
+            "https://music.bugs.co.kr/artist/1862",
+            "https://v.daum.net/v/20151006224609582"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 유통 프로필의 대한민국·비타민·1989년 솔로 데뷔와 공주문화관광재단의 동일 신원/작품을 대조했다. 한예진의 교수 임용 발표를 인용한 기사에서 포크록 싱어송라이터 활동을 확인했다. 포크 전체를 자동 록으로 바꾸지 않고 이 아티스트의 구체 근거를 사용한다.",
+        "sources": [
+          {
+            "url": "https://music.bugs.co.kr/artist/1862",
+            "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+            "summary": "한예진 교수 임용 발표를 인용한 헤럴드경제 기사에서 박학기를 대한민국 대표 포크록 싱어송라이터로 명시한다. 공공 문화재단·공식 유통의 같은 작품/신원과 대조했다."
+          },
+          {
+            "url": "https://v.daum.net/v/20151006224609582",
+            "checkedAt": "2026-10-25T01:36:23.006178+00:00",
+            "summary": "한예진 교수 임용 발표를 인용한 헤럴드경제 기사에서 박학기를 대한민국 대표 포크록 싱어송라이터로 명시한다. 공공 문화재단·공식 유통의 같은 작품/신원과 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "ce20750c-76b2-43e9-b915-4295022ecb0e",
+      "name": "유준열",
+      "musicBrainzId": "494f5b95-5af0-473e-ba3a-39e25daee835",
+      "country": "KR",
+      "originalVersion": "2026-10-16T16:39:22.913584+00:00",
+      "currentVersion": "2026-10-16T16:39:22.913584+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "공주문화관광재단 직접 소개에서 동물원 유준열과 1988년 데뷔/대표작을 확인했다. 포크 그룹의 멤버라는 사실만으로 개인의 록 범위를 확정하지 않으며 정확한 본인 크레딧 검증이 남는다.",
+          "checkedAt": "2026-10-25T01:39:38.533Z",
+          "waitingSince": "2026-10-25T01:39:38.533Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.533Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "공주문화관광재단 직접 소개에서 동물원 유준열과 1988년 데뷔/대표작을 확인했다. 포크 그룹의 멤버라는 사실만으로 개인의 록 범위를 확정하지 않으며 정확한 본인 크레딧 검증이 남는다.",
+          "checkedAt": "2026-10-25T01:39:38.612Z",
+          "waitingSince": "2026-10-25T01:39:38.612Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.612Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:38.695Z",
+          "waitingSince": "2026-10-25T01:39:38.695Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.695Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 32,
+        "bandId": "ce20750c-76b2-43e9-b915-4295022ecb0e",
+        "name": "유준열",
+        "notes": "공주문화관광재단 직접 소개에서 동물원 유준열과 1988년 데뷔/대표작을 확인했다. 포크 그룹의 멤버라는 사실만으로 개인의 록 범위를 확정하지 않으며 정확한 본인 크레딧 검증이 남는다.",
+        "sourceUrls": [
+          "https://www.gongjucf.or.kr/base/nrr/performance/read?dateType=&menuLevel=3&menuNo=16&performanceNo=1525&type=A1"
+        ],
+        "missingRequirements": [
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "8563b83a-cd99-4b50-822d-339e86b108fa",
+      "name": "이정희",
+      "musicBrainzId": "abdf0be4-ebf0-4a06-8324-a03ebe2f674a",
+      "country": "KR",
+      "originalVersion": "2026-10-21T13:48:31.369679+00:00",
+      "currentVersion": "2026-10-21T13:48:31.369679+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "이정희/이정/7Dayz 검색과 기존 Last.fm의 동명 여성 가수 음반 사이 상충을 보존했다. 반환 MBID가 같아도 해당 작품을 남성 솔로 이정의 근거로 합치지 않았다.",
+          "checkedAt": "2026-10-25T01:39:38.775Z",
+          "waitingSince": "2026-10-25T01:39:38.775Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.775Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "이정희/이정/7Dayz 검색과 기존 Last.fm의 동명 여성 가수 음반 사이 상충을 보존했다. 반환 MBID가 같아도 해당 작품을 남성 솔로 이정의 근거로 합치지 않았다.",
+          "checkedAt": "2026-10-25T01:39:38.864Z",
+          "waitingSince": "2026-10-25T01:39:38.864Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.864Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:38.980Z",
+          "waitingSince": "2026-10-25T01:39:38.980Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:38.980Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 33,
+        "bandId": "8563b83a-cd99-4b50-822d-339e86b108fa",
+        "name": "이정희",
+        "notes": "이정희/이정/7Dayz 검색과 기존 Last.fm의 동명 여성 가수 음반 사이 상충을 보존했다. 반환 MBID가 같아도 해당 작품을 남성 솔로 이정의 근거로 합치지 않았다.",
+        "sourceUrls": [
+          "https://www.maniadb.com/artist/109203"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "909e9a31-9cbe-4513-90eb-6f2b66664ac8",
+      "name": "신아영",
+      "musicBrainzId": "fcc7d92f-b62c-4c77-9d6a-95b1f1b65c5d",
+      "country": "KR",
+      "originalVersion": "2026-10-24T00:42:29.26987+00:00",
+      "currentVersion": "2026-10-24T00:42:29.26987+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "신아영/이파란 후보를 검색했지만 방송인·가수 동명과 선택 MBID 캐시의 발라드 컴필레이션만으로 같은 신원을 확인하지 못했다. 공식 개별 크레딧 및 실제 록 활동 검증이 남는다.",
+          "checkedAt": "2026-10-25T01:39:39.065Z",
+          "waitingSince": "2026-10-25T01:39:39.065Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.065Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "신아영/이파란 후보를 검색했지만 방송인·가수 동명과 선택 MBID 캐시의 발라드 컴필레이션만으로 같은 신원을 확인하지 못했다. 공식 개별 크레딧 및 실제 록 활동 검증이 남는다.",
+          "checkedAt": "2026-10-25T01:39:39.148Z",
+          "waitingSince": "2026-10-25T01:39:39.148Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.148Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:39.231Z",
+          "waitingSince": "2026-10-25T01:39:39.231Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.231Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 34,
+        "bandId": "909e9a31-9cbe-4513-90eb-6f2b66664ac8",
+        "name": "신아영",
+        "notes": "신아영/이파란 후보를 검색했지만 방송인·가수 동명과 선택 MBID 캐시의 발라드 컴필레이션만으로 같은 신원을 확인하지 못했다. 공식 개별 크레딧 및 실제 록 활동 검증이 남는다.",
+        "sourceUrls": [],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "1487a0b0-389a-45df-b328-c6b6edf1af82",
+      "name": "이제형",
+      "musicBrainzId": "e583fbc6-9317-493b-a0cc-088dda997972",
+      "country": "KR",
+      "originalVersion": "2026-10-24T00:42:29.282691+00:00",
+      "currentVersion": "2026-10-24T00:42:29.282691+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "deferred",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "Bugs Avenue St. 직접 소개의 이제형 프로듀서/믹싱엔지니어·민트미즐 등 활동을 확인했다. 선택 MBID와 이 인물의 원작 연결 및 록 본인 활동은 미완료라 다른 동명 작곡가와 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:39.329Z",
+          "waitingSince": "2026-10-25T01:39:39.329Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.329Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "Bugs Avenue St. 직접 소개의 이제형 프로듀서/믹싱엔지니어·민트미즐 등 활동을 확인했다. 선택 MBID와 이 인물의 원작 연결 및 록 본인 활동은 미완료라 다른 동명 작곡가와 합치지 않는다.",
+          "checkedAt": "2026-10-25T01:39:39.408Z",
+          "waitingSince": "2026-10-25T01:39:39.408Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.408Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:39.495Z",
+          "waitingSince": "2026-10-25T01:39:39.495Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.495Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 35,
+        "bandId": "1487a0b0-389a-45df-b328-c6b6edf1af82",
+        "name": "이제형",
+        "notes": "Bugs Avenue St. 직접 소개의 이제형 프로듀서/믹싱엔지니어·민트미즐 등 활동을 확인했다. 선택 MBID와 이 인물의 원작 연결 및 록 본인 활동은 미완료라 다른 동명 작곡가와 합치지 않는다.",
+        "sourceUrls": [
+          "https://music.bugs.co.kr/artist/80140511"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "c5813b89-a1e6-45d8-9442-10882150acb9",
+      "name": "고상지",
+      "musicBrainzId": "4345f596-64aa-4a86-8388-b3046d0b6c8d",
+      "country": "KR",
+      "originalVersion": "2026-10-24T23:14:26.794259+00:00",
+      "currentVersion": "2026-10-24T23:14:26.794259+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "pending",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "국립아시아문화전당 프로필과 실제 일치 MBID Last.fm의 Maycgre 1.0/Ataque del Tango를 대조했다. 일본 애니메이션 영감·탱고 활동을 J-pop으로 세지 않고 과거 대학 록 밴드 경험만으로 현재 분류를 확정하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:39.575Z",
+          "waitingSince": "2026-10-25T01:39:39.575Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.575Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "국립아시아문화전당 프로필과 실제 일치 MBID Last.fm의 Maycgre 1.0/Ataque del Tango를 대조했다. 일본 애니메이션 영감·탱고 활동을 J-pop으로 세지 않고 과거 대학 록 밴드 경험만으로 현재 분류를 확정하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:39.659Z",
+          "waitingSince": "2026-10-25T01:39:39.659Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.659Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:39.739Z",
+          "waitingSince": "2026-10-25T01:39:39.739Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.739Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 36,
+        "bandId": "c5813b89-a1e6-45d8-9442-10882150acb9",
+        "name": "고상지",
+        "notes": "국립아시아문화전당 프로필과 실제 일치 MBID Last.fm의 Maycgre 1.0/Ataque del Tango를 대조했다. 일본 애니메이션 영감·탱고 활동을 J-pop으로 세지 않고 과거 대학 록 밴드 경험만으로 현재 분류를 확정하지 않는다.",
+        "sourceUrls": [
+          "https://www.acc.go.kr/main/performance.do?PID=010401&action=Read&bnkey=EM_0000002749"
+        ],
+        "missingRequirements": [
+          "genreMatched",
+          "classificationMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "9d955b8f-e6ac-4f68-8e00-316f9eacc034",
+      "name": "김관우",
+      "musicBrainzId": "6bf8b763-a90d-481f-91f9-5a9569b3675f",
+      "country": "KR",
+      "originalVersion": "2026-10-24T20:48:52.102697+00:00",
+      "currentVersion": "2026-10-24T20:48:52.102697+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "pending",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "Last.fm 동일 MBID의 김관우는 November Beautiful Piano/FOUR SEASONS와 꼬꼬관광 컴필레이션을 반환했다. 검색된 LIF 보컬 김관우를 여기에 자동 연결하지 않았다. 기획사 페이지 직접 열기도403이며 원작/동명 신원 추가 대조가 필요하다.",
+          "checkedAt": "2026-10-25T01:39:39.856Z",
+          "waitingSince": "2026-10-25T01:39:39.856Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.856Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "Last.fm 동일 MBID의 김관우는 November Beautiful Piano/FOUR SEASONS와 꼬꼬관광 컴필레이션을 반환했다. 검색된 LIF 보컬 김관우를 여기에 자동 연결하지 않았다. 기획사 페이지 직접 열기도403이며 원작/동명 신원 추가 대조가 필요하다.",
+          "checkedAt": "2026-10-25T01:39:39.936Z",
+          "waitingSince": "2026-10-25T01:39:39.936Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:39.936Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:40.021Z",
+          "waitingSince": "2026-10-25T01:39:40.021Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.021Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 37,
+        "bandId": "9d955b8f-e6ac-4f68-8e00-316f9eacc034",
+        "name": "김관우",
+        "notes": "Last.fm 동일 MBID의 김관우는 November Beautiful Piano/FOUR SEASONS와 꼬꼬관광 컴필레이션을 반환했다. 검색된 LIF 보컬 김관우를 여기에 자동 연결하지 않았다. 기획사 페이지 직접 열기도403이며 원작/동명 신원 추가 대조가 필요하다.",
+        "sourceUrls": [
+          "https://jjticketbox.com/Music/?bmode=view&idx=164883867"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "conflicting_candidate_and_source_403",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "ac16ba04-2571-42d6-948a-cc49b750d5ee",
+      "name": "김은영",
+      "musicBrainzId": "8d8d63c3-fc24-4810-90e1-ce9798a62808",
+      "country": "KR",
+      "originalVersion": "2026-10-24T20:48:52.114368+00:00",
+      "currentVersion": "2026-10-24T20:48:52.114368+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "pending",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "더블엑스 공식 actor 목록에서 김은영(CHEETAH) 래퍼/배우를 읽었다. 현재 선택 MBID getInfo는 API6이므로 이 후보를 실제 외부 신원과 연결했다고 할 수 없다. 동명 작곡가와 합치거나 CHEETAH 별칭을 추가하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:40.104Z",
+          "waitingSince": "2026-10-25T01:39:40.104Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.104Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "더블엑스 공식 actor 목록에서 김은영(CHEETAH) 래퍼/배우를 읽었다. 현재 선택 MBID getInfo는 API6이므로 이 후보를 실제 외부 신원과 연결했다고 할 수 없다. 동명 작곡가와 합치거나 CHEETAH 별칭을 추가하지 않았다.",
+          "checkedAt": "2026-10-25T01:39:40.183Z",
+          "waitingSince": "2026-10-25T01:39:40.183Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.183Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:40.263Z",
+          "waitingSince": "2026-10-25T01:39:40.263Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.263Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 38,
+        "bandId": "ac16ba04-2571-42d6-948a-cc49b750d5ee",
+        "name": "김은영",
+        "notes": "더블엑스 공식 actor 목록에서 김은영(CHEETAH) 래퍼/배우를 읽었다. 현재 선택 MBID getInfo는 API6이므로 이 후보를 실제 외부 신원과 연결했다고 할 수 없다. 동명 작곡가와 합치거나 CHEETAH 별칭을 추가하지 않았다.",
+        "sourceUrls": [
+          "https://xx-ent.com/actor.html"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "document_read",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    },
+    {
+      "bandId": "bd004a0b-e24d-4156-9d4b-ae8f7b724748",
+      "name": "박예슬",
+      "musicBrainzId": "8f58fa53-023f-48d0-9177-f0c6fdab0f39",
+      "country": "KR",
+      "originalVersion": "2026-10-25T01:11:53.11779+00:00",
+      "currentVersion": "2026-10-25T01:11:53.11779+00:00",
+      "currentStatus": "unreviewed",
+      "currentCategory": "unclassified",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "priorResearchStatus": "pending",
+      "recordedTasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "Last.fm 같은 MBID 박예슬은 bright#4와 다수 발라드 컴필레이션·타가수 음반이 섞였다. 검색된 오아랜/ORN 본명 후보를 정확한 작품 검증 없이 연결하거나 별칭을 추가하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:40.342Z",
+          "waitingSince": "2026-10-25T01:39:40.342Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.342Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "Last.fm 같은 MBID 박예슬은 bright#4와 다수 발라드 컴필레이션·타가수 음반이 섞였다. 검색된 오아랜/ORN 본명 후보를 정확한 작품 검증 없이 연결하거나 별칭을 추가하지 않는다.",
+          "checkedAt": "2026-10-25T01:39:40.424Z",
+          "waitingSince": "2026-10-25T01:39:40.424Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.424Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+          "checkedAt": "2026-10-25T01:39:40.502Z",
+          "waitingSince": "2026-10-25T01:39:40.502Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-26T01:39:40.502Z",
+          "validUntil": null
+        }
+      },
+      "observations": {
+        "i": 39,
+        "bandId": "bd004a0b-e24d-4156-9d4b-ae8f7b724748",
+        "name": "박예슬",
+        "notes": "Last.fm 같은 MBID 박예슬은 bright#4와 다수 발라드 컴필레이션·타가수 음반이 섞였다. 검색된 오아랜/ORN 본명 후보를 정확한 작품 검증 없이 연결하거나 별칭을 추가하지 않는다.",
+        "sourceUrls": [
+          "https://www.stagepick.co.kr/artists/detail/O5jo1tjvNz7vJ613"
+        ],
+        "missingRequirements": [
+          "identityMatched",
+          "genreMatched"
+        ],
+        "scope": "discovery_only",
+        "observationAt": "2026-10-25T01:39:11.668180+00:00",
+        "researchComplete": false,
+        "readyToApply": false,
+        "channelReason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다."
+      }
+    }
+  ]
+}
