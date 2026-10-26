@@ -1,0 +1,4786 @@
+{
+  "runId": "cddcf52f-2ad0-4186-b4cc-5a4e3c72992a",
+  "startedAt": "2026-10-26T21:23:34.17+00:00",
+  "serverFinishedAt": "2026-10-26T21:32:55.457776+00:00",
+  "reportedAt": "2026-10-26T21:35:19.132072+00:00",
+  "reportedAtKst": "2026-10-27T06:35:19.132072+09:00",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "path": "/workspace/Concert_finder-recovered-20261023",
+  "gitHeadBefore": "ac27e18",
+  "requiredAncestorsPresent": [
+    "f267be1",
+    "fd45938"
+  ],
+  "environment": {
+    "observationsCurrent": true,
+    "phase": "running",
+    "networkPolicy": "enforced/restricted",
+    "bindings": "ready",
+    "supabaseActualSnapshotRead": true,
+    "lastfmActualHttp200": true,
+    "tlsProxyPreserved": true
+  },
+  "initialCatalog": {
+    "total": 663,
+    "approved": 394,
+    "unreviewed": 263,
+    "excluded": 6
+  },
+  "finalCatalog": {
+    "total": 663,
+    "approved": 417,
+    "excluded": 6,
+    "unreviewed": 240
+  },
+  "lease": {
+    "integratedBefore": 0,
+    "legacyBefore": 0,
+    "targetCount": 40,
+    "integratedAfter": 0,
+    "legacyAfter": 0,
+    "serverFinishReadback": {
+      "id": "cddcf52f-2ad0-4186-b4cc-5a4e3c72992a",
+      "startedAt": "2026-10-26T21:23:34.17+00:00",
+      "finishedAt": "2026-10-26T21:32:55.457776+00:00",
+      "targetCount": 40
+    }
+  },
+  "results": {
+    "selectedArtists": 40,
+    "selectedTasks": 76,
+    "stages": {
+      "channels:deferred": 38,
+      "research:deferred": 5,
+      "approval:deferred": 6,
+      "research:complete": 1,
+      "approval:complete": 23,
+      "research:exception": 1,
+      "approval:exception": 1,
+      "channels:exception": 1
+    },
+    "approvalsAppliedAndVerified": 23,
+    "researchComplete": 1,
+    "newRegistration": 0,
+    "aliasesChanged": 0,
+    "channelsSaved": 0,
+    "photosSaved": 0,
+    "sourceResearchOriginalProofsPreserved": {
+      "count": 23,
+      "unchanged": true
+    }
+  },
+  "providerAccounting": {
+    "musicbrainzRequests": 47,
+    "musicbrainzEntityReads": 40,
+    "musicbrainzExtraReads": 5,
+    "musicbrainzInternalRetries": 2,
+    "lastfmRequests": 55,
+    "lastfmReusedArtists": 11,
+    "lastfmNewArtists": 29,
+    "lastfmMismatches": [
+      0
+    ],
+    "lastfmApi6": [
+      10,
+      35
+    ],
+    "youtubeRequests": 0,
+    "chartRequests": 0,
+    "totalProviderRequests": 102,
+    "webReadsCountedSeparately": true,
+    "limitation": "Copied LF helper reported new40/reused0; actual29/11 and55HTTP derived from saved rows. Two internal MB retry requests attributed as batch overhead, not exact per-artist logs."
+  },
+  "core": {
+    "selectionBefore": 108,
+    "selectionAfter": 126,
+    "target": 200,
+    "unfilled": 74,
+    "mandatory": [
+      {
+        "name": "Bring Me the Horizon",
+        "musicBrainzId": null,
+        "bucket": "overseas_rock_band",
+        "expectedAliases": [
+          "BMTH",
+          "Bring Me the Horizon",
+          "브링 미 더 호라이즌",
+          "ブリング・ミー・ザ・ホライズン"
+        ],
+        "identitySource": "https://www.sonymusic.co.jp/artist/bringmethehorizon/profile/",
+        "bandId": null,
+        "registered": false,
+        "approved": false,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "BMTH",
+          "Bring Me the Horizon",
+          "브링 미 더 호라이즌",
+          "ブリング・ミー・ザ・ホライズン"
+        ]
+      },
+      {
+        "name": "Ado",
+        "musicBrainzId": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+        "bucket": "japanese_solo_unit",
+        "expectedAliases": [
+          "Ado",
+          "아도",
+          "アド"
+        ],
+        "identitySource": "https://www.universal-music.co.jp/ado/biography/",
+        "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+        "registered": true,
+        "approved": true,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "アド"
+        ]
+      },
+      {
+        "name": "UVERworld",
+        "musicBrainzId": "a107bff6-58da-4302-83ad-317e86a1811c",
+        "bucket": "japanese_rock_band",
+        "expectedAliases": [
+          "UVERworld",
+          "우버월드",
+          "ウーバーワールド"
+        ],
+        "identitySource": "https://www.sonymusic.co.jp/artist/UVERworld/profile/",
+        "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+        "registered": true,
+        "approved": true,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "우버월드"
+        ]
+      },
+      {
+        "name": "米津玄師",
+        "musicBrainzId": null,
+        "bucket": "japanese_solo_unit",
+        "expectedAliases": [
+          "요네즈 켄시",
+          "米津玄師",
+          "Kenshi Yonezu"
+        ],
+        "identitySource": "https://reissuerecords.net/profile/",
+        "bandId": null,
+        "registered": false,
+        "approved": false,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "요네즈 켄시",
+          "米津玄師",
+          "Kenshi Yonezu"
+        ]
+      }
+    ],
+    "complete": false,
+    "verifiedPoolBefore": 158,
+    "verifiedPoolAfter": 179,
+    "newValidatedCandidates": 21,
+    "meaning": "80/60/60 편성안 및 검증 후보 풀 안의 exact-MBID Last.fm listeners 기준. 세계 인기 상위200위/국가차트 국적 아님."
+  },
+  "identityClient": {
+    "currentSupport": "Existing begin --identity-file/identity CLI, immutable journal, receipt/current-identity/anonymous search readback implemented and previously isolated-tested. No new code changes this run.",
+    "selectedIdentityTasks": 0,
+    "mutations": 0,
+    "remaining": "Mandatory BMTH/Yonezu absent and Ado/UVERworld search aliases unresolved; no invented UUID/MBID and no late addition to fixed batch. Same-batch approval after identity mutation remains deferred to next eligible batch by installed original-target version contract."
+  },
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revisionBefore": 3248,
+    "revisionAfter": 3326,
+    "active": null,
+    "transfer": null,
+    "queueSummaryRemainingArtists": 409,
+    "stateSha256": "0ef5d4cda799fa645dfe5dc17a1478b4b3ef94e769f734c0a003af6a17ffa11c"
+  },
+  "preservedHashes": {
+    "provider-cooldowns.json": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+    "approval-drafts-573f7fc2.json": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337"
+  },
+  "artists": [
+    {
+      "i": 0,
+      "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+      "name": "Ado",
+      "musicBrainzId": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+      "country": "JP",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-22T07:39:53.54295+00:00",
+        "aliases": [
+          "아도"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-22T07:39:53.54295+00:00",
+        "aliases": [
+          "아도"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 2,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCln9P4Qm3-EAY4aiEPmRwEA"
+        ],
+        "reason": "공식 Universal Ado 페이지의 YouTube 링크 표시와 MB 채널 후보를 확인. 공식 페이지의 전체 목적지와 API ID 해석 일치가 미완료다. Last.fm MBID불일치만으로 채널 신원을 변경하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:07.109Z",
+        "apiError": null,
+        "exactMbid": false,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 1,
+      "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+      "name": "UVERworld",
+      "musicBrainzId": "a107bff6-58da-4302-83ad-317e86a1811c",
+      "country": "JP",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-22T07:39:56.317829+00:00",
+        "aliases": [
+          "SOUND極ROAD",
+          "ウーバーワールド"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-22T07:39:56.317829+00:00",
+        "aliases": [
+          "SOUND極ROAD",
+          "ウーバーワールド"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UC5TRRLOmKwkXyJUV7I4h8yA",
+          "https://www.youtube.com/channel/UCnziFQs4Ihms4UtxmVZP6cg"
+        ],
+        "reason": "공식 UVERworld 사이트와 MB의 서로 다른2개 채널 후보 확인. 해당 아티스트별 직접 전체 목적지와 API ID의 대조가 남아 임의 교체하지 않는다."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:33.994Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 2,
+      "bandId": "c77e2990-e52a-43d3-949a-c093a0683059",
+      "name": "Pulp",
+      "musicBrainzId": "76b2e842-5e85-4c97-ab62-d5bc315595b5",
+      "country": "GB",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:45.621747+00:00",
+        "aliases": [
+          "パルプ"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:45.621747+00:00",
+        "aliases": [
+          "パルプ"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCXjPo9Camh_4-TTMCQ-OMXA"
+        ],
+        "reason": "공식 후보 pulppeople 접근불가. MB 채널 관계는 후보이며 새 공식 직접 채널 링크/API 교차 미완료."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:34.789Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 3,
+      "bandId": "76ad4cf5-987e-49ff-8e95-e4b4a1fb1b13",
+      "name": "Red Hot Chili Peppers",
+      "musicBrainzId": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+      "country": "US",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:47.57342+00:00",
+        "aliases": [
+          "Red Hot Chilli Peppers",
+          "The Red Hot Chili Peppers",
+          "RHCP",
+          "Red Hot Chilly Peppers",
+          "The Red Hot Chilli Peppers"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:47.57342+00:00",
+        "aliases": [
+          "Red Hot Chilli Peppers",
+          "The Red Hot Chili Peppers",
+          "RHCP",
+          "Red Hot Chilly Peppers",
+          "The Red Hot Chilli Peppers"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCEuOwB9vSL1oPKGNdONB4ig",
+          "https://www.youtube.com/user/RHCPtv"
+        ],
+        "reason": "공식 RHCP 사이트는 Stadium Arcadium 발매만 보이며 직접 채널 목적지/ID 교차 미완료. MB2개 URL을 이름으로 확정하지 않는다."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:35.012Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 4,
+      "bandId": "56b08d08-6a43-46dd-ae34-5303d5d2f16d",
+      "name": "Rise Against",
+      "musicBrainzId": "606bf117-494f-4864-891f-09d63ff6aa4b",
+      "country": "US",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:51.003423+00:00",
+        "aliases": [
+          "Transistor Revolt"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:51.003423+00:00",
+        "aliases": [
+          "Transistor Revolt"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UChMKB2AHNpeuWhalpRYhUaw",
+          "https://www.youtube.com/channel/UCvDBqH87XVRQ31nz0JXLPGg"
+        ],
+        "reason": "공식 Rise Against 사이트 접근불가, MB 채널 후보2개. 공식 직접 링크/API ID 교차 미완료."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:35.311Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 5,
+      "bandId": "bdf6a531-2a70-40c1-b726-db3982fe06b4",
+      "name": "Siouxsie and the Banshees",
+      "musicBrainzId": "78ea5ea1-3c4d-4b7e-ac5d-68900319ebe2",
+      "country": "GB",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:53.713799+00:00",
+        "aliases": [
+          "The Banshees",
+          "Souixie & the Banshees",
+          "Siuoxsie & the Banshees",
+          "Siouxsie and the Bantshees",
+          "Siouxsie and the Banshee",
+          "Siouxie and the Banshees",
+          "Siouxie & the Banshees"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:53.713799+00:00",
+        "aliases": [
+          "The Banshees",
+          "Souixie & the Banshees",
+          "Siuoxsie & the Banshees",
+          "Siouxsie and the Bantshees",
+          "Siouxsie and the Banshee",
+          "Siouxie and the Banshees",
+          "Siouxie & the Banshees"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/user/bansheesofficial"
+        ],
+        "reason": "공식 Siouxsie 사이트 timeout. MB bansheesofficial user 후보를 API/공식 직접 링크 대조 없이 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:36.046Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 6,
+      "bandId": "7eda7ff5-f95c-4002-a60c-d75762a8b6cf",
+      "name": "Sublime",
+      "musicBrainzId": "95f5b748-d370-47fe-85bd-0af2dc450bc0",
+      "country": "US",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:56.405223+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:33:56.405223+00:00",
+        "aliases": []
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/user/SublimeVideos"
+        ],
+        "reason": "공식 Sublime 사이트는 로고/연락처 수준. MB SublimeVideos 후보와 아티스트별 직접 링크/API ID 교차 미완료."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:36.980Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 7,
+      "bandId": "90ab3299-e394-4fd0-a999-58b3cb86aff2",
+      "name": "Talking Heads",
+      "musicBrainzId": "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
+      "country": "US",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:34:01.836746+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:34:01.836746+00:00",
+        "aliases": []
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "MB의 talking-heads.net 후보 접근불가. 공식 직접 채널 근거/API ID 교차 미완료."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:37.630Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 8,
+      "bandId": "ad883499-cc0e-4b36-9a18-63f184dee1d9",
+      "name": "The Cardigans",
+      "musicBrainzId": "3e55d51d-687f-4a9d-af96-2fabccf802e5",
+      "country": "SE",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:34:04.531398+00:00",
+        "aliases": [
+          "Cardinang",
+          "Cardigns",
+          "Cardigans",
+          "Cardigans, The"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:34:04.531398+00:00",
+        "aliases": [
+          "Cardinang",
+          "Cardigns",
+          "Cardigans",
+          "Cardigans, The"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCVjvEbew-22208PyFmvfu_w"
+        ],
+        "reason": "공식 Cardigans 사이트는 빈 동적 본문. MB 채널 후보의 공식 직접링크/API 교차 미완료."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:38.460Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 9,
+      "bandId": "c74c8353-c62b-4ca3-bee4-efaab960d113",
+      "name": "The Cranberries",
+      "musicBrainzId": "c98d40fd-f6cf-4b26-883e-eaa515ee2851",
+      "country": "IE",
+      "selectedTasks": [
+        "channels"
+      ],
+      "outcomes": {
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:34:07.202034+00:00",
+        "aliases": [
+          "クランベリーズ",
+          "The Cramberries",
+          "The Cranberry Saw Us",
+          "ザクランベリーズ",
+          "Cranberries",
+          "ザ・クランベリーズ"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T17:34:07.202034+00:00",
+        "aliases": [
+          "クランベリーズ",
+          "The Cramberries",
+          "The Cranberry Saw Us",
+          "ザクランベリーズ",
+          "Cranberries",
+          "ザ・クランベリーズ"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 1,
+      "notes": "기존 승인 유지; 선택 채널 작업의 공식 직접 링크/API 신원 대조 미완료.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCb0vzLwvr7xbJgdqMzejDhw",
+          "https://www.youtube.com/channel/UCF9i903aeMcvcapmP1bS1oA"
+        ],
+        "reason": "공식 Cranberries 사이트 timeout, MB 채널 후보2개. 직접 링크/ID 불일치 가능성을 임의 해소하지 않는다."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:38.858Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 10,
+      "bandId": "4a703f4a-db46-4eb5-944a-61820405fc57",
+      "name": "이시문",
+      "musicBrainzId": "b7c1884d-d4cc-478e-9540-d2f9c70b449a",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "deferred",
+        "approval": "deferred",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-24T10:58:08.846069+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-24T10:58:08.846069+00:00",
+        "aliases": []
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 2,
+      "notes": "두산아트센터 공식 출연진 본문에서 이시문 기타/프로듀싱·추다혜차지스/김오키 뻐킹매드니스·Scent EP를 확인했다. 현재 MBID의 원작/관계가 비고 Last.fm API6이므로 정확한 개인 ID와 공식 원작 연결·유의미한 록 활동 교차가 남는다. funk와 punk를 혼동하지 않고 제외하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:07.236Z",
+        "apiError": 6,
+        "exactMbid": false,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 11,
+      "bandId": "87aa2e7a-9a5b-4fc7-a0e1-c919f74b6cff",
+      "name": "하덕규",
+      "musicBrainzId": "2c9861bb-10df-483d-be4b-089e11c24dfc",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "deferred",
+        "approval": "deferred",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-24T10:58:08.856734+00:00",
+        "aliases": [
+          "Ha Duk Kyu"
+        ]
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-24T10:58:08.856734+00:00",
+        "aliases": [
+          "Ha Duk Kyu"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 2,
+      "notes": "추가 MB의 시인과촌장 멤버·가시나무 작곡/작사 및 KR 개인 신원은 확인했다. 현재 실제 조사에서 포크/CCM 경력과 구체 록 활동을 구별할 공식 개인 근거가 부족하다. 그룹/개인 ID를 합치거나 포크만으로 제외하지 않고 보완 대기.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:34.333Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 12,
+      "bandId": "5beec8da-e31c-4b07-a4f3-aa4d4636a57a",
+      "name": "함춘호",
+      "musicBrainzId": "e4155fe8-626c-4aee-a9fc-694b9069ccab",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "deferred",
+        "approval": "deferred",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-24T10:58:08.865016+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-24T10:58:08.865016+00:00",
+        "aliases": []
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 2,
+      "notes": "추가 MB의 시인과촌장 멤버와 다수 실제 기타 참여를 확인했다. 공식 개인 신원·구체 록 원작 활동의 독립 교차가 남아 승인하지 않는다. 세션 기타라는 형식/포크만으로 제외하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": true,
+        "checkedAt": "2026-10-25T17:30:34.596Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 13,
+      "bandId": "7d12f96a-996d-4409-a6df-9b2ac30b612b",
+      "name": "고성진",
+      "musicBrainzId": "b5069703-fb0f-4625-8634-b4734dc77b34",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "complete",
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.044499+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "domestic_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:29:51.298952+00:00",
+        "aliases": []
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 4,
+      "notes": "음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:07.594Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://v.daum.net/v/5ICHoKFOhm",
+            "https://www.newsis.com/view/NISX20250715_0003252128",
+            "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 KR·South Korea를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://v.daum.net/v/5ICHoKFOhm",
+            "https://www.newsis.com/view/NISX20250715_0003252128",
+            "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34"
+          ]
+        },
+        "genreMatched": {
+          "summary": "음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://v.daum.net/v/5ICHoKFOhm",
+            "https://www.newsis.com/view/NISX20250715_0003252128",
+            "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 domestic_rock 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://v.daum.net/v/5ICHoKFOhm",
+            "https://www.newsis.com/view/NISX20250715_0003252128",
+            "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:b5069703-fb0f-4625-8634-b4734dc77b34와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://v.daum.net/v/5ICHoKFOhm",
+            "https://www.newsis.com/view/NISX20250715_0003252128",
+            "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://v.daum.net/v/5ICHoKFOhm",
+            "https://www.newsis.com/view/NISX20250715_0003252128",
+            "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다.",
+        "sources": [
+          {
+            "url": "https://v.daum.net/v/5ICHoKFOhm",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://www.newsis.com/view/NISX20250715_0003252128",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/b5069703-fb0f-4625-8634-b4734dc77b34",
+            "checkedAt": "2026-10-26T21:24:36.927Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "7d12f96a-996d-4409-a6df-9b2ac30b612b",
+        "expected_updated_at": "2026-10-26T19:20:20.044499+00:00",
+        "artist_name": "고성진",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 음악 전문 인터뷰의 서울1967·작곡가/기타리스트 고성진, 안재욱 Forever·플라워 Endless·1999년 김우디/고유진과 록밴드 결성 및 여주 재단 공연 소개의 실제 록발라드 활동을 확인했다. 추가 MB의 정확한 개인 ID가 플라워 멤버/작곡·편곡·보컬 관계를 가지는 것과 대조했다. Last.fm의 Final Fantasy 혼입은 신원/장르 근거로 쓰지 않는다.",
+        "evidence_url": "https://v.daum.net/v/5ICHoKFOhm"
+      },
+      "readback": {
+        "name": "고성진",
+        "bandId": "7d12f96a-996d-4409-a6df-9b2ac30b612b",
+        "status": "approved",
+        "category": "domestic_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:29:51.298952+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 14,
+      "bandId": "ca4bfa8f-c85a-4a75-a9e7-c959b4b7f855",
+      "name": "권정열",
+      "musicBrainzId": "99969a6d-5493-4f8c-9645-6e8336ce3363",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "deferred",
+        "approval": "deferred",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.032788+00:00",
+        "aliases": [
+          "Jeongyeol",
+          "Kwon Jung-Yul",
+          "Kwon Jeong yeol"
+        ]
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.032788+00:00",
+        "aliases": [
+          "Jeongyeol",
+          "Kwon Jung-Yul",
+          "Kwon Jeong yeol"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 4,
+      "notes": "정확한 개인 MBID가 10cm 멤버이고 어깨(Lean On Me) 원작/가창 관계를 갖는 것을 확인했다. 공식 소속사 입장 보도 후보는 확보했으나 본문 timeout, 개인 록 활동의 충분한 공식 교차 미완료. 10cm 그룹과 개인 MBID를 자동 병합하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:08.058Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 15,
+      "bandId": "cbc070b7-607d-4a36-9279-c8571ffe0e2a",
+      "name": "김광진",
+      "musicBrainzId": "e99893a1-ba5f-49ee-9e52-3de13f1018b8",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "deferred",
+        "approval": "deferred",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.050042+00:00",
+        "aliases": [
+          "Kim Gwangjin"
+        ]
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.050042+00:00",
+        "aliases": [
+          "Kim Gwangjin"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "MB/LF 동일 개인ID의 Virgin Flight/My Love My Life/It’s Me/Last Decade를 대조했다. 더클래식 음반의 록 활동 후보가 있지만 공식 음반 source는 query URL이며 이를 queryless로 위조하지 않았다. 개인·그룹의 실제 록 활동·공식 근거 보완이 남아 승인/제외하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:08.363Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 16,
+      "bandId": "0d38784d-59e1-401e-ad80-dfe134c93955",
+      "name": "홍성준",
+      "musicBrainzId": "2dbe9c45-ed89-4fa0-b724-fac801749b12",
+      "country": "KR",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": "exception",
+        "approval": "exception",
+        "channels": "exception"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.057972+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-26T19:20:20.057972+00:00",
+        "aliases": []
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 4,
+      "notes": "현재 MBID는 engineer·GNRSOUND 인스타 관계, mix/editor/recording 역할만 확인된다. Bugs 정식 OST 크레딧의 Mixed by 홍성준@gnrsound와 일치한다. 동명 BDC/SEONGJUN 가수 또는 Last.fm I’m을 이 엔지니어 ID에 합칠 수 없는 구체 신원 충돌이다. 실제 개인 판단/신원 정리가 필요하며 DB held/excluded 변경 없음.",
+      "channels": {
+        "result": "exception",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:08.727Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    },
+    {
+      "i": 17,
+      "bandId": "2d77fe22-fd77-4e05-b612-6ee9d3da4853",
+      "name": "愛内里菜",
+      "musicBrainzId": "3dfd5686-dcd1-41b0-b4da-1a7450a921e6",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:52.188786+00:00",
+        "aliases": [
+          "Rina Aiuchi",
+          "愛内 里菜",
+          "あいうち りな",
+          "あいうちりな",
+          "Aiuchi Rina"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:29:53.710426+00:00",
+        "aliases": [
+          "Rina Aiuchi",
+          "愛内 里菜",
+          "あいうち りな",
+          "あいうちりな",
+          "Aiuchi Rina"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UC2JJiHkY6PHLm3b4PVUOZmw"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:08.946Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다.",
+          "sourceUrls": [
+            "https://rikakakiuchi.official.ec/about",
+            "https://rinaaiuchirr.jp/",
+            "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://rikakakiuchi.official.ec/about",
+            "https://rinaaiuchirr.jp/",
+            "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다.",
+          "sourceUrls": [
+            "https://rikakakiuchi.official.ec/about",
+            "https://rinaaiuchirr.jp/",
+            "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://rikakakiuchi.official.ec/about",
+            "https://rinaaiuchirr.jp/",
+            "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:3dfd5686-dcd1-41b0-b4da-1a7450a921e6와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://rikakakiuchi.official.ec/about",
+            "https://rinaaiuchirr.jp/",
+            "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://rikakakiuchi.official.ec/about",
+            "https://rinaaiuchirr.jp/",
+            "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다.",
+        "sources": [
+          {
+            "url": "https://rikakakiuchi.official.ec/about",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다."
+          },
+          {
+            "url": "https://rinaaiuchirr.jp/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/3dfd5686-dcd1-41b0-b4da-1a7450a921e6",
+            "checkedAt": "2026-10-26T21:24:48.372Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "2d77fe22-fd77-4e05-b612-6ee9d3da4853",
+        "expected_updated_at": "2026-10-13T08:18:52.188786+00:00",
+        "artist_name": "愛内里菜",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Rina Aiuchi",
+          "愛内 里菜",
+          "あいうち りな",
+          "あいうちりな",
+          "Aiuchi Rina"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 프로필의 愛内里菜→R→愛内里菜 경력, Conan 테마곡·2000년 가수 데뷔·Ring 및 현재 공식 EVER JOYFUL/手紙/Let me fly 원작을 MB의 동일 개인 원작/공식 URL과 대조했다. 일본 팝 가창·작사 활동으로 기존 유지 판정을 보완한다.",
+        "evidence_url": "https://rikakakiuchi.official.ec/about"
+      },
+      "readback": {
+        "name": "愛内里菜",
+        "bandId": "2d77fe22-fd77-4e05-b612-6ee9d3da4853",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:29:53.710426+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 18,
+      "bandId": "f2ccaedb-7309-417c-a845-5afb7b26bf0c",
+      "name": "早見優",
+      "musicBrainzId": "35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:36.478044+00:00",
+        "aliases": [
+          "福田一美",
+          "早见优",
+          "HAYAMI Yuu",
+          "はやみ ゆう",
+          "Yu Hayami",
+          "早見 優",
+          "井上一美",
+          "舘野一美"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:29:55.635821+00:00",
+        "aliases": [
+          "福田一美",
+          "早见优",
+          "HAYAMI Yuu",
+          "はやみ ゆう",
+          "Yu Hayami",
+          "早見 優",
+          "井上一美",
+          "舘野一美"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 프로필의 日本生まれ·1982 急いで！初恋 데뷔·夏色のナンシー/PASSION/Affection 원작 및 실제 J-POP/rock/disco/jazz 가창을 MB의 동일 개인·JP·Atami·음반과 대조했다. 해외 성장 이력을 국적 변경 근거로 쓰지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:09.257Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 프로필의 日本生まれ·1982 急いで！初恋 데뷔·夏色のナンシー/PASSION/Affection 원작 및 실제 J-POP/rock/disco/jazz 가창을 MB의 동일 개인·JP·Atami·음반과 대조했다. 해외 성장 이력을 국적 변경 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://hayami-yu.fanpla.jp/news/2/",
+            "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://hayami-yu.fanpla.jp/news/2/",
+            "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 프로필의 日本生まれ·1982 急いで！初恋 데뷔·夏色のナンシー/PASSION/Affection 원작 및 실제 J-POP/rock/disco/jazz 가창을 MB의 동일 개인·JP·Atami·음반과 대조했다. 해외 성장 이력을 국적 변경 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://hayami-yu.fanpla.jp/news/2/",
+            "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://hayami-yu.fanpla.jp/news/2/",
+            "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://hayami-yu.fanpla.jp/news/2/",
+            "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://hayami-yu.fanpla.jp/news/2/",
+            "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 프로필의 日本生まれ·1982 急いで！初恋 데뷔·夏色のナンシー/PASSION/Affection 원작 및 실제 J-POP/rock/disco/jazz 가창을 MB의 동일 개인·JP·Atami·음반과 대조했다. 해외 성장 이력을 국적 변경 근거로 쓰지 않는다.",
+        "sources": [
+          {
+            "url": "https://hayami-yu.fanpla.jp/news/2/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 프로필의 日本生まれ·1982 急いで！初恋 데뷔·夏色のナンシー/PASSION/Affection 원작 및 실제 J-POP/rock/disco/jazz 가창을 MB의 동일 개인·JP·Atami·음반과 대조했다. 해외 성장 이력을 국적 변경 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd",
+            "checkedAt": "2026-10-26T21:24:50.665Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "f2ccaedb-7309-417c-a845-5afb7b26bf0c",
+        "expected_updated_at": "2026-10-13T08:18:36.478044+00:00",
+        "artist_name": "早見優",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "福田一美",
+          "早见优",
+          "HAYAMI Yuu",
+          "はやみ ゆう",
+          "Yu Hayami",
+          "早見 優",
+          "井上一美",
+          "舘野一美"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 프로필의 日本生まれ·1982 急いで！初恋 데뷔·夏色のナンシー/PASSION/Affection 원작 및 실제 J-POP/rock/disco/jazz 가창을 MB의 동일 개인·JP·Atami·음반과 대조했다. 해외 성장 이력을 국적 변경 근거로 쓰지 않는다.",
+        "evidence_url": "https://hayami-yu.fanpla.jp/news/2/"
+      },
+      "readback": {
+        "name": "早見優",
+        "bandId": "f2ccaedb-7309-417c-a845-5afb7b26bf0c",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:29:55.635821+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 19,
+      "bandId": "59f05765-4f95-4fe3-8816-42781aba8bc2",
+      "name": "春奈るな",
+      "musicBrainzId": "fe9532d4-3f0e-4685-bce6-92f91fdb35a0",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:33.358988+00:00",
+        "aliases": [
+          "伊藤彩",
+          "Haruna Luna",
+          "Luna Haruna"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:29:57.758721+00:00",
+        "aliases": [
+          "伊藤彩",
+          "Haruna Luna",
+          "Luna Haruna"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Sony의 HARUNA LUNA·10월11일·空は高く風は歌う 솔로 데뷔와 glory days/PEACE!!!·국내외 라이브를 정확한 MB 개인의 JP/Tokyo·동일 싱글/EP와 대조했다. 모델·성우 형식만이 아닌 실제 일본 팝 가창 활동을 확인했다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCrw59g2OA0NSIIt79wUtdBA",
+          "https://www.youtube.com/channel/UCTG22Ah9tULUoUHGX5CHElQ",
+          "https://www.youtube.com/channel/UCVHRCF1lRsSlhZSl3jdLFnQ"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:09.454Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony의 HARUNA LUNA·10월11일·空は高く風は歌う 솔로 데뷔와 glory days/PEACE!!!·국내외 라이브를 정확한 MB 개인의 JP/Tokyo·동일 싱글/EP와 대조했다. 모델·성우 형식만이 아닌 실제 일본 팝 가창 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Sony의 HARUNA LUNA·10월11일·空は高く風は歌う 솔로 데뷔와 glory days/PEACE!!!·국내외 라이브를 정확한 MB 개인의 JP/Tokyo·동일 싱글/EP와 대조했다. 모델·성우 형식만이 아닌 실제 일본 팝 가창 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:fe9532d4-3f0e-4685-bce6-92f91fdb35a0와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony의 HARUNA LUNA·10월11일·空は高く風は歌う 솔로 데뷔와 glory days/PEACE!!!·국내외 라이브를 정확한 MB 개인의 JP/Tokyo·동일 싱글/EP와 대조했다. 모델·성우 형식만이 아닌 실제 일본 팝 가창 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Sony의 HARUNA LUNA·10월11일·空は高く風は歌う 솔로 데뷔와 glory days/PEACE!!!·국내외 라이브를 정확한 MB 개인의 JP/Tokyo·동일 싱글/EP와 대조했다. 모델·성우 형식만이 아닌 실제 일본 팝 가창 활동을 확인했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/fe9532d4-3f0e-4685-bce6-92f91fdb35a0",
+            "checkedAt": "2026-10-26T21:24:52.568Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "59f05765-4f95-4fe3-8816-42781aba8bc2",
+        "expected_updated_at": "2026-10-13T08:18:33.358988+00:00",
+        "artist_name": "春奈るな",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "伊藤彩",
+          "Haruna Luna",
+          "Luna Haruna"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony의 HARUNA LUNA·10월11일·空は高く風は歌う 솔로 데뷔와 glory days/PEACE!!!·국내외 라이브를 정확한 MB 개인의 JP/Tokyo·동일 싱글/EP와 대조했다. 모델·성우 형식만이 아닌 실제 일본 팝 가창 활동을 확인했다.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/"
+      },
+      "readback": {
+        "name": "春奈るな",
+        "bandId": "59f05765-4f95-4fe3-8816-42781aba8bc2",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:29:57.758721+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 20,
+      "bandId": "40f97a3c-dc58-4261-837e-3a68fd5c2453",
+      "name": "東京女子流",
+      "musicBrainzId": "cb589717-2cd2-47b4-9262-84cf46adea54",
+      "country": "JP",
+      "selectedTasks": [
+        "approval"
+      ],
+      "outcomes": {
+        "approval": "complete"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:39.89998+00:00",
+        "aliases": [
+          "TOKYO GIRLS' STYLE",
+          "とうきょうじょしりゅう"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:29:59.252391+00:00",
+        "aliases": [
+          "TOKYO GIRLS' STYLE",
+          "とうきょうじょしりゅう"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Avex의 2010 결성·山邊未夢/新井ひとみ/中江友梨/庄司芽生 실제 보컬 멤버·7집 東京女子流·일본 무도관 단독공연/댄스보컬 활동을 MB의 JP 그룹·동일 앨범과 대조했다. 해산 예정/과거 활동을 미래 공연 존재로 확대하지 않는다.",
+      "channels": {
+        "result": "not_selected",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCkafLPXB6MgLmTbq8UHE8Cg"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:09.849Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Avex의 2010 결성·山邊未夢/新井ひとみ/中江友梨/庄司芽生 실제 보컬 멤버·7집 東京女子流·일본 무도관 단독공연/댄스보컬 활동을 MB의 JP 그룹·동일 앨범과 대조했다. 해산 예정/과거 활동을 미래 공연 존재로 확대하지 않는다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Avex의 2010 결성·山邊未夢/新井ひとみ/中江友梨/庄司芽生 실제 보컬 멤버·7집 東京女子流·일본 무도관 단독공연/댄스보컬 활동을 MB의 JP 그룹·동일 앨범과 대조했다. 해산 예정/과거 활동을 미래 공연 존재로 확대하지 않는다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:cb589717-2cd2-47b4-9262-84cf46adea54와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Avex의 2010 결성·山邊未夢/新井ひとみ/中江友梨/庄司芽生 실제 보컬 멤버·7집 東京女子流·일본 무도관 단독공연/댄스보컬 활동을 MB의 JP 그룹·동일 앨범과 대조했다. 해산 예정/과거 활동을 미래 공연 존재로 확대하지 않는다.",
+        "sources": [
+          {
+            "url": "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Avex의 2010 결성·山邊未夢/新井ひとみ/中江友梨/庄司芽生 실제 보컬 멤버·7집 東京女子流·일본 무도관 단독공연/댄스보컬 활동을 MB의 JP 그룹·동일 앨범과 대조했다. 해산 예정/과거 활동을 미래 공연 존재로 확대하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/cb589717-2cd2-47b4-9262-84cf46adea54",
+            "checkedAt": "2026-10-26T21:24:54.642Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "40f97a3c-dc58-4261-837e-3a68fd5c2453",
+        "expected_updated_at": "2026-10-13T08:18:39.89998+00:00",
+        "artist_name": "東京女子流",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "TOKYO GIRLS' STYLE",
+          "とうきょうじょしりゅう"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Avex의 2010 결성·山邊未夢/新井ひとみ/中江友梨/庄司芽生 실제 보컬 멤버·7집 東京女子流·일본 무도관 단독공연/댄스보컬 활동을 MB의 JP 그룹·동일 앨범과 대조했다. 해산 예정/과거 활동을 미래 공연 존재로 확대하지 않는다.",
+        "evidence_url": "https://avexnet.jp/contents/TKOJR-XXXX-XXXX/profile"
+      },
+      "readback": {
+        "name": "東京女子流",
+        "bandId": "40f97a3c-dc58-4261-837e-3a68fd5c2453",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:29:59.252391+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 21,
+      "bandId": "29e2a4e9-02a1-4397-950d-a896551baf22",
+      "name": "松田聖子",
+      "musicBrainzId": "ef013257-e584-410e-88e8-05ea9ae9ea3a",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:12.694964+00:00",
+        "aliases": [
+          "Seiko Matsuda",
+          "SEIKO",
+          "神田法子",
+          "Noriko Kanda",
+          "Noriko Kamachi",
+          "Seiko",
+          "松田 聖子",
+          "Matsuda Seiko",
+          "æ¾ç”°è–å­",
+          "まつだせいこ",
+          "まつだ せいこ",
+          "蒲池法子",
+          "Meg.C"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:00.768881+00:00",
+        "aliases": [
+          "Seiko Matsuda",
+          "SEIKO",
+          "神田法子",
+          "Noriko Kanda",
+          "Noriko Kamachi",
+          "Seiko",
+          "松田 聖子",
+          "Matsuda Seiko",
+          "æ¾ç”°è–å­",
+          "まつだせいこ",
+          "まつだ せいこ",
+          "蒲池法子",
+          "Meg.C"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 松田聖子 가수 프로필의 あなたに逢いたくて〜Missing You〜, Baby’s breath/my pure melody 작사작곡·가창 및 일본 원작 발매 활동을 MB의 JP/Kurume와 개인 음반으로 대조했다. SEIKO JAZZ 병행이 유의미한 일본 팝 활동을 지우지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:10.187Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 松田聖子 가수 프로필의 あなたに逢いたくて〜Missing You〜, Baby’s breath/my pure melody 작사작곡·가창 및 일본 원작 발매 활동을 MB의 JP/Kurume와 개인 음반으로 대조했다. SEIKO JAZZ 병행이 유의미한 일본 팝 활동을 지우지 않는다.",
+          "sourceUrls": [
+            "https://www.seikomatsuda.co.jp/profile/index.html",
+            "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.seikomatsuda.co.jp/profile/index.html",
+            "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 松田聖子 가수 프로필의 あなたに逢いたくて〜Missing You〜, Baby’s breath/my pure melody 작사작곡·가창 및 일본 원작 발매 활동을 MB의 JP/Kurume와 개인 음반으로 대조했다. SEIKO JAZZ 병행이 유의미한 일본 팝 활동을 지우지 않는다.",
+          "sourceUrls": [
+            "https://www.seikomatsuda.co.jp/profile/index.html",
+            "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.seikomatsuda.co.jp/profile/index.html",
+            "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:ef013257-e584-410e-88e8-05ea9ae9ea3a와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.seikomatsuda.co.jp/profile/index.html",
+            "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.seikomatsuda.co.jp/profile/index.html",
+            "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 松田聖子 가수 프로필의 あなたに逢いたくて〜Missing You〜, Baby’s breath/my pure melody 작사작곡·가창 및 일본 원작 발매 활동을 MB의 JP/Kurume와 개인 음반으로 대조했다. SEIKO JAZZ 병행이 유의미한 일본 팝 활동을 지우지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.seikomatsuda.co.jp/profile/index.html",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 松田聖子 가수 프로필의 あなたに逢いたくて〜Missing You〜, Baby’s breath/my pure melody 작사작곡·가창 및 일본 원작 발매 활동을 MB의 JP/Kurume와 개인 음반으로 대조했다. SEIKO JAZZ 병행이 유의미한 일본 팝 활동을 지우지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/ef013257-e584-410e-88e8-05ea9ae9ea3a",
+            "checkedAt": "2026-10-26T21:24:56.981Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "29e2a4e9-02a1-4397-950d-a896551baf22",
+        "expected_updated_at": "2026-10-13T08:18:12.694964+00:00",
+        "artist_name": "松田聖子",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Seiko Matsuda",
+          "SEIKO",
+          "神田法子",
+          "Noriko Kanda",
+          "Noriko Kamachi",
+          "Seiko",
+          "松田 聖子",
+          "Matsuda Seiko",
+          "æ¾ç”°è–å­",
+          "まつだせいこ",
+          "まつだ せいこ",
+          "蒲池法子",
+          "Meg.C"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 松田聖子 가수 프로필의 あなたに逢いたくて〜Missing You〜, Baby’s breath/my pure melody 작사작곡·가창 및 일본 원작 발매 활동을 MB의 JP/Kurume와 개인 음반으로 대조했다. SEIKO JAZZ 병행이 유의미한 일본 팝 활동을 지우지 않는다.",
+        "evidence_url": "https://www.seikomatsuda.co.jp/profile/index.html"
+      },
+      "readback": {
+        "name": "松田聖子",
+        "bandId": "29e2a4e9-02a1-4397-950d-a896551baf22",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:00.768881+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 22,
+      "bandId": "5ef48161-b087-4be1-b43e-3bac7954aab0",
+      "name": "林原めぐみ",
+      "musicBrainzId": "375a3c4c-7898-47f0-ad0e-443a75148c7a",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:11.301879+00:00",
+        "aliases": [
+          "MEGUMI",
+          "Megumi Hayashibara",
+          "Hayashibara Megumi",
+          "はやしばら めぐみ",
+          "林原 めぐみ"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:02.542874+00:00",
+        "aliases": [
+          "MEGUMI",
+          "Megumi Hayashibara",
+          "Hayashibara Megumi",
+          "はやしばら めぐみ",
+          "林原 めぐみ"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:10.379Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다.",
+          "sourceUrls": [
+            "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a"
+          ]
+        },
+        "genreMatched": {
+          "summary": "King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다.",
+          "sourceUrls": [
+            "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:375a3c4c-7898-47f0-ad0e-443a75148c7a와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다.",
+        "sources": [
+          {
+            "url": "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다."
+          },
+          {
+            "url": "https://www.kingrecords.co.jp/cs/g/gKICS-3980/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/375a3c4c-7898-47f0-ad0e-443a75148c7a",
+            "checkedAt": "2026-10-26T21:25:02.952Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "5ef48161-b087-4be1-b43e-3bac7954aab0",
+        "expected_updated_at": "2026-10-13T08:18:11.301879+00:00",
+        "artist_name": "林原めぐみ",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "MEGUMI",
+          "Megumi Hayashibara",
+          "Hayashibara Megumi",
+          "はやしばら めぐみ",
+          "林原 めぐみ"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: King의 林原めぐみ 개인 아티스트 30주년 VINTAGE DENIM과 Give a reason/Over Soul, 원작 Half and, Half/Perfume/SPHERE/Iravati·직접 작사작곡 DENIM을 MB의 JP·Kita 개인 원작과 대조했다. 성우 역할만이 아닌 실제 일본 팝 가창·음반 활동을 확인하며 이전 query URL을 조작하지 않고 실제 읽은 queryless 발매 자료를 사용한다.",
+        "evidence_url": "https://king-cr.jp/artist/hayashi/news/2021/0217_03.html"
+      },
+      "readback": {
+        "name": "林原めぐみ",
+        "bandId": "5ef48161-b087-4be1-b43e-3bac7954aab0",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:02.542874+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 23,
+      "bandId": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+      "name": "水樹奈々",
+      "musicBrainzId": "a80b9231-3a25-44d3-bb3d-55526d8b278d",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:37.159969+00:00",
+        "aliases": [
+          "水木奈々",
+          "みずきなな",
+          "近藤奈々",
+          "Nana Kondoh",
+          "Nana Kondou",
+          "Nana Kondō",
+          "Nana Mizuki",
+          "水樹奈奈"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:04.179656+00:00",
+        "aliases": [
+          "水木奈々",
+          "みずきなな",
+          "近藤奈々",
+          "Nana Kondoh",
+          "Nana Kondou",
+          "Nana Kondō",
+          "Nana Mizuki",
+          "水樹奈奈"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCLUUU-gAiTWdi67Vv1MOCRA"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:10.648Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.mizukinana.jp/biography/",
+            "https://www.mizukinana.jp/discography/",
+            "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.mizukinana.jp/biography/",
+            "https://www.mizukinana.jp/discography/",
+            "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.mizukinana.jp/biography/",
+            "https://www.mizukinana.jp/discography/",
+            "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.mizukinana.jp/biography/",
+            "https://www.mizukinana.jp/discography/",
+            "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:a80b9231-3a25-44d3-bb3d-55526d8b278d와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.mizukinana.jp/biography/",
+            "https://www.mizukinana.jp/discography/",
+            "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.mizukinana.jp/biography/",
+            "https://www.mizukinana.jp/discography/",
+            "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.mizukinana.jp/biography/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다."
+          },
+          {
+            "url": "https://www.mizukinana.jp/discography/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/a80b9231-3a25-44d3-bb3d-55526d8b278d",
+            "checkedAt": "2026-10-26T21:25:15.491Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+        "expected_updated_at": "2026-10-13T08:18:37.159969+00:00",
+        "artist_name": "水樹奈々",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "水木奈々",
+          "みずきなな",
+          "近藤奈々",
+          "Nana Kondoh",
+          "Nana Kondou",
+          "Nana Kondō",
+          "Nana Mizuki",
+          "水樹奈奈"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 水樹奈々의 1980.1.21·愛媛 출신·StarCrew와 개인 앨범 supersonic girl/MAGIC ATTRACTION/ULTIMATE DIAMOND/ROCKBOUND NEIGHBORS, POP MASTER/ETERNAL BLAZE 등의 실제 가창 음반을 MB의 JP/Niihama·동일 원작과 대조했다.",
+        "evidence_url": "https://www.mizukinana.jp/biography/"
+      },
+      "readback": {
+        "name": "水樹奈々",
+        "bandId": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:04.179656+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 24,
+      "bandId": "059219d7-319f-42b3-9833-d3b22d1f50de",
+      "name": "浜崎あゆみ",
+      "musicBrainzId": "2b615bcf-baa0-4657-b9a5-1a5f34c386c4",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:27.544293+00:00",
+        "aliases": [
+          "浜崎くるみ",
+          "浜崎 くるみ",
+          "浜﨑あゆみ",
+          "Ayu",
+          "Ayumi Hamazaki",
+          "はまさき あゆみ",
+          "CREA",
+          "Ayumi Hamasaki",
+          "濱崎步",
+          "浜崎 あゆみ",
+          "浜﨑 あゆみ",
+          "濱崎歩",
+          "浜崎步",
+          "Ayumi Kamasaki"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:05.681524+00:00",
+        "aliases": [
+          "浜崎くるみ",
+          "浜崎 くるみ",
+          "浜﨑あゆみ",
+          "Ayu",
+          "Ayumi Hamazaki",
+          "はまさき あゆみ",
+          "CREA",
+          "Ayumi Hamasaki",
+          "濱崎步",
+          "浜崎 あゆみ",
+          "浜﨑 あゆみ",
+          "濱崎歩",
+          "浜崎步",
+          "Ayumi Kamasaki"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 Avex의 ayumi hamasaki/浜崎あゆみ 명의 가창·2025 mimosa 원작 및 일본 공연 경력을 MB의 JP/Fukuoka·A Song for ××/LOVEppears/Duty 등 개인 원작과 기존 일본 팝 유지 조사에 대조했다. 검색 결과/국적만으로 분류하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UC7eXWU3oN-w5tNtP7sgeeNg"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:10.841Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Avex의 ayumi hamasaki/浜崎あゆみ 명의 가창·2025 mimosa 원작 및 일본 공연 경력을 MB의 JP/Fukuoka·A Song for ××/LOVEppears/Duty 등 개인 원작과 기존 일본 팝 유지 조사에 대조했다. 검색 결과/국적만으로 분류하지 않는다.",
+          "sourceUrls": [
+            "https://avex.jp/ayu/",
+            "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://avex.jp/ayu/",
+            "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Avex의 ayumi hamasaki/浜崎あゆみ 명의 가창·2025 mimosa 원작 및 일본 공연 경력을 MB의 JP/Fukuoka·A Song for ××/LOVEppears/Duty 등 개인 원작과 기존 일본 팝 유지 조사에 대조했다. 검색 결과/국적만으로 분류하지 않는다.",
+          "sourceUrls": [
+            "https://avex.jp/ayu/",
+            "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://avex.jp/ayu/",
+            "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:2b615bcf-baa0-4657-b9a5-1a5f34c386c4와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://avex.jp/ayu/",
+            "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://avex.jp/ayu/",
+            "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Avex의 ayumi hamasaki/浜崎あゆみ 명의 가창·2025 mimosa 원작 및 일본 공연 경력을 MB의 JP/Fukuoka·A Song for ××/LOVEppears/Duty 등 개인 원작과 기존 일본 팝 유지 조사에 대조했다. 검색 결과/국적만으로 분류하지 않는다.",
+        "sources": [
+          {
+            "url": "https://avex.jp/ayu/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 Avex의 ayumi hamasaki/浜崎あゆみ 명의 가창·2025 mimosa 원작 및 일본 공연 경력을 MB의 JP/Fukuoka·A Song for ××/LOVEppears/Duty 등 개인 원작과 기존 일본 팝 유지 조사에 대조했다. 검색 결과/국적만으로 분류하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/2b615bcf-baa0-4657-b9a5-1a5f34c386c4",
+            "checkedAt": "2026-10-26T21:25:17.383Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "059219d7-319f-42b3-9833-d3b22d1f50de",
+        "expected_updated_at": "2026-10-13T08:18:27.544293+00:00",
+        "artist_name": "浜崎あゆみ",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "浜崎くるみ",
+          "浜崎 くるみ",
+          "浜﨑あゆみ",
+          "Ayu",
+          "Ayumi Hamazaki",
+          "はまさき あゆみ",
+          "CREA",
+          "Ayumi Hamasaki",
+          "濱崎步",
+          "浜崎 あゆみ",
+          "浜﨑 あゆみ",
+          "濱崎歩",
+          "浜崎步",
+          "Ayumi Kamasaki"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 Avex의 ayumi hamasaki/浜崎あゆみ 명의 가창·2025 mimosa 원작 및 일본 공연 경력을 MB의 JP/Fukuoka·A Song for ××/LOVEppears/Duty 등 개인 원작과 기존 일본 팝 유지 조사에 대조했다. 검색 결과/국적만으로 분류하지 않는다.",
+        "evidence_url": "https://avex.jp/ayu/"
+      },
+      "readback": {
+        "name": "浜崎あゆみ",
+        "bandId": "059219d7-319f-42b3-9833-d3b22d1f50de",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:05.681524+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 25,
+      "bandId": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+      "name": "私立恵比寿中学",
+      "musicBrainzId": "f13e929f-6836-4f02-8175-b86c31bb91ec",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:11.6587+00:00",
+        "aliases": [
+          "エビ中",
+          "Shiritsu Ebisu Chugaku"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:07.375069+00:00",
+        "aliases": [
+          "エビ中",
+          "Shiritsu Ebisu Chugaku"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Sony의 Stardust 소속 エビ中 실제멤버 소개와 仮契約のシンデレラ/Go!Go!Here We Go!ロック・リー/中人 원작 음반 및 일본인 그룹 경력을 MB의 JP/Ebisu·동일 원작과 대조했다. 오래된8인 소개를 현재 전체멤버수로 확정하지 않으며 기존 일본 팝 활동을 확인했다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCAlXqXS266aeOIyH_sIcCvA/",
+          "https://www.youtube.com/user/ebichuSMEJ",
+          "https://www.youtube.com/user/EbichuVEVO"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:11.174Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony의 Stardust 소속 エビ中 실제멤버 소개와 仮契約のシンデレラ/Go!Go!Here We Go!ロック・リー/中人 원작 음반 및 일본인 그룹 경력을 MB의 JP/Ebisu·동일 원작과 대조했다. 오래된8인 소개를 현재 전체멤버수로 확정하지 않으며 기존 일본 팝 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Sony의 Stardust 소속 エビ中 실제멤버 소개와 仮契約のシンデレラ/Go!Go!Here We Go!ロック・リー/中人 원작 음반 및 일본인 그룹 경력을 MB의 JP/Ebisu·동일 원작과 대조했다. 오래된8인 소개를 현재 전체멤버수로 확정하지 않으며 기존 일본 팝 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:f13e929f-6836-4f02-8175-b86c31bb91ec와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony의 Stardust 소속 エビ中 실제멤버 소개와 仮契約のシンデレラ/Go!Go!Here We Go!ロック・リー/中人 원작 음반 및 일본인 그룹 경력을 MB의 JP/Ebisu·동일 원작과 대조했다. 오래된8인 소개를 현재 전체멤버수로 확정하지 않으며 기존 일본 팝 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Sony의 Stardust 소속 エビ中 실제멤버 소개와 仮契約のシンデレラ/Go!Go!Here We Go!ロック・リー/中人 원작 음반 및 일본인 그룹 경력을 MB의 JP/Ebisu·동일 원작과 대조했다. 오래된8인 소개를 현재 전체멤버수로 확정하지 않으며 기존 일본 팝 활동을 확인했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/f13e929f-6836-4f02-8175-b86c31bb91ec",
+            "checkedAt": "2026-10-26T21:25:19.279Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+        "expected_updated_at": "2026-10-13T08:18:11.6587+00:00",
+        "artist_name": "私立恵比寿中学",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "エビ中",
+          "Shiritsu Ebisu Chugaku"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony의 Stardust 소속 エビ中 실제멤버 소개와 仮契約のシンデレラ/Go!Go!Here We Go!ロック・リー/中人 원작 음반 및 일본인 그룹 경력을 MB의 JP/Ebisu·동일 원작과 대조했다. 오래된8인 소개를 현재 전체멤버수로 확정하지 않으며 기존 일본 팝 활동을 확인했다.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/ebichu/profile/"
+      },
+      "readback": {
+        "name": "私立恵比寿中学",
+        "bandId": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:07.375069+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 26,
+      "bandId": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+      "name": "荻野目洋子",
+      "musicBrainzId": "00fd440b-5e56-414a-8ac8-f4fa5cca9ada",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:24.252898+00:00",
+        "aliases": [
+          "Yoko Oginome",
+          "辻野洋子",
+          "荻野目 洋子",
+          "OGINOME Youko",
+          "ＹＯＫＯ",
+          "おぎのめ ようこ"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:09.051914+00:00",
+        "aliases": [
+          "Yoko Oginome",
+          "辻野洋子",
+          "荻野目 洋子",
+          "OGINOME Youko",
+          "ＹＯＫＯ",
+          "おぎのめ ようこ"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Victor의 荻野目洋子 1984 데뷔·ダンシング・ヒーロー/六本木純情派/NON STOPPER/VERGE OF LOVE/ディア・ポップシンガー 원작과 일본어/영어 가창 활동을 MB의 JP/Kashiwa·동일 음반에 대조했다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:11.433Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Victor의 荻野目洋子 1984 데뷔·ダンシング・ヒーロー/六本木純情派/NON STOPPER/VERGE OF LOVE/ディア・ポップシンガー 원작과 일본어/영어 가창 활동을 MB의 JP/Kashiwa·동일 음반에 대조했다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Victor의 荻野目洋子 1984 데뷔·ダンシング・ヒーロー/六本木純情派/NON STOPPER/VERGE OF LOVE/ディア・ポップシンガー 원작과 일본어/영어 가창 활동을 MB의 JP/Kashiwa·동일 음반에 대조했다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:00fd440b-5e56-414a-8ac8-f4fa5cca9ada와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Victor의 荻野目洋子 1984 데뷔·ダンシング・ヒーロー/六本木純情派/NON STOPPER/VERGE OF LOVE/ディア・ポップシンガー 원작과 일본어/영어 가창 활동을 MB의 JP/Kashiwa·동일 음반에 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Victor의 荻野目洋子 1984 데뷔·ダンシング・ヒーロー/六本木純情派/NON STOPPER/VERGE OF LOVE/ディア・ポップシンガー 원작과 일본어/영어 가창 활동을 MB의 JP/Kashiwa·동일 음반에 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/00fd440b-5e56-414a-8ac8-f4fa5cca9ada",
+            "checkedAt": "2026-10-26T21:25:21.528Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+        "expected_updated_at": "2026-10-13T08:18:24.252898+00:00",
+        "artist_name": "荻野目洋子",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Yoko Oginome",
+          "辻野洋子",
+          "荻野目 洋子",
+          "OGINOME Youko",
+          "ＹＯＫＯ",
+          "おぎのめ ようこ"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Victor의 荻野目洋子 1984 데뷔·ダンシング・ヒーロー/六本木純情派/NON STOPPER/VERGE OF LOVE/ディア・ポップシンガー 원작과 일본어/영어 가창 활동을 MB의 JP/Kashiwa·동일 음반에 대조했다.",
+        "evidence_url": "https://www.jvcmusic.co.jp/-/Profile/A000306.html"
+      },
+      "readback": {
+        "name": "荻野目洋子",
+        "bandId": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:09.051914+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 27,
+      "bandId": "cb663e55-afcf-45f5-a190-69a6779245d9",
+      "name": "超ときめき♡宣伝部",
+      "musicBrainzId": "b901c170-0045-4555-8472-8ff0d59cbefe",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:19.056106+00:00",
+        "aliases": [
+          "Tokisen",
+          "Cho Tokimeki♡Sendenbu",
+          "超とき宣",
+          "とき宣",
+          "Chō Tokimeki Sendenbu",
+          "Chou Tokimeki Sendenbu",
+          "Cho Tokimeki Sendenbu",
+          "ときめき♡宣伝部"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:10.66977+00:00",
+        "aliases": [
+          "Tokisen",
+          "Cho Tokimeki♡Sendenbu",
+          "超とき宣",
+          "とき宣",
+          "Chō Tokimeki Sendenbu",
+          "Chou Tokimeki Sendenbu",
+          "Cho Tokimeki Sendenbu",
+          "ときめき♡宣伝部"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCPO-HYS3fdDIKlMMgpcCzdg"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:11.690Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:b901c170-0045-4555-8472-8ff0d59cbefe와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다.",
+        "sources": [
+          {
+            "url": "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다."
+          },
+          {
+            "url": "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/discography",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/b901c170-0045-4555-8472-8ff0d59cbefe",
+            "checkedAt": "2026-10-26T21:25:23.780Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "cb663e55-afcf-45f5-a190-69a6779245d9",
+        "expected_updated_at": "2026-10-13T08:18:19.056106+00:00",
+        "artist_name": "超ときめき♡宣伝部",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Tokisen",
+          "Cho Tokimeki♡Sendenbu",
+          "超とき宣",
+          "とき宣",
+          "Chō Tokimeki Sendenbu",
+          "Chou Tokimeki Sendenbu",
+          "Cho Tokimeki Sendenbu",
+          "ときめき♡宣伝部"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Avex가 명시한 Stardust 보컬 유닛 超ときめき♡宣伝部 멤버와 ときめく恋と青春/ときめきえがお/ハートな胸の内♡·超最強 실제 싱글/앨범 발매를 MB의 JP 그룹·동일 원작과 대조했다. 하트/록온 구호를 록 장르 근거로 쓰지 않고 일본 아이돌 팝 활동으로 확인했다.",
+        "evidence_url": "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile"
+      },
+      "readback": {
+        "name": "超ときめき♡宣伝部",
+        "bandId": "cb663e55-afcf-45f5-a190-69a6779245d9",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:10.66977+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 28,
+      "bandId": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+      "name": "酒井法子",
+      "musicBrainzId": "53e56331-5049-4a9f-9195-98bddff6361a",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:21.895655+00:00",
+        "aliases": [
+          "Noriko Sakai",
+          "法子",
+          "さかい のりこ",
+          "酒井 法子",
+          "高相法子"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:12.092617+00:00",
+        "aliases": [
+          "Noriko Sakai",
+          "法子",
+          "さかい のりこ",
+          "酒井 法子",
+          "高相法子"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Victor의 酒井法子 1987 男のコになりたい 데뷔·碧いうさぎ/Premium Best/Lovely Times/NORIKO PartIII 원작 발매·가창 활동을 MB의 JP/Fukuoka 개인 음반과 대조했다. 배우 경력이나 국적만으로 판정하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCfOX1ylBV2D5dain27m5XNQ"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:11.946Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Victor의 酒井法子 1987 男のコになりたい 데뷔·碧いうさぎ/Premium Best/Lovely Times/NORIKO PartIII 원작 발매·가창 활동을 MB의 JP/Fukuoka 개인 음반과 대조했다. 배우 경력이나 국적만으로 판정하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Victor의 酒井法子 1987 男のコになりたい 데뷔·碧いうさぎ/Premium Best/Lovely Times/NORIKO PartIII 원작 발매·가창 활동을 MB의 JP/Fukuoka 개인 음반과 대조했다. 배우 경력이나 국적만으로 판정하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:53e56331-5049-4a9f-9195-98bddff6361a와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Victor의 酒井法子 1987 男のコになりたい 데뷔·碧いうさぎ/Premium Best/Lovely Times/NORIKO PartIII 원작 발매·가창 활동을 MB의 JP/Fukuoka 개인 음반과 대조했다. 배우 경력이나 국적만으로 판정하지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Victor의 酒井法子 1987 男のコになりたい 데뷔·碧いうさぎ/Premium Best/Lovely Times/NORIKO PartIII 원작 발매·가창 활동을 MB의 JP/Fukuoka 개인 음반과 대조했다. 배우 경력이나 국적만으로 판정하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/53e56331-5049-4a9f-9195-98bddff6361a",
+            "checkedAt": "2026-10-26T21:25:25.781Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+        "expected_updated_at": "2026-10-13T08:18:21.895655+00:00",
+        "artist_name": "酒井法子",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Noriko Sakai",
+          "法子",
+          "さかい のりこ",
+          "酒井 法子",
+          "高相法子"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Victor의 酒井法子 1987 男のコになりたい 데뷔·碧いうさぎ/Premium Best/Lovely Times/NORIKO PartIII 원작 발매·가창 활동을 MB의 JP/Fukuoka 개인 음반과 대조했다. 배우 경력이나 국적만으로 판정하지 않는다.",
+        "evidence_url": "https://www.jvcmusic.co.jp/-/Profile/A000342.html"
+      },
+      "readback": {
+        "name": "酒井法子",
+        "bandId": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:12.092617+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 29,
+      "bandId": "19772a44-b3d2-4dd9-869b-6182804d815b",
+      "name": "野口五郎",
+      "musicBrainzId": "6454bb18-a6f9-4f28-9be1-24fafc68f98a",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:28.92819+00:00",
+        "aliases": [
+          "野口 五郎",
+          "のぐち ごろう",
+          "NOGUCHI Gorou",
+          "SATOU Yasushi",
+          "Yasushi Sato",
+          "さとう やすし",
+          "佐藤 靖",
+          "佐藤靖",
+          "Goro Noguchi"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:13.621937+00:00",
+        "aliases": [
+          "野口 五郎",
+          "のぐち ごろう",
+          "NOGUCHI Gorou",
+          "SATOU Yasushi",
+          "Yasushi Sato",
+          "さとう やすし",
+          "佐藤 靖",
+          "佐藤靖",
+          "Goro Noguchi"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Avex의 野口五郎 본명佐藤靖·1956.2.23·岐阜県美濃市와 青いリンゴ/甘い生活/私鉄沿線/きらめき/風の駅 등의 실제 가창·발매 이력을 MB의 JP/Mino·개인 원작에 대조했다. 演歌 병행만으로 일본 팝 활동을 제외하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:12.209Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Avex의 野口五郎 본명佐藤靖·1956.2.23·岐阜県美濃市와 青いリンゴ/甘い生活/私鉄沿線/きらめき/風の駅 등의 실제 가창·발매 이력을 MB의 JP/Mino·개인 원작에 대조했다. 演歌 병행만으로 일본 팝 활동을 제외하지 않는다.",
+          "sourceUrls": [
+            "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Avex의 野口五郎 본명佐藤靖·1956.2.23·岐阜県美濃市와 青いリンゴ/甘い生活/私鉄沿線/きらめき/風の駅 등의 실제 가창·발매 이력을 MB의 JP/Mino·개인 원작에 대조했다. 演歌 병행만으로 일본 팝 활동을 제외하지 않는다.",
+          "sourceUrls": [
+            "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:6454bb18-a6f9-4f28-9be1-24fafc68f98a와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Avex의 野口五郎 본명佐藤靖·1956.2.23·岐阜県美濃市와 青いリンゴ/甘い生活/私鉄沿線/きらめき/風の駅 등의 실제 가창·발매 이력을 MB의 JP/Mino·개인 원작에 대조했다. 演歌 병행만으로 일본 팝 활동을 제외하지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Avex의 野口五郎 본명佐藤靖·1956.2.23·岐阜県美濃市와 青いリンゴ/甘い生活/私鉄沿線/きらめき/風の駅 등의 실제 가창·발매 이력을 MB의 JP/Mino·개인 원작에 대조했다. 演歌 병행만으로 일본 팝 활동을 제외하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/6454bb18-a6f9-4f28-9be1-24fafc68f98a",
+            "checkedAt": "2026-10-26T21:25:28.097Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "19772a44-b3d2-4dd9-869b-6182804d815b",
+        "expected_updated_at": "2026-10-13T08:18:28.92819+00:00",
+        "artist_name": "野口五郎",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "野口 五郎",
+          "のぐち ごろう",
+          "NOGUCHI Gorou",
+          "SATOU Yasushi",
+          "Yasushi Sato",
+          "さとう やすし",
+          "佐藤 靖",
+          "佐藤靖",
+          "Goro Noguchi"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Avex의 野口五郎 본명佐藤靖·1956.2.23·岐阜県美濃市와 青いリンゴ/甘い生活/私鉄沿線/きらめき/風の駅 등의 실제 가창·발매 이력을 MB의 JP/Mino·개인 원작에 대조했다. 演歌 병행만으로 일본 팝 활동을 제외하지 않는다.",
+        "evidence_url": "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile"
+      },
+      "readback": {
+        "name": "野口五郎",
+        "bandId": "19772a44-b3d2-4dd9-869b-6182804d815b",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:13.621937+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 30,
+      "bandId": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+      "name": "雨宮天",
+      "musicBrainzId": "b7f02d15-1c58-458e-95fd-f2477f133095",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:35.13895+00:00",
+        "aliases": [
+          "雨宫天",
+          "Sora Amamiya"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:15.162131+00:00",
+        "aliases": [
+          "雨宫天",
+          "Sora Amamiya"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCc4xpujLxnUBSI1XX-SdldQ"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:12.503Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "https://mikiki.tokyo.jp/articles/-/3098",
+            "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "https://mikiki.tokyo.jp/articles/-/3098",
+            "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "https://mikiki.tokyo.jp/articles/-/3098",
+            "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "https://mikiki.tokyo.jp/articles/-/3098",
+            "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:b7f02d15-1c58-458e-95fd-f2477f133095와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "https://mikiki.tokyo.jp/articles/-/3098",
+            "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "https://mikiki.tokyo.jp/articles/-/3098",
+            "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/amamiyasora/profile/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://www.sme.co.jp/pressrelease/news/pdf/20150316.pdf",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://mikiki.tokyo.jp/articles/-/3098",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/b7f02d15-1c58-458e-95fd-f2477f133095",
+            "checkedAt": "2026-10-26T21:25:30.269Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+        "expected_updated_at": "2026-10-13T08:18:35.13895+00:00",
+        "artist_name": "雨宮天",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "雨宫天",
+          "Sora Amamiya"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony 프로필·MusicRayn 공식 발표의 雨宮天/1993.8.28/東京·개인 Skyreach CD데뷔와 TOWER/bounce의 JAPAN Pop 음악 인터뷰·하드한 Skyreach 실제 가창을 MB의 JP/Tokyo·개인 원작과 대조했다. Sony 빈 discography나 검색 스니펫은 완료 근거로 쓰지 않는다.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/amamiyasora/profile/"
+      },
+      "readback": {
+        "name": "雨宮天",
+        "bandId": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:15.162131+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 31,
+      "bandId": "981e25ef-f2cb-4333-a393-9362066e37c7",
+      "name": "飯島真理",
+      "musicBrainzId": "668f86c0-53c5-432a-bf7b-8cba488da4ee",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:45.992803+00:00",
+        "aliases": [
+          "飯島 真理",
+          "饭岛真理",
+          "Mari Iijima",
+          "いいじま まり",
+          "いいじままり"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:16.706133+00:00",
+        "aliases": [
+          "飯島 真理",
+          "饭岛真理",
+          "Mari Iijima",
+          "いいじま まり",
+          "いいじままり"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Victor의 飯島真理 1983 싱어송라이터 Rosé 데뷔·marimusic/No Limit·City Pop 콘서트/セシールの雨傘/For Lovers OnlyⅡ와 MB의 JP/Tsuchiura·Rosé/Blanche/midori 개인 음반을 대조했다. 캐릭터リン・ミンメイ와 실제 개인 신원을 구분한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/user/marimusicvideos"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:12.788Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Victor의 飯島真理 1983 싱어송라이터 Rosé 데뷔·marimusic/No Limit·City Pop 콘서트/セシールの雨傘/For Lovers OnlyⅡ와 MB의 JP/Tsuchiura·Rosé/Blanche/midori 개인 음반을 대조했다. 캐릭터リン・ミンメイ와 실제 개인 신원을 구분한다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Victor의 飯島真理 1983 싱어송라이터 Rosé 데뷔·marimusic/No Limit·City Pop 콘서트/セシールの雨傘/For Lovers OnlyⅡ와 MB의 JP/Tsuchiura·Rosé/Blanche/midori 개인 음반을 대조했다. 캐릭터リン・ミンメイ와 실제 개인 신원을 구분한다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:668f86c0-53c5-432a-bf7b-8cba488da4ee와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Victor의 飯島真理 1983 싱어송라이터 Rosé 데뷔·marimusic/No Limit·City Pop 콘서트/セシールの雨傘/For Lovers OnlyⅡ와 MB의 JP/Tsuchiura·Rosé/Blanche/midori 개인 음반을 대조했다. 캐릭터リン・ミンメイ와 실제 개인 신원을 구분한다.",
+        "sources": [
+          {
+            "url": "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Victor의 飯島真理 1983 싱어송라이터 Rosé 데뷔·marimusic/No Limit·City Pop 콘서트/セシールの雨傘/For Lovers OnlyⅡ와 MB의 JP/Tsuchiura·Rosé/Blanche/midori 개인 음반을 대조했다. 캐릭터リン・ミンメイ와 실제 개인 신원을 구분한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/668f86c0-53c5-432a-bf7b-8cba488da4ee",
+            "checkedAt": "2026-10-26T21:25:32.661Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "981e25ef-f2cb-4333-a393-9362066e37c7",
+        "expected_updated_at": "2026-10-13T08:18:45.992803+00:00",
+        "artist_name": "飯島真理",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "飯島 真理",
+          "饭岛真理",
+          "Mari Iijima",
+          "いいじま まり",
+          "いいじままり"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Victor의 飯島真理 1983 싱어송라이터 Rosé 데뷔·marimusic/No Limit·City Pop 콘서트/セシールの雨傘/For Lovers OnlyⅡ와 MB의 JP/Tsuchiura·Rosé/Blanche/midori 개인 음반을 대조했다. 캐릭터リン・ミンメイ와 실제 개인 신원을 구분한다.",
+        "evidence_url": "https://www.jvcmusic.co.jp/-/Profile/A000283.html"
+      },
+      "readback": {
+        "name": "飯島真理",
+        "bandId": "981e25ef-f2cb-4333-a393-9362066e37c7",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:16.706133+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 32,
+      "bandId": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+      "name": "黒木メイサ",
+      "musicBrainzId": "7a102c6f-62e0-4b39-8d6d-ab58fb94b3df",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:55.057849+00:00",
+        "aliases": [
+          "Meisa",
+          "Meisa Kuroki"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:18.185948+00:00",
+        "aliases": [
+          "Meisa",
+          "Meisa Kuroki"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "Sony의 黒木メイサ/1988.5.28/沖縄·hellcat/SHOCK-運命-/ATTITUDE/Like This 실제 원작 가창·R&B dance 활동을 MB의 JP/Nago·동일 개인 음반과 대조했다. 배우라는 형식만으로 제외하지 않으며 기존 일본 팝 유지 판정을 보완한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:13.155Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony의 黒木メイサ/1988.5.28/沖縄·hellcat/SHOCK-運命-/ATTITUDE/Like This 실제 원작 가창·R&B dance 활동을 MB의 JP/Nago·동일 개인 음반과 대조했다. 배우라는 형식만으로 제외하지 않으며 기존 일본 팝 유지 판정을 보완한다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Sony의 黒木メイサ/1988.5.28/沖縄·hellcat/SHOCK-運命-/ATTITUDE/Like This 실제 원작 가창·R&B dance 활동을 MB의 JP/Nago·동일 개인 음반과 대조했다. 배우라는 형식만으로 제외하지 않으며 기존 일본 팝 유지 판정을 보완한다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:7a102c6f-62e0-4b39-8d6d-ab58fb94b3df와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony의 黒木メイサ/1988.5.28/沖縄·hellcat/SHOCK-運命-/ATTITUDE/Like This 실제 원작 가창·R&B dance 활동을 MB의 JP/Nago·동일 개인 음반과 대조했다. 배우라는 형식만으로 제외하지 않으며 기존 일본 팝 유지 판정을 보완한다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "Sony의 黒木メイサ/1988.5.28/沖縄·hellcat/SHOCK-運命-/ATTITUDE/Like This 실제 원작 가창·R&B dance 활동을 MB의 JP/Nago·동일 개인 음반과 대조했다. 배우라는 형식만으로 제외하지 않으며 기존 일본 팝 유지 판정을 보완한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/7a102c6f-62e0-4b39-8d6d-ab58fb94b3df",
+            "checkedAt": "2026-10-26T21:25:34.927Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+        "expected_updated_at": "2026-10-13T08:18:55.057849+00:00",
+        "artist_name": "黒木メイサ",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Meisa",
+          "Meisa Kuroki"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony의 黒木メイサ/1988.5.28/沖縄·hellcat/SHOCK-運命-/ATTITUDE/Like This 실제 원작 가창·R&B dance 활동을 MB의 JP/Nago·동일 개인 음반과 대조했다. 배우라는 형식만으로 제외하지 않으며 기존 일본 팝 유지 판정을 보완한다.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/meisakuroki/profile/"
+      },
+      "readback": {
+        "name": "黒木メイサ",
+        "bandId": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:18.185948+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 33,
+      "bandId": "22656510-a275-4c0d-9233-2a15434b2ce2",
+      "name": "℃‐ute",
+      "musicBrainzId": "98c90095-a4ee-4644-b445-ca6219f0ca00",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:41.349781+00:00",
+        "aliases": [
+          "°C-ute",
+          "큐트",
+          "Cute",
+          "c-ute",
+          "キュート"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:19.630839+00:00",
+        "aliases": [
+          "°C-ute",
+          "큐트",
+          "Cute",
+          "c-ute",
+          "キュート"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "UP-FRONT의 실제 ℃-ute 아티스트·℃OMPLETE SINGLE COLLECTION/To Tomorrow/ファイナルスコール/The Curtain Rises 및 일본 음악 활동을 정확한 MB JP 그룹 원작과 대조했다. 해산한 그룹을 미래 공연 중이라고 하지 않으며 실제 일본 보컬 팝 발매 활동을 확인한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCcS2E_TVMSwbN4Q5eH7F_oA"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:13.430Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "UP-FRONT의 실제 ℃-ute 아티스트·℃OMPLETE SINGLE COLLECTION/To Tomorrow/ファイナルスコール/The Curtain Rises 및 일본 음악 활동을 정확한 MB JP 그룹 원작과 대조했다. 해산한 그룹을 미래 공연 중이라고 하지 않으며 실제 일본 보컬 팝 발매 활동을 확인한다.",
+          "sourceUrls": [
+            "https://www.up-front-works.jp/artist/c-ute/",
+            "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.up-front-works.jp/artist/c-ute/",
+            "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00"
+          ]
+        },
+        "genreMatched": {
+          "summary": "UP-FRONT의 실제 ℃-ute 아티스트·℃OMPLETE SINGLE COLLECTION/To Tomorrow/ファイナルスコール/The Curtain Rises 및 일본 음악 활동을 정확한 MB JP 그룹 원작과 대조했다. 해산한 그룹을 미래 공연 중이라고 하지 않으며 실제 일본 보컬 팝 발매 활동을 확인한다.",
+          "sourceUrls": [
+            "https://www.up-front-works.jp/artist/c-ute/",
+            "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.up-front-works.jp/artist/c-ute/",
+            "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:98c90095-a4ee-4644-b445-ca6219f0ca00와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.up-front-works.jp/artist/c-ute/",
+            "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.up-front-works.jp/artist/c-ute/",
+            "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "UP-FRONT의 실제 ℃-ute 아티스트·℃OMPLETE SINGLE COLLECTION/To Tomorrow/ファイナルスコール/The Curtain Rises 및 일본 음악 활동을 정확한 MB JP 그룹 원작과 대조했다. 해산한 그룹을 미래 공연 중이라고 하지 않으며 실제 일본 보컬 팝 발매 활동을 확인한다.",
+        "sources": [
+          {
+            "url": "https://www.up-front-works.jp/artist/c-ute/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "UP-FRONT의 실제 ℃-ute 아티스트·℃OMPLETE SINGLE COLLECTION/To Tomorrow/ファイナルスコール/The Curtain Rises 및 일본 음악 활동을 정확한 MB JP 그룹 원작과 대조했다. 해산한 그룹을 미래 공연 중이라고 하지 않으며 실제 일본 보컬 팝 발매 활동을 확인한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/98c90095-a4ee-4644-b445-ca6219f0ca00",
+            "checkedAt": "2026-10-26T21:25:37.249Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "22656510-a275-4c0d-9233-2a15434b2ce2",
+        "expected_updated_at": "2026-10-13T08:18:41.349781+00:00",
+        "artist_name": "℃‐ute",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "°C-ute",
+          "큐트",
+          "Cute",
+          "c-ute",
+          "キュート"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: UP-FRONT의 실제 ℃-ute 아티스트·℃OMPLETE SINGLE COLLECTION/To Tomorrow/ファイナルスコール/The Curtain Rises 및 일본 음악 활동을 정확한 MB JP 그룹 원작과 대조했다. 해산한 그룹을 미래 공연 중이라고 하지 않으며 실제 일본 보컬 팝 발매 활동을 확인한다.",
+        "evidence_url": "https://www.up-front-works.jp/artist/c-ute/"
+      },
+      "readback": {
+        "name": "℃‐ute",
+        "bandId": "22656510-a275-4c0d-9233-2a15434b2ce2",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:19.630839+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 34,
+      "bandId": "6e1fe77c-684e-4a84-807c-ca1f9165d592",
+      "name": "Alien Sex Fiend",
+      "musicBrainzId": "3580a118-49e3-4aa1-972a-f5f0ff750dd2",
+      "country": "GB",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:26.805104+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:21.252293+00:00",
+        "aliases": []
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:13.653Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다.",
+          "sourceUrls": [
+            "https://www.asf-13thmoon.com/index.html",
+            "https://deathrock.com/aliensexfiend/",
+            "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 GB·United Kingdom를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.asf-13thmoon.com/index.html",
+            "https://deathrock.com/aliensexfiend/",
+            "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다.",
+          "sourceUrls": [
+            "https://www.asf-13thmoon.com/index.html",
+            "https://deathrock.com/aliensexfiend/",
+            "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.asf-13thmoon.com/index.html",
+            "https://deathrock.com/aliensexfiend/",
+            "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:3580a118-49e3-4aa1-972a-f5f0ff750dd2와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.asf-13thmoon.com/index.html",
+            "https://deathrock.com/aliensexfiend/",
+            "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.asf-13thmoon.com/index.html",
+            "https://deathrock.com/aliensexfiend/",
+            "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.asf-13thmoon.com/index.html",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다."
+          },
+          {
+            "url": "https://deathrock.com/aliensexfiend/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/3580a118-49e3-4aa1-972a-f5f0ff750dd2",
+            "checkedAt": "2026-10-26T21:25:39.125Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "6e1fe77c-684e-4a84-807c-ca1f9165d592",
+        "expected_updated_at": "2026-10-13T08:20:26.805104+00:00",
+        "artist_name": "Alien Sex Fiend",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 Alien Sex Fiend/13th Moon·Cherry Red 발매 연결과 음악 전문 deathrock의 UK/London1982·Nik/Mrs Fiend·Batcave gothic punk/industrial 활동을 MB의 GB/London 그룹·동일 앨범과 대조했다. 동명 아티스트나 순수 전자음악 형식만으로 단정하지 않는다.",
+        "evidence_url": "https://www.asf-13thmoon.com/index.html"
+      },
+      "readback": {
+        "name": "Alien Sex Fiend",
+        "bandId": "6e1fe77c-684e-4a84-807c-ca1f9165d592",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:21.252293+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 35,
+      "bandId": "e8c50b16-0be1-44f0-a797-ece2d6a94bd4",
+      "name": "angela",
+      "musicBrainzId": "904dfcc4-6973-4311-9580-b052a124b0cd",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:17.117768+00:00",
+        "aliases": [
+          "アンジェラ"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:22.695903+00:00",
+        "aliases": [
+          "アンジェラ"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 2,
+      "notes": "공식 atsuko 보컬/작사작곡·KATSU 기타/편곡·岡山 출신 유닛, 明日への brilliant road 데뷔·蒼穹のファフナー/シドニアの騎士 주제가 및 Answer 원작 발매를 MB의 JP 그룹·동일 작품과 대조했다. 실제 일본 팝 애니송 활동으로 기존 유지 판정을 보완한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCziN0SyXTx509xX3-s1gK4A"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:13.718Z",
+        "apiError": 6,
+        "exactMbid": false,
+        "adoptedToCoreThisRun": false
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 atsuko 보컬/작사작곡·KATSU 기타/편곡·岡山 출신 유닛, 明日への brilliant road 데뷔·蒼穹のファフナー/シドニアの騎士 주제가 및 Answer 원작 발매를 MB의 JP 그룹·동일 작품과 대조했다. 실제 일본 팝 애니송 활동으로 기존 유지 판정을 보완한다.",
+          "sourceUrls": [
+            "https://angela-official.com/profile",
+            "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://angela-official.com/profile",
+            "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 atsuko 보컬/작사작곡·KATSU 기타/편곡·岡山 출신 유닛, 明日への brilliant road 데뷔·蒼穹のファフナー/シドニアの騎士 주제가 및 Answer 원작 발매를 MB의 JP 그룹·동일 작품과 대조했다. 실제 일본 팝 애니송 활동으로 기존 유지 판정을 보완한다.",
+          "sourceUrls": [
+            "https://angela-official.com/profile",
+            "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://angela-official.com/profile",
+            "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:904dfcc4-6973-4311-9580-b052a124b0cd와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://angela-official.com/profile",
+            "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://angela-official.com/profile",
+            "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 atsuko 보컬/작사작곡·KATSU 기타/편곡·岡山 출신 유닛, 明日への brilliant road 데뷔·蒼穹のファフナー/シドニアの騎士 주제가 및 Answer 원작 발매를 MB의 JP 그룹·동일 작품과 대조했다. 실제 일본 팝 애니송 활동으로 기존 유지 판정을 보완한다.",
+        "sources": [
+          {
+            "url": "https://angela-official.com/profile",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 atsuko 보컬/작사작곡·KATSU 기타/편곡·岡山 출신 유닛, 明日への brilliant road 데뷔·蒼穹のファフナー/シドニアの騎士 주제가 및 Answer 원작 발매를 MB의 JP 그룹·동일 작품과 대조했다. 실제 일본 팝 애니송 활동으로 기존 유지 판정을 보완한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/904dfcc4-6973-4311-9580-b052a124b0cd",
+            "checkedAt": "2026-10-26T21:25:51.431Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "e8c50b16-0be1-44f0-a797-ece2d6a94bd4",
+        "expected_updated_at": "2026-10-13T08:18:17.117768+00:00",
+        "artist_name": "angela",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "アンジェラ"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 atsuko 보컬/작사작곡·KATSU 기타/편곡·岡山 출신 유닛, 明日への brilliant road 데뷔·蒼穹のファフナー/シドニアの騎士 주제가 및 Answer 원작 발매를 MB의 JP 그룹·동일 작품과 대조했다. 실제 일본 팝 애니송 활동으로 기존 유지 판정을 보완한다.",
+        "evidence_url": "https://angela-official.com/profile"
+      },
+      "readback": {
+        "name": "angela",
+        "bandId": "e8c50b16-0be1-44f0-a797-ece2d6a94bd4",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:22.695903+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 36,
+      "bandId": "d37a71ce-bf3e-47ed-a1a0-8305a7abff85",
+      "name": "Aqours",
+      "musicBrainzId": "b1c1b09e-7a43-4090-b69d-195af799dc65",
+      "country": "JP",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:16.515368+00:00",
+        "aliases": [
+          "シャゼリア☆キッス",
+          "CYaZALEA Kiss"
+        ]
+      },
+      "after": {
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:24.1643+00:00",
+        "aliases": [
+          "シャゼリア☆キッス",
+          "CYaZALEA Kiss"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 LoveLive 음악 상품 본문의 Aqours 永久hours/僕らの旅は終わらない, 9명 실제 CV가창진 및 개별솔로/그룹 음반 구분을 MB의 JP·Aqours 그룹 원작에 대조했다. AiScReam/SaintSnow 등 다른 유닛과 합치지 않으며 실제 일본 보컬 팝 음반 활동을 확인했다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:13.974Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 LoveLive 음악 상품 본문의 Aqours 永久hours/僕らの旅は終わらない, 9명 실제 CV가창진 및 개별솔로/그룹 음반 구분을 MB의 JP·Aqours 그룹 원작에 대조했다. AiScReam/SaintSnow 등 다른 유닛과 합치지 않으며 실제 일본 보컬 팝 음반 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 LoveLive 음악 상품 본문의 Aqours 永久hours/僕らの旅は終わらない, 9명 실제 CV가창진 및 개별솔로/그룹 음반 구분을 MB의 JP·Aqours 그룹 원작에 대조했다. AiScReam/SaintSnow 등 다른 유닛과 합치지 않으며 실제 일본 보컬 팝 음반 활동을 확인했다.",
+          "sourceUrls": [
+            "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:b1c1b09e-7a43-4090-b69d-195af799dc65와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 LoveLive 음악 상품 본문의 Aqours 永久hours/僕らの旅は終わらない, 9명 실제 CV가창진 및 개별솔로/그룹 음반 구분을 MB의 JP·Aqours 그룹 원작에 대조했다. AiScReam/SaintSnow 등 다른 유닛과 합치지 않으며 실제 일본 보컬 팝 음반 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://www.lovelive-anime.jp/uranohoshi/cd.php",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "공식 LoveLive 음악 상품 본문의 Aqours 永久hours/僕らの旅は終わらない, 9명 실제 CV가창진 및 개별솔로/그룹 음반 구분을 MB의 JP·Aqours 그룹 원작에 대조했다. AiScReam/SaintSnow 등 다른 유닛과 합치지 않으며 실제 일본 보컬 팝 음반 활동을 확인했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/b1c1b09e-7a43-4090-b69d-195af799dc65",
+            "checkedAt": "2026-10-26T21:25:53.396Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "d37a71ce-bf3e-47ed-a1a0-8305a7abff85",
+        "expected_updated_at": "2026-10-13T08:18:16.515368+00:00",
+        "artist_name": "Aqours",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "シャゼリア☆キッス",
+          "CYaZALEA Kiss"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 LoveLive 음악 상품 본문의 Aqours 永久hours/僕らの旅は終わらない, 9명 실제 CV가창진 및 개별솔로/그룹 음반 구분을 MB의 JP·Aqours 그룹 원작에 대조했다. AiScReam/SaintSnow 등 다른 유닛과 합치지 않으며 실제 일본 보컬 팝 음반 활동을 확인했다.",
+        "evidence_url": "https://www.lovelive-anime.jp/uranohoshi/cd.php"
+      },
+      "readback": {
+        "name": "Aqours",
+        "bandId": "d37a71ce-bf3e-47ed-a1a0-8305a7abff85",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:24.1643+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 37,
+      "bandId": "0cfa5892-2f26-467b-8058-5697b79301ba",
+      "name": "Arena",
+      "musicBrainzId": "c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89",
+      "country": "GB",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:13.964835+00:00",
+        "aliases": []
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:25.664076+00:00",
+        "aliases": []
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCFp1-Dr6nbF6H73sdmh8H_w"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:14.179Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다.",
+          "sourceUrls": [
+            "https://www.robertsowden.com/arena",
+            "https://www.axs.com/artists/1122096/arena-tickets",
+            "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 GB·United Kingdom를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://www.robertsowden.com/arena",
+            "https://www.axs.com/artists/1122096/arena-tickets",
+            "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89"
+          ]
+        },
+        "genreMatched": {
+          "summary": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다.",
+          "sourceUrls": [
+            "https://www.robertsowden.com/arena",
+            "https://www.axs.com/artists/1122096/arena-tickets",
+            "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://www.robertsowden.com/arena",
+            "https://www.axs.com/artists/1122096/arena-tickets",
+            "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.robertsowden.com/arena",
+            "https://www.axs.com/artists/1122096/arena-tickets",
+            "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.robertsowden.com/arena",
+            "https://www.axs.com/artists/1122096/arena-tickets",
+            "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다.",
+        "sources": [
+          {
+            "url": "https://www.robertsowden.com/arena",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다."
+          },
+          {
+            "url": "https://www.axs.com/artists/1122096/arena-tickets",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다."
+          },
+          {
+            "url": "https://www.loudersound.com/bands-artists/arena-singer-damian-wilson-to-leave-the-band-at-the-end-of-this-year-paul-manzi-to-return",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89",
+            "checkedAt": "2026-10-26T21:25:55.910Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "0cfa5892-2f26-467b-8058-5697b79301ba",
+        "expected_updated_at": "2026-10-13T08:21:13.964835+00:00",
+        "artist_name": "Arena",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 전 보컬 Robert Sowden 공식 회고의 Clive Nolan/Mick Pointer/John Mitchell·Prog Rock·Contagion/Peppers Ghost와 AXS 공식밴드소개·Prog/Louder 본문의 UK prog rock 및 동일멤버/음반을 MB GB 그룹과 대조했다. 동명 메탈그룹을 분리한다.",
+        "evidence_url": "https://www.robertsowden.com/arena"
+      },
+      "readback": {
+        "name": "Arena",
+        "bandId": "0cfa5892-2f26-467b-8058-5697b79301ba",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:25.664076+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 38,
+      "bandId": "7b2f72d9-47d7-4f13-b963-d974aecad0d0",
+      "name": "Babybird",
+      "musicBrainzId": "93aaa233-6b5f-41bf-bfe8-70cf1552c218",
+      "country": "GB",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "complete",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:07.193969+00:00",
+        "aliases": [
+          "Baby Burd"
+        ]
+      },
+      "after": {
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T21:30:27.160013+00:00",
+        "aliases": [
+          "Baby Burd"
+        ]
+      },
+      "actualApplied": true,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:14.480Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": true
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다.",
+          "sourceUrls": [
+            "https://music.apple.com/us/artist/babybird/69411060",
+            "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 GB·United Kingdom를 위 공식 개인·그룹의 동일 이름/원작/출신·활동 이력과 대조했다. 국가를 변경하지 않으며 청취 지역을 국적으로 사용하지 않는다.",
+          "sourceUrls": [
+            "https://music.apple.com/us/artist/babybird/69411060",
+            "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218"
+          ]
+        },
+        "genreMatched": {
+          "summary": "정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다.",
+          "sourceUrls": [
+            "https://music.apple.com/us/artist/babybird/69411060",
+            "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 실제 음악 활동·보존된 유지 판정과 대조했다. 새 혼합 장르 기준을 만들지 않았다.",
+          "sourceUrls": [
+            "https://music.apple.com/us/artist/babybird/69411060",
+            "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:93aaa233-6b5f-41bf-bfe8-70cf1552c218와 원본 버전·이름·별칭·국가 및 위 공식 신원을 대조했다. 새 외부 키 생성·별칭/관계 변경 없음.",
+          "sourceUrls": [
+            "https://music.apple.com/us/artist/babybird/69411060",
+            "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·공연 수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://music.apple.com/us/artist/babybird/69411060",
+            "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다.",
+        "sources": [
+          {
+            "url": "https://music.apple.com/us/artist/babybird/69411060",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다."
+          },
+          {
+            "url": "https://sheffieldmusicarchive.co.uk/bands/babybird/",
+            "checkedAt": "2026-10-26T21:29:49.517008+00:00",
+            "summary": "정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/93aaa233-6b5f-41bf-bfe8-70cf1552c218",
+            "checkedAt": "2026-10-26T21:25:58.227Z",
+            "summary": "현재 context와 같은 canonical id/name/country/area/작품·URL 관계를 실제 공유 게이트로 대조했다. 사용자 편집 태그를 장르 근거로 사용하지 않았다."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "7b2f72d9-47d7-4f13-b963-d974aecad0d0",
+        "expected_updated_at": "2026-10-13T08:20:07.193969+00:00",
+        "artist_name": "Babybird",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Baby Burd"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 정식 음원유통의 Ugly Beautiful/Ex-maniac/There’s Something Going On/Bugged 원작과 Sheffield Music Archive의 English indie/alternative rock·Stephen Jones/Luke Scott/Robert Gregory 및 1995 Sheffield 밴드 경력을 MB GB/Sheffield 그룹에 대조했다. 솔로 Baby Bird와 밴드 Babybird의 경력을 구분한다.",
+        "evidence_url": "https://music.apple.com/us/artist/babybird/69411060"
+      },
+      "readback": {
+        "name": "Babybird",
+        "bandId": "7b2f72d9-47d7-4f13-b963-d974aecad0d0",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "updatedAt": "2026-10-26T21:30:27.160013+00:00",
+        "publicationApproved": true
+      }
+    },
+    {
+      "i": 39,
+      "bandId": "b7a5e80a-8dfe-4ab8-a368-8ebcfb896b30",
+      "name": "Barenaked Ladies",
+      "musicBrainzId": "86e736b4-93e2-40ff-9e1c-fb7c63fef5f6",
+      "country": "CA",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": "deferred",
+        "channels": "deferred"
+      },
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:40.497297+00:00",
+        "aliases": [
+          "BNL",
+          "Bare Naked Ladies"
+        ]
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:40.497297+00:00",
+        "aliases": [
+          "BNL",
+          "Bare Naked Ladies"
+        ]
+      },
+      "actualApplied": false,
+      "providerCallsWithoutBatchOverhead": 3,
+      "notes": "공식 사이트 bio/root403, Shelter 관리 소개와 Canadian Music Hall의 Scarborough/Ontario·Gordon/Stunt 원작은 확인했다. 실제 열린 Apple 페이지는 앨범/플레이리스트였으며 전용 About 장르 본문이 없었다. 같은 명의·캐나다·밴드 형식만으로 충분한 록 요건을 완료하지 않고 공식/음악 전문 대체 장르 근거 보완 대기.",
+      "channels": {
+        "result": "deferred",
+        "saved": false,
+        "readBack": false,
+        "photoSaved": false,
+        "candidates": [
+          "https://www.youtube.com/channel/UCk1VTZtKTDV1Zo1mHyoPyZA",
+          "https://www.youtube.com/channel/UCZ5fcCDgq2xEo6niWSr3dVg"
+        ],
+        "reason": "선택 대상의 기존 verified profile/cache 없음. MB의 URL 관계 및 공식 페이지 링크 표시는 후보로 보존하되 전체 직접 목적지/API ID 일치를 완료하지 않아 저장하지 않는다."
+      },
+      "popularity": {
+        "reused": false,
+        "checkedAt": "2026-10-26T21:24:14.649Z",
+        "apiError": null,
+        "exactMbid": true,
+        "adoptedToCoreThisRun": false
+      }
+    }
+  ],
+  "exceptions": [
+    {
+      "bandId": "0d38784d-59e1-401e-ad80-dfe134c93955",
+      "name": "홍성준",
+      "musicBrainzId": "2dbe9c45-ed89-4fa0-b724-fac801749b12",
+      "reason": "현재 MBID는 engineer·GNRSOUND 인스타 관계, mix/editor/recording 역할만 확인된다. Bugs 정식 OST 크레딧의 Mixed by 홍성준@gnrsound와 일치한다. 동명 BDC/SEONGJUN 가수 또는 Last.fm I’m을 이 엔지니어 ID에 합칠 수 없는 구체 신원 충돌이다. 실제 개인 판단/신원 정리가 필요하며 DB held/excluded 변경 없음.",
+      "sources": [
+        "https://musicbrainz.org/artist/2dbe9c45-ed89-4fa0-b724-fac801749b12",
+        "https://music.bugs.co.kr/album/20154671"
+      ],
+      "dbStatusUnchanged": true
+    }
+  ],
+  "validation": {
+    "utf8AndJson": true,
+    "diffCheck": true,
+    "newCodeTests": 0,
+    "codeUnchanged": true,
+    "reuse": "No code changes; previous compatibility/queue isolated tests remain baseline evidence, not new production mutation proof. Documentation content/diff validation performed.",
+    "limitations": [
+      "Selected channel/artist_profiles query initially used nonexistent youtube_channel_url; read actual columns then reran channel_url successfully. No database mutation resulted.",
+      "Copied LF helper labels new40/reused0 were inaccurate; saved rows establish new29/reused11/55requests. Authoritative r36-accounting.json corrects labels.",
+      "MusicBrainz HTTP42 for40 entity requests plus5 extra=47. Two retries are batch overhead, not falsely attributed exact request timestamps.",
+      "Finish accounting attributes already-recorded approval-only index20 provider cost to first remaining stage as explicit batch overhead; total102 verified in closed history."
+    ]
+  },
+  "scopePreserved": [
+    "No concert candidate collection/write/repair, publicationON, notification send or worker/scheduler changes.",
+    "No init/accept/handoff/pastapply replay/manual queue edits; closed server finish confirmed before active cleared.",
+    "No DDL/rights changes/deploy/push/PR/merge; no personal login/actor/token substitution.",
+    "No raw HTML/API bodies/images/YouTube titles or photos written to Git. MB/Last.fm investigation files remain ignored; no key-bearing URLs in outputs.",
+    "No false drafts changed to ready solely by authentication. Query URLs not stripped or validator bypassed."
+  ]
+}
