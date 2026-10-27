@@ -1,0 +1,640 @@
+{
+  "projectRef": "czjrzylvnewfjnfwjhwf",
+  "policy": "jpop-or-rock-v1",
+  "queuePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+  "runId": "bd18bffa-9f1f-47bc-9b41-6b5e0ce68227",
+  "trigger": "user_requested_five_artist_validation",
+  "startedAt": "2026-10-20T05:47:50.861Z",
+  "finishedAt": "2026-10-20T05:47:58.861Z",
+  "selected": 5,
+  "approved": 5,
+  "category": "overseas_rock",
+  "rows": [
+    {
+      "bandId": "5ada99f1-8845-4e4b-b34d-eb12eb284f37",
+      "name": "Metallica",
+      "verdict": "keep",
+      "applied": true,
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 역사에 James Hetfield·Lars Ulrich, Kill 'Em All·Ride the Lightning·Master of Puppets가 나오며 해당 MBID의 음반 목록·공식 사이트 관계와 일치한다.",
+          "sourceUrls": [
+            "https://www.metallica.com/history/",
+            "https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 역사의 LA 결성과 Bay Area 이동, MBID의 Los Angeles/United States 출신 및 US area를 대조했다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+            "https://www.metallica.com/history/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 역사에서 데뷔작의 metal 음악과 thrash 활동을 설명하므로 록 계열 활동이 확인된다.",
+          "sourceUrls": [
+            "https://www.metallica.com/history/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "US 신원과 실제 록/메탈 활동을 각각 확인하여 해외 록(overseas_rock)으로 분류한다.",
+          "sourceUrls": [
+            "https://www.metallica.com/history/",
+            "https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "서버 context의 기존 band.musicbrainz_id=65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab와 private.artist_identities의 mb:65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab 연결을 확인한 뒤 외부 프로필·공식 사이트·음반 신원을 교차 확인한다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+            "https://www.metallica.com/history/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "설치된 서버 RPC와 수집기 코드를 확인했다. 승인하면 해당 외부 신원에 공연 자동 공개 자격을 부여하지만 이 RPC가 공연을 직접 공개하지는 않는다. 실제 공연은 기존 수집기의 일정·공식 발표·출처·중복·수동 보호 조건도 통과해야 한다.",
+          "sourceUrls": [
+            "https://www.metallica.com/history/",
+            "https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab"
+          ]
+        }
+      },
+      "proof": {
+        "decision": "keep",
+        "summary": "공식 역사에 James Hetfield·Lars Ulrich, Kill 'Em All·Ride the Lightning·Master of Puppets가 나오며 해당 MBID의 음반 목록·공식 사이트 관계와 일치한다. 공식 역사에서 데뷔작의 metal 음악과 thrash 활동을 설명하므로 록 계열 활동이 확인된다.",
+        "sources": [
+          {
+            "url": "https://www.metallica.com/history/",
+            "summary": "공식 역사에서 LA 결성, Hetfield/Ulrich, 초기 음반과 메탈 활동 확인.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+            "summary": "해당 그룹의 US area·LA 결성, 공식 metallica.com 관계 및 초기 음반을 신원 연결에 대조. 장르 태그를 판정 근거로 사용하지 않음.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          }
+        ]
+      },
+      "before": {
+        "target_band_id": "5ada99f1-8845-4e4b-b34d-eb12eb284f37",
+        "expected_updated_at": "2026-10-13T08:19:05.515385+00:00",
+        "artist_name": "Metallica",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "メタリカ",
+          "Metalica",
+          "메탈리카"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 역사에서 데뷔작의 metal 음악과 thrash 활동을 설명하므로 록 계열 활동이 확인된다. 신원·국가·기존 외부 ID 연결·분류·공개 승인 효과를 개별 확인한 사용자 요청 5팀 검증 승인.",
+        "evidence_url": "https://www.metallica.com/history/"
+      },
+      "after": {
+        "id": "5ada99f1-8845-4e4b-b34d-eb12eb284f37",
+        "name": "Metallica",
+        "aliases": [
+          "メタリカ",
+          "Metalica",
+          "메탈리카"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T05:47:52.566427+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-20T05:47:52.566427+00:00"
+      }
+    },
+    {
+      "bandId": "fc8df115-ec55-42a7-863c-a64b71f662f9",
+      "name": "Nirvana",
+      "verdict": "keep",
+      "applied": true,
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "박물관 소개의 Kurt Cobain·Krist Novoselic·Dave Grohl과 Bleach/Nevermind/In Utero를 미국 grunge 그룹 MBID 및 nirvana.com 공식 음반 목록과 대조했다. 동명 영국 그룹과 구분했다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/nirvana/",
+            "https://musicbrainz.org/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da"
+          ]
+        },
+        "countryMatched": {
+          "summary": "박물관의 Seattle/Pacific Northwest 소개와 MBID의 Aberdeen, Washington, United States 출신·US area가 일치한다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+            "https://rockhall.com/inductees/nirvana/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "박물관 본문이 punk-inspired sound, grunge 및 alternative-rock 활동과 해당 음반을 직접 설명한다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/nirvana/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "US 신원과 실제 록/메탈 활동을 각각 확인하여 해외 록(overseas_rock)으로 분류한다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/nirvana/",
+            "https://musicbrainz.org/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "서버 context의 기존 band.musicbrainz_id=5b11f4ce-a62d-471e-81fc-a69a8278c7da와 private.artist_identities의 mb:5b11f4ce-a62d-471e-81fc-a69a8278c7da 연결을 확인한 뒤 외부 프로필·공식 사이트·음반 신원을 교차 확인한다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+            "https://rockhall.com/inductees/nirvana/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "설치된 서버 RPC와 수집기 코드를 확인했다. 승인하면 해당 외부 신원에 공연 자동 공개 자격을 부여하지만 이 RPC가 공연을 직접 공개하지는 않는다. 실제 공연은 기존 수집기의 일정·공식 발표·출처·중복·수동 보호 조건도 통과해야 한다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/nirvana/",
+            "https://musicbrainz.org/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da"
+          ]
+        }
+      },
+      "proof": {
+        "decision": "keep",
+        "summary": "박물관 소개의 Kurt Cobain·Krist Novoselic·Dave Grohl과 Bleach/Nevermind/In Utero를 미국 grunge 그룹 MBID 및 nirvana.com 공식 음반 목록과 대조했다. 동명 영국 그룹과 구분했다. 박물관 본문이 punk-inspired sound, grunge 및 alternative-rock 활동과 해당 음반을 직접 설명한다.",
+        "sources": [
+          {
+            "url": "https://rockhall.com/inductees/nirvana/",
+            "summary": "Seattle 그룹의 멤버와 Bleach/Nevermind/In Utero, grunge·alternative-rock 활동을 확인. 헌액 여부만으로 판단하지 않음.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://www.nirvana.com/",
+            "summary": "MusicBrainz가 연결한 공식 사이트에서 Nevermind/In Utero 등 음반 신원을 대조.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+            "summary": "1980s–1990s US grunge band로 구분되는 그룹. US area, Aberdeen 결성, 해당 음반 및 nirvana.com 관계를 확인.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          }
+        ]
+      },
+      "before": {
+        "target_band_id": "fc8df115-ec55-42a7-863c-a64b71f662f9",
+        "expected_updated_at": "2026-10-13T08:19:06.872775+00:00",
+        "artist_name": "Nirvana",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "ニルヴァーナ",
+          "Nirvana US"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 박물관 본문이 punk-inspired sound, grunge 및 alternative-rock 활동과 해당 음반을 직접 설명한다. 신원·국가·기존 외부 ID 연결·분류·공개 승인 효과를 개별 확인한 사용자 요청 5팀 검증 승인.",
+        "evidence_url": "https://rockhall.com/inductees/nirvana/"
+      },
+      "after": {
+        "id": "fc8df115-ec55-42a7-863c-a64b71f662f9",
+        "name": "Nirvana",
+        "aliases": [
+          "ニルヴァーナ",
+          "Nirvana US"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T05:47:54.302448+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-20T05:47:54.302448+00:00"
+      }
+    },
+    {
+      "bandId": "47556da9-65d6-4a46-ab87-480cedeaddf3",
+      "name": "Radiohead",
+      "verdict": "keep",
+      "applied": true,
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "박물관 소개의 Thom Yorke·Jonny/Colin Greenwood·Ed O'Brien·Phillip Selway와 Kid A를 MBID 및 radiohead.com 공식 사이트 관계와 대조했다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/radiohead/",
+            "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711"
+          ]
+        },
+        "countryMatched": {
+          "summary": "해당 MBID의 Abingdon-on-Thames, Oxfordshire, England/United Kingdom 결성지와 GB area를 확인하고 동일 멤버·음반의 공식 사이트 관계로 신원을 연결했다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711",
+            "https://rockhall.com/inductees/radiohead/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "박물관 본문이 rock and roll의 확장 및 여러 음악적 영향을 설명한다. 전자음악 혼합이 있어도 실제 록 활동이 있어 유지한다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/radiohead/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "GB 신원과 실제 록/메탈 활동을 각각 확인하여 해외 록(overseas_rock)으로 분류한다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/radiohead/",
+            "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "서버 context의 기존 band.musicbrainz_id=a74b1b7f-71a5-4011-9441-d0b5e4122711와 private.artist_identities의 mb:a74b1b7f-71a5-4011-9441-d0b5e4122711 연결을 확인한 뒤 외부 프로필·공식 사이트·음반 신원을 교차 확인한다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711",
+            "https://rockhall.com/inductees/radiohead/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "설치된 서버 RPC와 수집기 코드를 확인했다. 승인하면 해당 외부 신원에 공연 자동 공개 자격을 부여하지만 이 RPC가 공연을 직접 공개하지는 않는다. 실제 공연은 기존 수집기의 일정·공식 발표·출처·중복·수동 보호 조건도 통과해야 한다.",
+          "sourceUrls": [
+            "https://rockhall.com/inductees/radiohead/",
+            "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711"
+          ]
+        }
+      },
+      "proof": {
+        "decision": "keep",
+        "summary": "박물관 소개의 Thom Yorke·Jonny/Colin Greenwood·Ed O'Brien·Phillip Selway와 Kid A를 MBID 및 radiohead.com 공식 사이트 관계와 대조했다. 박물관 본문이 rock and roll의 확장 및 여러 음악적 영향을 설명한다. 전자음악 혼합이 있어도 실제 록 활동이 있어 유지한다.",
+        "sources": [
+          {
+            "url": "https://rockhall.com/inductees/radiohead/",
+            "summary": "구성원 5명과 Kid A 및 록 활동·음악적 확장을 설명하는 본문 확인.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://www.radiohead.com/",
+            "summary": "MusicBrainz에 연결된 동일 그룹 공식 사이트를 확인. 현재 공연 날짜를 검증된 공연 데이터로 가져오지 않음.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711",
+            "summary": "Abingdon/England/United Kingdom 결성지, GB area, radiohead.com 공식 관계와 음반 목록으로 신원 확인. 장르 태그와 구분.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          }
+        ]
+      },
+      "before": {
+        "target_band_id": "47556da9-65d6-4a46-ab87-480cedeaddf3",
+        "expected_updated_at": "2026-10-12T14:45:47.408114+00:00",
+        "artist_name": "Radiohead",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Radiohead & Thom Yorke",
+          "レディオヘッド",
+          "电台司令",
+          "r/head",
+          "라디오헤드",
+          "Radio Head"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 박물관 본문이 rock and roll의 확장 및 여러 음악적 영향을 설명한다. 전자음악 혼합이 있어도 실제 록 활동이 있어 유지한다. 신원·국가·기존 외부 ID 연결·분류·공개 승인 효과를 개별 확인한 사용자 요청 5팀 검증 승인.",
+        "evidence_url": "https://rockhall.com/inductees/radiohead/"
+      },
+      "after": {
+        "id": "47556da9-65d6-4a46-ab87-480cedeaddf3",
+        "name": "Radiohead",
+        "aliases": [
+          "Radiohead & Thom Yorke",
+          "レディオヘッド",
+          "电台司令",
+          "r/head",
+          "라디오헤드",
+          "Radio Head"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T05:47:55.759277+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-20T05:47:55.759277+00:00"
+      }
+    },
+    {
+      "bandId": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+      "name": "Black Sabbath",
+      "verdict": "keep",
+      "applied": true,
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 역사와 박물관 본문의 Ozzy Osbourne·Tony Iommi·Geezer Butler·Bill Ward 및 Black Sabbath/Paranoid, 이전 Earth 이름을 해당 MBID와 대조했다.",
+          "sourceUrls": [
+            "https://www.blacksabbath.com/history.html",
+            "https://musicbrainz.org/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 역사 검색에서 제공된 본문의 Birmingham, England 결성과 MBID의 Birmingham/United Kingdom 출신·GB area가 일치한다. 직접 열기에서 본문 일부가 누락된 점은 박물관 자료로 보완했다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+            "https://www.blacksabbath.com/history.html"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 역사와 박물관 소개가 heavy metal·hard rock 활동을 직접 설명한다.",
+          "sourceUrls": [
+            "https://www.blacksabbath.com/history.html"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "GB 신원과 실제 록/메탈 활동을 각각 확인하여 해외 록(overseas_rock)으로 분류한다.",
+          "sourceUrls": [
+            "https://www.blacksabbath.com/history.html",
+            "https://musicbrainz.org/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "서버 context의 기존 band.musicbrainz_id=5182c1d9-c7d2-4dad-afa0-ccfeada921a8와 private.artist_identities의 mb:5182c1d9-c7d2-4dad-afa0-ccfeada921a8 연결을 확인한 뒤 외부 프로필·공식 사이트·음반 신원을 교차 확인한다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+            "https://www.blacksabbath.com/history.html"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "설치된 서버 RPC와 수집기 코드를 확인했다. 승인하면 해당 외부 신원에 공연 자동 공개 자격을 부여하지만 이 RPC가 공연을 직접 공개하지는 않는다. 실제 공연은 기존 수집기의 일정·공식 발표·출처·중복·수동 보호 조건도 통과해야 한다.",
+          "sourceUrls": [
+            "https://www.blacksabbath.com/history.html",
+            "https://musicbrainz.org/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8"
+          ]
+        }
+      },
+      "proof": {
+        "decision": "keep",
+        "summary": "공식 역사와 박물관 본문의 Ozzy Osbourne·Tony Iommi·Geezer Butler·Bill Ward 및 Black Sabbath/Paranoid, 이전 Earth 이름을 해당 MBID와 대조했다. 공식 역사와 박물관 소개가 heavy metal·hard rock 활동을 직접 설명한다.",
+        "sources": [
+          {
+            "url": "https://www.blacksabbath.com/history.html",
+            "summary": "공식 역사 검색 결과 본문에서 Birmingham/England 결성과 네 멤버, heavy-metal 음반 활동 확인. 직접 열기에서는 본문이 부분 누락되어 박물관 자료와 교차 확인.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://rockhall.com/inductees/black-sabbath/",
+            "summary": "네 멤버 및 heavy metal·hard rock 설명을 확인하여 공식 역사와 교차 검수.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+            "summary": "Birmingham/United Kingdom 그룹과 GB area, blacksabbath.com 공식 관계, 동일 음반 신원을 대조.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          }
+        ]
+      },
+      "before": {
+        "target_band_id": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+        "expected_updated_at": "2026-10-13T08:19:22.140984+00:00",
+        "artist_name": "Black Sabbath",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "블랙 사바쓰",
+          "Polka Tulk",
+          "Blakc Sabbath",
+          "Блэк Саббат",
+          "Blak Sabbath",
+          "Sabs",
+          "Sabbs",
+          "Sabbat",
+          "Sabbath",
+          "Black Sabbat",
+          "ブラック・サバス",
+          "Black Sabath",
+          "Earth",
+          "Polka Tulk Blues",
+          "Blac Sabat"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 역사와 박물관 소개가 heavy metal·hard rock 활동을 직접 설명한다. 신원·국가·기존 외부 ID 연결·분류·공개 승인 효과를 개별 확인한 사용자 요청 5팀 검증 승인.",
+        "evidence_url": "https://www.blacksabbath.com/history.html"
+      },
+      "after": {
+        "id": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+        "name": "Black Sabbath",
+        "aliases": [
+          "블랙 사바쓰",
+          "Polka Tulk",
+          "Blakc Sabbath",
+          "Блэк Саббат",
+          "Blak Sabbath",
+          "Sabs",
+          "Sabbs",
+          "Sabbat",
+          "Sabbath",
+          "Black Sabbat",
+          "ブラック・サバス",
+          "Black Sabath",
+          "Earth",
+          "Polka Tulk Blues",
+          "Blac Sabat"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T05:47:57.249575+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-20T05:47:57.249575+00:00"
+      }
+    },
+    {
+      "bandId": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+      "name": "Blue Öyster Cult",
+      "verdict": "keep",
+      "applied": true,
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 The Band 소개의 Eric Bloom·Buck Dharma, (Don't Fear) The Reaper·Burnin' For You를 DB 별칭 BOC/Blue Oyster Cult와 해당 MBID 음반·공식 사이트 관계로 대조했다.",
+          "sourceUrls": [
+            "https://www.blueoystercult.com/bocBand.html",
+            "https://musicbrainz.org/artist/c7423e0c-ab3e-4ab4-be10-cdff5a9d3062"
+          ]
+        },
+        "countryMatched": {
+          "summary": "해당 MBID의 Stony Brook, New York, United States 결성지와 US area를 확인하고 공식 밴드의 동일 멤버·곡으로 신원을 대조했다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/c7423e0c-ab3e-4ab4-be10-cdff5a9d3062",
+            "https://www.blueoystercult.com/bocBand.html"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 The Band 본문에서 rock music 및 대표곡의 록 활동을 직접 설명하므로 밴드 형식만으로 판단하지 않았다.",
+          "sourceUrls": [
+            "https://www.blueoystercult.com/bocBand.html"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "US 신원과 실제 록/메탈 활동을 각각 확인하여 해외 록(overseas_rock)으로 분류한다.",
+          "sourceUrls": [
+            "https://www.blueoystercult.com/bocBand.html",
+            "https://musicbrainz.org/artist/c7423e0c-ab3e-4ab4-be10-cdff5a9d3062"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "서버 context의 기존 band.musicbrainz_id=c7423e0c-ab3e-4ab4-be10-cdff5a9d3062와 private.artist_identities의 mb:c7423e0c-ab3e-4ab4-be10-cdff5a9d3062 연결을 확인한 뒤 외부 프로필·공식 사이트·음반 신원을 교차 확인한다.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/c7423e0c-ab3e-4ab4-be10-cdff5a9d3062",
+            "https://www.blueoystercult.com/bocBand.html"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "설치된 서버 RPC와 수집기 코드를 확인했다. 승인하면 해당 외부 신원에 공연 자동 공개 자격을 부여하지만 이 RPC가 공연을 직접 공개하지는 않는다. 실제 공연은 기존 수집기의 일정·공식 발표·출처·중복·수동 보호 조건도 통과해야 한다.",
+          "sourceUrls": [
+            "https://www.blueoystercult.com/bocBand.html",
+            "https://musicbrainz.org/artist/c7423e0c-ab3e-4ab4-be10-cdff5a9d3062"
+          ]
+        }
+      },
+      "proof": {
+        "decision": "keep",
+        "summary": "공식 The Band 소개의 Eric Bloom·Buck Dharma, (Don't Fear) The Reaper·Burnin' For You를 DB 별칭 BOC/Blue Oyster Cult와 해당 MBID 음반·공식 사이트 관계로 대조했다. 공식 The Band 본문에서 rock music 및 대표곡의 록 활동을 직접 설명하므로 밴드 형식만으로 판단하지 않았다.",
+        "sources": [
+          {
+            "url": "https://www.blueoystercult.com/bocBand.html",
+            "summary": "공식 밴드 소개의 rock music 설명, Eric Bloom/Buck Dharma와 대표곡으로 신원·실제 록 활동 확인.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/c7423e0c-ab3e-4ab4-be10-cdff5a9d3062",
+            "summary": "Stony Brook/New York/United States 결성지와 US area, blueoystercult.com 공식 관계 및 음반 신원 확인.",
+            "checkedAt": "2026-10-20T05:47:50.862Z"
+          }
+        ]
+      },
+      "before": {
+        "target_band_id": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+        "expected_updated_at": "2026-10-13T08:20:54.667081+00:00",
+        "artist_name": "Blue Öyster Cult",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Blue Öyster Club",
+          "BOC",
+          "Blue Oyster Cult",
+          "B.O.C."
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 The Band 본문에서 rock music 및 대표곡의 록 활동을 직접 설명하므로 밴드 형식만으로 판단하지 않았다. 신원·국가·기존 외부 ID 연결·분류·공개 승인 효과를 개별 확인한 사용자 요청 5팀 검증 승인.",
+        "evidence_url": "https://www.blueoystercult.com/bocBand.html"
+      },
+      "after": {
+        "id": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+        "name": "Blue Öyster Cult",
+        "aliases": [
+          "Blue Öyster Club",
+          "BOC",
+          "Blue Oyster Cult",
+          "B.O.C."
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "c7423e0c-ab3e-4ab4-be10-cdff5a9d3062",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-20T05:47:58.422217+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-20T05:47:58.422217+00:00"
+      }
+    }
+  ],
+  "sourceNotes": [
+    "Official artist and museum biographies checked through web tools; MusicBrainz used for identity/country and official-site relationships, not genre tags.",
+    "Provider cooldown file was read after web identity lookups. No MusicBrainz API requests or channel refreshes were made.",
+    "This explicit manual request ran before the next scheduled slot. Canonical lastStartedAt was advanced to this run; no server schedule guard was disabled."
+  ],
+  "checkedCodePaths": [
+    "supabase/migrations/20261020053150_integrated_artist_approval.sql",
+    "supabase/migrations/20261013070742_artist_curation.sql"
+  ],
+  "checks": {
+    "serviceRpc": true,
+    "receiptReadBack": true,
+    "publicationApprovals": true,
+    "artistIdentityPreserved": true,
+    "concertAndFollowRelationsPreserved": true,
+    "managementHistoryVerified": true,
+    "idempotentReplayVerified": true,
+    "idempotentReplayArtist": "Metallica"
+  },
+  "channelWorkPerformed": false,
+  "apiCalls": {
+    "youtube": 0,
+    "musicbrainz": 0
+  },
+  "scope": "Five user-requested approvals completed; the full catalog review remains incomplete.",
+  "catalogCounts": {
+    "approved": 5,
+    "unreviewed": 607,
+    "excluded": 6
+  },
+  "relationshipCounts": {
+    "before": {
+      "bands": 618,
+      "concerts": 8,
+      "concertLinks": 13,
+      "follows": 3
+    },
+    "after": {
+      "bands": 618,
+      "concerts": 8,
+      "concertLinks": 13,
+      "follows": 3
+    }
+  },
+  "databaseReceipts": 5,
+  "publicationIdentityApprovals": 5,
+  "canonicalCheckpoint": {
+    "owner": "local",
+    "lastStartedAt": "2026-10-20T05:47:50.861Z",
+    "nextBatchNotBefore": "2026-10-20T10:47:50.861Z"
+  }
+}

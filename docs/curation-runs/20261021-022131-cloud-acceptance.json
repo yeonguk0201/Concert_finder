@@ -1,0 +1,118 @@
+{
+  "recordedAtKst": "2026-10-21T02:21:31.297924+09:00",
+  "source": "local-to-cloud-20261021-021119.zip",
+  "zipSha256": "ac8231dd680f530cf4d4ef34f102addbb7461a3ab0798825d23e57db240216d9",
+  "handoffSha256": "2f9e1b799ab1804396d1773ba5898c16dfcd6b4aeb2e13bd1bf6388a88e500be",
+  "manifestFilesVerified": 46,
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "sourceRevision": 452,
+  "acceptedRevision": 453,
+  "owner": "cloud",
+  "transfer": null,
+  "activeRun": null,
+  "tracked": 623,
+  "initCalled": false,
+  "entriesHistoryAndTimingPreserved": true,
+  "localShutdownEvidence": {
+    "memoryAcceptPreservesEntriesAndHistory": true,
+    "sourceExecutionBlocked": true,
+    "staleReplayBlocked": true,
+    "reviewProcessCount": 0,
+    "queueLockAbsent": true,
+    "legacyServerIdle": true
+  },
+  "localAutomationReported": "PAUSED",
+  "preflight": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "sourceRevision": 452,
+    "expectedAcceptedRevision": 453,
+    "tracked": 623,
+    "currentCatalog": 623,
+    "changed": [],
+    "missing": [],
+    "allSnapshotKeysValid": true,
+    "entriesAndHistoryPreserved": true,
+    "serverIdle": true,
+    "serviceAvailable": true,
+    "lastStartedAt": "2026-10-20T15:48:09.169Z",
+    "nextBatchNotBefore": "2026-10-20T20:48:09.169Z",
+    "memoryBegin": {
+      "state": "idle",
+      "reason": "schedule_window"
+    }
+  },
+  "codeComparison": {
+    "approvalLibraryIdentical": true,
+    "installedMigrationSourceIdentical": true,
+    "referenceCodeExecutedOrCopied": false,
+    "differences": [
+      {
+        "path": "scripts/artist-review-queue.mjs",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "scripts/refresh-artist-channels.mjs",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "tests/artist-review-queue.test.mjs",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "docs/artist-review-handoff.md",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "scripts/lib/artist-review-queue.mjs",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "scripts/lib/artist-review-migrate.mjs",
+        "kind": "reference_only_not_installed"
+      },
+      {
+        "path": "skills/concert-artist-channels/SKILL.md",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "skills/concert-artist-curation/SKILL.md",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "skills/concert-artist-channels/references/manifest.md",
+        "kind": "different_existing_preserved"
+      },
+      {
+        "path": "skills/concert-artist-curation/references/runner.md",
+        "kind": "different_existing_preserved"
+      }
+    ]
+  },
+  "reportsImported": [
+    "20261020-021804-cloud-handoff.json",
+    "20261020-133837-local-acceptance.json",
+    "20261021-005629-dedicated-checkout-reconnect.json",
+    "20261020-144758-five-artist-approval.json"
+  ],
+  "existingReportConflictsPreserved": [],
+  "newArtistResearchCompleted": 0,
+  "newCurationApplied": 0,
+  "newChannelsApplied": 0,
+  "nextBatchNotBeforeKst": "2026-10-21T05:48:09.169+09:00",
+  "currentAction": "accepted_existing_checkpoints_waiting_for_five_hour_window",
+  "automationEnabled": true,
+  "automationPromptUpdatedForLatestHandoff": true,
+  "schedulePreserved": "FREQ=HOURLY;INTERVAL=5;Asia/Seoul",
+  "nextAutomationTrigger": "tool returned null; no exact trigger claimed",
+  "validation": {
+    "zipCrcAndManifestSha256": true,
+    "packetHashMatchesManifestAndInfo": true,
+    "all623SnapshotKeysValid": true,
+    "actualDbSnapshotMatchesAll623": true,
+    "memoryAcceptPreservesEntriesHistoryAndTiming": true,
+    "actualAcceptedStateMatchesPacket": true,
+    "memoryBeginReturnsScheduleWindowIdle": true,
+    "noApplicationCodeChanged": true,
+    "existingPassingTestsReused": "related 18; full Node 136 and Vitest 100, lint/build from unchanged previous code"
+  }
+}

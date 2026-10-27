@@ -10,6 +10,7 @@ const safeError = error => /^(EDIT_CONFLICT|CHANNEL_LOCKED|CHANNEL_REVIEW_REQUIR
 export async function runRefresh(client, { key = '', manifest = null, selection = null, fetcher = fetch, pause, now = Date.now() } = {}) {
   const selected = selection ? new Map(validateSelection(selection).artists
     .filter(row => Array.isArray(row.tasks) && row.tasks.includes('channels'))
+    .filter(row => !row.identityMutation || row.recorded?.identity?.applied === true)
     .map(row => [row.bandId, row.identityVersion])) : null
   if (selected && manifest?.artists?.some(row => !selected.has(row.bandId)
     || selected.get(row.bandId) !== row.identityVersion)) throw new Error('TARGET_NOT_SELECTED')

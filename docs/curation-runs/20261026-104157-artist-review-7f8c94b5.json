@@ -1,0 +1,3948 @@
+{
+  "policy": "jpop-or-rock-v1",
+  "runId": "7f8c94b5-7293-4db0-a3a7-030bcfbdae64",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "checkedAt": "2026-10-26T01:41:57.113579+00:00",
+  "checkedAtKST": "2026-10-26T10:41:57.113579+09:00",
+  "headAtStart": "f74ac31",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "beforeRevision": 2802,
+    "revision": 2886,
+    "active": null,
+    "transfer": null,
+    "remainingEntries": 365
+  },
+  "fixedSelection": {
+    "distinctArtists": 40,
+    "researchTasks": 3,
+    "approvalTasks": 39,
+    "channelsTasks": 40,
+    "recordedTasks": 82
+  },
+  "result": {
+    "appliedApproval": 12,
+    "deferredApproval": 27,
+    "deferredResearch": 3,
+    "channelCacheReused": 5,
+    "deferredChannels": 35,
+    "newChannelsOrPhotos": 0,
+    "identityMutations": 0,
+    "catalog": {
+      "total": 658,
+      "approved": 353,
+      "excluded": 6,
+      "unreviewed": 299
+    },
+    "serverFinishedAt": "2026-10-26 01:39:26.16539+00",
+    "validIntegratedLease": 0,
+    "receiptAndVersionApprovalRelationsReadback": 12
+  },
+  "providers": {
+    "lastfmRequests": 74,
+    "musicbrainzRequests": 42,
+    "musicbrainzEntities": 40,
+    "youtubeRequests": 0,
+    "channelReused": 5,
+    "priorMetricCacheMatchesAuditedAfterRequests": [],
+    "coreNew": 10,
+    "coreCandidates": 124,
+    "limitation": "Prior matching lookup cache audit was performed after this run requests; any matches are duplicate reads, not new discovery or verified identity.",
+    "getInfoApiError6": [
+      3,
+      9,
+      18,
+      32
+    ],
+    "returnedMbidMismatch": [
+      {
+        "index": 13,
+        "requested": "9388cee2-7d57-4598-905f-106019b267d3",
+        "returned": "4a42053d-8b57-4341-a89d-d711ff4df7c8"
+      },
+      {
+        "index": 35,
+        "requested": "1322f39c-cea6-42aa-aa98-3b6b5043b07d",
+        "returned": "3b1c764b-5efd-4b7c-bfc3-21fb7650be86"
+      }
+    ],
+    "returnedMbidAbsent": [
+      38
+    ],
+    "metricsUsedOnlyAfterIdentityCountryGenreCheck": true,
+    "officialEqualLovePageReads": 1,
+    "fullChartRequests": 0,
+    "sharedMusicBrainzGate": true,
+    "inheritedProxyTlsPreserved": true
+  },
+  "core": {
+    "verifiedCandidates": 124,
+    "newVerifiedCandidates": 10,
+    "selected": 76,
+    "unfilled": 124,
+    "mandatory": [
+      {
+        "name": "Bring Me the Horizon",
+        "musicBrainzId": null,
+        "bucket": "overseas_rock_band",
+        "expectedAliases": [
+          "BMTH",
+          "Bring Me the Horizon",
+          "브링 미 더 호라이즌",
+          "ブリング・ミー・ザ・ホライズン"
+        ],
+        "identitySource": "https://www.sonymusic.co.jp/artist/bringmethehorizon/profile/",
+        "bandId": null,
+        "registered": false,
+        "approved": false,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "BMTH",
+          "Bring Me the Horizon",
+          "브링 미 더 호라이즌",
+          "ブリング・ミー・ザ・ホライズン"
+        ]
+      },
+      {
+        "name": "Ado",
+        "musicBrainzId": "e134b52f-2e9e-4734-9bc3-bea9648d1fa1",
+        "bucket": "japanese_solo_unit",
+        "expectedAliases": [
+          "Ado",
+          "아도",
+          "アド"
+        ],
+        "identitySource": "https://www.universal-music.co.jp/ado/biography/",
+        "bandId": "1bb57d2e-eef1-419e-82c7-fe7e4dac7a55",
+        "registered": true,
+        "approved": true,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "アド"
+        ]
+      },
+      {
+        "name": "UVERworld",
+        "musicBrainzId": "a107bff6-58da-4302-83ad-317e86a1811c",
+        "bucket": "japanese_rock_band",
+        "expectedAliases": [
+          "UVERworld",
+          "우버월드",
+          "ウーバーワールド"
+        ],
+        "identitySource": "https://www.sonymusic.co.jp/artist/UVERworld/profile/",
+        "bandId": "d8b77cd8-0bdb-4b54-a06a-4311aa05e718",
+        "registered": true,
+        "approved": true,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "우버월드"
+        ]
+      },
+      {
+        "name": "米津玄師",
+        "musicBrainzId": null,
+        "bucket": "japanese_solo_unit",
+        "expectedAliases": [
+          "요네즈 켄시",
+          "米津玄師",
+          "Kenshi Yonezu"
+        ],
+        "identitySource": "https://reissuerecords.net/profile/",
+        "bandId": null,
+        "registered": false,
+        "approved": false,
+        "protected": false,
+        "identityVerified": false,
+        "metricStatus": "not_checked",
+        "selectionBasis": "user_nominated",
+        "nameCandidates": [],
+        "missingSearchNames": [
+          "요네즈 켄시",
+          "米津玄師",
+          "Kenshi Yonezu"
+        ]
+      }
+    ],
+    "meaning": "편성안 기준 후보 풀 내 Last.fm 청취자 정렬과 사용자 지명 목록. 검증된 전세계 인기 상위 200위가 아님.",
+    "complete": false
+  },
+  "channels": {
+    "summary": {
+      "imported": 0,
+      "importFailures": 0,
+      "artists": 5,
+      "applied": 5,
+      "writeFailures": 0,
+      "apiCalls": 0,
+      "counts": {
+        "reused": 5
+      },
+      "errors": {},
+      "ok": true,
+      "officiallyVerified": 5,
+      "photosAvailable": 5,
+      "readBack": 5
+    },
+    "readback": [
+      {
+        "band_id": "f95cc1b6-a8de-43c9-94e9-897f4c08df48",
+        "name": "MyGO!!!!!",
+        "band_version": "2026-10-12 14:24:09.149148+00",
+        "verification": "verified",
+        "last_status": "reused",
+        "channel_url": "https://www.youtube.com/channel/UC80p_16pSSHA8YmtCVdX51w",
+        "evidence": [
+          {
+            "url": "https://bang-dream.com/mygo",
+            "kind": "official_artist_page",
+            "checkedAt": "2026-10-15T15:14:20.266Z",
+            "identityMatched": true,
+            "linkedChannelUrl": "https://www.youtube.com/channel/UC80p_16pSSHA8YmtCVdX51w"
+          }
+        ],
+        "checked_at": "2026-10-25 22:03:57.603+00",
+        "expires_at": "2026-11-23 22:03:57.603+00",
+        "channel_id": "UC80p_16pSSHA8YmtCVdX51w"
+      },
+      {
+        "band_id": "8b091a38-1fb6-4bde-8da8-fa2410fa914b",
+        "name": "RADWIMPS",
+        "band_version": "2026-10-26 01:35:32.387164+00",
+        "verification": "verified",
+        "last_status": "reused",
+        "channel_url": "https://www.youtube.com/channel/UCIVqvhyo8ttjYOmMJuhq_YQ",
+        "evidence": [
+          {
+            "url": "https://radwimps.jp/",
+            "kind": "official_artist_page",
+            "checkedAt": "2026-10-15T13:09:40.40277+00:00",
+            "identityMatched": true,
+            "linkedChannelUrl": "https://www.youtube.com/channel/UCIVqvhyo8ttjYOmMJuhq_YQ"
+          }
+        ],
+        "checked_at": "2026-10-25 22:03:57.603+00",
+        "expires_at": "2026-11-23 22:03:57.603+00",
+        "channel_id": "UCIVqvhyo8ttjYOmMJuhq_YQ"
+      },
+      {
+        "band_id": "34ad608e-4a36-4097-913d-e9631c87d550",
+        "name": "ONE OK ROCK",
+        "band_version": "2026-10-25 05:29:49.650506+00",
+        "verification": "verified",
+        "last_status": "reused",
+        "channel_url": "https://www.youtube.com/user/ONEOKROCKchannel",
+        "evidence": [
+          {
+            "url": "https://www.oneokrock.com/en/",
+            "kind": "official_artist_page",
+            "checkedAt": "2026-10-15T13:09:40.40277+00:00",
+            "identityMatched": true,
+            "linkedChannelUrl": "https://www.youtube.com/user/ONEOKROCKchannel"
+          }
+        ],
+        "checked_at": "2026-10-25 22:03:57.603+00",
+        "expires_at": "2026-11-23 22:03:57.603+00",
+        "channel_id": "UCzycs8MqvIY4nXWwS-v4J9g"
+      },
+      {
+        "band_id": "6e5101d2-abcd-4796-8b3f-c1c6428b116a",
+        "name": "Rain Tree",
+        "band_version": "2026-10-12 14:24:09.148764+00",
+        "verification": "verified",
+        "last_status": "reused",
+        "channel_url": "https://www.youtube.com/@RainTree_RT",
+        "evidence": [
+          {
+            "url": "https://rt-official.jp/",
+            "kind": "official_artist_page",
+            "checkedAt": "2026-10-15T15:14:20.266Z",
+            "identityMatched": true,
+            "linkedChannelUrl": "https://www.youtube.com/@RainTree_RT"
+          }
+        ],
+        "checked_at": "2026-10-25 22:03:57.603+00",
+        "expires_at": "2026-11-23 22:03:57.603+00",
+        "channel_id": "UCPWRM__3noCZm_ZsBE-lG-Q"
+      },
+      {
+        "band_id": "ba268f6a-a4fc-4bee-9371-103143a69d1c",
+        "name": "=LOVE",
+        "band_version": "2026-10-13 08:18:21.208702+00",
+        "verification": "verified",
+        "last_status": "reused",
+        "channel_url": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A",
+        "evidence": [
+          {
+            "url": "https://equal-love.jp/feature/about",
+            "kind": "official_artist_page",
+            "excerpt": "指原莉乃による新しいアイドルProject",
+            "checkedAt": "2026-10-16T15:47:22.738Z",
+            "identityMatched": true,
+            "linkedChannelUrl": "https://www.youtube.com/channel/UCv7VutirxDn3RWIJXI68n_A"
+          }
+        ],
+        "checked_at": "2026-10-25 22:03:57.603+00",
+        "expires_at": "2026-11-23 22:03:57.603+00",
+        "channel_id": "UCv7VutirxDn3RWIJXI68n_A"
+      }
+    ],
+    "interpretation": "유효한 기존 공식 근거와 API 캐시5를 동일40팀 selection에서 재사용. cache checkedAt2026-10-25T22:03:57.603Z 유지. applied5는 reused 상태 저장/readback이며 새 채널/사진 확보가 아니다."
+  },
+  "preservedHashes": {
+    "provider-cooldowns.json": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+    "approval-drafts-573f7fc2.json": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337"
+  },
+  "limits": [
+    "새 공식 웹 proof checkedAt은 읽은 근거를 확인하고 입력을 작성한 시각이며 정확한 개별 HTTP 송신 로그가 아니다. MusicBrainz canonical entity URL은 실제 API로 읽은 동일 entity를 가리킨다. 원래 research 확인일은 연장하지 않았다.",
+    "MusicBrainz 실제40entity 조회42요청(도구 내부 재시도 포함), terminal 실패0. 제공처 cooldown 파일의 과거 실패/재시도 기록과 수동 false 초안은 SHA 일치로 보존.",
+    "Last.fm4팀 API6, Aimer/SnowMan 반환MBID 불일치2, t+pazolite 반환MBID 없음1의 지표는 채택하지 않았다. TOUCHED/SCANDAL은 지표 오류와 별도로 실제 MBID·공식 근거가 갖춰져 기존DB 승인을 진행했다.",
+    "최근 r*-lastfm-new 캐시 audit에서 동일MBID 유효매칭0. audit는 이번 요청 이후 수행했다. core-discovery 국가 차트 재수집0.",
+    "이미 구현된 identity CLI/journal을 이번에 새 구현한 성과로 세지 않았다. 고정 목록에는 identity task가 없어 신규/별칭 변경0.",
+    "이 역할은 공연 감시/후보수집/공개정책/알림을 실행하지 않았다. 운영DDL·배포·push/PR/merge·예약수정0.",
+    "유효 cache 재사용 외 신규 채널은 MB URL 관계 단독으로 verified하지 않았다. 전체카탈로그/핵심200/검색/사진 완료가 아니다."
+  ],
+  "artists": [
+    {
+      "index": 0,
+      "bandId": "34ad608e-4a36-4097-913d-e9631c87d550",
+      "name": "ONE OK ROCK",
+      "musicBrainzId": "6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+      "country": "JP",
+      "aliases": [
+        "원오크록",
+        "ワンオクロック",
+        "원오케이락"
+      ],
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-25T05:29:49.650506+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "after": {
+        "version": "2026-10-25T05:29:49.650506+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "appliedApproval": false,
+      "notes": "기존 승인; channels 전용 선정.",
+      "providerCalls": 3,
+      "tasks": {
+        "channels": {
+          "status": "complete",
+          "reason": "VALID_OFFICIAL_CACHE_REUSED_AND_DB_READBACK_VERIFIED; new YouTube requests0, cache checkedAt preserved",
+          "checkedAt": "2026-10-26T01:39:21.777Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T22:03:57.603Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-11-01T22:03:57.603Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-25T05:29:49.650506+00:00",
+            "checkedAt": "2026-10-25T22:03:57.603Z"
+          }
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:28:44.507Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.oneokrock.com/en/about/",
+          "checkedAt": "2026-10-13T09:01:43.993Z",
+          "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "bandId": "7e47bfa0-1498-4b78-834d-a2cb6c1c19d5",
+      "name": "김지민",
+      "musicBrainzId": "b6838060-7d4d-485a-8f27-cb16665b683d",
+      "country": "KR",
+      "aliases": [],
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-25T21:49:47.59627+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-25T21:49:47.59627+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "MB disambiguation은 Harmonize alto이고 YES24 멤버 자료에서 김지민을 확인했다. Last.fm 정확 MBID 응답의 OST/가요 음반과 해당 개인의 작품 연결은 미완료. 동명이인 가능성과 실제 록 활동을 확인하기 전 승인하지 않는다.",
+      "providerCalls": 3,
+      "tasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB disambiguation은 Harmonize alto이고 YES24 멤버 자료에서 김지민을 확인했다. Last.fm 정확 MBID 응답의 OST/가요 음반과 해당 개인의 작품 연결은 미완료. 동명이인 가능성과 실제 록 활동을 확인하기 전 승인하지 않는다.",
+          "checkedAt": "2026-10-26T01:38:08.733Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:08.733Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB disambiguation은 Harmonize alto이고 YES24 멤버 자료에서 김지민을 확인했다. Last.fm 정확 MBID 응답의 OST/가요 음반과 해당 개인의 작품 연결은 미완료. 동명이인 가능성과 실제 록 활동을 확인하기 전 승인하지 않는다.",
+          "checkedAt": "2026-10-26T01:38:08.873Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:08.873Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:21.911Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:21.911Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "b6838060-7d4d-485a-8f27-cb16665b683d",
+        "country": "KR",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:28:46.761Z"
+      },
+      "priorSources": []
+    },
+    {
+      "index": 2,
+      "bandId": "871fa8c8-a601-4326-a9eb-be9e991b539c",
+      "name": "유사랑",
+      "musicBrainzId": "9b06a92f-be30-42c7-83b5-e5df7b599bd5",
+      "country": "KR",
+      "aliases": [
+        "Ryu Sarang"
+      ],
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-26T00:23:17.611338+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T00:23:17.611338+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Bugs My Way에서 유사랑/유봉인 재즈 보컬·팝재즈 활동을 실제 확인했다. 록/J-pop 정책 경계와 개인 외부 신원 교차의 추가 검증이 필요하며 재즈 한 장만으로 제외하지 않는다.",
+      "providerCalls": 3,
+      "tasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "Bugs My Way에서 유사랑/유봉인 재즈 보컬·팝재즈 활동을 실제 확인했다. 록/J-pop 정책 경계와 개인 외부 신원 교차의 추가 검증이 필요하며 재즈 한 장만으로 제외하지 않는다.",
+          "checkedAt": "2026-10-26T01:38:08.971Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:08.971Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "Bugs My Way에서 유사랑/유봉인 재즈 보컬·팝재즈 활동을 실제 확인했다. 록/J-pop 정책 경계와 개인 외부 신원 교차의 추가 검증이 필요하며 재즈 한 장만으로 제외하지 않는다.",
+          "checkedAt": "2026-10-26T01:38:09.072Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.072Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.008Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.008Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "9b06a92f-be30-42c7-83b5-e5df7b599bd5",
+        "country": "KR",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:28:48.516Z"
+      },
+      "priorSources": []
+    },
+    {
+      "index": 3,
+      "bandId": "52a910bc-8476-475e-98b6-1a73e42a2725",
+      "name": "이예지",
+      "musicBrainzId": "c402a5e2-d7e3-4211-a42b-7e7ee1f16a94",
+      "country": "KR",
+      "aliases": [],
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-26T00:23:17.600977+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T00:23:17.600977+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "MB disambiguation The Ballad of Us와 iMBC 이예지/싫어 발매를 대조했다. Last.fm error6, 발라드 경연과 새 싱글만으로 국내 록으로 분류하지 않는다.",
+      "providerCalls": 2,
+      "tasks": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB disambiguation The Ballad of Us와 iMBC 이예지/싫어 발매를 대조했다. Last.fm error6, 발라드 경연과 새 싱글만으로 국내 록으로 분류하지 않는다.",
+          "checkedAt": "2026-10-26T01:38:09.192Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.192Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB disambiguation The Ballad of Us와 iMBC 이예지/싫어 발매를 대조했다. Last.fm error6, 발라드 경연과 새 싱글만으로 국내 록으로 분류하지 않는다.",
+          "checkedAt": "2026-10-26T01:38:09.286Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.286Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.102Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.102Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "c402a5e2-d7e3-4211-a42b-7e7ee1f16a94",
+        "country": "KR",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:28:50.390Z"
+      },
+      "priorSources": []
+    },
+    {
+      "index": 4,
+      "bandId": "ba268f6a-a4fc-4bee-9371-103143a69d1c",
+      "name": "=LOVE",
+      "musicBrainzId": "28abfefb-cceb-4605-8330-a53b6d161403",
+      "country": "JP",
+      "aliases": [
+        "イコールラブ",
+        "Equal LOVE",
+        "＝LOVE",
+        "イコラブ",
+        "= LOVE"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:21.208702+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:21.208702+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "공식 Sony 프로필·정확한 MBID·개별 발매/채널은 확인. 이번 채택 가능한 J-pop 실제 장르 자료/요건별 proof 조합이 미완료여서 승인과 채널 검증을 구분.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 Sony 프로필·정확한 MBID·개별 발매/채널은 확인. 이번 채택 가능한 J-pop 실제 장르 자료/요건별 proof 조합이 미완료여서 승인과 채널 검증을 구분.",
+          "checkedAt": "2026-10-26T01:38:09.375Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.375Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "VALID_OFFICIAL_CACHE_REUSED_AND_DB_READBACK_VERIFIED; new YouTube requests0, cache checkedAt preserved",
+          "checkedAt": "2026-10-26T01:39:22.204Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T22:03:57.603Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-11-01T22:03:57.603Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-13T08:18:21.208702+00:00",
+            "checkedAt": "2026-10-25T22:03:57.603Z"
+          }
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "28abfefb-cceb-4605-8330-a53b6d161403",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:28:52.258Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.sonymusic.co.jp/artist/equal-love/profile/",
+          "checkedAt": "2026-10-13T09:14:23.291Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "bandId": "f95cc1b6-a8de-43c9-94e9-897f4c08df48",
+      "name": "MyGO!!!!!",
+      "musicBrainzId": "be91faa6-5277-4b73-b97c-10786db10598",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:24:09.149148+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-12T14:24:09.149148+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "공식 BanG Dream/MyGO 및 Bushiroad 페이지 접근 실패. MB의 JP·개별 음반은 확인했으나 검색 스니펫만으로 실제 punk/rock 근거를 완료하지 않음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 BanG Dream/MyGO 및 Bushiroad 페이지 접근 실패. MB의 JP·개별 음반은 확인했으나 검색 스니펫만으로 실제 punk/rock 근거를 완료하지 않음.",
+          "checkedAt": "2026-10-26T01:38:09.462Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.462Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "VALID_OFFICIAL_CACHE_REUSED_AND_DB_READBACK_VERIFIED; new YouTube requests0, cache checkedAt preserved",
+          "checkedAt": "2026-10-26T01:39:22.295Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T22:03:57.603Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-11-01T22:03:57.603Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-12T14:24:09.149148+00:00",
+            "checkedAt": "2026-10-25T22:03:57.603Z"
+          }
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "be91faa6-5277-4b73-b97c-10786db10598",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:28:54.296Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://bang-dream.com/artist/mygo/",
+          "checkedAt": "2026-10-13T09:14:23.364Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "bandId": "8b091a38-1fb6-4bde-8da8-fa2410fa914b",
+      "name": "RADWIMPS",
+      "musicBrainzId": "6f500293-7396-4903-b4fd-118127d06f9e",
+      "country": "JP",
+      "aliases": [
+        "라드윔프스",
+        "ラッドウィンプス",
+        "래드윔프스",
+        "ラッドウインプス"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:45:04.815757+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:32.387164+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:30.318Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:30.318Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:30.318Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:32.387164+00:00"
+          }
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "VALID_OFFICIAL_CACHE_REUSED_AND_DB_READBACK_VERIFIED; new YouTube requests0, cache checkedAt preserved",
+          "checkedAt": "2026-10-26T01:39:22.381Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T22:03:57.603Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-11-01T22:03:57.603Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:32.387164+00:00",
+            "checkedAt": "2026-10-25T22:03:57.603Z"
+          }
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "6f500293-7396-4903-b4fd-118127d06f9e",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:28:56.157Z"
+      },
+      "proposal": {
+        "target_band_id": "8b091a38-1fb6-4bde-8da8-fa2410fa914b",
+        "expected_updated_at": "2026-10-12T14:45:04.815757+00:00",
+        "artist_name": "RADWIMPS",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "라드윔프스",
+          "ラッドウィンプス",
+          "래드윔프스",
+          "ラッドウインプス"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다.",
+        "evidence_url": "https://radwimps.jp/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다.",
+          "sourceUrls": [
+            "https://radwimps.jp/biography/",
+            "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID 6f500293-7396-4903-b4fd-118127d06f9e country JP를 위 개별 아티스트/레이블 활동과 대조. 공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다.",
+          "sourceUrls": [
+            "https://radwimps.jp/biography/",
+            "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. 공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다.",
+          "sourceUrls": [
+            "https://radwimps.jp/biography/",
+            "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. 공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다.",
+          "sourceUrls": [
+            "https://radwimps.jp/biography/",
+            "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:6f500293-7396-4903-b4fd-118127d06f9e 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:28:56.157Z",
+          "sourceUrls": [
+            "https://radwimps.jp/biography/",
+            "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://radwimps.jp/biography/",
+            "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다.",
+        "sources": [
+          {
+            "url": "https://radwimps.jp/biography/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다."
+          },
+          {
+            "url": "https://music.apple.com/us/album/radwimps-4-okazu-no-gohan/1511080228",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "공식 RADWIMPS bio의 Yokohama 첫 활동·Yojiro Noda/Yusuke Takeda와 RADWIMPS4/君の名は를 확인했다. Apple Music RADWIMPS4의 실제 Rock 분류를 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/6f500293-7396-4903-b4fd-118127d06f9e",
+            "checkedAt": "2026-10-26T01:28:56.157Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "RADWIMPS",
+        "bandId": "8b091a38-1fb6-4bde-8da8-fa2410fa914b",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 7,
+      "bandId": "6e5101d2-abcd-4796-8b3f-c1c6428b116a",
+      "name": "Rain Tree",
+      "musicBrainzId": "0e05481c-61c4-4ca0-903c-f1fbe0cb8457",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:24:09.148764+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-12T14:24:09.148764+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Rain Tree 공식 사이트의 곡/멤버 및 MB JP/원작 일치. 실제 J-pop 장르·국가 요건별 채택 근거 보완 미완료. 활동 장소/가수 형식만으로 승인하지 않음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Rain Tree 공식 사이트의 곡/멤버 및 MB JP/원작 일치. 실제 J-pop 장르·국가 요건별 채택 근거 보완 미완료. 활동 장소/가수 형식만으로 승인하지 않음.",
+          "checkedAt": "2026-10-26T01:38:09.579Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.579Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "VALID_OFFICIAL_CACHE_REUSED_AND_DB_READBACK_VERIFIED; new YouTube requests0, cache checkedAt preserved",
+          "checkedAt": "2026-10-26T01:39:22.463Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-25T22:03:57.603Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-11-01T22:03:57.603Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-12T14:24:09.148764+00:00",
+            "checkedAt": "2026-10-25T22:03:57.603Z"
+          }
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "0e05481c-61c4-4ca0-903c-f1fbe0cb8457",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:01.344Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://rt-official.jp/",
+          "checkedAt": "2026-10-13T09:18:52.942Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "bandId": "1892f15b-8b15-4c34-83f1-dae7b00a538d",
+      "name": "Tool",
+      "musicBrainzId": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+      "country": "US",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:54.808617+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:34.354373+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:33.532Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:33.532Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:33.532Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:34.354373+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.549Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.549Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+        "country": "US",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:03.595Z"
+      },
+      "proposal": {
+        "target_band_id": "1892f15b-8b15-4c34-83f1-dae7b00a538d",
+        "expected_updated_at": "2026-10-13T08:19:54.808617+00:00",
+        "artist_name": "Tool",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다.",
+        "evidence_url": "https://www.sonymusic.co.uk/artist/tool/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.uk/artist/tool/",
+            "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID 66fc5bf8-daa4-4241-b378-9bc9077939d2 country US를 위 개별 아티스트/레이블 활동과 대조. Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.uk/artist/tool/",
+            "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.uk/artist/tool/",
+            "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책에 따라 위 실제 음악 활동을 확인. Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.uk/artist/tool/",
+            "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:66fc5bf8-daa4-4241-b378-9bc9077939d2 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:03.595Z",
+          "sourceUrls": [
+            "https://www.sonymusic.co.uk/artist/tool/",
+            "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.uk/artist/tool/",
+            "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.uk/artist/tool/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Sony 공식 TOOL 소개에서 Carey/Chancellor/Jones/Keenan과 Undertow·Ænima·Lateralus 및 Best Metal Performance 작품 활동을 확인했다. 정확한 MBID의 US/Los Angeles 기원과 원작 목록을 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2",
+            "checkedAt": "2026-10-26T01:29:03.595Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "Tool",
+        "bandId": "1892f15b-8b15-4c34-83f1-dae7b00a538d",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 9,
+      "bandId": "83e05b4c-21ff-4435-863d-37adcfdc9564",
+      "name": "TOUCHED",
+      "musicBrainzId": "969c0579-d5fb-4576-8eb3-dea777d396c2",
+      "country": "KR",
+      "aliases": [
+        "터치드"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:45:04.317189+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:35.780113+00:00",
+        "category": "domestic_rock",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 2,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:35.057Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:35.057Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:35.057Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:35.780113+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.660Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.660Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "969c0579-d5fb-4576-8eb3-dea777d396c2",
+        "country": "KR",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:08.968Z"
+      },
+      "proposal": {
+        "target_band_id": "83e05b4c-21ff-4435-863d-37adcfdc9564",
+        "expected_updated_at": "2026-10-12T14:45:04.317189+00:00",
+        "artist_name": "TOUCHED",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [
+          "터치드"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다.",
+        "evidence_url": "https://www.mpmgmusic.com/touched"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/touched",
+            "https://music.apple.com/us/album/purple/1864845484",
+            "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID 969c0579-d5fb-4576-8eb3-dea777d396c2 country KR를 위 개별 아티스트/레이블 활동과 대조. MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/touched",
+            "https://music.apple.com/us/album/purple/1864845484",
+            "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/touched",
+            "https://music.apple.com/us/album/purple/1864845484",
+            "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 domestic_rock 정책에 따라 위 실제 음악 활동을 확인. MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/touched",
+            "https://music.apple.com/us/album/purple/1864845484",
+            "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:969c0579-d5fb-4576-8eb3-dea777d396c2 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:08.968Z",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/touched",
+            "https://music.apple.com/us/album/purple/1864845484",
+            "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.mpmgmusic.com/touched",
+            "https://music.apple.com/us/album/purple/1864845484",
+            "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.mpmgmusic.com/touched",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다."
+          },
+          {
+            "url": "https://music.apple.com/us/album/purple/1864845484",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "MPMG TOUCHED 개별 소개의 서울예대 동문 밴드·Yunmin/Kim Seungbin/John B Kim/Chea Dohyeon 및 Purple를 확인했다. Apple Music Purple Rock과 정확한 MBID의 South Korean band·Purple를 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/969c0579-d5fb-4576-8eb3-dea777d396c2",
+            "checkedAt": "2026-10-26T01:29:08.968Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "TOUCHED",
+        "bandId": "83e05b4c-21ff-4435-863d-37adcfdc9564",
+        "status": "approved",
+        "category": "domestic_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 10,
+      "bandId": "6b23c25d-1afc-4e08-9cd3-08df82817f80",
+      "name": "UFO",
+      "musicBrainzId": "c0bf9e20-2872-4897-ad1f-0882b83272a0",
+      "country": "GB",
+      "aliases": [
+        "U.F.O",
+        "UFO!"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:20:45.098003+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:37.275788+00:00",
+        "category": "overseas_rock",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:36.493Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:36.493Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:36.493Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:37.275788+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.754Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.754Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "c0bf9e20-2872-4897-ad1f-0882b83272a0",
+        "country": "GB",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:11.209Z"
+      },
+      "proposal": {
+        "target_band_id": "6b23c25d-1afc-4e08-9cd3-08df82817f80",
+        "expected_updated_at": "2026-10-13T08:20:45.098003+00:00",
+        "artist_name": "UFO",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "U.F.O",
+          "UFO!"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다.",
+        "evidence_url": "https://repertoirerecords.com/artists/ufo/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다.",
+          "sourceUrls": [
+            "https://repertoirerecords.com/artists/ufo/",
+            "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID c0bf9e20-2872-4897-ad1f-0882b83272a0 country GB를 위 개별 아티스트/레이블 활동과 대조. Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다.",
+          "sourceUrls": [
+            "https://repertoirerecords.com/artists/ufo/",
+            "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다.",
+          "sourceUrls": [
+            "https://repertoirerecords.com/artists/ufo/",
+            "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 overseas_rock 정책에 따라 위 실제 음악 활동을 확인. Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다.",
+          "sourceUrls": [
+            "https://repertoirerecords.com/artists/ufo/",
+            "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:c0bf9e20-2872-4897-ad1f-0882b83272a0 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:11.209Z",
+          "sourceUrls": [
+            "https://repertoirerecords.com/artists/ufo/",
+            "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://repertoirerecords.com/artists/ufo/",
+            "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다.",
+        "sources": [
+          {
+            "url": "https://repertoirerecords.com/artists/ufo/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Repertoire Records가 British rock UFO와 Phil Mogg/Pete Way/Mick Bolton/Andy Parker를 명시하고 Phenomenon·Lights Out·No Heavy Petting을 설명한다. 정확한 MBID의 GB/Enfield 및 원작과 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/c0bf9e20-2872-4897-ad1f-0882b83272a0",
+            "checkedAt": "2026-10-26T01:29:11.209Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "UFO",
+        "bandId": "6b23c25d-1afc-4e08-9cd3-08df82817f80",
+        "status": "approved",
+        "category": "overseas_rock",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 11,
+      "bandId": "c62bdcc2-1d89-40e4-af3a-cc586e79b1af",
+      "name": "22/7",
+      "musicBrainzId": "4d1c86ff-1287-4d9a-8c01-19585a5e1bea",
+      "country": "JP",
+      "aliases": [
+        "22/7 (nanabun no nijyuuni)",
+        "nanabun no nijyuuni",
+        "227",
+        "ナナブンノニジュウニ"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:45.639008+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:45.639008+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Sony에서 일본 애니메이션 프로젝트와22/7 아이돌 신원을 확인, MB JP/원작 대조. 개별 J-pop 실제 음악 근거 보완 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony에서 일본 애니메이션 프로젝트와22/7 아이돌 신원을 확인, MB JP/원작 대조. 개별 J-pop 실제 음악 근거 보완 미완료.",
+          "checkedAt": "2026-10-26T01:38:09.728Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.728Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.854Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.854Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "4d1c86ff-1287-4d9a-8c01-19585a5e1bea",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:14.492Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.sonymusic.co.jp/artist/nanabunnonijyuuni/profile/",
+          "checkedAt": "2026-10-13T09:14:23.295Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "bandId": "35498b09-8013-46d6-a9f9-dc659f4eeb84",
+      "name": "AAA",
+      "musicBrainzId": "5d6047a8-f601-4157-a1ee-b8b87b162489",
+      "country": "JP",
+      "aliases": [
+        "AAA DEN-O form",
+        "Triple A",
+        "Attack All Around",
+        "AAA DEN-O Form"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:10.279021+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:10.279021+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "avex AAA 프로필의 BLOOD on FIRE 데뷔와 performance group 활동 확인. 실제 J-pop 음악 분류/해당 원작 교차 근거 보완 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "avex AAA 프로필의 BLOOD on FIRE 데뷔와 performance group 활동 확인. 실제 J-pop 음악 분류/해당 원작 교차 근거 보완 미완료.",
+          "checkedAt": "2026-10-26T01:38:09.820Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.820Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:22.943Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:22.943Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "5d6047a8-f601-4157-a1ee-b8b87b162489",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:17.991Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://avexnet.jp/contents/AAAXX-XXXX-XXXX/profile",
+          "checkedAt": "2026-10-13T09:14:23.297Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "bandId": "febf7c1a-9371-44a2-91ac-e1d3519a078c",
+      "name": "Aimer",
+      "musicBrainzId": "9388cee2-7d57-4598-905f-106019b267d3",
+      "country": "JP",
+      "aliases": [
+        "エメリズム",
+        "aimerrhythm",
+        "フジモトエミ",
+        "藤本恵実",
+        "Emi Fujimoto",
+        "エメ",
+        "AimerOfficialVEVO"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:29.938091+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:29.938091+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Sony Aimer/daydream/Sleepless Nights 및 MB 동일 ID를 확인. Last.fm 응답 MBID가 요청과 달라 지표 불사용. 추가 국가/실제 장르 채택 근거 미완료; ID 수정 없음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony Aimer/daydream/Sleepless Nights 및 MB 동일 ID를 확인. Last.fm 응답 MBID가 요청과 달라 지표 불사용. 추가 국가/실제 장르 채택 근거 미완료; ID 수정 없음.",
+          "checkedAt": "2026-10-26T01:38:09.919Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:09.919Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.045Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.045Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "9388cee2-7d57-4598-905f-106019b267d3",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:29:20.517Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.sonymusic.co.jp/artist/aimer/profile/",
+          "checkedAt": "2026-10-13T09:14:23.302Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "bandId": "000edded-b5d9-475d-8076-2d5304866ec4",
+      "name": "amazarashi",
+      "musicBrainzId": "105f5e66-9742-40e8-a1f2-bc9781f935e8",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:24:09.149121+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-12T14:24:09.149121+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Sony amazarashi profile에서 Aomori/Akita 밴드 확인. 실제 rock 설명이 있는 새 대체 자료 본문이 열리지 않아 검색 스니펫을 완료 근거로 세지 않음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony amazarashi profile에서 Aomori/Akita 밴드 확인. 실제 rock 설명이 있는 새 대체 자료 본문이 열리지 않아 검색 스니펫을 완료 근거로 세지 않음.",
+          "checkedAt": "2026-10-26T01:38:10.016Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.016Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.132Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.132Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "105f5e66-9742-40e8-a1f2-bc9781f935e8",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:23.593Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.sonymusic.co.jp/artist/amazarashi/profile/",
+          "checkedAt": "2026-10-13T09:14:23.308Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "bandId": "c5ef4127-68a2-4e4f-b467-86e40038ec78",
+      "name": "cali≠gari",
+      "musicBrainzId": "a7ed7e10-d6f4-485d-b4b6-46540ed38123",
+      "country": "JP",
+      "aliases": [
+        "カリガリ",
+        "cali=gari",
+        "cali gari",
+        "カリ≠ガリ",
+        "cali+gari"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:59.333653+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:59.333653+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Victor cali≠gari profile의 멤버/1993결성/발매를 확인. 실제 록/J-pop 음악 활동 및 국가 개별 proof 보완 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Victor cali≠gari profile의 멤버/1993결성/발매를 확인. 실제 록/J-pop 음악 활동 및 국가 개별 proof 보완 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.103Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.103Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.229Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.229Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "a7ed7e10-d6f4-485d-b4b6-46540ed38123",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:25.293Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.jvcmusic.co.jp/-/Profile/A016947.html",
+          "checkedAt": "2026-10-13T09:14:23.310Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "bandId": "5be523f4-aa73-4dff-b7d6-1f50b32d864c",
+      "name": "ClariS",
+      "musicBrainzId": "f3688ad9-cd14-4cee-8fa0-0f4434e762bb",
+      "country": "JP",
+      "aliases": [
+        "アリス★クララ",
+        "アリス☆クララ"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:33.003394+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:39.056812+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:38.293Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:38.293Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:38.293Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:39.056812+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.317Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.317Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "f3688ad9-cd14-4cee-8fa0-0f4434e762bb",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:27.344Z"
+      },
+      "proposal": {
+        "target_band_id": "5be523f4-aa73-4dff-b7d6-1f50b32d864c",
+        "expected_updated_at": "2026-10-13T08:18:33.003394+00:00",
+        "artist_name": "ClariS",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "アリス★クララ",
+          "アリス☆クララ"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/claris/profile/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "https://music.apple.com/us/album/birthday/1537249841",
+            "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID f3688ad9-cd14-4cee-8fa0-0f4434e762bb country JP를 위 개별 아티스트/레이블 활동과 대조. Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "https://music.apple.com/us/album/birthday/1537249841",
+            "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "https://music.apple.com/us/album/birthday/1537249841",
+            "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "https://music.apple.com/us/album/birthday/1537249841",
+            "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:f3688ad9-cd14-4cee-8fa0-0f4434e762bb 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:27.344Z",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "https://music.apple.com/us/album/birthday/1537249841",
+            "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "https://music.apple.com/us/album/birthday/1537249841",
+            "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/claris/profile/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다."
+          },
+          {
+            "url": "https://music.apple.com/us/album/birthday/1537249841",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Sony ClariS 소개의 irony·コネクト 애니메이션 주제가 활동을 확인하고 Apple Music Birthday의 Pop 분류 및 Connect/Irony를 교차했다. 정확한 MBID의 JP/Japan 및 BIRTHDAY 원작과 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/f3688ad9-cd14-4cee-8fa0-0f4434e762bb",
+            "checkedAt": "2026-10-26T01:29:27.344Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "ClariS",
+        "bandId": "5be523f4-aa73-4dff-b7d6-1f50b32d864c",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 17,
+      "bandId": "9889e3ea-7a2d-4bb1-ace8-38d04fa082e8",
+      "name": "Crystal Kay",
+      "musicBrainzId": "86443348-fd26-48cf-bd13-7ea7fa27505c",
+      "country": "JP",
+      "aliases": [
+        "Crystal Kaye",
+        "クリスタル・ケイ・ウィリアムズ",
+        "C-Kay",
+        "Kurisutaru Kei Wiriamuzu",
+        "克莉絲朵·凱兒",
+        "クリスタル・ケイ",
+        "Crystal Kay Williams"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:51.84063+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:40.420454+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:39.734Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:39.734Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:39.734Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:40.420454+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.412Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.412Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "86443348-fd26-48cf-bd13-7ea7fa27505c",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:29:29.369Z"
+      },
+      "proposal": {
+        "target_band_id": "9889e3ea-7a2d-4bb1-ace8-38d04fa082e8",
+        "expected_updated_at": "2026-10-13T08:18:51.84063+00:00",
+        "artist_name": "Crystal Kay",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "Crystal Kaye",
+          "クリスタル・ケイ・ウィリアムズ",
+          "C-Kay",
+          "Kurisutaru Kei Wiriamuzu",
+          "克莉絲朵·凱兒",
+          "クリスタル・ケイ",
+          "Crystal Kay Williams"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다.",
+        "evidence_url": "https://www.universal-music.co.jp/crystal-kay/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID 86443348-fd26-48cf-bd13-7ea7fa27505c country JP를 위 개별 아티스트/레이블 활동과 대조. Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:86443348-fd26-48cf-bd13-7ea7fa27505c 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:29.369Z",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.co.jp/crystal-kay/biography/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Universal Crystal Kay 소개가 J-POP에 R&B/HIP HOP을 결합한 실제 활동과 almost seventeen, 고향 Yokohama를 설명한다. 정확한 MBID의 JP/Japan과 동일 원작을 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/86443348-fd26-48cf-bd13-7ea7fa27505c",
+            "checkedAt": "2026-10-26T01:29:29.369Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "Crystal Kay",
+        "bandId": "9889e3ea-7a2d-4bb1-ace8-38d04fa082e8",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 18,
+      "bandId": "10bc8a44-0006-4382-9bac-2d0ead9bb700",
+      "name": "DIALOGUE+",
+      "musicBrainzId": "c1129b37-b474-41ea-ae2a-64cfab4209ff",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:33.702494+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:33.702494+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "DIALOGUE+ 공식 discography 접근 자료와 MB JP/원작 대조. Last.fm error6. 실제 장르·개별 승인 proof 미완료.",
+      "providerCalls": 2,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "DIALOGUE+ 공식 discography 접근 자료와 MB JP/원작 대조. Last.fm error6. 실제 장르·개별 승인 proof 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.312Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.312Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.498Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.498Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "c1129b37-b474-41ea-ae2a-64cfab4209ff",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:31.142Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://dialogue-music.jp/discography/",
+          "checkedAt": "2026-10-13T09:14:23.320Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "bandId": "6a9c0d46-91da-4c87-9cae-0d4556ab32fa",
+      "name": "DIR EN GREY",
+      "musicBrainzId": "ab309b83-904f-4e2c-8d11-a0223bba51f9",
+      "country": "JP",
+      "aliases": [
+        "Dir en grey",
+        "ディルアングレイ",
+        "Dir en gery",
+        "ヂル アン グレイ",
+        "Dir en Gry",
+        "Dir en gy",
+        "dir and grey",
+        "diru an gurei",
+        "Dir en erey",
+        "dir engrey",
+        "Die en Grey",
+        "ディル アン グレイ",
+        "Dir En Gray"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:42.457153+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:42.457153+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "DIR EN GREY 공식 bio는 본문3줄만 관측, MB JP/작품 확인. 전문 음악 소개는 검색 결과만 있어 실제 장르 근거 본문 보완 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "DIR EN GREY 공식 bio는 본문3줄만 관측, MB JP/작품 확인. 전문 음악 소개는 검색 결과만 있어 실제 장르 근거 본문 보완 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.401Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.401Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.593Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.593Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "ab309b83-904f-4e2c-8d11-a0223bba51f9",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:33.251Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://direngrey.co.jp/bio/",
+          "checkedAt": "2026-10-13T09:14:23.322Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "bandId": "c99ac8ad-083f-4130-8bfb-aa95b5952d9d",
+      "name": "eufonius",
+      "musicBrainzId": "e361f783-66c1-4b8d-9ec5-07c3dcec6e66",
+      "country": "JP",
+      "aliases": [
+        "ユーフォニアス"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:30.965045+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:30.965045+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Lantis eufonius 개별 bio503, MB JP/작품은 확인. 실제 J-pop/개별 요건별 근거 보완 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Lantis eufonius 개별 bio503, MB JP/작품은 확인. 실제 J-pop/개별 요건별 근거 보완 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.491Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.491Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.683Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.683Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "e361f783-66c1-4b8d-9ec5-07c3dcec6e66",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:34.992Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.lantis.jp/artist/eufonius/bio.html",
+          "checkedAt": "2026-10-13T09:14:23.324Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "bandId": "bd3c3606-0016-42d3-b725-4441623569c3",
+      "name": "GACKT",
+      "musicBrainzId": "e7a8e086-16df-44a7-91e4-640986bcff72",
+      "country": "JP",
+      "aliases": [
+        "神威楽斗",
+        "大城 ガクト",
+        "ガクト",
+        "かむいがくと",
+        "神威 楽斗",
+        "Gackt C.",
+        "Gackt Camui",
+        "かむい がくと",
+        "Gackt Kamui",
+        "Gackt.C"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:53.409538+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:53.409538+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "GACKT 공식 profile의 일본 솔로 활동 확인, MB JP/작품 대조. 실제 장르와 개별 원작 연결 proof 조합 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "GACKT 공식 profile의 일본 솔로 활동 확인, MB JP/작품 대조. 실제 장르와 개별 원작 연결 proof 조합 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.580Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.580Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.779Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.779Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "e7a8e086-16df-44a7-91e4-640986bcff72",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:29:38.089Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://gackt.com/profiles",
+          "checkedAt": "2026-10-13T09:14:23.331Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "bandId": "4419b3e5-00a7-4f49-9aae-17891eebd570",
+      "name": "GARNiDELiA",
+      "musicBrainzId": "9bdb5e93-32e4-4dbb-9fac-b8771e1c1551",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:46.677897+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:46.677897+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Universal GARNiDELiA에서 MARiA/toku·ambiguous/響喜乱舞 확인. J-pop 실제 장르/국가 요건별 추가 근거 채택 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Universal GARNiDELiA에서 MARiA/toku·ambiguous/響喜乱舞 확인. J-pop 실제 장르/국가 요건별 추가 근거 채택 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.673Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.673Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.880Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.880Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "9bdb5e93-32e4-4dbb-9fac-b8771e1c1551",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:40.262Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.universal-music.co.jp/garnidelia/biography/",
+          "checkedAt": "2026-10-13T09:14:23.333Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "bandId": "cf677a0c-a5ab-4075-8cd7-f0c8e39a3744",
+      "name": "m‐flo",
+      "musicBrainzId": "22dd2db3-88ea-4428-a7a8-5cd3acf23175",
+      "country": "JP",
+      "aliases": [
+        "mflo",
+        "えむふろう",
+        "m-flow",
+        "m-flo♥STAR TREK™",
+        "エムフロウ",
+        "meteorite-flow crew",
+        "mediarite-flow crew",
+        "エム・フロウ",
+        "エム・フロー",
+        "えむ ふろう"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:54.713588+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:54.713588+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "avex m-flo 프로필에서 EXPO EXPO 등 활동 확인. hip-hop/R&B 혼합에서 기존 jpop 범위의 구체 근거가 아직 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "avex m-flo 프로필에서 EXPO EXPO 등 활동 확인. hip-hop/R&B 혼합에서 기존 jpop 범위의 구체 근거가 아직 미완료.",
+          "checkedAt": "2026-10-26T01:38:10.786Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.786Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:23.976Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:23.976Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "22dd2db3-88ea-4428-a7a8-5cd3acf23175",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:41.978Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://avexnet.jp/contents/MFLOX-XXXX-XXXX/profile",
+          "checkedAt": "2026-10-13T09:14:23.348Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "bandId": "f9d7e9f3-bca1-4f0a-b437-21b8a44f25b4",
+      "name": "May J.",
+      "musicBrainzId": "ec7e4f26-cddb-4e91-9f08-5f2f12da5f36",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:37.748662+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:41.762054+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:41.055Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:41.055Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:41.055Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:41.762054+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.065Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.065Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "ec7e4f26-cddb-4e91-9f08-5f2f12da5f36",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:29:44.112Z"
+      },
+      "proposal": {
+        "target_band_id": "f9d7e9f3-bca1-4f0a-b437-21b8a44f25b4",
+        "expected_updated_at": "2026-10-13T08:18:37.748662+00:00",
+        "artist_name": "May J.",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다.",
+        "evidence_url": "https://www.may-j.com/profile/english.html"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다.",
+          "sourceUrls": [
+            "https://www.may-j.com/profile/english.html",
+            "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID ec7e4f26-cddb-4e91-9f08-5f2f12da5f36 country JP를 위 개별 아티스트/레이블 활동과 대조. May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다.",
+          "sourceUrls": [
+            "https://www.may-j.com/profile/english.html",
+            "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다.",
+          "sourceUrls": [
+            "https://www.may-j.com/profile/english.html",
+            "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다.",
+          "sourceUrls": [
+            "https://www.may-j.com/profile/english.html",
+            "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:ec7e4f26-cddb-4e91-9f08-5f2f12da5f36 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:44.112Z",
+          "sourceUrls": [
+            "https://www.may-j.com/profile/english.html",
+            "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.may-j.com/profile/english.html",
+            "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.may-j.com/profile/english.html",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "May J 공식 영문 profile에서 multilingual J-pop singer-songwriter, Family/for you를 확인했다. 다양한 혈통을 국적으로 단정하지 않고 정확한 MBID의 JP 및 동일 개별 원작/공식 홈페이지 관계로 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/ec7e4f26-cddb-4e91-9f08-5f2f12da5f36",
+            "checkedAt": "2026-10-26T01:29:44.112Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "May J.",
+        "bandId": "f9d7e9f3-bca1-4f0a-b437-21b8a44f25b4",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 25,
+      "bandId": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+      "name": "mihimaru GT",
+      "musicBrainzId": "6011bcce-9f6b-4aae-adae-68727eaef7e0",
+      "country": "JP",
+      "aliases": [
+        "mihimaruGT"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:26.892363+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:43.125857+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:42.401Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:42.401Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:42.401Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:43.125857+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.159Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.159Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "6011bcce-9f6b-4aae-adae-68727eaef7e0",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:45.990Z"
+      },
+      "proposal": {
+        "target_band_id": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+        "expected_updated_at": "2026-10-13T08:18:26.892363+00:00",
+        "artist_name": "mihimaru GT",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "mihimaruGT"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다.",
+        "evidence_url": "https://www.mihimaru-gt.com/profile/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다.",
+          "sourceUrls": [
+            "https://www.mihimaru-gt.com/profile/",
+            "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID 6011bcce-9f6b-4aae-adae-68727eaef7e0 country JP를 위 개별 아티스트/레이블 활동과 대조. mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다.",
+          "sourceUrls": [
+            "https://www.mihimaru-gt.com/profile/",
+            "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다.",
+          "sourceUrls": [
+            "https://www.mihimaru-gt.com/profile/",
+            "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다.",
+          "sourceUrls": [
+            "https://www.mihimaru-gt.com/profile/",
+            "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:6011bcce-9f6b-4aae-adae-68727eaef7e0 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:45.990Z",
+          "sourceUrls": [
+            "https://www.mihimaru-gt.com/profile/",
+            "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.mihimaru-gt.com/profile/",
+            "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.mihimaru-gt.com/profile/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "mihimaru GT 공식 profile의 hiroko/miyake·2003년 Shibuya ROCK WEST 기원 및 HIP!POP!/혁신적 POPS 지향을 확인했다. 멤버 Hyogo/Okayama 기록과 정확한 MBID의 JP 및 공식 Universal 홈페이지 관계를 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/6011bcce-9f6b-4aae-adae-68727eaef7e0",
+            "checkedAt": "2026-10-26T01:29:45.990Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "mihimaru GT",
+        "bandId": "1500fb7d-1650-4441-8e08-c8aba6bd89f6",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 26,
+      "bandId": "5a62a979-cc6b-4966-b726-fc4fcbb5ecc5",
+      "name": "MINMI",
+      "musicBrainzId": "0a2d8d95-9cb1-48da-927c-613b4e12ae72",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:56.084155+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:56.084155+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "MINMI 공식 Osaka 기원과 Miracle·hip-hop/reggae 활동 확인. 현 미국 거주와 기원을 구분. 국적만으로 J-pop으로 승인하지 않고 실제 장르 경계를 보존.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "MINMI 공식 Osaka 기원과 Miracle·hip-hop/reggae 활동 확인. 현 미국 거주와 기원을 구분. 국적만으로 J-pop으로 승인하지 않고 실제 장르 경계를 보존.",
+          "checkedAt": "2026-10-26T01:38:10.930Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:10.930Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.245Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.245Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "0a2d8d95-9cb1-48da-927c-613b4e12ae72",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:29:48.486Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://minmi.jp/biography/",
+          "checkedAt": "2026-10-13T09:14:23.354Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "bandId": "aa9b7177-897d-41ce-9ed1-f845be2720b2",
+      "name": "miwa",
+      "musicBrainzId": "a83e47fb-d486-4c15-9919-ed8351cc395c",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:44.959031+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:44.45137+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:43.764Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:43.764Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:43.764Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:44.45137+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.338Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.338Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "a83e47fb-d486-4c15-9919-ed8351cc395c",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:29:50.289Z"
+      },
+      "proposal": {
+        "target_band_id": "aa9b7177-897d-41ce-9ed1-f845be2720b2",
+        "expected_updated_at": "2026-10-13T08:18:44.959031+00:00",
+        "artist_name": "miwa",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/miwa/profile/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID a83e47fb-d486-4c15-9919-ed8351cc395c country JP를 위 개별 아티스트/레이블 활동과 대조. Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:a83e47fb-d486-4c15-9919-ed8351cc395c 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:29:50.289Z",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/miwa/profile/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치."
+          },
+          {
+            "url": "https://music.apple.com/us/album/guitarissimo/1537431823",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Sony miwa profile에서 Hayama 출생/Tokyo 성장·싱어송라이터 활동과 guitarissimo/Delight를 확인하고 Apple Music guitarissimo의 J-Pop 분류를 교차했다. 정확한 MBID의 JP 및 해당 Sony 공식 홈페이지 관계와 원작 일치."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/a83e47fb-d486-4c15-9919-ed8351cc395c",
+            "checkedAt": "2026-10-26T01:29:50.289Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "miwa",
+        "bandId": "aa9b7177-897d-41ce-9ed1-f845be2720b2",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 28,
+      "bandId": "0f8a5a78-942a-47a0-9d34-e7eeaf40bd8a",
+      "name": "moumoon",
+      "musicBrainzId": "391c42b9-1f4b-4d2d-be6f-dc823db7dd60",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:16.149699+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:16.149699+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "avex moumoon의 YUKA/MASAKI·Sunshine Girl/Fullmoon 확인. 개별 음악 장르·국가 요건별 승인 proof 조합은 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "avex moumoon의 YUKA/MASAKI·Sunshine Girl/Fullmoon 확인. 개별 음악 장르·국가 요건별 승인 proof 조합은 미완료.",
+          "checkedAt": "2026-10-26T01:38:11.075Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.075Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.424Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.424Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "391c42b9-1f4b-4d2d-be6f-dc823db7dd60",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:52.948Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://avexnet.jp/contents/MOUMO-XXXX-XXXX",
+          "checkedAt": "2026-10-13T09:14:23.360Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "bandId": "b55ca720-67aa-4f50-a656-7318f906e9ca",
+      "name": "MUCC",
+      "musicBrainzId": "0da0f48c-3689-4c38-bf4a-c5b50d516689",
+      "country": "JP",
+      "aliases": [
+        "ムック"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:52.351633+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:19:52.351633+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Tokuma MUCC의 actual rock/metal/punk 및 일본 활동 확인. 현 선정의 개별 원작 및 국가 신원 교차 proof 조합 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Tokuma MUCC의 actual rock/metal/punk 및 일본 활동 확인. 현 선정의 개별 원작 및 국가 신원 교차 proof 조합 미완료.",
+          "checkedAt": "2026-10-26T01:38:11.183Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.183Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.514Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.514Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "0da0f48c-3689-4c38-bf4a-c5b50d516689",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:55.065Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.tkma.co.jp/jpop_profile/MUCC.html",
+          "checkedAt": "2026-10-13T09:14:23.362Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "bandId": "9beceb4d-6524-473f-943c-34c41227fc6d",
+      "name": "NMB48",
+      "musicBrainzId": "e3e715b3-2e88-4902-869c-131f4e9a5c01",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:48.568041+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:48.568041+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "NMB48 기존 근거는 쿼리형 Yoshimoto URL이며 이번 MB JP/원작 확인과 구분. 실제 공식 음악/국가 검증 보완 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "NMB48 기존 근거는 쿼리형 Yoshimoto URL이며 이번 MB JP/원작 확인과 구분. 실제 공식 음악/국가 검증 보완 미완료.",
+          "checkedAt": "2026-10-26T01:38:11.283Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.283Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.601Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.601Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "e3e715b3-2e88-4902-869c-131f4e9a5c01",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:29:57.725Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://profile.yoshimoto.co.jp/talent/detail?id=10069",
+          "checkedAt": "2026-10-13T09:18:52.933Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "bandId": "2c8565b4-bf7f-4544-80a2-015bb16e1aa1",
+      "name": "Poppin'Party",
+      "musicBrainzId": "9cacc8a5-fb40-4584-aea2-591172da6e84",
+      "country": "JP",
+      "aliases": [
+        "ポピパ",
+        "PoPiPa",
+        "Popping Party",
+        "Poppin Party"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:46.350594+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:46.350594+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Poppin Party MB JP/작품은 확인. BanG Dream 계열 실제 개별 공식 본문 근거를 이번 채택하지 못해 장르 완료로 세지 않음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Poppin Party MB JP/작품은 확인. BanG Dream 계열 실제 개별 공식 본문 근거를 이번 채택하지 못해 장르 완료로 세지 않음.",
+          "checkedAt": "2026-10-26T01:38:11.370Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.370Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.692Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.692Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "9cacc8a5-fb40-4584-aea2-591172da6e84",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:04.043Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://bang-dream.com/artist/poppinparty/",
+          "checkedAt": "2026-10-13T09:18:52.937Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "bandId": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+      "name": "SCANDAL",
+      "musicBrainzId": "d4c7c69d-a1f9-4717-a409-0346fd90d517",
+      "country": "JP",
+      "aliases": [
+        "スキャンダル",
+        "斯坎朵"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:19:45.128318+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:45.863225+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 2,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:45.109Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:45.109Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:45.109Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:45.863225+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.777Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.777Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "d4c7c69d-a1f9-4717-a409-0346fd90d517",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:06.644Z"
+      },
+      "proposal": {
+        "target_band_id": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+        "expected_updated_at": "2026-10-13T08:19:45.128318+00:00",
+        "artist_name": "SCANDAL",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "スキャンダル",
+          "斯坎朵"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다.",
+        "evidence_url": "https://www.sonymusic.co.jp/artist/scandal/profile/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID d4c7c69d-a1f9-4717-a409-0346fd90d517 country JP를 위 개별 아티스트/레이블 활동과 대조. Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:d4c7c69d-a1f9-4717-a409-0346fd90d517 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:30:06.644Z",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/scandal/profile/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Sony SCANDAL profile이 Osaka Japan 결성, HARUNA/MAMI/TOMOMI/RINA 및 aggressive pop/rock 사운드와 BEST★SCANDAL/TEMPTATION BOX/BABY ACTION을 설명한다. 정확한 MBID의 JP·동일 Sony 공식 홈페이지 관계·원작을 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/d4c7c69d-a1f9-4717-a409-0346fd90d517",
+            "checkedAt": "2026-10-26T01:30:06.644Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "SCANDAL",
+        "bandId": "26828883-d9a4-48e7-a273-79d4a0e70ad6",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 33,
+      "bandId": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+      "name": "SEKAI NO OWARI",
+      "musicBrainzId": "d9dbfe6a-8346-4337-8614-fe96aab63927",
+      "country": "JP",
+      "aliases": [
+        "End of the World",
+        "세카이노오와리",
+        "世界の終わり",
+        "SekaOwa"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-12T14:45:05.178638+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:47.213411+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:46.524Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:46.524Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:46.524Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:47.213411+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.871Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.871Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "d9dbfe6a-8346-4337-8614-fe96aab63927",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:09.063Z"
+      },
+      "proposal": {
+        "target_band_id": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+        "expected_updated_at": "2026-10-12T14:45:05.178638+00:00",
+        "artist_name": "SEKAI NO OWARI",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "End of the World",
+          "세카이노오와리",
+          "世界の終わり",
+          "SekaOwa"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다.",
+        "evidence_url": "https://www.universal-music.co.jp/sekainoowari/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID d9dbfe6a-8346-4337-8614-fe96aab63927 country JP를 위 개별 아티스트/레이블 활동과 대조. Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:d9dbfe6a-8346-4337-8614-fe96aab63927 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:30:09.063Z",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.co.jp/sekainoowari/biography/",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "Universal SEKAI NO OWARI biography의 일본을 대표하는4인조 밴드 명시와 pop부터dark까지의 실제 곡 활동, EARTH/scent of memory/Habit를 확인했다. 정확한 MBID의 JP·EARTH/Tree/Eye/Lip 원작을 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/d9dbfe6a-8346-4337-8614-fe96aab63927",
+            "checkedAt": "2026-10-26T01:30:09.063Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "SEKAI NO OWARI",
+        "bandId": "c6fa53ee-e0a5-49e2-adaf-820f104edcd0",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    },
+    {
+      "index": 34,
+      "bandId": "b159ad20-2dfe-4ef8-ba32-44370dc3e1b0",
+      "name": "SixTONES",
+      "musicBrainzId": "47a3fb29-e36b-440b-9d3c-3a68cec34396",
+      "country": "JP",
+      "aliases": [
+        "STONES",
+        "SixTONES(ストーンズ)"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:39.062402+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:39.062402+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "SixTONES 공식 홈의 새 발매와 MB JP/작품 확인. 실제 J-pop/국가 요건별 개별 proof 조합 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "SixTONES 공식 홈의 새 발매와 MB JP/작품 확인. 실제 J-pop/국가 요건별 개별 proof 조합 미완료.",
+          "checkedAt": "2026-10-26T01:38:11.497Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.497Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:24.960Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:24.960Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "47a3fb29-e36b-440b-9d3c-3a68cec34396",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:11.898Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.sixtones.jp/",
+          "checkedAt": "2026-10-13T09:18:52.951Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "bandId": "d268aafc-3f8f-4557-95fc-001e817fe77b",
+      "name": "Snow Man",
+      "musicBrainzId": "1322f39c-cea6-42aa-aa98-3b6b5043b07d",
+      "country": "JP",
+      "aliases": [
+        "SnowMan"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:30.283233+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:30.283233+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "Snow Man MB JP/작품은 확인. Last.fm 반환 MBID 불일치로 지표 불사용. 개별 공식 프로필/장르 proof 보완 미완료, 신원 변경 없음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Snow Man MB JP/작품은 확인. Last.fm 반환 MBID 불일치로 지표 불사용. 개별 공식 프로필/장르 proof 보완 미완료, 신원 변경 없음.",
+          "checkedAt": "2026-10-26T01:38:11.587Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.587Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:25.061Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:25.061Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "1322f39c-cea6-42aa-aa98-3b6b5043b07d",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:13.766Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://avexnet.jp/contents/music_j/SNOMN/discography/1032432",
+          "checkedAt": "2026-10-13T09:18:52.954Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "bandId": "31cf2bdb-339b-49f3-b2bd-c58d57da7260",
+      "name": "SUPER☆GiRLS",
+      "musicBrainzId": "4d49e67b-1746-48ac-9eac-9ebabc595486",
+      "country": "JP",
+      "aliases": [
+        "SUPER?GiRLS"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:18.715369+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:18.715369+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "SUPER GiRLS 공식 profile의 avex 아이돌 오디션·超絶少女 발매 확인. 음악 실제 장르/국가 요건별 proof 조합 미완료.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "SUPER GiRLS 공식 profile의 avex 아이돌 오디션·超絶少女 발매 확인. 음악 실제 장르/국가 요건별 proof 조합 미완료.",
+          "checkedAt": "2026-10-26T01:38:11.675Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.675Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:25.151Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:25.151Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "4d49e67b-1746-48ac-9eac-9ebabc595486",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:16.458Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://supergirls.jp/profile/index.php",
+          "checkedAt": "2026-10-13T09:18:52.957Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "bandId": "984b4d94-076e-47da-8d98-6cfc81125cd6",
+      "name": "T.M.Revolution",
+      "musicBrainzId": "7dea80e3-0861-4c9c-86df-eec42fc2c5a8",
+      "country": "JP",
+      "aliases": [
+        "Takanori Makes Revolution",
+        "TM Revolution",
+        "TMR",
+        "TMRevolution",
+        "ティー・エム・レボリューション",
+        "西川贵教"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:49.582853+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:49.582853+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "TM Revolution 공식 bio 관측 본문이 매우 짧음. MB JP/작품과 실제 J-pop/rock 활동 근거 보완을 구분한다.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "TM Revolution 공식 bio 관측 본문이 매우 짧음. MB JP/작품과 실제 J-pop/rock 활동 근거 보완을 구분한다.",
+          "checkedAt": "2026-10-26T01:38:11.762Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.762Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:25.249Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:25.249Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "7dea80e3-0861-4c9c-86df-eec42fc2c5a8",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:30:20.857Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.tm-revolution.com/bio/",
+          "checkedAt": "2026-10-13T09:18:52.959Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "bandId": "25930c68-731d-40f8-95a3-a0d70a324b12",
+      "name": "t+pazolite",
+      "musicBrainzId": "d72ae77d-ca32-498d-870e-8204165b8ee4",
+      "country": "JP",
+      "aliases": [],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:18:51.177283+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-13T08:18:51.177283+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "appliedApproval": false,
+      "notes": "t+pazolite TuneCore 관측 본문이 제한됨. MB JP person/작품 확인, Last.fm 반환 MBID 없음으로 지표 불사용. 전자음악과 jpop 정책 경계를 임의 확대하지 않음.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "deferred",
+          "reason": "t+pazolite TuneCore 관측 본문이 제한됨. MB JP person/작품 확인, Last.fm 반환 MBID 없음으로 지표 불사용. 전자음악과 jpop 정책 경계를 임의 확대하지 않음.",
+          "checkedAt": "2026-10-26T01:38:11.853Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:38:11.853Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:25.338Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:25.338Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "d72ae77d-ca32-498d-870e-8204165b8ee4",
+        "country": "JP",
+        "type": "Person",
+        "checkedAt": "2026-10-26T01:30:26.650Z"
+      },
+      "priorSources": [
+        {
+          "url": "https://www.tunecore.co.jp/artists/tpazolite?lang=en",
+          "checkedAt": "2026-10-13T09:18:52.962Z",
+          "summary": "외부 신원과 공식 레이블/아티스트 프로필의 보컬·멤버·원작 음반 활동을 대조함. 실제 J-pop 또는 록 계열 발매·공연 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "bandId": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+      "name": "THE ALFEE",
+      "musicBrainzId": "db855eff-9d28-4bd7-ab2c-7301495b4669",
+      "country": "JP",
+      "aliases": [
+        "アルフィー",
+        "Alfie",
+        "ALFEE"
+      ],
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "version": "2026-10-13T08:21:01.44472+00:00",
+        "category": "unclassified",
+        "status": "unreviewed"
+      },
+      "after": {
+        "version": "2026-10-26T01:35:48.535138+00:00",
+        "category": "jpop",
+        "status": "approved"
+      },
+      "appliedApproval": true,
+      "notes": "현재 공식 음악 근거와 정확한 MBID를 대조해 승인 적용/receipt/readback 확인.",
+      "providerCalls": 3,
+      "tasks": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T01:35:47.853Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T01:35:47.853Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T01:35:47.853Z",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T01:35:48.535138+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선정된 정확 MBID의 URL 관계를 읽었으나 직접 공식 아티스트 페이지 링크·API 검증·버전 readback이 모두 갖춰진 채널 근거가 미완료. MB 관계나 이름만으로 verified를 만들지 않음.",
+          "checkedAt": "2026-10-26T01:39:25.431Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T01:39:25.431Z",
+          "validUntil": null
+        }
+      },
+      "originalResearchPreserved": true,
+      "externalReadback": {
+        "id": "db855eff-9d28-4bd7-ab2c-7301495b4669",
+        "country": "JP",
+        "type": "Group",
+        "checkedAt": "2026-10-26T01:30:31.467Z"
+      },
+      "proposal": {
+        "target_band_id": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+        "expected_updated_at": "2026-10-13T08:21:01.44472+00:00",
+        "artist_name": "THE ALFEE",
+        "country": "JP",
+        "artist_category": "jpop",
+        "artist_aliases": [
+          "アルフィー",
+          "Alfie",
+          "ALFEE"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다.",
+        "evidence_url": "https://www.alfee.com/profile/s_main.html"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다.",
+          "sourceUrls": [
+            "https://www.alfee.com/profile/s_main.html",
+            "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669"
+          ]
+        },
+        "countryMatched": {
+          "summary": "정확한 MBID db855eff-9d28-4bd7-ab2c-7301495b4669 country JP를 위 개별 아티스트/레이블 활동과 대조. THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다.",
+          "sourceUrls": [
+            "https://www.alfee.com/profile/s_main.html",
+            "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669"
+          ]
+        },
+        "genreMatched": {
+          "summary": "태그·국적/그룹 형식만으로 판단하지 않고 실제 발매/음악 활동 확인. THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다.",
+          "sourceUrls": [
+            "https://www.alfee.com/profile/s_main.html",
+            "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop 정책에 따라 위 실제 음악 활동을 확인. THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다.",
+          "sourceUrls": [
+            "https://www.alfee.com/profile/s_main.html",
+            "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 server context의 mb:db855eff-9d28-4bd7-ab2c-7301495b4669 및 원본 버전과 정확히 같은 MusicBrainz API entity 확인. 위 개별 원작/공식 URL 관계를 교차. 확인 시각 2026-10-26T01:30:31.467Z",
+          "sourceUrls": [
+            "https://www.alfee.com/profile/s_main.html",
+            "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 공연 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 이벤트 공개 조건도 별도로 필요하다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.alfee.com/profile/s_main.html",
+            "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다.",
+        "sources": [
+          {
+            "url": "https://www.alfee.com/profile/s_main.html",
+            "checkedAt": "2026-10-26T01:35:09.970735+00:00",
+            "summary": "THE ALFEE 공식 profile의 Meiji Gakuin 캠퍼스 결성·일본 음악씬 밴드·록 밴드 수상과 Sakurai/Sakazaki/Takamizawa를 확인했다. 정확한 MBID의 JP 및 동일 공식 alfee.com/Universal 아티스트 홈페이지 관계를 교차했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/db855eff-9d28-4bd7-ab2c-7301495b4669",
+            "checkedAt": "2026-10-26T01:30:31.467Z",
+            "summary": "동일 canonical entity의 공식 MusicBrainz API를 공유 게이트에서 실제 읽음. id/name/country/type/개별 원작 및 URL 관계를 확인. 태그는 장르 판정에 사용하지 않았다."
+          }
+        ]
+      },
+      "readback": {
+        "name": "THE ALFEE",
+        "bandId": "cd18a626-cb8f-4f46-8c0d-f6ccf7f9afa4",
+        "status": "approved",
+        "category": "jpop",
+        "versionMatches": true,
+        "identityPreserved": true,
+        "relationsPreserved": true,
+        "publicationApproval": true
+      }
+    }
+  ]
+}

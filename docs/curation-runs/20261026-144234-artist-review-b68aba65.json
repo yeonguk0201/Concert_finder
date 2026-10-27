@@ -1,0 +1,4884 @@
+{
+  "version": 1,
+  "role": "artist-review",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "policy": "jpop-or-rock-v1",
+  "observedAt": "2026-10-26T05:42:34.174242+00:00",
+  "runId": "b68aba65-192f-4aa4-8c7e-52a4ee59b892",
+  "serverLifecycle": {
+    "id": "b68aba65-192f-4aa4-8c7e-52a4ee59b892",
+    "started_at": "2026-10-26 05:34:06.855+00",
+    "finished_at": "2026-10-26 05:41:11.818942+00",
+    "targets": 40
+  },
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 2964,
+    "active": null,
+    "transfer": null,
+    "sha256": "a1ed66756e262a9fa5b70b5aacccef190d5bbf2cf746f28e252168453b756615"
+  },
+  "selected": 40,
+  "selectedTasks": 76,
+  "researchCompleted": 1,
+  "approvalAppliedVerified": 1,
+  "researchDeferred": 17,
+  "approvalDeferred": 17,
+  "channelsDeferred": 40,
+  "newChannels": 0,
+  "newPhotos": 0,
+  "channelCacheReused": 0,
+  "catalogCount": 658,
+  "catalogStatusCounts": {
+    "approved": 354,
+    "unreviewed": 298,
+    "excluded": 6
+  },
+  "queueRemainingEligibleArtists": 404,
+  "corePlan": {
+    "selected": 76,
+    "unfilled": 124,
+    "mandatory": 4,
+    "complete": false
+  },
+  "requests": {
+    "musicbrainzHttpRequests": 41,
+    "musicbrainzEntities": 40,
+    "musicbrainzInternalRetries": 1,
+    "lastfmHttpRequests": 29,
+    "lastfmCacheReusedArtists": 22,
+    "lastfmApiError6": 7,
+    "lastfmMbidMismatches": [
+      {
+        "i": 31,
+        "requested": "189a3528-68c2-480f-a4e1-c4db29152398",
+        "returned": "5cdf9d0e-73b5-4159-a6cb-7a1861b65699"
+      }
+    ],
+    "youtubeApiRequests": 0,
+    "chartRequests": 0
+  },
+  "readback": [
+    {
+      "id": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+      "name": "심규선",
+      "curation_status": "approved",
+      "category": "domestic_rock",
+      "updated_at": "2026-10-26 05:38:41.267646+00",
+      "country_code": "KR",
+      "musicbrainz_id": "189a3528-68c2-480f-a4e1-c4db29152398",
+      "aliases": [
+        "Lucia",
+        "Sim Gyu Seon"
+      ],
+      "publication_approved": true,
+      "concert_relations": 0,
+      "follow_relations": 0
+    }
+  ],
+  "preserved": {
+    "cooldownSha256": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+    "falseDraftSha256": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337",
+    "initialHead": "a2f4de6",
+    "f267be1Ancestor": true,
+    "fd45938Ancestor": true
+  },
+  "validation": {
+    "newTestsRun": 0,
+    "codeAndTestsUnchangedSince": "a2f4de6",
+    "docsUtf8JsonDiffCheck": "passed",
+    "identityClient": "현재 코드에 mutation CLI/journal 및 receipt/search readback 경로가 이미 구현돼 있음. 기존 호환 문서의 최신 절을 따름. 운영 신규/별칭 성공을 이번 실행에서 주장하지 않음."
+  },
+  "limitations": [
+    "공식 페이지의 YouTube 링크 표시만으로 전체 목적지 ID를 추정하지 않았다. 정확 링크/API 검증 미완료로 manifest verified 및 저장 미수행. YouTube 페이지/비공식API 스크래핑0.",
+    "미검수 개인 작곡가/세션 ID는 자료 부족만으로 제외·보류하지 않았다. 김수희의 트로트/메탈 협업은 구체 분류 경계로 보존했다.",
+    "웹 조사 checkedAt은 실제 읽은 후 기록 시각이며 정밀 HTTP 요청 로그로 가장하지 않음. 검색 시도·MB조회만으로 연구 완료를 세지 않음.",
+    "상태 집계는 현재 snapshot이며 전체 카탈로그/핵심200 완료가 아님. 운영 DDL/공연 수집/공개ON/발송/예약 변경/배포/push/PR/merge 없음."
+  ],
+  "artists": [
+    {
+      "index": 0,
+      "bandId": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+      "name": "Manic Street Preachers",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:39.539879+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:43.982Z",
+            "waitingSince": "2026-10-13T09:01:43.982Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:43.982Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:43.982Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://www.sonymusic.co.uk/about/",
+                  "checkedAt": "2026-10-13T09:01:43.982Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:38.707Z",
+            "waitingSince": "2026-10-25T05:29:38.707Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:38.707Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:38.707Z",
+            "proposal": {
+              "target_band_id": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+              "expected_updated_at": "2026-10-13T08:19:43.141883+00:00",
+              "artist_name": "Manic Street Preachers",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "マニック・ストリート・プリーチャーズ",
+                "Manics",
+                "The Manic Street Preachers",
+                "Maniac Street Preachers",
+                "M.S.P.",
+                "MSP"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: Blackwood/Caerphilly에서1986년 결성한 웨일스 얼터너티브 록 밴드, Bradfield/Wire/Moore 멤버와 This Is My Truth Tell Me Yours 등 음반 확인.",
+              "evidence_url": "https://www.sonymusic.co.uk/artist/manic-street-preachers/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:39.539879+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:15.290Z",
+            "waitingSince": "2026-10-25T05:33:15.290Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:15.290Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+        "name": "Manic Street Preachers",
+        "aliases": [
+          "マニック・ストリート・プリーチャーズ",
+          "Manics",
+          "The Manic Street Preachers",
+          "Maniac Street Preachers",
+          "M.S.P.",
+          "MSP"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "32efea44-6cb5-4b4f-bdaa-c8b8f6cef981",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:39.539879+00:00"
+      },
+      "musicbrainz": {
+        "id": "32efea44-6cb5-4b4f-bdaa-c8b8f6cef981",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:34:47.247Z",
+        "sourceUrl": "https://musicbrainz.org/artist/32efea44-6cb5-4b4f-bdaa-c8b8f6cef981"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. YouTube 링크 표시. 검색 도구 응답에서 목적지 전체 URL 확인 불가. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완. 요청 집계에는 특정 아티스트에 귀속하지 못한 공유 MusicBrainz 내부 재시도1을 batch 공통비용으로 포함.",
+          "checkedAt": "2026-10-26T05:41:03.954Z",
+          "waitingSince": "2026-10-26T05:41:03.954Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:03.954Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.manicstreetpreachers.com/",
+        "summary": "YouTube 링크 표시. 검색 도구 응답에서 목적지 전체 URL 확인 불가."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UC0fmT1J9iVv_wzLUN7E-aJA",
+        "https://www.youtube.com/user/ManicStPreachersVEVO"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 1,
+      "bandId": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+      "name": "Megadeth",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:41.359757+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:43.983Z",
+            "waitingSince": "2026-10-13T09:01:43.983Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:43.983Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:43.983Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://www.megadeth.com/pages/band",
+                  "checkedAt": "2026-10-13T09:01:43.983Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:40.622Z",
+            "waitingSince": "2026-10-25T05:29:40.622Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:40.622Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:40.622Z",
+            "proposal": {
+              "target_band_id": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+              "expected_updated_at": "2026-10-13T08:20:53.305875+00:00",
+              "artist_name": "Megadeth",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "メガデス",
+                "Megadeath",
+                "The World Needs a Hero"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: Dave Mustaine의1983년 결성 및 thrash metal 활동, Rust In Peace/Countdown To Extinction/Youthanasia 등의 작품 확인. / 1983년6월 Hollywood CA에서 Mustaine/Ellefson 등이 Megadeth를 결성한 연혁으로 미국 신원 확인.",
+              "evidence_url": "https://www.megadeth.com/pages/band"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:41.359757+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:15.397Z",
+            "waitingSince": "2026-10-25T05:33:15.397Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:15.397Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+        "name": "Megadeth",
+        "aliases": [
+          "メガデス",
+          "Megadeath",
+          "The World Needs a Hero"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:41.359757+00:00"
+      },
+      "musicbrainz": {
+        "id": "a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:34:50.642Z",
+        "sourceUrl": "https://musicbrainz.org/artist/a9044915-8be3-4c7e-b11f-9e2d2ea0a91e"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 음반·공식 band 메뉴 확인. 직접 채널 목적지 미확인, MB에 두 후보. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.085Z",
+          "waitingSince": "2026-10-26T05:41:04.085Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.085Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.megadeth.com/",
+        "summary": "음반·공식 band 메뉴 확인. 직접 채널 목적지 미확인, MB에 두 후보."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UC-Ugu5IBFgrYuHBAW2DjmZQ",
+        "https://www.youtube.com/channel/UCLVz1B001PIbq9LliJenV2w"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 2,
+      "bandId": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+      "name": "Mötley Crüe",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:45.547641+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:43.989Z",
+            "waitingSince": "2026-10-13T09:01:43.989Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:43.989Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:43.989Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://www.motley.com/#band-section",
+                  "checkedAt": "2026-10-13T09:01:43.989Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:44.790Z",
+            "waitingSince": "2026-10-25T05:29:44.790Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:44.790Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:44.790Z",
+            "proposal": {
+              "target_band_id": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+              "expected_updated_at": "2026-10-13T08:20:51.25624+00:00",
+              "artist_name": "Mötley Crüe",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "モトリー・クルー",
+                "Mötley Crue",
+                "Motley Crue"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: Los Angeles CA 출신 Vince Neil/Nikki Sixx/Tommy Lee/Mick Mars와 John5의 밴드. 공식 소개가 록 밴드 활동과 Kickstart My Heart/Home Sweet Home을 명시.",
+              "evidence_url": "https://www.motley.com/bio"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:45.547641+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:15.699Z",
+            "waitingSince": "2026-10-25T05:33:15.699Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:15.699Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+        "name": "Mötley Crüe",
+        "aliases": [
+          "モトリー・クルー",
+          "Mötley Crue",
+          "Motley Crue"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "26f07661-e115-471d-a930-206f5c89d17c",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:45.547641+00:00"
+      },
+      "musicbrainz": {
+        "id": "26f07661-e115-471d-a930-206f5c89d17c",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:34:52.907Z",
+        "sourceUrl": "https://musicbrainz.org/artist/26f07661-e115-471d-a930-206f5c89d17c"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. YouTube 링크 표시. 전체 목적지 미확인, MB에 두 후보. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.177Z",
+          "waitingSince": "2026-10-26T05:41:04.177Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.177Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.motley.com/",
+        "summary": "YouTube 링크 표시. 전체 목적지 미확인, MB에 두 후보."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UC4OIQdGVhOAQx3IgrAnSzaw",
+        "https://www.youtube.com/channel/UCq2g_Vcu3J1OwNRmdTNoxYA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 3,
+      "bandId": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+      "name": "Motörhead",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:46.934425+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:43.990Z",
+            "waitingSince": "2026-10-13T09:01:43.990Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:43.990Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:43.990Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://imotorhead.com/",
+                  "checkedAt": "2026-10-13T09:01:43.990Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:46.216Z",
+            "waitingSince": "2026-10-25T05:29:46.216Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:46.216Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:46.216Z",
+            "proposal": {
+              "target_band_id": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+              "expected_updated_at": "2026-10-13T08:19:22.487603+00:00",
+              "artist_name": "Motörhead",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "The Wacken Family Choir Mix",
+                "モーターヘッド",
+                "Moterhead",
+                "Motorhead"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 음반사 Cleopatra의 Motörhead 전용 소개가1975년 결성한 영국 록 밴드 및 Lemmy/Larry Wallis/Lucas Fox를 명시. 공식 imotorhead 링크도 제공. / Motörhead 공식 사이트의 밴드 페이지 확인. 현재 짧은 안내만 있어 상세 장르·국가 근거는 레이블 소개와 대조.",
+              "evidence_url": "https://cleopatrarecordsmotrhead.bandcamp.com/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:46.934425+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:15.802Z",
+            "waitingSince": "2026-10-25T05:33:15.802Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:15.802Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+        "name": "Motörhead",
+        "aliases": [
+          "The Wacken Family Choir Mix",
+          "モーターヘッド",
+          "Moterhead",
+          "Motorhead"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "57961a97-3796-4bf7-9f02-a985a8979ae9",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:46.934425+00:00"
+      },
+      "musicbrainz": {
+        "id": "57961a97-3796-4bf7-9f02-a985a8979ae9",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:34:55.489Z",
+        "sourceUrl": "https://musicbrainz.org/artist/57961a97-3796-4bf7-9f02-a985a8979ae9"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 음반/역사 확인. 직접 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.280Z",
+          "waitingSince": "2026-10-26T05:41:04.280Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.280Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://imotorhead.com/",
+        "summary": "공식 음반/역사 확인. 직접 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCbPCDmtTU-W4SdA8abZtWpA",
+        "https://www.youtube.com/user/L0D666"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 4,
+      "bandId": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+      "name": "Rage Against the Machine",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:52.410125+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:43.995Z",
+            "waitingSince": "2026-10-13T09:01:43.995Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:43.995Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:43.995Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://www.ratm.com/bio/",
+                  "checkedAt": "2026-10-13T09:01:43.995Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:51.687Z",
+            "waitingSince": "2026-10-25T05:29:51.687Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:51.687Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:51.687Z",
+            "proposal": {
+              "target_band_id": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+              "expected_updated_at": "2026-10-13T08:19:52.668155+00:00",
+              "artist_name": "Rage Against the Machine",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "レイジアゲインストザマシーン",
+                "レイジ・アゲインスト・ザ・マシーン",
+                "Rage",
+                "Rage Againts the Machine",
+                "RATM"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1991년 Los Angeles에서 결성한 미국 록 밴드로 Zack/Tim/Tom/Brad 멤버와 Epic 계약 및 셀프타이틀 작품을 설명. 차트 순위는 판정에 사용하지 않음.",
+              "evidence_url": "https://www.officialcharts.com/artist/28610/rage-against-the-machine/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:52.410125+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:16.034Z",
+            "waitingSince": "2026-10-25T05:33:16.034Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:16.034Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+        "name": "Rage Against the Machine",
+        "aliases": [
+          "レイジアゲインストザマシーン",
+          "レイジ・アゲインスト・ザ・マシーン",
+          "Rage",
+          "Rage Againts the Machine",
+          "RATM"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "3798b104-01cb-484c-a3b0-56adc6399b80",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:52.410125+00:00"
+      },
+      "musicbrainz": {
+        "id": "3798b104-01cb-484c-a3b0-56adc6399b80",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:03.387Z",
+        "sourceUrl": "https://musicbrainz.org/artist/3798b104-01cb-484c-a3b0-56adc6399b80"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 동영상 및 YouTube 링크 표시. watch 링크와 채널 ID를 동일시하지 않음. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.372Z",
+          "waitingSince": "2026-10-26T05:41:04.372Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.372Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.ratm.com/",
+        "summary": "동영상 및 YouTube 링크 표시. watch 링크와 채널 ID를 동일시하지 않음."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCFcytuxeGAHyM67L_nHDTIA",
+        "https://www.youtube.com/channel/UCm_W_hbwbzJE8w52jZ2NO0A"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 5,
+      "bandId": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+      "name": "Rush",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:55.596666+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:43.998Z",
+            "waitingSince": "2026-10-13T09:01:43.998Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:43.998Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:43.998Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://www.rush.com/band/",
+                  "checkedAt": "2026-10-13T09:01:43.998Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:54.863Z",
+            "waitingSince": "2026-10-25T05:29:54.863Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:54.863Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:54.863Z",
+            "proposal": {
+              "target_band_id": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+              "expected_updated_at": "2026-10-13T08:19:12.008182+00:00",
+              "artist_name": "Rush",
+              "country": "CA",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "ラッシュ"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: Toronto Willowdale에서1968년 결성, 캐나다 출신을 명시. 2112의 progressive rock 및 Moving Pictures/A Farewell to Kings와 Lifeson/Lee/Peart 확인.",
+              "evidence_url": "https://www.rush.com/band/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:55.596666+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:16.232Z",
+            "waitingSince": "2026-10-25T05:33:16.232Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:16.232Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+        "name": "Rush",
+        "aliases": [
+          "ラッシュ"
+        ],
+        "country_code": "CA",
+        "musicbrainz_id": "534ee493-bfac-4575-a44a-0ae41e2c3fe4",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:55.596666+00:00"
+      },
+      "musicbrainz": {
+        "id": "534ee493-bfac-4575-a44a-0ae41e2c3fe4",
+        "country": "CA",
+        "type": "Group",
+        "disambiguation": "Canadian rock trio",
+        "checkedAt": "2026-10-26T05:35:07.599Z",
+        "sourceUrl": "https://musicbrainz.org/artist/534ee493-bfac-4575-a44a-0ae41e2c3fe4"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 사이트 footer YouTube 링크 표시. 전체 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.461Z",
+          "waitingSince": "2026-10-26T05:41:04.461Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.461Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.rush.com/",
+        "summary": "공식 사이트 footer YouTube 링크 표시. 전체 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UC5C-Asy_myoWCkLEtZR72SA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 6,
+      "bandId": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+      "name": "Sigur Rós",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:29:58.423001+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:01:44.000Z",
+            "waitingSince": "2026-10-13T09:01:44.000Z",
+            "lastSuccessfulAt": "2026-10-13T09:01:44.000Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:01:44.000Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://sigurros.com/band/",
+                  "checkedAt": "2026-10-13T09:01:44.000Z",
+                  "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:29:57.690Z",
+            "waitingSince": "2026-10-25T05:29:57.690Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:29:57.690Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:29:57.690Z",
+            "proposal": {
+              "target_band_id": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+              "expected_updated_at": "2026-10-13T08:20:04.476574+00:00",
+              "artist_name": "Sigur Rós",
+              "country": "IS",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "Sigur Ros",
+                "シガー・ロス",
+                "Sìgur Ros",
+                "Sìgur Rós"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 북유럽이사회 음악상 선정 사유가1994년 결성한 아이슬란드 post-rock 밴드로 명시하고 실험적 작곡·공연과 공식 sigurros.com 연결을 제공.",
+              "evidence_url": "https://www.norden.org/en/nominee/sigur-ros"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:29:58.423001+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:16.430Z",
+            "waitingSince": "2026-10-25T05:33:16.430Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:16.430Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+        "name": "Sigur Rós",
+        "aliases": [
+          "Sigur Ros",
+          "シガー・ロス",
+          "Sìgur Ros",
+          "Sìgur Rós"
+        ],
+        "country_code": "IS",
+        "musicbrainz_id": "f6f2326f-6b25-4170-b89d-e235b25508e8",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:29:58.423001+00:00"
+      },
+      "musicbrainz": {
+        "id": "f6f2326f-6b25-4170-b89d-e235b25508e8",
+        "country": "IS",
+        "type": "Group",
+        "disambiguation": "Icelandic post‐rock band",
+        "checkedAt": "2026-10-26T05:35:11.340Z",
+        "sourceUrl": "https://musicbrainz.org/artist/f6f2326f-6b25-4170-b89d-e235b25508e8"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 사이트 읽음. 정확한 직접 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.548Z",
+          "waitingSince": "2026-10-26T05:41:04.548Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.548Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://sigurros.com/",
+        "summary": "공식 사이트 읽음. 정확한 직접 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCAmt29QykFXnuIqQoEEnEFg",
+        "https://www.youtube.com/channel/UCPfV1jxOwDJnQUlCVl_xIOA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 7,
+      "bandId": "6a8840a5-e1ef-4ee4-a171-25b592e3cc09",
+      "name": "Blondie",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:02.535614+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.092Z",
+            "waitingSince": "2026-10-13T09:03:42.092Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.092Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.092Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/blondie/",
+                  "checkedAt": "2026-10-13T09:03:42.092Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:01.790Z",
+            "waitingSince": "2026-10-25T05:30:01.790Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:01.790Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:01.790Z",
+            "proposal": {
+              "target_band_id": "6a8840a5-e1ef-4ee4-a171-25b592e3cc09",
+              "expected_updated_at": "2026-10-13T08:19:34.683922+00:00",
+              "artist_name": "Blondie",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "ブロンディ",
+                "Deborah Harry & Blondie"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1974년 Debbie Harry/Chris Stein이 결성한 New York punk/new wave 신원과 Parallel Lines/Heart Of Glass 작품을 설명. / 신원별 소개에서 punk/new wave와 혼합 장르 실험을 구체적으로 설명. 헌액 사실만으로 장르를 판정하지 않음.",
+              "evidence_url": "https://www.officialcharts.com/artist/16742/blondie/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:02.535614+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.048Z",
+            "waitingSince": "2026-10-25T05:33:17.048Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.048Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "6a8840a5-e1ef-4ee4-a171-25b592e3cc09",
+        "name": "Blondie",
+        "aliases": [
+          "ブロンディ",
+          "Deborah Harry & Blondie"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "4d2956d1-a3f7-44bb-9a41-67563e1a0c94",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:02.535614+00:00"
+      },
+      "musicbrainz": {
+        "id": "4d2956d1-a3f7-44bb-9a41-67563e1a0c94",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "US rock band",
+        "checkedAt": "2026-10-26T05:35:15.467Z",
+        "sourceUrl": "https://musicbrainz.org/artist/4d2956d1-a3f7-44bb-9a41-67563e1a0c94"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 실제 punk/rock 앨범 소개 확인. 정확 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.636Z",
+          "waitingSince": "2026-10-26T05:41:04.636Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.636Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.blondie.net/",
+        "summary": "실제 punk/rock 앨범 소개 확인. 정확 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCZ61C4Ymbb8xShMKrjNtvWg"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 8,
+      "bandId": "9158a0c7-9165-482e-a2d3-580acf95c276",
+      "name": "Dire Straits",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:03.922836+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.100Z",
+            "waitingSince": "2026-10-13T09:03:42.100Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.100Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.100Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/dire-straits/",
+                  "checkedAt": "2026-10-13T09:03:42.100Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:03.205Z",
+            "waitingSince": "2026-10-25T05:30:03.205Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:03.205Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:03.205Z",
+            "proposal": {
+              "target_band_id": "9158a0c7-9165-482e-a2d3-580acf95c276",
+              "expected_updated_at": "2026-10-13T08:19:28.909767+00:00",
+              "artist_name": "Dire Straits",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "다이어 스트레이츠",
+                "ダイアー・ストレイツ",
+                "Dire Straits (TH)",
+                "Dire Straights"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1977년 Deptford London에서 Mark/David Knopfler·John Illsley·Pick Withers가 결성한 British rock band로 명시. Brothers In Arms 등 작품 확인.",
+              "evidence_url": "https://www.officialcharts.com/artist/16752/dire-straits/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:03.922836+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.145Z",
+            "waitingSince": "2026-10-25T05:33:17.145Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.145Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "9158a0c7-9165-482e-a2d3-580acf95c276",
+        "name": "Dire Straits",
+        "aliases": [
+          "다이어 스트레이츠",
+          "ダイアー・ストレイツ",
+          "Dire Straits (TH)",
+          "Dire Straights"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "614e3804-7d34-41ba-857f-811bad7c2b7a",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:03.922836+00:00"
+      },
+      "musicbrainz": {
+        "id": "614e3804-7d34-41ba-857f-811bad7c2b7a",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:17.506Z",
+        "sourceUrl": "https://musicbrainz.org/artist/614e3804-7d34-41ba-857f-811bad7c2b7a"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 응답에 텍스트 없음. 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.721Z",
+          "waitingSince": "2026-10-26T05:41:04.721Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.721Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.direstraits.com/",
+        "summary": "응답에 텍스트 없음. 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCA37MBUzQgLbUHoUQgl-p0g",
+        "https://www.youtube.com/channel/UCc4o6gJBS8VQto3ZR5Z_wcw"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 9,
+      "bandId": "ff374181-31ab-400f-95fa-9f403b8655a3",
+      "name": "Foo Fighters",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:05.317688+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.107Z",
+            "waitingSince": "2026-10-13T09:03:42.107Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.107Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.107Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/foo-fighters/",
+                  "checkedAt": "2026-10-13T09:03:42.107Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:04.602Z",
+            "waitingSince": "2026-10-25T05:30:04.602Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:04.602Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:04.602Z",
+            "proposal": {
+              "target_band_id": "ff374181-31ab-400f-95fa-9f403b8655a3",
+              "expected_updated_at": "2026-10-12T14:45:06.73206+00:00",
+              "artist_name": "Foo Fighters",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "フー・ファイター",
+                "푸 파이터스",
+                "Foofighters"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1994년 Seattle에서 Dave Grohl이 결성한 American rock band와 멤버를 명시. / 기타 riff·드럼·록 표현을 구체적으로 설명하고 Grohl/Smear/Mendel 등의 신원 대조.",
+              "evidence_url": "https://www.officialcharts.com/artist/27860/foo-fighters/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:05.317688+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.410Z",
+            "waitingSince": "2026-10-25T05:33:17.410Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.410Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "ff374181-31ab-400f-95fa-9f403b8655a3",
+        "name": "Foo Fighters",
+        "aliases": [
+          "フー・ファイター",
+          "푸 파이터스",
+          "Foofighters"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "67f66c07-6e61-4026-ade5-7e782fad3a5d",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:05.317688+00:00"
+      },
+      "musicbrainz": {
+        "id": "67f66c07-6e61-4026-ade5-7e782fad3a5d",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:19.713Z",
+        "sourceUrl": "https://musicbrainz.org/artist/67f66c07-6e61-4026-ade5-7e782fad3a5d"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 응답이 iframe만 표시. 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.822Z",
+          "waitingSince": "2026-10-26T05:41:04.822Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.822Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.foofighters.com/",
+        "summary": "응답이 iframe만 표시. 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCGRjJrpD2bmk9Ilq6nq80qg",
+        "https://www.youtube.com/channel/UCi2KNss4Yx73NG0JARSFe0A"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 10,
+      "bandId": "988e032d-91c7-4630-a54b-01a68545542a",
+      "name": "Genesis",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:06.673594+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.108Z",
+            "waitingSince": "2026-10-13T09:03:42.108Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.108Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.108Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/genesis/",
+                  "checkedAt": "2026-10-13T09:03:42.108Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:05.956Z",
+            "waitingSince": "2026-10-25T05:30:05.956Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:05.956Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:05.956Z",
+            "proposal": {
+              "target_band_id": "988e032d-91c7-4630-a54b-01a68545542a",
+              "expected_updated_at": "2026-10-13T08:19:07.894501+00:00",
+              "artist_name": "Genesis",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "Genesys",
+                "Phil Collins and Genesis"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1967년 Surrey Charterhouse 결성 영국 밴드, Gabriel/Collins/Banks/Rutherford 등을 명시. progressive rock에서 후속 rock 전개 및 Invisible Touch 확인.",
+              "evidence_url": "https://www.officialcharts.com/artist/14995/genesis/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:06.673594+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.505Z",
+            "waitingSince": "2026-10-25T05:33:17.505Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.505Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "988e032d-91c7-4630-a54b-01a68545542a",
+        "name": "Genesis",
+        "aliases": [
+          "Genesys",
+          "Phil Collins and Genesis"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "8e3fcd7d-bda1-4ca0-b987-b8528d2ee74e",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:06.673594+00:00"
+      },
+      "musicbrainz": {
+        "id": "8e3fcd7d-bda1-4ca0-b987-b8528d2ee74e",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "English rock band",
+        "checkedAt": "2026-10-26T05:35:22.097Z",
+        "sourceUrl": "https://musicbrainz.org/artist/8e3fcd7d-bda1-4ca0-b987-b8528d2ee74e"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. YouTube 링크 표시. 전체 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:04.916Z",
+          "waitingSince": "2026-10-26T05:41:04.916Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:04.916Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://genesis-music.com/",
+        "summary": "YouTube 링크 표시. 전체 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UChv9FR8xwUxEkdBUVu4VUOw"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 11,
+      "bandId": "59bcb7f9-2cf8-4df3-a9d1-908c6efdba95",
+      "name": "Heart",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:08.208498+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.111Z",
+            "waitingSince": "2026-10-13T09:03:42.111Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.111Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.111Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/heart/",
+                  "checkedAt": "2026-10-13T09:03:42.111Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:07.421Z",
+            "waitingSince": "2026-10-25T05:30:07.421Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:07.421Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:07.421Z",
+            "proposal": {
+              "target_band_id": "59bcb7f9-2cf8-4df3-a9d1-908c6efdba95",
+              "expected_updated_at": "2026-10-13T08:20:47.497692+00:00",
+              "artist_name": "Heart",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: Ann/Nancy Wilson 밴드 Heart의 Seattle 시작, Crazy On You/Magic Man/Barracuda/Dreamboat Annie 시대와 실제 rock 연주·작곡을 확인. / hard rock과 folk 혼합 활동을 명시하고 Wilson 자매와 Fisher/Fossen 등 밴드 신원 확인. 초기 Vancouver 활동을 단독 국가로 바꾸지 않음.",
+              "evidence_url": "https://walkoffame.com/heart/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:08.208498+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.618Z",
+            "waitingSince": "2026-10-25T05:33:17.618Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.618Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "59bcb7f9-2cf8-4df3-a9d1-908c6efdba95",
+        "name": "Heart",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "bdbd48f5-abf3-4a4f-9a21-4551dbc3fde9",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:08.208498+00:00"
+      },
+      "musicbrainz": {
+        "id": "bdbd48f5-abf3-4a4f-9a21-4551dbc3fde9",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "rock band, Ann and Nancy Wilson",
+        "checkedAt": "2026-10-26T05:35:23.886Z",
+        "sourceUrl": "https://musicbrainz.org/artist/bdbd48f5-abf3-4a4f-9a21-4551dbc3fde9"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 새 웹사이트 준비/투어 목록 표시. 직접 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.019Z",
+          "waitingSince": "2026-10-26T05:41:05.019Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.019Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.heart-music.com/",
+        "summary": "새 웹사이트 준비/투어 목록 표시. 직접 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCsFPCqkPsesPa8XxN1pJx-w"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 12,
+      "bandId": "4a87b412-40fb-4432-a26d-063470dac866",
+      "name": "Journey",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:09.590933+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.112Z",
+            "waitingSince": "2026-10-13T09:03:42.112Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.112Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.112Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/journey/",
+                  "checkedAt": "2026-10-13T09:03:42.112Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:08.844Z",
+            "waitingSince": "2026-10-25T05:30:08.844Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:08.844Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:08.844Z",
+            "proposal": {
+              "target_band_id": "4a87b412-40fb-4432-a26d-063470dac866",
+              "expected_updated_at": "2026-10-13T08:19:34.356747+00:00",
+              "artist_name": "Journey",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1973년 결성 American rock band Journey라는 레이블 소개와 공식 아티스트 사이트 연결 확인.",
+              "evidence_url": "https://www.sonymusic.co.uk/artist/journey/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:09.590933+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.724Z",
+            "waitingSince": "2026-10-25T05:33:17.724Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.724Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "4a87b412-40fb-4432-a26d-063470dac866",
+        "name": "Journey",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "abd506e1-6f2b-4d6f-b937-92c267f6f88b",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:09.590933+00:00"
+      },
+      "musicbrainz": {
+        "id": "abd506e1-6f2b-4d6f-b937-92c267f6f88b",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "American rock band",
+        "checkedAt": "2026-10-26T05:35:28.345Z",
+        "sourceUrl": "https://musicbrainz.org/artist/abd506e1-6f2b-4d6f-b937-92c267f6f88b"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 작품/밴드 확인. 직접 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.107Z",
+          "waitingSince": "2026-10-26T05:41:05.107Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.107Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://journeymusic.com/",
+        "summary": "공식 작품/밴드 확인. 직접 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCCcn1f6IDJyXVNYoiYIGZFw"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 13,
+      "bandId": "0588a5bf-51d1-482d-b1a0-ef946644e9da",
+      "name": "Judas Priest",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:10.986973+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.113Z",
+            "waitingSince": "2026-10-13T09:03:42.113Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.113Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.113Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/judas-priest/",
+                  "checkedAt": "2026-10-13T09:03:42.113Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:10.270Z",
+            "waitingSince": "2026-10-25T05:30:10.270Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:10.270Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:10.270Z",
+            "proposal": {
+              "target_band_id": "0588a5bf-51d1-482d-b1a0-ef946644e9da",
+              "expected_updated_at": "2026-10-13T08:19:25.175178+00:00",
+              "artist_name": "Judas Priest",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "Iudas Sacerdos",
+                "猶太祭司",
+                "דזשודאס פריסט",
+                "จูดาสพรีสต์",
+                "జుడాస్ ప్రీస్",
+                "Џудас прист",
+                "주다스 프리스트",
+                "ಜುದಾಸ್ ಪ್ರೀಸ್ಟ್‌",
+                "ジューダス・プリースト",
+                "जुडास प्रीस्ट",
+                "જુડાસ પ્રિસ્ટ",
+                "ג'ודס פריסט",
+                "জুডাস প্রিস্ট",
+                "Джудас Прийст",
+                "جوداس بريست",
+                "Judus Prist"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1969년 Birmingham England에서 결성된 English heavy metal band라는 레이블 소개로 영국 신원·실제 장르를 대조.",
+              "evidence_url": "https://www.sonymusic.co.uk/artist/judas-priest/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:10.986973+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:17.830Z",
+            "waitingSince": "2026-10-25T05:33:17.830Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:17.830Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "0588a5bf-51d1-482d-b1a0-ef946644e9da",
+        "name": "Judas Priest",
+        "aliases": [
+          "Iudas Sacerdos",
+          "猶太祭司",
+          "דזשודאס פריסט",
+          "จูดาสพรีสต์",
+          "జుడాస్ ప్రీస్",
+          "Џудас прист",
+          "주다스 프리스트",
+          "ಜುದಾಸ್ ಪ್ರೀಸ್ಟ್‌",
+          "ジューダス・プリースト",
+          "जुडास प्रीस्ट",
+          "જુડાસ પ્રિસ્ટ",
+          "ג'ודס פריסט",
+          "জুডাস প্রিস্ট",
+          "Джудас Прийст",
+          "جوداس بريست",
+          "Judus Prist"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "6b335658-22c8-485d-93de-0bc29a1d0349",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:10.986973+00:00"
+      },
+      "musicbrainz": {
+        "id": "6b335658-22c8-485d-93de-0bc29a1d0349",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:33.135Z",
+        "sourceUrl": "https://musicbrainz.org/artist/6b335658-22c8-485d-93de-0bc29a1d0349"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 입장 페이지·음원서비스 링크 표시. 직접 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.202Z",
+          "waitingSince": "2026-10-26T05:41:05.202Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.202Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.judaspriest.com/",
+        "summary": "입장 페이지·음원서비스 링크 표시. 직접 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UC48vpdaG8NDvEGLj11XPPZQ",
+        "https://www.youtube.com/channel/UCStHqF-8YWv8x6SJcTFkEXA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 14,
+      "bandId": "62230c1f-147b-4e59-b38b-e16978833055",
+      "name": "Led Zeppelin",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:12.38908+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.116Z",
+            "waitingSince": "2026-10-13T09:03:42.116Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.116Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.116Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/led-zeppelin/",
+                  "checkedAt": "2026-10-13T09:03:42.116Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:11.643Z",
+            "waitingSince": "2026-10-25T05:30:11.643Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:11.643Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:11.643Z",
+            "proposal": {
+              "target_band_id": "62230c1f-147b-4e59-b38b-e16978833055",
+              "expected_updated_at": "2026-10-13T08:19:05.169193+00:00",
+              "artist_name": "Led Zeppelin",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "レッド・ツェッペリン",
+                "レッド・ゼップ",
+                "レッドゼップ",
+                "ゼップ",
+                "ledzep",
+                "Bootleg Zeppelin",
+                "LZ",
+                "Led Zepplelin",
+                "Led Zepellin",
+                "レッド ツェッペリン",
+                "レッドツェッペリン",
+                "Led Zepplin",
+                "Led Zep"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: London에서 결성한 Plant/Page/John Paul Jones/Bonham 밴드와 heavy metal 기여 설명. / blues/Celtic folk 혼합 실제 록 활동과 Led Zeppelin I~IV·Physical Graffiti 등 작품을 설명.",
+              "evidence_url": "https://www.officialcharts.com/artist/29594/led-zeppelin/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:12.38908+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.099Z",
+            "waitingSince": "2026-10-25T05:33:18.099Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.099Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "62230c1f-147b-4e59-b38b-e16978833055",
+        "name": "Led Zeppelin",
+        "aliases": [
+          "レッド・ツェッペリン",
+          "レッド・ゼップ",
+          "レッドゼップ",
+          "ゼップ",
+          "ledzep",
+          "Bootleg Zeppelin",
+          "LZ",
+          "Led Zepplelin",
+          "Led Zepellin",
+          "レッド ツェッペリン",
+          "レッドツェッペリン",
+          "Led Zepplin",
+          "Led Zep"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:12.38908+00:00"
+      },
+      "musicbrainz": {
+        "id": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:35.257Z",
+        "sourceUrl": "https://musicbrainz.org/artist/678d88b2-87b0-403b-b63d-5da7465aecc3"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. stairway 캠페인으로 이동. 동영상 iframe은 직접 채널 링크 근거가 아님. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.289Z",
+          "waitingSince": "2026-10-26T05:41:05.289Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.289Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.ledzeppelin.com/",
+        "summary": "stairway 캠페인으로 이동. 동영상 iframe은 직접 채널 링크 근거가 아님."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCaKZA66vM_TUpetUNohmR0A"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 15,
+      "bandId": "44315219-899b-4a01-a3fc-61a77dd3e2c3",
+      "name": "Pearl Jam",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:13.751371+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.121Z",
+            "waitingSince": "2026-10-13T09:03:42.121Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.121Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.121Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/pearl-jam/",
+                  "checkedAt": "2026-10-13T09:03:42.121Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:13.024Z",
+            "waitingSince": "2026-10-25T05:30:13.024Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:13.024Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:13.024Z",
+            "proposal": {
+              "target_band_id": "44315219-899b-4a01-a3fc-61a77dd3e2c3",
+              "expected_updated_at": "2026-10-13T08:19:03.810661+00:00",
+              "artist_name": "Pearl Jam",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "Mookie Blaylock"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: American rock group과 Ament/Cameron/Gossard/McCready/Vedder를 명시하고 Jeremy/Spin The Black Circle 활동을 대조.",
+              "evidence_url": "https://www.sonymusic.co.uk/artist/pearl-jam/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:13.751371+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.198Z",
+            "waitingSince": "2026-10-25T05:33:18.198Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.198Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "44315219-899b-4a01-a3fc-61a77dd3e2c3",
+        "name": "Pearl Jam",
+        "aliases": [
+          "Mookie Blaylock"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "83b9cbe7-9857-49e2-ab8e-b57b01038103",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:13.751371+00:00"
+      },
+      "musicbrainz": {
+        "id": "83b9cbe7-9857-49e2-ab8e-b57b01038103",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:37.468Z",
+        "sourceUrl": "https://musicbrainz.org/artist/83b9cbe7-9857-49e2-ab8e-b57b01038103"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 작품/영상 메뉴 확인. 정확 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.392Z",
+          "waitingSince": "2026-10-26T05:41:05.392Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.392Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://pearljam.com/",
+        "summary": "공식 작품/영상 메뉴 확인. 정확 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UClQT6Vnsm6BUm0I5kR26EkQ",
+        "https://www.youtube.com/channel/UCqSQvq0K7rtRL8hX175LkMA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 16,
+      "bandId": "64b27293-b282-47e3-ac50-a6593fb4e991",
+      "name": "Queen",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:15.208815+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.122Z",
+            "waitingSince": "2026-10-13T09:03:42.122Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.122Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.122Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/queen/",
+                  "checkedAt": "2026-10-13T09:03:42.122Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:14.491Z",
+            "waitingSince": "2026-10-25T05:30:14.491Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:14.491Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:14.491Z",
+            "proposal": {
+              "target_band_id": "64b27293-b282-47e3-ac50-a6593fb4e991",
+              "expected_updated_at": "2026-10-13T08:19:06.537012+00:00",
+              "artist_name": "Queen",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "皇后乐队",
+                "クイーン"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1970년 결성 British rock band와 Mercury/May/Deacon/Taylor 멤버를 명시. / progressive/arena rock·heavy metal 등 혼합 활동, A Night At The Opera/The Game 작품 확인.",
+              "evidence_url": "https://www.officialcharts.com/artist/21275/queen/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:15.208815+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.299Z",
+            "waitingSince": "2026-10-25T05:33:18.299Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.299Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "64b27293-b282-47e3-ac50-a6593fb4e991",
+        "name": "Queen",
+        "aliases": [
+          "皇后乐队",
+          "クイーン"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:15.208815+00:00"
+      },
+      "musicbrainz": {
+        "id": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "UK rock group",
+        "checkedAt": "2026-10-26T05:35:42.397Z",
+        "sourceUrl": "https://musicbrainz.org/artist/0383dadf-2a4e-4d10-a46a-e9e041da8eb3"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 사이트/음악 뉴스 확인. 정확 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.489Z",
+          "waitingSince": "2026-10-26T05:41:05.489Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.489Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.queenonline.com/",
+        "summary": "공식 사이트/음악 뉴스 확인. 정확 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCiMhD4jzUqG-IgPzUmmytRQ"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 17,
+      "bandId": "9f9d139c-21a6-4bea-b23b-c2172a8a61dc",
+      "name": "Ramones",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:16.565301+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.125Z",
+            "waitingSince": "2026-10-13T09:03:42.125Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.125Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.125Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/ramones/",
+                  "checkedAt": "2026-10-13T09:03:42.125Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:15.878Z",
+            "waitingSince": "2026-10-25T05:30:15.878Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:15.878Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:15.878Z",
+            "proposal": {
+              "target_band_id": "9f9d139c-21a6-4bea-b23b-c2172a8a61dc",
+              "expected_updated_at": "2026-10-13T08:19:26.220705+00:00",
+              "artist_name": "Ramones",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "The Ramones",
+                "Ramones, The"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 공식 박물관 소개에서1974년 Forest Hills New York의 시작, punk 전개, Ramones/Leave Home/Rocket To Russia 작품 확인. / 구체적인 punk rock 활동 및 Joey/Johnny/Dee Dee/Tommy/Marky 신원 확인.",
+              "evidence_url": "https://grammymuseum.org/exhibit/hey-ho-lets-go-ramones-and-the-birth-of-punk/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:16.565301+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.399Z",
+            "waitingSince": "2026-10-25T05:33:18.399Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.399Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "9f9d139c-21a6-4bea-b23b-c2172a8a61dc",
+        "name": "Ramones",
+        "aliases": [
+          "The Ramones",
+          "Ramones, The"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "d6ed7887-a401-47a8-893c-34b967444d26",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:16.565301+00:00"
+      },
+      "musicbrainz": {
+        "id": "d6ed7887-a401-47a8-893c-34b967444d26",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "US punk rock band",
+        "checkedAt": "2026-10-26T05:35:44.400Z",
+        "sourceUrl": "https://musicbrainz.org/artist/d6ed7887-a401-47a8-893c-34b967444d26"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 홈페이지 확인. 정확 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.577Z",
+          "waitingSince": "2026-10-26T05:41:05.577Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.577Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.ramones.com/",
+        "summary": "공식 홈페이지 확인. 정확 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/ramones",
+        "https://www.youtube.com/channel/UCSrA5JaXpR21z_E1FDA03RA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 18,
+      "bandId": "e3f50f7b-4d88-4f5d-a0d7-158d0e64ed59",
+      "name": "Santana",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:17.943039+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.126Z",
+            "waitingSince": "2026-10-13T09:03:42.126Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.126Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.126Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/santana/",
+                  "checkedAt": "2026-10-13T09:03:42.126Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:17.215Z",
+            "waitingSince": "2026-10-25T05:30:17.215Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:17.215Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:17.215Z",
+            "proposal": {
+              "target_band_id": "e3f50f7b-4d88-4f5d-a0d7-158d0e64ed59",
+              "expected_updated_at": "2026-10-13T08:19:11.669127+00:00",
+              "artist_name": "Santana",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "Santana Band",
+                "サンタナ"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 공식 소개의 Carlos 개인과 Santana 밴드를 구분. San Francisco의 Afro-Latin-blues-rock fusion outfit으로 시작한 그룹이며 Santana/Abraxas/Santana III/Supernatural을 확인.",
+              "evidence_url": "https://santana.com/carlos-santana-biography/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:17.943039+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.501Z",
+            "waitingSince": "2026-10-25T05:33:18.501Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.501Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "e3f50f7b-4d88-4f5d-a0d7-158d0e64ed59",
+        "name": "Santana",
+        "aliases": [
+          "Santana Band",
+          "サンタナ"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "9a3bf45c-347d-4630-894d-7cf3e8e0b632",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:17.943039+00:00"
+      },
+      "musicbrainz": {
+        "id": "9a3bf45c-347d-4630-894d-7cf3e8e0b632",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "US Latin, blues, & rock band",
+        "checkedAt": "2026-10-26T05:35:49.516Z",
+        "sourceUrl": "https://musicbrainz.org/artist/9a3bf45c-347d-4630-894d-7cf3e8e0b632"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 연구 도구 Timeout. 현재 공식 페이지 내용 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.664Z",
+          "waitingSince": "2026-10-26T05:41:05.664Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.664Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.santana.com/",
+        "summary": "연구 도구 Timeout. 현재 공식 페이지 내용 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCI7pNDDat9jR8TjgF48aBDA",
+        "https://www.youtube.com/channel/UCty_FzLdVEPlsUMg1O8eEgA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 19,
+      "bandId": "90a6ec08-6b78-44bd-9d0e-36b7c4e2b96c",
+      "name": "Sex Pistols",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:19.3103+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.128Z",
+            "waitingSince": "2026-10-13T09:03:42.128Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.128Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.128Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/sex-pistols/",
+                  "checkedAt": "2026-10-13T09:03:42.128Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:18.570Z",
+            "waitingSince": "2026-10-25T05:30:18.570Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:18.570Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:18.570Z",
+            "proposal": {
+              "target_band_id": "90a6ec08-6b78-44bd-9d0e-36b7c4e2b96c",
+              "expected_updated_at": "2026-10-13T08:20:18.680465+00:00",
+              "artist_name": "Sex Pistols",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "The Sex Pistols",
+                "'Original' Sex Pistols",
+                "The Original Pistols"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1975년 London에서 결성한 English punk rock band, Rotten/Jones/Cook/Matlock/Vicious와 Never Mind The Bollocks 작품 확인.",
+              "evidence_url": "https://www.officialcharts.com/artist/15960/sex-pistols/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:19.3103+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.601Z",
+            "waitingSince": "2026-10-25T05:33:18.601Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.601Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "90a6ec08-6b78-44bd-9d0e-36b7c4e2b96c",
+        "name": "Sex Pistols",
+        "aliases": [
+          "The Sex Pistols",
+          "'Original' Sex Pistols",
+          "The Original Pistols"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "e5db18cb-4b1f-496d-a308-548b611090d3",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:19.3103+00:00"
+      },
+      "musicbrainz": {
+        "id": "e5db18cb-4b1f-496d-a308-548b611090d3",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:51.286Z",
+        "sourceUrl": "https://musicbrainz.org/artist/e5db18cb-4b1f-496d-a308-548b611090d3"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 홈페이지 확인. 정확 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.751Z",
+          "waitingSince": "2026-10-26T05:41:05.751Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.751Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.sexpistolsofficial.com/",
+        "summary": "공식 홈페이지 확인. 정확 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCcjWoLUPOkEVhevjI8DB5vQ",
+        "https://www.youtube.com/user/SexPistolsChannel"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 20,
+      "bandId": "c9588501-7a8c-4e3a-a65d-17b308f96f4f",
+      "name": "The Byrds",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:22.081445+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.134Z",
+            "waitingSince": "2026-10-13T09:03:42.134Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.134Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.134Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/byrds/",
+                  "checkedAt": "2026-10-13T09:03:42.134Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:21.371Z",
+            "waitingSince": "2026-10-25T05:30:21.371Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:21.371Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:21.371Z",
+            "proposal": {
+              "target_band_id": "c9588501-7a8c-4e3a-a65d-17b308f96f4f",
+              "expected_updated_at": "2026-10-13T08:19:27.892966+00:00",
+              "artist_name": "The Byrds",
+              "country": "US",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "The Birds",
+                "Byrds",
+                "Byrds, The"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: L.A.에서 McGuinn/Clark/Crosby가 만나 결성, CBS 계약 및 Mr Tambourine Man/Turn Turn Turn/Fifth Dimension을 설명. 미국 folk rock/psychedelic/country rock 활동을 확인. thebyrds.com 팬 사이트는 승인 근거로 쓰지 않음.",
+              "evidence_url": "https://www.sonymusic.co.jp/artist/TheByrds/profile/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:22.081445+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.801Z",
+            "waitingSince": "2026-10-25T05:33:18.801Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.801Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "c9588501-7a8c-4e3a-a65d-17b308f96f4f",
+        "name": "The Byrds",
+        "aliases": [
+          "The Birds",
+          "Byrds",
+          "Byrds, The"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "2819834e-4e08-47b0-a2c4-b7672318e8f0",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:22.081445+00:00"
+      },
+      "musicbrainz": {
+        "id": "2819834e-4e08-47b0-a2c4-b7672318e8f0",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "American rock band",
+        "checkedAt": "2026-10-26T05:35:53.209Z",
+        "sourceUrl": "https://musicbrainz.org/artist/2819834e-4e08-47b0-a2c4-b7672318e8f0"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.841Z",
+          "waitingSince": "2026-10-26T05:41:05.841Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.841Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCrKNKWIIi_MjNDnxqG8BiOw"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 21,
+      "bandId": "8bd4f2b2-6ba8-41df-9fda-15d7f7e11166",
+      "name": "The Clash",
+      "selectedTasks": [
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-25T05:30:23.548619+00:00",
+        "stages": {
+          "research": {
+            "status": "complete",
+            "checkedAt": "2026-10-13T09:03:42.135Z",
+            "waitingSince": "2026-10-13T09:03:42.135Z",
+            "lastSuccessfulAt": "2026-10-13T09:03:42.135Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-11T09:03:42.135Z",
+            "applied": false,
+            "proof": {
+              "decision": "keep",
+              "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+              "sources": [
+                {
+                  "url": "https://rockhall.com/inductees/clash/",
+                  "checkedAt": "2026-10-13T09:03:42.135Z",
+                  "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+                }
+              ]
+            },
+            "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+          },
+          "approval": {
+            "status": "complete",
+            "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+            "checkedAt": "2026-10-25T05:30:22.740Z",
+            "waitingSince": "2026-10-25T05:30:22.740Z",
+            "applied": true,
+            "lastSuccessfulAt": "2026-10-25T05:30:22.740Z",
+            "nextAttemptAt": null,
+            "validUntil": "2027-01-23T05:30:22.740Z",
+            "proposal": {
+              "target_band_id": "8bd4f2b2-6ba8-41df-9fda-15d7f7e11166",
+              "expected_updated_at": "2026-10-13T08:19:26.893832+00:00",
+              "artist_name": "The Clash",
+              "country": "GB",
+              "artist_category": "overseas_rock",
+              "artist_aliases": [
+                "Clash, The",
+                "Clash",
+                "Clash, Thr"
+              ],
+              "review_status": "approved",
+              "reason": "자동 검수 jpop-or-rock-v1: 1976년 London에서 형성된 English rock band, British punk wave와 Strummer/Jones/Simonon/Headon 멤버를 명시.",
+              "evidence_url": "https://www.sonymusic.co.uk/artist/the-clash/"
+            },
+            "authorityKey": "integrated-service-approval-v1",
+            "verification": {
+              "readBack": true,
+              "version": "2026-10-25T05:30:23.548619+00:00"
+            }
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "채널 task 대상의 기존 artist_channels 프로필0건을 현재 DB에서 확인했다. 직접 공식 링크와 canonical API ID·잠금·버전 검증이 모두 갖춰진 manifest는 아직 없어 신규 저장/사진을 하지 않는다. MusicBrainz cooldown 보존. ONE OK ROCK/ORANGE RANGE는 채널 task가 아니며 기존 verified cache를 재조회하고 갱신하지 않았다.",
+            "checkedAt": "2026-10-25T05:33:18.906Z",
+            "waitingSince": "2026-10-25T05:33:18.906Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T05:33:18.906Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "8bd4f2b2-6ba8-41df-9fda-15d7f7e11166",
+        "name": "The Clash",
+        "aliases": [
+          "Clash, The",
+          "Clash",
+          "Clash, Thr"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "8f92558c-2baa-4758-8c38-615519e9deda",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-25T05:30:23.548619+00:00"
+      },
+      "musicbrainz": {
+        "id": "8f92558c-2baa-4758-8c38-615519e9deda",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "70s–80s British punk rock band",
+        "checkedAt": "2026-10-26T05:35:57.698Z",
+        "sourceUrl": "https://musicbrainz.org/artist/8f92558c-2baa-4758-8c38-615519e9deda"
+      },
+      "result": {
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. 공식 홈페이지 확인. 정확 채널 목적지 미확인. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:05.935Z",
+          "waitingSince": "2026-10-26T05:41:05.935Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:05.935Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": {
+        "url": "https://www.theclash.com/",
+        "summary": "공식 홈페이지 확인. 정확 채널 목적지 미확인."
+      },
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCd3r4AlUO5QQrvF3iDHsjPw",
+        "https://www.youtube.com/channel/UCWfAZudbGLAyrrEBaGuslNA"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": true,
+        "apiError": null,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 22,
+      "bandId": "2cd90d1b-01ac-4879-9ef5-73ec28abd539",
+      "name": "강재욱",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-23T13:26:40.601952+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "이름 검색에서 게임 사운드 제작자·영화 음악 크레딧 동명 후보가 발견됐지만 선택 MBID와 공식 음악 신원 연결 미완료. 새 Last.fm 조회도 API6이다. 동명이인을 합치지 않는다.",
+            "checkedAt": "2026-10-25T01:39:30.430Z",
+            "waitingSince": "2026-10-25T01:39:30.430Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.430Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "이름 검색에서 게임 사운드 제작자·영화 음악 크레딧 동명 후보가 발견됐지만 선택 MBID와 공식 음악 신원 연결 미완료. 새 Last.fm 조회도 API6이다. 동명이인을 합치지 않는다.",
+            "checkedAt": "2026-10-25T01:39:30.550Z",
+            "waitingSince": "2026-10-25T01:39:30.550Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.550Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:30.636Z",
+            "waitingSince": "2026-10-25T01:39:30.636Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.636Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "2cd90d1b-01ac-4879-9ef5-73ec28abd539",
+        "name": "강재욱",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "429a84e1-d1b4-4990-8691-972bccba5547",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T13:26:40.601952+00:00"
+      },
+      "musicbrainz": {
+        "id": "429a84e1-d1b4-4990-8691-972bccba5547",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:35:59.465Z",
+        "sourceUrl": "https://musicbrainz.org/artist/429a84e1-d1b4-4990-8691-972bccba5547"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB entity에 작품·공식 URL 관계가 없다. 검색에서 게임 사운드/녹음 담당 동명이인과 비음악인 결과가 섞여 정확 신원·록/J-pop 근거 미확인. 임의 합치지 않음.",
+          "checkedAt": "2026-10-26T05:41:06.028Z",
+          "waitingSince": "2026-10-26T05:41:06.028Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.028Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB entity에 작품·공식 URL 관계가 없다. 검색에서 게임 사운드/녹음 담당 동명이인과 비음악인 결과가 섞여 정확 신원·록/J-pop 근거 미확인. 임의 합치지 않음.",
+          "checkedAt": "2026-10-26T05:41:06.115Z",
+          "waitingSince": "2026-10-26T05:41:06.115Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.115Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:06.205Z",
+          "waitingSince": "2026-10-26T05:41:06.205Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.205Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB entity에 작품·공식 URL 관계가 없다. 검색에서 게임 사운드/녹음 담당 동명이인과 비음악인 결과가 섞여 정확 신원·록/J-pop 근거 미확인. 임의 합치지 않음.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 23,
+      "bandId": "f93927cb-ed8e-4c08-b9c1-75265eb6e1db",
+      "name": "이주호",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-23T13:26:40.590225+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "해바라기 이주호의 포크 활동과 같은 이름의 타 작곡가 검색이 함께 존재한다. 새 Last.fm API6이며 선택 MBID/같은 솔로 작품 확인 및 록 범위가 미완료다.",
+            "checkedAt": "2026-10-25T01:39:30.721Z",
+            "waitingSince": "2026-10-25T01:39:30.721Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.721Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "해바라기 이주호의 포크 활동과 같은 이름의 타 작곡가 검색이 함께 존재한다. 새 Last.fm API6이며 선택 MBID/같은 솔로 작품 확인 및 록 범위가 미완료다.",
+            "checkedAt": "2026-10-25T01:39:30.815Z",
+            "waitingSince": "2026-10-25T01:39:30.815Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.815Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:30.900Z",
+            "waitingSince": "2026-10-25T01:39:30.900Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.900Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "f93927cb-ed8e-4c08-b9c1-75265eb6e1db",
+        "name": "이주호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "01e89f63-20f4-4cbd-8966-85d072a96923",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T13:26:40.590225+00:00"
+      },
+      "musicbrainz": {
+        "id": "01e89f63-20f4-4cbd-8966-85d072a96923",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "해바라기",
+        "checkedAt": "2026-10-26T05:36:03.931Z",
+        "sourceUrl": "https://musicbrainz.org/artist/01e89f63-20f4-4cbd-8966-85d072a96923"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB disambiguation 해바라기. 포크 듀오 활동과 개인 ID/작품·록 활동을 공식 근거로 연결하는 요건 미완료.",
+          "checkedAt": "2026-10-26T05:41:06.292Z",
+          "waitingSince": "2026-10-26T05:41:06.292Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.292Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB disambiguation 해바라기. 포크 듀오 활동과 개인 ID/작품·록 활동을 공식 근거로 연결하는 요건 미완료.",
+          "checkedAt": "2026-10-26T05:41:06.378Z",
+          "waitingSince": "2026-10-26T05:41:06.378Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.378Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:06.474Z",
+          "waitingSince": "2026-10-26T05:41:06.474Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.474Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB disambiguation 해바라기. 포크 듀오 활동과 개인 ID/작품·록 활동을 공식 근거로 연결하는 요건 미완료.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 24,
+      "bandId": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+      "name": "강건후",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-14T13:24:32.435618+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "서울문화포털의 기타 세션 강건후·공식 유통 기타 크레딧 후보를 검색했다. 이 신원이 선택 MBID인지와 독립적인 실제 록 활동이 미완료이며 이전 API6을 반복 요청하지 않았다.",
+            "checkedAt": "2026-10-25T01:39:30.985Z",
+            "waitingSince": "2026-10-25T01:39:30.985Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:30.985Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "서울문화포털의 기타 세션 강건후·공식 유통 기타 크레딧 후보를 검색했다. 이 신원이 선택 MBID인지와 독립적인 실제 록 활동이 미완료이며 이전 API6을 반복 요청하지 않았다.",
+            "checkedAt": "2026-10-25T01:39:31.061Z",
+            "waitingSince": "2026-10-25T01:39:31.061Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.061Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:31.144Z",
+            "waitingSince": "2026-10-25T01:39:31.144Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.144Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+        "name": "강건후",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "b599c005-877b-48e2-a82e-5a6e021054e7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-14T13:24:32.435618+00:00"
+      },
+      "musicbrainz": {
+        "id": "b599c005-877b-48e2-a82e-5a6e021054e7",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "guitarist",
+        "checkedAt": "2026-10-26T05:36:09.299Z",
+        "sourceUrl": "https://musicbrainz.org/artist/b599c005-877b-48e2-a82e-5a6e021054e7"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB guitarist 및 star9sailor 관계. 서울문화포털 기타 세션·발매 자료 후보를 찾았으나 기타 참여 자체로 록 장르를 확정하지 않음.",
+          "checkedAt": "2026-10-26T05:41:06.563Z",
+          "waitingSince": "2026-10-26T05:41:06.563Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.563Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB guitarist 및 star9sailor 관계. 서울문화포털 기타 세션·발매 자료 후보를 찾았으나 기타 참여 자체로 록 장르를 확정하지 않음.",
+          "checkedAt": "2026-10-26T05:41:06.738Z",
+          "waitingSince": "2026-10-26T05:41:06.738Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.738Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:06.858Z",
+          "waitingSince": "2026-10-26T05:41:06.858Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.858Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB guitarist 및 star9sailor 관계. 서울문화포털 기타 세션·발매 자료 후보를 찾았으나 기타 참여 자체로 록 장르를 확정하지 않음.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 25,
+      "bandId": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+      "name": "김경태",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T07:26:59.702286+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "김경태 검색은 포크 솔로·전시 아티스트·연극인 동명이인이 섞였다. 기존 engineer MB 관측과 이 후보들을 결합할 크레딧이 없어 신원/장르 미완료다.",
+            "checkedAt": "2026-10-25T01:39:31.228Z",
+            "waitingSince": "2026-10-25T01:39:31.228Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.228Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "김경태 검색은 포크 솔로·전시 아티스트·연극인 동명이인이 섞였다. 기존 engineer MB 관측과 이 후보들을 결합할 크레딧이 없어 신원/장르 미완료다.",
+            "checkedAt": "2026-10-25T01:39:31.306Z",
+            "waitingSince": "2026-10-25T01:39:31.306Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.306Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:31.398Z",
+            "waitingSince": "2026-10-25T01:39:31.398Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.398Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+        "name": "김경태",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "7fd5d6a3-8b08-469d-9119-a6f0581fb1ba",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T07:26:59.702286+00:00"
+      },
+      "musicbrainz": {
+        "id": "7fd5d6a3-8b08-469d-9119-a6f0581fb1ba",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "enginner",
+        "checkedAt": "2026-10-26T05:36:10.992Z",
+        "sourceUrl": "https://musicbrainz.org/artist/7fd5d6a3-8b08-469d-9119-a6f0581fb1ba"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB disambiguation enginner 및 gypsy_inthevibe 관계만 확인. 엔지니어 크레딧과 독립 아티스트 신원·실제 록 활동 연결 미완료.",
+          "checkedAt": "2026-10-26T05:41:06.958Z",
+          "waitingSince": "2026-10-26T05:41:06.958Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:06.958Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB disambiguation enginner 및 gypsy_inthevibe 관계만 확인. 엔지니어 크레딧과 독립 아티스트 신원·실제 록 활동 연결 미완료.",
+          "checkedAt": "2026-10-26T05:41:07.047Z",
+          "waitingSince": "2026-10-26T05:41:07.047Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.047Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:07.135Z",
+          "waitingSince": "2026-10-26T05:41:07.135Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.135Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB disambiguation enginner 및 gypsy_inthevibe 관계만 확인. 엔지니어 크레딧과 독립 아티스트 신원·실제 록 활동 연결 미완료.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 26,
+      "bandId": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+      "name": "김수희",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-12T14:24:09.149317+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "실제 Pathos 유통 페이지의 김수희/성인가요·트로트 및 기존 일치 MBID 작품을 읽었다. 별도 취재의 나티와 헤비메탈 크로스오버 리허설도 실제 읽어 단일 트로트 태그로 제외하지 않았다. 공연의 단발 혼합 장르와 본인 지속 록 활동 범위의 판단을 보완해야 한다.",
+            "checkedAt": "2026-10-25T01:39:31.519Z",
+            "waitingSince": "2026-10-25T01:39:31.519Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.519Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "실제 Pathos 유통 페이지의 김수희/성인가요·트로트 및 기존 일치 MBID 작품을 읽었다. 별도 취재의 나티와 헤비메탈 크로스오버 리허설도 실제 읽어 단일 트로트 태그로 제외하지 않았다. 공연의 단발 혼합 장르와 본인 지속 록 활동 범위의 판단을 보완해야 한다.",
+            "checkedAt": "2026-10-25T01:39:31.726Z",
+            "waitingSince": "2026-10-25T01:39:31.726Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.726Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:31.808Z",
+            "waitingSince": "2026-10-25T01:39:31.808Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.808Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+        "name": "김수희",
+        "aliases": [
+          "Kim Soo Hee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.149317+00:00"
+      },
+      "musicbrainz": {
+        "id": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:15.794Z",
+        "sourceUrl": "https://musicbrainz.org/artist/0da2870e-d645-4cc4-ace0-98d6923d9cc5"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "방송사 트로트 경력 자료와 조선일보의 나티 협업/블랙캣츠 경력 자료를 실제 읽음. 혼합 활동을 단순 트로트로 제외하지 않음. 해당 ID의 지속 록 활동 및 공식 상세 근거 보완 필요.",
+          "checkedAt": "2026-10-26T05:41:07.219Z",
+          "waitingSince": "2026-10-26T05:41:07.219Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.219Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "방송사 트로트 경력 자료와 조선일보의 나티 협업/블랙캣츠 경력 자료를 실제 읽음. 혼합 활동을 단순 트로트로 제외하지 않음. 해당 ID의 지속 록 활동 및 공식 상세 근거 보완 필요.",
+          "checkedAt": "2026-10-26T05:41:07.308Z",
+          "waitingSince": "2026-10-26T05:41:07.308Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.308Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:07.394Z",
+          "waitingSince": "2026-10-26T05:41:07.394Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.394Z",
+          "validUntil": null
+        }
+      },
+      "notes": "방송사 트로트 경력 자료와 조선일보의 나티 협업/블랙캣츠 경력 자료를 실제 읽음. 혼합 활동을 단순 트로트로 제외하지 않음. 해당 ID의 지속 록 활동 및 공식 상세 근거 보완 필요.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 27,
+      "bandId": "810b1871-70ab-4563-8703-747012ea6f1d",
+      "name": "김조한",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T01:30:28.913689+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "실제 Soul Family With Johan 유통 소개는 R&B/소울이며 동일 작품을 기존 일치 MBID 캐시와 대조했다. 특정 수록곡을 얼터너티브 록이라 부르는 검색은 위키 복제여서 공식 록 검증으로 사용하지 않았다. 국적 해석도 KR와 추가 대조가 필요하다.",
+            "checkedAt": "2026-10-25T01:39:31.977Z",
+            "waitingSince": "2026-10-25T01:39:31.977Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:31.977Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "실제 Soul Family With Johan 유통 소개는 R&B/소울이며 동일 작품을 기존 일치 MBID 캐시와 대조했다. 특정 수록곡을 얼터너티브 록이라 부르는 검색은 위키 복제여서 공식 록 검증으로 사용하지 않았다. 국적 해석도 KR와 추가 대조가 필요하다.",
+            "checkedAt": "2026-10-25T01:39:32.058Z",
+            "waitingSince": "2026-10-25T01:39:32.058Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.058Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:32.165Z",
+            "waitingSince": "2026-10-25T01:39:32.165Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.165Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "810b1871-70ab-4563-8703-747012ea6f1d",
+        "name": "김조한",
+        "aliases": [
+          "George Han Kim",
+          "Johan Kim",
+          "Kim Jo Han"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T01:30:28.913689+00:00"
+      },
+      "musicbrainz": {
+        "id": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:18.214Z",
+        "sourceUrl": "https://musicbrainz.org/artist/ec061c8b-18b5-48d7-8434-3d57289102a1"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB의 Soul Family with Johan 등 작품·미국 Atlanta 출생/DB country KR 확인. R&B/솔리드 활동과 별도의 실제 록/J-pop 근거 및 국가 요건 미완료.",
+          "checkedAt": "2026-10-26T05:41:07.482Z",
+          "waitingSince": "2026-10-26T05:41:07.482Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.482Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB의 Soul Family with Johan 등 작품·미국 Atlanta 출생/DB country KR 확인. R&B/솔리드 활동과 별도의 실제 록/J-pop 근거 및 국가 요건 미완료.",
+          "checkedAt": "2026-10-26T05:41:07.570Z",
+          "waitingSince": "2026-10-26T05:41:07.570Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.570Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:07.657Z",
+          "waitingSince": "2026-10-26T05:41:07.657Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.657Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB의 Soul Family with Johan 등 작품·미국 Atlanta 출생/DB country KR 확인. R&B/솔리드 활동과 별도의 실제 록/J-pop 근거 및 국가 요건 미완료.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 28,
+      "bandId": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+      "name": "김종국",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T01:30:28.899139+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "새 공식 소속사 아티스트 페이지 후보 검색으로 김종국의 음악/방송 활동을 발견했으나 실제 록/J-pop 활동의 직접 작품 근거는 미완료다. 그룹 형식과 이름/대중성으로 승인하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:32.244Z",
+            "waitingSince": "2026-10-25T01:39:32.244Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.244Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "새 공식 소속사 아티스트 페이지 후보 검색으로 김종국의 음악/방송 활동을 발견했으나 실제 록/J-pop 활동의 직접 작품 근거는 미완료다. 그룹 형식과 이름/대중성으로 승인하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:32.329Z",
+            "waitingSince": "2026-10-25T01:39:32.329Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.329Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:32.406Z",
+            "waitingSince": "2026-10-25T01:39:32.406Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.406Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+        "name": "김종국",
+        "aliases": [
+          "Kim Jong Kook",
+          "Kim Jong-kook"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T01:30:28.899139+00:00"
+      },
+      "musicbrainz": {
+        "id": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:20.682Z",
+        "sourceUrl": "https://musicbrainz.org/artist/f6a68f94-384c-47a2-85a8-81731e0a559c"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식 홈페이지는 해외접속차단 응답. MB This Is Me/Here I am 등을 확인했으나 댄스·발라드 활동을 록으로 추정하지 않음. 대체 공식 음반 근거 필요.",
+          "checkedAt": "2026-10-26T05:41:07.743Z",
+          "waitingSince": "2026-10-26T05:41:07.743Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.743Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 홈페이지는 해외접속차단 응답. MB This Is Me/Here I am 등을 확인했으나 댄스·발라드 활동을 록으로 추정하지 않음. 대체 공식 음반 근거 필요.",
+          "checkedAt": "2026-10-26T05:41:07.835Z",
+          "waitingSince": "2026-10-26T05:41:07.835Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.835Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:07.925Z",
+          "waitingSince": "2026-10-26T05:41:07.925Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:07.925Z",
+          "validUntil": null
+        }
+      },
+      "notes": "공식 홈페이지는 해외접속차단 응답. MB This Is Me/Here I am 등을 확인했으나 댄스·발라드 활동을 록으로 추정하지 않음. 대체 공식 음반 근거 필요.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 29,
+      "bandId": "59786668-4c4f-4568-8928-034dc1706ac2",
+      "name": "박성현",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-14T19:24:49.220714+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "실제 공식 유통 꽃길인생의 포크 발라드·보컬 크레딧은 읽었지만 이 박성현과 선택 MBID의 Love Delight/영턱스클럽 신원이 같은지 미확정이다. 서로 다른 동명 가수를 합치지 않는다.",
+            "checkedAt": "2026-10-25T01:39:32.483Z",
+            "waitingSince": "2026-10-25T01:39:32.483Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.483Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "실제 공식 유통 꽃길인생의 포크 발라드·보컬 크레딧은 읽었지만 이 박성현과 선택 MBID의 Love Delight/영턱스클럽 신원이 같은지 미확정이다. 서로 다른 동명 가수를 합치지 않는다.",
+            "checkedAt": "2026-10-25T01:39:32.565Z",
+            "waitingSince": "2026-10-25T01:39:32.565Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.565Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:32.641Z",
+            "waitingSince": "2026-10-25T01:39:32.641Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.641Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "59786668-4c4f-4568-8928-034dc1706ac2",
+        "name": "박성현",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "ef019f33-047a-4091-bc38-6a951856de0a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-14T19:24:49.220714+00:00"
+      },
+      "musicbrainz": {
+        "id": "ef019f33-047a-4091-bc38-6a951856de0a",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:28.024Z",
+        "sourceUrl": "https://musicbrainz.org/artist/ef019f33-047a-4091-bc38-6a951856de0a"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB ytc_park 관계와 Last.fm의 Love Delight 등 후보를 확인. 작품·소속·개인 신원을 정확 공식 자료로 대조해야 함.",
+          "checkedAt": "2026-10-26T05:41:08.014Z",
+          "waitingSince": "2026-10-26T05:41:08.014Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.014Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB ytc_park 관계와 Last.fm의 Love Delight 등 후보를 확인. 작품·소속·개인 신원을 정확 공식 자료로 대조해야 함.",
+          "checkedAt": "2026-10-26T05:41:08.103Z",
+          "waitingSince": "2026-10-26T05:41:08.103Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.103Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:08.212Z",
+          "waitingSince": "2026-10-26T05:41:08.212Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.212Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB ytc_park 관계와 Last.fm의 Love Delight 등 후보를 확인. 작품·소속·개인 신원을 정확 공식 자료로 대조해야 함.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "ef019f33-047a-4091-bc38-6a951856de0a",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 30,
+      "bandId": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+      "name": "변진섭",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-12T14:24:09.149204+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "변진섭 직접 공식 프로필 검색은 충분한 결과를 얻지 못했다. 기존 발라드 작품 캐시는 보존하되 록/J-pop 활동을 확인하거나 단일 장르만으로 제외하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:32.730Z",
+            "waitingSince": "2026-10-25T01:39:32.730Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.730Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "변진섭 직접 공식 프로필 검색은 충분한 결과를 얻지 못했다. 기존 발라드 작품 캐시는 보존하되 록/J-pop 활동을 확인하거나 단일 장르만으로 제외하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:32.811Z",
+            "waitingSince": "2026-10-25T01:39:32.811Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.811Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:32.942Z",
+            "waitingSince": "2026-10-25T01:39:32.942Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:32.942Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+        "name": "변진섭",
+        "aliases": [
+          "Byun Jin Sub"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.149204+00:00"
+      },
+      "musicbrainz": {
+        "id": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:35.498Z",
+        "sourceUrl": "https://musicbrainz.org/artist/e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 그대 내게 다시/변진섭2 확인. 록 버전 공연 검색 후보가 있어 발라드만으로 제외하지 않음. 실제 본문/공식 음반 확인 미완료.",
+          "checkedAt": "2026-10-26T05:41:08.301Z",
+          "waitingSince": "2026-10-26T05:41:08.301Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.301Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB 그대 내게 다시/변진섭2 확인. 록 버전 공연 검색 후보가 있어 발라드만으로 제외하지 않음. 실제 본문/공식 음반 확인 미완료.",
+          "checkedAt": "2026-10-26T05:41:08.392Z",
+          "waitingSince": "2026-10-26T05:41:08.392Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.392Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:08.478Z",
+          "waitingSince": "2026-10-26T05:41:08.478Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.478Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB 그대 내게 다시/변진섭2 확인. 록 버전 공연 검색 후보가 있어 발라드만으로 제외하지 않음. 실제 본문/공식 음반 확인 미완료.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 31,
+      "bandId": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+      "name": "심규선",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-14T19:24:49.232495+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "소속사 발표 및 작품 후보 검색은 보완했으나 기존 요청 MBID와 반환 Lucia MBID 불일치가 해결되지 않았다. 이름과 공연 소개만으로 신원 ID를 교체하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:33.020Z",
+            "waitingSince": "2026-10-25T01:39:33.020Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.020Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "소속사 발표 및 작품 후보 검색은 보완했으나 기존 요청 MBID와 반환 Lucia MBID 불일치가 해결되지 않았다. 이름과 공연 소개만으로 신원 ID를 교체하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:33.119Z",
+            "waitingSince": "2026-10-25T01:39:33.119Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.119Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:33.219Z",
+            "waitingSince": "2026-10-25T01:39:33.219Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.219Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+        "name": "심규선",
+        "aliases": [
+          "Lucia",
+          "Sim Gyu Seon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "189a3528-68c2-480f-a4e1-c4db29152398",
+        "category": "domestic_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-26T05:38:41.267646+00:00"
+      },
+      "musicbrainz": {
+        "id": "189a3528-68c2-480f-a4e1-c4db29152398",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "Korean singer-songwriter",
+        "checkedAt": "2026-10-26T05:36:37.411Z",
+        "sourceUrl": "https://musicbrainz.org/artist/189a3528-68c2-480f-a4e1-c4db29152398"
+      },
+      "result": {
+        "research": {
+          "status": "complete",
+          "reason": "헤아릴 규/Kakao Entertainment의 실제 심규선 #HUMANKIND 음반 자료에서 Lucia 별명, Light&Shade·환상소곡집 등 작품과 Question 수록을 확인했다. 소속사 제공 음악 보도에서 앨범의 강한 록 사운드와 Question의 록 스타일을 구체적으로 확인하여 domestic_rock으로 판정한다. 판매 분류·MB 태그 단독 판정이 아니다.",
+          "checkedAt": "2026-10-26T05:38:39.589Z",
+          "waitingSince": "2026-10-26T05:38:39.589Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-26T05:36:37.411Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T05:36:37.411Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "헤아릴 규/Kakao Entertainment의 실제 심규선 #HUMANKIND 음반 자료에서 Lucia 별명, Light&Shade·환상소곡집 등 작품과 Question 수록을 확인했다. 소속사 제공 음악 보도에서 앨범의 강한 록 사운드와 Question의 록 스타일을 구체적으로 확인하여 domestic_rock으로 판정한다. 판매 분류·MB 태그 단독 판정이 아니다.",
+            "sources": [
+              {
+                "url": "https://m.yes24.com/Goods/Detail/122850302",
+                "checkedAt": "2026-10-26T05:38:39.490436+00:00",
+                "summary": "헤아릴 규/Kakao Entertainment의 실제 심규선 #HUMANKIND 음반 자료에서 Lucia 별명, Light&Shade·환상소곡집 등 작품과 Question 수록을 확인했다. 소속사 제공 음악 보도에서 앨범의 강한 록 사운드와 Question의 록 스타일을 구체적으로 확인하여 domestic_rock으로 판정한다. 판매 분류·MB 태그 단독 판정이 아니다."
+              },
+              {
+                "url": "https://sports.khan.co.kr/article/202310090838003",
+                "checkedAt": "2026-10-26T05:38:39.490436+00:00",
+                "summary": "헤아릴 규/Kakao Entertainment의 실제 심규선 #HUMANKIND 음반 자료에서 Lucia 별명, Light&Shade·환상소곡집 등 작품과 Question 수록을 확인했다. 소속사 제공 음악 보도에서 앨범의 강한 록 사운드와 Question의 록 스타일을 구체적으로 확인하여 domestic_rock으로 판정한다. 판매 분류·MB 태그 단독 판정이 아니다."
+              },
+              {
+                "url": "https://musicbrainz.org/artist/189a3528-68c2-480f-a4e1-c4db29152398",
+                "checkedAt": "2026-10-26T05:36:37.411Z",
+                "summary": "실제 MusicBrainz entity의 KR/Busan 및 동일 #HUMANKIND·Light & Shade 작품을 대조. Last.fm이 반환한 다른 Lucia MBID는 사용하지 않음."
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-26T05:38:39.697Z",
+          "waitingSince": "2026-10-26T05:38:39.697Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-26T05:38:39.697Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-24T05:38:39.697Z",
+          "proposal": {
+            "target_band_id": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+            "expected_updated_at": "2026-10-14T19:24:49.232495+00:00",
+            "artist_name": "심규선",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [
+              "Lucia",
+              "Sim Gyu Seon"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 헤아릴 규/Kakao Entertainment의 실제 심규선 #HUMANKIND 음반 자료에서 Lucia 별명, Light&Shade·환상소곡집 등 작품과 Question 수록을 확인했다. 소속사 제공 음악 보도에서 앨범의 강한 록 사운드와 Question의 록 스타일을 구체적으로 확인하여 domestic_rock으로 판정한다. 판매 분류·MB 태그 단독 판정이 아니다.",
+            "evidence_url": "https://m.yes24.com/Goods/Detail/122850302"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-26T05:38:41.267646+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:08.604Z",
+          "waitingSince": "2026-10-26T05:41:08.604Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.604Z",
+          "validUntil": null
+        }
+      },
+      "notes": "기존 승인 보존; 이 실행에서는 선택된 채널 task만 검토.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UC4VMmTByZwTAaU3En8HQE6A"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": true,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "5cdf9d0e-73b5-4159-a6cb-7a1861b65699",
+        "metricUsed": false,
+        "reason": "이번 고정 목록은 핵심200 후보를 새로 추가하지 않음. 심규선은 다른 Lucia MBID 반환으로 지표 사용 금지."
+      }
+    },
+    {
+      "index": 32,
+      "bandId": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+      "name": "안다은",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-14T15:10:08.930152+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "안다은/김규년의 디에이드 공식 유통 음반 후보를 찾았지만 소매 분류 록/인디록/메탈만으로 개인의 실제 록 활동을 확정하지 않았다. 선택 솔로와 그룹을 분리해 추가 작품 검증이 필요하다.",
+            "checkedAt": "2026-10-25T01:39:33.298Z",
+            "waitingSince": "2026-10-25T01:39:33.298Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.298Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "안다은/김규년의 디에이드 공식 유통 음반 후보를 찾았지만 소매 분류 록/인디록/메탈만으로 개인의 실제 록 활동을 확정하지 않았다. 선택 솔로와 그룹을 분리해 추가 작품 검증이 필요하다.",
+            "checkedAt": "2026-10-25T01:39:33.421Z",
+            "waitingSince": "2026-10-25T01:39:33.421Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.421Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:33.497Z",
+            "waitingSince": "2026-10-25T01:39:33.497Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.497Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+        "name": "안다은",
+        "aliases": [
+          "An Da Eun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-14T15:10:08.930152+00:00"
+      },
+      "musicbrainz": {
+        "id": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:39.117Z",
+        "sourceUrl": "https://musicbrainz.org/artist/c0b8df30-30f7-4b04-8a55-88c9f421d588"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB의 우연히 봄 및 디에이드/어쿠스틱콜라보 활동 후보를 대조. 그룹 활동만으로 개인 ID의 록 활동 승인 요건을 채우지 않음.",
+          "checkedAt": "2026-10-26T05:41:08.696Z",
+          "waitingSince": "2026-10-26T05:41:08.696Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.696Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB의 우연히 봄 및 디에이드/어쿠스틱콜라보 활동 후보를 대조. 그룹 활동만으로 개인 ID의 록 활동 승인 요건을 채우지 않음.",
+          "checkedAt": "2026-10-26T05:41:08.788Z",
+          "waitingSince": "2026-10-26T05:41:08.788Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.788Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:08.884Z",
+          "waitingSince": "2026-10-26T05:41:08.884Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.884Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB의 우연히 봄 및 디에이드/어쿠스틱콜라보 활동 후보를 대조. 그룹 활동만으로 개인 ID의 록 활동 승인 요건을 채우지 않음.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 33,
+      "bandId": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+      "name": "양다일",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-12T14:24:09.149229+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "양다일 inside의 브랜뉴뮤직 유통 후보를 대체 검색했다. 직접 Bugs 앨범 열기는 timeout으로 실패해 새 완료 근거로 세지 않았다. 기존 일치 MBID 캐시는 보존하며 실제 록/J-pop 활동은 미완료다.",
+            "checkedAt": "2026-10-25T01:39:33.578Z",
+            "waitingSince": "2026-10-25T01:39:33.578Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.578Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "양다일 inside의 브랜뉴뮤직 유통 후보를 대체 검색했다. 직접 Bugs 앨범 열기는 timeout으로 실패해 새 완료 근거로 세지 않았다. 기존 일치 MBID 캐시는 보존하며 실제 록/J-pop 활동은 미완료다.",
+            "checkedAt": "2026-10-25T01:39:33.654Z",
+            "waitingSince": "2026-10-25T01:39:33.654Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.654Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:33.745Z",
+            "waitingSince": "2026-10-25T01:39:33.745Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.745Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+        "name": "양다일",
+        "aliases": [
+          "Yang Da Il"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.149229+00:00"
+      },
+      "musicbrainz": {
+        "id": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:44.207Z",
+        "sourceUrl": "https://musicbrainz.org/artist/2593a1ae-572e-4d4a-b567-1fe6810a46fb"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB inside/Our Joys and Sadnesses 작품과 계약 종료 보도 후보 확인. 과거 브랜뉴 소속을 현재 소속으로 고정하지 않음. 실제 록/J-pop 활동 근거 부족.",
+          "checkedAt": "2026-10-26T05:41:08.976Z",
+          "waitingSince": "2026-10-26T05:41:08.976Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:08.976Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB inside/Our Joys and Sadnesses 작품과 계약 종료 보도 후보 확인. 과거 브랜뉴 소속을 현재 소속으로 고정하지 않음. 실제 록/J-pop 활동 근거 부족.",
+          "checkedAt": "2026-10-26T05:41:09.077Z",
+          "waitingSince": "2026-10-26T05:41:09.077Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.077Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:09.174Z",
+          "waitingSince": "2026-10-26T05:41:09.174Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.174Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB inside/Our Joys and Sadnesses 작품과 계약 종료 보도 후보 확인. 과거 브랜뉴 소속을 현재 소속으로 고정하지 않음. 실제 록/J-pop 활동 근거 부족.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 34,
+      "bandId": "92a5e91a-3527-418b-b804-309bada7a55c",
+      "name": "우수현",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T07:26:59.692357+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "우수현 포크 가수의 KOCCA 지원 시절인연 공식 유통 후보와 동명 초등학생 바이올리니스트가 함께 검색됐다. 선택 MBID/작품 연결 없이 클래식 제외하거나 록 승인하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:33.833Z",
+            "waitingSince": "2026-10-25T01:39:33.833Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.833Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "우수현 포크 가수의 KOCCA 지원 시절인연 공식 유통 후보와 동명 초등학생 바이올리니스트가 함께 검색됐다. 선택 MBID/작품 연결 없이 클래식 제외하거나 록 승인하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:33.909Z",
+            "waitingSince": "2026-10-25T01:39:33.909Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.909Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:33.994Z",
+            "waitingSince": "2026-10-25T01:39:33.994Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:33.994Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "92a5e91a-3527-418b-b804-309bada7a55c",
+        "name": "우수현",
+        "aliases": [
+          "Woo Suhyun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "9176781a-74ef-4617-ae0a-7c713b287554",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T07:26:59.692357+00:00"
+      },
+      "musicbrainz": {
+        "id": "9176781a-74ef-4617-ae0a-7c713b287554",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "South Korean singer-songwriter",
+        "checkedAt": "2026-10-26T05:36:46.324Z",
+        "sourceUrl": "https://musicbrainz.org/artist/9176781a-74ef-4617-ae0a-7c713b287554"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 이름 모를 숲·우수현 및 개별 음반 후보를 확인. Apple Music 실제 페이지 접근 불가, Last.fm API6. 포크/재즈 분류 검색만으로 제외하지 않음.",
+          "checkedAt": "2026-10-26T05:41:09.270Z",
+          "waitingSince": "2026-10-26T05:41:09.270Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.270Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB 이름 모를 숲·우수현 및 개별 음반 후보를 확인. Apple Music 실제 페이지 접근 불가, Last.fm API6. 포크/재즈 분류 검색만으로 제외하지 않음.",
+          "checkedAt": "2026-10-26T05:41:09.362Z",
+          "waitingSince": "2026-10-26T05:41:09.362Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.362Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:09.467Z",
+          "waitingSince": "2026-10-26T05:41:09.467Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.467Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB 이름 모를 숲·우수현 및 개별 음반 후보를 확인. Apple Music 실제 페이지 접근 불가, Last.fm API6. 포크/재즈 분류 검색만으로 제외하지 않음.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [
+        "https://www.youtube.com/@wo_oso_o"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 35,
+      "bandId": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+      "name": "이기환",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T01:30:28.907801+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "이기환/KIPLE의 실제 음반 크레딧 후보를 검색했으나 선택 MBID와 본인 음악 활동·록 범위를 교차검증하지 못했다. 작곡/편곡 참여만으로 독립 록 신원을 확정하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:34.072Z",
+            "waitingSince": "2026-10-25T01:39:34.072Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.072Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "이기환/KIPLE의 실제 음반 크레딧 후보를 검색했으나 선택 MBID와 본인 음악 활동·록 범위를 교차검증하지 못했다. 작곡/편곡 참여만으로 독립 록 신원을 확정하지 않는다.",
+            "checkedAt": "2026-10-25T01:39:34.156Z",
+            "waitingSince": "2026-10-25T01:39:34.156Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.156Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:34.235Z",
+            "waitingSince": "2026-10-25T01:39:34.235Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.235Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+        "name": "이기환",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T01:30:28.907801+00:00"
+      },
+      "musicbrainz": {
+        "id": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "composer, KIPLE",
+        "checkedAt": "2026-10-26T05:36:51.101Z",
+        "sourceUrl": "https://musicbrainz.org/artist/6831cb3d-9aaf-4dc5-84c0-5d15dd57c384"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB composer,KIPLE와 kihwani_0311 관계. Last.fm 앨범명이 같은 작곡가 신원을 입증하지 않음. 공식 크레딧·장르 보완 필요.",
+          "checkedAt": "2026-10-26T05:41:09.557Z",
+          "waitingSince": "2026-10-26T05:41:09.557Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.557Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB composer,KIPLE와 kihwani_0311 관계. Last.fm 앨범명이 같은 작곡가 신원을 입증하지 않음. 공식 크레딧·장르 보완 필요.",
+          "checkedAt": "2026-10-26T05:41:09.644Z",
+          "waitingSince": "2026-10-26T05:41:09.644Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.644Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:09.732Z",
+          "waitingSince": "2026-10-26T05:41:09.732Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.732Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB composer,KIPLE와 kihwani_0311 관계. Last.fm 앨범명이 같은 작곡가 신원을 입증하지 않음. 공식 크레딧·장르 보완 필요.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 36,
+      "bandId": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+      "name": "이동민",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T07:26:59.695783+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "고등래퍼 이동민 후보가 발견됐지만 선택 MBID의 원작·크레딧과 정확히 연결되지 않았다. 동명 배우/가수의 본명과 합치지 않고 신원/범위를 미완료로 남긴다.",
+            "checkedAt": "2026-10-25T01:39:34.316Z",
+            "waitingSince": "2026-10-25T01:39:34.316Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.316Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "고등래퍼 이동민 후보가 발견됐지만 선택 MBID의 원작·크레딧과 정확히 연결되지 않았다. 동명 배우/가수의 본명과 합치지 않고 신원/범위를 미완료로 남긴다.",
+            "checkedAt": "2026-10-25T01:39:34.393Z",
+            "waitingSince": "2026-10-25T01:39:34.393Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.393Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:34.472Z",
+            "waitingSince": "2026-10-25T01:39:34.472Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.472Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+        "name": "이동민",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T07:26:59.695783+00:00"
+      },
+      "musicbrainz": {
+        "id": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:36:56.069Z",
+        "sourceUrl": "https://musicbrainz.org/artist/4838ad0f-852f-4ae6-8d19-f1109556c7e9"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 작품/관계가 없고 Last.fm은 고등래퍼 FINAL을 반환. 동명 인물 가능성이 남아 목록의 신원으로 확정하지 않음.",
+          "checkedAt": "2026-10-26T05:41:09.828Z",
+          "waitingSince": "2026-10-26T05:41:09.828Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.828Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB 작품/관계가 없고 Last.fm은 고등래퍼 FINAL을 반환. 동명 인물 가능성이 남아 목록의 신원으로 확정하지 않음.",
+          "checkedAt": "2026-10-26T05:41:09.917Z",
+          "waitingSince": "2026-10-26T05:41:09.917Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:09.917Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:10.008Z",
+          "waitingSince": "2026-10-26T05:41:10.008Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.008Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB 작품/관계가 없고 Last.fm은 고등래퍼 FINAL을 반환. 동명 인물 가능성이 남아 목록의 신원으로 확정하지 않음.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 37,
+      "bandId": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+      "name": "이루다",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-12T14:24:09.148752+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "LEE LU DA 검색이 우주소녀 멤버 등으로 이어졌지만 현재 선택 MBID의 같은 작품/공식 신원 연결이 없다. 이름/로마자만으로 동일 신원을 확정하지 않았다.",
+            "checkedAt": "2026-10-25T01:39:34.551Z",
+            "waitingSince": "2026-10-25T01:39:34.551Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.551Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "LEE LU DA 검색이 우주소녀 멤버 등으로 이어졌지만 현재 선택 MBID의 같은 작품/공식 신원 연결이 없다. 이름/로마자만으로 동일 신원을 확정하지 않았다.",
+            "checkedAt": "2026-10-25T01:39:34.629Z",
+            "waitingSince": "2026-10-25T01:39:34.629Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.629Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:34.707Z",
+            "waitingSince": "2026-10-25T01:39:34.707Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.707Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+        "name": "이루다",
+        "aliases": [
+          "이루다 (LEE LU DA)"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "2045d73e-23ba-4857-90b4-4064d8a19f04",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.148752+00:00"
+      },
+      "musicbrainz": {
+        "id": "2045d73e-23ba-4857-90b4-4064d8a19f04",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-26T05:37:00.957Z",
+        "sourceUrl": "https://musicbrainz.org/artist/2045d73e-23ba-4857-90b4-4064d8a19f04"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB 작품 없이 YouTube channel 관계만 있음. 검색의 동명 피아노/가수와 해당 entity를 연결할 공식 근거 미확인. Last.fm API6.",
+          "checkedAt": "2026-10-26T05:41:10.097Z",
+          "waitingSince": "2026-10-26T05:41:10.097Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.097Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB 작품 없이 YouTube channel 관계만 있음. 검색의 동명 피아노/가수와 해당 entity를 연결할 공식 근거 미확인. Last.fm API6.",
+          "checkedAt": "2026-10-26T05:41:10.187Z",
+          "waitingSince": "2026-10-26T05:41:10.187Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.187Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:10.276Z",
+          "waitingSince": "2026-10-26T05:41:10.276Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.276Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB 작품 없이 YouTube channel 관계만 있음. 검색의 동명 피아노/가수와 해당 entity를 연결할 공식 근거 미확인. Last.fm API6.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [
+        "https://www.youtube.com/channel/UCnwRB1ozI4z0hEdw3_Z_P7A"
+      ],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 38,
+      "bandId": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+      "name": "이설아",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-14T23:14:17.350309+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "POCLANOS 직접 아티스트 소개의 못다한 말들·작은 마을·신작 기록을 읽어 같은 작품을 보완했다. 포크 또는 인디라는 말만으로 록으로 바꾸지 않고 실제 록 범위는 미완료다.",
+            "checkedAt": "2026-10-25T01:39:34.783Z",
+            "waitingSince": "2026-10-25T01:39:34.783Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.783Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "POCLANOS 직접 아티스트 소개의 못다한 말들·작은 마을·신작 기록을 읽어 같은 작품을 보완했다. 포크 또는 인디라는 말만으로 록으로 바꾸지 않고 실제 록 범위는 미완료다.",
+            "checkedAt": "2026-10-25T01:39:34.865Z",
+            "waitingSince": "2026-10-25T01:39:34.865Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.865Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:34.940Z",
+            "waitingSince": "2026-10-25T01:39:34.940Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:34.940Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+        "name": "이설아",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-14T23:14:17.350309+00:00"
+      },
+      "musicbrainz": {
+        "id": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "singer-songwriter",
+        "checkedAt": "2026-10-26T05:37:02.681Z",
+        "sourceUrl": "https://musicbrainz.org/artist/dfb57b38-13bf-4f95-850d-a085cdc1940b"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "인디스트릿 실제 페이지에서 못다한 말들/엄마로 산다는 것은 등 작품 확인. MB 작품·공식 URL 부재. 개별 공식 레이블 신원 및 실제 록 활동 대조 필요.",
+          "checkedAt": "2026-10-26T05:41:10.382Z",
+          "waitingSince": "2026-10-26T05:41:10.382Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.382Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "인디스트릿 실제 페이지에서 못다한 말들/엄마로 산다는 것은 등 작품 확인. MB 작품·공식 URL 부재. 개별 공식 레이블 신원 및 실제 록 활동 대조 필요.",
+          "checkedAt": "2026-10-26T05:41:10.469Z",
+          "waitingSince": "2026-10-26T05:41:10.469Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.469Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:10.561Z",
+          "waitingSince": "2026-10-26T05:41:10.561Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.561Z",
+          "validUntil": null
+        }
+      },
+      "notes": "인디스트릿 실제 페이지에서 못다한 말들/엄마로 산다는 것은 등 작품 확인. MB 작품·공식 URL 부재. 개별 공식 레이블 신원 및 실제 록 활동 대조 필요.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": null,
+        "returnedMbid": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    },
+    {
+      "index": 39,
+      "bandId": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+      "name": "이연재",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "identityVersion": "2026-10-15T21:28:34.358536+00:00",
+        "stages": {
+          "research": {
+            "status": "deferred",
+            "reason": "서울문화포털 직접 자료에서 나인티덕의 색소폰 이연재를 읽었다. 선택된 brass MB 신원의 정확한 작품/관계와 실제 록/J-pop 활동 검증이 남는다. 동명 기타리스트·교향악단 단원과 합치지 않는다.",
+            "checkedAt": "2026-10-25T01:39:35.025Z",
+            "waitingSince": "2026-10-25T01:39:35.025Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:35.025Z",
+            "validUntil": null
+          },
+          "approval": {
+            "status": "deferred",
+            "reason": "서울문화포털 직접 자료에서 나인티덕의 색소폰 이연재를 읽었다. 선택된 brass MB 신원의 정확한 작품/관계와 실제 록/J-pop 활동 검증이 남는다. 동명 기타리스트·교향악단 단원과 합치지 않는다.",
+            "checkedAt": "2026-10-25T01:39:35.101Z",
+            "waitingSince": "2026-10-25T01:39:35.101Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:35.101Z",
+            "validUntil": null
+          },
+          "channels": {
+            "status": "deferred",
+            "reason": "선택 개인 신원의 공식 forward 채널 링크/API ID 교차검증 입력이 없다. MB cooldown을 지키고 그룹·레이블 채널을 개인에게 대입하지 않으며 유효 캐시 존재 여부를 읽어 불필요한 API 요청을 피했다.",
+            "checkedAt": "2026-10-25T01:39:35.180Z",
+            "waitingSince": "2026-10-25T01:39:35.180Z",
+            "applied": false,
+            "lastSuccessfulAt": null,
+            "nextAttemptAt": "2026-10-26T01:39:35.180Z",
+            "validUntil": null
+          }
+        }
+      },
+      "afterBand": {
+        "id": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+        "name": "이연재",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "4e9bd85d-790c-4116-b8ab-e29f16168ac8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-15T21:28:34.358536+00:00"
+      },
+      "musicbrainz": {
+        "id": "4e9bd85d-790c-4116-b8ab-e29f16168ac8",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "brass",
+        "checkedAt": "2026-10-26T05:37:05.033Z",
+        "sourceUrl": "https://musicbrainz.org/artist/4e9bd85d-790c-4116-b8ab-e29f16168ac8"
+      },
+      "result": {
+        "research": {
+          "status": "deferred",
+          "reason": "MB disambiguation brass. 서울문화포털 동명 색소폰/나인티덕 소개 검색 후보가 있으나 현재 ID와 직접 연결되지 않아 재즈로 자동 제외하지 않음.",
+          "checkedAt": "2026-10-26T05:41:10.649Z",
+          "waitingSince": "2026-10-26T05:41:10.649Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.649Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "MB disambiguation brass. 서울문화포털 동명 색소폰/나인티덕 소개 검색 후보가 있으나 현재 ID와 직접 연결되지 않아 재즈로 자동 제외하지 않음.",
+          "checkedAt": "2026-10-26T05:41:10.758Z",
+          "waitingSince": "2026-10-26T05:41:10.758Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.758Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "공식성 검증 캐시 없음. MB YouTube 관계/개별 공식 페이지 직접 채널 링크·API 일치 검증 미완료. candidate를 verified로 승격하지 않음. 다음 정상 선정에서 보완.",
+          "checkedAt": "2026-10-26T05:41:10.858Z",
+          "waitingSince": "2026-10-26T05:41:10.858Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-27T05:41:10.858Z",
+          "validUntil": null
+        }
+      },
+      "notes": "MB disambiguation brass. 서울문화포털 동명 색소폰/나인티덕 소개 검색 후보가 있으나 현재 ID와 직접 연결되지 않아 재즈로 자동 제외하지 않음.",
+      "officialChannelObservation": null,
+      "channelCandidateUrls": [],
+      "channelCandidateVerification": "candidate_not_verified",
+      "readyToApply": false,
+      "lastfm": {
+        "reused": false,
+        "apiError": 6,
+        "returnedMbid": null,
+        "metricUsed": false,
+        "reason": "검증된 핵심 후보 변경에 사용하지 않음."
+      }
+    }
+  ]
+}

@@ -1,0 +1,4581 @@
+{
+  "project": "czjrzylvnewfjnfwjhwf",
+  "policy": "jpop-or-rock-v1",
+  "role": "artist-review",
+  "runId": "20ec5ded-971f-4ce3-a481-42170dfbd228",
+  "startedAt": "2026-10-27T01:27:35.706Z",
+  "completedAt": "2026-10-27T01:37:36.672369+00:00",
+  "completedAtKst": "2026-10-27T10:37:36.672369+09:00",
+  "environment": {
+    "path": "/workspace/Concert_finder-recovered-20261023",
+    "headAtStart": "1822c85",
+    "requiredAncestors": [
+      "f267be1",
+      "fd45938"
+    ],
+    "observationsCurrent": true,
+    "networkPolicy": "restricted/enforced; inherited proxy/TLS/CA preserved",
+    "bindings": "ready; real Supabase snapshot/begin/context/apply/readback/finish and Last.fm probe succeeded",
+    "initialLiveLeases": {
+      "integrated": 0,
+      "legacy": 0
+    },
+    "identityClient": "Current mutation CLI/journal implemented; no implementation gap found, no mutation attempted"
+  },
+  "queue": {
+    "id": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revisionBefore": 3326,
+    "revisionAfter": 3394,
+    "active": null,
+    "transfer": null,
+    "hashes": {
+      "state.json": "6e767a82a8f5cce5e41a7264a56a61d6228d6b73be3427172d13ea24b97d0969",
+      "provider-cooldowns.json": "39e13a5f6ec9aaa418fdd7b497672a3a23f9e368acb4d6a6eceb3a6a4ca4130f",
+      "approval-drafts-573f7fc2.json": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337"
+    },
+    "serverRun": {
+      "id": "20ec5ded-971f-4ce3-a481-42170dfbd228",
+      "started_at": "2026-10-27T01:27:35.706+00:00",
+      "finished_at": "2026-10-27T01:35:46.743297+00:00",
+      "target_count": 40
+    },
+    "historyApiCalls": 77,
+    "remainingArtists": 371
+  },
+  "catalog": {
+    "before": {
+      "total": 663,
+      "approved": 417,
+      "unreviewed": 240,
+      "excluded": 6
+    },
+    "after": {
+      "total": 663,
+      "approved": 432,
+      "excluded": 6,
+      "unreviewed": 225
+    },
+    "receipts": 15,
+    "latestBandVersionAndPublicationApprovalReadback": 15,
+    "relations": "All 15 apply results true only after existing CLI receipt/latest band/publication approval/concert/follow relation readback verification"
+  },
+  "selectedDistinctArtists": 40,
+  "selectedTasks": 66,
+  "taskResults": {
+    "channels:deferred": 40,
+    "approval:deferred": 11,
+    "approval:complete": 15
+  },
+  "newResearchCompleted": 0,
+  "originalResearchPreserved": 40,
+  "approvalsApplied": 15,
+  "approvalDeferred": 11,
+  "channelsDeferred": 40,
+  "identityMutations": 0,
+  "newRegistrations": 0,
+  "aliasChanges": 0,
+  "channelSaves": 0,
+  "photoSaves": 0,
+  "core": {
+    "composition": "80/60/60 proposal, not verified worldwide top 200",
+    "poolBefore": 179,
+    "poolAfter": 193,
+    "newVerifiedWithExactMbidMetrics": 14,
+    "selectedBefore": 126,
+    "selectedAfter": 130,
+    "unfilled": 70,
+    "mandatoryCount": 4,
+    "complete": false
+  },
+  "providerAccounting": {
+    "musicbrainzRequests": 40,
+    "musicbrainzEntityReads": 40,
+    "musicbrainzInternalRetries": 0,
+    "lastfmRequests": 36,
+    "lastfmReusedArtists": 4,
+    "lastfmMismatches": [
+      33
+    ],
+    "lastfmApi6": [
+      29,
+      31,
+      37
+    ],
+    "lastfmConnectionProbeRequests": 1,
+    "youtubeRequests": 0,
+    "chartRequests": 0,
+    "webReadsCountedSeparately": true,
+    "totalProviderRequests": 77
+  },
+  "lastfmConnection": {
+    "checkedAt": "2026-10-27T01:27:33.634Z",
+    "requests": 1,
+    "http": 200,
+    "apiSuccess": true,
+    "apiError": null,
+    "exactMbid": true,
+    "purpose": "connection probe only; cached metric checkedAt preserved"
+  },
+  "artists": [
+    {
+      "index": 0,
+      "bandId": "fb964b4c-ad50-4608-9296-a343e9ec74e3",
+      "name": "10cc",
+      "aliases": [
+        "Ten CC",
+        "10 CC"
+      ],
+      "musicbrainzId": "f37c537b-3557-4031-bfd6-ab63ced32854",
+      "country": "GB",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:15.398Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "10cc",
+          "Sheet Music",
+          "The Original Soundtrack",
+          "How Dare You!",
+          "Deceptive Bends"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.945Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.10cc.world/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:19.051052+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:19.051052+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. 이 단계에 batch 연결 확인 artist.getInfo 1회의 공통 비용을 포함하며 대상 연구/지표 완료로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:40.910Z",
+          "nextAttemptAt": "2026-10-28T01:35:40.910Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCjyD_pnM14qs0xwkwvzVsTw"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "f37c537b-3557-4031-bfd6-ab63ced32854",
+        "returnedMbid": "f37c537b-3557-4031-bfd6-ab63ced32854",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:31.981Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 1,
+      "bandId": "6195f4e7-97a2-43db-831d-6d765941b48b",
+      "name": "175R",
+      "aliases": [
+        "Inago Rider"
+      ],
+      "musicbrainzId": "856fd456-a940-4e12-970a-66bffaf0ffbd",
+      "country": "JP",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:17.245Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "Go! Upstart!",
+          "Songs",
+          "MELODY",
+          "7 -SEVEN-",
+          "Bremen"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.946Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.175r.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-24T17:47:20.54931+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-24T17:47:20.54931+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.049Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.049Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "856fd456-a940-4e12-970a-66bffaf0ffbd",
+        "returnedMbid": "856fd456-a940-4e12-970a-66bffaf0ffbd",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:32.123Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 2,
+      "bandId": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+      "name": "Counting Crows",
+      "aliases": [],
+      "musicbrainzId": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
+      "country": "US",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:23.026Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "August and Everything After",
+          "Recovering the Satellites",
+          "This Desert Life",
+          "Hard Candy",
+          "Saturday Nights & Sunday Mornings"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.957Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.countingcrows.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:26.263312+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:26.263312+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.143Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.143Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/user/countingcrows"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
+        "returnedMbid": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:32.249Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 3,
+      "bandId": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+      "name": "Do As Infinity",
+      "aliases": [
+        "DAI",
+        "ドゥー・アズ・インフィニティ",
+        "ドゥー・アズ",
+        "大无限乐团",
+        "大無限樂團"
+      ],
+      "musicbrainzId": "b128a994-2400-432d-b26a-8feede87daa8",
+      "country": "JP",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:24.952Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "BREAK OF DAWN",
+          "NEW WORLD",
+          "DEEP FOREST",
+          "TRUE SONG",
+          "GATES OF HEAVEN"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.959Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://d-a-i.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-24T17:47:27.591177+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-24T17:47:27.591177+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.234Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.234Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCt6JXbx9PVL9gEkvdPjwVmw"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "b128a994-2400-432d-b26a-8feede87daa8",
+        "returnedMbid": "b128a994-2400-432d-b26a-8feede87daa8",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:32.442Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 4,
+      "bandId": "62500607-1eef-4c81-bc44-592107bc54e9",
+      "name": "Foreigner",
+      "aliases": [],
+      "musicbrainzId": "160629ab-ec18-4931-8c95-02cb92d06186",
+      "country": "US",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:29.132Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "Foreigner",
+          "Double Vision",
+          "Head Games",
+          "4",
+          "Agent Provocateur"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.965Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.foreigneronline.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:33.06938+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:33.06938+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.322Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.322Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCr79-QZv1_VGlxVWLc28xrQ"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "160629ab-ec18-4931-8c95-02cb92d06186",
+        "returnedMbid": "160629ab-ec18-4931-8c95-02cb92d06186",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:32.568Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 5,
+      "bandId": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+      "name": "Grateful Dead",
+      "aliases": [
+        "The Grateful Dead",
+        "Greatful Dead",
+        "Greatfull Dead"
+      ],
+      "musicbrainzId": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+      "country": "US",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:31.076Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "The Grateful Dead",
+          "Anthem of the Sun",
+          "Aoxomoxoa",
+          "Workingman’s Dead",
+          "American Beauty"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.970Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.dead.net/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:35.871346+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:35.871346+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.414Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.414Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UC9dWluHyEwvIj5NNs7KkJ0A",
+          "https://www.youtube.com/user/gratefulvideo"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+        "returnedMbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:32.656Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 6,
+      "bandId": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+      "name": "INXS",
+      "aliases": [
+        "In Excess",
+        "I.N.X.S.",
+        "The Farriss Brothers"
+      ],
+      "musicbrainzId": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+      "country": "AU",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:37.220Z",
+        "country": "AU",
+        "area": "Australia",
+        "type": "Group",
+        "worksSample": [
+          "INXS",
+          "Underneath the Colours",
+          "Shabooh Shoobah",
+          "The Swing",
+          "Listen Like Thieves"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.972Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.inxs.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:38.705779+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:38.705779+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.505Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.505Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCAldEKRD6LXGd8FAXI6Oo3w"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+        "returnedMbid": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:32.786Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 7,
+      "bandId": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+      "name": "Jethro Tull",
+      "aliases": [
+        "ジェ入ロ",
+        "Jetro Tull",
+        "Tull",
+        "Jethrp Tull"
+      ],
+      "musicbrainzId": "ece57992-dc2e-4f67-a269-fa43626c1a3d",
+      "country": "GB",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:39.282Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "This Was",
+          "Stand Up",
+          "Benefit",
+          "Aqualung",
+          "Thick as a Brick"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.974Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://jethrotull.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:40.179684+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:40.179684+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.591Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.591Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCyZe0Uc78q7aEA7bFKtZ-oA"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "ece57992-dc2e-4f67-a269-fa43626c1a3d",
+        "returnedMbid": "ece57992-dc2e-4f67-a269-fa43626c1a3d",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:33.251Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 8,
+      "bandId": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+      "name": "Kansas",
+      "aliases": [],
+      "musicbrainzId": "69689acf-d9cd-4d20-a972-47db4ed51b1a",
+      "country": "US",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:41.349Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "Kansas",
+          "Song for America",
+          "Masque",
+          "Leftoverture",
+          "Point of Know Return"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.978Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.kansasband.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:42.85635+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:42.85635+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.678Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.678Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/user/kansasVEVO"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "69689acf-d9cd-4d20-a972-47db4ed51b1a",
+        "returnedMbid": "69689acf-d9cd-4d20-a972-47db4ed51b1a",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:33.558Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 9,
+      "bandId": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+      "name": "Lynyrd Skynyrd",
+      "aliases": [
+        "Leonard Skinner",
+        "Lynyrd Skynyurd",
+        "Lynyrd Shynyrd",
+        "Lynrd Skynyrd",
+        "Lynyrd Skynard",
+        "Lynrd Skynrd",
+        "Lynyrd Skynrd",
+        "Lynryd Skynyrd",
+        "Lynard Skynard",
+        "Leonard Skinnerd",
+        "Lynard Skynyrd",
+        "Lynyrd Skynyd",
+        "Lenhard Skinnerd",
+        "Lyndyrd Skynyrd"
+      ],
+      "musicbrainzId": "c544ed4d-2390-4442-a83e-1ea2883b09c8",
+      "country": "US",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:44.816Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "(pronounced ’lĕh-’nérd ’skin-’nérd)",
+          "Second Helping",
+          "Nuthin’ Fancy",
+          "Gimme Back My Bullets",
+          "Street Survivors"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:01:43.981Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://lynyrdskynyrd.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:44.248108+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-24T17:47:44.248108+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.775Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.775Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCipLjr-h2iaEBWMJVfK2e2A",
+          "https://www.youtube.com/channel/UCu6GVHlTqWpsn4P46hNO9ig",
+          "https://www.youtube.com/channel/UCifDYheLW7ZwCdSRAW0g1jw"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "c544ed4d-2390-4442-a83e-1ea2883b09c8",
+        "returnedMbid": "c544ed4d-2390-4442-a83e-1ea2883b09c8",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:33.647Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 10,
+      "bandId": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+      "name": "The Jesus and Mary Chain",
+      "aliases": [
+        "The Jesus And Mary Chain",
+        "JAMC",
+        "Jesus and Mary Chain",
+        "Jesus & Mary Chain",
+        "The Jesus & Mary Chain",
+        "The Jesus And Marychain"
+      ],
+      "musicbrainzId": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+      "country": "GB",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:48.417Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "Psychocandy",
+          "Darklands",
+          "Barbed Wire Kisses (B-Sides and More)",
+          "Automatic",
+          "Honey’s Dead"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:11:37.328Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://themarychain.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:29:58.336172+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:29:58.336172+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.871Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.871Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCAlP0LcJ_RVqLvNr78w8MmA"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+        "returnedMbid": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+        "reused": true,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-25T21:24:13.144Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 1
+    },
+    {
+      "index": 11,
+      "bandId": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+      "name": "The Jimi Hendrix Experience",
+      "aliases": [
+        "The Jimmy Hendrix Experience",
+        "The Jimmi Hendrix Experience"
+      ],
+      "musicbrainzId": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+      "country": "GB",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:51.835Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "Are You Experienced",
+          "Axis: Bold as Love",
+          "Electric Ladyland",
+          "Smash Hits",
+          "Voodoo Chile"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:11:37.331Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.jimihendrix.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:29:59.776227+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:29:59.776227+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. Jimi Hendrix 개인 공식 사이트가 Experience 그룹 전용 채널까지 증명하지는 않는다.",
+          "checkedAt": "2026-10-27T01:35:41.972Z",
+          "nextAttemptAt": "2026-10-28T01:35:41.972Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. Jimi Hendrix 개인 공식 사이트가 Experience 그룹 전용 채널까지 증명하지는 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+        "returnedMbid": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+        "reused": true,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-25T21:24:13.413Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 1
+    },
+    {
+      "index": 12,
+      "bandId": "04eb6f86-95c1-43fc-972e-3366224d6c75",
+      "name": "The Offspring",
+      "aliases": [
+        "Offspring",
+        "Off Spring"
+      ],
+      "musicbrainzId": "23a03e33-a603-404e-bcbf-2c00159d7067",
+      "country": "US",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:53.701Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "The Offspring",
+          "Ignition",
+          "Smash",
+          "Ixnay on the Hombre",
+          "Americana"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:11:37.347Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://www.offspring.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:30:01.207161+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:30:01.207161+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.063Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.063Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCF3EnnuLjeab3r8l1k2rV9g",
+          "https://www.youtube.com/channel/UCP3EX5VKeaG4Oa2qTKPuEFA"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "23a03e33-a603-404e-bcbf-2c00159d7067",
+        "returnedMbid": "23a03e33-a603-404e-bcbf-2c00159d7067",
+        "reused": true,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-25T21:24:14.361Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 1
+    },
+    {
+      "index": 13,
+      "bandId": "9ba909bf-fe35-451a-bb78-af430449d12b",
+      "name": "The Psychedelic Furs",
+      "aliases": [
+        "The Psychedlic Furs",
+        "The Furs",
+        "Psychedelic Furs",
+        "Psycheldic Furs",
+        "The Psychadelic Furs",
+        "The Psychedelics Furs"
+      ],
+      "musicbrainzId": "9f930ddf-be2f-4de5-a39f-7ae47305752e",
+      "country": "GB",
+      "tasks": [
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:55.647Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "In the Pink",
+          "The Psychedelic Furs",
+          "Talk Talk Talk",
+          "Forever Now",
+          "Mirror Moves"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T09:11:37.352Z",
+      "summary": "기존 승인과 연구를 보존하고 이번에는 선정된 채널 작업만 조사했다.",
+      "sourceUrls": [
+        "https://thepsychedelicfurs.com/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:30:04.09146+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-25T21:30:04.09146+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.171Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.171Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/user/ThePsychFurs"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "9f930ddf-be2f-4de5-a39f-7ae47305752e",
+        "returnedMbid": "9f930ddf-be2f-4de5-a39f-7ae47305752e",
+        "reused": true,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-25T21:24:14.710Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 1
+    },
+    {
+      "index": 14,
+      "bandId": "bca8fda2-f346-461c-86b4-6409e124da0f",
+      "name": "Bee Gees",
+      "aliases": [
+        "The Bee Gees",
+        "Bee Gees, The",
+        "BeeGees",
+        "Би Джиз"
+      ],
+      "musicbrainzId": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
+      "country": "GB",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:57.735Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "E.S.P",
+          "One",
+          "Selección 5 Estrellas",
+          "The Bee Gees Sing and Play 14 Barry Gibb Songs",
+          "Spicks and Specks"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.799Z",
+      "summary": "공식 Bee Gees 음악 목록과 Rock Hall의 Gibb 형제는 확인했다. MB의 GB/Redcliffe와 영국 출생·호주 결성/활동 이력을 구분할 충분한 공식 국가 근거 및 초기 록 원작 문맥 보완이 남는다. 현 국가를 임의 수정하거나 disco라는 이유로 제외하지 않는다.",
+      "sourceUrls": [
+        "https://www.beegees.com/",
+        "https://www.rockhall.com/inductees/bee-gees"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:20.376496+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:20.376496+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 Bee Gees 음악 목록과 Rock Hall의 Gibb 형제는 확인했다. MB의 GB/Redcliffe와 영국 출생·호주 결성/활동 이력을 구분할 충분한 공식 국가 근거 및 초기 록 원작 문맥 보완이 남는다. 현 국가를 임의 수정하거나 disco라는 이유로 제외하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.267Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.267Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.336Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.336Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCD9sCcKXnFxMeuFoNayVxeQ"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
+        "returnedMbid": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:33.748Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 15,
+      "bandId": "07aac391-f72d-4c4e-835a-b3ab6abad2f5",
+      "name": "BeForU",
+      "aliases": [
+        "Be For U",
+        "ビーフォーユー"
+      ],
+      "musicbrainzId": "862cd6ae-ea74-4696-a35c-73055135cdb7",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:28:59.536Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "BeForU",
+          "BeForU II",
+          "BeForU III: Breaking Into The probability Changes",
+          "シャングリラ",
+          "6NOTES"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.802Z",
+      "summary": "MB의 JP/BeForU II/III·Red Rocket Rising을 확인했다. 검색에는 Konami/Avex 경력 후보가 있으나 실제 읽은 공식 레이블/그룹 소개가 없어 기존 Apple 불가 주소 및 위키/스니펫만으로 승인하지 않는다.",
+      "sourceUrls": [
+        "https://www.cdjapan.co.jp/product/AVCA-26007"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:58.192384+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:58.192384+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "MB의 JP/BeForU II/III·Red Rocket Rising을 확인했다. 검색에는 Konami/Avex 경력 후보가 있으나 실제 읽은 공식 레이블/그룹 소개가 없어 기존 Apple 불가 주소 및 위키/스니펫만으로 승인하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.431Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.431Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.501Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.501Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "862cd6ae-ea74-4696-a35c-73055135cdb7",
+        "returnedMbid": "862cd6ae-ea74-4696-a35c-73055135cdb7",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:33.906Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 16,
+      "bandId": "db1d90aa-7381-4d49-ad95-510e27ba6fe3",
+      "name": "Belle and Sebastian",
+      "aliases": [
+        "Belle et Sébastien",
+        "Belle & Sebatian",
+        "Belle Adn Sebastian",
+        "Belle & Sebastien",
+        "Belle and Sebastien",
+        "Belle & Sebastian",
+        "ベル・アンド・セバスチャン"
+      ],
+      "musicbrainzId": "e5c7b94f-e264-473c-bb0f-37c85d4d5c70",
+      "country": "GB",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:01.505Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "Tigermilk",
+          "If You’re Feeling Sinister",
+          "The Boy With the Arab Strap",
+          "Fold Your Hands Child, You Walk Like a Peasant",
+          "Dear Catastrophe Waitress"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.804Z",
+      "summary": "Red Light 공식 관리 소개의 Glasgow 7인조, A Bit of Previous/The Boy With The Arab Strap 원작과 Young And Stupid의 acoustic rocker 설명을 정확한 GB/Glasgow MB 그룹 원작과 대조했다. chamber pop 병행과 무관하게 실제 록 활동을 확인했다.",
+      "sourceUrls": [
+        "https://redlightmanagement.com/artists/belle-and-sebastian/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Red Light 공식 관리 소개의 Glasgow 7인조, A Bit of Previous/The Boy With The Arab Strap 원작과 Young And Stupid의 acoustic rocker 설명을 정확한 GB/Glasgow MB 그룹 원작과 대조했다. chamber pop 병행과 무관하게 실제 록 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Red Light 공식 관리 소개의 Glasgow 7인조, A Bit of Previous/The Boy With The Arab Strap 원작과 Young And Stupid의 acoustic rocker 설명을 정확한 GB/Glasgow MB 그룹 원작과 대조했다. chamber pop 병행과 무관하게 실제 록 활동을 확인했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70",
+            "checkedAt": "2026-10-27T01:29:01.505Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Red Light 공식 관리 소개의 Glasgow 7인조, A Bit of Previous/The Boy With The Arab Strap 원작과 Young And Stupid의 acoustic rocker 설명을 정확한 GB/Glasgow MB 그룹 원작과 대조했다. chamber pop 병행과 무관하게 실제 록 활동을 확인했다.",
+          "sourceUrls": [
+            "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 GB·United Kingdom를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Red Light 공식 관리 소개의 Glasgow 7인조, A Bit of Previous/The Boy With The Arab Strap 원작과 Young And Stupid의 acoustic rocker 설명을 정확한 GB/Glasgow MB 그룹 원작과 대조했다. chamber pop 병행과 무관하게 실제 록 활동을 확인했다.",
+          "sourceUrls": [
+            "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:e5c7b94f-e264-473c-bb0f-37c85d4d5c70와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://redlightmanagement.com/artists/belle-and-sebastian/",
+            "https://musicbrainz.org/artist/e5c7b94f-e264-473c-bb0f-37c85d4d5c70"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:14.058204+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:33:49.289127+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:49.289127+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:46.911Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. MB에 서로 다른2개 채널 URL이 있어 공식 직접 링크 교차 전 임의 선택하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.598Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.598Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCIS-RzDIUQcYGL0aSLA67hw",
+          "https://www.youtube.com/channel/UClz7tzOxFJT_v5iOfh8PPvg"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. MB에 서로 다른2개 채널 URL이 있어 공식 직접 링크 교차 전 임의 선택하지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "e5c7b94f-e264-473c-bb0f-37c85d4d5c70",
+        "returnedMbid": "e5c7b94f-e264-473c-bb0f-37c85d4d5c70",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.004Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 17,
+      "bandId": "1782ce7d-590b-4781-9557-6217bfb2e05b",
+      "name": "Beyond",
+      "aliases": [],
+      "musicbrainzId": "d84d02ad-d74c-4227-8073-6f13a039cfac",
+      "country": "HK",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:03.336Z",
+        "country": "HK",
+        "area": "Hong Kong",
+        "type": "Group",
+        "worksSample": [
+          "Beyond Live 88",
+          "精选辑 ENCORE",
+          "再見理想",
+          "亞拉伯跳舞女郎",
+          "秘密警察"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.806Z",
+      "summary": "MB의 HK/Hong Kong band·再見理想/秘密警察/現代舞台를 확인하고 beyond.com.hk의 회고·홍콩 인물을 읽었다. 현 사이트는 커뮤니티 성격이며 충분한 공식 밴드 소개/작품의 록 근거 교차가 남아 자동 승인하지 않는다.",
+      "sourceUrls": [
+        "https://www.beyond.com.hk/"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:51.665961+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:51.665961+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "MB의 HK/Hong Kong band·再見理想/秘密警察/現代舞台를 확인하고 beyond.com.hk의 회고·홍콩 인물을 읽었다. 현 사이트는 커뮤니티 성격이며 충분한 공식 밴드 소개/작품의 록 근거 교차가 남아 자동 승인하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.693Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.693Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.769Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.769Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "d84d02ad-d74c-4227-8073-6f13a039cfac",
+        "returnedMbid": "d84d02ad-d74c-4227-8073-6f13a039cfac",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.109Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 18,
+      "bandId": "a6de2517-7480-4793-8003-4f3d99149d1b",
+      "name": "BLU‐SWING",
+      "aliases": [
+        "BLU-SWING"
+      ],
+      "musicbrainzId": "1c69113d-00eb-4120-b166-6699e33a0031",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:09.826Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "Jazzyster",
+          "REVISION",
+          "Bottom Line",
+          "Secret of Attraction",
+          "Find Your Way"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.810Z",
+      "summary": "Columbia의 2004 도쿄 결성·中村祐介/蓮池真治/小島翔/田中裕梨 및 REVISION/JAZZYSTER 원작, Cotton Club의 동일 멤버와 JAZZ/SOUL/ROCK 혼합 활동을 MB의 JP 그룹·동일 원작에 대조했다. 일본 국적/밴드 형식만으로 판정하지 않으며 실제 록을 포함한 음악 활동을 확인했다.",
+      "sourceUrls": [
+        "https://columbia.jp/artist-info/blu-swing/prof.html",
+        "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Columbia의 2004 도쿄 결성·中村祐介/蓮池真治/小島翔/田中裕梨 및 REVISION/JAZZYSTER 원작, Cotton Club의 동일 멤버와 JAZZ/SOUL/ROCK 혼합 활동을 MB의 JP 그룹·동일 원작에 대조했다. 일본 국적/밴드 형식만으로 판정하지 않으며 실제 록을 포함한 음악 활동을 확인했다.",
+        "sources": [
+          {
+            "url": "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Columbia의 2004 도쿄 결성·中村祐介/蓮池真治/小島翔/田中裕梨 및 REVISION/JAZZYSTER 원작, Cotton Club의 동일 멤버와 JAZZ/SOUL/ROCK 혼합 활동을 MB의 JP 그룹·동일 원작에 대조했다. 일본 국적/밴드 형식만으로 판정하지 않으며 실제 록을 포함한 음악 활동을 확인했다."
+          },
+          {
+            "url": "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Columbia의 2004 도쿄 결성·中村祐介/蓮池真治/小島翔/田中裕梨 및 REVISION/JAZZYSTER 원작, Cotton Club의 동일 멤버와 JAZZ/SOUL/ROCK 혼합 활동을 MB의 JP 그룹·동일 원작에 대조했다. 일본 국적/밴드 형식만으로 판정하지 않으며 실제 록을 포함한 음악 활동을 확인했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031",
+            "checkedAt": "2026-10-27T01:29:09.826Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Columbia의 2004 도쿄 결성·中村祐介/蓮池真治/小島翔/田中裕梨 및 REVISION/JAZZYSTER 원작, Cotton Club의 동일 멤버와 JAZZ/SOUL/ROCK 혼합 활동을 MB의 JP 그룹·동일 원작에 대조했다. 일본 국적/밴드 형식만으로 판정하지 않으며 실제 록을 포함한 음악 활동을 확인했다.",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Columbia의 2004 도쿄 결성·中村祐介/蓮池真治/小島翔/田中裕梨 및 REVISION/JAZZYSTER 원작, Cotton Club의 동일 멤버와 JAZZ/SOUL/ROCK 혼합 활동을 MB의 JP 그룹·동일 원작에 대조했다. 일본 국적/밴드 형식만으로 판정하지 않으며 실제 록을 포함한 음악 활동을 확인했다.",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:1c69113d-00eb-4120-b166-6699e33a0031와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/blu-swing/prof.html",
+            "https://www.cottonclubjapan.co.jp/jp/sp/artists/blu-swing-230202/",
+            "https://musicbrainz.org/artist/1c69113d-00eb-4120-b166-6699e33a0031"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149356+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-27T01:33:51.357612+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:51.357612+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:50.484Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.859Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.859Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/@BLUSWINGchannel"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "1c69113d-00eb-4120-b166-6699e33a0031",
+        "returnedMbid": "1c69113d-00eb-4120-b166-6699e33a0031",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.202Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 19,
+      "bandId": "34f02e89-19fb-4fbd-8881-056043d23c70",
+      "name": "Cheap Trick",
+      "aliases": [],
+      "musicbrainzId": "9f870653-72b0-4c6d-8c59-439a95963e09",
+      "country": "US",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:12.134Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "The Box Set Series",
+          "In Color",
+          "Cheap Trick",
+          "Heaven Tonight",
+          "Dream Police"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.813Z",
+      "summary": "공식 Cheap Trick 사이트의 1977~1990 Epic 음반 활동과 Rock Hall의 Rick Nielsen/Robin Zander/Tom Petersson/Bun E. Carlos·기타 중심 록 공연 설명을 MB의 US/Rockford 그룹·Cheap Trick/In Color/Heaven Tonight 원작과 대조했다.",
+      "sourceUrls": [
+        "https://www.cheaptrick.com/",
+        "https://www.rockhall.com/inductees/cheap-trick"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Cheap Trick 사이트의 1977~1990 Epic 음반 활동과 Rock Hall의 Rick Nielsen/Robin Zander/Tom Petersson/Bun E. Carlos·기타 중심 록 공연 설명을 MB의 US/Rockford 그룹·Cheap Trick/In Color/Heaven Tonight 원작과 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.cheaptrick.com/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Cheap Trick 사이트의 1977~1990 Epic 음반 활동과 Rock Hall의 Rick Nielsen/Robin Zander/Tom Petersson/Bun E. Carlos·기타 중심 록 공연 설명을 MB의 US/Rockford 그룹·Cheap Trick/In Color/Heaven Tonight 원작과 대조했다."
+          },
+          {
+            "url": "https://www.rockhall.com/inductees/cheap-trick",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Cheap Trick 사이트의 1977~1990 Epic 음반 활동과 Rock Hall의 Rick Nielsen/Robin Zander/Tom Petersson/Bun E. Carlos·기타 중심 록 공연 설명을 MB의 US/Rockford 그룹·Cheap Trick/In Color/Heaven Tonight 원작과 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09",
+            "checkedAt": "2026-10-27T01:29:12.134Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Cheap Trick 사이트의 1977~1990 Epic 음반 활동과 Rock Hall의 Rick Nielsen/Robin Zander/Tom Petersson/Bun E. Carlos·기타 중심 록 공연 설명을 MB의 US/Rockford 그룹·Cheap Trick/In Color/Heaven Tonight 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.cheaptrick.com/",
+            "https://www.rockhall.com/inductees/cheap-trick",
+            "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 US·United States를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.cheaptrick.com/",
+            "https://www.rockhall.com/inductees/cheap-trick",
+            "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Cheap Trick 사이트의 1977~1990 Epic 음반 활동과 Rock Hall의 Rick Nielsen/Robin Zander/Tom Petersson/Bun E. Carlos·기타 중심 록 공연 설명을 MB의 US/Rockford 그룹·Cheap Trick/In Color/Heaven Tonight 원작과 대조했다.",
+          "sourceUrls": [
+            "https://www.cheaptrick.com/",
+            "https://www.rockhall.com/inductees/cheap-trick",
+            "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.cheaptrick.com/",
+            "https://www.rockhall.com/inductees/cheap-trick",
+            "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:9f870653-72b0-4c6d-8c59-439a95963e09와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.cheaptrick.com/",
+            "https://www.rockhall.com/inductees/cheap-trick",
+            "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.cheaptrick.com/",
+            "https://www.rockhall.com/inductees/cheap-trick",
+            "https://musicbrainz.org/artist/9f870653-72b0-4c6d-8c59-439a95963e09"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:46.1487+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:33:53.302596+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:53.302596+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:52.452Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:42.954Z",
+          "nextAttemptAt": "2026-10-28T01:35:42.954Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCz9V8f3PUaaFH1rNzIu9nFQ"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "9f870653-72b0-4c6d-8c59-439a95963e09",
+        "returnedMbid": "9f870653-72b0-4c6d-8c59-439a95963e09",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.495Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 20,
+      "bandId": "3f2e157d-5715-4c4a-9cb8-b458439a059f",
+      "name": "COALTAR OF THE DEEPERS",
+      "aliases": [
+        "Coaltar of the Deepers"
+      ],
+      "musicbrainzId": "e031ae5d-db68-4e06-980b-f828fe5b40dd",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:15.266Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "THE VISITORS FROM DEEPSPACE",
+          "SUBMERGE",
+          "Come Over To the Deepend",
+          "NO THANK YOU",
+          "newave"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.816Z",
+      "summary": "Creativeman의 NARASAKI/KANNO·THE VISITORS FROM DEEPSPACE/SUBMERGE/REVENGE 원작을 MB JP/Tokyo 신원과 대조했다. 공식 본문은 이력 중심이고 장르 보완 CDJournal 실제 읽기는 timeout. 구체 록/일본 팝 원작 활동을 확정할 충분한 근거 보완 대기.",
+      "sourceUrls": [
+        "https://www.creativeman.co.jp/event/cotd4/",
+        "https://artist.cdjournal.com/a/coaltar-of-the-deepers/110654"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149343+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149343+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Creativeman의 NARASAKI/KANNO·THE VISITORS FROM DEEPSPACE/SUBMERGE/REVENGE 원작을 MB JP/Tokyo 신원과 대조했다. 공식 본문은 이력 중심이고 장르 보완 CDJournal 실제 읽기는 timeout. 구체 록/일본 팝 원작 활동을 확정할 충분한 근거 보완 대기.",
+          "checkedAt": "2026-10-27T01:35:43.046Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.046Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.120Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.120Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "e031ae5d-db68-4e06-980b-f828fe5b40dd",
+        "returnedMbid": "e031ae5d-db68-4e06-980b-f828fe5b40dd",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.656Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 21,
+      "bandId": "4b2aaed6-7d31-4a88-a133-190f8c8825ed",
+      "name": "Die Toten Hosen",
+      "aliases": [
+        "Die Toten Hasen",
+        "DIE ROTEN ROSEN",
+        "Tangobrüder",
+        "Die Toten Haosen",
+        "Rote Rosen",
+        "Roten Rosen",
+        "Tote Hosen",
+        "Die Roten Rosen",
+        "ディー・トーテン・ホーゼン",
+        "Die Totten Hosen"
+      ],
+      "musicbrainzId": "c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1",
+      "country": "DE",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:18.440Z",
+        "country": "DE",
+        "area": "Germany",
+        "type": "Group",
+        "worksSample": [
+          "Opel-Gang",
+          "Unter falscher Flagge",
+          "Damenwahl",
+          "Never Mind the Hosen Here’s Die Roten Rosen (aus Düsseldorf)",
+          "Ein kleines bisschen Horrorschau"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.820Z",
+      "summary": "공식 Die Toten Hosen의 Campino/Kuddel/Andi/Breiti/Vom 멤버와 Opel-Gang/Hier kommt Alex/Learning English 및 실제 록 공연 이력을 MB의 DE/Düsseldorf 그룹·동일 원작에 대조했다. 해외 공연 국가를 국적으로 삼지 않는다.",
+      "sourceUrls": [
+        "https://www.dth.de/band",
+        "https://www.dth.de/band/biographie"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Die Toten Hosen의 Campino/Kuddel/Andi/Breiti/Vom 멤버와 Opel-Gang/Hier kommt Alex/Learning English 및 실제 록 공연 이력을 MB의 DE/Düsseldorf 그룹·동일 원작에 대조했다. 해외 공연 국가를 국적으로 삼지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.dth.de/band",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Die Toten Hosen의 Campino/Kuddel/Andi/Breiti/Vom 멤버와 Opel-Gang/Hier kommt Alex/Learning English 및 실제 록 공연 이력을 MB의 DE/Düsseldorf 그룹·동일 원작에 대조했다. 해외 공연 국가를 국적으로 삼지 않는다."
+          },
+          {
+            "url": "https://www.dth.de/band/biographie",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Die Toten Hosen의 Campino/Kuddel/Andi/Breiti/Vom 멤버와 Opel-Gang/Hier kommt Alex/Learning English 및 실제 록 공연 이력을 MB의 DE/Düsseldorf 그룹·동일 원작에 대조했다. 해외 공연 국가를 국적으로 삼지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1",
+            "checkedAt": "2026-10-27T01:29:18.440Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Die Toten Hosen의 Campino/Kuddel/Andi/Breiti/Vom 멤버와 Opel-Gang/Hier kommt Alex/Learning English 및 실제 록 공연 이력을 MB의 DE/Düsseldorf 그룹·동일 원작에 대조했다. 해외 공연 국가를 국적으로 삼지 않는다.",
+          "sourceUrls": [
+            "https://www.dth.de/band",
+            "https://www.dth.de/band/biographie",
+            "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 DE·Germany를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.dth.de/band",
+            "https://www.dth.de/band/biographie",
+            "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Die Toten Hosen의 Campino/Kuddel/Andi/Breiti/Vom 멤버와 Opel-Gang/Hier kommt Alex/Learning English 및 실제 록 공연 이력을 MB의 DE/Düsseldorf 그룹·동일 원작에 대조했다. 해외 공연 국가를 국적으로 삼지 않는다.",
+          "sourceUrls": [
+            "https://www.dth.de/band",
+            "https://www.dth.de/band/biographie",
+            "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.dth.de/band",
+            "https://www.dth.de/band/biographie",
+            "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.dth.de/band",
+            "https://www.dth.de/band/biographie",
+            "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.dth.de/band",
+            "https://www.dth.de/band/biographie",
+            "https://musicbrainz.org/artist/c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:18.345154+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:33:54.823275+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:54.823275+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:54.047Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.209Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.209Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCzQaHdbeofGzUvzUsLyvUIg"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1",
+        "returnedMbid": "c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.728Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 22,
+      "bandId": "d9904318-3244-486d-81ed-c251c537745b",
+      "name": "Donots",
+      "aliases": [
+        "Donot",
+        "The Donots",
+        "Donats"
+      ],
+      "musicbrainzId": "06a4a555-1b69-4175-83df-2528a8e5af05",
+      "country": "DE",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:22.048Z",
+        "country": "DE",
+        "area": "Germany",
+        "type": "Group",
+        "worksSample": [
+          "Pedigree Punk",
+          "Tonight's Karaoke-Contest Winners",
+          "Better Days Not Included",
+          "Pocketrock",
+          "Amplify the Good Times"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.823Z",
+      "summary": "Universal의 Ibbenbüren 출신 DONOTS·Ingo/Guido Knollmann·Alex Siedenbiedel/Eike Herwig/Jan-Dirk Poggemann과 Wake The Dogs/Karacho 원작·구체 punkrock 제작 활동을 MB DE/Ibbenbüren 그룹에 대조했다.",
+      "sourceUrls": [
+        "https://www.donots.com/",
+        "https://www.universal-music.de/donots/biografie"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal의 Ibbenbüren 출신 DONOTS·Ingo/Guido Knollmann·Alex Siedenbiedel/Eike Herwig/Jan-Dirk Poggemann과 Wake The Dogs/Karacho 원작·구체 punkrock 제작 활동을 MB DE/Ibbenbüren 그룹에 대조했다.",
+        "sources": [
+          {
+            "url": "https://www.donots.com/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Universal의 Ibbenbüren 출신 DONOTS·Ingo/Guido Knollmann·Alex Siedenbiedel/Eike Herwig/Jan-Dirk Poggemann과 Wake The Dogs/Karacho 원작·구체 punkrock 제작 활동을 MB DE/Ibbenbüren 그룹에 대조했다."
+          },
+          {
+            "url": "https://www.universal-music.de/donots/biografie",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Universal의 Ibbenbüren 출신 DONOTS·Ingo/Guido Knollmann·Alex Siedenbiedel/Eike Herwig/Jan-Dirk Poggemann과 Wake The Dogs/Karacho 원작·구체 punkrock 제작 활동을 MB DE/Ibbenbüren 그룹에 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05",
+            "checkedAt": "2026-10-27T01:29:22.048Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Universal의 Ibbenbüren 출신 DONOTS·Ingo/Guido Knollmann·Alex Siedenbiedel/Eike Herwig/Jan-Dirk Poggemann과 Wake The Dogs/Karacho 원작·구체 punkrock 제작 활동을 MB DE/Ibbenbüren 그룹에 대조했다.",
+          "sourceUrls": [
+            "https://www.donots.com/",
+            "https://www.universal-music.de/donots/biografie",
+            "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 DE·Germany를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.donots.com/",
+            "https://www.universal-music.de/donots/biografie",
+            "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Universal의 Ibbenbüren 출신 DONOTS·Ingo/Guido Knollmann·Alex Siedenbiedel/Eike Herwig/Jan-Dirk Poggemann과 Wake The Dogs/Karacho 원작·구체 punkrock 제작 활동을 MB DE/Ibbenbüren 그룹에 대조했다.",
+          "sourceUrls": [
+            "https://www.donots.com/",
+            "https://www.universal-music.de/donots/biografie",
+            "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.donots.com/",
+            "https://www.universal-music.de/donots/biografie",
+            "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:06a4a555-1b69-4175-83df-2528a8e5af05와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.donots.com/",
+            "https://www.universal-music.de/donots/biografie",
+            "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.donots.com/",
+            "https://www.universal-music.de/donots/biografie",
+            "https://musicbrainz.org/artist/06a4a555-1b69-4175-83df-2528a8e5af05"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:36.936202+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:33:56.290944+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:56.290944+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:55.491Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.303Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.303Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCviT_vJ1VqRExOv9vlVE9Bg"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "06a4a555-1b69-4175-83df-2528a8e5af05",
+        "returnedMbid": "06a4a555-1b69-4175-83df-2528a8e5af05",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:34.802Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 23,
+      "bandId": "95464ba0-7ca9-490a-a0a9-5aad96e35883",
+      "name": "ELLEGARDEN",
+      "aliases": [
+        "エルレガーデン",
+        "엘르가든"
+      ],
+      "musicbrainzId": "923158cf-9d21-4bce-8040-41e7a497c1c9",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:24.035Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "Stupid",
+          "DON'T TRUST ANYONE BUT US",
+          "BRING YOUR BOARD!!",
+          "Pepperoni Quattro",
+          "RIOT ON THE GRILL"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.825Z",
+      "summary": "Fuji Rock 공식 출연자 소개의 1998 千葉 결성·細美武士/生形真一/高田雄一/高橋宏貴 및 록/펑크 활동, ELEVEN FIRE CRACKERS/The End of Yesterday 원작을 정확한 JP/Chiba MB 그룹에 대조했다.",
+      "sourceUrls": [
+        "https://23.fujirockfestival.com/artist/detail/1889"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Fuji Rock 공식 출연자 소개의 1998 千葉 결성·細美武士/生形真一/高田雄一/高橋宏貴 및 록/펑크 활동, ELEVEN FIRE CRACKERS/The End of Yesterday 원작을 정확한 JP/Chiba MB 그룹에 대조했다.",
+        "sources": [
+          {
+            "url": "https://23.fujirockfestival.com/artist/detail/1889",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Fuji Rock 공식 출연자 소개의 1998 千葉 결성·細美武士/生形真一/高田雄一/高橋宏貴 및 록/펑크 활동, ELEVEN FIRE CRACKERS/The End of Yesterday 원작을 정확한 JP/Chiba MB 그룹에 대조했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9",
+            "checkedAt": "2026-10-27T01:29:24.035Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Fuji Rock 공식 출연자 소개의 1998 千葉 결성·細美武士/生形真一/高田雄一/高橋宏貴 및 록/펑크 활동, ELEVEN FIRE CRACKERS/The End of Yesterday 원작을 정확한 JP/Chiba MB 그룹에 대조했다.",
+          "sourceUrls": [
+            "https://23.fujirockfestival.com/artist/detail/1889",
+            "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://23.fujirockfestival.com/artist/detail/1889",
+            "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Fuji Rock 공식 출연자 소개의 1998 千葉 결성·細美武士/生形真一/高田雄一/高橋宏貴 및 록/펑크 활동, ELEVEN FIRE CRACKERS/The End of Yesterday 원작을 정확한 JP/Chiba MB 그룹에 대조했다.",
+          "sourceUrls": [
+            "https://23.fujirockfestival.com/artist/detail/1889",
+            "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://23.fujirockfestival.com/artist/detail/1889",
+            "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:923158cf-9d21-4bce-8040-41e7a497c1c9와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://23.fujirockfestival.com/artist/detail/1889",
+            "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://23.fujirockfestival.com/artist/detail/1889",
+            "https://musicbrainz.org/artist/923158cf-9d21-4bce-8040-41e7a497c1c9"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:45:05.953975+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-27T01:33:57.733572+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:57.733572+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:56.998Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.397Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.397Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "923158cf-9d21-4bce-8040-41e7a497c1c9",
+        "returnedMbid": "923158cf-9d21-4bce-8040-41e7a497c1c9",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.062Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 24,
+      "bandId": "d8f9a76f-6b40-491e-90af-e15f319c3925",
+      "name": "Fugazi",
+      "aliases": [],
+      "musicbrainzId": "233fc3f3-6de2-465c-985e-e721dbabbace",
+      "country": "US",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:26.348Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "Repeater",
+          "Steady Diet of Nothing",
+          "In on the Kill Taker",
+          "Red Medicine",
+          "End Hits"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.827Z",
+      "summary": "Dischord의 Washington DC 그룹·Ian MacKaye/Guy Picciotto/Joe Lally/Brendan Canty와 Repeater/Red Medicine/The Argument 원작을 MB의 US/Washington DC 신원에 대조했다. Trouser Press 본문의 punk rock/post-hardcore 원작 비평으로 실제 록 활동을 보완했다.",
+      "sourceUrls": [
+        "https://dischord.com/band/fugazi",
+        "https://trouserpress.com/reviews/fugazi/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Dischord의 Washington DC 그룹·Ian MacKaye/Guy Picciotto/Joe Lally/Brendan Canty와 Repeater/Red Medicine/The Argument 원작을 MB의 US/Washington DC 신원에 대조했다. Trouser Press 본문의 punk rock/post-hardcore 원작 비평으로 실제 록 활동을 보완했다.",
+        "sources": [
+          {
+            "url": "https://dischord.com/band/fugazi",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Dischord의 Washington DC 그룹·Ian MacKaye/Guy Picciotto/Joe Lally/Brendan Canty와 Repeater/Red Medicine/The Argument 원작을 MB의 US/Washington DC 신원에 대조했다. Trouser Press 본문의 punk rock/post-hardcore 원작 비평으로 실제 록 활동을 보완했다."
+          },
+          {
+            "url": "https://trouserpress.com/reviews/fugazi/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Dischord의 Washington DC 그룹·Ian MacKaye/Guy Picciotto/Joe Lally/Brendan Canty와 Repeater/Red Medicine/The Argument 원작을 MB의 US/Washington DC 신원에 대조했다. Trouser Press 본문의 punk rock/post-hardcore 원작 비평으로 실제 록 활동을 보완했다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace",
+            "checkedAt": "2026-10-27T01:29:26.348Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Dischord의 Washington DC 그룹·Ian MacKaye/Guy Picciotto/Joe Lally/Brendan Canty와 Repeater/Red Medicine/The Argument 원작을 MB의 US/Washington DC 신원에 대조했다. Trouser Press 본문의 punk rock/post-hardcore 원작 비평으로 실제 록 활동을 보완했다.",
+          "sourceUrls": [
+            "https://dischord.com/band/fugazi",
+            "https://trouserpress.com/reviews/fugazi/",
+            "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 US·United States를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://dischord.com/band/fugazi",
+            "https://trouserpress.com/reviews/fugazi/",
+            "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Dischord의 Washington DC 그룹·Ian MacKaye/Guy Picciotto/Joe Lally/Brendan Canty와 Repeater/Red Medicine/The Argument 원작을 MB의 US/Washington DC 신원에 대조했다. Trouser Press 본문의 punk rock/post-hardcore 원작 비평으로 실제 록 활동을 보완했다.",
+          "sourceUrls": [
+            "https://dischord.com/band/fugazi",
+            "https://trouserpress.com/reviews/fugazi/",
+            "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://dischord.com/band/fugazi",
+            "https://trouserpress.com/reviews/fugazi/",
+            "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:233fc3f3-6de2-465c-985e-e721dbabbace와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://dischord.com/band/fugazi",
+            "https://trouserpress.com/reviews/fugazi/",
+            "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://dischord.com/band/fugazi",
+            "https://trouserpress.com/reviews/fugazi/",
+            "https://musicbrainz.org/artist/233fc3f3-6de2-465c-985e-e721dbabbace"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:58.309922+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:33:59.181409+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:33:59.181409+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:58.425Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.491Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.491Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "233fc3f3-6de2-465c-985e-e721dbabbace",
+        "returnedMbid": "233fc3f3-6de2-465c-985e-e721dbabbace",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.188Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 25,
+      "bandId": "e767ef92-54e3-4e97-8991-eea4e210b7c8",
+      "name": "Goo Goo Dolls",
+      "aliases": [
+        "The Goo Goo Dolls",
+        "Goo Goo Dolls, The",
+        "Goo-Goo Dolls"
+      ],
+      "musicbrainzId": "e2c00c56-8365-4160-9f40-a64682917633",
+      "country": "US",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:28.385Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "Goo Goo Dolls",
+          "Jed",
+          "Hold Me Up",
+          "Superstar Car Wash",
+          "A Boy Named Goo"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.830Z",
+      "summary": "공식 사이트의 Dizzy Up the Girl/Let Love In과 MB US/Buffalo 원작은 대조했다. Warner press 실제 본문은 사진/자료 목록만 있고 명확한 밴드 장르 소개가 없어 이름/밴드 형식만으로 록 요건을 완료하지 않는다.",
+      "sourceUrls": [
+        "https://www.googoodolls.com/",
+        "https://press.warnerrecords.com/googoodolls"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:30.85527+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:30.85527+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 사이트의 Dizzy Up the Girl/Let Love In과 MB US/Buffalo 원작은 대조했다. Warner press 실제 본문은 사진/자료 목록만 있고 명확한 밴드 장르 소개가 없어 이름/밴드 형식만으로 록 요건을 완료하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.582Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.582Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.659Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.659Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCiEKDhv4v0YTc-ZtpABkXZA"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "e2c00c56-8365-4160-9f40-a64682917633",
+        "returnedMbid": "e2c00c56-8365-4160-9f40-a64682917633",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.266Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 26,
+      "bandId": "a2199522-5d67-4630-a96a-ea20fe2ae1a9",
+      "name": "Grobschnitt",
+      "aliases": [
+        "Kapelle Elias Grobschnitt",
+        "Elias Grobschnitt"
+      ],
+      "musicbrainzId": "666fd16d-d9f9-4eff-80ed-a064d5bbca7c",
+      "country": "DE",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:34.448Z",
+        "country": "DE",
+        "area": "Germany",
+        "type": "Group",
+        "worksSample": [
+          "Grobschnitt",
+          "Ballermann",
+          "Jumbo",
+          "Rockpommel's Land",
+          "Merry-Go-Round"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.832Z",
+      "summary": "공식 Grobschnitt의 Jumbo/Solar Music·Eroc/Lupo/Willi와 WDR Rockpalast의 독일 록밴드·hard rock/psychedelic·Rockpommels Land 및 구성원 경력을 MB DE/Hagen·동일 원작에 대조했다. 재결성 이력을 새 신원으로 만들지 않는다.",
+      "sourceUrls": [
+        "https://www.grobschnitt.rocks/",
+        "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Grobschnitt의 Jumbo/Solar Music·Eroc/Lupo/Willi와 WDR Rockpalast의 독일 록밴드·hard rock/psychedelic·Rockpommels Land 및 구성원 경력을 MB DE/Hagen·동일 원작에 대조했다. 재결성 이력을 새 신원으로 만들지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.grobschnitt.rocks/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Grobschnitt의 Jumbo/Solar Music·Eroc/Lupo/Willi와 WDR Rockpalast의 독일 록밴드·hard rock/psychedelic·Rockpommels Land 및 구성원 경력을 MB DE/Hagen·동일 원작에 대조했다. 재결성 이력을 새 신원으로 만들지 않는다."
+          },
+          {
+            "url": "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Grobschnitt의 Jumbo/Solar Music·Eroc/Lupo/Willi와 WDR Rockpalast의 독일 록밴드·hard rock/psychedelic·Rockpommels Land 및 구성원 경력을 MB DE/Hagen·동일 원작에 대조했다. 재결성 이력을 새 신원으로 만들지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c",
+            "checkedAt": "2026-10-27T01:29:34.448Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Grobschnitt의 Jumbo/Solar Music·Eroc/Lupo/Willi와 WDR Rockpalast의 독일 록밴드·hard rock/psychedelic·Rockpommels Land 및 구성원 경력을 MB DE/Hagen·동일 원작에 대조했다. 재결성 이력을 새 신원으로 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.grobschnitt.rocks/",
+            "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 DE·Germany를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.grobschnitt.rocks/",
+            "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Grobschnitt의 Jumbo/Solar Music·Eroc/Lupo/Willi와 WDR Rockpalast의 독일 록밴드·hard rock/psychedelic·Rockpommels Land 및 구성원 경력을 MB DE/Hagen·동일 원작에 대조했다. 재결성 이력을 새 신원으로 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.grobschnitt.rocks/",
+            "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.grobschnitt.rocks/",
+            "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:666fd16d-d9f9-4eff-80ed-a064d5bbca7c와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.grobschnitt.rocks/",
+            "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.grobschnitt.rocks/",
+            "https://www1.wdr.de/fernsehen/rockpalast/ueber-grobschnitt-100.html",
+            "https://musicbrainz.org/artist/666fd16d-d9f9-4eff-80ed-a064d5bbca7c"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:09.299978+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:34:00.62471+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:00.62471+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:33:59.867Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.751Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.751Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "666fd16d-d9f9-4eff-80ed-a064d5bbca7c",
+        "returnedMbid": "666fd16d-d9f9-4eff-80ed-a064d5bbca7c",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.451Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 27,
+      "bandId": "d6858816-ec17-40fc-811d-eb0e1d0f816a",
+      "name": "Hey! Say! JUMP",
+      "aliases": [],
+      "musicbrainzId": "d024da79-b980-40bb-af2d-d2d56b95b3f3",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:41.028Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "JUMP NO.1",
+          "JUMP WORLD",
+          "smart",
+          "JUMPing CAR",
+          "DEAR."
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.834Z",
+      "summary": "실제 queryless Storm 프로필의 일본 출신 멤버와 신작 Juliet/돔투어를 확인했다. discography 본문은 빈 동적 목록으로 기존 원작 및 구체 일본 팝 가창 활동의 충분한 실제 본문 교차 보완이 남는다. query URL에서 매개변수만 지워 읽었다고 주장하지 않는다.",
+      "sourceUrls": [
+        "https://web.storm-labels.co.jp/s/st/artist/J0007/profile",
+        "https://web.storm-labels.co.jp/s/st/artist/J0007",
+        "https://web.storm-labels.co.jp/s/st/artist/J0007/discography"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:44.632259+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:44.632259+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "실제 queryless Storm 프로필의 일본 출신 멤버와 신작 Juliet/돔투어를 확인했다. discography 본문은 빈 동적 목록으로 기존 원작 및 구체 일본 팝 가창 활동의 충분한 실제 본문 교차 보완이 남는다. query URL에서 매개변수만 지워 읽었다고 주장하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.845Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.845Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:43.919Z",
+          "nextAttemptAt": "2026-10-28T01:35:43.919Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCFzXU6-djdXlDvXI3-2Appw"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "d024da79-b980-40bb-af2d-d2d56b95b3f3",
+        "returnedMbid": "d024da79-b980-40bb-af2d-d2d56b95b3f3",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.721Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 28,
+      "bandId": "5215821c-db7c-46c3-87d7-680c4e6c4ca7",
+      "name": "HKT48",
+      "aliases": [],
+      "musicbrainzId": "216d2e42-ac1c-43eb-a027-d160df86508e",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:44.685Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "チームH 1st Stage「手をつなぎながら」～studio recording～",
+          "092",
+          "アウトスタンディング",
+          "お願いヴァレンティヌ",
+          "タンスのゲン"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.836Z",
+      "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다.",
+      "sourceUrls": [
+        "https://www.hkt48.jp/whatsHKT48/",
+        "https://www.hkt48.jp/profile/",
+        "https://www.hkt48.jp/discography/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.hkt48.jp/whatsHKT48/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다."
+          },
+          {
+            "url": "https://www.hkt48.jp/profile/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다."
+          },
+          {
+            "url": "https://www.hkt48.jp/discography/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e",
+            "checkedAt": "2026-10-27T01:29:44.685Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다.",
+          "sourceUrls": [
+            "https://www.hkt48.jp/whatsHKT48/",
+            "https://www.hkt48.jp/profile/",
+            "https://www.hkt48.jp/discography/",
+            "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.hkt48.jp/whatsHKT48/",
+            "https://www.hkt48.jp/profile/",
+            "https://www.hkt48.jp/discography/",
+            "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 HKT48의 福岡 결성·극장 가창·스키스키스킵 데뷔와 アウトスタンディング/半袖天使 등 실제 일본 보컬 팝 음반 활동을 MB의 JP/Fukuoka 그룹·동일 원작과 대조했다. 다른 AKB48 유닛을 합치지 않는다.",
+          "sourceUrls": [
+            "https://www.hkt48.jp/whatsHKT48/",
+            "https://www.hkt48.jp/profile/",
+            "https://www.hkt48.jp/discography/",
+            "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.hkt48.jp/whatsHKT48/",
+            "https://www.hkt48.jp/profile/",
+            "https://www.hkt48.jp/discography/",
+            "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:216d2e42-ac1c-43eb-a027-d160df86508e와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.hkt48.jp/whatsHKT48/",
+            "https://www.hkt48.jp/profile/",
+            "https://www.hkt48.jp/discography/",
+            "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.hkt48.jp/whatsHKT48/",
+            "https://www.hkt48.jp/profile/",
+            "https://www.hkt48.jp/discography/",
+            "https://musicbrainz.org/artist/216d2e42-ac1c-43eb-a027-d160df86508e"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:28.601433+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-27T01:34:02.056437+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:02.056437+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:01.312Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.023Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.023Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCPQ0GEWwLaam1lTX9P-CgGA"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "216d2e42-ac1c-43eb-a027-d160df86508e",
+        "returnedMbid": "216d2e42-ac1c-43eb-a027-d160df86508e",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.858Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 29,
+      "bandId": "2df1812a-ccd0-4587-900d-68b1beb62c72",
+      "name": "Hoshino Team A",
+      "aliases": [],
+      "musicbrainzId": "7071a999-b391-4150-83e9-0a9c480e7256",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:50.926Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "Way to the Future"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.838Z",
+      "summary": "MB JP 그룹에는 Way to the Future 한 작품만 있고 Last.fm API6이다. Sushi Bar/Unnoticeable 유통 후보를 찾았으나 Qobuz 실제 본문은 일반 메뉴 중심이며 후속 읽기404로 원작 크레딧·국가·정확 MBID 연결을 확인하지 못했다. 스니펫이나 kaito 동명이인으로 신원/장르 요건을 채우지 않는다.",
+      "sourceUrls": [
+        "https://www.qobuz.com/us-en/album/unnoticeable-hoshino-team-a-feat-kaito/ly17shh6r2q6b"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:02.240698+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:02.240698+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "MB JP 그룹에는 Way to the Future 한 작품만 있고 Last.fm API6이다. Sushi Bar/Unnoticeable 유통 후보를 찾았으나 Qobuz 실제 본문은 일반 메뉴 중심이며 후속 읽기404로 원작 크레딧·국가·정확 MBID 연결을 확인하지 못했다. 스니펫이나 kaito 동명이인으로 신원/장르 요건을 채우지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.121Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.121Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.193Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.193Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "7071a999-b391-4150-83e9-0a9c480e7256",
+        "returnedMbid": null,
+        "reused": false,
+        "apiError": 6,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:35.958Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 30,
+      "bandId": "7e4c0339-efd6-4a6b-8b93-aaa4fb9f4760",
+      "name": "HOYO-MiX",
+      "aliases": [
+        "HoYo-MiX",
+        "HOYOMIX"
+      ],
+      "musicbrainzId": "9df7ddfb-75fe-4470-9269-5810d9263b09",
+      "country": "CN",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:29:54.389Z",
+        "country": "CN",
+        "area": "China",
+        "type": "Group",
+        "worksSample": [
+          "“派蒙”配音演员谈《原神‐珍珠之歌5》",
+          "Track by Track Commentary: Aether’s Voice Actor on Genshin Impact – The Shimmering Voyage Vol. 5",
+          "아이테르 성우의 ’원신‐진주의 노래 5’",
+          "空の声優が語る『原神‐真珠の歌5』",
+          "未定事件簿OST11：暗涌无终"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.841Z",
+      "summary": "MB CN/Shanghai의 HOYO-MiX 게임 OST 스튜디오 신원을 확인했다. BITE! Sān-Z 공동 유통은 후보이나 실제 Qobuz 본문 timeout; 제작 스튜디오·독립 밴드·가창자 역할과 구체 유의미 록 활동의 충분한 공식 근거가 남는다. 공동 원작 제목/Pop-Rock 표기만으로 승인하지 않는다.",
+      "sourceUrls": [
+        "https://www.qobuz.com/fi-en/album/bite-san-z-hoyo-mix/d7yyfsnzw2n9a"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:07.901339+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:07.901339+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "MB CN/Shanghai의 HOYO-MiX 게임 OST 스튜디오 신원을 확인했다. BITE! Sān-Z 공동 유통은 후보이나 실제 Qobuz 본문 timeout; 제작 스튜디오·독립 밴드·가창자 역할과 구체 유의미 록 활동의 충분한 공식 근거가 남는다. 공동 원작 제목/Pop-Rock 표기만으로 승인하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.284Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.284Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.357Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.357Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UC6pM_fjt__KO-KS61goPlGQ"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "9df7ddfb-75fe-4470-9269-5810d9263b09",
+        "returnedMbid": "9df7ddfb-75fe-4470-9269-5810d9263b09",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.034Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 31,
+      "bandId": "656debc8-6cad-4377-b560-f89485ff9f70",
+      "name": "Ian Dury & the Blockheads",
+      "aliases": [
+        "Ian Drury and the Blockheads",
+        "Ian Drury & the Blockheads"
+      ],
+      "musicbrainzId": "d4675794-9ad3-48eb-bcd4-b98be183b396",
+      "country": "GB",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:00.265Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "Do It Yourself",
+          "Laughter",
+          "Mr Love Pants",
+          "Ten More Turnips From the Tip",
+          "Jukebox Dury"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.843Z",
+      "summary": "공식 Ian Dury 회고와 Blockheads의 1977 UK 결성·Chaz Jankel/Norman Watt-Roy/Charlie Charles/John Turnbull/Mick Gallagher, Do It Yourself/Laughter/Mr Love Pants 및 록 활동을 MB의 GB/London 결합 명의 신원과 대조했다. 사후 The Blockheads와 동일 ID로 병합하지 않는다.",
+      "sourceUrls": [
+        "https://iandury.co.uk/biography/",
+        "https://www.theblockheads.com/category/biographies/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Ian Dury 회고와 Blockheads의 1977 UK 결성·Chaz Jankel/Norman Watt-Roy/Charlie Charles/John Turnbull/Mick Gallagher, Do It Yourself/Laughter/Mr Love Pants 및 록 활동을 MB의 GB/London 결합 명의 신원과 대조했다. 사후 The Blockheads와 동일 ID로 병합하지 않는다.",
+        "sources": [
+          {
+            "url": "https://iandury.co.uk/biography/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Ian Dury 회고와 Blockheads의 1977 UK 결성·Chaz Jankel/Norman Watt-Roy/Charlie Charles/John Turnbull/Mick Gallagher, Do It Yourself/Laughter/Mr Love Pants 및 록 활동을 MB의 GB/London 결합 명의 신원과 대조했다. 사후 The Blockheads와 동일 ID로 병합하지 않는다."
+          },
+          {
+            "url": "https://www.theblockheads.com/category/biographies/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Ian Dury 회고와 Blockheads의 1977 UK 결성·Chaz Jankel/Norman Watt-Roy/Charlie Charles/John Turnbull/Mick Gallagher, Do It Yourself/Laughter/Mr Love Pants 및 록 활동을 MB의 GB/London 결합 명의 신원과 대조했다. 사후 The Blockheads와 동일 ID로 병합하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396",
+            "checkedAt": "2026-10-27T01:30:00.265Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Ian Dury 회고와 Blockheads의 1977 UK 결성·Chaz Jankel/Norman Watt-Roy/Charlie Charles/John Turnbull/Mick Gallagher, Do It Yourself/Laughter/Mr Love Pants 및 록 활동을 MB의 GB/London 결합 명의 신원과 대조했다. 사후 The Blockheads와 동일 ID로 병합하지 않는다.",
+          "sourceUrls": [
+            "https://iandury.co.uk/biography/",
+            "https://www.theblockheads.com/category/biographies/",
+            "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 GB·United Kingdom를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://iandury.co.uk/biography/",
+            "https://www.theblockheads.com/category/biographies/",
+            "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Ian Dury 회고와 Blockheads의 1977 UK 결성·Chaz Jankel/Norman Watt-Roy/Charlie Charles/John Turnbull/Mick Gallagher, Do It Yourself/Laughter/Mr Love Pants 및 록 활동을 MB의 GB/London 결합 명의 신원과 대조했다. 사후 The Blockheads와 동일 ID로 병합하지 않는다.",
+          "sourceUrls": [
+            "https://iandury.co.uk/biography/",
+            "https://www.theblockheads.com/category/biographies/",
+            "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://iandury.co.uk/biography/",
+            "https://www.theblockheads.com/category/biographies/",
+            "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:d4675794-9ad3-48eb-bcd4-b98be183b396와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://iandury.co.uk/biography/",
+            "https://www.theblockheads.com/category/biographies/",
+            "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://iandury.co.uk/biography/",
+            "https://www.theblockheads.com/category/biographies/",
+            "https://musicbrainz.org/artist/d4675794-9ad3-48eb-bcd4-b98be183b396"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:38.652529+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:34:03.49037+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:03.49037+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:02.752Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.452Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.452Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "d4675794-9ad3-48eb-bcd4-b98be183b396",
+        "returnedMbid": null,
+        "reused": false,
+        "apiError": 6,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.122Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 32,
+      "bandId": "997baefb-82c0-4a47-aa6a-b005a92dffdc",
+      "name": "Lia",
+      "aliases": [
+        "リア"
+      ],
+      "musicbrainzId": "9d9d1d36-1fed-44e2-9069-9398284e9f6c",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:02.547Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Person",
+        "worksSample": [
+          "AIR Analog Collector's Edition – 鳥の詩 / Farewell song",
+          "prismatic",
+          "Colors of Life",
+          "THE FORCE OF LOVE",
+          "dearly"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.861Z",
+      "summary": "현 공식 Lia 사이트의 일본 애니송 가창 활동과 공식 Otafest 초청 소개의 Japanese singer·Tori no Uta/Aozora/My Soul Your Beats·SAGARIBANA 원작을 MB의 JP/Tokyo 개인·AIR/prismatic/REVIVES 원작에 대조했다. ITZY 동명 Lia와 구별하며 해외 거주를 국적 변경으로 보지 않는다.",
+      "sourceUrls": [
+        "https://lia-music.net/",
+        "https://otafest.com/lia/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "현 공식 Lia 사이트의 일본 애니송 가창 활동과 공식 Otafest 초청 소개의 Japanese singer·Tori no Uta/Aozora/My Soul Your Beats·SAGARIBANA 원작을 MB의 JP/Tokyo 개인·AIR/prismatic/REVIVES 원작에 대조했다. ITZY 동명 Lia와 구별하며 해외 거주를 국적 변경으로 보지 않는다.",
+        "sources": [
+          {
+            "url": "https://lia-music.net/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "현 공식 Lia 사이트의 일본 애니송 가창 활동과 공식 Otafest 초청 소개의 Japanese singer·Tori no Uta/Aozora/My Soul Your Beats·SAGARIBANA 원작을 MB의 JP/Tokyo 개인·AIR/prismatic/REVIVES 원작에 대조했다. ITZY 동명 Lia와 구별하며 해외 거주를 국적 변경으로 보지 않는다."
+          },
+          {
+            "url": "https://otafest.com/lia/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "현 공식 Lia 사이트의 일본 애니송 가창 활동과 공식 Otafest 초청 소개의 Japanese singer·Tori no Uta/Aozora/My Soul Your Beats·SAGARIBANA 원작을 MB의 JP/Tokyo 개인·AIR/prismatic/REVIVES 원작에 대조했다. ITZY 동명 Lia와 구별하며 해외 거주를 국적 변경으로 보지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c",
+            "checkedAt": "2026-10-27T01:30:02.547Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현 공식 Lia 사이트의 일본 애니송 가창 활동과 공식 Otafest 초청 소개의 Japanese singer·Tori no Uta/Aozora/My Soul Your Beats·SAGARIBANA 원작을 MB의 JP/Tokyo 개인·AIR/prismatic/REVIVES 원작에 대조했다. ITZY 동명 Lia와 구별하며 해외 거주를 국적 변경으로 보지 않는다.",
+          "sourceUrls": [
+            "https://lia-music.net/",
+            "https://otafest.com/lia/",
+            "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 JP·Japan를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://lia-music.net/",
+            "https://otafest.com/lia/",
+            "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+          ]
+        },
+        "genreMatched": {
+          "summary": "현 공식 Lia 사이트의 일본 애니송 가창 활동과 공식 Otafest 초청 소개의 Japanese singer·Tori no Uta/Aozora/My Soul Your Beats·SAGARIBANA 원작을 MB의 JP/Tokyo 개인·AIR/prismatic/REVIVES 원작에 대조했다. ITZY 동명 Lia와 구별하며 해외 거주를 국적 변경으로 보지 않는다.",
+          "sourceUrls": [
+            "https://lia-music.net/",
+            "https://otafest.com/lia/",
+            "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 jpop 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://lia-music.net/",
+            "https://otafest.com/lia/",
+            "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:9d9d1d36-1fed-44e2-9069-9398284e9f6c와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://lia-music.net/",
+            "https://otafest.com/lia/",
+            "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://lia-music.net/",
+            "https://otafest.com/lia/",
+            "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:32.658001+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "jpop",
+        "updated_at": "2026-10-27T01:34:04.923624+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:04.923624+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:04.167Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.541Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.541Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "9d9d1d36-1fed-44e2-9069-9398284e9f6c",
+        "returnedMbid": "9d9d1d36-1fed-44e2-9069-9398284e9f6c",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.257Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 33,
+      "bandId": "69b6467b-6a1e-4738-9559-ffe18e9e7e72",
+      "name": "Live",
+      "aliases": [
+        "Līve"
+      ],
+      "musicbrainzId": "cba77ba2-862d-4cee-a8f6-d3f9daf7211c",
+      "country": "US",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:05.905Z",
+        "country": "US",
+        "area": "United States",
+        "type": "Group",
+        "worksSample": [
+          "The Distance to Here: The Acoustic Sessions",
+          "Mental Jewelry",
+          "Throwing Copper",
+          "Secret Samadhi",
+          "The Distance to Here"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.865Z",
+      "summary": "MB US/York·Throwing Copper/Secret Samadhi와 Ticketmaster의 Ed Kowalczyk/Chad Taylor/Patrick Dahlheimer/Chad Gracey·York Pennsylvania 원작 소개는 일치한다. 공식 사이트 접근 불가·명확한 록 원작 근거 보완이 남는다. Last.fm이 다른 MBID를 반환해 지표를 거절했으며 공식/MB 신원을 그 응답에 맞춰 변경하지 않는다.",
+      "sourceUrls": [
+        "https://www.livetheband.com/",
+        "https://www.ticketmaster.co.uk/live-tickets/artist/749781"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:36.021011+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:36.021011+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "MB US/York·Throwing Copper/Secret Samadhi와 Ticketmaster의 Ed Kowalczyk/Chad Taylor/Patrick Dahlheimer/Chad Gracey·York Pennsylvania 원작 소개는 일치한다. 공식 사이트 접근 불가·명확한 록 원작 근거 보완이 남는다. Last.fm이 다른 MBID를 반환해 지표를 거절했으며 공식/MB 신원을 그 응답에 맞춰 변경하지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.639Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.639Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.711Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.711Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/user/Freaks4LiveTV"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "cba77ba2-862d-4cee-a8f6-d3f9daf7211c",
+        "returnedMbid": "b11ef3b0-247c-4c42-acc9-16e75b875096",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": "MBID_MISMATCH_OR_ABSENT",
+        "checkedAt": "2026-10-27T01:29:36.347Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 34,
+      "bandId": "d19194a5-ffc0-4258-8984-131f96bcff0f",
+      "name": "livetune",
+      "aliases": [],
+      "musicbrainzId": "00b812dc-dcb7-41bf-833f-feba6e9eeea1",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:08.191Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "Re:Package",
+          "Re:Upload",
+          "「と」",
+          "Re:Dial",
+          "Re:MIKUS"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.868Z",
+      "summary": "TOYS FACTORY 실제 と/Re:Dial/Tell Your World EP 및 Transfer/Take Your Way 원작과 MB JP 그룹은 대조했다. 과거 공식 도메인 livetune.jp는 현재 무관한 일반 연예 블로그로 바뀌어 공식 근거/채널 신원에 쓰지 않는다. Natalie 본문403이며 vocaloid/프로듀서·구체 일본 팝 가창 활동 분류를 위한 공식 소개 보완이 남는다.",
+      "sourceUrls": [
+        "https://www.toysfactory.co.jp/artist/livetune/disco/1042",
+        "https://livetune.jp/",
+        "https://natalie.mu/music/artist/9742"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:59.533742+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:59.533742+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "TOYS FACTORY 실제 と/Re:Dial/Tell Your World EP 및 Transfer/Take Your Way 원작과 MB JP 그룹은 대조했다. 과거 공식 도메인 livetune.jp는 현재 무관한 일반 연예 블로그로 바뀌어 공식 근거/채널 신원에 쓰지 않는다. Natalie 본문403이며 vocaloid/프로듀서·구체 일본 팝 가창 활동 분류를 위한 공식 소개 보완이 남는다.",
+          "checkedAt": "2026-10-27T01:35:44.808Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.808Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. livetune.jp의 현재 무관한 블로그는 공식성 근거에서 배제한다.",
+          "checkedAt": "2026-10-27T01:35:44.884Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.884Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCQcboHvGXFE5vuy2AK2MUOg"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다. livetune.jp의 현재 무관한 블로그는 공식성 근거에서 배제한다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "00b812dc-dcb7-41bf-833f-feba6e9eeea1",
+        "returnedMbid": "00b812dc-dcb7-41bf-833f-feba6e9eeea1",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.489Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 35,
+      "bandId": "12bd5529-2c07-4899-ab8d-7c7af652ad5e",
+      "name": "Manfred Mann’s Earth Band",
+      "aliases": [
+        "Manfred Manns Earthband",
+        "Manfred Man's Earth Band",
+        "Manfred Mann´s Earth Band",
+        "Mannfred Manns Earth Band",
+        "Manfred Mann's Earthband",
+        "Manfred Manns Earth Band",
+        "Manfred Mann’s Earth Band featuring Chris Thompson"
+      ],
+      "musicbrainzId": "83e9c775-84ea-4cf6-abdf-b9ffa8c3d060",
+      "country": "GB",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:11.930Z",
+        "country": "GB",
+        "area": "United Kingdom",
+        "type": "Group",
+        "worksSample": [
+          "Tumbling Ball",
+          "Glorified Magnified",
+          "Manfred Mann’s Earth Band",
+          "Messin’",
+          "Solar Fire"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.870Z",
+      "summary": "공식 Earth Band 사이트의 The Roaring Silence/Blinded By The Light·Chris Thompson 및 classic rock 활동을 MB의 GB/London 그룹·동일 원작에 대조했다. 사이트가 별도로 구분하는 Manfred Mann featuring Paul Jones와 합치지 않는다.",
+      "sourceUrls": [
+        "https://www.manfredmann.co.uk/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Earth Band 사이트의 The Roaring Silence/Blinded By The Light·Chris Thompson 및 classic rock 활동을 MB의 GB/London 그룹·동일 원작에 대조했다. 사이트가 별도로 구분하는 Manfred Mann featuring Paul Jones와 합치지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.manfredmann.co.uk/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 Earth Band 사이트의 The Roaring Silence/Blinded By The Light·Chris Thompson 및 classic rock 활동을 MB의 GB/London 그룹·동일 원작에 대조했다. 사이트가 별도로 구분하는 Manfred Mann featuring Paul Jones와 합치지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060",
+            "checkedAt": "2026-10-27T01:30:11.930Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Earth Band 사이트의 The Roaring Silence/Blinded By The Light·Chris Thompson 및 classic rock 활동을 MB의 GB/London 그룹·동일 원작에 대조했다. 사이트가 별도로 구분하는 Manfred Mann featuring Paul Jones와 합치지 않는다.",
+          "sourceUrls": [
+            "https://www.manfredmann.co.uk/",
+            "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 GB·United Kingdom를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.manfredmann.co.uk/",
+            "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 Earth Band 사이트의 The Roaring Silence/Blinded By The Light·Chris Thompson 및 classic rock 활동을 MB의 GB/London 그룹·동일 원작에 대조했다. 사이트가 별도로 구분하는 Manfred Mann featuring Paul Jones와 합치지 않는다.",
+          "sourceUrls": [
+            "https://www.manfredmann.co.uk/",
+            "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.manfredmann.co.uk/",
+            "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:83e9c775-84ea-4cf6-abdf-b9ffa8c3d060와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.manfredmann.co.uk/",
+            "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.manfredmann.co.uk/",
+            "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:08.951804+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:34:06.312029+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:06.312029+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:05.589Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:44.984Z",
+          "nextAttemptAt": "2026-10-28T01:35:44.984Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UC46BoyW19rtJe4q_Qz2lZOQ"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "83e9c775-84ea-4cf6-abdf-b9ffa8c3d060",
+        "returnedMbid": "83e9c775-84ea-4cf6-abdf-b9ffa8c3d060",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.570Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 36,
+      "bandId": "e083b38d-769c-4a23-85bd-fa55bdae476c",
+      "name": "Moxy Früvous",
+      "aliases": [
+        "Moxy Fruvous"
+      ],
+      "musicbrainzId": "bf103bd9-7a20-4a7e-95e0-369fe494fc88",
+      "country": "CA",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:15.241Z",
+        "country": "CA",
+        "area": "Canada",
+        "type": "Group",
+        "worksSample": [
+          "The Independent Cassette",
+          "Bargainville",
+          "Wood",
+          "You Will Go to the Moon",
+          "Thornhill"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.874Z",
+      "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다.",
+      "sourceUrls": [
+        "https://www.fruvous.com/band.html",
+        "https://www.fruvous.com/discog.html",
+        "https://fruvous.com/news/96rough.html"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.fruvous.com/band.html",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다."
+          },
+          {
+            "url": "https://www.fruvous.com/discog.html",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다."
+          },
+          {
+            "url": "https://fruvous.com/news/96rough.html",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88",
+            "checkedAt": "2026-10-27T01:30:15.241Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다.",
+          "sourceUrls": [
+            "https://www.fruvous.com/band.html",
+            "https://www.fruvous.com/discog.html",
+            "https://fruvous.com/news/96rough.html",
+            "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 CA·Canada를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.fruvous.com/band.html",
+            "https://www.fruvous.com/discog.html",
+            "https://fruvous.com/news/96rough.html",
+            "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 보존 사이트의 Mike Ford/Dave Matheson/Jian Ghomeshi/Murray Foster와 Bargainville/Wood/Thornhill 원작, 보존된 Rough Guide의 Toronto Canada·rock/folk/a cappella 혼합 활동을 MB의 CA/Thornhill 그룹·동일 원작에 대조했다. 과거 투어를 현재 공연으로 확대하지 않는다.",
+          "sourceUrls": [
+            "https://www.fruvous.com/band.html",
+            "https://www.fruvous.com/discog.html",
+            "https://fruvous.com/news/96rough.html",
+            "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.fruvous.com/band.html",
+            "https://www.fruvous.com/discog.html",
+            "https://fruvous.com/news/96rough.html",
+            "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:bf103bd9-7a20-4a7e-95e0-369fe494fc88와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.fruvous.com/band.html",
+            "https://www.fruvous.com/discog.html",
+            "https://fruvous.com/news/96rough.html",
+            "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.fruvous.com/band.html",
+            "https://www.fruvous.com/discog.html",
+            "https://fruvous.com/news/96rough.html",
+            "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:10.914575+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:34:07.690229+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:07.690229+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:06.968Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:45.076Z",
+          "nextAttemptAt": "2026-10-28T01:35:45.076Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "bf103bd9-7a20-4a7e-95e0-369fe494fc88",
+        "returnedMbid": "bf103bd9-7a20-4a7e-95e0-369fe494fc88",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.722Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 37,
+      "bandId": "99e4e3da-9711-4da0-a78d-cd3dece0ba73",
+      "name": "NEWS",
+      "aliases": [
+        "「NEWS」",
+        "NewS"
+      ],
+      "musicbrainzId": "53187856-5b14-4b58-9c81-c5ea843b6c7a",
+      "country": "JP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:17.940Z",
+        "country": "JP",
+        "area": "Japan",
+        "type": "Group",
+        "worksSample": [
+          "touch",
+          "pacific",
+          "color",
+          "LIVE",
+          "NEWS"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.883Z",
+      "summary": "실제 ELOV의 小山慶一郎/加藤シゲアキ/増田貴久 일본 출신 프로필·NEWS LIVE TOUR 2025 変身은 확인했다. MB의 touch/pacific/color 원작과 가창·발매 근거를 교차할 discography 본문은 접근 불가. Last.fm API6을 신원/장르 실패나 제외 사유로 쓰지 않는다.",
+      "sourceUrls": [
+        "https://www.elov-label.jp/s/el/artist/J0005/profile",
+        "https://www.elov-label.jp/s/el/artist/J0005",
+        "https://www.elov-label.jp/s/el/artist/J0005/discography"
+      ],
+      "approvalRequirements": null,
+      "approvalProof": null,
+      "approvalEvidence": null,
+      "applied": false,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:38.74306+00:00"
+      },
+      "after": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:38.74306+00:00"
+      },
+      "verification": null,
+      "selectedTaskResults": {
+        "approval": {
+          "status": "deferred",
+          "reason": "실제 ELOV의 小山慶一郎/加藤シゲアキ/増田貴久 일본 출신 프로필·NEWS LIVE TOUR 2025 変身은 확인했다. MB의 touch/pacific/color 원작과 가창·발매 근거를 교차할 discography 본문은 접근 불가. Last.fm API6을 신원/장르 실패나 제외 사유로 쓰지 않는다.",
+          "checkedAt": "2026-10-27T01:35:45.178Z",
+          "nextAttemptAt": "2026-10-28T01:35:45.178Z",
+          "applied": false
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:45.250Z",
+          "nextAttemptAt": "2026-10-28T01:35:45.250Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [
+          "https://www.youtube.com/channel/UCj9f2amb1D0RuTNrBQ9GJoQ"
+        ],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "53187856-5b14-4b58-9c81-c5ea843b6c7a",
+        "returnedMbid": null,
+        "reused": false,
+        "apiError": 6,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.826Z",
+        "adoptedForNewCoreCandidate": false
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 38,
+      "bandId": "7b419217-cbb3-46e0-8a8a-14d852630316",
+      "name": "Noir Désir",
+      "aliases": [
+        "Noir Disir",
+        "Noir Desir"
+      ],
+      "musicbrainzId": "e6358374-5eea-4205-be22-382ed6df493c",
+      "country": "FR",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:19.782Z",
+        "country": "FR",
+        "area": "France",
+        "type": "Group",
+        "worksSample": [
+          "Où veux‐tu qu’je r’garde ?",
+          "Veuillez rendre l’âme (à qui elle appartient)",
+          "Du ciment sous les plaines",
+          "Tostaky",
+          "666.667 Club"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.885Z",
+      "summary": "Universal France 실제 소개의 Bordeaux France·Bertrand Cantat/Serge Teyssot-Gay/Denis Barthe/Fred Vidalenc와 noise rock·Tostaky/666.667 Club/Des Visages des Figures 원작을 MB의 FR/Bordeaux 그룹에 대조했다. 현재 팬/제휴 사이트로 바뀐 noirdez 본문을 공식 근거로 쓰지 않는다.",
+      "sourceUrls": [
+        "https://www.universalmusic.fr/artistes/20000085423"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal France 실제 소개의 Bordeaux France·Bertrand Cantat/Serge Teyssot-Gay/Denis Barthe/Fred Vidalenc와 noise rock·Tostaky/666.667 Club/Des Visages des Figures 원작을 MB의 FR/Bordeaux 그룹에 대조했다. 현재 팬/제휴 사이트로 바뀐 noirdez 본문을 공식 근거로 쓰지 않는다.",
+        "sources": [
+          {
+            "url": "https://www.universalmusic.fr/artistes/20000085423",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "Universal France 실제 소개의 Bordeaux France·Bertrand Cantat/Serge Teyssot-Gay/Denis Barthe/Fred Vidalenc와 noise rock·Tostaky/666.667 Club/Des Visages des Figures 원작을 MB의 FR/Bordeaux 그룹에 대조했다. 현재 팬/제휴 사이트로 바뀐 noirdez 본문을 공식 근거로 쓰지 않는다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c",
+            "checkedAt": "2026-10-27T01:30:19.782Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Universal France 실제 소개의 Bordeaux France·Bertrand Cantat/Serge Teyssot-Gay/Denis Barthe/Fred Vidalenc와 noise rock·Tostaky/666.667 Club/Des Visages des Figures 원작을 MB의 FR/Bordeaux 그룹에 대조했다. 현재 팬/제휴 사이트로 바뀐 noirdez 본문을 공식 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000085423",
+            "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 FR·France를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000085423",
+            "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Universal France 실제 소개의 Bordeaux France·Bertrand Cantat/Serge Teyssot-Gay/Denis Barthe/Fred Vidalenc와 noise rock·Tostaky/666.667 Club/Des Visages des Figures 원작을 MB의 FR/Bordeaux 그룹에 대조했다. 현재 팬/제휴 사이트로 바뀐 noirdez 본문을 공식 근거로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000085423",
+            "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000085423",
+            "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:e6358374-5eea-4205-be22-382ed6df493c와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000085423",
+            "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000085423",
+            "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:37.289727+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:34:09.838145+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:09.838145+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:08.376Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:45.350Z",
+          "nextAttemptAt": "2026-10-28T01:35:45.350Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "e6358374-5eea-4205-be22-382ed6df493c",
+        "returnedMbid": "e6358374-5eea-4205-be22-382ed6df493c",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:36.972Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    },
+    {
+      "index": 39,
+      "bandId": "d4b944ef-55cb-474c-968c-a18a7f524984",
+      "name": "Omega",
+      "aliases": [
+        "Omega Együttes",
+        "Omega Redstar"
+      ],
+      "musicbrainzId": "819e4775-b9a6-4a24-b4af-0acfa9669a00",
+      "country": "HU",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "identityContextMatched": true,
+      "musicbrainz": {
+        "checkedAt": "2026-10-27T01:30:21.585Z",
+        "country": "HU",
+        "area": "Hungary",
+        "type": "Group",
+        "worksSample": [
+          "Omega Red Star From Hungary",
+          "Trombitás Frédi és a rettenetes emberek",
+          "10000 lépés",
+          "Éjszakai országút",
+          "Omega"
+        ]
+      },
+      "researchReusedWithoutTimestampExtension": true,
+      "originalResearchCheckedAt": "2026-10-13T10:51:08.888Z",
+      "summary": "실제 배급사 MIG 소개의 Hungarian prog rock OMEGA·1962 결성·Bacillus 영어 앨범과 기타 György Molnár를 MB의 HU/Budapest Hungarian rock band·Omega Red Star From Hungary/200 Years After the Last War 원작에 대조했다. 동명 metal Omega/개인과 구분한다.",
+      "sourceUrls": [
+        "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/"
+      ],
+      "approvalRequirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "실제 배급사 MIG 소개의 Hungarian prog rock OMEGA·1962 결성·Bacillus 영어 앨범과 기타 György Molnár를 MB의 HU/Budapest Hungarian rock band·Omega Red Star From Hungary/200 Years After the Last War 원작에 대조했다. 동명 metal Omega/개인과 구분한다.",
+        "sources": [
+          {
+            "url": "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "checkedAt": "2026-10-27T01:33:46.795377+00:00",
+            "summary": "실제 배급사 MIG 소개의 Hungarian prog rock OMEGA·1962 결성·Bacillus 영어 앨범과 기타 György Molnár를 MB의 HU/Budapest Hungarian rock band·Omega Red Star From Hungary/200 Years After the Last War 원작에 대조했다. 동명 metal Omega/개인과 구분한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00",
+            "checkedAt": "2026-10-27T01:30:21.585Z",
+            "summary": "공유 게이트 실제 읽기로 현재 band와 같은 canonical ID/name/country/area/원작 및 공식 URL 관계를 확인했다. MB 태그는 장르 확정 근거가 아니다."
+          }
+        ]
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "실제 배급사 MIG 소개의 Hungarian prog rock OMEGA·1962 결성·Bacillus 영어 앨범과 기타 György Molnár를 MB의 HU/Budapest Hungarian rock band·Omega Red Star From Hungary/200 Years After the Last War 원작에 대조했다. 동명 metal Omega/개인과 구분한다.",
+          "sourceUrls": [
+            "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+          ]
+        },
+        "countryMatched": {
+          "summary": "현재 DB/정확한 MBID의 HU·Hungary를 공식/배급/주최 자료의 동일 신원과 작품에 교차했다. 원산 국가를 보존하며 차트 청취 지역을 국적으로 쓰지 않는다.",
+          "sourceUrls": [
+            "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+          ]
+        },
+        "genreMatched": {
+          "summary": "실제 배급사 MIG 소개의 Hungarian prog rock OMEGA·1962 결성·Bacillus 영어 앨범과 기타 György Molnár를 MB의 HU/Budapest Hungarian rock band·Omega Red Star From Hungary/200 Years After the Last War 원작에 대조했다. 동명 metal Omega/개인과 구분한다.",
+          "sourceUrls": [
+            "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "기존 jpop-or-rock-v1의 overseas_rock 분류를 위 실제 가창/록 원작 활동에 대조했다. 새로운 혼합 장르 기준을 만들지 않는다.",
+          "sourceUrls": [
+            "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:819e4775-b9a6-4a24-b4af-0acfa9669a00와 공식 신원·원본 버전/이름/별칭/국가를 대조했다. 외부 키 생성이나 신원/관계 변경 없음.",
+          "sourceUrls": [
+            "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·승인으로 외부 신원별 공연 자동 공개 승인이 생기지만 실제 이벤트 공개에는 출처 정책·발표·정확 예매시각·회차 등 기존 조건도 충족해야 한다. 공개ON·수집·발송은 실행하지 않는다.",
+          "sourceUrls": [
+            "https://www.mig-music.de/en/m-i-g-and-hungarian-prog-rock-legend-omega-announce-collaboration-news/",
+            "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+          ]
+        }
+      },
+      "applied": true,
+      "before": {
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:57.526162+00:00"
+      },
+      "after": {
+        "curation_status": "approved",
+        "category": "overseas_rock",
+        "updated_at": "2026-10-27T01:34:11.305869+00:00"
+      },
+      "verification": {
+        "readBack": true,
+        "version": "2026-10-27T01:34:11.305869+00:00"
+      },
+      "selectedTaskResults": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-27T01:34:10.526Z",
+          "nextAttemptAt": null,
+          "applied": true
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+          "checkedAt": "2026-10-27T01:35:45.446Z",
+          "nextAttemptAt": "2026-10-28T01:35:45.446Z",
+          "applied": false
+        }
+      },
+      "channel": {
+        "profileAndCacheRows": 0,
+        "candidates": [],
+        "reason": "현재 DB에서 이 대상의 channel profile/API cache 없음. MB의 URL 관계는 후보이며 실제 아티스트별 공식 페이지의 전체 직접 목적지와 API ID 일치가 미완료여서 저장/사진 확보로 세지 않는다.",
+        "saved": false,
+        "photoSaved": false
+      },
+      "lastfm": {
+        "requestedMbid": "819e4775-b9a6-4a24-b4af-0acfa9669a00",
+        "returnedMbid": "819e4775-b9a6-4a24-b4af-0acfa9669a00",
+        "reused": false,
+        "apiError": null,
+        "metricRejected": null,
+        "checkedAt": "2026-10-27T01:29:37.093Z",
+        "adoptedForNewCoreCandidate": true
+      },
+      "providerWorkRequests": 2
+    }
+  ],
+  "limits": [
+    "No new identity/alias mutation, deployment, DDL, push, PR, merge, concert collection, publication policy ON, or notifications. Paused schedules untouched.",
+    "Pending evidence is deferred, not a completed investigation or an administrator judgment exception. No excluded/held writes.",
+    "No YouTube API/page scraping/image download. MB channel relationships and visible page link labels are candidates; full direct destination/API identity crosscheck remains pending.",
+    "Current livetune.jp is unrelated entertainment content, excluded as official evidence. Noirdez.com current affiliate/community page was not used as official proof; Universal France biography was read instead.",
+    "API counts 77 cover actual MusicBrainz/Last.fm HTTP calls including 1 connection probe; exclude Supabase lifecycle/RPC and web research tool requests. Web tool underlying HTTP count is not observable.",
+    "Four valid Last.fm cache rows reused; Live mismatched response rejected, Hoshino Team A/Ian Dury & the Blockheads/NEWS API6 not scored as zero.",
+    "Existing authority_wait/readyToApply=false draft and provider cooldown bytes unchanged.",
+    "No application code changed; no new fixture tests/lint/build run. Documentation UTF-8/JSON/content/link/diff checks only.",
+    "A previous M24 connection helper was accidentally reused for the probe: new result moved to R37 and M24 sanitized historical JSON restored from committed M24 report; no monitoring latest/fingerprint/notification state changed."
+  ]
+}

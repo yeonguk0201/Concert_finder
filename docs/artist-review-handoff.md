@@ -6,6 +6,12 @@
 
 ## 구현 범위
 
+2026-10-25 KST 후속: [identity 클라이언트 경로](artist-identity-client-compatibility.md)의 현재 구현 절이 아래 과거 CLI 미완료 설명보다 우선한다. `begin --identity-file`·`identity`·불변 저널·공개 검색 readback·queue/finish 연결을 격리 테스트로 구현했다. 운영 신규/별칭 쓰기 성공은 아직 미검증이다. 설치된 승인 RPC가 최초 target 버전만 받으므로 identity 변경 대상의 승인은 다음 선정 가능한 정규 batch로 defer하며, 같은 batch 재등록·별도 writer로 우회하지 않는다. 복구 환경은 `/workspace/Concert_finder-recovered-20261023`이며 기존 queue를 init/accept하지 않는다.
+
+2026-10-24 운영 `service_begin_integrated_review` 정의의 전체 대상 버전 검사와 대조해, 로컬 저널 준비도 신원 변경 없는 일반 검수 대상의 존재·원본 버전을 검사한다. 목록 마지막 대상의 누락/버전 변경/버전 없음도 저널 게시 전에 거부한다. 기존 mutation CLI·서버 등록·queue 통합의 미완료 경계는 그대로다.
+
+신규/별칭의 호환 준비에는 `artist-identity-journal.mjs`의 불변 요청 저널과 `artist-identity-work.mjs`의 읽기 전용 `recoverIdentityJournal`이 있다. 저널의 전체 고정 목록(신원 변경 없는 검수 대상 포함)·원본 버전·실행 ID를 현재 active와 대조한 뒤에만 receipt/readback/public search를 읽는다. receipt 없음·검색 충돌·읽기 실패는 미완료로 보존하고 queue를 변경하지 않는다. 이는 mutation CLI나 신규/별칭 쓰기의 활성화가 아니며 서버 등록·동일40팀 선정·queue checkpoint/finish 통합은 여전히 필요하다.
+
 `scripts/artist-review-queue.mjs`와 `scripts/lib/artist-review-queue.mjs`는 기존 카탈로그의 신원·장르/분류·승인/채널·사진에 **하나의 최대 40팀 목록**을 사용한다. 오류·보류·권한 대기도 선택 수에 포함하고 실패한 팀 대신 새 팀을 넣지 않는다. 같은 상태 파일의 begin 재호출은 기존 batch를 반환한다. 실행 주기는 Codex 앱 예약에서만 관리한다(현재 사용자 설정: 4시간). 완료한 실행의 시작 시각으로 새 batch를 지연시키지 않는다. lastStartedAt은 이력으로 인계 시에도 보존한다. 활성 batch가 있으면 새로 선정하지 않는다.
 
 우선순위는 신원·장르 → 완료 근거가 있는 분류·승인 → 채널·사진이다. 같은 우선순위는 대기 시작 시각, 이름·ID 순으로 처리한다. `--direction=reverse`는 대기 시각까지 같은 항목의 이름·ID 순서만 반대로 한다. 날짜가 된 재시도보다 역순 이름을 우선하지 않는다. 수동 보류/제외는 선택하지 않고 기존 승인 팀은 채널 단계만 선택한다.

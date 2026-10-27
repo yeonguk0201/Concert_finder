@@ -1,0 +1,60 @@
+{
+  "kst": "2026-10-25T01:21:55+09:00",
+  "role": "shared-collector-code-fix",
+  "baseHead": "e21c6e0",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "changes": [
+    "Read current artist names, aliases, countries, MBIDs and review states inside source collection lease",
+    "Prioritize approved catalog credits within the unchanged shared provider budget; canonicalize verified multilingual aliases then require exact unique provider MBID/country agreement",
+    "Do not link ambiguous, protected, unreviewed or conflicting catalog names by name alone",
+    "Check existing candidate artist keys/band counts before every completion attempt, including skip mode; block removal/replacement rather than copy old keys",
+    "Close blocked source lease with fixed failure code; keep normalized candidate draft and URL/count-only identity_link_review report"
+  ],
+  "validation": {
+    "finalRelatedTests": 33,
+    "newLinkTests": 10,
+    "fullSuiteBeforeFinalTwoTestsAndCreditPriority": {
+      "node": 191,
+      "vitest": 101,
+      "vitestFiles": 23
+    },
+    "lint": "passed",
+    "build": "passed; existing large-bundle warning",
+    "diffCheck": "passed",
+    "liveReadOnly": {
+      "catalogRows": 640,
+      "approvedRows": 208,
+      "unchangedKeysPassed": true,
+      "emptyKeysBlocked": true,
+      "writes": 0
+    },
+    "changelogFetch": "markdown unsupported HTTP400; current Supabase RPC/range docs verified with search_docs"
+  },
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 2167,
+    "active": null,
+    "transfer": null,
+    "sha256": "e08c98653b5fa0651738a4ff9f8580bb014050ebad1265945c6728133d6d3bdf",
+    "unchanged": true
+  },
+  "notPerformed": [
+    "collector execution against providers",
+    "production DB writes",
+    "DDL/migration",
+    "publication ON",
+    "notifications",
+    "schedule edits",
+    "separate collector checkout edits",
+    "deployment",
+    "push/PR/merge",
+    "old candidate restoration"
+  ],
+  "limits": [
+    "The guard covers this shared client only; installed SQL upsert and other writers remain unchanged. A concurrent administrative write between the read and completion is not atomically fenced.",
+    "Removing a lineup key deliberately blocks completion of the entire source, requiring review of legitimate cancellation/change as well as lookup failures.",
+    "Provider outage/budget, unreviewed identity, NOL permission and manual publication OFF remain independent blockers.",
+    "The current operating workflows and other-chat KOPIS runner do not receive these files automatically."
+  ]
+}

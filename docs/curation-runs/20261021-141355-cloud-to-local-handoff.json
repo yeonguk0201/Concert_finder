@@ -1,0 +1,36 @@
+{
+  "createdAtKst": "2026-10-21T14:13:55.460588+09:00",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "offeredRevision": 572,
+  "expectedAcceptedRevision": 573,
+  "transferId": "e358b65b-4466-4d81-a6cd-fbf1fb8fa185",
+  "from": "cloud",
+  "to": "local",
+  "cloudAutomation": {
+    "id": "6ad2484e14b8819191c9b7217bdd0572",
+    "is_enabled": false,
+    "checkedAt": "2026-10-21T14:13:55.460588+09:00"
+  },
+  "activeRun": null,
+  "reviewProcessCount": 0,
+  "queueLockPresent": false,
+  "legacyServer": "idle",
+  "catalogVerification": {
+    "checkedAt": "2026-10-21T05:12:37.680Z",
+    "legacyRunner": "idle",
+    "catalogCount": 625,
+    "tracked": 625,
+    "changedBandIds": [],
+    "newBandIds": [],
+    "missingBandIds": [],
+    "activeRun": null,
+    "revision": 571
+  },
+  "lastStartedAt": "2026-10-20T21:27:10.193Z",
+  "earliestNewBatchAtKst": "2026-10-21T11:27:10.193000+09:00",
+  "handoffSha256": "676ae4ea6ef6a4158e11ab684f58ecf5199e2a8d3e87bc63ca552137792ca57f",
+  "sourceCodeCommit": "de11ee73eebee3f0d3bd4c2d63150b4b13d48259",
+  "lastReviewRunId": "718ad688-9f77-4744-ab0d-0e660b50f63d",
+  "newReviewOrDatabaseMutationDuringHandoff": false,
+  "localAcceptPerformed": false
+}

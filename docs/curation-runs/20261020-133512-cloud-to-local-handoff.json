@@ -1,0 +1,23 @@
+{
+  "recordedAtKst": "2026-10-20T13:35:12.573075+09:00",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "revision": 321,
+  "from": "cloud",
+  "to": "local",
+  "transfer": {
+    "id": "905cbef0-7dbe-477c-a596-71945ee9e4d9",
+    "from": "cloud",
+    "to": "local",
+    "offeredAt": "2026-10-20T04:34:25.874Z"
+  },
+  "tracked": 618,
+  "activeRun": null,
+  "cloudAutomationId": "6ad2484e14b8819191c9b7217bdd0572",
+  "cloudAutomationEnabled": false,
+  "runningNodeProcesses": 0,
+  "legacyServerBusy": false,
+  "lastStartedAt": "2026-10-20T01:32:44.965Z",
+  "expectedAcceptedRevision": 322,
+  "lastCompletedCommit": "24ec150",
+  "note": "송신측은 인계 대기 상태로 동결됨. 실제 로컬 accept는 아직 수행하지 않았으며 성공 확인 후 로컬 예약을 활성화한다. 승인 초안은 readyToApply=false이며 인증만으로 승인할 수 없음."
+}

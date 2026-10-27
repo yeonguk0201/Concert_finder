@@ -1,0 +1,3839 @@
+{
+  "policy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+  "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+  "observedAt": "2026-10-23T05:40:05.527987+00:00",
+  "kst": "2026-10-23T14:40:05.527987+09:00",
+  "environmentId": "ccarenv_b64_Y2NhcmVudl8yMmMyZGVkZTM3NDQ4MTkxYmVjNmI3NTFjNjMzMGYxZg",
+  "codePath": "/workspace/Concert_finder",
+  "gitBase": "902d964",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 1532,
+    "active": null,
+    "transfer": null,
+    "lastStartedAt": "2026-10-23T05:24:41.192Z",
+    "stateSha256": "3c0da60ef633792e26e24c2ab10ea913c03642c17869c8c8848f274477e80b60"
+  },
+  "run": {
+    "id": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+    "selected": 40,
+    "startedAt": "2026-10-23T05:24:41.192+00:00",
+    "finishedAt": "2026-10-23T05:37:17.852762+00:00"
+  },
+  "selected": 40,
+  "newApprovals": 8,
+  "newResearchComplete": 0,
+  "reusedResearchForApproval": 8,
+  "approvalDeferred": 32,
+  "researchDeferred": 27,
+  "channelDeferred": 40,
+  "channelsSaved": 0,
+  "photosSaved": 0,
+  "apiRequests": {
+    "musicBrainz": 3,
+    "youtube": 0,
+    "lastfm": 0,
+    "meaning": "실제 제공처 API 요청. 웹 조사 도구 호출 및 Supabase RPC/SQL과 별도. 기존 CLI의 Supabase 전체 전송 계수는 계측하지 않아 정확한 총수를 주장하지 않음"
+  },
+  "readback": {
+    "verifiedAt": "2026-10-23T05:38:32.999939+00:00",
+    "allApproved": true,
+    "receiptCount": 8,
+    "liveLegacyLeases": 0,
+    "unchangedIdentity": true,
+    "relationsPreserved": true,
+    "publicationApprovals": 8,
+    "allCurrentVersionsMatch": true
+  },
+  "bandsBefore": {
+    "total": 630,
+    "approved": 145,
+    "unreviewed": 479,
+    "excluded": 6
+  },
+  "bandsAfter": {
+    "approved": 153,
+    "excluded": 6,
+    "unreviewed": 471
+  },
+  "activeIntegratedLeases": 0,
+  "workflowRemaining": 411,
+  "authorityWaitingPreserved": 66,
+  "fullCatalogComplete": false,
+  "core200Complete": false,
+  "manualJudgmentExceptions": [],
+  "limitations": [
+    "원래 research와 checkedAt/유효기간을 보존했다. 보완 proof의 checkedAt은 실제 자료를 읽고 기록한 관측 시각이며 원본 HTTP 요청 로그 시각을 주장하지 않는다.",
+    "국내 동명이인 27팀은 정확한 외부 신원·작품 연결이 부족하다. 이번 실행의 새 조사 완료나 제외로 세지 않았다.",
+    "일본 5팀은 공식 프로필 접근/국가/신원 추가 확인이 남아 승인하지 않았다.",
+    "MusicBrainz 3회 네트워크 실패 후 24시간 provider cooldown 보존. 공식 대체 자료 검수는 계속했다.",
+    "선정 팀 저장 채널 프로필/캐시 0개를 읽기 전용으로 확인. 공식 사이트의 직접 채널 주소를 네트워크 내에서 추출하지 못해 API ID 검증/저장을 하지 않았다. no_official_channel 판정이 아니다.",
+    "현재 Last.fm 보안 바인딩은 미관측이며 인기 지표를 호출하지 않았다. 기존 DB 검수를 중단하지 않았다.",
+    "identity-work 모듈은 receipt 복구 준비만 지원하고 identity CLI/고정 journal 쓰기는 미연결. 신규 등록/별칭 쓰기를 실행하지 않았다.",
+    "로컬 커밋과 체크포인트는 현재 환경 보존이며 다른 채팅/원격으로 자동 동기화됐다는 뜻이 아니다."
+  ],
+  "artists": [
+    {
+      "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+      "name": "이선정",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "26731ddd-4bab-4ef5-854c-ce467be8403f",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.313519+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.313519+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 MB 응답의 violinist 정보는 보존했다. 동명 강남문화재단 연주자와 현재 MBID의 구체 작품 연결이 미완료다. 제공처 cooldown 중이어서 외부 ID 재조회는 하지 않았고 이름·직업만으로 제외하지 않았다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 MB 응답의 violinist 정보는 보존했다. 동명 강남문화재단 연주자와 현재 MBID의 구체 작품 연결이 미완료다. 제공처 cooldown 중이어서 외부 ID 재조회는 하지 않았고 이름·직업만으로 제외하지 않았다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 MB 응답의 violinist 정보는 보존했다. 동명 강남문화재단 연주자와 현재 MBID의 구체 작품 연결이 미완료다. 제공처 cooldown 중이어서 외부 ID 재조회는 하지 않았고 이름·직업만으로 제외하지 않았다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 MB 응답의 violinist 정보는 보존했다. 동명 강남문화재단 연주자와 현재 MBID의 구체 작품 연결이 미완료다. 제공처 cooldown 중이어서 외부 ID 재조회는 하지 않았고 이름·직업만으로 제외하지 않았다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 MB 응답의 violinist 정보는 보존했다. 동명 강남문화재단 연주자와 현재 MBID의 구체 작품 연결이 미완료다. 제공처 cooldown 중이어서 외부 ID 재조회는 하지 않았고 이름·직업만으로 제외하지 않았다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 3,
+          "nextAttemptAt": "2026-10-24T05:37:10.541Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 MB 응답의 violinist 정보는 보존했다. 동명 강남문화재단 연주자와 현재 MBID의 구체 작품 연결이 미완료다. 제공처 cooldown 중이어서 외부 ID 재조회는 하지 않았고 이름·직업만으로 제외하지 않았다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:10.635Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "7830f7f9-cf4c-4ff2-8fe3-ddfa5ee635fc",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:10.703Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+      "name": "이성호",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "b31d0d8e-3b56-4413-8517-2ea36d1262e6",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.934799+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.934799+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 음악인 후보 검색은 신원·작품의 확정 근거가 아니다. 현재 MBID와 공식 작품을 연결하는 자료가 부족하며 제공처 cooldown을 존중한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 음악인 후보 검색은 신원·작품의 확정 근거가 아니다. 현재 MBID와 공식 작품을 연결하는 자료가 부족하며 제공처 cooldown을 존중한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 음악인 후보 검색은 신원·작품의 확정 근거가 아니다. 현재 MBID와 공식 작품을 연결하는 자료가 부족하며 제공처 cooldown을 존중한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 음악인 후보 검색은 신원·작품의 확정 근거가 아니다. 현재 MBID와 공식 작품을 연결하는 자료가 부족하며 제공처 cooldown을 존중한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 음악인 후보 검색은 신원·작품의 확정 근거가 아니다. 현재 MBID와 공식 작품을 연결하는 자료가 부족하며 제공처 cooldown을 존중한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:10.762Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 음악인 후보 검색은 신원·작품의 확정 근거가 아니다. 현재 MBID와 공식 작품을 연결하는 자료가 부족하며 제공처 cooldown을 존중한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:10.821Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:10.892Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+      "name": "최재호",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "968c57d8-ec41-4d0d-8c67-1a960c3fea00",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.277146+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.277146+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 성우 최재호의 인터뷰 후보가 있으나 현재 외부 신원이 같은 성우인지와 음악 활동을 확인하지 못했다. 성우 이름 일치만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 성우 최재호의 인터뷰 후보가 있으나 현재 외부 신원이 같은 성우인지와 음악 활동을 확인하지 못했다. 성우 이름 일치만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 성우 최재호의 인터뷰 후보가 있으나 현재 외부 신원이 같은 성우인지와 음악 활동을 확인하지 못했다. 성우 이름 일치만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 성우 최재호의 인터뷰 후보가 있으나 현재 외부 신원이 같은 성우인지와 음악 활동을 확인하지 못했다. 성우 이름 일치만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 성우 최재호의 인터뷰 후보가 있으나 현재 외부 신원이 같은 성우인지와 음악 활동을 확인하지 못했다. 성우 이름 일치만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:10.980Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 성우 최재호의 인터뷰 후보가 있으나 현재 외부 신원이 같은 성우인지와 음악 활동을 확인하지 못했다. 성우 이름 일치만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.062Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.141Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+      "name": "최정인",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "88aae8ce-aab8-4926-9172-c0a4955e4e97",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T11:36:58.700358+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T11:36:58.700358+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: SKY 캐슬 OST 작곡가와 다른 가수·배우 동명 후보를 구분해야 한다. 현재 MBID에 어느 경력이 연결되는지 확인되지 않아 작곡가로 임의 결정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: SKY 캐슬 OST 작곡가와 다른 가수·배우 동명 후보를 구분해야 한다. 현재 MBID에 어느 경력이 연결되는지 확인되지 않아 작곡가로 임의 결정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: SKY 캐슬 OST 작곡가와 다른 가수·배우 동명 후보를 구분해야 한다. 현재 MBID에 어느 경력이 연결되는지 확인되지 않아 작곡가로 임의 결정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: SKY 캐슬 OST 작곡가와 다른 가수·배우 동명 후보를 구분해야 한다. 현재 MBID에 어느 경력이 연결되는지 확인되지 않아 작곡가로 임의 결정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: SKY 캐슬 OST 작곡가와 다른 가수·배우 동명 후보를 구분해야 한다. 현재 MBID에 어느 경력이 연결되는지 확인되지 않아 작곡가로 임의 결정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.233Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: SKY 캐슬 OST 작곡가와 다른 가수·배우 동명 후보를 구분해야 한다. 현재 MBID에 어느 경력이 연결되는지 확인되지 않아 작곡가로 임의 결정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.358Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.440Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+      "name": "정재환",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "e64c4995-8948-438f-8988-3240dc2c7ab4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.917823+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.917823+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Bugs Jul19의 7월19일 본문에서 muzabis(정재환)의 모던 록 활동을 실제 확인했다. 그러나 현재 MBID와 이 밴드 멤버가 같은 사람임을 연결하지 못해 완료·승인으로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Bugs Jul19의 7월19일 본문에서 muzabis(정재환)의 모던 록 활동을 실제 확인했다. 그러나 현재 MBID와 이 밴드 멤버가 같은 사람임을 연결하지 못해 완료·승인으로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Bugs Jul19의 7월19일 본문에서 muzabis(정재환)의 모던 록 활동을 실제 확인했다. 그러나 현재 MBID와 이 밴드 멤버가 같은 사람임을 연결하지 못해 완료·승인으로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Bugs Jul19의 7월19일 본문에서 muzabis(정재환)의 모던 록 활동을 실제 확인했다. 그러나 현재 MBID와 이 밴드 멤버가 같은 사람임을 연결하지 못해 완료·승인으로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Bugs Jul19의 7월19일 본문에서 muzabis(정재환)의 모던 록 활동을 실제 확인했다. 그러나 현재 MBID와 이 밴드 멤버가 같은 사람임을 연결하지 못해 완료·승인으로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.512Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Bugs Jul19의 7월19일 본문에서 muzabis(정재환)의 모던 록 활동을 실제 확인했다. 그러나 현재 MBID와 이 밴드 멤버가 같은 사람임을 연결하지 못해 완료·승인으로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.570Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.630Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+      "name": "남성모",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "9e955360-4301-4444-bad3-56aa91051753",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.943628+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.943628+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 공식 배급 멤버 목록에 남성모가 있는 것을 확인했다. 그 멤버와 현재 MBID의 신원 연결 및 실제 록/J-pop 활동이 미완료다. 그룹 형태·일본 공연만으로 대상 여부를 정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 공식 배급 멤버 목록에 남성모가 있는 것을 확인했다. 그 멤버와 현재 MBID의 신원 연결 및 실제 록/J-pop 활동이 미완료다. 그룹 형태·일본 공연만으로 대상 여부를 정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 공식 배급 멤버 목록에 남성모가 있는 것을 확인했다. 그 멤버와 현재 MBID의 신원 연결 및 실제 록/J-pop 활동이 미완료다. 그룹 형태·일본 공연만으로 대상 여부를 정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 공식 배급 멤버 목록에 남성모가 있는 것을 확인했다. 그 멤버와 현재 MBID의 신원 연결 및 실제 록/J-pop 활동이 미완료다. 그룹 형태·일본 공연만으로 대상 여부를 정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 공식 배급 멤버 목록에 남성모가 있는 것을 확인했다. 그 멤버와 현재 MBID의 신원 연결 및 실제 록/J-pop 활동이 미완료다. 그룹 형태·일본 공연만으로 대상 여부를 정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.689Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 공식 배급 멤버 목록에 남성모가 있는 것을 확인했다. 그 멤버와 현재 MBID의 신원 연결 및 실제 록/J-pop 활동이 미완료다. 그룹 형태·일본 공연만으로 대상 여부를 정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.749Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.810Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+      "name": "황성빈",
+      "aliases": [
+        "HWANG SEONG BIN"
+      ],
+      "country": "KR",
+      "musicBrainzId": "c04d9626-83b7-4159-8ed4-3e954ed906a9",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.945385+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.945385+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 배급 멤버 목록의 황성빈을 확인했다. 동명 야구선수와 혼동하지 않으며 현재 MBID와 정확한 멤버 신원·대상 장르의 연결을 더 확인해야 한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 배급 멤버 목록의 황성빈을 확인했다. 동명 야구선수와 혼동하지 않으며 현재 MBID와 정확한 멤버 신원·대상 장르의 연결을 더 확인해야 한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 배급 멤버 목록의 황성빈을 확인했다. 동명 야구선수와 혼동하지 않으며 현재 MBID와 정확한 멤버 신원·대상 장르의 연결을 더 확인해야 한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 배급 멤버 목록의 황성빈을 확인했다. 동명 야구선수와 혼동하지 않으며 현재 MBID와 정확한 멤버 신원·대상 장르의 연결을 더 확인해야 한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 배급 멤버 목록의 황성빈을 확인했다. 동명 야구선수와 혼동하지 않으며 현재 MBID와 정확한 멤버 신원·대상 장르의 연결을 더 확인해야 한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.871Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 82MAJOR 배급 멤버 목록의 황성빈을 확인했다. 동명 야구선수와 혼동하지 않으며 현재 MBID와 정확한 멤버 신원·대상 장르의 연결을 더 확인해야 한다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.938Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:11.997Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+      "name": "윤석철",
+      "aliases": [
+        "Seokcheol Yun",
+        "Yun Seok Cheol"
+      ],
+      "country": "KR",
+      "musicBrainzId": "c3237f6e-14b2-4c6a-936e-32ef519348e4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.646252+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.646252+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 및 안녕의 온도 활동 후보를 찾았으나 현재 외부 신원과 의미 있는 록/J-pop 활동을 함께 확인하지 못했다. 재즈 태그만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 및 안녕의 온도 활동 후보를 찾았으나 현재 외부 신원과 의미 있는 록/J-pop 활동을 함께 확인하지 못했다. 재즈 태그만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 및 안녕의 온도 활동 후보를 찾았으나 현재 외부 신원과 의미 있는 록/J-pop 활동을 함께 확인하지 못했다. 재즈 태그만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 및 안녕의 온도 활동 후보를 찾았으나 현재 외부 신원과 의미 있는 록/J-pop 활동을 함께 확인하지 못했다. 재즈 태그만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 및 안녕의 온도 활동 후보를 찾았으나 현재 외부 신원과 의미 있는 록/J-pop 활동을 함께 확인하지 못했다. 재즈 태그만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.055Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 및 안녕의 온도 활동 후보를 찾았으나 현재 외부 신원과 의미 있는 록/J-pop 활동을 함께 확인하지 못했다. 재즈 태그만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.153Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.220Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+      "name": "이찬원",
+      "aliases": [
+        "Lee Chanwon",
+        "Lee Chan Won"
+      ],
+      "country": "KR",
+      "musicBrainzId": "61981bcc-25e5-40ec-970d-8998494af238",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.660248+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.660248+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 경력과 새 음반의 락앤롤 인생 제목 후보가 있다. 제목이나 기존 트로트 이력만으로 실제 록 활동의 유무를 확정하지 않는다. 원음반의 실제 장르·본인 신원 근거가 더 필요하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 경력과 새 음반의 락앤롤 인생 제목 후보가 있다. 제목이나 기존 트로트 이력만으로 실제 록 활동의 유무를 확정하지 않는다. 원음반의 실제 장르·본인 신원 근거가 더 필요하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 경력과 새 음반의 락앤롤 인생 제목 후보가 있다. 제목이나 기존 트로트 이력만으로 실제 록 활동의 유무를 확정하지 않는다. 원음반의 실제 장르·본인 신원 근거가 더 필요하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 경력과 새 음반의 락앤롤 인생 제목 후보가 있다. 제목이나 기존 트로트 이력만으로 실제 록 활동의 유무를 확정하지 않는다. 원음반의 실제 장르·본인 신원 근거가 더 필요하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 경력과 새 음반의 락앤롤 인생 제목 후보가 있다. 제목이나 기존 트로트 이력만으로 실제 록 활동의 유무를 확정하지 않는다. 원음반의 실제 장르·본인 신원 근거가 더 필요하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.285Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 경력과 새 음반의 락앤롤 인생 제목 후보가 있다. 제목이나 기존 트로트 이력만으로 실제 록 활동의 유무를 확정하지 않는다. 원음반의 실제 장르·본인 신원 근거가 더 필요하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.348Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.416Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+      "name": "서림",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "a78361b4-d3eb-4928-8125-c988045074a6",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.664288+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.664288+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 배급 프로필 20180732에서 대한민국 국적과 산만한시선 소속을 확인했다. 해당 현재 MBID 및 실제 록/J-pop 활동 연결은 미완료이며 포크 듀오라는 정보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 배급 프로필 20180732에서 대한민국 국적과 산만한시선 소속을 확인했다. 해당 현재 MBID 및 실제 록/J-pop 활동 연결은 미완료이며 포크 듀오라는 정보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 배급 프로필 20180732에서 대한민국 국적과 산만한시선 소속을 확인했다. 해당 현재 MBID 및 실제 록/J-pop 활동 연결은 미완료이며 포크 듀오라는 정보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 배급 프로필 20180732에서 대한민국 국적과 산만한시선 소속을 확인했다. 해당 현재 MBID 및 실제 록/J-pop 활동 연결은 미완료이며 포크 듀오라는 정보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 배급 프로필 20180732에서 대한민국 국적과 산만한시선 소속을 확인했다. 해당 현재 MBID 및 실제 록/J-pop 활동 연결은 미완료이며 포크 듀오라는 정보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.475Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 배급 프로필 20180732에서 대한민국 국적과 산만한시선 소속을 확인했다. 해당 현재 MBID 및 실제 록/J-pop 활동 연결은 미완료이며 포크 듀오라는 정보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.539Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.617Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+      "name": "진원",
+      "aliases": [
+        "진대원"
+      ],
+      "country": "KR",
+      "musicBrainzId": "6b239332-5e1b-47e4-8dcd-1b654a4ab1e7",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.672954+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.672954+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 고칠게 음반 후보를 찾았으나 진대원 별칭의 현재 MBID와 원음반·실제 대상 장르를 대조하지 못했다. 발라드 후보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 고칠게 음반 후보를 찾았으나 진대원 별칭의 현재 MBID와 원음반·실제 대상 장르를 대조하지 못했다. 발라드 후보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 고칠게 음반 후보를 찾았으나 진대원 별칭의 현재 MBID와 원음반·실제 대상 장르를 대조하지 못했다. 발라드 후보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 고칠게 음반 후보를 찾았으나 진대원 별칭의 현재 MBID와 원음반·실제 대상 장르를 대조하지 못했다. 발라드 후보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 고칠게 음반 후보를 찾았으나 진대원 별칭의 현재 MBID와 원음반·실제 대상 장르를 대조하지 못했다. 발라드 후보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.675Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 고칠게 음반 후보를 찾았으나 진대원 별칭의 현재 MBID와 원음반·실제 대상 장르를 대조하지 못했다. 발라드 후보만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.731Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.799Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+      "name": "박소현",
+      "aliases": [
+        "Park Sohyun"
+      ],
+      "country": "KR",
+      "musicBrainzId": "21170f37-04cf-4b52-949f-518323da3d8b",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.62144+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.62144+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 Bugs 동명 프로필 66510·20054298의 서로 다른 작품 기록을 보존했다. 현재 MBID가 어느 신원인지 외부 연결이 미완료여서 통합·제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 Bugs 동명 프로필 66510·20054298의 서로 다른 작품 기록을 보존했다. 현재 MBID가 어느 신원인지 외부 연결이 미완료여서 통합·제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 Bugs 동명 프로필 66510·20054298의 서로 다른 작품 기록을 보존했다. 현재 MBID가 어느 신원인지 외부 연결이 미완료여서 통합·제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 Bugs 동명 프로필 66510·20054298의 서로 다른 작품 기록을 보존했다. 현재 MBID가 어느 신원인지 외부 연결이 미완료여서 통합·제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 Bugs 동명 프로필 66510·20054298의 서로 다른 작품 기록을 보존했다. 현재 MBID가 어느 신원인지 외부 연결이 미완료여서 통합·제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.858Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 이전 Bugs 동명 프로필 66510·20054298의 서로 다른 작품 기록을 보존했다. 현재 MBID가 어느 신원인지 외부 연결이 미완료여서 통합·제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.919Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:12.979Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+      "name": "조성일",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "9c534bd7-aba0-435b-9ac3-0f34919570da",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T14:03:04.442816+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T14:03:04.442816+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 밴드/솔로 음악인 및 82MAJOR의 CHO SEONG IL 동명 멤버 후보를 구분해야 한다. 현재 DB 신원과 어느 경력이 연결되는지 미확인이다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 밴드/솔로 음악인 및 82MAJOR의 CHO SEONG IL 동명 멤버 후보를 구분해야 한다. 현재 DB 신원과 어느 경력이 연결되는지 미확인이다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 밴드/솔로 음악인 및 82MAJOR의 CHO SEONG IL 동명 멤버 후보를 구분해야 한다. 현재 DB 신원과 어느 경력이 연결되는지 미확인이다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 밴드/솔로 음악인 및 82MAJOR의 CHO SEONG IL 동명 멤버 후보를 구분해야 한다. 현재 DB 신원과 어느 경력이 연결되는지 미확인이다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 밴드/솔로 음악인 및 82MAJOR의 CHO SEONG IL 동명 멤버 후보를 구분해야 한다. 현재 DB 신원과 어느 경력이 연결되는지 미확인이다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.050Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 밴드/솔로 음악인 및 82MAJOR의 CHO SEONG IL 동명 멤버 후보를 구분해야 한다. 현재 DB 신원과 어느 경력이 연결되는지 미확인이다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.111Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.178Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+      "name": "마이진",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "a30f6c0f-9d2c-4765-8541-b5bd17c31044",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T17:24:12.848175+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T17:24:12.848175+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 활동 후보만으로 제외하지 않았다. 본인의 정확한 공식 음반·국가와 의미 있는 록/J-pop 활동의 유무를 대조하는 자료가 부족하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 활동 후보만으로 제외하지 않았다. 본인의 정확한 공식 음반·국가와 의미 있는 록/J-pop 활동의 유무를 대조하는 자료가 부족하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 활동 후보만으로 제외하지 않았다. 본인의 정확한 공식 음반·국가와 의미 있는 록/J-pop 활동의 유무를 대조하는 자료가 부족하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 활동 후보만으로 제외하지 않았다. 본인의 정확한 공식 음반·국가와 의미 있는 록/J-pop 활동의 유무를 대조하는 자료가 부족하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 활동 후보만으로 제외하지 않았다. 본인의 정확한 공식 음반·국가와 의미 있는 록/J-pop 활동의 유무를 대조하는 자료가 부족하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.245Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 트로트 활동 후보만으로 제외하지 않았다. 본인의 정확한 공식 음반·국가와 의미 있는 록/J-pop 활동의 유무를 대조하는 자료가 부족하다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.308Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.366Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+      "name": "김영하",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "5b149009-adf1-4722-aef4-25dabf5824d0",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T20:41:49.755716+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T20:41:49.755716+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 소설가의 음악 토크 공연은 이 DB 음악인 신원의 증명이 아니다. 현재 MBID와 작품을 연결하지 못했으며 작가 이름만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 소설가의 음악 토크 공연은 이 DB 음악인 신원의 증명이 아니다. 현재 MBID와 작품을 연결하지 못했으며 작가 이름만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 소설가의 음악 토크 공연은 이 DB 음악인 신원의 증명이 아니다. 현재 MBID와 작품을 연결하지 못했으며 작가 이름만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 소설가의 음악 토크 공연은 이 DB 음악인 신원의 증명이 아니다. 현재 MBID와 작품을 연결하지 못했으며 작가 이름만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 소설가의 음악 토크 공연은 이 DB 음악인 신원의 증명이 아니다. 현재 MBID와 작품을 연결하지 못했으며 작가 이름만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.440Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 소설가의 음악 토크 공연은 이 DB 음악인 신원의 증명이 아니다. 현재 MBID와 작품을 연결하지 못했으며 작가 이름만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.513Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.570Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+      "name": "최정윤",
+      "aliases": [
+        "Choi Jung Yoon",
+        "Choi Jungyoon"
+      ],
+      "country": "KR",
+      "musicBrainzId": "74a06b20-ccd9-4cdf-9539-2db7b527f225",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.998391+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.998391+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Choi Jung Yoon/Choi Jungyoon 별칭의 현재 신원에 대한 지난 미완료 기록을 보존했다. 공식 경력·작품과 록/J-pop 활동이 아직 충분히 연결되지 않았다. 이번에 새 완료 근거로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Choi Jung Yoon/Choi Jungyoon 별칭의 현재 신원에 대한 지난 미완료 기록을 보존했다. 공식 경력·작품과 록/J-pop 활동이 아직 충분히 연결되지 않았다. 이번에 새 완료 근거로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Choi Jung Yoon/Choi Jungyoon 별칭의 현재 신원에 대한 지난 미완료 기록을 보존했다. 공식 경력·작품과 록/J-pop 활동이 아직 충분히 연결되지 않았다. 이번에 새 완료 근거로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Choi Jung Yoon/Choi Jungyoon 별칭의 현재 신원에 대한 지난 미완료 기록을 보존했다. 공식 경력·작품과 록/J-pop 활동이 아직 충분히 연결되지 않았다. 이번에 새 완료 근거로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Choi Jung Yoon/Choi Jungyoon 별칭의 현재 신원에 대한 지난 미완료 기록을 보존했다. 공식 경력·작품과 록/J-pop 활동이 아직 충분히 연결되지 않았다. 이번에 새 완료 근거로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.632Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: Choi Jung Yoon/Choi Jungyoon 별칭의 현재 신원에 대한 지난 미완료 기록을 보존했다. 공식 경력·작품과 록/J-pop 활동이 아직 충분히 연결되지 않았다. 이번에 새 완료 근거로 세지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.709Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.770Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+      "name": "정승원",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "d798ffea-df3f-404f-a4a2-c22bc33e6992",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:31.005542+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:31.005542+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 가수·크로스오버 음악인 후보와 현재 MBID의 작품 연결이 확인되지 않았다. 국적·이름만으로 판정하지 않으며 외부 신원 재조회는 제공처 cooldown을 따른다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 가수·크로스오버 음악인 후보와 현재 MBID의 작품 연결이 확인되지 않았다. 국적·이름만으로 판정하지 않으며 외부 신원 재조회는 제공처 cooldown을 따른다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 가수·크로스오버 음악인 후보와 현재 MBID의 작품 연결이 확인되지 않았다. 국적·이름만으로 판정하지 않으며 외부 신원 재조회는 제공처 cooldown을 따른다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 가수·크로스오버 음악인 후보와 현재 MBID의 작품 연결이 확인되지 않았다. 국적·이름만으로 판정하지 않으며 외부 신원 재조회는 제공처 cooldown을 따른다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 가수·크로스오버 음악인 후보와 현재 MBID의 작품 연결이 확인되지 않았다. 국적·이름만으로 판정하지 않으며 외부 신원 재조회는 제공처 cooldown을 따른다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.829Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 동명 가수·크로스오버 음악인 후보와 현재 MBID의 작품 연결이 확인되지 않았다. 국적·이름만으로 판정하지 않으며 외부 신원 재조회는 제공처 cooldown을 따른다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.894Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:13.957Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+      "name": "조윤성",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "6a0edcd4-bf70-4864-9bb2-6757c863a9c7",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T06:15:03.110412+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T06:15:03.110412+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 후보와 다른 분야 동명을 구분할 현재 MBID·작품 자료가 미완료다. 재즈 경력만으로 의미 있는 록 활동의 부재를 단정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 후보와 다른 분야 동명을 구분할 현재 MBID·작품 자료가 미완료다. 재즈 경력만으로 의미 있는 록 활동의 부재를 단정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 후보와 다른 분야 동명을 구분할 현재 MBID·작품 자료가 미완료다. 재즈 경력만으로 의미 있는 록 활동의 부재를 단정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 후보와 다른 분야 동명을 구분할 현재 MBID·작품 자료가 미완료다. 재즈 경력만으로 의미 있는 록 활동의 부재를 단정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 후보와 다른 분야 동명을 구분할 현재 MBID·작품 자료가 미완료다. 재즈 경력만으로 의미 있는 록 활동의 부재를 단정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.023Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 재즈 피아니스트 후보와 다른 분야 동명을 구분할 현재 MBID·작품 자료가 미완료다. 재즈 경력만으로 의미 있는 록 활동의 부재를 단정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.084Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.154Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+      "name": "박재정",
+      "aliases": [
+        "Parc Jae Jung"
+      ],
+      "country": "KR",
+      "musicBrainzId": "ad88ad9e-ed16-4aa9-8b60-15a30ef9972b",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T10:04:48.161815+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T10:04:48.161815+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 자작곡 | THE LIVE ALBUM의 공식 배급 소개를 열었다. Parc Jae Jung의 현재 외부 신원과 실제 록/J-pop 활동의 구체 근거는 미완료다. 발라드 음반만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 자작곡 | THE LIVE ALBUM의 공식 배급 소개를 열었다. Parc Jae Jung의 현재 외부 신원과 실제 록/J-pop 활동의 구체 근거는 미완료다. 발라드 음반만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 자작곡 | THE LIVE ALBUM의 공식 배급 소개를 열었다. Parc Jae Jung의 현재 외부 신원과 실제 록/J-pop 활동의 구체 근거는 미완료다. 발라드 음반만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 자작곡 | THE LIVE ALBUM의 공식 배급 소개를 열었다. Parc Jae Jung의 현재 외부 신원과 실제 록/J-pop 활동의 구체 근거는 미완료다. 발라드 음반만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 자작곡 | THE LIVE ALBUM의 공식 배급 소개를 열었다. Parc Jae Jung의 현재 외부 신원과 실제 록/J-pop 활동의 구체 근거는 미완료다. 발라드 음반만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.218Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 자작곡 | THE LIVE ALBUM의 공식 배급 소개를 열었다. Parc Jae Jung의 현재 외부 신원과 실제 록/J-pop 활동의 구체 근거는 미완료다. 발라드 음반만으로 제외하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.291Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "de4633b0-050f-4448-8592-22a5b73e49fb",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.362Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+      "name": "왕세윤",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "486ad71c-6574-411b-9e09-0011282ce7b8",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.909771+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.909771+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 스웨덴세탁소 공식 잠들 때까지에서 왕세윤의 기타·편곡·내 친구 기타 연주를 확인했다. 현재 개인 MBID와 활동의 연결 및 실제 대상 장르 상세 검증이 남았다. 기타 사용만으로 록이라고 확정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 스웨덴세탁소 공식 잠들 때까지에서 왕세윤의 기타·편곡·내 친구 기타 연주를 확인했다. 현재 개인 MBID와 활동의 연결 및 실제 대상 장르 상세 검증이 남았다. 기타 사용만으로 록이라고 확정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 스웨덴세탁소 공식 잠들 때까지에서 왕세윤의 기타·편곡·내 친구 기타 연주를 확인했다. 현재 개인 MBID와 활동의 연결 및 실제 대상 장르 상세 검증이 남았다. 기타 사용만으로 록이라고 확정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 스웨덴세탁소 공식 잠들 때까지에서 왕세윤의 기타·편곡·내 친구 기타 연주를 확인했다. 현재 개인 MBID와 활동의 연결 및 실제 대상 장르 상세 검증이 남았다. 기타 사용만으로 록이라고 확정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 스웨덴세탁소 공식 잠들 때까지에서 왕세윤의 기타·편곡·내 친구 기타 연주를 확인했다. 현재 개인 MBID와 활동의 연결 및 실제 대상 장르 상세 검증이 남았다. 기타 사용만으로 록이라고 확정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.427Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 스웨덴세탁소 공식 잠들 때까지에서 왕세윤의 기타·편곡·내 친구 기타 연주를 확인했다. 현재 개인 MBID와 활동의 연결 및 실제 대상 장르 상세 검증이 남았다. 기타 사용만으로 록이라고 확정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.486Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4851a311-a33b-4a44-bde6-8c349dbcf40c",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.552Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+      "name": "최시유",
+      "aliases": [
+        "최인영"
+      ],
+      "country": "KR",
+      "musicBrainzId": "314cd26e-7bf6-4a48-a962-c99187329c80",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.916333+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T15:06:20.916333+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 공식 배급 OST의 아티스트 최시유와 본문 최인영(스웨덴세탁소), 어쿠스틱 보컬 설명을 확인했다. 별칭과 현재 MBID를 대조한 실제 록 활동 검증이 남았다. 별칭을 수정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 공식 배급 OST의 아티스트 최시유와 본문 최인영(스웨덴세탁소), 어쿠스틱 보컬 설명을 확인했다. 별칭과 현재 MBID를 대조한 실제 록 활동 검증이 남았다. 별칭을 수정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 공식 배급 OST의 아티스트 최시유와 본문 최인영(스웨덴세탁소), 어쿠스틱 보컬 설명을 확인했다. 별칭과 현재 MBID를 대조한 실제 록 활동 검증이 남았다. 별칭을 수정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 공식 배급 OST의 아티스트 최시유와 본문 최인영(스웨덴세탁소), 어쿠스틱 보컬 설명을 확인했다. 별칭과 현재 MBID를 대조한 실제 록 활동 검증이 남았다. 별칭을 수정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 공식 배급 OST의 아티스트 최시유와 본문 최인영(스웨덴세탁소), 어쿠스틱 보컬 설명을 확인했다. 별칭과 현재 MBID를 대조한 실제 록 활동 검증이 남았다. 별칭을 수정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.613Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 공식 배급 OST의 아티스트 최시유와 본문 최인영(스웨덴세탁소), 어쿠스틱 보컬 설명을 확인했다. 별칭과 현재 MBID를 대조한 실제 록 활동 검증이 남았다. 별칭을 수정하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.672Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4f9d1bf5-6476-4a77-8055-325052c443a0",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.730Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+      "name": "정봉길",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "aab184f4-ed37-419b-a407-194cfece1ac4",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.928528+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.928528+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 현재 MBID와 공식 음악 경력을 잇는 구체적인 출처·작품 연결을 확보하지 못했다. 검색 결과 부족과 MB cooldown을 제외·사람 판단 완료의 근거로 삼지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 현재 MBID와 공식 음악 경력을 잇는 구체적인 출처·작품 연결을 확보하지 못했다. 검색 결과 부족과 MB cooldown을 제외·사람 판단 완료의 근거로 삼지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 현재 MBID와 공식 음악 경력을 잇는 구체적인 출처·작품 연결을 확보하지 못했다. 검색 결과 부족과 MB cooldown을 제외·사람 판단 완료의 근거로 삼지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 현재 MBID와 공식 음악 경력을 잇는 구체적인 출처·작품 연결을 확보하지 못했다. 검색 결과 부족과 MB cooldown을 제외·사람 판단 완료의 근거로 삼지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 현재 MBID와 공식 음악 경력을 잇는 구체적인 출처·작품 연결을 확보하지 못했다. 검색 결과 부족과 MB cooldown을 제외·사람 판단 완료의 근거로 삼지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.801Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 현재 MBID와 공식 음악 경력을 잇는 구체적인 출처·작품 연결을 확보하지 못했다. 검색 결과 부족과 MB cooldown을 제외·사람 판단 완료의 근거로 삼지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.860Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "d8fc1e3d-3986-492e-988e-a1c2b3e9306f",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:14.920Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+      "name": "최승현",
+      "aliases": [
+        "Seung-Hyun Choi",
+        "Shawn Choi",
+        "Seung Hyung Choi"
+      ],
+      "country": "KR",
+      "musicBrainzId": "a42ff7dd-80ab-4076-bb11-9bea40da307c",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.935525+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-20T19:15:52.935525+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 티켓링크 공지에서 리도어 멤버 최승현을 확인했다. 현재 DB의 Shawn Choi/Seung-Hyun Choi 별칭과 동일 인물이라는 근거는 확인되지 않아 TOP·리도어 기타리스트 등과 임의 통합하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 티켓링크 공지에서 리도어 멤버 최승현을 확인했다. 현재 DB의 Shawn Choi/Seung-Hyun Choi 별칭과 동일 인물이라는 근거는 확인되지 않아 TOP·리도어 기타리스트 등과 임의 통합하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 티켓링크 공지에서 리도어 멤버 최승현을 확인했다. 현재 DB의 Shawn Choi/Seung-Hyun Choi 별칭과 동일 인물이라는 근거는 확인되지 않아 TOP·리도어 기타리스트 등과 임의 통합하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 티켓링크 공지에서 리도어 멤버 최승현을 확인했다. 현재 DB의 Shawn Choi/Seung-Hyun Choi 별칭과 동일 인물이라는 근거는 확인되지 않아 TOP·리도어 기타리스트 등과 임의 통합하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 티켓링크 공지에서 리도어 멤버 최승현을 확인했다. 현재 DB의 Shawn Choi/Seung-Hyun Choi 별칭과 동일 인물이라는 근거는 확인되지 않아 TOP·리도어 기타리스트 등과 임의 통합하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.000Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유: EVIDENCE_INCOMPLETE: 티켓링크 공지에서 리도어 멤버 최승현을 확인했다. 현재 DB의 Shawn Choi/Seung-Hyun Choi 별칭과 동일 인물이라는 근거는 확인되지 않아 TOP·리도어 기타리스트 등과 임의 통합하지 않는다. 다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.076Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "c98ed223-ca95-4584-8ef3-2daf67646db7",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.175Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "8df47b65-a374-46bf-8b08-dfa24df7406d",
+      "name": "강윤기",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "fdcad7ac-316e-4515-ac2c-2118da1ca6dd",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.398814+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.398814+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "8df47b65-a374-46bf-8b08-dfa24df7406d",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.295Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "8df47b65-a374-46bf-8b08-dfa24df7406d",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.361Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "8df47b65-a374-46bf-8b08-dfa24df7406d",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.440Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "6b5398b6-02c9-4690-9975-40c3416b1db2",
+      "name": "김창완",
+      "aliases": [
+        "Kim Changwan"
+      ],
+      "country": "KR",
+      "musicBrainzId": "583ceac1-556a-445c-b522-c2b4f9f9272e",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.384387+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.384387+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6b5398b6-02c9-4690-9975-40c3416b1db2",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.504Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6b5398b6-02c9-4690-9975-40c3416b1db2",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.586Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6b5398b6-02c9-4690-9975-40c3416b1db2",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.648Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "5ad4c175-d43b-49a0-b18a-ced82b7cbc5a",
+      "name": "안지영",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "68484baa-5f6d-462c-a8ca-49dac4bc3c22",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.375894+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.375894+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "5ad4c175-d43b-49a0-b18a-ced82b7cbc5a",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.705Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "5ad4c175-d43b-49a0-b18a-ced82b7cbc5a",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.763Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "5ad4c175-d43b-49a0-b18a-ced82b7cbc5a",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.824Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "359057a6-ad99-4fd3-84f2-2b8954060cb6",
+      "name": "최윤식",
+      "aliases": [],
+      "country": "KR",
+      "musicBrainzId": "3728dd0d-fa25-4790-9a56-de853664866a",
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.392767+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-23T01:30:36.392767+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "359057a6-ad99-4fd3-84f2-2b8954060cb6",
+          "stage": "research",
+          "status": "deferred",
+          "reason": "IDENTITY_EVIDENCE_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.879Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "359057a6-ad99-4fd3-84f2-2b8954060cb6",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 현재 외부 ID 연결은 context로 읽었으나 MusicBrainz 재조회 3회 네트워크 실패. 이번 조사에서 정확히 같은 신원/작품으로 연결된 대체 공식 근거를 확보하지 못함. 이름/직업/검색 스니펫만으로 승인 또는 제외하지 않음. 보존한 미완료 사유:  다음 조치: 현재 MBID와 공식 작품·소속 이력을 직접 대조; 공식 대체 자료는 제공처 cooldown과 별개로 조사.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.935Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "359057a6-ad99-4fd3-84f2-2b8954060cb6",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:15.993Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "10bc8a44-0006-4382-9bac-2d0ead9bb700",
+      "name": "DIALOGUE+",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "c1129b37-b474-41ea-ae2a-64cfab4209ff",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:33.702494+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:33.702494+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 discography에서 DIALOGUE+1/2/3 및 원작 발매를 확인했지만 공식 구성원·국가와 현재 외부 ID의 추가 대조가 남음. profile/introduction 대체 경로 접근 실패. 멤버 소개 또는 레이블 공식 신원 자료가 다음 조치.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 discography에서 DIALOGUE+1/2/3 및 원작 발매를 확인했지만 공식 구성원·국가와 현재 외부 ID의 추가 대조가 남음. profile/introduction 대체 경로 접근 실패. 멤버 소개 또는 레이블 공식 신원 자료가 다음 조치.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 discography에서 DIALOGUE+1/2/3 및 원작 발매를 확인했지만 공식 구성원·국가와 현재 외부 ID의 추가 대조가 남음. profile/introduction 대체 경로 접근 실패. 멤버 소개 또는 레이블 공식 신원 자료가 다음 조치.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 discography에서 DIALOGUE+1/2/3 및 원작 발매를 확인했지만 공식 구성원·국가와 현재 외부 ID의 추가 대조가 남음. profile/introduction 대체 경로 접근 실패. 멤버 소개 또는 레이블 공식 신원 자료가 다음 조치.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "10bc8a44-0006-4382-9bac-2d0ead9bb700",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 discography에서 DIALOGUE+1/2/3 및 원작 발매를 확인했지만 공식 구성원·국가와 현재 외부 ID의 추가 대조가 남음. profile/introduction 대체 경로 접근 실패. 멤버 소개 또는 레이블 공식 신원 자료가 다음 조치.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.047Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "10bc8a44-0006-4382-9bac-2d0ead9bb700",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.102Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "6a9c0d46-91da-4c87-9cae-0d4556ab32fa",
+      "name": "DIR EN GREY",
+      "aliases": [
+        "Dir en grey",
+        "ディルアングレイ",
+        "Dir en gery",
+        "ヂル アン グレイ",
+        "Dir en Gry",
+        "Dir en gy",
+        "dir and grey",
+        "diru an gurei",
+        "Dir en erey",
+        "dir engrey",
+        "Die en Grey",
+        "ディル アン グレイ",
+        "Dir En Gray"
+      ],
+      "country": "JP",
+      "musicBrainzId": "ab309b83-904f-4e2c-8d11-a0223bba51f9",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:42.457153+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:42.457153+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 bio는 본문이 iframe에 가려 구체 신원·국가·장르를 읽지 못했고 영문 biography 대체 경로도 접근 불가. 공식 레이블 소개/접근 가능한 약력을 확인해야 함.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 bio는 본문이 iframe에 가려 구체 신원·국가·장르를 읽지 못했고 영문 biography 대체 경로도 접근 불가. 공식 레이블 소개/접근 가능한 약력을 확인해야 함.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 bio는 본문이 iframe에 가려 구체 신원·국가·장르를 읽지 못했고 영문 biography 대체 경로도 접근 불가. 공식 레이블 소개/접근 가능한 약력을 확인해야 함.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 bio는 본문이 iframe에 가려 구체 신원·국가·장르를 읽지 못했고 영문 biography 대체 경로도 접근 불가. 공식 레이블 소개/접근 가능한 약력을 확인해야 함.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6a9c0d46-91da-4c87-9cae-0d4556ab32fa",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 bio는 본문이 iframe에 가려 구체 신원·국가·장르를 읽지 못했고 영문 biography 대체 경로도 접근 불가. 공식 레이블 소개/접근 가능한 약력을 확인해야 함.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.156Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "6a9c0d46-91da-4c87-9cae-0d4556ab32fa",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.217Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "c99ac8ad-083f-4130-8bfb-aa95b5952d9d",
+      "name": "eufonius",
+      "aliases": [
+        "ユーフォニアス"
+      ],
+      "country": "JP",
+      "musicBrainzId": "e361f783-66c1-4b8d-9ec5-07c3dcec6e66",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:30.965045+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:30.965045+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Lantis 소개에서 riya·菊地創 및 2004년 双恋 주제가 활동을 확인했지만 국가와 외부 ID의 구체 신원 보완이 남음. 후속 요청은 503. 일본어 주제가 활동만으로 JP 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Lantis 소개에서 riya·菊地創 및 2004년 双恋 주제가 활동을 확인했지만 국가와 외부 ID의 구체 신원 보완이 남음. 후속 요청은 503. 일본어 주제가 활동만으로 JP 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Lantis 소개에서 riya·菊地創 및 2004년 双恋 주제가 활동을 확인했지만 국가와 외부 ID의 구체 신원 보완이 남음. 후속 요청은 503. 일본어 주제가 활동만으로 JP 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Lantis 소개에서 riya·菊地創 및 2004년 双恋 주제가 활동을 확인했지만 국가와 외부 ID의 구체 신원 보완이 남음. 후속 요청은 503. 일본어 주제가 활동만으로 JP 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "c99ac8ad-083f-4130-8bfb-aa95b5952d9d",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_INCOMPLETE: Lantis 소개에서 riya·菊地創 및 2004년 双恋 주제가 활동을 확인했지만 국가와 외부 ID의 구체 신원 보완이 남음. 후속 요청은 503. 일본어 주제가 활동만으로 JP 국가를 확정하지 않음.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.269Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "c99ac8ad-083f-4130-8bfb-aa95b5952d9d",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.324Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "12ee9503-46e1-4174-a6e4-9ea8f0b74911",
+      "name": "fhána",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "0879ca44-f3eb-4553-a689-4ec10354bed2",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:18.38567+00:00"
+      },
+      "after": {
+        "name": "fhána",
+        "aliases": [],
+        "category": "jpop",
+        "updated_at": "2026-10-23T05:36:11.872123+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "0879ca44-f3eb-4553-a689-4ec10354bed2",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 레이블의 佐藤純一·towana·kevin mitsunaga 및 2011년 결성, ケセラセラ·Outside of Melancholy를 확인하여 DB fhána와 보존된 같은 공식 프로필의 원래 그룹을 대조",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/fhana/prof.html"
+          ]
+        },
+        "countryMatched": {
+          "summary": "레이블이 일본 국내 정기 투어와 해외 활동을 구분하며 일본 원작 주제가·정규 발매 기반을 설명. 현재 DB JP는 일본 기반 그룹으로 일치하며 멤버 개인 국적을 추정하지 않음",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/fhana/prof.html"
+          ]
+        },
+        "genreMatched": {
+          "summary": "ケセラセラ·青空のラプソディ·愛のシュプリーム 등 다수 일본 원작 애니메이션 주제가, 정규 음반 및 공연 활동을 직접 확인하여 실제 J-pop 음악 활동 판정",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/fhana/prof.html"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "일본 기반 원래 그룹 신원과 위 실제 J-pop 원작 음반·공연 활동을 별도로 확인하여 기존 jpop 분류 적용",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/fhana/prof.html"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context의 기존 mb:0879ca44-f3eb-4553-a689-4ec10354bed2가 band 12ee9503-46e1-4174-a6e4-9ea8f0b74911에 연결되어 있고 공식 레이블의 같은 아티스트·기존 공식 근거와 일치. 이번 MusicBrainz 재조회 실패는 그대로 보존하며 새 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/fhana/prof.html"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/fhana/prof.html"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 레이블의 佐藤純一·towana·kevin mitsunaga 및 2011년 결성, ケセラセラ·Outside of Melancholy를 확인하여 DB fhána와 보존된 같은 공식 프로필의 원래 그룹을 대조; 레이블이 일본 국내 정기 투어와 해외 활동을 구분하며 일본 원작 주제가·정규 발매 기반을 설명. 현재 DB JP는 일본 기반 그룹으로 일치하며 멤버 개인 국적을 추정하지 않음; ケセラセラ·青空のラプソディ·愛のシュプリーム 등 다수 일본 원작 애니메이션 주제가, 정규 음반 및 공연 활동을 직접 확인하여 실제 J-pop 음악 활동 판정",
+        "sources": [
+          {
+            "url": "https://columbia.jp/artist-info/fhana/prof.html",
+            "checkedAt": "2026-10-23T05:36:06.484581+00:00",
+            "summary": "공식 레이블의 佐藤純一·towana·kevin mitsunaga 및 2011년 결성, ケセラセラ·Outside of Melancholy를 확인하여 DB fhána와 보존된 같은 공식 프로필의 원래 그룹을 대조; 레이블이 일본 국내 정기 투어와 해외 활동을 구분하며 일본 원작 주제가·정규 발매 기반을 설명. 현재 DB JP는 일본 기반 그룹으로 일치하며 멤버 개인 국적을 추정하지 않음; ケセラセラ·青空のラプソディ·愛のシュプリーム 등 다수 일본 원작 애니메이션 주제가, 정규 음반 및 공연 활동을 직접 확인하여 실제 J-pop 음악 활동 판정"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:36:11.877127+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "12ee9503-46e1-4174-a6e4-9ea8f0b74911",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.388Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "f44689ee-d86b-4614-ac15-0c0cbfba812d",
+      "name": "fripSide",
+      "aliases": [
+        "Frip Side",
+        "fripSide(nao)",
+        "フリップサイド"
+      ],
+      "country": "JP",
+      "musicBrainzId": "de1d37ff-942a-4c85-a375-ff4f5bf2eaa9",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:47.198996+00:00"
+      },
+      "after": {
+        "name": "fripSide",
+        "aliases": [
+          "Frip Side",
+          "fripSide(nao)",
+          "フリップサイド"
+        ],
+        "category": "jpop",
+        "updated_at": "2026-10-23T05:33:27.032655+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "de1d37ff-942a-4c85-a375-ff4f5bf2eaa9",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 프로필이 2002년 八木沼悟志 결성과 nao·南條愛乃를 거친 보컬 계보, 현재 阿部寿世·上杉真央 및 only my railgun을 설명. DB fripSide/fripSide(nao)/フリップサイド와 같은 원래 유닛",
+          "sourceUrls": [
+            "https://fripside.net/profiles"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 결성자 프로필의 도쿄 출신·우라야스 성장과 멤버 오사카 출신, 일본 단독 공연 활동으로 JP 기반 유닛 확인",
+          "sourceUrls": [
+            "https://fripside.net/profiles"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개가 digital J-POP 부흥을 음악 목표로 명시하며 only my railgun 등 원작 애니메이션·게임 주제가와 단독 공연 활동을 확인",
+          "sourceUrls": [
+            "https://fripside.net/profiles"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "일본 신원과 실제 J-pop 활동을 별도로 확인하여 기존 jpop 분류 적용",
+          "sourceUrls": [
+            "https://fripside.net/profiles"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context에서 mb:de1d37ff-942a-4c85-a375-ff4f5bf2eaa9가 기존 band f44689ee-d86b-4614-ac15-0c0cbfba812d에 연결됨을 확인. 공식 프로필의 원래 아티스트와 DB 이름·별칭·국가 및 보존한 공식 근거를 대조. 이번 MusicBrainz 요청 실패로 새로운 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://fripside.net/profiles"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://fripside.net/profiles"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 프로필이 2002년 八木沼悟志 결성과 nao·南條愛乃를 거친 보컬 계보, 현재 阿部寿世·上杉真央 및 only my railgun을 설명. DB fripSide/fripSide(nao)/フリップサイド와 같은 원래 유닛; 공식 결성자 프로필의 도쿄 출신·우라야스 성장과 멤버 오사카 출신, 일본 단독 공연 활동으로 JP 기반 유닛 확인; 공식 소개가 digital J-POP 부흥을 음악 목표로 명시하며 only my railgun 등 원작 애니메이션·게임 주제가와 단독 공연 활동을 확인",
+        "sources": [
+          {
+            "url": "https://fripside.net/profiles",
+            "checkedAt": "2026-10-23T05:33:07.273706+00:00",
+            "summary": "공식 프로필이 2002년 八木沼悟志 결성과 nao·南條愛乃를 거친 보컬 계보, 현재 阿部寿世·上杉真央 및 only my railgun을 설명. DB fripSide/fripSide(nao)/フリップサイド와 같은 원래 유닛; 공식 결성자 프로필의 도쿄 출신·우라야스 성장과 멤버 오사카 출신, 일본 단독 공연 활동으로 JP 기반 유닛 확인; 공식 소개가 digital J-POP 부흥을 음악 목표로 명시하며 only my railgun 등 원작 애니메이션·게임 주제가와 단독 공연 활동을 확인"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:33:27.037425+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "f44689ee-d86b-4614-ac15-0c0cbfba812d",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.446Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "bd3c3606-0016-42d3-b725-4441623569c3",
+      "name": "GACKT",
+      "aliases": [
+        "神威楽斗",
+        "大城 ガクト",
+        "ガクト",
+        "かむいがくと",
+        "神威 楽斗",
+        "Gackt C.",
+        "Gackt Camui",
+        "かむい がくと",
+        "Gackt Kamui",
+        "Gackt.C"
+      ],
+      "country": "JP",
+      "musicBrainzId": "e7a8e086-16df-44a7-91e4-640986bcff72",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:53.409538+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:53.409538+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 profile의 1999년 솔로 활동·음반·VISUALIVE 공연을 확인했으나 출신 국가 보완이 남음. Universal 대체 biography는 404. 검색 스니펫의 오키나와 출생을 확정 근거로 사용하지 않음.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 profile의 1999년 솔로 활동·음반·VISUALIVE 공연을 확인했으나 출신 국가 보완이 남음. Universal 대체 biography는 404. 검색 스니펫의 오키나와 출생을 확정 근거로 사용하지 않음.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 profile의 1999년 솔로 활동·음반·VISUALIVE 공연을 확인했으나 출신 국가 보완이 남음. Universal 대체 biography는 404. 검색 스니펫의 오키나와 출생을 확정 근거로 사용하지 않음.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 profile의 1999년 솔로 활동·음반·VISUALIVE 공연을 확인했으나 출신 국가 보완이 남음. Universal 대체 biography는 404. 검색 스니펫의 오키나와 출생을 확정 근거로 사용하지 않음.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "bd3c3606-0016-42d3-b725-4441623569c3",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_INCOMPLETE: 공식 profile의 1999년 솔로 활동·음반·VISUALIVE 공연을 확인했으나 출신 국가 보완이 남음. Universal 대체 biography는 404. 검색 스니펫의 오키나와 출생을 확정 근거로 사용하지 않음.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.500Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "bd3c3606-0016-42d3-b725-4441623569c3",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.563Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "4419b3e5-00a7-4f49-9aae-17891eebd570",
+      "name": "GARNiDELiA",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "9bdb5e93-32e4-4dbb-9fac-b8771e1c1551",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:46.677897+00:00"
+      },
+      "after": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:46.677897+00:00"
+      },
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Universal 소개에서 메이리아·toku, ambiguous·極楽浄土 및 아시아 투어를 확인했으나 국가와 현재 외부 ID의 구체 신원 대조가 남음. 해외 인기/일본 레이블 소속만으로 출신 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "countryMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Universal 소개에서 메이리아·toku, ambiguous·極楽浄土 및 아시아 투어를 확인했으나 국가와 현재 외부 ID의 구체 신원 대조가 남음. 해외 인기/일본 레이블 소속만으로 출신 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "genreMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Universal 소개에서 메이리아·toku, ambiguous·極楽浄土 및 아시아 투어를 확인했으나 국가와 현재 외부 ID의 구체 신원 대조가 남음. 해외 인기/일본 레이블 소속만으로 출신 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "classificationMatched": {
+          "summary": "APPROVAL_REQUIREMENTS_INCOMPLETE: Universal 소개에서 메이리아·toku, ambiguous·極楽浄土 및 아시아 투어를 확인했으나 국가와 현재 외부 ID의 구체 신원 대조가 남음. 해외 인기/일본 레이블 소속만으로 출신 국가를 확정하지 않음.",
+          "sourceUrls": []
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 서버 context에서 기존 MBID 연결만 확인; 공식 외부 신원 조사 완료와 구분",
+          "sourceUrls": []
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 공개 승인이 생기며 기존 이벤트 공개 조건·수동 OFF·초기 무알림 조건이 계속 필요함",
+          "sourceUrls": []
+        }
+      },
+      "approvalProof": null,
+      "applied": false,
+      "receipt": null,
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4419b3e5-00a7-4f49-9aae-17891eebd570",
+          "stage": "approval",
+          "status": "deferred",
+          "reason": "APPROVAL_REQUIREMENTS_INCOMPLETE: Universal 소개에서 메이리아·toku, ambiguous·極楽浄土 및 아시아 투어를 확인했으나 국가와 현재 외부 ID의 구체 신원 대조가 남음. 해외 인기/일본 레이블 소속만으로 출신 국가를 확정하지 않음.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.619Z"
+        },
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "4419b3e5-00a7-4f49-9aae-17891eebd570",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.675Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "f257a8e4-70eb-4643-b01b-36042b0cd781",
+      "name": "H△G",
+      "aliases": [
+        "HAG"
+      ],
+      "country": "JP",
+      "musicBrainzId": "e8d121db-7003-4927-b00b-b8788c064256",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.149266+00:00"
+      },
+      "after": {
+        "name": "H△G",
+        "aliases": [
+          "HAG"
+        ],
+        "category": "jpop",
+        "updated_at": "2026-10-23T05:33:09.422407+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "e8d121db-7003-4927-b00b-b8788c064256",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 레이블의 H△G/HAG, 보컬 Chiho 중심 창작 집단과 f分の1ゆらぎ·星見る頃を過ぎても를 확인. DB H△G/HAG 및 보존한 같은 공식 프로필의 신원과 일치",
+          "sourceUrls": [
+            "https://www.tkma.co.jp/jpop_profile/hag.html"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개가 고향을 愛知県으로 명시하여 일본 기반 원래 집단과 JP를 확인",
+          "sourceUrls": [
+            "https://www.tkma.co.jp/jpop_profile/hag.html"
+          ]
+        },
+        "genreMatched": {
+          "summary": "레이블이 차세대 J-POP 아티스트라고 명시하고 2014년 데뷔 음반·원작 대표곡·공연 활동을 설명",
+          "sourceUrls": [
+            "https://www.tkma.co.jp/jpop_profile/hag.html"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "일본 신원과 실제 J-pop 활동을 별도로 확인하여 기존 jpop 분류 적용",
+          "sourceUrls": [
+            "https://www.tkma.co.jp/jpop_profile/hag.html"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context에서 mb:e8d121db-7003-4927-b00b-b8788c064256가 기존 band f257a8e4-70eb-4643-b01b-36042b0cd781에 연결됨을 확인. 공식 프로필의 원래 아티스트와 DB 이름·별칭·국가 및 보존한 공식 근거를 대조. 이번 MusicBrainz 요청 실패로 새로운 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://www.tkma.co.jp/jpop_profile/hag.html"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://www.tkma.co.jp/jpop_profile/hag.html"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 레이블의 H△G/HAG, 보컬 Chiho 중심 창작 집단과 f分の1ゆらぎ·星見る頃を過ぎても를 확인. DB H△G/HAG 및 보존한 같은 공식 프로필의 신원과 일치; 공식 소개가 고향을 愛知県으로 명시하여 일본 기반 원래 집단과 JP를 확인; 레이블이 차세대 J-POP 아티스트라고 명시하고 2014년 데뷔 음반·원작 대표곡·공연 활동을 설명",
+        "sources": [
+          {
+            "url": "https://www.tkma.co.jp/jpop_profile/hag.html",
+            "checkedAt": "2026-10-23T05:33:07.273706+00:00",
+            "summary": "공식 레이블의 H△G/HAG, 보컬 Chiho 중심 창작 집단과 f分の1ゆらぎ·星見る頃を過ぎても를 확인. DB H△G/HAG 및 보존한 같은 공식 프로필의 신원과 일치; 공식 소개가 고향을 愛知県으로 명시하여 일본 기반 원래 집단과 JP를 확인; 레이블이 차세대 J-POP 아티스트라고 명시하고 2014년 데뷔 음반·원작 대표곡·공연 활동을 설명"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:33:09.468826+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "f257a8e4-70eb-4643-b01b-36042b0cd781",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.732Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "72a22990-2db0-4d17-aeca-dc863b0b0878",
+      "name": "Hump Back",
+      "aliases": [
+        "험프백 (Hump Back)"
+      ],
+      "country": "JP",
+      "musicBrainzId": "80895035-46f9-4b83-a6a6-f8b3be250f7a",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.148714+00:00"
+      },
+      "after": {
+        "name": "Hump Back",
+        "aliases": [
+          "험프백 (Hump Back)"
+        ],
+        "category": "overseas_rock",
+        "updated_at": "2026-10-23T05:33:28.505169+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "80895035-46f9-4b83-a6a6-f8b3be250f7a",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 Hump Back 프로필의 林萌々子·ぴか·美咲 세 멤버와 2009년 결성 확인. DB Hump Back/험프백 및 보존한 같은 공식 프로필의 원래 밴드 신원 대조",
+          "sourceUrls": [
+            "https://humpback.jp/profiles"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 아티스트 소개가 오사카 출신이라고 명시하여 JP 확인",
+          "sourceUrls": [
+            "https://humpback.jp/profiles"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개가 3인조 록 밴드라고 명시하고 보컬/기타·베이스·드럼의 실제 활동 구성을 확인",
+          "sourceUrls": [
+            "https://humpback.jp/profiles"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "한국 외 신원과 실제 록/메탈 활동을 별도로 확인하여 기존 overseas_rock 분류 적용; 일본 국적만으로 jpop으로 분류하지 않음",
+          "sourceUrls": [
+            "https://humpback.jp/profiles"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context에서 mb:80895035-46f9-4b83-a6a6-f8b3be250f7a가 기존 band 72a22990-2db0-4d17-aeca-dc863b0b0878에 연결됨을 확인. 공식 프로필의 원래 아티스트와 DB 이름·별칭·국가 및 보존한 공식 근거를 대조. 이번 MusicBrainz 요청 실패로 새로운 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://humpback.jp/profiles"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://humpback.jp/profiles"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 Hump Back 프로필의 林萌々子·ぴか·美咲 세 멤버와 2009년 결성 확인. DB Hump Back/험프백 및 보존한 같은 공식 프로필의 원래 밴드 신원 대조; 공식 아티스트 소개가 오사카 출신이라고 명시하여 JP 확인; 공식 소개가 3인조 록 밴드라고 명시하고 보컬/기타·베이스·드럼의 실제 활동 구성을 확인",
+        "sources": [
+          {
+            "url": "https://humpback.jp/profiles",
+            "checkedAt": "2026-10-23T05:33:07.273706+00:00",
+            "summary": "공식 Hump Back 프로필의 林萌々子·ぴか·美咲 세 멤버와 2009년 결성 확인. DB Hump Back/험프백 및 보존한 같은 공식 프로필의 원래 밴드 신원 대조; 공식 아티스트 소개가 오사카 출신이라고 명시하여 JP 확인; 공식 소개가 3인조 록 밴드라고 명시하고 보컬/기타·베이스·드럼의 실제 활동 구성을 확인"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:33:28.507156+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "72a22990-2db0-4d17-aeca-dc863b0b0878",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.786Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "f446d0b1-6f0f-4b7e-a3b1-f3ec0d104b37",
+      "name": "King Gnu",
+      "aliases": [
+        "キングヌー",
+        "Srv.Vinci",
+        "킹누",
+        "Mrs.Vinci"
+      ],
+      "country": "JP",
+      "musicBrainzId": "338f5d97-3133-4bf8-a58e-068ff9b5405d",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:45:04.980273+00:00"
+      },
+      "after": {
+        "name": "King Gnu",
+        "aliases": [
+          "キングヌー",
+          "Srv.Vinci",
+          "킹누",
+          "Mrs.Vinci"
+        ],
+        "category": "overseas_rock",
+        "updated_at": "2026-10-23T05:33:29.965491+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "338f5d97-3133-4bf8-a58e-068ff9b5405d",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony 공식 King Gnu 소개의 常田大希·勢喜遊·新井和輝·井口理와 Sympa·白日·CEREMONY를 확인. DB King Gnu/キングヌー 및 기존 Sony 공식 신원 근거와 대조",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/kinggnu/profile/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개가 four-member Japanese band라고 명시하여 JP 확인",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/kinggnu/profile/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개가 일본 록 밴드라고 명시하며 얼터너티브·팝 음악성과 실제 Sympa·CEREMONY·THE GREATEST UNKNOWN 발매 및 투어 활동을 설명",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/kinggnu/profile/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "한국 외 신원과 실제 록/메탈 활동을 별도로 확인하여 기존 overseas_rock 분류 적용; 일본 국적만으로 jpop으로 분류하지 않음",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/kinggnu/profile/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context에서 mb:338f5d97-3133-4bf8-a58e-068ff9b5405d가 기존 band f446d0b1-6f0f-4b7e-a3b1-f3ec0d104b37에 연결됨을 확인. 공식 프로필의 원래 아티스트와 DB 이름·별칭·국가 및 보존한 공식 근거를 대조. 이번 MusicBrainz 요청 실패로 새로운 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/kinggnu/profile/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/kinggnu/profile/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony 공식 King Gnu 소개의 常田大希·勢喜遊·新井和輝·井口理와 Sympa·白日·CEREMONY를 확인. DB King Gnu/キングヌー 및 기존 Sony 공식 신원 근거와 대조; 공식 소개가 four-member Japanese band라고 명시하여 JP 확인; 공식 소개가 일본 록 밴드라고 명시하며 얼터너티브·팝 음악성과 실제 Sympa·CEREMONY·THE GREATEST UNKNOWN 발매 및 투어 활동을 설명",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/kinggnu/profile/",
+            "checkedAt": "2026-10-23T05:33:07.273706+00:00",
+            "summary": "Sony 공식 King Gnu 소개의 常田大希·勢喜遊·新井和輝·井口理와 Sympa·白日·CEREMONY를 확인. DB King Gnu/キングヌー 및 기존 Sony 공식 신원 근거와 대조; 공식 소개가 four-member Japanese band라고 명시하여 JP 확인; 공식 소개가 일본 록 밴드라고 명시하며 얼터너티브·팝 음악성과 실제 Sympa·CEREMONY·THE GREATEST UNKNOWN 발매 및 투어 활동을 설명"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:33:29.968565+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "f446d0b1-6f0f-4b7e-a3b1-f3ec0d104b37",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.839Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "eec40845-e0f5-4134-a5b0-df969307b2e7",
+      "name": "Kis-My-Ft2",
+      "aliases": [],
+      "country": "JP",
+      "musicBrainzId": "54e9716a-a8f1-45f0-a7f3-3367bc66104b",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:25.592766+00:00"
+      },
+      "after": {
+        "name": "Kis-My-Ft2",
+        "aliases": [],
+        "category": "jpop",
+        "updated_at": "2026-10-23T05:36:15.713325+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "54e9716a-a8f1-45f0-a7f3-3367bc66104b",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "MENT 공식 Kis-My-Ft2의 千賀健永·宮田俊哉·横尾渉·藤ヶ谷太輔·玉森裕太·二階堂高嗣 여섯 멤버와 현행 음반 목록을 확인하여 DB 및 보존한 같은 레이블 프로필의 원래 그룹 대조",
+          "sourceUrls": [
+            "https://mentrecording.jp/kismyft2/profile",
+            "https://mentrecording.jp/kismyft2/discography/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 프로필이 여섯 멤버의 아이치·가나가와·도쿄 출신을 명시하고 일본 레이블의 연속 국내 원작 발매와 연결되어 기존 일본 기반 그룹 JP 확인",
+          "sourceUrls": [
+            "https://mentrecording.jp/kismyft2/profile",
+            "https://mentrecording.jp/kismyft2/discography/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "프로필만 보지 않고 공식 discography의 2026년 Escape·UNISON, 祈り/FIRE BEAT 원작 음원과 앨범·싱글 발매를 확인하여 실제 J-pop 활동 판정. 미래 예정 Kis-SCENE을 이미 발매됐다고 세지 않음",
+          "sourceUrls": [
+            "https://mentrecording.jp/kismyft2/profile",
+            "https://mentrecording.jp/kismyft2/discography/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "일본 기반 원래 그룹 신원과 위 실제 J-pop 원작 음반·공연 활동을 별도로 확인하여 기존 jpop 분류 적용",
+          "sourceUrls": [
+            "https://mentrecording.jp/kismyft2/profile",
+            "https://mentrecording.jp/kismyft2/discography/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context의 기존 mb:54e9716a-a8f1-45f0-a7f3-3367bc66104b가 band eec40845-e0f5-4134-a5b0-df969307b2e7에 연결되어 있고 공식 레이블의 같은 아티스트·기존 공식 근거와 일치. 이번 MusicBrainz 재조회 실패는 그대로 보존하며 새 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://mentrecording.jp/kismyft2/profile",
+            "https://mentrecording.jp/kismyft2/discography/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://mentrecording.jp/kismyft2/profile",
+            "https://mentrecording.jp/kismyft2/discography/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "MENT 공식 Kis-My-Ft2의 千賀健永·宮田俊哉·横尾渉·藤ヶ谷太輔·玉森裕太·二階堂高嗣 여섯 멤버와 현행 음반 목록을 확인하여 DB 및 보존한 같은 레이블 프로필의 원래 그룹 대조; 공식 프로필이 여섯 멤버의 아이치·가나가와·도쿄 출신을 명시하고 일본 레이블의 연속 국내 원작 발매와 연결되어 기존 일본 기반 그룹 JP 확인; 프로필만 보지 않고 공식 discography의 2026년 Escape·UNISON, 祈り/FIRE BEAT 원작 음원과 앨범·싱글 발매를 확인하여 실제 J-pop 활동 판정. 미래 예정 Kis-SCENE을 이미 발매됐다고 세지 않음",
+        "sources": [
+          {
+            "url": "https://mentrecording.jp/kismyft2/profile",
+            "checkedAt": "2026-10-23T05:36:06.484581+00:00",
+            "summary": "MENT 공식 Kis-My-Ft2의 千賀健永·宮田俊哉·横尾渉·藤ヶ谷太輔·玉森裕太·二階堂高嗣 여섯 멤버와 현행 음반 목록을 확인하여 DB 및 보존한 같은 레이블 프로필의 원래 그룹 대조; 공식 프로필이 여섯 멤버의 아이치·가나가와·도쿄 출신을 명시하고 일본 레이블의 연속 국내 원작 발매와 연결되어 기존 일본 기반 그룹 JP 확인; 프로필만 보지 않고 공식 discography의 2026년 Escape·UNISON, 祈り/FIRE BEAT 원작 음원과 앨범·싱글 발매를 확인하여 실제 J-pop 활동 판정. 미래 예정 Kis-SCENE을 이미 발매됐다고 세지 않음"
+          },
+          {
+            "url": "https://mentrecording.jp/kismyft2/discography/",
+            "checkedAt": "2026-10-23T05:36:06.484581+00:00",
+            "summary": "MENT 공식 Kis-My-Ft2의 千賀健永·宮田俊哉·横尾渉·藤ヶ谷太輔·玉森裕太·二階堂高嗣 여섯 멤버와 현행 음반 목록을 확인하여 DB 및 보존한 같은 레이블 프로필의 원래 그룹 대조; 공식 프로필이 여섯 멤버의 아이치·가나가와·도쿄 출신을 명시하고 일본 레이블의 연속 국내 원작 발매와 연결되어 기존 일본 기반 그룹 JP 확인; 프로필만 보지 않고 공식 discography의 2026년 Escape·UNISON, 祈り/FIRE BEAT 원작 음원과 앨범·싱글 발매를 확인하여 실제 J-pop 활동 판정. 미래 예정 Kis-SCENE을 이미 발매됐다고 세지 않음"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:36:15.714644+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "eec40845-e0f5-4134-a5b0-df969307b2e7",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.896Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "e6a4f263-30b2-4531-a3ba-77870794a7c2",
+      "name": "Little Glee Monster",
+      "aliases": [
+        "リトグリ"
+      ],
+      "country": "JP",
+      "musicBrainzId": "466e197e-1d82-441e-82c4-380b97fd1839",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:19.667968+00:00"
+      },
+      "after": {
+        "name": "Little Glee Monster",
+        "aliases": [
+          "リトグリ"
+        ],
+        "category": "jpop",
+        "updated_at": "2026-10-23T05:36:14.146851+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "466e197e-1d82-441e-82c4-380b97fd1839",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Sony 공식 Little Glee Monster/リトグリ 프로필의 2014년 放課後ハイファイブ 데뷔와 2022년 ミカ·結海·miyou 합류, 世界はあなたに笑いかけている·ECHO·Join Us를 현재 DB 및 보존된 공식 프로필과 대조",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Sony가 일본 국내 활동과 해외 아시아 투어를 구분하고 도쿄·오사카 기반 신체제 활동을 명시하여 일본 기반 그룹 JP 확인. 필리핀 출신 멤버 ミカ를 일본 출신으로 바꾸거나 전원 일본 국적이라고 추정하지 않음",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "보컬 그룹 형식만으로 판정하지 않고 放課後ハイファイブ·ECHO·Join Us·Pages 등 실제 일본 대중음악 원작 싱글·앨범 발매와 투어 활동을 확인하여 J-pop 유지",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "일본 기반 원래 그룹 신원과 위 실제 J-pop 원작 음반·공연 활동을 별도로 확인하여 기존 jpop 분류 적용",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context의 기존 mb:466e197e-1d82-441e-82c4-380b97fd1839가 band e6a4f263-30b2-4531-a3ba-77870794a7c2에 연결되어 있고 공식 레이블의 같은 아티스트·기존 공식 근거와 일치. 이번 MusicBrainz 재조회 실패는 그대로 보존하며 새 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Sony 공식 Little Glee Monster/リトグリ 프로필의 2014년 放課後ハイファイブ 데뷔와 2022년 ミカ·結海·miyou 합류, 世界はあなたに笑いかけている·ECHO·Join Us를 현재 DB 및 보존된 공식 프로필과 대조; Sony가 일본 국내 활동과 해외 아시아 투어를 구분하고 도쿄·오사카 기반 신체제 활동을 명시하여 일본 기반 그룹 JP 확인. 필리핀 출신 멤버 ミカ를 일본 출신으로 바꾸거나 전원 일본 국적이라고 추정하지 않음; 보컬 그룹 형식만으로 판정하지 않고 放課後ハイファイブ·ECHO·Join Us·Pages 등 실제 일본 대중음악 원작 싱글·앨범 발매와 투어 활동을 확인하여 J-pop 유지",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/LittleGleeMonster/profile/",
+            "checkedAt": "2026-10-23T05:36:06.484581+00:00",
+            "summary": "Sony 공식 Little Glee Monster/リトグリ 프로필의 2014년 放課後ハイファイブ 데뷔와 2022년 ミカ·結海·miyou 합류, 世界はあなたに笑いかけている·ECHO·Join Us를 현재 DB 및 보존된 공식 프로필과 대조; Sony가 일본 국내 활동과 해외 아시아 투어를 구분하고 도쿄·오사카 기반 신체제 활동을 명시하여 일본 기반 그룹 JP 확인. 필리핀 출신 멤버 ミカ를 일본 출신으로 바꾸거나 전원 일본 국적이라고 추정하지 않음; 보컬 그룹 형식만으로 판정하지 않고 放課後ハイファイブ·ECHO·Join Us·Pages 등 실제 일본 대중음악 원작 싱글·앨범 발매와 투어 활동을 확인하여 J-pop 유지"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:36:14.149635+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "e6a4f263-30b2-4531-a3ba-77870794a7c2",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:16.953Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "bec19554-16f2-437c-9f2f-3b8084bc77ee",
+      "name": "LOUDNESS",
+      "aliases": [
+        "Loudness",
+        "ラウドネス"
+      ],
+      "country": "JP",
+      "musicBrainzId": "513b6df2-f44c-4484-b99d-97f79266cb4a",
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:50.579794+00:00"
+      },
+      "after": {
+        "name": "LOUDNESS",
+        "aliases": [
+          "Loudness",
+          "ラウドネス"
+        ],
+        "category": "overseas_rock",
+        "updated_at": "2026-10-23T05:33:31.352945+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "513b6df2-f44c-4484-b99d-97f79266cb4a",
+        "curation_status": "approved"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Columbia 공식 LOUDNESS/ラウドネス 소개에서 1981년 결성·BIRTHDAY EVE·THUNDER IN THE EAST 및 樋口宗孝 이력을 확인. DB LOUDNESS/ラウドネス와 보존한 같은 공식 프로필의 신원 일치",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/loudness/prof.html"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 레이블이 일본인 아티스트로 명시하고 일본 데뷔와 해외 진출을 구분하여 JP 확인",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/loudness/prof.html"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 레이블이 헤비 메탈 밴드로 명시하고 데뷔 음반·실제 록 공연 및 THUNDER IN THE EAST 녹음·발매 이력을 설명",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/loudness/prof.html"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "한국 외 신원과 실제 록/메탈 활동을 별도로 확인하여 기존 overseas_rock 분류 적용; 일본 국적만으로 jpop으로 분류하지 않음",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/loudness/prof.html"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 service_integrated_review_context에서 mb:513b6df2-f44c-4484-b99d-97f79266cb4a가 기존 band bec19554-16f2-437c-9f2f-3b8084bc77ee에 연결됨을 확인. 공식 프로필의 원래 아티스트와 DB 이름·별칭·국가 및 보존한 공식 근거를 대조. 이번 MusicBrainz 요청 실패로 새로운 외부 응답을 확인했다고 주장하지 않음",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/loudness/prof.html"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "분류·검수 승인으로 이 외부 신원별 공연 자동 공개 승인이 생성됨을 확인. 기존 이벤트 공개 조건·수동 publication OFF·초기 채움 무알림 조건도 충족해야 하며 공연 즉시 공개나 알림 발송을 뜻하지 않음",
+          "sourceUrls": [
+            "https://columbia.jp/artist-info/loudness/prof.html"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Columbia 공식 LOUDNESS/ラウドネス 소개에서 1981년 결성·BIRTHDAY EVE·THUNDER IN THE EAST 및 樋口宗孝 이력을 확인. DB LOUDNESS/ラウドネス와 보존한 같은 공식 프로필의 신원 일치; 공식 레이블이 일본인 아티스트로 명시하고 일본 데뷔와 해외 진출을 구분하여 JP 확인; 공식 레이블이 헤비 메탈 밴드로 명시하고 데뷔 음반·실제 록 공연 및 THUNDER IN THE EAST 녹음·발매 이력을 설명",
+        "sources": [
+          {
+            "url": "https://columbia.jp/artist-info/loudness/prof.html",
+            "checkedAt": "2026-10-23T05:33:07.273706+00:00",
+            "summary": "Columbia 공식 LOUDNESS/ラウドネス 소개에서 1981년 결성·BIRTHDAY EVE·THUNDER IN THE EAST 및 樋口宗孝 이력을 확인. DB LOUDNESS/ラウドネス와 보존한 같은 공식 프로필의 신원 일치; 공식 레이블이 일본인 아티스트로 명시하고 일본 데뷔와 해외 진출을 구분하여 JP 확인; 공식 레이블이 헤비 메탈 밴드로 명시하고 데뷔 음반·실제 록 공연 및 THUNDER IN THE EAST 녹음·발매 이력을 설명"
+          }
+        ]
+      },
+      "applied": true,
+      "receipt": {
+        "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+        "appliedAt": "2026-10-23T05:33:31.356851+00:00",
+        "relations": [
+          0,
+          0
+        ]
+      },
+      "deferred": [
+        {
+          "runId": "9ba07e3a-3367-4e07-b124-40a94e5dfac4",
+          "bandId": "bec19554-16f2-437c-9f2f-3b8084bc77ee",
+          "stage": "channels",
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_DISCOVERY_INCOMPLETE: 선택된 팀의 저장 채널 프로필/유효 캐시를 현재 DB에서 찾지 못함. 공식 페이지 직접 채널 URL과 API ID의 일치 검증이 없어 저장하지 않음. MusicBrainz 3회 네트워크 실패로 제공처 cooldown 보존. King Gnu/GARNiDELiA/Hump Back/fripSide의 페이지 링크 추출 요청은 현재 허용 네트워크에서 실패했고 다른 경로로 우회하지 않음. 다음 조치: 허용된 공식 링크 자료 확인 후 API 해석; 공식 채널 없음 판정이 아님.",
+          "apiCalls": 0,
+          "nextAttemptAt": "2026-10-24T05:37:17.008Z"
+        }
+      ],
+      "channelSaved": false,
+      "photoSaved": false
+    }
+  ]
+}

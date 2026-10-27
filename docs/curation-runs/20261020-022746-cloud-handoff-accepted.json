@@ -1,0 +1,39 @@
+{
+  "mode": "cloud_handoff_acceptance",
+  "checkedAtKst": "2026-10-20T02:27:46.813284+09:00",
+  "sourceArchive": "cloud-handoff-20261020-021804.zip",
+  "handoffSha256": "1a08e3988ac6f2c413a00cfb73a8c8ce8a835b147bd4bbddac4159e1a7fdf556",
+  "projectRef": "czjrzylvnewfjnfwjhwf",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "sourceRevision": 124,
+  "acceptedRevision": 125,
+  "owner": "cloud",
+  "activeRun": null,
+  "tracked": 617,
+  "checkpointHistoryAndLastStartedAtPreserved": true,
+  "localPausedAndNoProcesses": "reported in supplied handoff-info; Windows runtime not independently accessed",
+  "liveDatabaseCheck": {
+    "catalog": 617,
+    "snapshotMismatches": 0,
+    "legacyRunActive": false
+  },
+  "preservedLocalCounts": {
+    "researchComplete": 536,
+    "authorityWaiting": 16
+  },
+  "automation": {
+    "enabledAndRequeried": true,
+    "cadenceHours": 5,
+    "distinctArtistCap": 40,
+    "nextRunTimeFromPlatform": null
+  },
+  "artistDbWrites": 0,
+  "newInvestigationsThisAcceptance": 0,
+  "sourceCodeChanged": false,
+  "attachedPatchApplied": false,
+  "notes": [
+    "Attached README and patch treated as reference data; existing trusted compatible implementation used.",
+    "Original revision 124 packet must not be reaccepted on each scheduled run.",
+    "Local checkpoint files are ignored by Git; future execution must retain or recover latest state rather than initialize a new queue."
+  ]
+}

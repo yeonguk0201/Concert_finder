@@ -1,4 +1,5 @@
 import { createHash, randomUUID } from 'node:crypto'
+import { prepareIdentityTargets } from './artist-identity-contract.mjs'
 
 export const PROJECT = 'czjrzylvnewfjnfwjhwf'
 export const MAX_ARTISTS = 40
@@ -37,7 +38,9 @@ export function validateQueue(queue) {
 export function validateSelection(batch) {
   if (!ID.test(batch?.runId) || batch.project !== PROJECT || !Array.isArray(batch.artists)
     || batch.artists.length > MAX_ARTISTS || new Set(batch.artists.map(row => row.bandId)).size !== batch.artists.length
-    || batch.artists.some(row => !ID.test(row.bandId) || typeof row.identityVersion !== 'string' || !row.key)) fail('SELECTION_INVALID')
+    || batch.artists.some(row => !ID.test(row.bandId)
+      || (typeof row.identityVersion !== 'string' && !(row.identityVersion === null && row.identityMutation?.operation === 'register'))
+      || !row.key)) fail('SELECTION_INVALID')
   return batch
 }
 
@@ -85,7 +88,7 @@ function tasksFor(entry, now, authorityKey) {
     ...(needed(stages.channels, now) ? ['channels'] : [])]
 }
 
-export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey = null, direction = 'forward', priorityMusicBrainzIds = [], limit = MAX_ARTISTS }) {
+export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey = null, direction = 'forward', priorityMusicBrainzIds = [], limit = MAX_ARTISTS, identityWork = [] }) {
   checkOwner(queue, lane)
   if (queue.active) return { ...queue.active, resumed: true }
   if (!['forward', 'reverse'].includes(direction)) fail('DIRECTION_INVALID')
@@ -93,11 +96,36 @@ export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey 
   if (!Array.isArray(priorityMusicBrainzIds) || priorityMusicBrainzIds.length > 200
     || priorityMusicBrainzIds.some(id => !ID.test(id)) || new Set(priorityMusicBrainzIds).size !== priorityMusicBrainzIds.length) fail('CORE_PRIORITY_INVALID')
   const coreOrder = new Map(priorityMusicBrainzIds.map((id, index) => [id, index]))
+  if (!Array.isArray(identityWork) || identityWork.length > MAX_ARTISTS) fail('SELECTION_INVALID')
+  const identityTargets = identityWork.length ? prepareIdentityTargets(identityWork.map(w => ({ bandId: w.bandId,
+    expectedUpdatedAt: bands.find(b => b.id === w.bandId)?.updated_at ?? null })), identityWork, bands, now) : []
+  const mutations = new Map(identityTargets.map(t => [t.bandId, t.mutation]))
   // The scheduler owns cadence; ownership, frozen batches and provider retry times remain enforced.
   reconcile(queue, bands, now)
+  for (const target of identityTargets) {
+    const previousIdentity = queue.entries[target.bandId]?.stages.identity
+    if (previousIdentity?.nextAttemptAt && stamp(previousIdentity.nextAttemptAt) > now) fail('IDENTITY_RETRY_NOT_DUE')
+    if (target.mutation.operation === 'register') {
+      const m = target.mutation, band = { id: target.bandId, name: m.name, aliases: [], country_code: m.country,
+        musicbrainz_id: m.musicBrainzId, category: 'unclassified', curation_status: 'unreviewed', updated_at: null }
+      queue.entries[target.bandId] = { band, key: snapshotKey(band), waitingSince: iso(now), missing: false,
+        stages: Object.fromEntries(STAGES.map(stage => [stage, freshStage(now)])), previous: null }
+    }
+    const entry = queue.entries[target.bandId]
+    entry.stages.identity = freshStage(now)
+    if (entry.band.curation_status === 'unreviewed') for (const stage of STAGES) {
+      const previous = entry.stages[stage]
+      entry.stages[stage] = ['deferred', 'exception'].includes(previous.status)
+        ? previous : freshStage(now)
+    }
+  }
   const candidates = Object.values(queue.entries).map(entry => {
     const tasks = tasksFor(entry, now, authorityKey)
-    const priority = tasks.includes('research') ? 1 : tasks.includes('approval') ? 2 : 3
+    if (mutations.has(entry.band.id)) {
+      tasks.unshift('identity')
+      if (entry.band.curation_status === 'unreviewed' && !tasks.includes('approval')) tasks.push('approval')
+    }
+    const priority = tasks.includes('identity') || tasks.includes('research') ? 1 : tasks.includes('approval') ? 2 : 3
     const since = Math.min(...tasks.map(stage => stamp(entry.stages[stage].waitingSince)))
     return { entry, tasks, priority, since, core: coreOrder.get(entry.band.musicbrainz_id) ?? Infinity }
   }).filter(row => row.tasks.length)
@@ -109,6 +137,7 @@ export function beginBatch(queue, { lane, bands, now = Date.now(), authorityKey 
     authorityKey, apiCalls: 0, artists: candidates.slice(0, limit).map(({ entry, tasks, priority }) => ({
       bandId: entry.band.id, name: entry.band.name, identityVersion: entry.band.updated_at, key: entry.key,
       priority, tasks, stages: structuredClone(entry.stages), recorded: {}, receipts: {},
+      ...(mutations.has(entry.band.id) ? { identityMutation: structuredClone(mutations.get(entry.band.id)) } : {}),
     })) }
   queue.active = batch; queue.lastStartedAt = iso(now); queue.revision++
   return batch
@@ -135,8 +164,9 @@ export function recordStage(queue, { lane, runId, bandId, stage, status, reason,
   verification = null, proposal = null, apiCalls = 0, now = Date.now() }) {
   checkOwner(queue, lane)
   const batch = queue.active, row = batch?.artists.find(row => row.bandId === bandId)
-  if (!row || batch.runId !== runId || !STAGES.includes(stage)) fail('TARGET_NOT_SELECTED')
+  if (!row || batch.runId !== runId || ![...STAGES, 'identity'].includes(stage)) fail('TARGET_NOT_SELECTED')
   if (!row.tasks.includes(stage)) fail('TASK_NOT_SELECTED')
+  if (stage !== 'identity' && row.identityMutation && !row.recorded.identity?.applied && status !== 'deferred') fail('IDENTITY_REQUIRED')
   const receipt = createHash('sha256').update(JSON.stringify([status, reason, proof, applied, verification, proposal, apiCalls])).digest('hex')
   if (row.receipts[stage]) {
     if (row.receipts[stage] !== receipt) fail('CHECKPOINT_CONFLICT')
@@ -146,6 +176,8 @@ export function recordStage(queue, { lane, runId, bandId, stage, status, reason,
     || !Number.isInteger(apiCalls) || apiCalls < 0 || apiCalls > 100 || typeof reason !== 'string' || reason.length > 2000) fail('CHECKPOINT_INVALID')
   if (status === 'authority_wait' && stage !== 'approval') fail('CHECKPOINT_INVALID')
   if (applied && (typeof verification?.version !== 'string' || verification?.readBack !== true)) fail('READBACK_REQUIRED')
+  if (stage === 'identity' && status === 'complete'
+    && (!applied || verification?.publicSearchVerified !== true)) fail('READBACK_REQUIRED')
   const entry = queue.entries[bandId]
   const value = { status, reason, checkedAt: iso(now), waitingSince: iso(now), applied,
     lastSuccessfulAt: status === 'complete' ? iso(now) : entry.stages[stage].lastSuccessfulAt ?? null,
@@ -189,6 +221,7 @@ export function recordStage(queue, { lane, runId, bandId, stage, status, reason,
     value.authorityKey = batch.authorityKey
   }
   if (verification) value.verification = { readBack: verification.readBack === true, version: verification.version,
+    ...(stage === 'identity' ? { publicSearchVerified: verification.publicSearchVerified === true } : {}),
     ...(verification.checkedAt ? { checkedAt: verification.checkedAt } : {}) }
   entry.stages[stage] = value; row.recorded[stage] = value; row.receipts[stage] = receipt
   batch.apiCalls += apiCalls; queue.revision++

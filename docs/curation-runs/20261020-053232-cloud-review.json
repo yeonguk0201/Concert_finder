@@ -1,0 +1,2725 @@
+{
+  "policy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+  "projectRef": "czjrzylvnewfjnfwjhwf",
+  "mode": "scheduled_cloud_integrated_review",
+  "runId": "79d24354-f4f0-438d-afb7-879f94405db0",
+  "startedAt": "2026-10-19T20:24:50.297Z",
+  "finishedAt": "2026-10-19T20:31:08.802Z",
+  "recordedAtKst": "2026-10-20T05:32:32.194589+09:00",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "queueRevision": 239,
+  "owner": "cloud",
+  "status": "batch_checkpointed_catalog_incomplete",
+  "counts": {
+    "catalogAtRead": 618,
+    "selectedDistinct": 40,
+    "newResearchKeep": 5,
+    "researchDeferred": 28,
+    "existingResearchReusedForApprovalProposal": 7,
+    "curationProposalsAuthorityWait": 12,
+    "curationApplied": 0,
+    "channelApplied": 0,
+    "photoApplied": 0,
+    "channelDeferred": 38,
+    "channelHumanException": 1,
+    "runnableNow": 513,
+    "totalAuthorityWaiting": 28,
+    "notFullyApprovedAndFinished": 612
+  },
+  "apiAccounting": {
+    "youTubeApiRequests": 0,
+    "musicBrainzApiRequests": 0,
+    "musicBrainzWebAccessAttempts": 2,
+    "webToolOperations": {
+      "searchQueries": 37,
+      "open": 27,
+      "find": 8,
+      "click": 2
+    },
+    "supabaseRestRequests": 6,
+    "providerHttpCountsBehindWebTool": "not exposed; web operations are not claimed as exact provider HTTP request counts"
+  },
+  "database": {
+    "catalog": 618,
+    "changedBandIds": [],
+    "curationWrites": 0,
+    "channelProfileWrites": 0,
+    "photoWrites": 0,
+    "channelManifestExpirySweepInvoked": true
+  },
+  "administrativeExceptions": [
+    {
+      "bandId": "74cb8677-f1ab-4c3c-909c-bb7f61a4fe51",
+      "name": "Ayreon",
+      "reason": "공식 Arjen Lucassen 사이트가 Ayreon/Star One 등 여러 프로젝트를 함께 소개하고 Arjen Anthony Lucassen 채널을 연결한다. 이 공통 제작자 채널을 별도 Ayreon MBID의 공식 채널로 지정할 수 있는지 판단이 필요해 자동 연결/교체하지 않았다.",
+      "officialSource": "https://www.arjenlucassen.com/content/",
+      "candidateChannel": "https://www.youtube.com/channel/UCihO6uVisilu1mn4x2u-HOA",
+      "apiResolvedThisRun": false
+    }
+  ],
+  "technicalDeferrals": {
+    "musicBrainz": "429/failed web access; no further MusicBrainz requests after failure",
+    "officialSourceExample": "Antenna KwonJinAh page returned 403; snippet not accepted as completed evidence",
+    "channelProfilesForSelectedChannelTasks": 0,
+    "nextRetryPolicy": "checkpoint time +24 hours",
+    "noMissingEvidenceExclusion": true,
+    "providerCooldowns": {
+      "musicbrainz.org": {
+        "lastFailureAt": "2026-10-19T20:31:08.802Z",
+        "nextAttemptAt": "2026-10-20T20:31:08.802000Z",
+        "reason": "429/failed web access; application API was not called; use alternate official sources while cooling down"
+      },
+      "antenna.co.kr": {
+        "lastFailureAt": "2026-10-19T20:31:08.802Z",
+        "nextAttemptAt": "2026-10-20T20:31:08.802000Z",
+        "reason": "official artist page returned 403; no genre exclusion or success timestamp update"
+      }
+    }
+  },
+  "authority": {
+    "administratorSessionProvided": false,
+    "newAuthorityWait": 12,
+    "repeatedAuthenticationNotice": "No new authentication request; same known lack of authenticated administrator. Proposals preserved."
+  },
+  "rows": [
+    {
+      "bandId": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+      "name": "이성호",
+      "identitySnapshot": {
+        "id": "f5550475-ebbf-4a81-9baf-effb816d9f4e",
+        "name": "이성호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "b31d0d8e-3b56-4413-8517-2ea36d1262e6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.934799+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:02.852Z",
+          "waitingSince": "2026-10-19T20:31:02.852Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:02.852Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:02.937Z",
+          "waitingSince": "2026-10-19T20:31:02.937Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:02.937Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:02.991Z",
+          "waitingSince": "2026-10-19T20:31:02.991Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:02.991Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "2bde29a8-f641-4c07-80ad-74ed61158a88",
+      "name": "이은미",
+      "identitySnapshot": {
+        "id": "2bde29a8-f641-4c07-80ad-74ed61158a88",
+        "name": "이은미",
+        "aliases": [
+          "Lee Eun Mee",
+          "Lee Eun Mi"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "657e1d87-31a4-43bc-87fb-c64aff7578a3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.942568+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:03.062Z",
+          "waitingSince": "2026-10-19T20:31:03.062Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.062Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:03.124Z",
+          "waitingSince": "2026-10-19T20:31:03.124Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.124Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:03.167Z",
+          "waitingSince": "2026-10-19T20:31:03.167Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.167Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "f7216f6b-058b-449c-9ad4-9335cbde4e0d",
+      "name": "장필순",
+      "identitySnapshot": {
+        "id": "f7216f6b-058b-449c-9ad4-9335cbde4e0d",
+        "name": "장필순",
+        "aliases": [
+          "Jang Pill Soon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "00b885c5-92b2-4413-8dc2-af6f218c57d2",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T16:39:22.922955+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:03.224Z",
+          "waitingSince": "2026-10-19T20:31:03.224Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.224Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:03.276Z",
+          "waitingSince": "2026-10-19T20:31:03.276Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.276Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:03.332Z",
+          "waitingSince": "2026-10-19T20:31:03.332Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.332Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+      "name": "조장혁",
+      "identitySnapshot": {
+        "id": "a08b3fbe-133c-4712-9cfc-b7197470c8f8",
+        "name": "조장혁",
+        "aliases": [
+          "Cho Jang Hyuck"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "79cbeeec-0aa4-4273-a97e-1718788ca2e5",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T06:57:47.368417+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:03.372Z",
+          "waitingSince": "2026-10-19T20:31:03.372Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.372Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:03.436Z",
+          "waitingSince": "2026-10-19T20:31:03.436Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.436Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:03.485Z",
+          "waitingSince": "2026-10-19T20:31:03.485Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.485Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+      "name": "최재호",
+      "identitySnapshot": {
+        "id": "cc793ee8-406a-4d30-a53d-c9e0f593747b",
+        "name": "최재호",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "968c57d8-ec41-4d0d-8c67-1a960c3fea00",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-16T22:53:23.277146+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:03.567Z",
+          "waitingSince": "2026-10-19T20:31:03.567Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.567Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:03.623Z",
+          "waitingSince": "2026-10-19T20:31:03.623Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.623Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:03.732Z",
+          "waitingSince": "2026-10-19T20:31:03.732Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.732Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+      "name": "최정인",
+      "identitySnapshot": {
+        "id": "1ee5d82b-858d-4b64-8afb-8fd33000d1f9",
+        "name": "최정인",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "88aae8ce-aab8-4926-9172-c0a4955e4e97",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-17T11:36:58.700358+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:03.773Z",
+          "waitingSince": "2026-10-19T20:31:03.773Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.773Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:03.823Z",
+          "waitingSince": "2026-10-19T20:31:03.823Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.823Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:03.863Z",
+          "waitingSince": "2026-10-19T20:31:03.863Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:03.863Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "42b04348-2c78-4359-a4ee-09e382f336ce",
+      "name": "김수철",
+      "identitySnapshot": {
+        "id": "42b04348-2c78-4359-a4ee-09e382f336ce",
+        "name": "김수철",
+        "aliases": [
+          "Kim Soo-chul"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c43b268b-6fe9-44bb-b656-e86c618f8918",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.905084+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 소개/정식 음반 크레딧과 실제 록 활동 확인",
+          "checkedAt": "2026-10-19T20:31:03.902Z",
+          "waitingSince": "2026-10-19T20:31:03.902Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-19T20:31:02.850Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-17T20:31:02.850Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "공식 경력에서 김수철의 작은거인 기타·보컬 활동과 하드록 음반 이력을 확인했다. 국악·영화음악 병행은 실제 록 활동을 배제하는 근거가 아니므로 유지한다.",
+            "sources": [
+              {
+                "url": "https://www.kimsoochul.co.kr/html/kimsoochul/profile.php",
+                "checkedAt": "2026-10-19T20:31:02.850Z",
+                "excerpt": "리드기타와 보컬 김수철; 작은거인은 하드록과 록음악을 중심으로"
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:03.963Z",
+          "waitingSince": "2026-10-19T20:31:03.963Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "42b04348-2c78-4359-a4ee-09e382f336ce",
+            "expected_updated_at": "2026-10-18T00:04:46.905084+00:00",
+            "artist_name": "김수철",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [
+              "Kim Soo-chul"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 domestic_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://www.kimsoochul.co.kr/html/kimsoochul/profile.php"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.021Z",
+          "waitingSince": "2026-10-19T20:31:04.021Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.021Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "5739b0f3-9ada-4141-82f4-a0d130219f7f",
+      "name": "이승기",
+      "identitySnapshot": {
+        "id": "5739b0f3-9ada-4141-82f4-a0d130219f7f",
+        "name": "이승기",
+        "aliases": [
+          "Lee Seung Gi",
+          "Lee Seung Ki",
+          "Lee Seung-gi",
+          "Lee Seung-ki"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "aff0405a-9f74-48b0-b5fe-acfc138624f8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.9126+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:04.065Z",
+          "waitingSince": "2026-10-19T20:31:04.065Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.065Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:04.113Z",
+          "waitingSince": "2026-10-19T20:31:04.113Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.113Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.156Z",
+          "waitingSince": "2026-10-19T20:31:04.156Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.156Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+      "name": "정재환",
+      "identitySnapshot": {
+        "id": "06163a60-edd0-4641-8b28-5453a1ccdb40",
+        "name": "정재환",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "e64c4995-8948-438f-8988-3240dc2c7ab4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.917823+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:04.198Z",
+          "waitingSince": "2026-10-19T20:31:04.198Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.198Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:04.273Z",
+          "waitingSince": "2026-10-19T20:31:04.273Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.273Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.316Z",
+          "waitingSince": "2026-10-19T20:31:04.316Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.316Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "37f2a6ca-e9ed-4541-88c8-8a1024959a71",
+      "name": "이찬혁",
+      "identitySnapshot": {
+        "id": "37f2a6ca-e9ed-4541-88c8-8a1024959a71",
+        "name": "이찬혁",
+        "aliases": [
+          "LEE CHANHYUK",
+          "Lee Chanhyeok"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "810a4fc2-e368-4212-8494-a3934be6973d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.924819+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:04.359Z",
+          "waitingSince": "2026-10-19T20:31:04.359Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.359Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:04.409Z",
+          "waitingSince": "2026-10-19T20:31:04.409Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.409Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.453Z",
+          "waitingSince": "2026-10-19T20:31:04.453Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.453Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "77f9efe3-9f64-48aa-a98d-3ddc50d61d54",
+      "name": "윤수일",
+      "identitySnapshot": {
+        "id": "77f9efe3-9f64-48aa-a98d-3ddc50d61d54",
+        "name": "윤수일",
+        "aliases": [
+          "Yoon Soo Il"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "3d115c4f-4e22-4b9a-9a2b-18e88ecb01c0",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.931779+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 소개/정식 음반 크레딧과 실제 록 활동 확인",
+          "checkedAt": "2026-10-19T20:31:04.497Z",
+          "waitingSince": "2026-10-19T20:31:04.497Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-19T20:31:02.850Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-17T20:31:02.850Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "음악 전문지의 2025 음반 보도는 윤수일 밴드와 실제 록·트로트 혼합 작품 활동을 명시한다. 정식 음원 유통의 동일 이름·국적·아파트/윤수일밴드 작품 목록을 보완 대조했으며 성인가요 태그만으로 제외하지 않는다.",
+            "sources": [
+              {
+                "url": "https://rollingstone.co.kr/main-trending/$/21655",
+                "checkedAt": "2026-10-19T20:31:02.850Z",
+                "excerpt": "본인의 시그니처인 록 트로트 장르"
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:04.550Z",
+          "waitingSince": "2026-10-19T20:31:04.550Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "77f9efe3-9f64-48aa-a98d-3ddc50d61d54",
+            "expected_updated_at": "2026-10-18T00:04:46.931779+00:00",
+            "artist_name": "윤수일",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [
+              "Yoon Soo Il"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 domestic_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://rollingstone.co.kr/main-trending/$/21655"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.594Z",
+          "waitingSince": "2026-10-19T20:31:04.594Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.594Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "c2455b58-e10c-4959-85e8-3f36c7221267",
+      "name": "권진아",
+      "identitySnapshot": {
+        "id": "c2455b58-e10c-4959-85e8-3f36c7221267",
+        "name": "권진아",
+        "aliases": [
+          "Kwon Jin Ah",
+          "Kwon Jina"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "4951cd19-8dd8-4cec-965e-675c4cf184a4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.941923+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:04.634Z",
+          "waitingSince": "2026-10-19T20:31:04.634Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.634Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:04.686Z",
+          "waitingSince": "2026-10-19T20:31:04.686Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.686Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.728Z",
+          "waitingSince": "2026-10-19T20:31:04.728Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.728Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+      "name": "남성모",
+      "identitySnapshot": {
+        "id": "3f2a01ad-978b-45cc-9cb1-00636c561014",
+        "name": "남성모",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "9e955360-4301-4444-bad3-56aa91051753",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.943628+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:04.775Z",
+          "waitingSince": "2026-10-19T20:31:04.775Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.775Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:04.826Z",
+          "waitingSince": "2026-10-19T20:31:04.826Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.826Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:04.870Z",
+          "waitingSince": "2026-10-19T20:31:04.870Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.870Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+      "name": "황성빈",
+      "identitySnapshot": {
+        "id": "260d4353-fedf-4521-a1ad-e873b08e58ef",
+        "name": "황성빈",
+        "aliases": [
+          "HWANG SEONG BIN"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c04d9626-83b7-4159-8ed4-3e954ed906a9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T00:04:46.945385+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:04.912Z",
+          "waitingSince": "2026-10-19T20:31:04.912Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:04.912Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:05.025Z",
+          "waitingSince": "2026-10-19T20:31:05.025Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.025Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:05.074Z",
+          "waitingSince": "2026-10-19T20:31:05.074Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.074Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "b54ca30c-d111-42d6-a479-83b79837fae8",
+      "name": "백예린",
+      "identitySnapshot": {
+        "id": "b54ca30c-d111-42d6-a479-83b79837fae8",
+        "name": "백예린",
+        "aliases": [
+          "Yerin Baek",
+          "Baek Ye-rin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d598652a-b64a-4e21-b607-bcec71698731",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.636672+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:05.115Z",
+          "waitingSince": "2026-10-19T20:31:05.115Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.115Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:05.169Z",
+          "waitingSince": "2026-10-19T20:31:05.169Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.169Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:05.214Z",
+          "waitingSince": "2026-10-19T20:31:05.214Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.214Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+      "name": "윤석철",
+      "identitySnapshot": {
+        "id": "72b49b70-fef7-4e48-aecc-682c0eaf4787",
+        "name": "윤석철",
+        "aliases": [
+          "Seokcheol Yun",
+          "Yun Seok Cheol"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c3237f6e-14b2-4c6a-936e-32ef519348e4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.646252+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:05.255Z",
+          "waitingSince": "2026-10-19T20:31:05.255Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.255Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:05.306Z",
+          "waitingSince": "2026-10-19T20:31:05.306Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.306Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:05.345Z",
+          "waitingSince": "2026-10-19T20:31:05.345Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.345Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "f269d43a-9f95-40b3-b83e-59c9a3e0a7e9",
+      "name": "이기용",
+      "identitySnapshot": {
+        "id": "f269d43a-9f95-40b3-b83e-59c9a3e0a7e9",
+        "name": "이기용",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "196a58fd-9756-4766-a1ad-5d9b77d40bde",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.653817+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 소개/정식 음반 크레딧과 실제 록 활동 확인",
+          "checkedAt": "2026-10-19T20:31:05.383Z",
+          "waitingSince": "2026-10-19T20:31:05.383Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-19T20:31:02.850Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-17T20:31:02.850Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "미러볼뮤직 유통 음반 설명과 참여자 크레딧에서 허클베리핀의 얼터너티브 작품 및 이기용의 기타·보컬·작사/작곡 참여를 대조했다. 출판사 인물 소개의 허클베리핀/스왈로우 경력도 보완 확인했다.",
+            "sources": [
+              {
+                "url": "https://m.yes24.com/goods/detail/198236590",
+                "checkedAt": "2026-10-19T20:31:02.850Z",
+                "excerpt": "거친 얼터너티브 곡들; 이기용 (Guitar, Vocal)"
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:05.434Z",
+          "waitingSince": "2026-10-19T20:31:05.434Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "f269d43a-9f95-40b3-b83e-59c9a3e0a7e9",
+            "expected_updated_at": "2026-10-18T04:29:55.653817+00:00",
+            "artist_name": "이기용",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 domestic_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://m.yes24.com/goods/detail/198236590"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:05.479Z",
+          "waitingSince": "2026-10-19T20:31:05.479Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.479Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+      "name": "이찬원",
+      "identitySnapshot": {
+        "id": "d40c69db-585a-494d-965a-b0ba5e2a0b0d",
+        "name": "이찬원",
+        "aliases": [
+          "Lee Chanwon",
+          "Lee Chan Won"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "61981bcc-25e5-40ec-970d-8998494af238",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.660248+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:05.523Z",
+          "waitingSince": "2026-10-19T20:31:05.523Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.523Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:05.582Z",
+          "waitingSince": "2026-10-19T20:31:05.582Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.582Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:05.632Z",
+          "waitingSince": "2026-10-19T20:31:05.632Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.632Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "586f6cb8-d286-413c-9adf-9185a423e201",
+      "name": "서림",
+      "identitySnapshot": {
+        "id": "586f6cb8-d286-413c-9adf-9185a423e201",
+        "name": "서림",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a78361b4-d3eb-4928-8125-c988045074a6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.664288+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:05.677Z",
+          "waitingSince": "2026-10-19T20:31:05.677Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.677Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:05.761Z",
+          "waitingSince": "2026-10-19T20:31:05.761Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.761Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:05.803Z",
+          "waitingSince": "2026-10-19T20:31:05.803Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.803Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+      "name": "진원",
+      "identitySnapshot": {
+        "id": "eef0e117-4158-4f57-a0a0-266a15528dfa",
+        "name": "진원",
+        "aliases": [
+          "진대원"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "6b239332-5e1b-47e4-8dcd-1b654a4ab1e7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.672954+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:05.846Z",
+          "waitingSince": "2026-10-19T20:31:05.846Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.846Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:05.944Z",
+          "waitingSince": "2026-10-19T20:31:05.944Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:05.944Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:06.043Z",
+          "waitingSince": "2026-10-19T20:31:06.043Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.043Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "c4739cbf-67ff-4410-b01e-44c179d99ea5",
+      "name": "배인혁",
+      "identitySnapshot": {
+        "id": "c4739cbf-67ff-4410-b01e-44c179d99ea5",
+        "name": "배인혁",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6c5cacac-ca42-4019-a44d-6c4387519e4b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T04:29:55.674558+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 소개/정식 음반 크레딧과 실제 록 활동 확인",
+          "checkedAt": "2026-10-19T20:31:06.084Z",
+          "waitingSince": "2026-10-19T20:31:06.084Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-19T20:31:02.850Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-17T20:31:02.850Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "로맨틱펀치 SOS의 정식 유통 앨범 소개·제작사와 보컬 크레딧을 확인했다. 배인혁의 참여가 파워 펑크 곡 설명과 연결되어 실제 록 활동을 확인했다.",
+            "sources": [
+              {
+                "url": "https://music.bugs.co.kr/album/20356465",
+                "checkedAt": "2026-10-19T20:31:02.850Z",
+                "excerpt": "로맨틱 펀치만의 파워 펑크 랩소디! Vocal 배인혁"
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:06.138Z",
+          "waitingSince": "2026-10-19T20:31:06.138Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "c4739cbf-67ff-4410-b01e-44c179d99ea5",
+            "expected_updated_at": "2026-10-18T04:29:55.674558+00:00",
+            "artist_name": "배인혁",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 domestic_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://music.bugs.co.kr/album/20356465"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:06.197Z",
+          "waitingSince": "2026-10-19T20:31:06.197Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.197Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+      "name": "박소현",
+      "identitySnapshot": {
+        "id": "b8fed8ae-1b11-4ba2-b818-6122f32a4a30",
+        "name": "박소현",
+        "aliases": [
+          "Park Sohyun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "21170f37-04cf-4b52-949f-518323da3d8b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.62144+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:06.308Z",
+          "waitingSince": "2026-10-19T20:31:06.308Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.308Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:06.361Z",
+          "waitingSince": "2026-10-19T20:31:06.361Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.361Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:06.401Z",
+          "waitingSince": "2026-10-19T20:31:06.401Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.401Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "36d0874b-e0e5-4140-8202-b53eb2c18952",
+      "name": "이무진",
+      "identitySnapshot": {
+        "id": "36d0874b-e0e5-4140-8202-b53eb2c18952",
+        "name": "이무진",
+        "aliases": [
+          "Lee Mujin",
+          "Lee Mu-jin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "b0e4a01c-d035-4fe6-8683-617a0798e473",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T09:37:18.629337+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:06.445Z",
+          "waitingSince": "2026-10-19T20:31:06.445Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.445Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:06.511Z",
+          "waitingSince": "2026-10-19T20:31:06.511Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.511Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:06.554Z",
+          "waitingSince": "2026-10-19T20:31:06.554Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.554Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+      "name": "조성일",
+      "identitySnapshot": {
+        "id": "39a1e2d8-1a68-4f47-b4f5-6a8626575ef0",
+        "name": "조성일",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "9c534bd7-aba0-435b-9ac3-0f34919570da",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T14:03:04.442816+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:06.593Z",
+          "waitingSince": "2026-10-19T20:31:06.593Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.593Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:06.646Z",
+          "waitingSince": "2026-10-19T20:31:06.646Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.646Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:06.714Z",
+          "waitingSince": "2026-10-19T20:31:06.714Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.714Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "6746b89a-cb43-4846-925a-fef34cb44750",
+      "name": "마이진",
+      "identitySnapshot": {
+        "id": "6746b89a-cb43-4846-925a-fef34cb44750",
+        "name": "마이진",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a30f6c0f-9d2c-4765-8541-b5bd17c31044",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T17:24:12.848175+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:06.768Z",
+          "waitingSince": "2026-10-19T20:31:06.768Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.768Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:06.818Z",
+          "waitingSince": "2026-10-19T20:31:06.818Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.818Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:06.860Z",
+          "waitingSince": "2026-10-19T20:31:06.860Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.860Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "3bc78b16-802b-405b-80ff-567157b0fa90",
+      "name": "김영하",
+      "identitySnapshot": {
+        "id": "3bc78b16-802b-405b-80ff-567157b0fa90",
+        "name": "김영하",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "5b149009-adf1-4722-aef4-25dabf5824d0",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T20:41:49.755716+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:06.908Z",
+          "waitingSince": "2026-10-19T20:31:06.908Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.908Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:06.977Z",
+          "waitingSince": "2026-10-19T20:31:06.977Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:06.977Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:07.017Z",
+          "waitingSince": "2026-10-19T20:31:07.017Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.017Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "7c23cd06-5727-450f-957c-90437f647372",
+      "name": "이승철",
+      "identitySnapshot": {
+        "id": "7c23cd06-5727-450f-957c-90437f647372",
+        "name": "이승철",
+        "aliases": [
+          "李承哲",
+          "Lee Seung Chul",
+          "Lee Seungcheol",
+          "Lee Seungchul",
+          "Lee Seung Cheol"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f2ba0737-6707-4051-935d-26b6cfb4d2a3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.985232+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:07.060Z",
+          "waitingSince": "2026-10-19T20:31:07.060Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.060Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:07.112Z",
+          "waitingSince": "2026-10-19T20:31:07.112Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.112Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:07.159Z",
+          "waitingSince": "2026-10-19T20:31:07.159Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.159Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+      "name": "최정윤",
+      "identitySnapshot": {
+        "id": "a3c800ca-c8bb-46dd-89d4-2251e10a37e0",
+        "name": "최정윤",
+        "aliases": [
+          "Choi Jung Yoon",
+          "Choi Jungyoon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "74a06b20-ccd9-4cdf-9539-2db7b527f225",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:30.998391+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:07.201Z",
+          "waitingSince": "2026-10-19T20:31:07.201Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.201Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:07.263Z",
+          "waitingSince": "2026-10-19T20:31:07.263Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.263Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:07.303Z",
+          "waitingSince": "2026-10-19T20:31:07.303Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.303Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+      "name": "정승원",
+      "identitySnapshot": {
+        "id": "70b345cd-3a55-4bb1-ac67-46671c6d9021",
+        "name": "정승원",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "d798ffea-df3f-404f-a4a2-c22bc33e6992",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-18T23:12:31.005542+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:07.348Z",
+          "waitingSince": "2026-10-19T20:31:07.348Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.348Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:07.400Z",
+          "waitingSince": "2026-10-19T20:31:07.400Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.400Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:07.442Z",
+          "waitingSince": "2026-10-19T20:31:07.442Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.442Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "d6fe0f4e-6695-47f0-a22e-97e1566db0d0",
+      "name": "고영배",
+      "identitySnapshot": {
+        "id": "d6fe0f4e-6695-47f0-a22e-97e1566db0d0",
+        "name": "고영배",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "577b7028-9f4c-4950-98c9-0f1f12d258c5",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T01:14:52.185054+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "complete",
+          "reason": "공식 소개/정식 음반 크레딧과 실제 록 활동 확인",
+          "checkedAt": "2026-10-19T20:31:07.485Z",
+          "waitingSince": "2026-10-19T20:31:07.485Z",
+          "applied": false,
+          "lastSuccessfulAt": "2026-10-19T20:31:02.850Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-17T20:31:02.850Z",
+          "proof": {
+            "decision": "keep",
+            "summary": "소속사 아티스트 소개가 소란의 팝·모던록 활동과 보컬 고영배를 함께 명시한다. 그룹 자체와 개인 신원은 구분하고 실제 록 보컬 활동에 따라 유지한다.",
+            "sources": [
+              {
+                "url": "https://www.mpmgmusic.com/soran",
+                "checkedAt": "2026-10-19T20:31:02.850Z",
+                "excerpt": "팝과 모던록을 추구하는 밴드 소란; 보컬 고영배"
+              }
+            ]
+          }
+        },
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:07.539Z",
+          "waitingSince": "2026-10-19T20:31:07.539Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "d6fe0f4e-6695-47f0-a22e-97e1566db0d0",
+            "expected_updated_at": "2026-10-19T01:14:52.185054+00:00",
+            "artist_name": "고영배",
+            "country": "KR",
+            "artist_category": "domestic_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 domestic_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://www.mpmgmusic.com/soran"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "소속사에서 소란과 보컬 신원은 확인했으나 밴드 채널을 개인 고영배 채널로 간주하지 않는다. 개인 아티스트별 직접 연결을 추가 확인한 뒤 API 해석·저장한다.",
+          "checkedAt": "2026-10-19T20:31:07.586Z",
+          "waitingSince": "2026-10-19T20:31:07.586Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.586Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "a0c97a82-beb1-4aba-b594-d000fd3d190e",
+      "name": "류진",
+      "identitySnapshot": {
+        "id": "a0c97a82-beb1-4aba-b594-d000fd3d190e",
+        "name": "류진",
+        "aliases": [
+          "신류진",
+          "Ryujin"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d9c9d459-f412-425a-9bac-fe7b1312cd74",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T01:14:52.195037+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:07.626Z",
+          "waitingSince": "2026-10-19T20:31:07.626Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.626Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:07.682Z",
+          "waitingSince": "2026-10-19T20:31:07.682Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.682Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:07.727Z",
+          "waitingSince": "2026-10-19T20:31:07.727Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.727Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+      "name": "조윤성",
+      "identitySnapshot": {
+        "id": "b8f78509-af8e-44a4-b3d8-f1d9f9cc363b",
+        "name": "조윤성",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6a0edcd4-bf70-4864-9bb2-6757c863a9c7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T06:15:03.110412+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:07.775Z",
+          "waitingSince": "2026-10-19T20:31:07.775Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.775Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:07.826Z",
+          "waitingSince": "2026-10-19T20:31:07.826Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.826Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:07.871Z",
+          "waitingSince": "2026-10-19T20:31:07.871Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.871Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+      "name": "정준영",
+      "identitySnapshot": {
+        "id": "e887b5e9-6a0e-44a2-8f49-6d705071d882",
+        "name": "정준영",
+        "aliases": [
+          "Jung Joon Young"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f08998b7-4e52-4f05-b942-48f136271917",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-19T19:22:26.979528+00:00"
+      },
+      "tasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "pending",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "공식/대체 자료 검색을 시도했으나 현재 외부 신원의 작품·관계 교차 확인이 미완료다. MusicBrainz 429/접근 실패 이후 추가 요청을 중단했다. 검색 결과·국가·이름·일반 장르 태그만으로 유지/제외/보류를 확정하지 않으며 24시간 뒤 재시도한다.",
+          "checkedAt": "2026-10-19T20:31:07.922Z",
+          "waitingSince": "2026-10-19T20:31:07.922Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.922Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "RESEARCH_INCOMPLETE: 신원·장르 조사 완료 후 분류·승인 요건을 확인한다. 실제 관리자 인증도 현재 제공되지 않았으나 이를 장르 불확실성으로 처리하지 않는다.",
+          "checkedAt": "2026-10-19T20:31:07.985Z",
+          "waitingSince": "2026-10-19T20:31:07.985Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:07.985Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.025Z",
+          "waitingSince": "2026-10-19T20:31:08.025Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:08.025Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+      "name": "10,000 Maniacs",
+      "identitySnapshot": {
+        "id": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+        "name": "10,000 Maniacs",
+        "aliases": [
+          "Nathalie Merchant & 10,000 Maniacs",
+          "10.000 Maniacs",
+          "Ten Thousand Maniacs",
+          "10000 Maniacs"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "b9a06530-1241-4162-836f-7b8e79deaa58",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:05.841241+00:00"
+      },
+      "tasks": [
+        "approval"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "complete"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.078Z",
+          "waitingSince": "2026-10-19T20:31:08.078Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "c288e967-c4bc-4288-91d4-83eb2a5fc3be",
+            "expected_updated_at": "2026-10-13T08:20:05.841241+00:00",
+            "artist_name": "10,000 Maniacs",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Nathalie Merchant & 10,000 Maniacs",
+              "10.000 Maniacs",
+              "Ten Thousand Maniacs",
+              "10000 Maniacs"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://maniacs.com/about"
+          },
+          "authorityKey": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "fb964b4c-ad50-4608-9296-a343e9ec74e3",
+      "name": "10cc",
+      "identitySnapshot": {
+        "id": "fb964b4c-ad50-4608-9296-a343e9ec74e3",
+        "name": "10cc",
+        "aliases": [
+          "Ten CC",
+          "10 CC"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "f37c537b-3557-4031-bfd6-ab63ced32854",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:03.132013+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.138Z",
+          "waitingSince": "2026-10-19T20:31:08.138Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "fb964b4c-ad50-4608-9296-a343e9ec74e3",
+            "expected_updated_at": "2026-10-13T08:21:03.132013+00:00",
+            "artist_name": "10cc",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Ten CC",
+              "10 CC"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://www.10cc.world/"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.188Z",
+          "waitingSince": "2026-10-19T20:31:08.188Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:08.188Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "6195f4e7-97a2-43db-831d-6d765941b48b",
+      "name": "175R",
+      "identitySnapshot": {
+        "id": "6195f4e7-97a2-43db-831d-6d765941b48b",
+        "name": "175R",
+        "aliases": [
+          "Inago Rider"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "856fd456-a940-4e12-970a-66bffaf0ffbd",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:56.435206+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.243Z",
+          "waitingSince": "2026-10-19T20:31:08.243Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "6195f4e7-97a2-43db-831d-6d765941b48b",
+            "expected_updated_at": "2026-10-13T08:18:56.435206+00:00",
+            "artist_name": "175R",
+            "country": "JP",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Inago Rider"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://www.175r.com/news/2/"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.297Z",
+          "waitingSince": "2026-10-19T20:31:08.297Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:08.297Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "938b4c0d-0411-40f1-9bf5-c1a6cfc65685",
+      "name": "999",
+      "identitySnapshot": {
+        "id": "938b4c0d-0411-40f1-9bf5-c1a6cfc65685",
+        "name": "999",
+        "aliases": [
+          "Nine Nine Nine"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "90967f7a-dccf-43f8-a212-e84b34e24a7d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:33.554867+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.372Z",
+          "waitingSince": "2026-10-19T20:31:08.372Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "938b4c0d-0411-40f1-9bf5-c1a6cfc65685",
+            "expected_updated_at": "2026-10-13T08:20:33.554867+00:00",
+            "artist_name": "999",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Nine Nine Nine"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://www.nineninenine.net/"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.420Z",
+          "waitingSince": "2026-10-19T20:31:08.420Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:08.420Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "f5383922-e794-4c00-8485-d3d92c981768",
+      "name": "Asia",
+      "identitySnapshot": {
+        "id": "f5383922-e794-4c00-8485-d3d92c981768",
+        "name": "Asia",
+        "aliases": [],
+        "country_code": "GB",
+        "musicbrainz_id": "8f695099-c714-4ad0-8888-36eca37fee84",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:55.010053+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.476Z",
+          "waitingSince": "2026-10-19T20:31:08.476Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "f5383922-e794-4c00-8485-d3d92c981768",
+            "expected_updated_at": "2026-10-13T08:20:55.010053+00:00",
+            "artist_name": "Asia",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://originalasia.com/about/"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.522Z",
+          "waitingSince": "2026-10-19T20:31:08.522Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:08.522Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "74cb8677-f1ab-4c3c-909c-bb7f61a4fe51",
+      "name": "Ayreon",
+      "identitySnapshot": {
+        "id": "74cb8677-f1ab-4c3c-909c-bb7f61a4fe51",
+        "name": "Ayreon",
+        "aliases": [
+          "에이리온"
+        ],
+        "country_code": "NL",
+        "musicbrainz_id": "7bbfd77c-1102-4831-9ba8-246fb67460b3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:06.624595+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.584Z",
+          "waitingSince": "2026-10-19T20:31:08.584Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "74cb8677-f1ab-4c3c-909c-bb7f61a4fe51",
+            "expected_updated_at": "2026-10-13T08:21:06.624595+00:00",
+            "artist_name": "Ayreon",
+            "country": "NL",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "에이리온"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://www.arjenlucassen.com/content/info/bio/"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "exception",
+          "reason": "공식 Arjen Lucassen 사이트가 Ayreon/Star One 등 여러 프로젝트를 함께 소개하고 Arjen Anthony Lucassen 채널을 연결한다. 이 공통 제작자 채널을 별도 Ayreon MBID의 공식 채널로 지정할 수 있는지 판단이 필요해 자동 연결/교체하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.647Z",
+          "waitingSince": "2026-10-19T20:31:08.647Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    },
+    {
+      "bandId": "6edab8d9-1218-4897-b591-2d222138ca90",
+      "name": "Ash",
+      "identitySnapshot": {
+        "id": "6edab8d9-1218-4897-b591-2d222138ca90",
+        "name": "Ash",
+        "aliases": [],
+        "country_code": "GB",
+        "musicbrainz_id": "99164692-c02d-407c-81c9-25d338dd21f4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:16.75103+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "beforeStages": {
+        "research": "complete",
+        "approval": "pending",
+        "channels": "pending"
+      },
+      "outcomes": {
+        "approval": {
+          "status": "authority_wait",
+          "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+          "checkedAt": "2026-10-19T20:31:08.701Z",
+          "waitingSince": "2026-10-19T20:31:08.701Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": null,
+          "validUntil": null,
+          "proposal": {
+            "target_band_id": "6edab8d9-1218-4897-b591-2d222138ca90",
+            "expected_updated_at": "2026-10-13T08:20:16.75103+00:00",
+            "artist_name": "Ash",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 실제 록 활동 유지 근거를 바탕으로 overseas_rock 분류·승인을 제안한다. 실제 관리자 인증과 기존 외부 신원 연결/공개 승인 요건을 재확인한 후 적용해야 한다.",
+            "evidence_url": "https://universalmusic.fr/artistes/20000237322"
+          },
+          "authorityKey": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "선택 대상의 기존 저장 프로필/인계 후보는 없었다. 직접 확인한 공식 아티스트별 채널 링크가 확보되지 않았고 MusicBrainz URL 관계 제공처 접근도 실패해 발견을 지연한다. 이름 검색이나 Topic/팬 채널로 대체하지 않으며 사진 API 호출·저장은 하지 않았다.",
+          "checkedAt": "2026-10-19T20:31:08.755Z",
+          "waitingSince": "2026-10-19T20:31:08.755Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-20T20:31:08.755Z",
+          "validUntil": null
+        }
+      },
+      "sourcePolicy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+      "curationApplied": false,
+      "channelApplied": false,
+      "photoApplied": false,
+      "identityLiveProviderStatus": "MusicBrainz web access failed; no external-ID remapping or name/alias rewrite performed"
+    }
+  ],
+  "completeCatalog": false,
+  "codeChanged": false
+}

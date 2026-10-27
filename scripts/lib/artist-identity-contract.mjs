@@ -1,12 +1,16 @@
 // Pure validation for the installed 20261022121342 contract. No RPC or queue writes.
+import { isDeepStrictEqual } from 'node:util'
+
 const ID = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/
 const fail = code => { throw new Error(code) }
 const text = (value, max) => typeof value === 'string' && value.trim() && value.length <= max
-const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
+// PostgreSQL JSONB does not preserve object-key order. Arrays remain ordered.
+const same = isDeepStrictEqual
 const searchName = s => s.normalize('NFKC').toLowerCase().replace(/\s+/g, '')
 
 export function validateIdentityMutation(change, now = Date.now()) {
-  if (!change || !['register', 'aliases'].includes(change.operation) || !ID.test(change.musicBrainzId ?? '')
+  if (!change || Object.keys(change).some(k => !['operation', 'musicBrainzId', 'name', 'country', 'aliases', 'requirements', 'proof'].includes(k))
+    || !['register', 'aliases'].includes(change.operation) || !ID.test(change.musicBrainzId ?? '')
     || !text(change.name, 200) || !/^[A-Z]{2}$/.test(change.country ?? '')
     || !Array.isArray(change.aliases) || change.aliases.length > 100 || change.aliases.some(a => !text(a, 200))) fail('IDENTITY_INVALID')
   if (['identityMatched', 'countryMatched', 'sameIdentityAliases'].some(k => change.requirements?.[k] !== true)
@@ -25,11 +29,12 @@ export function validateIdentityMutation(change, now = Date.now()) {
 }
 
 // Validate work against an already fixed selection; never append/refill targets or mutate input.
-// Queue registration/identity CLI integration is deliberately not implemented here.
+// Queue registration and mutation execution live in separate modules.
 export function prepareIdentityTargets(targets, work, catalog, now = Date.now()) {
   if (!Array.isArray(targets) || targets.length < 1 || targets.length > 40
     || targets.some(t => !ID.test(t.bandId ?? '')) || new Set(targets.map(t => t.bandId)).size !== targets.length
-    || !Array.isArray(work) || new Set(work.map(w => w.bandId)).size !== work.length) fail('SELECTION_INVALID')
+    || !Array.isArray(work) || new Set(work.map(w => w.bandId)).size !== work.length
+    || !Array.isArray(catalog)) fail('SELECTION_INVALID')
   const selected = new Map(targets.map(t => [t.bandId, t]))
   const assigned = new Map()
   for (const item of work) {
@@ -51,6 +56,13 @@ export function prepareIdentityTargets(targets, work, catalog, now = Date.now())
       || [other.name, ...other.aliases].some(n => names.includes(searchName(n))))) fail('IDENTITY_CONFLICT')
     if (target.mutation && !same(target.mutation, change)) fail('SELECTION_CONFLICT')
     assigned.set(item.bandId, structuredClone(change))
+  }
+  // The installed begin RPC checks ordinary reviews as well as mutations.
+  // Reject incomplete/stale snapshots before publishing an immutable journal.
+  for (const target of targets.filter(t => !assigned.has(t.bandId))) {
+    const band = catalog.find(b => b.id === target.bandId)
+    if (!band || !Number.isFinite(Date.parse(target.expectedUpdatedAt))
+      || band.updated_at !== target.expectedUpdatedAt) fail('EDIT_CONFLICT')
   }
   return targets.map(t => ({ ...structuredClone(t), ...(assigned.has(t.bandId) ? { mutation: assigned.get(t.bandId) } : {}) }))
 }

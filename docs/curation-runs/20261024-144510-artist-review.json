@@ -1,0 +1,4158 @@
+{
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "707a9e27-cbc5-4535-9048-925881fff479",
+  "startedAt": "2026-10-24T05:30:10.590Z",
+  "finishedAt": "2026-10-24T05:43:08.530Z",
+  "savedAtKst": "2026-10-24T14:45:10.373429+09:00",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 1972,
+    "active": null,
+    "transfer": null
+  },
+  "preflight": {
+    "gitHead": "4d4cf841fd62325ef8c0d91ccaad46895cd69354",
+    "ancestors": [
+      "f267be1",
+      "fd45938"
+    ],
+    "environment": "current/running; enforced policy; approved bindings ready",
+    "actualConnection": "Supabase snapshot634; Last.fm HTTP200/API successes; MusicBrainz 40 HTTP200 through existing shared gate",
+    "catalog": {
+      "approved": 167,
+      "unreviewed": 461,
+      "excluded": 6,
+      "total": 634
+    },
+    "liveIntegrated": 0,
+    "liveLegacy": 0,
+    "receiptInstalled": true
+  },
+  "summary": {
+    "selected": 40,
+    "tasks": 80,
+    "researchSelected": 0,
+    "newResearchStageCompletions": 0,
+    "supplementalEvidenceApproved": 13,
+    "approvalApplied": 13,
+    "approvalDeferred": 27,
+    "approvedNames": [
+      "King Gizzard & the Lizard Wizard",
+      "KOTOKO",
+      "LiSA",
+      "Mogwai",
+      "Mrs. GREEN APPLE",
+      "Muse",
+      "My Chemical Romance",
+      "Omoinotake",
+      "Pretenders",
+      "Sleater‐Kinney",
+      "Slipknot",
+      "Ten Years After",
+      "The Fall"
+    ],
+    "channelTasks": 40,
+    "channelApplied": 0,
+    "channelDeferred": 40,
+    "newRegistration": 0,
+    "aliasWrites": 0,
+    "catalog": {
+      "approved": 180,
+      "excluded": 6,
+      "unreviewed": 448,
+      "total": 634
+    },
+    "queueRemaining": 415,
+    "authorityWaiting": 66
+  },
+  "actualExternalApiCalls": {
+    "lastfm": 75,
+    "lastfmSuccess": 70,
+    "lastfmApiError6": 5,
+    "musicbrainz": 40,
+    "musicbrainzHttp200": 40,
+    "youtube": 0,
+    "chartRefetch": 0,
+    "directOfficialSiteAttempts": 5,
+    "directOfficialSiteNetworkCancellations": 5,
+    "accounting": "Last.fm75 and MusicBrainz40 requests recorded before fetch; terminal status persisted. Queue apiCalls0 is stage accounting, not actual API0. Web connector source reads are separate from provider API counts."
+  },
+  "readback": {
+    "catalog": {
+      "approved": 180,
+      "excluded": 6,
+      "unreviewed": 448
+    },
+    "total": 634,
+    "run": {
+      "id": "707a9e27-cbc5-4535-9048-925881fff479",
+      "targets": 40,
+      "startedAt": "2026-10-24T05:30:10.59+00:00",
+      "finishedAt": "2026-10-24T05:43:09.614846+00:00"
+    },
+    "receipts": 13,
+    "live_integrated": 0,
+    "applied": [
+      {
+        "name": "King Gizzard & the Lizard Wizard",
+        "bandId": "982374a0-388c-41bd-97ee-fc4bd5d58505",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "KOTOKO",
+        "bandId": "645e1294-ea7c-4646-bdcf-0682362137b3",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "LiSA",
+        "bandId": "e24b2bfa-8b7a-4f69-806d-5f829b595083",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Mogwai",
+        "bandId": "96b7352d-4880-46d2-9924-f8740a3e2465",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Mrs. GREEN APPLE",
+        "bandId": "1b6f01b7-c62b-4788-b51d-22ef6f3bd9ca",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Muse",
+        "bandId": "ac54c4a6-491c-4485-ae20-166959581617",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "My Chemical Romance",
+        "bandId": "8f0b57b1-a196-44ae-92a3-5ab463fc6901",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          5,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Omoinotake",
+        "bandId": "a8dc73bf-1da6-4088-8602-95c2ae2296cf",
+        "status": "approved",
+        "category": "jpop",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Pretenders",
+        "bandId": "40d82383-132f-472b-96ef-3135addcb47e",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Sleater‐Kinney",
+        "bandId": "e805a182-8ab8-4289-8358-bc635fe3caeb",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Slipknot",
+        "bandId": "372723b5-fc58-4507-8de7-4102bbf14af3",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "Ten Years After",
+        "bandId": "238d3d64-b4f2-4511-992e-44810359e525",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      },
+      {
+        "name": "The Fall",
+        "bandId": "29e2d6e1-b9f1-4390-8dec-2a6b40e86183",
+        "status": "approved",
+        "category": "overseas_rock",
+        "relations": [
+          0,
+          0
+        ],
+        "versionMatched": true
+      }
+    ]
+  },
+  "preservation": {
+    "inheritedDraftSha256": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337",
+    "inheritedDraftUnchanged": true,
+    "originalResearchCheckedAt": "2026-10-13 retained; no extension or replacement",
+    "musicbrainzCooldown": "prior failure and retry timestamp retained as history; elapsed retry succeeded this run and lastSuccessAt appended",
+    "schedules": "not modified; no duplicate runner created",
+    "concerts": "no collection, publication policy change or notification send"
+  },
+  "identityClient": {
+    "available": "receipt recovery; immutable journal preparation; retained alias readback checks",
+    "remaining": "mutation CLI and integration with frozen queue/lease/journal are not complete; no new writer or import/seed bypass used",
+    "existingChecks": "journal 38 isolated tests and lint/build passed in prior validated commits; code unchanged this run, not counted as new test execution"
+  },
+  "core200": {
+    "mandatory": 4,
+    "unfilledSlots": 196,
+    "meaning": "80 Japanese solo/unit +60 Japanese rock band +60 overseas rock/metal composition proposal, not verified world popularity ranking",
+    "candidateRows300": "unverified; no full chart refetch",
+    "newRegistrationsDeferred": "BMTH/Yonezu identity work not added to frozen40"
+  },
+  "limitations": [
+    "Last.fm error6 for King Gizzard, LiSA, NEWS, ryo, the Microphones: popularity unavailable; King Gizzard/LiSA independently verified through current MusicBrainz and official works.",
+    "Live/Spirit Last.fm returned other MBIDs; Omega/ravex works mix flagged. Never derive approval from API ID or tags alone.",
+    "All selected40 lack stored channel profiles/cache. Exact artist-specific official channel links and YouTube API match remain incomplete; no API images saved.",
+    "27 incomplete approvals are deferred with individual reasons; no catalog-wide completion claim."
+  ],
+  "items": [
+    {
+      "bandId": "982374a0-388c-41bd-97ee-fc4bd5d58505",
+      "name": "King Gizzard & the Lizard Wizard",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "982374a0-388c-41bd-97ee-fc4bd5d58505",
+        "name": "King Gizzard & the Lizard Wizard",
+        "aliases": [
+          "King Gizzard and the Lizard Wizard",
+          "KGLW",
+          "King Gizzard",
+          "King Gizz"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:48.167818+00:00",
+        "country_code": "AU",
+        "musicbrainz_id": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+          "evidenceUrl": "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.856Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:39:39.212Z",
+        "waitingSince": "2026-10-24T05:39:39.212Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:39:39.212Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:39:39.212Z",
+        "proposal": {
+          "target_band_id": "982374a0-388c-41bd-97ee-fc4bd5d58505",
+          "expected_updated_at": "2026-10-13T08:20:48.167818+00:00",
+          "artist_name": "King Gizzard & the Lizard Wizard",
+          "country": "AU",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "King Gizzard and the Lizard Wizard",
+            "KGLW",
+            "King Gizzard",
+            "King Gizz"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: ATO 공식 계약 발표는 호주 psychedelic rock 그룹임을 명시한다. ATO는 Melbourne 출신 그룹의 psychedelic/progressive rock·metal 활동 및 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz를 설명한다. 현재 공식 사이트가 아티스트 이름과 원작 음반 Phantom Island 및 Flight b741를 명시한다.",
+          "evidence_url": "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:39:40.246157+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:03.891Z",
+        "waitingSince": "2026-10-24T05:43:03.891Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:03.891Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 0,
+        "bandId": "982374a0-388c-41bd-97ee-fc4bd5d58505",
+        "name": "King Gizzard & the Lizard Wizard",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:36:41.173Z",
+        "mbCountry": "AU",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://kinggizzardandthelizardwizard.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCNiyS8zr2RIddszLwtoyUow"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "MusicBrainz 현재 응답의 동일 ID와 official homepage가 공식 사이트와 일치하고 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz가 레이블 원작과 일치. Last.fm error6은 인기 지표 미확인이며 신원 대체 근거와 구분한다. 현재 DB bandId=982374a0-388c-41bd-97ee-fc4bd5d58505; MBID=f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+          "sourceUrls": [
+            "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "https://kinggizzardandthelizardwizard.com/",
+            "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+          ]
+        },
+        "countryMatched": {
+          "summary": "ATO 공식 계약 발표는 호주 psychedelic rock 그룹임을 명시한다. ATO는 Melbourne 출신 그룹의 psychedelic/progressive rock·metal 활동 및 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz를 설명한다. 현재 공식 사이트가 아티스트 이름과 원작 음반 Phantom Island 및 Flight b741를 명시한다. 현재 country_code AU와 일치.",
+          "sourceUrls": [
+            "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "https://kinggizzardandthelizardwizard.com/",
+            "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+          ]
+        },
+        "genreMatched": {
+          "summary": "ATO 공식 계약 발표는 호주 psychedelic rock 그룹임을 명시한다. ATO는 Melbourne 출신 그룹의 psychedelic/progressive rock·metal 활동 및 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz를 설명한다. 현재 공식 사이트가 아티스트 이름과 원작 음반 Phantom Island 및 Flight b741를 명시한다.",
+          "sourceUrls": [
+            "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "https://kinggizzardandthelizardwizard.com/",
+            "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "국적 또는 형식만으로 판정하지 않고 위 실제 음악 활동을 기존 overseas_rock 정책과 대조했다. ATO 공식 계약 발표는 호주 psychedelic rock 그룹임을 명시한다. ATO는 Melbourne 출신 그룹의 psychedelic/progressive rock·metal 활동 및 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz를 설명한다. 현재 공식 사이트가 아티스트 이름과 원작 음반 Phantom Island 및 Flight b741를 명시한다.",
+          "sourceUrls": [
+            "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "https://kinggizzardandthelizardwizard.com/",
+            "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "MusicBrainz 현재 응답의 동일 ID와 official homepage가 공식 사이트와 일치하고 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz가 레이블 원작과 일치. Last.fm error6은 인기 지표 미확인이며 신원 대체 근거와 구분한다. 현재 service context에서 연결된 외부 key/evidenceUrl을 확인했다.",
+          "sourceUrls": [
+            "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "https://kinggizzardandthelizardwizard.com/",
+            "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 자동 공개 승인이 연결되며 개별 공연의 출처 공개 정책, 공식 근거·발표·일반/선예매 절대시각·회차·취소/변경/중복/수동 차단·초기 채움 무알림·기존 찜/동의와 발송 조건은 별도로 충족해야 한다. 이번 아티스트 검수는 공연 공개나 알림 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "https://kinggizzardandthelizardwizard.com/",
+            "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "ATO 공식 계약 발표는 호주 psychedelic rock 그룹임을 명시한다. ATO는 Melbourne 출신 그룹의 psychedelic/progressive rock·metal 활동 및 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz를 설명한다. 현재 공식 사이트가 아티스트 이름과 원작 음반 Phantom Island 및 Flight b741를 명시한다.",
+        "sources": [
+          {
+            "url": "https://atorecords.com/news/ato-welcomes-king-gizzard-the-lizard-wizard/",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "ATO 공식 계약 발표는 호주 psychedelic rock 그룹임을 명시한다."
+          },
+          {
+            "url": "https://atorecords.com/news/king-gizzard-announces-murder-of-the-universe-out-june-23rd/",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "ATO는 Melbourne 출신 그룹의 psychedelic/progressive rock·metal 활동 및 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz를 설명한다."
+          },
+          {
+            "url": "https://kinggizzardandthelizardwizard.com/",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "현재 공식 사이트가 아티스트 이름과 원작 음반 Phantom Island 및 Flight b741를 명시한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+            "checkedAt": "2026-10-24T05:36:41.173Z",
+            "summary": "MusicBrainz 현재 응답의 동일 ID와 official homepage가 공식 사이트와 일치하고 Murder of the Universe, Nonagon Infinity, I’m In Your Mind Fuzz가 레이블 원작과 일치. Last.fm error6은 인기 지표 미확인이며 신원 대체 근거와 구분한다. API의 국가/태그만으로 분류하지 않고 공식 원작과 실제 소개를 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "645e1294-ea7c-4646-bdcf-0682362137b3",
+      "name": "KOTOKO",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "645e1294-ea7c-4646-bdcf-0682362137b3",
+        "name": "KOTOKO",
+        "aliases": [
+          "kotoko"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:15.521364+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "b71abaa0-dd97-4e85-943d-3ffa2d3278a5",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:b71abaa0-dd97-4e85-943d-3ffa2d3278a5",
+          "evidenceUrl": "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.859Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:39:41.021Z",
+        "waitingSince": "2026-10-24T05:39:41.021Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:39:41.021Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:39:41.021Z",
+        "proposal": {
+          "target_band_id": "645e1294-ea7c-4646-bdcf-0682362137b3",
+          "expected_updated_at": "2026-10-13T08:18:15.521364+00:00",
+          "artist_name": "KOTOKO",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "kotoko"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 소개는 일본 Hokkaido Sapporo 출신 KOTOKO의 작사·작곡·가창, 애니메이션 주제가 및 2004년 羽-hane- 솔로 데뷔와 실제 일본 대중음악 활동을 설명한다.",
+          "evidence_url": "https://www.kotoko.asia/pages/profile"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:39:41.779718+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:03.991Z",
+        "waitingSince": "2026-10-24T05:43:03.991Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:03.991Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 1,
+        "bandId": "645e1294-ea7c-4646-bdcf-0682362137b3",
+        "name": "KOTOKO",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:22.756Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://whv-amusic.com/kotoko/"
+          },
+          {
+            "type": "official homepage",
+            "url": "https://www.kotoko.asia/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.geneon-ent.co.jp/rondorobe/music/kotoko/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "artist.getInfo 동일 MBID 및 getTopAlbums 羽 -Hane-를 공식 데뷔 음반과 대조. MusicBrainz의 현재 official homepage도 kotoko.asia로 일치. 현재 DB bandId=645e1294-ea7c-4646-bdcf-0682362137b3; MBID=b71abaa0-dd97-4e85-943d-3ffa2d3278a5",
+          "sourceUrls": [
+            "https://www.kotoko.asia/pages/profile",
+            "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개는 일본 Hokkaido Sapporo 출신 KOTOKO의 작사·작곡·가창, 애니메이션 주제가 및 2004년 羽-hane- 솔로 데뷔와 실제 일본 대중음악 활동을 설명한다. 현재 country_code JP와 일치.",
+          "sourceUrls": [
+            "https://www.kotoko.asia/pages/profile",
+            "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개는 일본 Hokkaido Sapporo 출신 KOTOKO의 작사·작곡·가창, 애니메이션 주제가 및 2004년 羽-hane- 솔로 데뷔와 실제 일본 대중음악 활동을 설명한다.",
+          "sourceUrls": [
+            "https://www.kotoko.asia/pages/profile",
+            "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "국적 또는 형식만으로 판정하지 않고 위 실제 음악 활동을 기존 jpop 정책과 대조했다. 공식 소개는 일본 Hokkaido Sapporo 출신 KOTOKO의 작사·작곡·가창, 애니메이션 주제가 및 2004년 羽-hane- 솔로 데뷔와 실제 일본 대중음악 활동을 설명한다.",
+          "sourceUrls": [
+            "https://www.kotoko.asia/pages/profile",
+            "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "artist.getInfo 동일 MBID 및 getTopAlbums 羽 -Hane-를 공식 데뷔 음반과 대조. MusicBrainz의 현재 official homepage도 kotoko.asia로 일치. 현재 service context에서 연결된 외부 key/evidenceUrl을 확인했다.",
+          "sourceUrls": [
+            "https://www.kotoko.asia/pages/profile",
+            "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 자동 공개 승인이 연결되며 개별 공연의 출처 공개 정책, 공식 근거·발표·일반/선예매 절대시각·회차·취소/변경/중복/수동 차단·초기 채움 무알림·기존 찜/동의와 발송 조건은 별도로 충족해야 한다. 이번 아티스트 검수는 공연 공개나 알림 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://www.kotoko.asia/pages/profile",
+            "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "공식 소개는 일본 Hokkaido Sapporo 출신 KOTOKO의 작사·작곡·가창, 애니메이션 주제가 및 2004년 羽-hane- 솔로 데뷔와 실제 일본 대중음악 활동을 설명한다.",
+        "sources": [
+          {
+            "url": "https://www.kotoko.asia/pages/profile",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "공식 소개는 일본 Hokkaido Sapporo 출신 KOTOKO의 작사·작곡·가창, 애니메이션 주제가 및 2004년 羽-hane- 솔로 데뷔와 실제 일본 대중음악 활동을 설명한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/b71abaa0-dd97-4e85-943d-3ffa2d3278a5",
+            "checkedAt": "2026-10-24T05:37:22.756Z",
+            "summary": "artist.getInfo 동일 MBID 및 getTopAlbums 羽 -Hane-를 공식 데뷔 음반과 대조. MusicBrainz의 현재 official homepage도 kotoko.asia로 일치. API의 국가/태그만으로 분류하지 않고 공식 원작과 실제 소개를 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "997baefb-82c0-4a47-aa6a-b005a92dffdc",
+      "name": "Lia",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "997baefb-82c0-4a47-aa6a-b005a92dffdc",
+        "name": "Lia",
+        "aliases": [
+          "リア"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:32.658001+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "9d9d1d36-1fed-44e2-9069-9398284e9f6c",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:9d9d1d36-1fed-44e2-9069-9398284e9f6c",
+          "evidenceUrl": "https://musicbrainz.org/artist/9d9d1d36-1fed-44e2-9069-9398284e9f6c"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.861Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "공식 홈페이지 lia-music.jp가 503이고 시도한 프로필도 접근 불가. Last.fm 동일 MBID와 Key+Lia 작품 후보는 확보했으나 공식 국가·실제 장르 및 원작 교차 근거 보완 필요.",
+        "checkedAt": "2026-10-24T05:43:04.055Z",
+        "waitingSince": "2026-10-24T05:43:04.055Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.055Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.118Z",
+        "waitingSince": "2026-10-24T05:43:04.118Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.118Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 2,
+        "bandId": "997baefb-82c0-4a47-aa6a-b005a92dffdc",
+        "name": "Lia",
+        "approvalApplied": false,
+        "approvalLimitation": "공식 홈페이지 lia-music.jp가 503이고 시도한 프로필도 접근 불가. Last.fm 동일 MBID와 Key+Lia 작품 후보는 확보했으나 공식 국가·실제 장르 및 원작 교차 근거 보완 필요.",
+        "mbObservedAt": "2026-10-24T05:37:24.724Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://lia-music.jp/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "e24b2bfa-8b7a-4f69-806d-5f829b595083",
+      "name": "LiSA",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e24b2bfa-8b7a-4f69-806d-5f829b595083",
+        "name": "LiSA",
+        "aliases": [
+          "織部里沙",
+          "lxixsxa",
+          "织部里沙 (LiSA OLiVE)"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:22.836868+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "85d76093-9865-4605-97fa-8c910929d366",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:85d76093-9865-4605-97fa-8c910929d366",
+          "evidenceUrl": "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.863Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:39:42.458Z",
+        "waitingSince": "2026-10-24T05:39:42.458Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:39:42.458Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:39:42.458Z",
+        "proposal": {
+          "target_band_id": "e24b2bfa-8b7a-4f69-806d-5f829b595083",
+          "expected_updated_at": "2026-10-13T08:18:22.836868+00:00",
+          "artist_name": "LiSA",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "織部里沙",
+            "lxixsxa",
+            "织部里沙 (LiSA OLiVE)"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 일본 Gifu 출신 LiSA, 2011년 Letters to U 솔로 데뷔, 애니메이션 주제가·록 페스티벌 활동 및 LiSA BEST -Day- / -Way-를 확인한다.",
+          "evidence_url": "https://www.sonymusic.co.jp/artist/lisa/profile/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:39:43.236167+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.184Z",
+        "waitingSince": "2026-10-24T05:43:04.184Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.184Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 3,
+        "bandId": "e24b2bfa-8b7a-4f69-806d-5f829b595083",
+        "name": "LiSA",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:26.591Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://www.lxixsxa.com/"
+          },
+          {
+            "type": "official homepage",
+            "url": "https://www.sonymusic.co.jp/artist/lisa/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCm9XuXWofRSxSqX3imN0q9A",
+          "https://www.youtube.com/lisaSMEJ"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Last.fm error6으로 지표는 미확인. 대신 현재 MusicBrainz 동일 ID의 official homepage가 Sony artist/lisa와 일치하고 LiSA BEST -Day- / -Way- 작품이 Sony 공식 소개와 일치하여 동명이인과 구분한다. 현재 DB bandId=e24b2bfa-8b7a-4f69-806d-5f829b595083; MBID=85d76093-9865-4605-97fa-8c910929d366",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Sony 공식 소개는 일본 Gifu 출신 LiSA, 2011년 Letters to U 솔로 데뷔, 애니메이션 주제가·록 페스티벌 활동 및 LiSA BEST -Day- / -Way-를 확인한다. 현재 country_code JP와 일치.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Sony 공식 소개는 일본 Gifu 출신 LiSA, 2011년 Letters to U 솔로 데뷔, 애니메이션 주제가·록 페스티벌 활동 및 LiSA BEST -Day- / -Way-를 확인한다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "국적 또는 형식만으로 판정하지 않고 위 실제 음악 활동을 기존 jpop 정책과 대조했다. Sony 공식 소개는 일본 Gifu 출신 LiSA, 2011년 Letters to U 솔로 데뷔, 애니메이션 주제가·록 페스티벌 활동 및 LiSA BEST -Day- / -Way-를 확인한다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "Last.fm error6으로 지표는 미확인. 대신 현재 MusicBrainz 동일 ID의 official homepage가 Sony artist/lisa와 일치하고 LiSA BEST -Day- / -Way- 작품이 Sony 공식 소개와 일치하여 동명이인과 구분한다. 현재 service context에서 연결된 외부 key/evidenceUrl을 확인했다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 자동 공개 승인이 연결되며 개별 공연의 출처 공개 정책, 공식 근거·발표·일반/선예매 절대시각·회차·취소/변경/중복/수동 차단·초기 채움 무알림·기존 찜/동의와 발송 조건은 별도로 충족해야 한다. 이번 아티스트 검수는 공연 공개나 알림 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Sony 공식 소개는 일본 Gifu 출신 LiSA, 2011년 Letters to U 솔로 데뷔, 애니메이션 주제가·록 페스티벌 활동 및 LiSA BEST -Day- / -Way-를 확인한다.",
+        "sources": [
+          {
+            "url": "https://www.sonymusic.co.jp/artist/lisa/profile/",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "Sony 공식 소개는 일본 Gifu 출신 LiSA, 2011년 Letters to U 솔로 데뷔, 애니메이션 주제가·록 페스티벌 활동 및 LiSA BEST -Day- / -Way-를 확인한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/85d76093-9865-4605-97fa-8c910929d366",
+            "checkedAt": "2026-10-24T05:37:26.591Z",
+            "summary": "Last.fm error6으로 지표는 미확인. 대신 현재 MusicBrainz 동일 ID의 official homepage가 Sony artist/lisa와 일치하고 LiSA BEST -Day- / -Way- 작품이 Sony 공식 소개와 일치하여 동명이인과 구분한다. API의 국가/태그만으로 분류하지 않고 공식 원작과 실제 소개를 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "69b6467b-6a1e-4738-9559-ffe18e9e7e72",
+      "name": "Live",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "69b6467b-6a1e-4738-9559-ffe18e9e7e72",
+        "name": "Live",
+        "aliases": [
+          "Līve"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:36.021011+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "cba77ba2-862d-4cee-a8f6-d3f9daf7211c",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:cba77ba2-862d-4cee-a8f6-d3f9daf7211c",
+          "evidenceUrl": "https://musicbrainz.org/artist/cba77ba2-862d-4cee-a8f6-d3f9daf7211c"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.865Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "Last.fm이 요청 MBID와 다른 MBID를 반환함. MusicBrainz의 현재 Live/US/공식 livetheband.com 관계는 확보했으나 공식 소개 접근 실패. Throwing Copper 등 원작과 실제 미국 록 밴드 신원을 독립 확인해야 함.",
+        "checkedAt": "2026-10-24T05:43:04.251Z",
+        "waitingSince": "2026-10-24T05:43:04.251Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.251Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.316Z",
+        "waitingSince": "2026-10-24T05:43:04.316Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.316Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 4,
+        "bandId": "69b6467b-6a1e-4738-9559-ffe18e9e7e72",
+        "name": "Live",
+        "approvalApplied": false,
+        "approvalLimitation": "Last.fm이 요청 MBID와 다른 MBID를 반환함. MusicBrainz의 현재 Live/US/공식 livetheband.com 관계는 확보했으나 공식 소개 접근 실패. Throwing Copper 등 원작과 실제 미국 록 밴드 신원을 독립 확인해야 함.",
+        "mbObservedAt": "2026-10-24T05:37:28.681Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://livetheband.com/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://freaks4live.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/user/Freaks4LiveTV"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "d19194a5-ffc0-4258-8984-131f96bcff0f",
+      "name": "livetune",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d19194a5-ffc0-4258-8984-131f96bcff0f",
+        "name": "livetune",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:59.533742+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "00b812dc-dcb7-41bf-833f-feba6e9eeea1",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:00b812dc-dcb7-41bf-833f-feba6e9eeea1",
+          "evidenceUrl": "https://musicbrainz.org/artist/00b812dc-dcb7-41bf-833f-feba6e9eeea1"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.868Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "MusicBrainz의 livetune/toysfactory 공식 관계와 Last.fm Tell Your World 원작 후보 확보. 레이블 bio/profile 접근 불가로 k z 등 제작자 신원·국가·실제 일본 대중음악 활동의 공식 소개가 미확인.",
+        "checkedAt": "2026-10-24T05:43:04.381Z",
+        "waitingSince": "2026-10-24T05:43:04.381Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.381Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.438Z",
+        "waitingSince": "2026-10-24T05:43:04.438Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.438Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 5,
+        "bandId": "d19194a5-ffc0-4258-8984-131f96bcff0f",
+        "name": "livetune",
+        "approvalApplied": false,
+        "approvalLimitation": "MusicBrainz의 livetune/toysfactory 공식 관계와 Last.fm Tell Your World 원작 후보 확보. 레이블 bio/profile 접근 불가로 k z 등 제작자 신원·국가·실제 일본 대중음악 활동의 공식 소개가 미확인.",
+        "mbObservedAt": "2026-10-24T05:37:30.709Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://livetune.jp/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.toysfactory.co.jp/artist/livetune"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCQcboHvGXFE5vuy2AK2MUOg"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "12bd5529-2c07-4899-ab8d-7c7af652ad5e",
+      "name": "Manfred Mann’s Earth Band",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "12bd5529-2c07-4899-ab8d-7c7af652ad5e",
+        "name": "Manfred Mann’s Earth Band",
+        "aliases": [
+          "Manfred Manns Earthband",
+          "Manfred Man's Earth Band",
+          "Manfred Mann´s Earth Band",
+          "Mannfred Manns Earth Band",
+          "Manfred Mann's Earthband",
+          "Manfred Manns Earth Band",
+          "Manfred Mann’s Earth Band featuring Chris Thompson"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:08.951804+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "83e9c775-84ea-4cf6-abdf-b9ffa8c3d060",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:83e9c775-84ea-4cf6-abdf-b9ffa8c3d060",
+          "evidenceUrl": "https://musicbrainz.org/artist/83e9c775-84ea-4cf6-abdf-b9ffa8c3d060"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.870Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "현재 MusicBrainz 공식 주소 manfredmann.co.uk 및 공식 The Roaring Silence 작품 확인. 다른 1960년대 Manfred Mann 그룹과 구분했고 Earth Band 자체의 국가·록 활동 소개 근거는 추가 필요.",
+        "checkedAt": "2026-10-24T05:43:04.499Z",
+        "waitingSince": "2026-10-24T05:43:04.499Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.499Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.557Z",
+        "waitingSince": "2026-10-24T05:43:04.557Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.557Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 6,
+        "bandId": "12bd5529-2c07-4899-ab8d-7c7af652ad5e",
+        "name": "Manfred Mann’s Earth Band",
+        "approvalApplied": false,
+        "approvalLimitation": "현재 MusicBrainz 공식 주소 manfredmann.co.uk 및 공식 The Roaring Silence 작품 확인. 다른 1960년대 Manfred Mann 그룹과 구분했고 Earth Band 자체의 국가·록 활동 소개 근거는 추가 필요.",
+        "mbObservedAt": "2026-10-24T05:37:32.659Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://www.manfredmann.co.uk/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UC46BoyW19rtJe4q_Qz2lZOQ"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "96b7352d-4880-46d2-9924-f8740a3e2465",
+      "name": "Mogwai",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "96b7352d-4880-46d2-9924-f8740a3e2465",
+        "name": "Mogwai",
+        "aliases": [
+          "Mogwa"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:06.854314+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "d700b3f5-45af-4d02-95ed-57d301bda93e",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:d700b3f5-45af-4d02-95ed-57d301bda93e",
+          "evidenceUrl": "https://musicbrainz.org/artist/d700b3f5-45af-4d02-95ed-57d301bda93e"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.872Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:35:51.554Z",
+        "waitingSince": "2026-10-24T05:35:51.554Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:35:51.554Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:35:51.554Z",
+        "proposal": {
+          "target_band_id": "96b7352d-4880-46d2-9924-f8740a3e2465",
+          "expected_updated_at": "2026-10-13T08:20:06.854314+00:00",
+          "artist_name": "Mogwai",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Mogwa"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다.",
+          "evidence_url": "https://www.subpop.com/artists/mogwai"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:35:53.491025+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.614Z",
+        "waitingSince": "2026-10-24T05:43:04.614Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.614Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 7,
+        "bandId": "96b7352d-4880-46d2-9924-f8740a3e2465",
+        "name": "Mogwai",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:34.551Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.mogwai.co.uk/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCqEG1Kwq26Zv2JfqdAwj9kg"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 DB 96b7352d-4880-46d2-9924-f8740a3e2465 / mb:d700b3f5-45af-4d02-95ed-57d301bda93e에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. 공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://www.subpop.com/artists/mogwai"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다. 현재 country_code GB와 일치.",
+          "sourceUrls": [
+            "https://www.subpop.com/artists/mogwai"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://www.subpop.com/artists/mogwai"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 계열 작품과 해외 활동을 대조하여 기존 overseas_rock 정책에 해당한다. 공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://www.subpop.com/artists/mogwai"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB 96b7352d-4880-46d2-9924-f8740a3e2465 / mb:d700b3f5-45af-4d02-95ed-57d301bda93e에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. 공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다. 연결된 key/evidenceUrl을 현재 context에서 확인했다.",
+          "sourceUrls": [
+            "https://www.subpop.com/artists/mogwai"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://www.subpop.com/artists/mogwai"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다.",
+        "sources": [
+          {
+            "url": "https://www.subpop.com/artists/mogwai",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "공식 레이블 Sub Pop은 Glasgow에서 1995년 결성된 Scottish 그룹과 구성원, 기타 기반 음악 및 Mr Beast의 art rock 성격을 설명한다. Young Team, Come On Die Young, Rock Action, Happy Songs For Happy People, Mr Beast가 연결 MBID의 작품 목록과 일치한다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "e083b38d-769c-4a23-85bd-fa55bdae476c",
+      "name": "Moxy Früvous",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e083b38d-769c-4a23-85bd-fa55bdae476c",
+        "name": "Moxy Früvous",
+        "aliases": [
+          "Moxy Fruvous"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:10.914575+00:00",
+        "country_code": "CA",
+        "musicbrainz_id": "bf103bd9-7a20-4a7e-95e0-369fe494fc88",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:bf103bd9-7a20-4a7e-95e0-369fe494fc88",
+          "evidenceUrl": "https://musicbrainz.org/artist/bf103bd9-7a20-4a7e-95e0-369fe494fc88"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.874Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "fruvous.com 공식 소개에서 Ontario 및 네 구성원·Bargainville 확인. folk/코미디/a cappella와 실제 rock 활동 경계의 작품 근거가 부족하여 밴드 형식만으로 해외 록 승인하지 않음.",
+        "checkedAt": "2026-10-24T05:43:04.675Z",
+        "waitingSince": "2026-10-24T05:43:04.675Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.675Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.732Z",
+        "waitingSince": "2026-10-24T05:43:04.732Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.732Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 8,
+        "bandId": "e083b38d-769c-4a23-85bd-fa55bdae476c",
+        "name": "Moxy Früvous",
+        "approvalApplied": false,
+        "approvalLimitation": "fruvous.com 공식 소개에서 Ontario 및 네 구성원·Bargainville 확인. folk/코미디/a cappella와 실제 rock 활동 경계의 작품 근거가 부족하여 밴드 형식만으로 해외 록 승인하지 않음.",
+        "mbObservedAt": "2026-10-24T05:37:36.318Z",
+        "mbCountry": "CA",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.fruvous.com/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "1b6f01b7-c62b-4788-b51d-22ef6f3bd9ca",
+      "name": "Mrs. GREEN APPLE",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "1b6f01b7-c62b-4788-b51d-22ef6f3bd9ca",
+        "name": "Mrs. GREEN APPLE",
+        "aliases": [
+          "ミセス",
+          "미세스그린애플",
+          "미세스 그린 애플"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:45:04.490725+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+          "evidenceUrl": "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.877Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:39:43.900Z",
+        "waitingSince": "2026-10-24T05:39:43.900Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:39:43.900Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:39:43.900Z",
+        "proposal": {
+          "target_band_id": "1b6f01b7-c62b-4788-b51d-22ef6f3bd9ca",
+          "expected_updated_at": "2026-10-12T14:45:04.490725+00:00",
+          "artist_name": "Mrs. GREEN APPLE",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "ミセス",
+            "미세스그린애플",
+            "미세스 그린 애플"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Universal 공식 소개의 일본 밴드 Mrs. GREEN APPLE 구성원 Omori Motoki, Wakai Hiroto, Fujisawa Ryoka와 2013년 결성, Variety·Attitude·ANTENNA·5·10 원작 활동을 대조했다. 음악 전문 CDJournal은 같은 구성원의 일본 rock band 및 2017년 동명 음반을 pop rock으로 명시한다.",
+          "evidence_url": "https://www.universal-music.co.jp/mrsgreenapple/biography/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:39:44.620355+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.790Z",
+        "waitingSince": "2026-10-24T05:43:04.790Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.790Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 9,
+        "bandId": "1b6f01b7-c62b-4788-b51d-22ef6f3bd9ca",
+        "name": "Mrs. GREEN APPLE",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:38.283Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://mrsgreenapple.com/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.universal-music.co.jp/mrsgreenapple/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCpFgmZm65yOU5X-hmWkWjuw"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Last.fm 동일 MBID 반환 및 Attitude·ANTENNA·5·10 원작이 레이블 소개와 일치한다. 현재 MusicBrainz 공식 레이블 URL 및 동일 작품도 대조. 현재 DB bandId=1b6f01b7-c62b-4788-b51d-22ef6f3bd9ca; MBID=9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Universal 공식 소개의 일본 밴드 Mrs. GREEN APPLE 구성원 Omori Motoki, Wakai Hiroto, Fujisawa Ryoka와 2013년 결성, Variety·Attitude·ANTENNA·5·10 원작 활동을 대조했다. 음악 전문 CDJournal은 같은 구성원의 일본 rock band 및 2017년 동명 음반을 pop rock으로 명시한다. 현재 country_code JP와 일치.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Universal 공식 소개의 일본 밴드 Mrs. GREEN APPLE 구성원 Omori Motoki, Wakai Hiroto, Fujisawa Ryoka와 2013년 결성, Variety·Attitude·ANTENNA·5·10 원작 활동을 대조했다. 음악 전문 CDJournal은 같은 구성원의 일본 rock band 및 2017년 동명 음반을 pop rock으로 명시한다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "국적 또는 형식만으로 판정하지 않고 위 실제 음악 활동을 기존 jpop 정책과 대조했다. Universal 공식 소개의 일본 밴드 Mrs. GREEN APPLE 구성원 Omori Motoki, Wakai Hiroto, Fujisawa Ryoka와 2013년 결성, Variety·Attitude·ANTENNA·5·10 원작 활동을 대조했다. 음악 전문 CDJournal은 같은 구성원의 일본 rock band 및 2017년 동명 음반을 pop rock으로 명시한다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "Last.fm 동일 MBID 반환 및 Attitude·ANTENNA·5·10 원작이 레이블 소개와 일치한다. 현재 MusicBrainz 공식 레이블 URL 및 동일 작품도 대조. 현재 service context에서 연결된 외부 key/evidenceUrl을 확인했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 자동 공개 승인이 연결되며 개별 공연의 출처 공개 정책, 공식 근거·발표·일반/선예매 절대시각·회차·취소/변경/중복/수동 차단·초기 채움 무알림·기존 찜/동의와 발송 조건은 별도로 충족해야 한다. 이번 아티스트 검수는 공연 공개나 알림 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Universal 공식 소개의 일본 밴드 Mrs. GREEN APPLE 구성원 Omori Motoki, Wakai Hiroto, Fujisawa Ryoka와 2013년 결성, Variety·Attitude·ANTENNA·5·10 원작 활동을 대조했다. 음악 전문 CDJournal은 같은 구성원의 일본 rock band 및 2017년 동명 음반을 pop rock으로 명시한다.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.co.jp/mrsgreenapple/biography/",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "Universal 공식 소개의 일본 밴드 Mrs. GREEN APPLE 구성원 Omori Motoki, Wakai Hiroto, Fujisawa Ryoka와 2013년 결성, Variety·Attitude·ANTENNA·5·10 원작 활동을 대조했다."
+          },
+          {
+            "url": "https://artist.cdjournal.com/d/mrsgreen-apple/4116111438",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "음악 전문 CDJournal은 같은 구성원의 일본 rock band 및 2017년 동명 음반을 pop rock으로 명시한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/9ce674b7-5180-41f7-9ac2-95dc0d8a0ed2",
+            "checkedAt": "2026-10-24T05:37:38.283Z",
+            "summary": "Last.fm 동일 MBID 반환 및 Attitude·ANTENNA·5·10 원작이 레이블 소개와 일치한다. 현재 MusicBrainz 공식 레이블 URL 및 동일 작품도 대조. API의 국가/태그만으로 분류하지 않고 공식 원작과 실제 소개를 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "ac54c4a6-491c-4485-ae20-166959581617",
+      "name": "Muse",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "ac54c4a6-491c-4485-ae20-166959581617",
+        "name": "Muse",
+        "aliases": [
+          "Rocket Baby Dolls",
+          "ミューズ"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:37.714791+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "9c9f1380-2516-4fc9-a3e6-f9f61941d090",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:9c9f1380-2516-4fc9-a3e6-f9f61941d090",
+          "evidenceUrl": "https://musicbrainz.org/artist/9c9f1380-2516-4fc9-a3e6-f9f61941d090"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.879Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:35:54.664Z",
+        "waitingSince": "2026-10-24T05:35:54.664Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:35:54.664Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:35:54.664Z",
+        "proposal": {
+          "target_band_id": "ac54c4a6-491c-4485-ae20-166959581617",
+          "expected_updated_at": "2026-10-13T08:19:37.714791+00:00",
+          "artist_name": "Muse",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Rocket Baby Dolls",
+            "ミューズ"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다.",
+          "evidence_url": "https://wmg.jp/muse"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:35:55.499492+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.846Z",
+        "waitingSince": "2026-10-24T05:43:04.846Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.846Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 10,
+        "bandId": "ac54c4a6-491c-4485-ae20-166959581617",
+        "name": "Muse",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:40.193Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://muse.mu/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCGGhM6XCSJFQ6DTRffnKRIw"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 DB ac54c4a6-491c-4485-ae20-166959581617 / mb:9c9f1380-2516-4fc9-a3e6-f9f61941d090에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다.",
+          "sourceUrls": [
+            "https://wmg.jp/muse"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다. 현재 country_code GB와 일치.",
+          "sourceUrls": [
+            "https://wmg.jp/muse"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다.",
+          "sourceUrls": [
+            "https://wmg.jp/muse"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 계열 작품과 해외 활동을 대조하여 기존 overseas_rock 정책에 해당한다. Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다.",
+          "sourceUrls": [
+            "https://wmg.jp/muse"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB ac54c4a6-491c-4485-ae20-166959581617 / mb:9c9f1380-2516-4fc9-a3e6-f9f61941d090에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다. 연결된 key/evidenceUrl을 현재 context에서 확인했다.",
+          "sourceUrls": [
+            "https://wmg.jp/muse"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://wmg.jp/muse"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다.",
+        "sources": [
+          {
+            "url": "https://wmg.jp/muse",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "Warner 공식 소개의 영국 Devon Teignmouth 출신 3인조 록 밴드이며 Matthew Bellamy, Chris Wolstenholme, Dominic Howard가 구성원이다. Absolution, Origin of Symmetry, The 2nd Law를 연결 MBID의 작품 목록과 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "8f0b57b1-a196-44ae-92a3-5ab463fc6901",
+      "name": "My Chemical Romance",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "8f0b57b1-a196-44ae-92a3-5ab463fc6901",
+        "name": "My Chemical Romance",
+        "aliases": [
+          "MCR",
+          "마이 케미컬 로맨스",
+          "마이케미컬로맨스",
+          "My Chem"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:45:07.226645+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "c07f0676-9143-4217-8a9f-4c26bd636f13",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mcr",
+          "evidenceUrl": "https://ualive.com/concerts/397"
+        },
+        {
+          "key": "mb:c07f0676-9143-4217-8a9f-4c26bd636f13",
+          "evidenceUrl": "https://musicbrainz.org/artist/c07f0676-9143-4217-8a9f-4c26bd636f13"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.881Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:35:56.148Z",
+        "waitingSince": "2026-10-24T05:35:56.148Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:35:56.148Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:35:56.148Z",
+        "proposal": {
+          "target_band_id": "8f0b57b1-a196-44ae-92a3-5ab463fc6901",
+          "expected_updated_at": "2026-10-12T14:45:07.226645+00:00",
+          "artist_name": "My Chemical Romance",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "MCR",
+            "마이 케미컬 로맨스",
+            "마이케미컬로맨스",
+            "My Chem"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다.",
+          "evidence_url": "https://wmg.jp/my-chemical-romance"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:35:56.854118+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:04.903Z",
+        "waitingSince": "2026-10-24T05:43:04.903Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.903Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 11,
+        "bandId": "8f0b57b1-a196-44ae-92a3-5ab463fc6901",
+        "name": "My Chemical Romance",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:42.451Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://www.mychemicalromance.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCCZGYab5SpD0I7Z5JqJZgww"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 DB 8f0b57b1-a196-44ae-92a3-5ab463fc6901 / mb:c07f0676-9143-4217-8a9f-4c26bd636f13에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://wmg.jp/my-chemical-romance",
+            "https://ualive.com/concerts/397"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다. 현재 country_code US와 일치.",
+          "sourceUrls": [
+            "https://wmg.jp/my-chemical-romance",
+            "https://ualive.com/concerts/397"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://wmg.jp/my-chemical-romance",
+            "https://ualive.com/concerts/397"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 계열 작품과 해외 활동을 대조하여 기존 overseas_rock 정책에 해당한다. Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://wmg.jp/my-chemical-romance",
+            "https://ualive.com/concerts/397"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB 8f0b57b1-a196-44ae-92a3-5ab463fc6901 / mb:c07f0676-9143-4217-8a9f-4c26bd636f13에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다. 연결된 key/evidenceUrl을 현재 context에서 확인했다.",
+          "sourceUrls": [
+            "https://wmg.jp/my-chemical-romance",
+            "https://ualive.com/concerts/397"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://wmg.jp/my-chemical-romance",
+            "https://ualive.com/concerts/397"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다.",
+        "sources": [
+          {
+            "url": "https://wmg.jp/my-chemical-romance",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "Warner 공식 소개는 2001년 미국 New Jersey 결성, Gerard Way 등 구성원, punk/emo 및 rock 활동과 The Black Parade, Three Cheers for Sweet Revenge를 확인한다. 연결 MBID의 작품 목록과 일치한다."
+          },
+          {
+            "url": "https://ualive.com/concerts/397",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "현재 DB의 별도 외부 key mcr에 연결된 ualive 페이지가 My Chemical Romance를 출연진 및 이모 록 아티스트로 명시한다. Warner 소개와 동일한 아티스트임을 대조했으며 공연 예매 시각 검증이나 수집은 수행하지 않았다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "99e4e3da-9711-4da0-a78d-cd3dece0ba73",
+      "name": "NEWS",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "99e4e3da-9711-4da0-a78d-cd3dece0ba73",
+        "name": "NEWS",
+        "aliases": [
+          "「NEWS」",
+          "NewS"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:38.74306+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "53187856-5b14-4b58-9c81-c5ea843b6c7a",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:53187856-5b14-4b58-9c81-c5ea843b6c7a",
+          "evidenceUrl": "https://musicbrainz.org/artist/53187856-5b14-4b58-9c81-c5ea843b6c7a"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.883Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "NEWS 공식 레이블과 세 구성원의 일본 출신 프로필 확인. Last.fm error6이며 현재 MBID는 touch/pacific/color 작품을 반환. 공식 음반과 실제 J-pop 활동·동일 MBID의 작품 대조가 더 필요.",
+        "checkedAt": "2026-10-24T05:43:04.966Z",
+        "waitingSince": "2026-10-24T05:43:04.966Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:04.966Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.029Z",
+        "waitingSince": "2026-10-24T05:43:05.029Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.029Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 12,
+        "bandId": "99e4e3da-9711-4da0-a78d-cd3dece0ba73",
+        "name": "NEWS",
+        "approvalApplied": false,
+        "approvalLimitation": "NEWS 공식 레이블과 세 구성원의 일본 출신 프로필 확인. Last.fm error6이며 현재 MBID는 touch/pacific/color 작품을 반환. 공식 음반과 실제 J-pop 활동·동일 MBID의 작품 대조가 더 필요.",
+        "mbObservedAt": "2026-10-24T05:37:44.387Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://starto.jp/s/p/artist/12"
+          },
+          {
+            "type": "official homepage",
+            "url": "https://www.elov-label.jp/s/je/artist/J0005"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCj9f2amb1D0RuTNrBQ9GJoQ"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "7b419217-cbb3-46e0-8a8a-14d852630316",
+      "name": "Noir Désir",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "7b419217-cbb3-46e0-8a8a-14d852630316",
+        "name": "Noir Désir",
+        "aliases": [
+          "Noir Disir",
+          "Noir Desir"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:37.289727+00:00",
+        "country_code": "FR",
+        "musicbrainz_id": "e6358374-5eea-4205-be22-382ed6df493c",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:e6358374-5eea-4205-be22-382ed6df493c",
+          "evidenceUrl": "https://musicbrainz.org/artist/e6358374-5eea-4205-be22-382ed6df493c"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.885Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "noirdez.com 현재 페이지는 팬 토론 및 Amazon affiliate로 보이며 MB의 official 관계만으로 공식 출처라 확정하지 않음. 프랑스 록 원작의 현 레이블·공식 신원 대체 근거 필요.",
+        "checkedAt": "2026-10-24T05:43:05.087Z",
+        "waitingSince": "2026-10-24T05:43:05.087Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.087Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.146Z",
+        "waitingSince": "2026-10-24T05:43:05.146Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.146Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 13,
+        "bandId": "7b419217-cbb3-46e0-8a8a-14d852630316",
+        "name": "Noir Désir",
+        "approvalApplied": false,
+        "approvalLimitation": "noirdez.com 현재 페이지는 팬 토론 및 Amazon affiliate로 보이며 MB의 official 관계만으로 공식 출처라 확정하지 않음. 프랑스 록 원작의 현 레이블·공식 신원 대체 근거 필요.",
+        "mbObservedAt": "2026-10-24T05:37:46.222Z",
+        "mbCountry": "FR",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.noirdez.com/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "d4b944ef-55cb-474c-968c-a18a7f524984",
+      "name": "Omega",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d4b944ef-55cb-474c-968c-a18a7f524984",
+        "name": "Omega",
+        "aliases": [
+          "Omega Együttes",
+          "Omega Redstar"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:57.526162+00:00",
+        "country_code": "HU",
+        "musicbrainz_id": "819e4775-b9a6-4a24-b4af-0acfa9669a00",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:819e4775-b9a6-4a24-b4af-0acfa9669a00",
+          "evidenceUrl": "https://musicbrainz.org/artist/819e4775-b9a6-4a24-b4af-0acfa9669a00"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.888Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "Omega Last.fm 동일 MBID 응답에 헝가리 10000 lépés와 El Dueño del Flow 등이 혼재. MusicBrainz HU 및 초기 작품 후보만으로 전체 신원을 확정하지 않음. omega.hu 접근 불가로 원작·국가·신원 독립 확인 필요.",
+        "checkedAt": "2026-10-24T05:43:05.213Z",
+        "waitingSince": "2026-10-24T05:43:05.213Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.213Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.271Z",
+        "waitingSince": "2026-10-24T05:43:05.271Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.271Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 14,
+        "bandId": "d4b944ef-55cb-474c-968c-a18a7f524984",
+        "name": "Omega",
+        "approvalApplied": false,
+        "approvalLimitation": "Omega Last.fm 동일 MBID 응답에 헝가리 10000 lépés와 El Dueño del Flow 등이 혼재. MusicBrainz HU 및 초기 작품 후보만으로 전체 신원을 확정하지 않음. omega.hu 접근 불가로 원작·국가·신원 독립 확인 필요.",
+        "mbObservedAt": "2026-10-24T05:37:48.041Z",
+        "mbCountry": "HU",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.omega.hu/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "a8dc73bf-1da6-4088-8602-95c2ae2296cf",
+      "name": "Omoinotake",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "a8dc73bf-1da6-4088-8602-95c2ae2296cf",
+        "name": "Omoinotake",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.14933+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "61c836d9-5e9e-4db1-94d9-35100a0537e9",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:61c836d9-5e9e-4db1-94d9-35100a0537e9",
+          "evidenceUrl": "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.890Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:41:25.765Z",
+        "waitingSince": "2026-10-24T05:41:25.765Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:41:25.765Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:41:25.765Z",
+        "proposal": {
+          "target_band_id": "a8dc73bf-1da6-4088-8602-95c2ae2296cf",
+          "expected_updated_at": "2026-10-12T14:24:09.14933+00:00",
+          "artist_name": "Omoinotake",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 공연 제작사 소개는 일본 Shimane 출신으로 Tokyo에서 2012년 결성된 Fujii Reo, Fukushima Tomoaki, Tomita Hironoshin의 피아노 트리오와 EVERBLUE, Ammolite, 幾億光年의 실제 일본 대중음악 활동을 명시한다. 음악 전문 CDJournal은 같은 세 구성원의 EVERBLUE 음반을 일본 rock & pops로 분류하고 Blue Period 주제가 및 일본 데뷔 활동을 설명한다.",
+          "evidence_url": "https://www.creativeman.co.jp/event/omoinotake-2026/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:41:27.251215+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.332Z",
+        "waitingSince": "2026-10-24T05:43:05.332Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.332Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 15,
+        "bandId": "a8dc73bf-1da6-4088-8602-95c2ae2296cf",
+        "name": "Omoinotake",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:49.786Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://omoinotake.com/"
+          },
+          {
+            "type": "official homepage",
+            "url": "https://www.sonymusic.co.jp/artist/Omoinotake/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCv1jAWnr9rPKRQsEZYl5izQ"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 Last.fm 동일 MBID 반환과 EVERBLUE/Ammolite/幾億光年 작품을 제작사 공식 소개와 대조했다. 현재 MusicBrainz 동일 ID의 official homepage는 omoinotake.com/Sony 해당 artist 프로필과 일치한다.",
+          "sourceUrls": [
+            "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "https://artist.cdjournal.com/d/everblue/4121090898",
+            "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 공연 제작사 소개는 일본 Shimane 출신으로 Tokyo에서 2012년 결성된 Fujii Reo, Fukushima Tomoaki, Tomita Hironoshin의 피아노 트리오와 EVERBLUE, Ammolite, 幾億光年의 실제 일본 대중음악 활동을 명시한다. 음악 전문 CDJournal은 같은 세 구성원의 EVERBLUE 음반을 일본 rock & pops로 분류하고 Blue Period 주제가 및 일본 데뷔 활동을 설명한다. 현재 country_code JP와 일치.",
+          "sourceUrls": [
+            "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "https://artist.cdjournal.com/d/everblue/4121090898",
+            "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 공연 제작사 소개는 일본 Shimane 출신으로 Tokyo에서 2012년 결성된 Fujii Reo, Fukushima Tomoaki, Tomita Hironoshin의 피아노 트리오와 EVERBLUE, Ammolite, 幾億光年의 실제 일본 대중음악 활동을 명시한다. 음악 전문 CDJournal은 같은 세 구성원의 EVERBLUE 음반을 일본 rock & pops로 분류하고 Blue Period 주제가 및 일본 데뷔 활동을 설명한다.",
+          "sourceUrls": [
+            "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "https://artist.cdjournal.com/d/everblue/4121090898",
+            "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 원작 활동을 기존 jpop 정책과 대조했다. 공식 공연 제작사 소개는 일본 Shimane 출신으로 Tokyo에서 2012년 결성된 Fujii Reo, Fukushima Tomoaki, Tomita Hironoshin의 피아노 트리오와 EVERBLUE, Ammolite, 幾億光年의 실제 일본 대중음악 활동을 명시한다. 음악 전문 CDJournal은 같은 세 구성원의 EVERBLUE 음반을 일본 rock & pops로 분류하고 Blue Period 주제가 및 일본 데뷔 활동을 설명한다.",
+          "sourceUrls": [
+            "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "https://artist.cdjournal.com/d/everblue/4121090898",
+            "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 Last.fm 동일 MBID 반환과 EVERBLUE/Ammolite/幾億光年 작품을 제작사 공식 소개와 대조했다. 현재 MusicBrainz 동일 ID의 official homepage는 omoinotake.com/Sony 해당 artist 프로필과 일치한다. 현재 context에서 DB bandId=a8dc73bf-1da6-4088-8602-95c2ae2296cf와 MBID=61c836d9-5e9e-4db1-94d9-35100a0537e9 외부 연결을 확인했다.",
+          "sourceUrls": [
+            "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "https://artist.cdjournal.com/d/everblue/4121090898",
+            "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "https://artist.cdjournal.com/d/everblue/4121090898",
+            "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "공식 공연 제작사 소개는 일본 Shimane 출신으로 Tokyo에서 2012년 결성된 Fujii Reo, Fukushima Tomoaki, Tomita Hironoshin의 피아노 트리오와 EVERBLUE, Ammolite, 幾億光年의 실제 일본 대중음악 활동을 명시한다. 음악 전문 CDJournal은 같은 세 구성원의 EVERBLUE 음반을 일본 rock & pops로 분류하고 Blue Period 주제가 및 일본 데뷔 활동을 설명한다.",
+        "sources": [
+          {
+            "url": "https://www.creativeman.co.jp/event/omoinotake-2026/",
+            "summary": "공식 공연 제작사 소개는 일본 Shimane 출신으로 Tokyo에서 2012년 결성된 Fujii Reo, Fukushima Tomoaki, Tomita Hironoshin의 피아노 트리오와 EVERBLUE, Ammolite, 幾億光年의 실제 일본 대중음악 활동을 명시한다.",
+            "checkedAt": "2026-10-24T05:41:25.695103+00:00"
+          },
+          {
+            "url": "https://artist.cdjournal.com/d/everblue/4121090898",
+            "summary": "음악 전문 CDJournal은 같은 세 구성원의 EVERBLUE 음반을 일본 rock & pops로 분류하고 Blue Period 주제가 및 일본 데뷔 활동을 설명한다.",
+            "checkedAt": "2026-10-24T05:41:25.695103+00:00"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/61c836d9-5e9e-4db1-94d9-35100a0537e9",
+            "summary": "현재 Last.fm 동일 MBID 반환과 EVERBLUE/Ammolite/幾億光年 작품을 제작사 공식 소개와 대조했다. 현재 MusicBrainz 동일 ID의 official homepage는 omoinotake.com/Sony 해당 artist 프로필과 일치한다.",
+            "checkedAt": "2026-10-24T05:37:49.786Z"
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "cc821f60-942f-4b22-84be-a1b3229fc545",
+      "name": "Pavement",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "cc821f60-942f-4b22-84be-a1b3229fc545",
+        "name": "Pavement",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:03.119293+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "36bfa85f-737b-41db-a8fc-b8825850ffc3",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:36bfa85f-737b-41db-a8fc-b8825850ffc3",
+          "evidenceUrl": "https://musicbrainz.org/artist/36bfa85f-737b-41db-a8fc-b8825850ffc3"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.893Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "Domino의 공식 Pavement 소개와 Slanted And Enchanted/Crooked Rain 원작 확인. 국가·실제 indie rock 근거 본문 보완 필요. Matador는 robots 제한/접근 실패를 보존하며 우회하지 않음.",
+        "checkedAt": "2026-10-24T05:43:05.406Z",
+        "waitingSince": "2026-10-24T05:43:05.406Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.406Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.471Z",
+        "waitingSince": "2026-10-24T05:43:05.471Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.471Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 16,
+        "bandId": "cc821f60-942f-4b22-84be-a1b3229fc545",
+        "name": "Pavement",
+        "approvalApplied": false,
+        "approvalLimitation": "Domino의 공식 Pavement 소개와 Slanted And Enchanted/Crooked Rain 원작 확인. 국가·실제 indie rock 근거 본문 보완 필요. Matador는 robots 제한/접근 실패를 보존하며 우회하지 않음.",
+        "mbObservedAt": "2026-10-24T05:37:51.642Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.matadorrecords.com/pavement/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "bf06a521-70d3-49c7-9213-881f5f655be2",
+      "name": "Pendragon",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "bf06a521-70d3-49c7-9213-881f5f655be2",
+        "name": "Pendragon",
+        "aliases": [
+          "Pentragon"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:11.998768+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "702cded2-ac87-476d-8e56-caa1999064a7",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:702cded2-ac87-476d-8e56-caa1999064a7",
+          "evidenceUrl": "https://musicbrainz.org/artist/702cded2-ac87-476d-8e56-caa1999064a7"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.896Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "공식 pendragon.mu HTTP500; Cherry Red 시도 경로 접근 불가. Last.fm/MB 동일 ID와 The Masquerade Overture 등 작품 후보는 확보했지만 영국 progressive rock 공식 소개 대체 근거 필요.",
+        "checkedAt": "2026-10-24T05:43:05.534Z",
+        "waitingSince": "2026-10-24T05:43:05.534Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.534Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.675Z",
+        "waitingSince": "2026-10-24T05:43:05.675Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.675Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 17,
+        "bandId": "bf06a521-70d3-49c7-9213-881f5f655be2",
+        "name": "Pendragon",
+        "approvalApplied": false,
+        "approvalLimitation": "공식 pendragon.mu HTTP500; Cherry Red 시도 경로 접근 불가. Last.fm/MB 동일 ID와 The Masquerade Overture 등 작품 후보는 확보했지만 영국 progressive rock 공식 소개 대체 근거 필요.",
+        "mbObservedAt": "2026-10-24T05:37:53.670Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://www.pendragon.mu/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCG9EnZZF7gC1aozLhZOmacw"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "48f9e0f8-78af-4153-a47b-97192d40e402",
+      "name": "Phish",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "48f9e0f8-78af-4153-a47b-97192d40e402",
+        "name": "Phish",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:04.484534+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "e01646f2-2a04-450d-8bf2-0d993082e058",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:e01646f2-2a04-450d-8bf2-0d993082e058",
+          "evidenceUrl": "https://musicbrainz.org/artist/e01646f2-2a04-450d-8bf2-0d993082e058"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.898Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "phish.com/band 공식 공연·작품 이력 확인. Vermont 기록을 국적 또는 장르 충분 근거로 사용하지 않으며 원작과 미국 록 활동 소개 추가 대조 필요.",
+        "checkedAt": "2026-10-24T05:43:05.750Z",
+        "waitingSince": "2026-10-24T05:43:05.750Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.750Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.812Z",
+        "waitingSince": "2026-10-24T05:43:05.812Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.812Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 18,
+        "bandId": "48f9e0f8-78af-4153-a47b-97192d40e402",
+        "name": "Phish",
+        "approvalApplied": false,
+        "approvalLimitation": "phish.com/band 공식 공연·작품 이력 확인. Vermont 기록을 국적 또는 장르 충분 근거로 사용하지 않으며 원작과 미국 록 활동 소개 추가 대조 필요.",
+        "mbObservedAt": "2026-10-24T05:37:55.494Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://phish.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCHzSA59X-pZa_nfvvcf_qcQ",
+          "https://www.youtube.com/user/phish"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "40d82383-132f-472b-96ef-3135addcb47e",
+      "name": "Pretenders",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "40d82383-132f-472b-96ef-3135addcb47e",
+        "name": "Pretenders",
+        "aliases": [
+          "プリテンダーズ",
+          "The Pretenders",
+          "Pretender"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:44.780387+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "e9c832b0-384b-4ee6-aec0-111372784aac",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:e9c832b0-384b-4ee6-aec0-111372784aac",
+          "evidenceUrl": "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.901Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:39:45.257Z",
+        "waitingSince": "2026-10-24T05:39:45.257Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:39:45.257Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:39:45.257Z",
+        "proposal": {
+          "target_band_id": "40d82383-132f-472b-96ef-3135addcb47e",
+          "expected_updated_at": "2026-10-13T08:19:44.780387+00:00",
+          "artist_name": "Pretenders",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "プリテンダーズ",
+            "The Pretenders",
+            "Pretender"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 음반 목록에서 Pretenders, Learning To Crawl, Get Close, Last of the Independents를 확인했다. 음악 전문 판매처 Rough Trade는 England Hereford에서 1978년 결성된 English-American rock band와 Chrissie Hynde, Martin Chambers를 명시한다. 밴드 결성지 GB와 개인 구성원 국적을 구분한다.",
+          "evidence_url": "https://thepretenders.com/discography/"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:39:45.998763+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:05.933Z",
+        "waitingSince": "2026-10-24T05:43:05.933Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:05.933Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 19,
+        "bandId": "40d82383-132f-472b-96ef-3135addcb47e",
+        "name": "Pretenders",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:37:57.365Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://thepretenders.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UC4oEfUAo2t1rJgM73BtO--g"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Last.fm 동일 MBID 및 네 원작이 공식 음반 목록과 일치하고 현재 MusicBrainz 공식 홈페이지도 thepretenders.com으로 일치한다. 현재 DB bandId=40d82383-132f-472b-96ef-3135addcb47e; MBID=e9c832b0-384b-4ee6-aec0-111372784aac",
+          "sourceUrls": [
+            "https://thepretenders.com/discography/",
+            "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 음반 목록에서 Pretenders, Learning To Crawl, Get Close, Last of the Independents를 확인했다. 음악 전문 판매처 Rough Trade는 England Hereford에서 1978년 결성된 English-American rock band와 Chrissie Hynde, Martin Chambers를 명시한다. 밴드 결성지 GB와 개인 구성원 국적을 구분한다. 현재 country_code GB와 일치.",
+          "sourceUrls": [
+            "https://thepretenders.com/discography/",
+            "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 음반 목록에서 Pretenders, Learning To Crawl, Get Close, Last of the Independents를 확인했다. 음악 전문 판매처 Rough Trade는 England Hereford에서 1978년 결성된 English-American rock band와 Chrissie Hynde, Martin Chambers를 명시한다. 밴드 결성지 GB와 개인 구성원 국적을 구분한다.",
+          "sourceUrls": [
+            "https://thepretenders.com/discography/",
+            "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "국적 또는 형식만으로 판정하지 않고 위 실제 음악 활동을 기존 overseas_rock 정책과 대조했다. 공식 음반 목록에서 Pretenders, Learning To Crawl, Get Close, Last of the Independents를 확인했다. 음악 전문 판매처 Rough Trade는 England Hereford에서 1978년 결성된 English-American rock band와 Chrissie Hynde, Martin Chambers를 명시한다. 밴드 결성지 GB와 개인 구성원 국적을 구분한다.",
+          "sourceUrls": [
+            "https://thepretenders.com/discography/",
+            "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "Last.fm 동일 MBID 및 네 원작이 공식 음반 목록과 일치하고 현재 MusicBrainz 공식 홈페이지도 thepretenders.com으로 일치한다. 현재 service context에서 연결된 외부 key/evidenceUrl을 확인했다.",
+          "sourceUrls": [
+            "https://thepretenders.com/discography/",
+            "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원별 공연 자동 공개 승인이 연결되며 개별 공연의 출처 공개 정책, 공식 근거·발표·일반/선예매 절대시각·회차·취소/변경/중복/수동 차단·초기 채움 무알림·기존 찜/동의와 발송 조건은 별도로 충족해야 한다. 이번 아티스트 검수는 공연 공개나 알림 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://thepretenders.com/discography/",
+            "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "공식 음반 목록에서 Pretenders, Learning To Crawl, Get Close, Last of the Independents를 확인했다. 음악 전문 판매처 Rough Trade는 England Hereford에서 1978년 결성된 English-American rock band와 Chrissie Hynde, Martin Chambers를 명시한다. 밴드 결성지 GB와 개인 구성원 국적을 구분한다.",
+        "sources": [
+          {
+            "url": "https://thepretenders.com/discography/",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "공식 음반 목록에서 Pretenders, Learning To Crawl, Get Close, Last of the Independents를 확인했다."
+          },
+          {
+            "url": "https://www.roughtrade.com/en-gb/artist/pretenders",
+            "checkedAt": "2026-10-24T05:39:39.127670+00:00",
+            "summary": "음악 전문 판매처 Rough Trade는 England Hereford에서 1978년 결성된 English-American rock band와 Chrissie Hynde, Martin Chambers를 명시한다. 밴드 결성지 GB와 개인 구성원 국적을 구분한다."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/e9c832b0-384b-4ee6-aec0-111372784aac",
+            "checkedAt": "2026-10-24T05:37:57.365Z",
+            "summary": "Last.fm 동일 MBID 및 네 원작이 공식 음반 목록과 일치하고 현재 MusicBrainz 공식 홈페이지도 thepretenders.com으로 일치한다. API의 국가/태그만으로 분류하지 않고 공식 원작과 실제 소개를 대조했다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "f5e5991c-be30-4d88-9d9d-65733530dd08",
+      "name": "Procol Harum",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "f5e5991c-be30-4d88-9d9d-65733530dd08",
+        "name": "Procol Harum",
+        "aliases": [
+          "프로콜 하룸",
+          "Procul Harum",
+          "Procol Harem",
+          "プロコル・ハルム",
+          "Procol Harum & Gary Brooker"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:02.800799+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "44119570-4d53-46e7-a447-bd18608c28d8",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:44119570-4d53-46e7-a447-bd18608c28d8",
+          "evidenceUrl": "https://musicbrainz.org/artist/44119570-4d53-46e7-a447-bd18608c28d8"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.903Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "MusicBrainz 동일 Procol Harum/GB와 원작 후보 및 Last.fm 동일 MBID 확보. 현 공식/권리자 소개의 국가·실제 록 활동 본문과 작품 교차 검증 미완료.",
+        "checkedAt": "2026-10-24T05:43:06.043Z",
+        "waitingSince": "2026-10-24T05:43:06.043Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.043Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.105Z",
+        "waitingSince": "2026-10-24T05:43:06.105Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.105Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 20,
+        "bandId": "f5e5991c-be30-4d88-9d9d-65733530dd08",
+        "name": "Procol Harum",
+        "approvalApplied": false,
+        "approvalLimitation": "MusicBrainz 동일 Procol Harum/GB와 원작 후보 및 Last.fm 동일 MBID 확보. 현 공식/권리자 소개의 국가·실제 록 활동 본문과 작품 교차 검증 미완료.",
+        "mbObservedAt": "2026-10-24T05:37:59.286Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "f5200ff6-aea2-48f4-8551-eaa82e4a1f03",
+      "name": "ravex",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "f5200ff6-aea2-48f4-8551-eaa82e4a1f03",
+        "name": "ravex",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:00.556037+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "38c7405e-387f-490e-b9d0-96540c4a3855",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:38c7405e-387f-490e-b9d0-96540c4a3855",
+          "evidenceUrl": "https://musicbrainz.org/artist/38c7405e-387f-490e-b9d0-96540c4a3855"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.905Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "ravex 공식 avex 경로 접근 불가. Last.fm 및 MB 작품에 trax와 MONTAGEM PRADA 등이 혼재하므로 이름/태그/MBID 일치만으로 신원·일본 장르 확정하지 않음. 원작 제작자/공식 레이블 교차 필요.",
+        "checkedAt": "2026-10-24T05:43:06.167Z",
+        "waitingSince": "2026-10-24T05:43:06.167Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.167Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.243Z",
+        "waitingSince": "2026-10-24T05:43:06.243Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.243Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 21,
+        "bandId": "f5200ff6-aea2-48f4-8551-eaa82e4a1f03",
+        "name": "ravex",
+        "approvalApplied": false,
+        "approvalLimitation": "ravex 공식 avex 경로 접근 불가. Last.fm 및 MB 작품에 trax와 MONTAGEM PRADA 등이 혼재하므로 이름/태그/MBID 일치만으로 신원·일본 장르 확정하지 않음. 원작 제작자/공식 레이블 교차 필요.",
+        "mbObservedAt": "2026-10-24T05:38:01.000Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://ravex.jp/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "81547820-7584-47a7-a705-ac64e7234f87",
+      "name": "Rin'",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "81547820-7584-47a7-a705-ac64e7234f87",
+        "name": "Rin'",
+        "aliases": [
+          "りん",
+          "凛",
+          "リン ."
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:56.771823+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "7538fec7-a618-4c8a-b008-8e2c35fb92a5",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:7538fec7-a618-4c8a-b008-8e2c35fb92a5",
+          "evidenceUrl": "https://musicbrainz.org/artist/7538fec7-a618-4c8a-b008-8e2c35fb92a5"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.907Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "rin-japan.com 공식 후보 HTTP403 및 profile/구 avex 경로 접근 불가. Last.fm/MB 時空/飛鳥/Inland Sea 후보만으로 전통 악기·월드 음악과 J-pop 활동 경계를 확정하지 않음.",
+        "checkedAt": "2026-10-24T05:43:06.303Z",
+        "waitingSince": "2026-10-24T05:43:06.303Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.303Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.366Z",
+        "waitingSince": "2026-10-24T05:43:06.366Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.366Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 22,
+        "bandId": "81547820-7584-47a7-a705-ac64e7234f87",
+        "name": "Rin'",
+        "approvalApplied": false,
+        "approvalLimitation": "rin-japan.com 공식 후보 HTTP403 및 profile/구 avex 경로 접근 불가. Last.fm/MB 時空/飛鳥/Inland Sea 후보만으로 전통 악기·월드 음악과 J-pop 활동 경계를 확정하지 않음.",
+        "mbObservedAt": "2026-10-24T05:38:02.849Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://rin-japan.com/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.avexnet.or.jp/rin/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCgb9giKu-kz7LNbLZbXWhlg"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "cb2283bf-3c75-4a1f-8ac3-d508830e1da7",
+      "name": "ryo",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "cb2283bf-3c75-4a1f-8ac3-d508830e1da7",
+        "name": "ryo",
+        "aliases": [
+          "Ryou Yokota",
+          "ryo (supercell)"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:53.734612+00:00",
+        "country_code": "JP",
+        "musicbrainz_id": "aabc3d78-218b-4e98-95b7-fe6388adef2d",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:aabc3d78-218b-4e98-95b7-fe6388adef2d",
+          "evidenceUrl": "https://musicbrainz.org/artist/aabc3d78-218b-4e98-95b7-fe6388adef2d"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.909Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "supercell 공식 홈페이지는 확인했으나 ryo 개인과 집단 supercell을 구분해야 함. Last.fm error6, MB는 supercell founder와 OST를 반환. 개인의 실제 국가·장르·작품 및 공개 신원 연결 근거 보완 필요.",
+        "checkedAt": "2026-10-24T05:43:06.444Z",
+        "waitingSince": "2026-10-24T05:43:06.444Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.444Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.505Z",
+        "waitingSince": "2026-10-24T05:43:06.505Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.505Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 23,
+        "bandId": "cb2283bf-3c75-4a1f-8ac3-d508830e1da7",
+        "name": "ryo",
+        "approvalApplied": false,
+        "approvalLimitation": "supercell 공식 홈페이지는 확인했으나 ryo 개인과 집단 supercell을 구분해야 함. Last.fm error6, MB는 supercell founder와 OST를 반환. 개인의 실제 국가·장르·작품 및 공개 신원 연결 근거 보완 필요.",
+        "mbObservedAt": "2026-10-24T05:38:04.742Z",
+        "mbCountry": "JP",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.supercell.jp/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCuCOwUiLDnGsP66lj4oYmEQ",
+          "https://www.youtube.com/channel/UCy9UVm-UjHqcktvxg-sS4qQ"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "e74f4688-e1f0-4c2d-a0ed-8cc342bd1799",
+      "name": "Saint Etienne",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e74f4688-e1f0-4c2d-a0ed-8cc342bd1799",
+        "name": "Saint Etienne",
+        "aliases": [
+          "St. Entienne",
+          "St. Ettiene",
+          "Saint Ettienne",
+          "St. Etienne",
+          "St. Ettienne",
+          "Saint-Etienne",
+          "Saint Ettiene",
+          "St.etienne",
+          "Saint Étienne",
+          "St Etienne"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:56.280187+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "3997d4a6-c2bd-4191-8406-eb07f0abb5d2",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:3997d4a6-c2bd-4191-8406-eb07f0abb5d2",
+          "evidenceUrl": "https://musicbrainz.org/artist/3997d4a6-c2bd-4191-8406-eb07f0abb5d2"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.911Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "saintetienne.com HTTP502. Last.fm/MB 동일 ID 및 Foxbase Alpha 등 작품 후보만으로 실제 국가·장르를 확정하지 않음. 공식 레이블 소개 대체 근거 필요.",
+        "checkedAt": "2026-10-24T05:43:06.564Z",
+        "waitingSince": "2026-10-24T05:43:06.564Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.564Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.627Z",
+        "waitingSince": "2026-10-24T05:43:06.627Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.627Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 24,
+        "bandId": "e74f4688-e1f0-4c2d-a0ed-8cc342bd1799",
+        "name": "Saint Etienne",
+        "approvalApplied": false,
+        "approvalLimitation": "saintetienne.com HTTP502. Last.fm/MB 동일 ID 및 Foxbase Alpha 등 작품 후보만으로 실제 국가·장르를 확정하지 않음. 공식 레이블 소개 대체 근거 필요.",
+        "mbObservedAt": "2026-10-24T05:38:06.696Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://web.archive.org/web/19970416091752/http://www.creation.co.uk/etienne/index.html"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.saintetienne.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/user/SaintEtienneOfficial"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "51d8da1c-8d3d-4cc7-ba07-849aafa2bd80",
+      "name": "Screeching Weasel",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "51d8da1c-8d3d-4cc7-ba07-849aafa2bd80",
+        "name": "Screeching Weasel",
+        "aliases": [
+          "Screaching Weasel"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:35.245247+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "e4a135d0-1948-4620-bc07-b0217d09ccc1",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:e4a135d0-1948-4620-bc07-b0217d09ccc1",
+          "evidenceUrl": "https://musicbrainz.org/artist/e4a135d0-1948-4620-bc07-b0217d09ccc1"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.913Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "screechingweasel.com 접근 실패. MB의 과거 weasels.littletype.com 관계 및 Last.fm 원작 후보 확보 상태이며 현 공식 레이블의 미국 punk rock 신원·작품 교차 필요.",
+        "checkedAt": "2026-10-24T05:43:06.688Z",
+        "waitingSince": "2026-10-24T05:43:06.688Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.688Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.749Z",
+        "waitingSince": "2026-10-24T05:43:06.749Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.749Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 25,
+        "bandId": "51d8da1c-8d3d-4cc7-ba07-849aafa2bd80",
+        "name": "Screeching Weasel",
+        "approvalApplied": false,
+        "approvalLimitation": "screechingweasel.com 접근 실패. MB의 과거 weasels.littletype.com 관계 및 Last.fm 원작 후보 확보 상태이며 현 공식 레이블의 미국 punk rock 신원·작품 교차 필요.",
+        "mbObservedAt": "2026-10-24T05:38:08.549Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://weasels.littletype.com/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "c7fef90a-8822-4f17-91a2-143b54528fce",
+      "name": "SE7EN",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "c7fef90a-8822-4f17-91a2-143b54528fce",
+        "name": "SE7EN",
+        "aliases": [
+          "Seven",
+          "세븐",
+          "최동욱"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:01.586409+00:00",
+        "country_code": "KR",
+        "musicbrainz_id": "031037c3-67be-459f-bd50-b51760501f38",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:031037c3-67be-459f-bd50-b51760501f38",
+          "evidenceUrl": "https://musicbrainz.org/artist/031037c3-67be-459f-bd50-b51760501f38"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.915Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "SE7EN의 MB 국가 KR 및 FIRST SE7EN 등 원작 후보 확보. 한국 R&B/댄스 활동과 일본 원작 J-pop 활동을 기존 분류 정책에 대조할 공식 신원·장르 근거 미완료. 국적만으로 제외하거나 J-pop 승인하지 않음.",
+        "checkedAt": "2026-10-24T05:43:06.866Z",
+        "waitingSince": "2026-10-24T05:43:06.866Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.866Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:06.926Z",
+        "waitingSince": "2026-10-24T05:43:06.926Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.926Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 26,
+        "bandId": "c7fef90a-8822-4f17-91a2-143b54528fce",
+        "name": "SE7EN",
+        "approvalApplied": false,
+        "approvalLimitation": "SE7EN의 MB 국가 KR 및 FIRST SE7EN 등 원작 후보 확보. 한국 R&B/댄스 활동과 일본 원작 J-pop 활동을 기존 분류 정책에 대조할 공식 신원·장르 근거 미완료. 국적만으로 제외하거나 J-pop 승인하지 않음.",
+        "mbObservedAt": "2026-10-24T05:38:10.398Z",
+        "mbCountry": "KR",
+        "mbOfficialCandidates": [],
+        "channelCandidates": [
+          "https://www.youtube.com/user/OfficialSe7en"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "6a8cb303-c298-4b8b-b656-7d7220d3939a",
+      "name": "SHINee",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "6a8cb303-c298-4b8b-b656-7d7220d3939a",
+        "name": "SHINee",
+        "aliases": [
+          "シャイニー",
+          "샤이니"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:48.90883+00:00",
+        "country_code": "KR",
+        "musicbrainz_id": "70e5098b-c4ae-4cd7-9799-3c1b9b57c753",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:70e5098b-c4ae-4cd7-9799-3c1b9b57c753",
+          "evidenceUrl": "https://musicbrainz.org/artist/70e5098b-c4ae-4cd7-9799-3c1b9b57c753"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.917Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "Universal 공식 SHINee 소개에서 한국 데뷔와 일본 원작 Replay/LUCIFER/D×D×D 활동 확인. 한국 그룹의 일본 활동을 기존 J-pop 분류 범위와 대조하는 요건이 남아 국가나 일본 판매만으로 승인하지 않음. 국가 KR 보존.",
+        "checkedAt": "2026-10-24T05:43:06.989Z",
+        "waitingSince": "2026-10-24T05:43:06.989Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:06.989Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.048Z",
+        "waitingSince": "2026-10-24T05:43:07.048Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.048Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 27,
+        "bandId": "6a8cb303-c298-4b8b-b656-7d7220d3939a",
+        "name": "SHINee",
+        "approvalApplied": false,
+        "approvalLimitation": "Universal 공식 SHINee 소개에서 한국 데뷔와 일본 원작 Replay/LUCIFER/D×D×D 활동 확인. 한국 그룹의 일본 활동을 기존 J-pop 분류 범위와 대조하는 요건이 남아 국가나 일본 판매만으로 승인하지 않음. 국가 KR 보존.",
+        "mbObservedAt": "2026-10-24T05:38:12.187Z",
+        "mbCountry": "KR",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://shinee.jp/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.universal-music.co.jp/shinee/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://shinee.smtown.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCyPwRgc3gQGqhk6RoGS50Ug"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "e805a182-8ab8-4289-8358-bc635fe3caeb",
+      "name": "Sleater‐Kinney",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e805a182-8ab8-4289-8358-bc635fe3caeb",
+        "name": "Sleater‐Kinney",
+        "aliases": [
+          "Sleater Kinney",
+          "Slater-Kinney"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:42.760157+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "e36e78eb-3ace-4acd-882c-16789e700ab7",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:e36e78eb-3ace-4acd-882c-16789e700ab7",
+          "evidenceUrl": "https://musicbrainz.org/artist/e36e78eb-3ace-4acd-882c-16789e700ab7"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.919Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:35:57.528Z",
+        "waitingSince": "2026-10-24T05:35:57.528Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:35:57.528Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:35:57.528Z",
+        "proposal": {
+          "target_band_id": "e805a182-8ab8-4289-8358-bc635fe3caeb",
+          "expected_updated_at": "2026-10-13T08:20:42.760157+00:00",
+          "artist_name": "Sleater‐Kinney",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Sleater Kinney",
+            "Slater-Kinney"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다.",
+          "evidence_url": "https://www.subpop.com/releases/sleater_kinney/the_woods"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:35:58.26635+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.112Z",
+        "waitingSince": "2026-10-24T05:43:07.112Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.112Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 28,
+        "bandId": "e805a182-8ab8-4289-8358-bc635fe3caeb",
+        "name": "Sleater‐Kinney",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:38:14.036Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.sleater-kinney.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCBwIM0Lj7XkhOfZhBJ5qb2g"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 DB e805a182-8ab8-4289-8358-bc635fe3caeb / mb:e36e78eb-3ace-4acd-882c-16789e700ab7에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://www.subpop.com/releases/sleater_kinney/the_woods"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다. 현재 country_code US와 일치.",
+          "sourceUrls": [
+            "https://www.subpop.com/releases/sleater_kinney/the_woods"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://www.subpop.com/releases/sleater_kinney/the_woods"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 계열 작품과 해외 활동을 대조하여 기존 overseas_rock 정책에 해당한다. Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://www.subpop.com/releases/sleater_kinney/the_woods"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB e805a182-8ab8-4289-8358-bc635fe3caeb / mb:e36e78eb-3ace-4acd-882c-16789e700ab7에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다. 연결된 key/evidenceUrl을 현재 context에서 확인했다.",
+          "sourceUrls": [
+            "https://www.subpop.com/releases/sleater_kinney/the_woods"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://www.subpop.com/releases/sleater_kinney/the_woods"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다.",
+        "sources": [
+          {
+            "url": "https://www.subpop.com/releases/sleater_kinney/the_woods",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "Sub Pop 공식 The Woods 소개는 1994년 Olympia Washington에서 결성된 American rock band 및 Corin Tucker, Carrie Brownstein, Janet Weiss를 명시한다. The Woods가 연결 MBID의 작품 목록과 일치한다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "6ede8592-0bb7-4b12-8490-1e1655ba12d6",
+      "name": "Slime",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "6ede8592-0bb7-4b12-8490-1e1655ba12d6",
+        "name": "Slime",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:36.234215+00:00",
+        "country_code": "DE",
+        "musicbrainz_id": "a0fe06e3-deb7-4ea2-a7de-cc93740fd163",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:a0fe06e3-deb7-4ea2-a7de-cc93740fd163",
+          "evidenceUrl": "https://musicbrainz.org/artist/a0fe06e3-deb7-4ea2-a7de-cc93740fd163"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.922Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "slime.de 공식 홈페이지와 새 음반/영상 링크 확인. German 언어·독일 공연 장소를 국가/장르 완료 근거로 사용하지 않으며 같은 MBID의 실제 독일 punk rock 원작·소개 교차 보완 필요.",
+        "checkedAt": "2026-10-24T05:43:07.173Z",
+        "waitingSince": "2026-10-24T05:43:07.173Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.173Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.256Z",
+        "waitingSince": "2026-10-24T05:43:07.256Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.256Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 29,
+        "bandId": "6ede8592-0bb7-4b12-8490-1e1655ba12d6",
+        "name": "Slime",
+        "approvalApplied": false,
+        "approvalLimitation": "slime.de 공식 홈페이지와 새 음반/영상 링크 확인. German 언어·독일 공연 장소를 국가/장르 완료 근거로 사용하지 않으며 같은 MBID의 실제 독일 punk rock 원작·소개 교차 보완 필요.",
+        "mbObservedAt": "2026-10-24T05:38:15.828Z",
+        "mbCountry": "DE",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.slime.de/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/user/elfslime"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "372723b5-fc58-4507-8de7-4102bbf14af3",
+      "name": "Slipknot",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "372723b5-fc58-4507-8de7-4102bbf14af3",
+        "name": "Slipknot",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:42.810747+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "a466c2a2-6517-42fb-a160-1087c3bafd9f",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:a466c2a2-6517-42fb-a160-1087c3bafd9f",
+          "evidenceUrl": "https://musicbrainz.org/artist/a466c2a2-6517-42fb-a160-1087c3bafd9f"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.924Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:35:58.930Z",
+        "waitingSince": "2026-10-24T05:35:58.930Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:35:58.930Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:35:58.930Z",
+        "proposal": {
+          "target_band_id": "372723b5-fc58-4507-8de7-4102bbf14af3",
+          "expected_updated_at": "2026-10-13T08:19:42.810747+00:00",
+          "artist_name": "Slipknot",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다.",
+          "evidence_url": "https://wmg.jp/slipknot"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:35:59.683146+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.359Z",
+        "waitingSince": "2026-10-24T05:43:07.359Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.359Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 30,
+        "bandId": "372723b5-fc58-4507-8de7-4102bbf14af3",
+        "name": "Slipknot",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:38:17.802Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.slipknot1.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/slipknot",
+          "https://www.youtube.com/channel/UCOJZ1tna8yj8mAEITPkHNCQ"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 DB 372723b5-fc58-4507-8de7-4102bbf14af3 / mb:a466c2a2-6517-42fb-a160-1087c3bafd9f에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다.",
+          "sourceUrls": [
+            "https://wmg.jp/slipknot"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다. 현재 country_code US와 일치.",
+          "sourceUrls": [
+            "https://wmg.jp/slipknot"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다.",
+          "sourceUrls": [
+            "https://wmg.jp/slipknot"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 계열 작품과 해외 활동을 대조하여 기존 overseas_rock 정책에 해당한다. Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다.",
+          "sourceUrls": [
+            "https://wmg.jp/slipknot"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB 372723b5-fc58-4507-8de7-4102bbf14af3 / mb:a466c2a2-6517-42fb-a160-1087c3bafd9f에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다. 연결된 key/evidenceUrl을 현재 context에서 확인했다.",
+          "sourceUrls": [
+            "https://wmg.jp/slipknot"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://wmg.jp/slipknot"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다.",
+        "sources": [
+          {
+            "url": "https://wmg.jp/slipknot",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "Warner 공식 소개는 미국 Iowa Des Moines에서 1995년 결성된 9인조의 heavy sound와 Slipknot, Iowa, Vol.3, All Hope Is Gone 활동을 설명한다. 이 원작 음반들이 연결 MBID의 작품 목록과 일치해 해외 록/메탈 정책에 부합한다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "230d3fe2-17d0-44b0-aec6-40f607c636f6",
+      "name": "Spirit",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "230d3fe2-17d0-44b0-aec6-40f607c636f6",
+        "name": "Spirit",
+        "aliases": [
+          "Randy California and Spirit"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:04.577995+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "ca5db97b-ba17-4e85-a876-46065e2052b3",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:ca5db97b-ba17-4e85-a876-46065e2052b3",
+          "evidenceUrl": "https://musicbrainz.org/artist/ca5db97b-ba17-4e85-a876-46065e2052b3"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.926Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "Last.fm 반환 MBID가 요청과 다름. MB 현재 Spirit/US 및 randycaliforniaandspirit.com 관계와 유족 추모 사이트는 확인했으나 개인 Randy California와 밴드 Spirit 구분, 원작·미국 록 활동 공식 근거가 미완료.",
+        "checkedAt": "2026-10-24T05:43:07.419Z",
+        "waitingSince": "2026-10-24T05:43:07.419Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.419Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.479Z",
+        "waitingSince": "2026-10-24T05:43:07.479Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.479Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 31,
+        "bandId": "230d3fe2-17d0-44b0-aec6-40f607c636f6",
+        "name": "Spirit",
+        "approvalApplied": false,
+        "approvalLimitation": "Last.fm 반환 MBID가 요청과 다름. MB 현재 Spirit/US 및 randycaliforniaandspirit.com 관계와 유족 추모 사이트는 확인했으나 개인 Randy California와 밴드 Spirit 구분, 원작·미국 록 활동 공식 근거가 미완료.",
+        "mbObservedAt": "2026-10-24T05:38:19.545Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.randycaliforniaandspirit.com/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "2ef7c7b4-e598-4a88-acb0-8f70bee291a9",
+      "name": "Status Quo",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "2ef7c7b4-e598-4a88-acb0-8f70bee291a9",
+        "name": "Status Quo",
+        "aliases": [
+          "The Status Quo",
+          "StatusQuo"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:15.847565+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "1884ed9c-6fe1-468d-a7f8-8d19c9c4e441",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:1884ed9c-6fe1-468d-a7f8-8d19c9c4e441",
+          "evidenceUrl": "https://musicbrainz.org/artist/1884ed9c-6fe1-468d-a7f8-8d19c9c4e441"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.928Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "공식 statusquo.co.uk 및 시도한 Universal biography 접근 불가. Last.fm/MB 동일 ID·In The Army Now 등 작품 후보만으로 영국 록 신원·분류 완료로 세지 않음. 현 공식 레이블 소개 대체 필요.",
+        "checkedAt": "2026-10-24T05:43:07.556Z",
+        "waitingSince": "2026-10-24T05:43:07.556Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.556Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.614Z",
+        "waitingSince": "2026-10-24T05:43:07.614Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.614Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 32,
+        "bandId": "2ef7c7b4-e598-4a88-acb0-8f70bee291a9",
+        "name": "Status Quo",
+        "approvalApplied": false,
+        "approvalLimitation": "공식 statusquo.co.uk 및 시도한 Universal biography 접근 불가. Last.fm/MB 동일 ID·In The Army Now 등 작품 후보만으로 영국 록 신원·분류 완료로 세지 않음. 현 공식 레이블 소개 대체 필요.",
+        "mbObservedAt": "2026-10-24T05:38:21.398Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.statusquo.co.uk/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UC0y98-1Rorhqn0oLrfJlTiQ"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "238d3d64-b4f2-4511-992e-44810359e525",
+      "name": "Ten Years After",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "238d3d64-b4f2-4511-992e-44810359e525",
+        "name": "Ten Years After",
+        "aliases": [
+          "Alvin Lee & Ten Years Later",
+          "10 Years After",
+          "Alvin Lee & Ten Years After"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:21:11.291549+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "73faa89a-ee00-4e40-b68e-80e4891dbc45",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:73faa89a-ee00-4e40-b68e-80e4891dbc45",
+          "evidenceUrl": "https://musicbrainz.org/artist/73faa89a-ee00-4e40-b68e-80e4891dbc45"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.930Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:36:00.305Z",
+        "waitingSince": "2026-10-24T05:36:00.305Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:36:00.305Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:36:00.305Z",
+        "proposal": {
+          "target_band_id": "238d3d64-b4f2-4511-992e-44810359e525",
+          "expected_updated_at": "2026-10-13T08:21:11.291549+00:00",
+          "artist_name": "Ten Years After",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Alvin Lee & Ten Years Later",
+            "10 Years After",
+            "Alvin Lee & Ten Years After"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다.",
+          "evidence_url": "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:36:01.090891+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.673Z",
+        "waitingSince": "2026-10-24T05:43:07.673Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.673Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 33,
+        "bandId": "238d3d64-b4f2-4511-992e-44810359e525",
+        "name": "Ten Years After",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:38:23.206Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.ten-years-after.co.uk/"
+          },
+          {
+            "type": "official homepage",
+            "url": "http://www.tenyearsafternow.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCIvZpAFH80ax0cyF4JGWXyA"
+        ],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 DB 238d3d64-b4f2-4511-992e-44810359e525 / mb:73faa89a-ee00-4e40-b68e-80e4891dbc45에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+          ]
+        },
+        "countryMatched": {
+          "summary": "Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다. 현재 country_code GB와 일치.",
+          "sourceUrls": [
+            "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 계열 작품과 해외 활동을 대조하여 기존 overseas_rock 정책에 해당한다. Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다.",
+          "sourceUrls": [
+            "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB 238d3d64-b4f2-4511-992e-44810359e525 / mb:73faa89a-ee00-4e40-b68e-80e4891dbc45에 artist.getInfo가 동일 MBID를 반환했고 artist.getTopAlbums의 원작을 공식 출처와 대조했다. Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다. 연결된 key/evidenceUrl을 현재 context에서 확인했다.",
+          "sourceUrls": [
+            "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다.",
+        "sources": [
+          {
+            "url": "https://floatingworldrecords.co.uk/blogs/discover/ten-years-after",
+            "checkedAt": "2026-10-24T05:35:51.478267+00:00",
+            "summary": "Floating World Records 소개는 영국 Nottingham 출신 blues/hard rock quartet, 1966년 결성 및 Alvin Lee, Ric Lee, Leo Lyons, Chick Churchill을 명시한다. 동명 데뷔 음반 Ten Years After가 연결 MBID의 작품 목록과 일치한다."
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "9889aa4a-8169-4d96-91db-c4a18f852efa",
+      "name": "Texas",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "9889aa4a-8169-4d96-91db-c4a18f852efa",
+        "name": "Texas",
+        "aliases": [],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:09.977727+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "7289d10d-d8d2-41ff-8308-c56ec9346e07",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:7289d10d-d8d2-41ff-8308-c56ec9346e07",
+          "evidenceUrl": "https://musicbrainz.org/artist/7289d10d-d8d2-41ff-8308-c56ec9346e07"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.933Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "현재 공식 texas.uk.com 및 White on Blonde 작품을 확인했으나 공연지 UK를 밴드 국가로 확정하지 않음. Scotland 결성 및 실제 pop rock 원작 소개 근거 보완 필요.",
+        "checkedAt": "2026-10-24T05:43:07.747Z",
+        "waitingSince": "2026-10-24T05:43:07.747Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.747Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.810Z",
+        "waitingSince": "2026-10-24T05:43:07.810Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.810Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 34,
+        "bandId": "9889aa4a-8169-4d96-91db-c4a18f852efa",
+        "name": "Texas",
+        "approvalApplied": false,
+        "approvalLimitation": "현재 공식 texas.uk.com 및 White on Blonde 작품을 확인했으나 공연지 UK를 밴드 국가로 확정하지 않음. Scotland 결성 및 실제 pop rock 원작 소개 근거 보완 필요.",
+        "mbObservedAt": "2026-10-24T05:38:25.104Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.texas.uk.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCc9KS7JP9ERosOQy-D1fOZA"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "6b979942-3c82-4d76-867e-620727e78890",
+      "name": "The 4‐Skins",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "6b979942-3c82-4d76-867e-620727e78890",
+        "name": "The 4‐Skins",
+        "aliases": [
+          "The Four Skins",
+          "4Skins",
+          "The 4 Skins",
+          "4 Skins",
+          "4-Skins"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:40.770944+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "ee846a6c-f354-4286-a898-b4fbabdcaf5e",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:ee846a6c-f354-4286-a898-b4fbabdcaf5e",
+          "evidenceUrl": "https://musicbrainz.org/artist/ee846a6c-f354-4286-a898-b4fbabdcaf5e"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.935Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "현재 MB 동일 The 4-Skins/GB와 The Good, the Bad & The 4 Skins 원작 후보 확보. 공식 관계 없음; 원작 권리 레이블의 국가·Oi!/punk rock 활동 소개를 직접 읽어 보완해야 함.",
+        "checkedAt": "2026-10-24T05:43:07.870Z",
+        "waitingSince": "2026-10-24T05:43:07.870Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.870Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.934Z",
+        "waitingSince": "2026-10-24T05:43:07.934Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.934Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 35,
+        "bandId": "6b979942-3c82-4d76-867e-620727e78890",
+        "name": "The 4‐Skins",
+        "approvalApplied": false,
+        "approvalLimitation": "현재 MB 동일 The 4-Skins/GB와 The Good, the Bad & The 4 Skins 원작 후보 확보. 공식 관계 없음; 원작 권리 레이블의 국가·Oi!/punk rock 활동 소개를 직접 읽어 보완해야 함.",
+        "mbObservedAt": "2026-10-24T05:38:26.907Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "29e2d6e1-b9f1-4390-8dec-2a6b40e86183",
+      "name": "The Fall",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "29e2d6e1-b9f1-4390-8dec-2a6b40e86183",
+        "name": "The Fall",
+        "aliases": [
+          "Fall"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:24.494369+00:00",
+        "country_code": "GB",
+        "musicbrainz_id": "d5da1841-9bc8-4813-9f89-11098090148e",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:d5da1841-9bc8-4813-9f89-11098090148e",
+          "evidenceUrl": "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.937Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "complete",
+        "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+        "checkedAt": "2026-10-24T05:41:28.344Z",
+        "waitingSince": "2026-10-24T05:41:28.344Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-24T05:41:28.344Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-22T05:41:28.344Z",
+        "proposal": {
+          "target_band_id": "29e2d6e1-b9f1-4390-8dec-2a6b40e86183",
+          "expected_updated_at": "2026-10-13T08:19:24.494369+00:00",
+          "artist_name": "The Fall",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Fall"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 소개는 Mark E. Smith가 이끈 Manchester 1976년 결성 그룹과 기타 중심 음악을 명시한다. 해당 소개의 2017년 예정 문구는 현재 활동 상태로 재해석하지 않았다. 공식 레이블은 같은 Manchester 1976년 결성 post-punk 그룹의 Hex Enduction Hour 및 Room To Live를 확인한다. 이 두 작품이 연결 MBID의 현재 작품과 일치한다.",
+          "evidence_url": "https://thefall.xyz/about-the-group"
+        },
+        "authorityKey": "integrated-service-approval-v1",
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-24T05:41:29.14468+00:00"
+        }
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:07.999Z",
+        "waitingSince": "2026-10-24T05:43:07.999Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:07.999Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 36,
+        "bandId": "29e2d6e1-b9f1-4390-8dec-2a6b40e86183",
+        "name": "The Fall",
+        "approvalApplied": true,
+        "approvalLimitation": null,
+        "mbObservedAt": "2026-10-24T05:38:28.765Z",
+        "mbCountry": "GB",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://thefall.xyz/"
+          }
+        ],
+        "channelCandidates": [],
+        "channelApplied": false
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "현재 Last.fm artist.getInfo 동일 MBID 반환과 Hex Enduction Hour 원작을 레이블과 대조했다. MusicBrainz 동일 ID의 official homepage가 thefall.xyz와 일치한다.",
+          "sourceUrls": [
+            "https://thefall.xyz/about-the-group",
+            "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개는 Mark E. Smith가 이끈 Manchester 1976년 결성 그룹과 기타 중심 음악을 명시한다. 해당 소개의 2017년 예정 문구는 현재 활동 상태로 재해석하지 않았다. 공식 레이블은 같은 Manchester 1976년 결성 post-punk 그룹의 Hex Enduction Hour 및 Room To Live를 확인한다. 이 두 작품이 연결 MBID의 현재 작품과 일치한다. 현재 country_code GB와 일치.",
+          "sourceUrls": [
+            "https://thefall.xyz/about-the-group",
+            "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개는 Mark E. Smith가 이끈 Manchester 1976년 결성 그룹과 기타 중심 음악을 명시한다. 해당 소개의 2017년 예정 문구는 현재 활동 상태로 재해석하지 않았다. 공식 레이블은 같은 Manchester 1976년 결성 post-punk 그룹의 Hex Enduction Hour 및 Room To Live를 확인한다. 이 두 작품이 연결 MBID의 현재 작품과 일치한다.",
+          "sourceUrls": [
+            "https://thefall.xyz/about-the-group",
+            "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 원작 활동을 기존 overseas_rock 정책과 대조했다. 공식 소개는 Mark E. Smith가 이끈 Manchester 1976년 결성 그룹과 기타 중심 음악을 명시한다. 해당 소개의 2017년 예정 문구는 현재 활동 상태로 재해석하지 않았다. 공식 레이블은 같은 Manchester 1976년 결성 post-punk 그룹의 Hex Enduction Hour 및 Room To Live를 확인한다. 이 두 작품이 연결 MBID의 현재 작품과 일치한다.",
+          "sourceUrls": [
+            "https://thefall.xyz/about-the-group",
+            "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 Last.fm artist.getInfo 동일 MBID 반환과 Hex Enduction Hour 원작을 레이블과 대조했다. MusicBrainz 동일 ID의 official homepage가 thefall.xyz와 일치한다. 현재 context에서 DB bandId=29e2d6e1-b9f1-4390-8dec-2a6b40e86183와 MBID=d5da1841-9bc8-4813-9f89-11098090148e 외부 연결을 확인했다.",
+          "sourceUrls": [
+            "https://thefall.xyz/about-the-group",
+            "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "외부 신원에 공연 자동 공개 승인이 연결된다. 개별 공연의 공식 근거·발표·일반/선예매 절대 시각·회차·중복/취소/중요 변경·수동 차단·출처 publication OFF·초기 채움 무알림·찜/동의 및 기존 발송 경로 조건은 별도로 충족해야 하며 이번 검수는 공연 공개나 발송을 수행하지 않는다.",
+          "sourceUrls": [
+            "https://thefall.xyz/about-the-group",
+            "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e"
+          ]
+        }
+      },
+      "supplementalProof": {
+        "decision": "keep",
+        "summary": "공식 소개는 Mark E. Smith가 이끈 Manchester 1976년 결성 그룹과 기타 중심 음악을 명시한다. 해당 소개의 2017년 예정 문구는 현재 활동 상태로 재해석하지 않았다. 공식 레이블은 같은 Manchester 1976년 결성 post-punk 그룹의 Hex Enduction Hour 및 Room To Live를 확인한다. 이 두 작품이 연결 MBID의 현재 작품과 일치한다.",
+        "sources": [
+          {
+            "url": "https://thefall.xyz/about-the-group",
+            "summary": "공식 소개는 Mark E. Smith가 이끈 Manchester 1976년 결성 그룹과 기타 중심 음악을 명시한다. 해당 소개의 2017년 예정 문구는 현재 활동 상태로 재해석하지 않았다.",
+            "checkedAt": "2026-10-24T05:41:25.695103+00:00"
+          },
+          {
+            "url": "https://www.cherryred.co.uk/the-fall-hex-enduction-hour-transparent-green-vinyl-edition",
+            "summary": "공식 레이블은 같은 Manchester 1976년 결성 post-punk 그룹의 Hex Enduction Hour 및 Room To Live를 확인한다. 이 두 작품이 연결 MBID의 현재 작품과 일치한다.",
+            "checkedAt": "2026-10-24T05:41:25.695103+00:00"
+          },
+          {
+            "url": "https://musicbrainz.org/artist/d5da1841-9bc8-4813-9f89-11098090148e",
+            "summary": "현재 Last.fm artist.getInfo 동일 MBID 반환과 Hex Enduction Hour 원작을 레이블과 대조했다. MusicBrainz 동일 ID의 official homepage가 thefall.xyz와 일치한다.",
+            "checkedAt": "2026-10-24T05:38:28.765Z"
+          }
+        ]
+      }
+    },
+    {
+      "bandId": "6f053fab-bd7c-4109-9321-41a8a838104e",
+      "name": "the Microphones",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "6f053fab-bd7c-4109-9321-41a8a838104e",
+        "name": "the Microphones",
+        "aliases": [
+          "The Microphones",
+          "Microphones"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:16.114256+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "6f2f87e7-3ce9-4f1c-81dd-6f068a78cf26",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:6f2f87e7-3ce9-4f1c-81dd-6f068a78cf26",
+          "evidenceUrl": "https://musicbrainz.org/artist/6f2f87e7-3ce9-4f1c-81dd-6f068a78cf26"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.939Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "Last.fm error6. MB 현재 the Microphones/US와 The Glow pt.2 등 작품 후보 확보, P.W. Elverum & Sun 사이트는 Mount Eerie/레이블 소개만 보임. 개인 Phil Elverum·Microphones·Mount Eerie를 구분할 공식 원작 및 국가·장르 근거 필요.",
+        "checkedAt": "2026-10-24T05:43:08.060Z",
+        "waitingSince": "2026-10-24T05:43:08.060Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:08.060Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. 현재 MB YouTube 후보가 없거나 제한적이며 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:08.125Z",
+        "waitingSince": "2026-10-24T05:43:08.125Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:08.125Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 37,
+        "bandId": "6f053fab-bd7c-4109-9321-41a8a838104e",
+        "name": "the Microphones",
+        "approvalApplied": false,
+        "approvalLimitation": "Last.fm error6. MB 현재 the Microphones/US와 The Glow pt.2 등 작품 후보 확보, P.W. Elverum & Sun 사이트는 Mount Eerie/레이블 소개만 보임. 개인 Phil Elverum·Microphones·Mount Eerie를 구분할 공식 원작 및 국가·장르 근거 필요.",
+        "mbObservedAt": "2026-10-24T05:38:30.557Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [],
+        "channelCandidates": [],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "507837b3-d8db-4057-a509-ea947cd6067e",
+      "name": "The Mountain Goats",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "507837b3-d8db-4057-a509-ea947cd6067e",
+        "name": "The Mountain Goats",
+        "aliases": [
+          "The Orange Trees",
+          "Mountain Goats"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:30.262742+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "9639cd52-c351-4a17-9797-58880e95a7ef",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:9639cd52-c351-4a17-9797-58880e95a7ef",
+          "evidenceUrl": "https://musicbrainz.org/artist/9639cd52-c351-4a17-9797-58880e95a7ef"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.941Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "공식 mountain-goats.com에서 John Darnielle와 All Hail West Texas 언급 확인. Merge 페이지 본문이 비어 있으며 미국 indie/folk rock 활동 및 해당 MBID 작품 연결의 구체적인 대체 레이블 소개 필요.",
+        "checkedAt": "2026-10-24T05:43:08.187Z",
+        "waitingSince": "2026-10-24T05:43:08.187Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:08.187Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:08.251Z",
+        "waitingSince": "2026-10-24T05:43:08.251Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:08.251Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 38,
+        "bandId": "507837b3-d8db-4057-a509-ea947cd6067e",
+        "name": "The Mountain Goats",
+        "approvalApplied": false,
+        "approvalLimitation": "공식 mountain-goats.com에서 John Darnielle와 All Hail West Texas 언급 확인. Merge 페이지 본문이 비어 있으며 미국 indie/folk rock 활동 및 해당 MBID 작품 연결의 구체적인 대체 레이블 소개 필요.",
+        "mbObservedAt": "2026-10-24T05:38:32.331Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "http://www.mountain-goats.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCl4hLK-YKeHuCAvS8ZPVv5Q",
+          "https://www.youtube.com/user/MountainGoatsVEVO"
+        ],
+        "channelApplied": false
+      }
+    },
+    {
+      "bandId": "c634be65-2211-4850-ad53-1ae8cf37bcb4",
+      "name": "The National",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "c634be65-2211-4850-ad53-1ae8cf37bcb4",
+        "name": "The National",
+        "aliases": [
+          "National (The)"
+        ],
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:02.420913+00:00",
+        "country_code": "US",
+        "musicbrainz_id": "664c3e0e-42d8-48c1-b209-1efca19c0325",
+        "curation_status": "unreviewed"
+      },
+      "externalKeys": [
+        {
+          "key": "mb:664c3e0e-42d8-48c1-b209-1efca19c0325",
+          "evidenceUrl": "https://musicbrainz.org/artist/664c3e0e-42d8-48c1-b209-1efca19c0325"
+        }
+      ],
+      "priorResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.945Z",
+        "reusedAsNewCompletion": false
+      },
+      "approval": {
+        "status": "deferred",
+        "reason": "americanmary.com 접근 불가, 4AD 본문 robots 제한/403. Ohio-raised Brooklyn-based 검색 스니펫만으로 국가·indie rock·원작 신원 검증을 완료하지 않음. 허용되는 공식 대체 근거 필요.",
+        "checkedAt": "2026-10-24T05:43:08.315Z",
+        "waitingSince": "2026-10-24T05:43:08.315Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:08.315Z",
+        "validUntil": null
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 채널 저장/유효 캐시 없음. MB의 YouTube 관계는 후보로 확보했으나 해당 아티스트 공식 페이지의 정확한 채널 링크와 YouTube API 해석 ID 교차 검증 미완료. 페이지의 영상 임베드·레이블 공통 채널만으로 verified 처리하지 않음. 보안 키 부재로 단정하지 않고 사진은 후순위로 보존.",
+        "checkedAt": "2026-10-24T05:43:08.377Z",
+        "waitingSince": "2026-10-24T05:43:08.377Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-25T05:43:08.377Z",
+        "validUntil": null
+      },
+      "investigation": {
+        "i": 39,
+        "bandId": "c634be65-2211-4850-ad53-1ae8cf37bcb4",
+        "name": "The National",
+        "approvalApplied": false,
+        "approvalLimitation": "americanmary.com 접근 불가, 4AD 본문 robots 제한/403. Ohio-raised Brooklyn-based 검색 스니펫만으로 국가·indie rock·원작 신원 검증을 완료하지 않음. 허용되는 공식 대체 근거 필요.",
+        "mbObservedAt": "2026-10-24T05:38:34.137Z",
+        "mbCountry": "US",
+        "mbOfficialCandidates": [
+          {
+            "type": "official homepage",
+            "url": "https://americanmary.com/"
+          }
+        ],
+        "channelCandidates": [
+          "https://www.youtube.com/channel/UCeiRyLo_Q9q4tlv9aaQJF5w",
+          "https://www.youtube.com/channel/UCzB3VrTOjAStUvaLPMDjHDw"
+        ],
+        "channelApplied": false
+      }
+    }
+  ]
+}
