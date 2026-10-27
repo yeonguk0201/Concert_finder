@@ -32,6 +32,34 @@ export function bookingWindows(lines, sourceUrl) {
   return { windows: unique, problems, conflict }
 }
 
+export function nolWorldProduct(value) {
+  try {
+    const u = new URL(value)
+    if (u.origin !== 'https://world.nol.com' || u.username || u.password || u.search || u.hash
+      || !/^\/en\/ticket\/products\/\d+$/.test(u.pathname)) return null
+    return u.href
+  } catch { return null }
+}
+
+export function nolSessions(text) {
+  const sessions = []
+  for (const line of text.split('\n').filter(s => /공연\s*일시/.test(s))) {
+    let year = null
+    for (const part of line.split(/[,，]/)) {
+      const m = part.match(/(?:(\d{4})년\s*)?(\d{1,2})월\s*(\d{1,2})일\s*(?:\([^)]*\)\s*)?(오전|오후)\s*(\d{1,2})시(?:\s*(\d{1,2})분)?/)
+      if (!m) throw Error('NOL_SESSION_AMBIGUOUS')
+      year = m[1] ?? year
+      if (!year) throw Error('NOL_SESSION_YEAR_REQUIRED')
+      const day = `${year}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`
+      const hour = Number(m[5]) % 12 + (m[4] === '오후' ? 12 : 0), minute = Number(m[6] ?? 0)
+      if (Number(m[5]) < 1 || Number(m[5]) > 12 || minute > 59 || !Number.isFinite(Date.parse(day))
+        || new Date(day).toISOString().slice(0, 10) !== day) throw Error('NOL_SESSION_INVALID')
+      sessions.push({ starts_on: day, starts_at: `${day}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00+09:00`, label: 'NOL 공연 일시' })
+    }
+  }
+  return [...new Map(sessions.map(s => [s.starts_at, s])).values()].sort((a, b) => a.starts_at.localeCompare(b.starts_at))
+}
+
 // Discovery only. No automatic identity, publication, account, or notification mutation.
 export function parseNolProduct(html, url) {
   if (nolProduct(url) !== url) throw Error('NOL_URL_INVALID')
@@ -51,6 +79,7 @@ export function parseNolProduct(html, url) {
   payload.ticket.booking_url = url
   const sales = bookingWindows(lines, url)
   payload.booking_windows = sales.windows
+  payload.sessions = nolSessions(text)
   payload.review_reasons = [...sales.problems, '공식 아티스트 신원·개별 회차·발표 시각·출처 운영 정책 확인 필요']
   const general = sales.windows.filter(w => w.kind === 'general')
   if (!sales.conflict && general.length === 1) {

@@ -1,6 +1,6 @@
 # 공연 수집기의 아티스트 연결 보호
 
-2026-10-25 KST 복구 checkout의 공용 `scripts/collect-catalog.mjs` 경로를 보완했다. 운영 배포·workflow/예약 변경·수집 재실행은 수행하지 않았다. 별도 채팅의 KOPIS 전용 실행기는 이 변경을 자동으로 전달받지 않는다.
+공용 `scripts/collect-catalog.mjs` 경로를 보완한다. 최신 dev의 `--concerts-only`와 Reissue/NOL 경로·adapter version·KOPIS 비밀 없는 요청 진단을 보존한다. 공연 전용 및 Reissue/NOL 업로드의 `identities=[]`를 유지하며 Reissue/NOL에는 아티스트 보완을 새로 연결하지 않는다. 운영 배포·workflow/예약 변경·수집 재실행은 수행하지 않았다. 별도 채팅의 KOPIS 전용 실행기는 이 변경을 자동으로 전달받지 않는다.
 
 ## 현재 DB 신원 대조
 

@@ -11,6 +11,7 @@ import { collectKopis, parseKopis, kopisWindows, kopisSource } from '../scripts/
 import { collectTicketlinkEvidence, parseTicketlinkNotice, supplementBooking, generalSale, ticketlinkProduct } from '../scripts/booking-evidence.mjs'
 import { parseConcert } from '../scripts/ualive.mjs'
 import { JSDOM } from 'jsdom'
+import { runSource } from '../scripts/collection-runner.mjs'
 
 const xml = (content = '', id = 'PF000001') => `<dbs><db><mt20id>${id}</mt20id><prfnm>RADWIMPS Seoul</prfnm><prfpdfrom>2027.01.01</prfpdfrom><prfpdto>2027.01.01</prfpdto><genrenm>대중음악</genrenm><fcltynm>공연장</fcltynm><area>서울특별시</area><prfcast>RADWIMPS, 미등록 가수</prfcast><frstregdt>2026-10-14 12:00:00</frstregdt><updatedate>2026-10-14 13:00:00</updatedate><dtguidance>금요일(19:00)</dtguidance><relates><relate><relatenm>티켓링크</relatenm><relateurl>http://www.ticketlink.co.kr/product/1</relateurl></relate></relates>${content}</db></dbs>`
 const sale = '<div>* 선예매 : 2026년 10월 15일 (목) 12PM</div><div>* 일반 예매 : 2026년 10월 16일 (금) 12PM</div>'
@@ -96,6 +97,44 @@ test('KOPIS retries temporary HTTP/network failures with pacing, while permanent
   assert.equal(calls, 1)
 })
 
+test('permanent KOPIS listing errors stop the source retry loop and identify the page without exposing credentials', async () => {
+  const calls = [], lifecycle = [], waits = []
+  const client = { rpc: async (name, args) => {
+    lifecycle.push({ name, args })
+    return { data: name === 'service_begin_collection' ? 'existing-run' : null }
+  } }
+  await assert.rejects(runSource({ client, source: 'kopis', sleep: async ms => waits.push(ms),
+    collect: () => collectKopis({ serviceKey: 'private-diagnostic-key', today: '2027-01-01', end: '2027-01-01',
+      sleep: async () => {}, fetcher: async url => {
+        const page = new URL(url).searchParams.get('cpage'); calls.push(page)
+        return page === '1' ? new Response(`<dbs>${Array.from({ length: 100 }, (_, i) => `<db><mt20id>PF${String(i).padStart(6, '0')}</mt20id></db>`).join('')}</dbs>`)
+          : new Response('provider body with private-diagnostic-key', { status: 400 })
+      } }), upload: () => assert.fail('failed collection must not upload'),
+  }), error => {
+    assert.equal(error.retryable, false)
+    assert.equal(error.message, 'KOPIS HTTP 400 [list 20270101-20270101 page=2]')
+    assert.ok(!JSON.stringify(error).includes('private-diagnostic-key'))
+    assert.equal(error.cause, undefined)
+    return true
+  })
+  assert.deepEqual(calls, ['1', '2'])
+  assert.deepEqual(waits, [])
+  assert.equal(lifecycle.at(-1).name, 'service_fail_collection')
+  assert.equal(lifecycle.at(-1).args.attempt_count, 1)
+})
+
+test('temporary KOPIS failures remain eligible for bounded source retries', async () => {
+  let calls = 0, attempts = 0
+  const result = await runSource({ source: 'kopis', sleep: async () => {}, collect: () => {
+    attempts++
+    return collectKopis({ serviceKey: 'private-diagnostic-key', today: '2027-01-01', end: '2027-01-01', sleep: async () => {},
+      fetcher: async () => ++calls <= 3 ? new Response('', { status: 503 }) : new Response('<dbs/>') })
+  } })
+  assert.equal(attempts, 2)
+  assert.equal(calls, 4)
+  assert.equal(result.attempts, 2)
+})
+
 test('KOPIS records detail failures and stops a failing provider after three consecutive errors', async () => {
   let requests = 0
   const result = await collectKopis({ serviceKey: 'test', today: '2027-01-01', end: '2027-01-01', sleep: async () => {}, fetcher: async url => {
@@ -178,6 +217,40 @@ test('CLI discovery → notice supplement → stable content hash → report wor
     assert.equal(row.payload.ticket.opens_at, '2026-10-16T03:00:00.000Z')
     assert.equal(row.content_hash, createHash('sha256').update(JSON.stringify(row.payload)).digest('hex'))
     assert.ok(row.payload.sources.some(s => s.url === 'https://www.ticketlink.co.kr/help/notice/62400'))
+    assert.ok(!`${stdout}${stderr}`.includes('test-secret-key'))
+  } finally { await rm(directory, { recursive: true, force: true }) }
+})
+
+test('concert-only CLI uploads through the existing lease without artist identities or discovery writes', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'encore-concert-only-'))
+  try {
+    const code = `
+      process.env.KOPIS_SERVICE_KEY = 'test-secret-key';
+      process.env.SUPABASE_URL = 'https://czjrzylvnewfjnfwjhwf.supabase.co';
+      process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-server-key';
+      process.argv.push('--source=kopis', '--concerts-only', '--upload', '--output=report.json');
+      let started = false, completed = false;
+      const json = value => new Response(JSON.stringify(value), { headers: { 'Content-Type': 'application/json' } });
+      globalThis.fetch = async (value, options) => {
+        const u = new URL(value);
+        if (u.origin === 'https://kopis.or.kr') return new Response('<dbs/>');
+        if (u.pathname === '/rest/v1/rpc/service_begin_collection') { started = true; return json('00000000-0000-4000-8000-000000000001'); }
+        if (u.pathname === '/rest/v1/rpc/service_complete_collection') {
+          const body = JSON.parse(options.body);
+          if (!started || body.identities.length || body.batch.candidates.length) throw new Error('artist writer or lease regression');
+          completed = true; return json({ published: 0, review: 0 });
+        }
+        throw new Error('unexpected network request');
+      };
+      await import(${JSON.stringify(new URL('../scripts/collect-catalog.mjs', import.meta.url).href)});
+      if (!completed) throw new Error('existing collection RPC not used');
+    `
+    const { stdout, stderr } = await promisify(execFile)(process.execPath, ['--input-type=module', '-e', code], { cwd: directory, encoding: 'utf8' })
+    const report = JSON.parse(await readFile(join(directory, 'report.json'), 'utf8'))
+    assert.equal(report.complete, true)
+    assert.equal(report.results[0].uploaded, true)
+    assert.equal(report.results[0].artist_identity_count, 0)
+    assert.ok(!`${stdout}${stderr}`.includes('test-server-key'))
     assert.ok(!`${stdout}${stderr}`.includes('test-secret-key'))
   } finally { await rm(directory, { recursive: true, force: true }) }
 })

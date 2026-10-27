@@ -11,20 +11,25 @@ import { filterPastCandidates } from './candidate-policy.mjs'
 import { runSource } from './collection-runner.mjs'
 import { collectKopis } from './kopis.mjs'
 import { collectTicketlinkEvidence, supplementBooking, ticketlinkProduct } from './booking-evidence.mjs'
+import { collectReissueNol } from './reissue-nol.mjs'
 import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved } from './collection-artist-links.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
 const selected = process.argv.find(a => a.startsWith('--source='))?.slice(9) ?? 'all'
 const includePast = process.argv.includes('--include-past')
-const skipArtistLookup = process.argv.includes('--skip-artist-lookup')
+// Concert collection must not become a second artist registration writer.
+const concertsOnly = process.argv.includes('--concerts-only')
+const skipArtistLookup = concertsOnly || process.argv.includes('--skip-artist-lookup')
 const cachePath = '.artist-cache.local'
 try {
-  if (!['all', 'ualive', 'mintpaper', 'radwimps', 'yes24', 'kopis'].includes(selected)) throw new Error('Unknown source')
+  if (!['all', 'ualive', 'mintpaper', 'radwimps', 'yes24', 'kopis', 'reissue_nol'].includes(selected)) throw new Error('Unknown source')
   if (selected === 'kopis' && !process.env.KOPIS_SERVICE_KEY) throw new Error('KOPIS_SERVICE_KEY missing')
   if (upload && (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY)) throw new Error('Server upload environment missing')
   const client = upload ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } }) : null
   const results = []
+  const reissueFile = process.argv.find(a => a.startsWith('--reissue-file='))?.slice(15)
+  const reissueLinks = JSON.parse(await readFile(reissueFile ?? new URL('./reissue-nol-links.json', import.meta.url), 'utf8'))
   const noticeFile = process.argv.find(a => a.startsWith('--notice-file='))?.slice(14)
   const noticeUrls = JSON.parse(await readFile(noticeFile ?? new URL('./ticketlink-notices.json', import.meta.url), 'utf8'))
   if (!Array.isArray(noticeUrls)) throw new Error('Notice allowlist must be an array')
@@ -52,7 +57,10 @@ try {
   try { cache = JSON.parse(await readFile(cachePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
   const lookupArtist = skipArtistLookup ? null : createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
   const writeReport = () => output ? writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: false, results }, null, 2) + '\n', 'utf8') : Promise.resolve()
-  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis'] : [selected]) {
+  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis', 'reissue_nol'] : [selected]) {
+    if (source === 'reissue_nol' && !reissueLinks.length) {
+      results.push({ source, skipped: 'reviewed_links_missing', uploaded: false }); await writeReport(); continue
+    }
     if (source === 'kopis' && !process.env.KOPIS_SERVICE_KEY) {
       results.push({ source, skipped: 'configuration_missing', warning: 'KOPIS_SERVICE_KEY 미등록: 공연 발견 경로 비활성', uploaded: false })
       console.error('::warning::KOPIS_SERVICE_KEY 미등록: KOPIS 수집을 건너뜁니다. 기존 주최사 수집만 실행합니다.')
@@ -65,13 +73,15 @@ try {
       const result = await runSource({ client, source, collect: async () => {
       const slotOption = process.argv.find(a => a.startsWith('--kopis-slot='))?.slice(13)
       const kopisOptions = slotOption === undefined ? {} : { slot: Number(slotOption) }
-      const result = source === 'kopis' ? await collectKopis(kopisOptions) : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
+      const result = source === 'reissue_nol' ? await collectReissueNol(reissueLinks) : source === 'kopis' ? await collectKopis(kopisOptions) : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
       result.excluded ??= []
       filterPastCandidates(result, { includePast })
       await supplement(result)
       console.error(`[${source}] 후보 ${result.candidates.length}개 · 제외 ${result.excluded.length}개 · 실패 ${result.failures.length}개; 아티스트 보완 중`)
-      const bands = client ? await readCollectionArtists(client) : []
-      discoveredIdentities = await enrichArtists(result, createCatalogArtistResolver(bands, lookupArtist))
+      if (source !== 'reissue_nol' && result.candidates.some(row => row.payload.discovered_artists?.some(credit => !credit.key && credit.name))) {
+        const bands = client ? await readCollectionArtists(client) : []
+        discoveredIdentities = await enrichArtists(result, createCatalogArtistResolver(bands, lookupArtist))
+      }
       for (const row of result.candidates) {
         if (row.payload.artwork) {
           const discovered = row.payload.artwork
@@ -93,7 +103,7 @@ try {
             if (error.message === 'COLLECTION_IDENTITY_REGRESSION') batch.identity_link_review = error.review
             throw error
           }
-          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: [...artists, ...discoveredIdentities], attempt_count: attempts, adapter_version: 'catalog-v1' })
+          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: concertsOnly || source === 'reissue_nol' ? [] : [...artists, ...discoveredIdentities], attempt_count: attempts, adapter_version: source === 'reissue_nol' ? 'reissue-nol-review-v1' : 'catalog-v1' })
           if (!error) return data
           lastError = error
           if (attempt < 3) await new Promise(resolve => setTimeout(resolve, attempt * 5000))

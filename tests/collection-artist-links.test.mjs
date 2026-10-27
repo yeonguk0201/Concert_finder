@@ -151,7 +151,7 @@ test('guarded ingestion preserves the actual SQL candidate revision/payload when
   } finally { await db.close() }
 })
 
-test('upload CLI in skip mode blocks completion, closes the lease and retains the candidate review draft', async () => {
+async function checkUploadMode(mode, hasLinks = true) {
   const directory = await mkdtemp(join(tmpdir(), 'concert-link-cli-'))
   const url = 'https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?mt20Id=PF000001'
   const xml = '<dbs><db><mt20id>PF000001</mt20id><prfnm>Fictional Seoul</prfnm><prfpdfrom>2027.01.01</prfpdfrom><prfpdto>2027.01.01</prfpdto><genrenm>대중음악</genrenm><fcltynm>가상 공연장</fcltynm><area>서울특별시</area><prfcast>가상 록</prfcast></db></dbs>'
@@ -161,33 +161,47 @@ test('upload CLI in skip mode blocks completion, closes the lease and retains th
     process.env.SUPABASE_URL='https://czjrzylvnewfjnfwjhwf.supabase.co';
     process.env.SUPABASE_SERVICE_ROLE_KEY='fictional-service-binding';
     delete process.env.CATALOG_SCHEDULED_AT;
-    process.argv.push('--source=kopis','--upload','--skip-artist-lookup','--output=report.json');
+    process.argv.push('--source=kopis','--upload',${JSON.stringify(mode)},'--output=report.json');
     const calls=[];
-    globalThis.fetch=async value=>{
+    globalThis.fetch=async (value,options)=>{
       const u=new URL(value);
       if(u.hostname==='kopis.or.kr') return new Response(${JSON.stringify(xml)});
       const name=u.pathname.split('/').at(-1); calls.push(name);
       if(name==='service_begin_collection') return new Response(JSON.stringify(${JSON.stringify(id(99))}));
       if(name==='bands') return new Response('[]');
-      if(name==='collection_candidates') return new Response(JSON.stringify([{source_url:${JSON.stringify(url)},artist_keys:[${JSON.stringify(identity.key)}],band_ids:[${JSON.stringify(id(1))}]}]));
+      if(name==='collection_candidates') return new Response(JSON.stringify([{source_url:${JSON.stringify(url)},artist_keys:${JSON.stringify(hasLinks ? [identity.key] : [])},band_ids:${JSON.stringify(hasLinks ? [id(1)] : [])}}]));
       if(name==='service_fail_collection') return new Response('null');
+      if(name==='service_complete_collection') {
+        const request=JSON.parse(options.body);
+        if(${JSON.stringify(mode)}!=='--concerts-only' || request.identities.length!==0) throw Error('Artist writer violation');
+        return new Response(JSON.stringify({published:0,review:1}));
+      }
       throw Error('Unexpected fetch');
     };
     await import(${JSON.stringify(new URL('../scripts/collect-catalog.mjs', import.meta.url).href)});
     await writeFile('calls.json',JSON.stringify(calls),'utf8');
   `
   try {
-    await assert.rejects(promisify(execFile)(process.execPath, ['--input-type=module', '-e', code], { cwd: directory, encoding: 'utf8' }), error => {
+    const execution = promisify(execFile)(process.execPath, ['--input-type=module', '-e', code], { cwd: directory, encoding: 'utf8' })
+    if (hasLinks) await assert.rejects(execution, error => {
       assert.equal(error.code, 1)
       assert.doesNotMatch(error.stdout + error.stderr, /fictional-kopis-binding|fictional-service-binding/)
       return true
     })
+    else {
+      const { stdout, stderr } = await execution
+      assert.doesNotMatch(stdout + stderr, /fictional-kopis-binding|fictional-service-binding/)
+    }
     const report = JSON.parse(await readFile(join(directory, 'report.json'), 'utf8'))
     const result = report.results[0]
-    assert.equal(result.error, 'COLLECTION_IDENTITY_REGRESSION'); assert.equal(result.uploaded, false)
+    assert.equal(result.error, hasLinks ? 'COLLECTION_IDENTITY_REGRESSION' : undefined); assert.equal(result.uploaded, !hasLinks)
     assert.equal(result.candidates.length, 1); assert.deepEqual(result.candidates[0].payload.artist_keys, [])
-    assert.deepEqual(result.identity_link_review, [{ source_url: url, reason: 'ARTIST_LINK_REMOVAL_REQUIRES_REVIEW', previous_key_count: 1, incoming_key_count: 0 }])
+    if (hasLinks) assert.deepEqual(result.identity_link_review, [{ source_url: url, reason: 'ARTIST_LINK_REMOVAL_REQUIRES_REVIEW', previous_key_count: 1, incoming_key_count: 0 }])
     const calls = JSON.parse(await readFile(join(directory, 'calls.json'), 'utf8'))
-    assert.ok(calls.includes('service_fail_collection')); assert.ok(!calls.includes('service_complete_collection'))
+    assert.equal(calls.includes('service_fail_collection'), hasLinks); assert.equal(calls.includes('service_complete_collection'), !hasLinks)
   } finally { await rm(directory, { recursive: true, force: true }) }
-})
+}
+
+test('upload CLI in skip mode blocks completion and retains a review draft', () => checkUploadMode('--skip-artist-lookup'))
+test('concert-only mode cannot bypass link-regression protection', () => checkUploadMode('--concerts-only'))
+test('concert-only mode preserves its empty identity payload on successful completion', () => checkUploadMode('--concerts-only', false))

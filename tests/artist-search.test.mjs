@@ -5,21 +5,31 @@ import { relevantArtists, artistQuery } from '../supabase/functions/_shared/musi
 const id = '00000000-0000-4000-8000-000000000001'
 const artist = { id, name: 'New Band', country: 'JP', type: 'Group', aliases: [{ name: '새 밴드' }] }
 const request = (body, token = 'admin') => new Request('https://example.test/search', { method:'POST', headers:{Authorization:`Bearer ${token}`},body:JSON.stringify(body) })
-test('public search never registers an artist and import authorizes before any provider call', async () => {
-  const calls = [], imported = []
-  const handler = createArtistSearchHandler({ authenticateUser:async token=>token==='admin', cache:async action=>action==='reserve',importArtist:async a=>imported.push(a),fetcher:async url=>{calls.push(url);return new Response(JSON.stringify({artists:[artist]}))} })
-  assert.equal((await handler(request({action:'import',id},'ordinary'))).status,401)
-  assert.equal(calls.length,0)
-  const result = await handler(new Request('https://example.test/search', {method:'POST',body:JSON.stringify({action:'search',query:'New Band'})}))
+test('external search and import require administrator access before cache, provider or writes', async () => {
+  const calls = []
+  const handler = createArtistSearchHandler({ authorize: async token => token === 'invalid' ? null : {admin: token === 'admin'},
+    cache: async action => { calls.push(action); return action === 'reserve' },
+    importArtist: async () => assert.fail('unauthorized import'),
+    fetcher: async () => { calls.push('fetch'); return new Response(JSON.stringify({artists:[artist]})) } })
+  for (const body of [{action:'search',query:'New Band'},{action:'import',id}]) {
+    const anonymous = await handler(new Request('https://example.test/search',{method:'POST',body:JSON.stringify(body)}))
+    assert.equal(anonymous.status,401)
+    assert.equal((await handler(request(body,'invalid'))).status,401)
+    const ordinary = await handler(request(body,'ordinary'))
+    assert.equal(ordinary.status,403)
+    assert.deepEqual(await ordinary.json(),{error:'ADMIN_REQUIRED'})
+  }
+  assert.deepEqual(calls,[])
+  const result = await handler(request({action:'search',query:'New Band'}))
   assert.equal(result.status,200)
   assert.equal((await result.json()).artists[0].key,`mb:${id}`)
-  assert.equal(imported.length,0)
   assert.equal((await handler(request({action:'import',id:'https://127.0.0.1'}))).status,400)
   assert.equal((await handler(request(null))).status,400)
 })
+
 test('import refetches identity by fixed provider ID and refuses missing country or conflicting identities', async () => {
   let provider={...artist}, imported=[]
-  const handler=createArtistSearchHandler({authenticateUser:async()=>true,cache:async action=>action==='reserve',importArtist:async a=>{imported.push(a);return 'band-id'},loadBand:async id=>({id,name:'New Band',country_code:'JP',aliases:[]}),fetcher:async url=>{assert.ok(url.startsWith(`https://musicbrainz.org/ws/2/artist/${id}?`));return new Response(JSON.stringify(provider))} })
+  const handler=createArtistSearchHandler({authorize:async()=>({admin:true}),cache:async action=>action==='reserve',importArtist:async a=>{imported.push(a);return 'band-id'},loadBand:async id=>({id,name:'New Band',country_code:'JP',aliases:[]}),fetcher:async url=>{assert.ok(url.startsWith(`https://musicbrainz.org/ws/2/artist/${id}?`));return new Response(JSON.stringify(provider))} })
   assert.equal((await handler(request({action:'import',id}))).status,200)
   assert.equal(imported[0].evidence,`https://musicbrainz.org/artist/${id}`)
   provider={...artist,country:undefined}
@@ -28,17 +38,17 @@ test('import refetches identity by fixed provider ID and refuses missing country
 })
 test('cache hits do not call provider; rate limiting and provider failure remain explicit', async () => {
   let network=0
-  const handler=createArtistSearchHandler({authenticateUser:async()=>true,cache:async()=>[],importArtist:async()=>{},fetcher:async()=>{network++;throw new Error('must not fetch')} })
+  const handler=createArtistSearchHandler({authorize:async()=>({admin:true}),cache:async()=>[],importArtist:async()=>{},fetcher:async()=>{network++;throw new Error('must not fetch')} })
   assert.equal((await handler(request({action:'search',query:'New'}))).status,200)
   assert.equal(network,0)
-  const busy=createArtistSearchHandler({authenticateUser:async()=>true,cache:async()=>false,importArtist:async()=>{},fetcher:async()=>{network++} })
+  const busy=createArtistSearchHandler({authorize:async()=>({admin:true}),cache:async()=>false,importArtist:async()=>{},fetcher:async()=>{network++} })
   assert.equal((await busy(request({action:'search',query:'New'}))).status,429)
-  const failing=createArtistSearchHandler({authenticateUser:async()=>true,cache:async action=>action==='reserve',importArtist:async()=>{},fetcher:async()=>new Response('',{status:503}) })
+  const failing=createArtistSearchHandler({authorize:async()=>({admin:true}),cache:async action=>action==='reserve',importArtist:async()=>{},fetcher:async()=>new Response('',{status:503}) })
   assert.equal((await failing(request({action:'search',query:'New'}))).status,503)
 })
 
 test('held and excluded imports return an actionable conflict without loading a public band', async () => {
-  const handler = createArtistSearchHandler({authenticateUser:async()=>true,cache:async()=>[{key:`mb:${id}`,country:'JP'}],importArtist:async()=>{throw new Error('ARTIST_NOT_AVAILABLE')},loadBand:async()=>assert.fail('hidden artist must not be returned')})
+  const handler = createArtistSearchHandler({authorize:async()=>({admin:true}),cache:async()=>[{key:`mb:${id}`,country:'JP'}],importArtist:async()=>{throw new Error('ARTIST_NOT_AVAILABLE')},loadBand:async()=>assert.fail('hidden artist must not be returned')})
   const response = await handler(request({action:'import',id}))
   assert.equal(response.status,409)
   assert.deepEqual(await response.json(),{error:'ARTIST_NOT_AVAILABLE'})
@@ -74,7 +84,7 @@ test('long queries match whole phrases and aliases, prioritize exact names and c
 test('server cache hits also pass relevance filtering and use a new query namespace', async () => {
   const row = { key: `mb:${id}`, name: 'Ado', country: 'JP', type: 'Person', aliases: [], score: 100 }
   let fetched = false
-  const handler = createArtistSearchHandler({ authenticateUser: async () => false,
+  const handler = createArtistSearchHandler({ authorize: async () => ({admin:true}),
     cache: async (action, term) => { assert.equal(action, 'get'); assert.equal(term, 'query:v3:ado'); return [row, { ...row, country: null }, { ...row, country: 'CN' }, { ...row, name: 'Ado Barker' }] },
     fetcher: async () => { fetched = true }, importArtist: async () => {} })
   const response = await handler(request({ action: 'search', query: 'ado' }))

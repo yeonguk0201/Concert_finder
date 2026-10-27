@@ -1,5 +1,9 @@
 import type { Band, Concert } from './data'
+import { matchesArtistSearch } from './artistSearch'
 export type ConcertOrder = 'announcement' | 'performance' | 'ticket'
+export function matchesArtist(band: Band, query: string) {
+  return matchesArtistSearch(band, query)
+}
 export function isUpcoming(concert: Concert, now = new Date()) {
   const today = now.toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' })
   return !concert.cancelled && (!(concert.endsOn || concert.date) || (concert.endsOn || concert.date).slice(0,10) >= today)
