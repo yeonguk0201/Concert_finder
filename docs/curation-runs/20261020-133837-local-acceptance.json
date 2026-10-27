@@ -1,0 +1,66 @@
+{
+  "mode": "cloud_to_local_acceptance",
+  "recordedAtKst": "2026-10-20T13:38:37.729441+09:00",
+  "sourceArchive": "cloud-to-local-20261020-133512.zip",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "sourceRevision": 321,
+  "acceptedRevision": 322,
+  "owner": "local",
+  "transfer": null,
+  "activeRun": null,
+  "tracked": 618,
+  "stageCounts": {
+    "research": {
+      "complete": 541,
+      "pending": 6,
+      "deferred": 69,
+      "exception": 2
+    },
+    "approval": {
+      "pending": 490,
+      "deferred": 60,
+      "authority_wait": 68
+    },
+    "channels": {
+      "pending": 472,
+      "deferred": 133,
+      "complete": 12,
+      "exception": 1
+    }
+  },
+  "cloudReportedPaused": true,
+  "localAutomationStatus": "ACTIVE",
+  "cadenceHours": 5,
+  "distinctArtistCap": 40,
+  "lastStartedAt": "2026-10-20T01:32:44.965Z",
+  "nextBatchNotBeforeKst": "2026-10-20T15:32:44.965000+09:00",
+  "resumeCheck": {
+    "catalogAtRead": 618,
+    "selected": 0,
+    "reason": "schedule_window"
+  },
+  "preserved": {
+    "allEntries": true,
+    "allHistory": true,
+    "fiveHourAnchor": true,
+    "providerCooldowns": true,
+    "conditionalApprovalRequirements": true,
+    "backup": ".local/artist-review-queue/state-before-local-accept-20261020-133512.json",
+    "incomingFiles": ".local/artist-review-queue/incoming-cloud-20261020-133512"
+  },
+  "validation": {
+    "manifestChecksums": 17,
+    "existingTrustedLocalCodeAcceptedPacket": true,
+    "cloudCodeHashesDiffer": true,
+    "applicationCodeModified": false,
+    "apiCachesOrSecretsImported": false,
+    "gitDiffCheck": "passed before local commit"
+  },
+  "dbWrites": 0,
+  "newReviewBatchStarted": false,
+  "notes": [
+    "Cloud-supplied approval drafts remain conditional; authentication alone does not satisfy approval requirements.",
+    "Cloud code checksums are comparison metadata; existing local code was used without installing code from the archive.",
+    "Cloud records are preserved as source-reported results; this acceptance run does not claim their DB changes as new local applications."
+  ]
+}

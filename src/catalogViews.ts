@@ -1,8 +1,8 @@
 import type { Band, Concert } from './data'
+import { matchesArtistSearch } from './artistSearch'
 export type ConcertOrder = 'announcement' | 'performance' | 'ticket'
 export function matchesArtist(band: Band, query: string) {
-  const term = query.trim().normalize('NFKC').toLowerCase()
-  return [band.name, ...(band.aliases ?? [])].some(value => value.normalize('NFKC').toLowerCase().includes(term))
+  return matchesArtistSearch(band, query)
 }
 export function isUpcoming(concert: Concert, now = new Date()) {
   const today = now.toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' })

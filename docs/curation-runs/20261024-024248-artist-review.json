@@ -1,0 +1,2518 @@
+{
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "301e8a3b-c0ac-4830-92cc-83a8a8c05ef1",
+  "startedAt": "2026-10-23T17:31:59.261Z",
+  "finishedAt": "2026-10-23T17:40:38.006Z",
+  "savedAtKst": "2026-10-24T02:42:48.451557+09:00",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 1693,
+    "active": null,
+    "transfer": null,
+    "stateSha256": "f39c7e47a1c546ec62ce1af48fc008f9dc26eb95f6d1878538a023877e8f7f9a"
+  },
+  "environment": {
+    "codePath": "/workspace/Concert_finder-recovered-20261023",
+    "gitBase": "9b1db14",
+    "requiredAncestors": [
+      "f267be1",
+      "fd45938"
+    ],
+    "readyBindingsObserved": true,
+    "networkEnforcedObserved": true,
+    "lastfmRealResponse": {
+      "provider": "lastfm",
+      "http": 200,
+      "error": null,
+      "mbidMatched": true,
+      "listeners": "41608",
+      "checkedAt": "2026-10-23T17:33:37.477Z"
+    }
+  },
+  "summary": {
+    "selected": 40,
+    "selectedTasks": 82,
+    "newResearchComplete": 0,
+    "approvalApplied": 4,
+    "approvalDeferred": 36,
+    "channelSavedAndReadBack": 1,
+    "channelDeferred": 39,
+    "newArtistRegistration": 0,
+    "aliasChanges": 0,
+    "completeTasks": 5,
+    "deferredTasks": 77,
+    "remainingQueueEntries": 415,
+    "authorityWaitingQueueEntries": 66,
+    "databaseArtistCounts": {
+      "approved": 157,
+      "unreviewed": 469,
+      "excluded": 6,
+      "total": 632
+    }
+  },
+  "actualExternalApiCalls": {
+    "lastfm": 11,
+    "youtube": 2,
+    "musicbrainz": 0,
+    "queueReportedCalls": 2,
+    "limitation": "queue apiCalls=2는 channel checkpoint에 기록한 수다. 별도 실제 Last.fm 신원/작품 읽기11회를 제외하므로 전체 외부 API13회와 구분한다. Last.fm은 connectivity1+선정5팀 getInfo/getTopAlbums10이다."
+  },
+  "readback": {
+    "checkedAt": "2026-10-23T17:41:01.023032+00:00",
+    "serverRunFinishedAt": "2026-10-23T17:40:39.035662+00:00",
+    "serverTargets": 40,
+    "approvalReceiptCount": 4,
+    "liveIntegratedLeases": 0,
+    "channel": {
+      "bandId": "40f97a3c-dc58-4261-837e-3a68fd5c2453",
+      "name": "東京女子流",
+      "verification": "verified",
+      "lastStatus": "refreshed",
+      "canonicalId": "UCkafLPXB6MgLmTbq8UHE8Cg",
+      "cacheCheckedAt": "2026-10-23T17:38:32.819Z",
+      "storedAndReadBack": true
+    },
+    "channelWriterSummary": {
+      "imported": 1,
+      "importFailures": 0,
+      "artists": 1,
+      "applied": 1,
+      "writeFailures": 0,
+      "apiCalls": 1,
+      "counts": {
+        "refreshed": 1
+      },
+      "errors": {},
+      "ok": true,
+      "officiallyVerified": 1,
+      "photosAvailable": 1,
+      "readBack": 1
+    }
+  },
+  "items": [
+    {
+      "bandId": "2cd90d1b-01ac-4879-9ef5-73ec28abd539",
+      "name": "강재욱",
+      "originalVersion": "2026-10-23T13:26:40.601952+00:00",
+      "currentVersion": "2026-10-23T13:26:40.601952+00:00",
+      "originalIdentity": {
+        "country": "KR",
+        "musicBrainzId": "429a84e1-d1b4-4990-8691-972bccba5547",
+        "aliases": []
+      },
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "신규 DB 신원의 이름 검색에서 음악인과 연결되는 공식 소개를 확보하지 못했다. 동명이인 결과를 MBID에 연결하지 않고 신원·J-pop/록 범위를 미확정으로 보존한다.",
+          "checkedAt": "2026-10-23T17:40:32.759Z",
+          "waitingSince": "2026-10-23T17:40:32.759Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:32.759Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "신규 DB 신원의 이름 검색에서 음악인과 연결되는 공식 소개를 확보하지 못했다. 동명이인 결과를 MBID에 연결하지 않고 신원·J-pop/록 범위를 미확정으로 보존한다.",
+          "checkedAt": "2026-10-23T17:40:32.853Z",
+          "waitingSince": "2026-10-23T17:40:32.853Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:32.853Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:32.930Z",
+          "waitingSince": "2026-10-23T17:40:32.930Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:32.930Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "신규 DB 신원의 이름 검색에서 음악인과 연결되는 공식 소개를 확보하지 못했다. 동명이인 결과를 MBID에 연결하지 않고 신원·J-pop/록 범위를 미확정으로 보존한다.",
+      "originalResearchPreserved": false,
+      "sourceUrls": []
+    },
+    {
+      "bandId": "f93927cb-ed8e-4c08-b9c1-75265eb6e1db",
+      "name": "이주호",
+      "originalVersion": "2026-10-23T13:26:40.590225+00:00",
+      "currentVersion": "2026-10-23T13:26:40.590225+00:00",
+      "originalIdentity": {
+        "country": "KR",
+        "musicBrainzId": "01e89f63-20f4-4cbd-8966-85d072a96923",
+        "aliases": []
+      },
+      "selectedTasks": [
+        "research",
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "research": {
+          "status": "deferred",
+          "reason": "이주호/해바라기의 포크·어쿠스틱 자료와 대한민국·작품 목록은 확인했으나 현재 MBID와 동일 솔로 신원인지 확인되지 않았다. 포크 자료만으로 제외하지 않고 록/J-pop 활동 및 MBID 일치 추가 검수.",
+          "checkedAt": "2026-10-23T17:40:32.995Z",
+          "waitingSince": "2026-10-23T17:40:32.995Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:32.995Z",
+          "validUntil": null
+        },
+        "approval": {
+          "status": "deferred",
+          "reason": "이주호/해바라기의 포크·어쿠스틱 자료와 대한민국·작품 목록은 확인했으나 현재 MBID와 동일 솔로 신원인지 확인되지 않았다. 포크 자료만으로 제외하지 않고 록/J-pop 활동 및 MBID 일치 추가 검수.",
+          "checkedAt": "2026-10-23T17:40:33.056Z",
+          "waitingSince": "2026-10-23T17:40:33.056Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.056Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.120Z",
+          "waitingSince": "2026-10-23T17:40:33.120Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.120Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "이주호/해바라기의 포크·어쿠스틱 자료와 대한민국·작품 목록은 확인했으나 현재 MBID와 동일 솔로 신원인지 확인되지 않았다. 포크 자료만으로 제외하지 않고 록/J-pop 활동 및 MBID 일치 추가 검수.",
+      "originalResearchPreserved": false,
+      "sourceUrls": [
+        "https://artistxstage.co.kr/roster/lee-juho",
+        "https://music.bugs.co.kr/artist/4320"
+      ]
+    },
+    {
+      "bandId": "b87ac886-0fd5-46b0-81a3-f53d3aacd3a5",
+      "name": "やなぎなぎ",
+      "originalVersion": "2026-10-13T08:18:29.6076+00:00",
+      "currentVersion": "2026-10-13T08:18:29.6076+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "eeacda09-891d-4367-b9cc-c6371c96d4d9",
+        "aliases": [
+          "yanaginagi",
+          "Nagi Yanagi",
+          "柳凪",
+          "Yanagi Nagi",
+          "ガゼル",
+          "やなぎ なぎ",
+          "yana",
+          "Gazelle"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 소개에서 nagi/supercell, ビードロ模様·エウアル 등 활동을 확인했고 현재 MBID getInfo 응답은 일치했다. JP 국가 및 구체 분류와 작품 기반 외부 신원 보완이 남아 있다.",
+          "checkedAt": "2026-10-23T17:40:33.199Z",
+          "waitingSince": "2026-10-23T17:40:33.199Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.199Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.262Z",
+          "waitingSince": "2026-10-23T17:40:33.262Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.262Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개에서 nagi/supercell, ビードロ模様·エウアル 등 활동을 확인했고 현재 MBID getInfo 응답은 일치했다. JP 국가 및 구체 분류와 작품 기반 외부 신원 보완이 남아 있다.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://yanaginagi.net/profile/"
+      ]
+    },
+    {
+      "bandId": "f4b2804a-7674-4852-9f82-20df5f05ffc5",
+      "name": "ヨルシカ",
+      "originalVersion": "2026-10-12T14:45:05.622197+00:00",
+      "currentVersion": "2026-10-12T14:45:05.622197+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "dfc6a151-3792-4695-8fda-f64723eaa788",
+        "aliases": [
+          "요루시카",
+          "YORUSHIKA",
+          "Yorushika"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Universal에서 n-buna/suis·2017 결성·だから僕は音楽を辞めた 및 기타 중심 음악 활동 확인. 국가 및 정확한 외부 신원 연결 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:33.321Z",
+          "waitingSince": "2026-10-23T17:40:33.321Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.321Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.386Z",
+          "waitingSince": "2026-10-23T17:40:33.386Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.386Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Universal에서 n-buna/suis·2017 결성·だから僕は音楽を辞めた 및 기타 중심 음악 활동 확인. 국가 및 정확한 외부 신원 연결 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/yorushika/biography/"
+      ]
+    },
+    {
+      "bandId": "2b7dc3d4-a556-4794-a28c-934aa14472cd",
+      "name": "ワルキューレ",
+      "originalVersion": "2026-10-13T08:18:42.129837+00:00",
+      "currentVersion": "2026-10-13T08:18:42.129837+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "eec83a8c-4698-43d6-a62c-abed00e7e6b5",
+        "aliases": [
+          "Walküre"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "FlyingDog에서 실제 가창자 JUNNA/鈴木みのり/東山奈央/西田望見/安野希世乃, Walkure Attack!·음반/공연 확인. 캐릭터와 실제 음악 유닛 MBID 및 국가 연결 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:33.449Z",
+          "waitingSince": "2026-10-23T17:40:33.449Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.449Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.515Z",
+          "waitingSince": "2026-10-23T17:40:33.515Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.515Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "FlyingDog에서 실제 가창자 JUNNA/鈴木みのり/東山奈央/西田望見/安野希世乃, Walkure Attack!·음반/공연 확인. 캐릭터와 실제 음악 유닛 MBID 및 국가 연결 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.jvcmusic.co.jp/flyingdog/-/Profile/A025373.html"
+      ]
+    },
+    {
+      "bandId": "5184afa2-71d1-47f0-b707-e274c972ee30",
+      "name": "三月のパンタシア",
+      "originalVersion": "2026-10-13T08:18:42.515625+00:00",
+      "currentVersion": "2026-10-13T08:18:42.515625+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "e103d17d-8bb8-47c1-83b7-279294598f28",
+        "aliases": [
+          "Sangatsu no Phantasia"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony에서 보컬みあ·はじまりの速度·ガールズブルー·팝 음악 프로젝트 활동 확인. 국가 및 외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:33.575Z",
+          "waitingSince": "2026-10-23T17:40:33.575Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.575Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.632Z",
+          "waitingSince": "2026-10-23T17:40:33.632Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.632Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Sony에서 보컬みあ·はじまりの速度·ガールズブルー·팝 음악 프로젝트 활동 확인. 국가 및 외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.sonymusic.co.jp/artist/sangatsunophantasia/profile/"
+      ]
+    },
+    {
+      "bandId": "617961ac-1e99-45f4-bcec-3c09bdde6949",
+      "name": "三浦大知",
+      "originalVersion": "2026-10-13T08:18:27.221056+00:00",
+      "currentVersion": "2026-10-13T08:18:27.221056+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "9ba40854-1c67-4864-a3df-9a86050cd316",
+        "aliases": [
+          "Daichi Miura",
+          "DAICHI"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 avex에서 오키나와·Folder와 솔로 분리·Keep It Goin On/EXCITE/HIT·R&B 활동 확인. 실제 J-pop/록 범위·외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:33.696Z",
+          "waitingSince": "2026-10-23T17:40:33.696Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.696Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.753Z",
+          "waitingSince": "2026-10-23T17:40:33.753Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.753Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 avex에서 오키나와·Folder와 솔로 분리·Keep It Goin On/EXCITE/HIT·R&B 활동 확인. 실제 J-pop/록 범위·외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://avex.jp/daichi/profile/"
+      ]
+    },
+    {
+      "bandId": "2a247818-25d4-406d-a5f9-ff2ec96c128b",
+      "name": "上坂すみれ",
+      "originalVersion": "2026-10-13T08:18:22.236971+00:00",
+      "currentVersion": "2026-10-13T08:18:22.236971+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "c7179f8d-f43e-4a7c-8baa-fdfa46ce2ebb",
+        "aliases": [
+          "政委",
+          "上坂堇",
+          "Sumire Uesaka"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "King에서 성우/음악인 신원·七つの海よりキミの海 데뷔 확인. 메탈 관심사를 실제 장르 근거로 사용하지 않음. queryless 공식 근거/국가/외부 ID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:33.814Z",
+          "waitingSince": "2026-10-23T17:40:33.814Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.814Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:33.871Z",
+          "waitingSince": "2026-10-23T17:40:33.871Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.871Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "King에서 성우/음악인 신원·七つの海よりキミの海 데뷔 확인. 메탈 관심사를 실제 장르 근거로 사용하지 않음. queryless 공식 근거/국가/외부 ID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=44238"
+      ]
+    },
+    {
+      "bandId": "29d4afc8-7e21-44e4-889c-af47e37258b3",
+      "name": "中山美穂",
+      "originalVersion": "2026-10-13T08:18:31.960639+00:00",
+      "currentVersion": "2026-10-13T08:18:31.960639+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "30d83c58-baeb-4474-b6c5-6704d00c4c20",
+        "aliases": [
+          "辻美穂",
+          "MIHO NAKAYAMA",
+          "なかやま みほ",
+          "中山 美穂",
+          "Miho Nakayama",
+          "Miho Tsuji",
+          "一咲",
+          "北山瑞穂"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "King에서 도쿄 출신·1985 CD데뷔/수상 확인. 배우 활동과 음악 신원을 구분하고 실제 작품·장르·MBID를 추가 대조해야 함.",
+          "checkedAt": "2026-10-23T17:40:33.933Z",
+          "waitingSince": "2026-10-23T17:40:33.933Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:33.933Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.014Z",
+          "waitingSince": "2026-10-23T17:40:34.014Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.014Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "King에서 도쿄 출신·1985 CD데뷔/수상 확인. 배우 활동과 음악 신원을 구분하고 실제 작품·장르·MBID를 추가 대조해야 함.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=10057"
+      ]
+    },
+    {
+      "bandId": "117888ba-e569-45a6-bd4c-453c50ee46c2",
+      "name": "中島美嘉",
+      "originalVersion": "2026-10-13T08:18:23.171261+00:00",
+      "currentVersion": "2026-10-13T08:18:23.171261+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "f8d6e5df-069e-4b8d-9a13-cc7e0a558dd1",
+        "aliases": [
+          "NANA starring MIKA NAKASHIMA",
+          "なかしまみか",
+          "NANA starring Nakashima Mika",
+          "Nakashima Mika",
+          "Mika Nakashima",
+          "なかしま みか",
+          "中岛美嘉",
+          "Nakachima Mika"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Sony Music/Info 경로503 후 실제 artist/MikaNakashima/profile에서 가고시마·STARS/TRUE/雪の華·록&팝 앨범상 확인. 정확한 MBID별 음악인·솔로/다른 명의 구분 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.091Z",
+          "waitingSince": "2026-10-23T17:40:34.091Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.091Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.154Z",
+          "waitingSince": "2026-10-23T17:40:34.154Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.154Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "기존 Sony Music/Info 경로503 후 실제 artist/MikaNakashima/profile에서 가고시마·STARS/TRUE/雪の華·록&팝 앨범상 확인. 정확한 MBID별 음악인·솔로/다른 명의 구분 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.sonymusic.co.jp/artist/MikaNakashima/profile/"
+      ]
+    },
+    {
+      "bandId": "df1fad15-9c4a-4782-ab3c-2ec206d6c322",
+      "name": "中森明菜",
+      "originalVersion": "2026-10-13T08:18:09.891625+00:00",
+      "currentVersion": "2026-10-13T08:18:09.891625+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "9f18e7f6-08e8-4b85-a5d9-070a60ee522a",
+        "aliases": [
+          "나카모리 아키나",
+          "Miran:Miran",
+          "なかもり あきな",
+          "ＭＩＲＡＮ",
+          "Nakamori Akina",
+          "中森 明菜",
+          "Akina Nakamori"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 소개가 일본인/도쿄 출신·スローモーション/ミ・アモーレ/DESIRE와 음반 활동을 명시. 현재 MBID/작품 대조와 분류 검증 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.221Z",
+          "waitingSince": "2026-10-23T17:40:34.221Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.221Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.286Z",
+          "waitingSince": "2026-10-23T17:40:34.286Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.286Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개가 일본인/도쿄 출신·スローモーション/ミ・アモーレ/DESIRE와 음반 활동을 명시. 현재 MBID/작품 대조와 분류 검증 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://akinanakamoriofficial.com/profile/"
+      ]
+    },
+    {
+      "bandId": "adf9d493-1faf-407b-8e51-675a7a506630",
+      "name": "乃木坂46",
+      "originalVersion": "2026-10-13T08:18:26.538581+00:00",
+      "currentVersion": "2026-10-13T08:18:26.538581+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "466f7b0a-a3e6-435d-8326-b4ef825a609d",
+        "aliases": [
+          "Nogizaka",
+          "NOGISAKA46",
+          "Nogizaka46",
+          "N46"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 멤버 목록과 실제 싱글 이력 확인. 날짜 query 없는 경로 확보. 그룹 국가·원작 J-pop/외부 ID 근거 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.353Z",
+          "waitingSince": "2026-10-23T17:40:34.353Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.353Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.415Z",
+          "waitingSince": "2026-10-23T17:40:34.415Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.415Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 멤버 목록과 실제 싱글 이력 확인. 날짜 query 없는 경로 확보. 그룹 국가·원작 J-pop/외부 ID 근거 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.nogizaka46.com/s/n46/search/artist"
+      ]
+    },
+    {
+      "bandId": "a1d059ab-76b8-47f9-b6c8-1141fe3d98e6",
+      "name": "井口裕香",
+      "originalVersion": "2026-10-13T08:18:25.93312+00:00",
+      "currentVersion": "2026-10-13T08:18:25.93312+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "bda56c26-092c-43c4-99dc-5373f18a4d85",
+        "aliases": [
+          "Yuka Iguchi"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 discography에서 Shining Star/Prologue/clearly 등 발매 확인. 국가/실제 장르·외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.531Z",
+          "waitingSince": "2026-10-23T17:40:34.531Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.531Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.592Z",
+          "waitingSince": "2026-10-23T17:40:34.592Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.592Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 discography에서 Shining Star/Prologue/clearly 등 발매 확인. 국가/실제 장르·외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://iguchiyuka.jp/discography/index.html"
+      ]
+    },
+    {
+      "bandId": "d5b31176-e66e-4ad7-806b-b16bda54041d",
+      "name": "伊藤美来",
+      "originalVersion": "2026-10-13T08:18:49.241596+00:00",
+      "currentVersion": "2026-10-13T08:18:49.241596+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "c16f8e30-0476-4d07-971d-f3b96adb1753",
+        "aliases": [
+          "Miku Ito",
+          "Miku Itō"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Columbia에서 성우 역할과 솔로음악을 분리하고 Shocking Blue/This One s for You 등 원작 발매 확인. 국가·외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.652Z",
+          "waitingSince": "2026-10-23T17:40:34.652Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.652Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.715Z",
+          "waitingSince": "2026-10-23T17:40:34.715Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.715Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Columbia에서 성우 역할과 솔로음악을 분리하고 Shocking Blue/This One s for You 등 원작 발매 확인. 국가·외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://columbia.jp/artist-info/itomiku/prof.html"
+      ]
+    },
+    {
+      "bandId": "c6e2cf0a-a583-4556-a11d-1a7f04cb0b29",
+      "name": "倉木麻衣",
+      "originalVersion": "2026-10-13T08:18:34.041897+00:00",
+      "currentVersion": "2026-10-13T08:18:34.041897+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "60f41bf9-86cb-482b-a1b3-64a3da90fa4a",
+        "aliases": [
+          "Mai Kuraki",
+          "くらき まい",
+          "Mai-K",
+          "倉木 麻衣",
+          "仓木麻衣",
+          "Mai.K"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 bio에서 Mai-K 미국 데뷔와 일본 데뷔를 구분하고 Love Day After Tomorrow/delicious way 확인. 데뷔 시장을 국적으로 삼지 않으며 국가·정확한 외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.778Z",
+          "waitingSince": "2026-10-23T17:40:34.778Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.778Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.840Z",
+          "waitingSince": "2026-10-23T17:40:34.840Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.840Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 bio에서 Mai-K 미국 데뷔와 일본 데뷔를 구분하고 Love Day After Tomorrow/delicious way 확인. 데뷔 시장을 국적으로 삼지 않으며 국가·정확한 외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://mai-kuraki.com/bio/"
+      ]
+    },
+    {
+      "bandId": "e361a539-d587-4d58-aebe-debdc2be1a64",
+      "name": "倖田來未",
+      "originalVersion": "2026-10-13T08:18:13.905157+00:00",
+      "currentVersion": "2026-10-13T08:18:13.905157+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "455641ea-fff4-49f6-8fb4-49f961d8f1ac",
+        "aliases": [
+          "Kumi Koda",
+          "Kouda Kumi",
+          "こうだくみ",
+          "Koda Kumi",
+          "倖田　來未",
+          "こうだ くみ",
+          "倖田 来未",
+          "神田來未子"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 profile의 교토 출신/일본인 명시, TAKE BACK/Butterfly/Black Cherry와 R&B 중심 활동 확인. 혼합 J-pop 범위·정확한 MBID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:34.908Z",
+          "waitingSince": "2026-10-23T17:40:34.908Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.908Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:34.976Z",
+          "waitingSince": "2026-10-23T17:40:34.976Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:34.976Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 profile의 교토 출신/일본인 명시, TAKE BACK/Butterfly/Black Cherry와 R&B 중심 활동 확인. 혼합 J-pop 범위·정확한 MBID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://rhythmzone.net/koda/profile/"
+      ]
+    },
+    {
+      "bandId": "0f163cf4-9a9b-47e4-b0a3-2409adfddc09",
+      "name": "内田真礼",
+      "originalVersion": "2026-10-13T08:18:32.328938+00:00",
+      "currentVersion": "2026-10-13T08:18:32.328938+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "74368b3e-6a26-4e74-a210-e7e616fc49df",
+        "aliases": [
+          "Maaya Uchida"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 사이트에서 도쿄·실제 음악 MV와 소속 확인. 이름/사진만으로 분류하지 않으며 원작 음반·외부 ID 근거 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:35.033Z",
+          "waitingSince": "2026-10-23T17:40:35.033Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.033Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.097Z",
+          "waitingSince": "2026-10-23T17:40:35.097Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.097Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 사이트에서 도쿄·실제 음악 MV와 소속 확인. 이름/사진만으로 분류하지 않으며 원작 음반·외부 ID 근거 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.uchidamaaya.jp/"
+      ]
+    },
+    {
+      "bandId": "25b5d8b8-13af-4a90-925a-75ca1ab815c7",
+      "name": "南條愛乃",
+      "originalVersion": "2026-10-13T08:18:21.542632+00:00",
+      "currentVersion": "2026-10-13T08:18:21.542632+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "b890b1bc-e024-409a-bbeb-a57aa23baa7d",
+        "aliases": [
+          "Yoshino Nanjō",
+          "Yoshino Nanjyou",
+          "Yoshino Nanjou",
+          "Yoshino Nanjoh"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "NBC에서 fripSide 보컬과 솔로 カタルモア/THE MEMORIES APARTMENT 활동을 구분. 국가/외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:35.170Z",
+          "waitingSince": "2026-10-23T17:40:35.170Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.170Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.229Z",
+          "waitingSince": "2026-10-23T17:40:35.229Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.229Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "NBC에서 fripSide 보컬과 솔로 カタルモア/THE MEMORIES APARTMENT 활동을 구분. 국가/외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://nbcuni-music.com/yoshino_nanjo/contents/hp0003/index00010000.html"
+      ]
+    },
+    {
+      "bandId": "b75d89d2-c1aa-4879-bff1-a0135cc98285",
+      "name": "堀江由衣",
+      "originalVersion": "2026-10-13T08:18:14.245243+00:00",
+      "currentVersion": "2026-10-13T08:18:14.245243+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "55266ab1-6655-45fe-83eb-40702468ce7d",
+        "aliases": [
+          "Yoshiko Horie",
+          "ホリエユイ",
+          "堀江由子",
+          "Yui Horie",
+          "ほりえゆい"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 소개에서 도쿄·声優アーティスト 및 음반11장/ワールドエンドの庭 확인. 구체 장르·정확한 외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:35.288Z",
+          "waitingSince": "2026-10-23T17:40:35.288Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.288Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.358Z",
+          "waitingSince": "2026-10-23T17:40:35.358Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.358Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개에서 도쿄·声優アーティスト 및 음반11장/ワールドエンドの庭 확인. 구체 장르·정확한 외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://horie-yui.com/profile/"
+      ]
+    },
+    {
+      "bandId": "7ac97ac1-7b2e-40bc-8950-73bec3b83ca8",
+      "name": "夏川椎菜",
+      "originalVersion": "2026-10-13T08:18:41.756162+00:00",
+      "currentVersion": "2026-10-13T08:18:41.756162+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "5922839d-b7ff-48c1-93ce-9d1678c02942",
+        "aliases": [
+          "Shiina Natsukawa"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony의 navigation-only 페이지 대신 /profile에서 치바 및 출연 역할 확인. 역할 명칭을 원작 음악 근거로 사용하지 않으며 실제 솔로 음악/MBID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:35.418Z",
+          "waitingSince": "2026-10-23T17:40:35.418Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.418Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.477Z",
+          "waitingSince": "2026-10-23T17:40:35.477Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.477Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Sony의 navigation-only 페이지 대신 /profile에서 치바 및 출연 역할 확인. 역할 명칭을 원작 음악 근거로 사용하지 않으며 실제 솔로 음악/MBID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.sonymusic.co.jp/artist/shiinanatsukawa/profile/"
+      ]
+    },
+    {
+      "bandId": "41d53a47-40d4-49b0-b2e3-0f50d325a04a",
+      "name": "UK Subs",
+      "originalVersion": "2026-10-13T08:20:18.002682+00:00",
+      "currentVersion": "2026-10-23T17:37:03.851881+00:00",
+      "originalIdentity": {
+        "country": "GB",
+        "musicBrainzId": "a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d",
+        "aliases": [
+          "U.K. Subs",
+          "The UK Subs"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T17:37:02.737Z",
+          "waitingSince": "2026-10-23T17:37:02.737Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T17:37:02.737Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T17:37:02.737Z",
+          "proposal": {
+            "target_band_id": "41d53a47-40d4-49b0-b2e3-0f50d325a04a",
+            "expected_updated_at": "2026-10-13T08:20:18.002682+00:00",
+            "artist_name": "UK Subs",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "U.K. Subs",
+              "The UK Subs"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+            "evidence_url": "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T17:37:03.851881+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.539Z",
+          "waitingSince": "2026-10-23T17:40:35.539Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.539Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개의 국가/록 활동과 MBID별 API 작품 교차 확인 후 승인 적용·readback 완료.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/"
+      ],
+      "proposal": {
+        "target_band_id": "41d53a47-40d4-49b0-b2e3-0f50d325a04a",
+        "expected_updated_at": "2026-10-13T08:20:18.002682+00:00",
+        "artist_name": "UK Subs",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "U.K. Subs",
+          "The UK Subs"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+        "evidence_url": "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다. 현재 DB band 41d53a47-40d4-49b0-b2e3-0f50d325a04a와 외부 key mb:a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 UK Subs 반환 확인; 동일 MBID의 getTopAlbums에서 Diminished Responsibility을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개의 활동 신원/원산 국가를 현재 GB와 대조했다. Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다.",
+          "sourceUrls": [
+            "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다.",
+          "sourceUrls": [
+            "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "현재 확인한 록 계열 활동과 GB 국가에 따라 기존 overseas_rock 정책을 적용한다. 국적이나 밴드 형식만으로 장르를 추정하지 않았다.",
+          "sourceUrls": [
+            "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB band 41d53a47-40d4-49b0-b2e3-0f50d325a04a와 외부 key mb:a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 UK Subs 반환 확인; 동일 MBID의 getTopAlbums에서 Diminished Responsibility을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 개별 공연은 이 RPC에서 공개하지 않으며 출처 publication OFF·발표/예매 시각·회차·수동 차단·초기 채움 무알림과 기존 발송 동의 조건은 별도로 충족해야 한다.",
+          "sourceUrls": [
+            "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다. 현재 DB band 41d53a47-40d4-49b0-b2e3-0f50d325a04a와 외부 key mb:a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 UK Subs 반환 확인; 동일 MBID의 getTopAlbums에서 Diminished Responsibility을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+        "sources": [
+          {
+            "url": "https://www.demonmusicgroup.co.uk/catalogue/releases/diminished-responsibility/",
+            "checkedAt": "2026-10-23T17:37:02.662607+00:00",
+            "summary": "Demon Records는 UK Subs를 잉글랜드 펑크 록 밴드로 명시하고 Charlie Harper·1976년 결성·Diminished Responsibility 음반을 소개한다."
+          },
+          {
+            "url": "https://ws.audioscrobbler.com/2.0/",
+            "checkedAt": "2026-10-23T17:34:34.495Z",
+            "summary": "현재 DB band 41d53a47-40d4-49b0-b2e3-0f50d325a04a와 외부 key mb:a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 UK Subs 반환 확인; 동일 MBID의 getTopAlbums에서 Diminished Responsibility을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음."
+          }
+        ]
+      },
+      "externalCrosscheck": {
+        "index": 20,
+        "bandId": "41d53a47-40d4-49b0-b2e3-0f50d325a04a",
+        "requestedMbid": "a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d",
+        "checkedAt": "2026-10-23T17:34:34.495Z",
+        "infoHttp": 200,
+        "apiError": null,
+        "returnedName": "UK Subs",
+        "returnedMbid": "a57d7a1b-b7ef-4f36-bbf6-9f5a167cd08d",
+        "mbidMatched": true,
+        "albumHttp": 200,
+        "albumError": null,
+        "albumArtist": "UK Subs",
+        "matchedOfficialWork": "Diminished Responsibility"
+      }
+    },
+    {
+      "bandId": "fc63f7e5-9b45-45c4-a132-7c881b188086",
+      "name": "Uriah Heep",
+      "originalVersion": "2026-10-13T08:19:21.500117+00:00",
+      "currentVersion": "2026-10-13T08:19:21.500117+00:00",
+      "originalIdentity": {
+        "country": "GB",
+        "musicBrainzId": "f1548c5b-329e-4036-921c-02213a04b525",
+        "aliases": [
+          "ユーライア・ヒープ",
+          "uriah%20heep",
+          "Uriah Hip",
+          "Uriah Hepp",
+          "yu-raia hi-pu",
+          "UH",
+          "Uriah Heap",
+          "ユーライア ヒープ",
+          "Uria Heep",
+          "Uriaheep",
+          "Uria Hepp"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 공식 band 페이지 timeout. 근거 완료로 세지 않으며 새로운 대체 공식 소개와 정확한 국가/MBID 검증 필요.",
+          "checkedAt": "2026-10-23T17:40:35.604Z",
+          "waitingSince": "2026-10-23T17:40:35.604Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.604Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.666Z",
+          "waitingSince": "2026-10-23T17:40:35.666Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.666Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "기존 공식 band 페이지 timeout. 근거 완료로 세지 않으며 새로운 대체 공식 소개와 정확한 국가/MBID 검증 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.uriah-heep.com/2020Site/band.html"
+      ]
+    },
+    {
+      "bandId": "e98b4500-cacf-41b9-b4b2-edf4a8f5f96e",
+      "name": "Weezer",
+      "originalVersion": "2026-10-13T08:19:47.159105+00:00",
+      "currentVersion": "2026-10-23T17:37:05.836151+00:00",
+      "originalIdentity": {
+        "country": "US",
+        "musicBrainzId": "6fe07aa5-fec0-4eca-a456-f29bff451b04",
+        "aliases": [
+          "ウィーザー"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T17:37:04.975Z",
+          "waitingSince": "2026-10-23T17:37:04.975Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T17:37:04.975Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T17:37:04.975Z",
+          "proposal": {
+            "target_band_id": "e98b4500-cacf-41b9-b4b2-edf4a8f5f96e",
+            "expected_updated_at": "2026-10-13T08:19:47.159105+00:00",
+            "artist_name": "Weezer",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "ウィーザー"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+            "evidence_url": "https://www.universal-music.co.jp/scott-and-rivers/biography/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T17:37:05.836151+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.727Z",
+          "waitingSince": "2026-10-23T17:40:35.727Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.727Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개의 국가/록 활동과 MBID별 API 작품 교차 확인 후 승인 적용·readback 완료.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/scott-and-rivers/biography/"
+      ],
+      "proposal": {
+        "target_band_id": "e98b4500-cacf-41b9-b4b2-edf4a8f5f96e",
+        "expected_updated_at": "2026-10-13T08:19:47.159105+00:00",
+        "artist_name": "Weezer",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "ウィーザー"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+        "evidence_url": "https://www.universal-music.co.jp/scott-and-rivers/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다. 현재 DB band e98b4500-cacf-41b9-b4b2-edf4a8f5f96e와 외부 key mb:6fe07aa5-fec0-4eca-a456-f29bff451b04 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Weezer 반환 확인; 동일 MBID의 getTopAlbums에서 Weezer을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개의 활동 신원/원산 국가를 현재 US와 대조했다. Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "현재 확인한 록 계열 활동과 US 국가에 따라 기존 overseas_rock 정책을 적용한다. 국적이나 밴드 형식만으로 장르를 추정하지 않았다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB band e98b4500-cacf-41b9-b4b2-edf4a8f5f96e와 외부 key mb:6fe07aa5-fec0-4eca-a456-f29bff451b04 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Weezer 반환 확인; 동일 MBID의 getTopAlbums에서 Weezer을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 개별 공연은 이 RPC에서 공개하지 않으며 출처 publication OFF·발표/예매 시각·회차·수동 차단·초기 채움 무알림과 기존 발송 동의 조건은 별도로 충족해야 한다.",
+          "sourceUrls": [
+            "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다. 현재 DB band e98b4500-cacf-41b9-b4b2-edf4a8f5f96e와 외부 key mb:6fe07aa5-fec0-4eca-a456-f29bff451b04 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Weezer 반환 확인; 동일 MBID의 getTopAlbums에서 Weezer을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+        "sources": [
+          {
+            "url": "https://www.universal-music.co.jp/scott-and-rivers/biography/",
+            "checkedAt": "2026-10-23T17:37:02.662607+00:00",
+            "summary": "Universal 공식 소개는 Weezer를 LA 얼터너티브 록 밴드로 명시하며 Rivers Cuomo, 1992년 결성 및 첫 Weezer 음반을 소개한다. Scott & Rivers 유닛 자체와 Weezer 밴드 신원을 구분했다."
+          },
+          {
+            "url": "https://ws.audioscrobbler.com/2.0/",
+            "checkedAt": "2026-10-23T17:34:37.149Z",
+            "summary": "현재 DB band e98b4500-cacf-41b9-b4b2-edf4a8f5f96e와 외부 key mb:6fe07aa5-fec0-4eca-a456-f29bff451b04 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Weezer 반환 확인; 동일 MBID의 getTopAlbums에서 Weezer을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음."
+          }
+        ]
+      },
+      "externalCrosscheck": {
+        "index": 22,
+        "bandId": "e98b4500-cacf-41b9-b4b2-edf4a8f5f96e",
+        "requestedMbid": "6fe07aa5-fec0-4eca-a456-f29bff451b04",
+        "checkedAt": "2026-10-23T17:34:37.149Z",
+        "infoHttp": 200,
+        "apiError": null,
+        "returnedName": "Weezer",
+        "returnedMbid": "6fe07aa5-fec0-4eca-a456-f29bff451b04",
+        "mbidMatched": true,
+        "albumHttp": 200,
+        "albumError": null,
+        "albumArtist": "Weezer",
+        "matchedOfficialWork": "Weezer"
+      }
+    },
+    {
+      "bandId": "1fac4ae2-16f0-4c68-8c8d-86f3fc4c0a19",
+      "name": "Wire",
+      "originalVersion": "2026-10-13T08:20:29.510021+00:00",
+      "currentVersion": "2026-10-13T08:20:29.510021+00:00",
+      "originalIdentity": {
+        "country": "GB",
+        "musicBrainzId": "7f2a8098-50e3-451c-8696-c5d9f64f4762",
+        "aliases": [
+          "Wir"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 Pinkflag에서 Colin Newman/Graham Lewis/Robert Grey/Matthew Simms와 Send/Red Barked Tree 확인. 국가·명시적 록 활동·외부 ID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:35.796Z",
+          "waitingSince": "2026-10-23T17:40:35.796Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.796Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.856Z",
+          "waitingSince": "2026-10-23T17:40:35.856Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.856Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 Pinkflag에서 Colin Newman/Graham Lewis/Robert Grey/Matthew Simms와 Send/Red Barked Tree 확인. 국가·명시적 록 활동·외부 ID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.pinkflag.com/us.php"
+      ]
+    },
+    {
+      "bandId": "bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64",
+      "name": "XTC",
+      "originalVersion": "2026-10-13T08:19:37.032919+00:00",
+      "currentVersion": "2026-10-23T17:37:07.589289+00:00",
+      "originalIdentity": {
+        "country": "GB",
+        "musicBrainzId": "97c86b2c-2765-46a2-aef8-76a7e24c430f",
+        "aliases": [
+          "엑스티씨",
+          "The Three Wise Men",
+          "The Beech Avenue Boys"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T17:37:06.891Z",
+          "waitingSince": "2026-10-23T17:37:06.891Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T17:37:06.891Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T17:37:06.891Z",
+          "proposal": {
+            "target_band_id": "bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64",
+            "expected_updated_at": "2026-10-13T08:19:37.032919+00:00",
+            "artist_name": "XTC",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "엑스티씨",
+              "The Three Wise Men",
+              "The Beech Avenue Boys"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+            "evidence_url": "https://www.universalmusic.fr/artistes/20000162941"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T17:37:07.589289+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.918Z",
+          "waitingSince": "2026-10-23T17:40:35.918Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.918Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개의 국가/록 활동과 MBID별 API 작품 교차 확인 후 승인 적용·readback 완료.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.universalmusic.fr/artistes/20000162941"
+      ],
+      "proposal": {
+        "target_band_id": "bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64",
+        "expected_updated_at": "2026-10-13T08:19:37.032919+00:00",
+        "artist_name": "XTC",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "엑스티씨",
+          "The Three Wise Men",
+          "The Beech Avenue Boys"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+        "evidence_url": "https://www.universalmusic.fr/artistes/20000162941"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다. 현재 DB band bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64와 외부 key mb:97c86b2c-2765-46a2-aef8-76a7e24c430f 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 XTC 반환 확인; 동일 MBID의 getTopAlbums에서 Skylarking을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000162941",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개의 활동 신원/원산 국가를 현재 GB와 대조했다. Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000162941",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000162941",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "현재 확인한 록 계열 활동과 GB 국가에 따라 기존 overseas_rock 정책을 적용한다. 국적이나 밴드 형식만으로 장르를 추정하지 않았다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000162941",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB band bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64와 외부 key mb:97c86b2c-2765-46a2-aef8-76a7e24c430f 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 XTC 반환 확인; 동일 MBID의 getTopAlbums에서 Skylarking을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000162941",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 개별 공연은 이 RPC에서 공개하지 않으며 출처 publication OFF·발표/예매 시각·회차·수동 차단·초기 채움 무알림과 기존 발송 동의 조건은 별도로 충족해야 한다.",
+          "sourceUrls": [
+            "https://www.universalmusic.fr/artistes/20000162941",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다. 현재 DB band bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64와 외부 key mb:97c86b2c-2765-46a2-aef8-76a7e24c430f 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 XTC 반환 확인; 동일 MBID의 getTopAlbums에서 Skylarking을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+        "sources": [
+          {
+            "url": "https://www.universalmusic.fr/artistes/20000162941",
+            "checkedAt": "2026-10-23T17:37:02.662607+00:00",
+            "summary": "Universal 공식 XTC 소개는 잉글랜드 Swindon 결성 및 Andy Partridge/Colin Moulding, 영국 post-punk/rock 활동과 Skylarking·English Settlement 음반을 확인한다. 프랑스 사이트 소재지를 밴드 국적으로 쓰지 않았다."
+          },
+          {
+            "url": "https://ws.audioscrobbler.com/2.0/",
+            "checkedAt": "2026-10-23T17:34:39.834Z",
+            "summary": "현재 DB band bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64와 외부 key mb:97c86b2c-2765-46a2-aef8-76a7e24c430f 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 XTC 반환 확인; 동일 MBID의 getTopAlbums에서 Skylarking을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음."
+          }
+        ]
+      },
+      "externalCrosscheck": {
+        "index": 24,
+        "bandId": "bc6233ab-2d0e-4b5d-9a9a-4028ae96ad64",
+        "requestedMbid": "97c86b2c-2765-46a2-aef8-76a7e24c430f",
+        "checkedAt": "2026-10-23T17:34:39.834Z",
+        "infoHttp": 200,
+        "apiError": null,
+        "returnedName": "XTC",
+        "returnedMbid": "97c86b2c-2765-46a2-aef8-76a7e24c430f",
+        "mbidMatched": true,
+        "albumHttp": 200,
+        "albumError": null,
+        "albumArtist": "XTC",
+        "matchedOfficialWork": "Skylarking"
+      }
+    },
+    {
+      "bandId": "f771e773-ba73-4c36-a20e-22fa12b8890e",
+      "name": "Xutos & Pontapés",
+      "originalVersion": "2026-10-13T08:20:35.923152+00:00",
+      "currentVersion": "2026-10-23T17:37:09.075515+00:00",
+      "originalIdentity": {
+        "country": "PT",
+        "musicBrainzId": "12f2de9e-83d0-48ee-902b-c73d7a7cb6c9",
+        "aliases": [
+          "Xutos e Pontapés",
+          "Xutos o Pontapés"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T17:37:08.331Z",
+          "waitingSince": "2026-10-23T17:37:08.331Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T17:37:08.331Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T17:37:08.331Z",
+          "proposal": {
+            "target_band_id": "f771e773-ba73-4c36-a20e-22fa12b8890e",
+            "expected_updated_at": "2026-10-13T08:20:35.923152+00:00",
+            "artist_name": "Xutos & Pontapés",
+            "country": "PT",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Xutos e Pontapés",
+              "Xutos o Pontapés"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+            "evidence_url": "https://xutos.pt/biografia/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T17:37:09.075515+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:35.985Z",
+          "waitingSince": "2026-10-23T17:40:35.985Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:35.985Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개의 국가/록 활동과 MBID별 API 작품 교차 확인 후 승인 적용·readback 완료.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://xutos.pt/biografia/"
+      ],
+      "proposal": {
+        "target_band_id": "f771e773-ba73-4c36-a20e-22fa12b8890e",
+        "expected_updated_at": "2026-10-13T08:20:35.923152+00:00",
+        "artist_name": "Xutos & Pontapés",
+        "country": "PT",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Xutos e Pontapés",
+          "Xutos o Pontapés"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다. MBID별 API 작품 교차 확인 및 DB 외부 신원 연결을 검증함. 개별 공연 공개/알림은 별도 조건을 유지함.",
+        "evidence_url": "https://xutos.pt/biografia/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다. 현재 DB band f771e773-ba73-4c36-a20e-22fa12b8890e와 외부 key mb:12f2de9e-83d0-48ee-902b-c73d7a7cb6c9 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Xutos & Pontapés 반환 확인; 동일 MBID의 getTopAlbums에서 Circo De Feras을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://xutos.pt/biografia/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개의 활동 신원/원산 국가를 현재 PT와 대조했다. Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다.",
+          "sourceUrls": [
+            "https://xutos.pt/biografia/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다.",
+          "sourceUrls": [
+            "https://xutos.pt/biografia/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "현재 확인한 록 계열 활동과 PT 국가에 따라 기존 overseas_rock 정책을 적용한다. 국적이나 밴드 형식만으로 장르를 추정하지 않았다.",
+          "sourceUrls": [
+            "https://xutos.pt/biografia/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 DB band f771e773-ba73-4c36-a20e-22fa12b8890e와 외부 key mb:12f2de9e-83d0-48ee-902b-c73d7a7cb6c9 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Xutos & Pontapés 반환 확인; 동일 MBID의 getTopAlbums에서 Circo De Feras을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+          "sourceUrls": [
+            "https://xutos.pt/biografia/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 개별 공연은 이 RPC에서 공개하지 않으며 출처 publication OFF·발표/예매 시각·회차·수동 차단·초기 채움 무알림과 기존 발송 동의 조건은 별도로 충족해야 한다.",
+          "sourceUrls": [
+            "https://xutos.pt/biografia/",
+            "https://ws.audioscrobbler.com/2.0/"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다. 현재 DB band f771e773-ba73-4c36-a20e-22fa12b8890e와 외부 key mb:12f2de9e-83d0-48ee-902b-c73d7a7cb6c9 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Xutos & Pontapés 반환 확인; 동일 MBID의 getTopAlbums에서 Circo De Feras을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음.",
+        "sources": [
+          {
+            "url": "https://xutos.pt/biografia/",
+            "checkedAt": "2026-10-23T17:37:02.662607+00:00",
+            "summary": "Xutos & Pontapés 공식 소개는 포르투갈의 포르투갈인 록앤롤 밴드, Tim/Zé Pedro/Kalú/João Cabeleira/Gui와 Circo de Feras·Cerco 음반 이력을 명시한다."
+          },
+          {
+            "url": "https://ws.audioscrobbler.com/2.0/",
+            "checkedAt": "2026-10-23T17:34:42.337Z",
+            "summary": "현재 DB band f771e773-ba73-4c36-a20e-22fa12b8890e와 외부 key mb:12f2de9e-83d0-48ee-902b-c73d7a7cb6c9 연결을 context에서 확인. Last.fm artist.getInfo에 해당 MBID를 요청해 동일 MBID와 Xutos & Pontapés 반환 확인; 동일 MBID의 getTopAlbums에서 Circo De Feras을 공식 소개의 작품과 대조. 이름 일치나 태그만으로 승인하지 않음."
+          }
+        ]
+      },
+      "externalCrosscheck": {
+        "index": 25,
+        "bandId": "f771e773-ba73-4c36-a20e-22fa12b8890e",
+        "requestedMbid": "12f2de9e-83d0-48ee-902b-c73d7a7cb6c9",
+        "checkedAt": "2026-10-23T17:34:42.337Z",
+        "infoHttp": 200,
+        "apiError": null,
+        "returnedName": "Xutos & Pontapés",
+        "returnedMbid": "12f2de9e-83d0-48ee-902b-c73d7a7cb6c9",
+        "mbidMatched": true,
+        "albumHttp": 200,
+        "albumError": null,
+        "albumArtist": "Xutos & Pontapés",
+        "matchedOfficialWork": "Circo De Feras"
+      }
+    },
+    {
+      "bandId": "a1ae0c1d-fd6d-4aaf-aa0b-3ac792650114",
+      "name": "Zwan",
+      "originalVersion": "2026-10-13T08:20:12.506881+00:00",
+      "currentVersion": "2026-10-13T08:20:12.506881+00:00",
+      "originalIdentity": {
+        "country": "US",
+        "musicBrainzId": "5af2629b-36de-486c-ad50-a89a28ff050f",
+        "aliases": [
+          "Djali Zwan"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "AppleMusic에서 Honestly/Lyric만 확인되고 소개·원산 국가 본문은 미확보. US storefront를 국적으로 쓰지 않으며 공식 대체 근거 필요.",
+          "checkedAt": "2026-10-23T17:40:36.045Z",
+          "waitingSince": "2026-10-23T17:40:36.045Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.045Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.115Z",
+          "waitingSince": "2026-10-23T17:40:36.115Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.115Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "AppleMusic에서 Honestly/Lyric만 확인되고 소개·원산 국가 본문은 미확보. US storefront를 국적으로 쓰지 않으며 공식 대체 근거 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://music.apple.com/us/artist/zwan/2092397"
+      ]
+    },
+    {
+      "bandId": "2224bb67-bcba-4d5b-9112-d893abeaac0a",
+      "name": "Гражданская оборона",
+      "originalVersion": "2026-10-13T08:20:19.690461+00:00",
+      "currentVersion": "2026-10-13T08:20:19.690461+00:00",
+      "originalIdentity": {
+        "country": "RU",
+        "musicBrainzId": "16d837ab-208f-4588-89bb-c036b5c5a0a6",
+        "aliases": [
+          "Grazhdanskaya Oborona",
+          "GrOb",
+          "ГрОб",
+          "Гр.Об.",
+          "Гр. Об."
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 사이트에서 1984 Omsk·Егор Летов/Константин Рябинов·러시아 록/펑크 활동 확인. Last.fm은 해당 MBID error6이며 외부 신원 교차 확인 보류. API 실패는 제외 근거 아님.",
+          "checkedAt": "2026-10-23T17:40:36.226Z",
+          "waitingSince": "2026-10-23T17:40:36.226Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.226Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.291Z",
+          "waitingSince": "2026-10-23T17:40:36.291Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.291Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 사이트에서 1984 Omsk·Егор Летов/Константин Рябинов·러시아 록/펑크 활동 확인. Last.fm은 해당 MBID error6이며 외부 신원 교차 확인 보류. API 실패는 제외 근거 아님.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.gr-oborona.ru/pub/rock/about.html"
+      ]
+    },
+    {
+      "bandId": "16f44e1e-eb43-4956-a35b-4f6648d47099",
+      "name": "Тараканы!",
+      "originalVersion": "2026-10-13T08:20:22.557263+00:00",
+      "currentVersion": "2026-10-13T08:20:22.557263+00:00",
+      "originalIdentity": {
+        "country": "RU",
+        "musicBrainzId": "6e2f63bf-c1eb-473f-a2aa-cd2daf08f5ec",
+        "aliases": [
+          "Tarakany!",
+          "Tarakany",
+          "Тараканы"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Rockisfest에서 punk/alternative-rock 및 공식 tarakany 사이트 링크 확인. 국가와 실제 공식 MBID/작품 근거 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:36.350Z",
+          "waitingSince": "2026-10-23T17:40:36.350Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.350Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.416Z",
+          "waitingSince": "2026-10-23T17:40:36.416Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.416Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Rockisfest에서 punk/alternative-rock 및 공식 tarakany 사이트 링크 확인. 국가와 실제 공식 MBID/작품 근거 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://rockisfest.ru/band/tarakany/"
+      ]
+    },
+    {
+      "bandId": "1582ef1a-6589-493d-b7c6-a3678df3011b",
+      "name": "小泉今日子",
+      "originalVersion": "2026-10-13T08:18:42.906872+00:00",
+      "currentVersion": "2026-10-13T08:18:42.906872+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "52af6a73-d1f9-4b74-923d-4a790938f4c3",
+        "aliases": [
+          "Kyōko Koizumi",
+          "小泉 今日子",
+          "KOIZUMIX PRODUCTION",
+          "KOIZUMI Kyouko",
+          "こいずみ きょうこ",
+          "Kyoko Koizumi"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Victor에서 1982 가수 데뷔·木枯しに抱かれて/優しい雨·黒猫同盟과 솔로를 구분. 국가/외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:36.491Z",
+          "waitingSince": "2026-10-23T17:40:36.491Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.491Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.550Z",
+          "waitingSince": "2026-10-23T17:40:36.550Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.550Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Victor에서 1982 가수 데뷔·木枯しに抱かれて/優しい雨·黒猫同盟과 솔로를 구분. 국가/외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.jvcmusic.co.jp/-/Profile/A000330.html"
+      ]
+    },
+    {
+      "bandId": "9d53e980-8849-49af-9c46-d63dfcb9d4d2",
+      "name": "岩崎宏美",
+      "originalVersion": "2026-10-13T08:18:12.001199+00:00",
+      "currentVersion": "2026-10-13T08:18:12.001199+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "7f4b1f97-b010-4a02-ba3e-6af929799c28",
+        "aliases": [
+          "Hiromi Iwasaki",
+          "いわさき ひろみ",
+          "Hiromi Masuda",
+          "益田宏美",
+          "ヒロリン",
+          "岩崎 宏美",
+          "益田 宏美"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 소개에서 도쿄·二重唱/ロマンス/あおぞら 원작 활동 확인. J-pop 실제 분류·MBID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:36.609Z",
+          "waitingSince": "2026-10-23T17:40:36.609Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.609Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.687Z",
+          "waitingSince": "2026-10-23T17:40:36.687Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.687Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개에서 도쿄·二重唱/ロマンス/あおぞら 원작 활동 확인. J-pop 실제 분류·MBID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.three-g-company.co.jp/profile/"
+      ]
+    },
+    {
+      "bandId": "85a890b2-0a1c-4c3d-a466-4443e57c2688",
+      "name": "川嶋あい",
+      "originalVersion": "2026-10-13T08:18:54.364913+00:00",
+      "currentVersion": "2026-10-13T08:18:54.364913+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "6d7ef4a5-26c9-45e7-ad19-24ec48c50ed4",
+        "aliases": [
+          "川嶋 あい",
+          "川島 愛",
+          "Ai Kawashima",
+          "ａｉ",
+          "川島愛",
+          "かわしま あい .",
+          "かわしま あい",
+          "Ai Kawashima .",
+          "川 嶋 あ い"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 profile의 후쿠오카 alt 텍스트와 I WiSH ai/소ロ My Love/compass 확인. 이미지 alt와 실제 본문 근거를 구분하고 외부 ID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:36.752Z",
+          "waitingSince": "2026-10-23T17:40:36.752Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.752Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.810Z",
+          "waitingSince": "2026-10-23T17:40:36.810Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.810Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 profile의 후쿠오카 alt 텍스트와 I WiSH ai/소ロ My Love/compass 확인. 이미지 alt와 실제 본문 근거를 구분하고 외부 ID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://kawashimaai.com/profile"
+      ]
+    },
+    {
+      "bandId": "b5b6ea2e-f80b-4a8a-93c1-dec4607acb9d",
+      "name": "工藤静香",
+      "originalVersion": "2026-10-13T08:18:34.805334+00:00",
+      "currentVersion": "2026-10-13T08:18:34.805334+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "387fa358-76f6-45bb-8d6a-9ab2e862b656",
+        "aliases": [
+          "木村静香",
+          "Shizuka Kudo",
+          "Kudou Shizuka",
+          "くどう しずか",
+          "工藤 静香",
+          "あえり",
+          "aeri",
+          "愛絵理"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "PonyCanyon 공식 발매 정보에서 Dynamic/공연·음악활동 확인. 국가·원래 신원과 현재 외부 ID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:36.874Z",
+          "waitingSince": "2026-10-23T17:40:36.874Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.874Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:36.935Z",
+          "waitingSince": "2026-10-23T17:40:36.935Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.935Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "PonyCanyon 공식 발매 정보에서 Dynamic/공연·음악활동 확인. 국가·원래 신원과 현재 외부 ID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://shizuka-kudo.net/index.html"
+      ]
+    },
+    {
+      "bandId": "78d6977e-6cdd-4522-a6d1-c0e4db922331",
+      "name": "影山ヒロノブ",
+      "originalVersion": "2026-10-13T08:18:50.848512+00:00",
+      "currentVersion": "2026-10-13T08:18:50.848512+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "4f764abb-ba0b-4ace-8e50-f9a97728d53e",
+        "aliases": [
+          "KAGE",
+          "影山 ヒロノブ",
+          "景山浩宣",
+          "かげやま ヒロノブ",
+          "かげやま ひろのぶ",
+          "Hironobu Kageyama"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 소개에서 오사카·LAZY 미셸/솔로/JAM Project를 구분하고 DREAMER/CHA-LA HEAD-CHA-LA와 록·음악활동 확인. 정확한 외부 ID/분류 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:36.998Z",
+          "waitingSince": "2026-10-23T17:40:36.998Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:36.998Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:37.065Z",
+          "waitingSince": "2026-10-23T17:40:37.065Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.065Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 소개에서 오사카·LAZY 미셸/솔로/JAM Project를 구분하고 DREAMER/CHA-LA HEAD-CHA-LA와 록·음악활동 확인. 정확한 외부 ID/분류 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://airblanca.com/profile/"
+      ]
+    },
+    {
+      "bandId": "a7d7fe5d-c251-4a5c-8ddb-336514bf75cb",
+      "name": "後藤真希",
+      "originalVersion": "2026-10-13T08:19:00.218416+00:00",
+      "currentVersion": "2026-10-13T08:19:00.218416+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "678ba12a-e485-44c7-8eaf-25e61a78a61b",
+        "aliases": [
+          "Maki Goto",
+          "後藤 真希",
+          "maki goto",
+          "Gotou Maki",
+          "Sweet Black feat. Maki Goto",
+          "SWEET BLACK feat. MAKI GOTO"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "XXXX를 포함한 avex URL은 실제 공식 profile임을 직접 확인. 도쿄·모닝구3기 이후 솔로/prAyer 확인. 문자열 모양만으로 placeholder로 단정했던 이전 관측은 현재 확인으로 보완; 외부 ID/장르 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:37.123Z",
+          "waitingSince": "2026-10-23T17:40:37.123Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.123Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:37.186Z",
+          "waitingSince": "2026-10-23T17:40:37.186Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.186Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "XXXX를 포함한 avex URL은 실제 공식 profile임을 직접 확인. 도쿄·모닝구3기 이후 솔로/prAyer 확인. 문자열 모양만으로 placeholder로 단정했던 이전 관측은 현재 확인으로 보완; 외부 ID/장르 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://avexnet.jp/contents/GOMAK-XXXX-XXXX/profile"
+      ]
+    },
+    {
+      "bandId": "2d77fe22-fd77-4e05-b612-6ee9d3da4853",
+      "name": "愛内里菜",
+      "originalVersion": "2026-10-13T08:18:52.188786+00:00",
+      "currentVersion": "2026-10-13T08:18:52.188786+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "3dfd5686-dcd1-41b0-b4da-1a7450a921e6",
+        "aliases": [
+          "Rina Aiuchi",
+          "愛内 里菜",
+          "あいうち りな",
+          "あいうちりな",
+          "Aiuchi Rina"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 굿즈 사이트에서 愛内里菜→R→원명 복귀/Ring/WARM PRAYER 원작 이력 확인. 국가/실제 장르/외부 ID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:37.254Z",
+          "waitingSince": "2026-10-23T17:40:37.254Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.254Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:37.317Z",
+          "waitingSince": "2026-10-23T17:40:37.317Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.317Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 굿즈 사이트에서 愛内里菜→R→원명 복귀/Ring/WARM PRAYER 원작 이력 확인. 국가/실제 장르/외부 ID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://rikakakiuchi.official.ec/about"
+      ]
+    },
+    {
+      "bandId": "f2ccaedb-7309-417c-a845-5afb7b26bf0c",
+      "name": "早見優",
+      "originalVersion": "2026-10-13T08:18:36.478044+00:00",
+      "currentVersion": "2026-10-13T08:18:36.478044+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "35b5c6ae-5fe4-47ba-a5da-34c40c1eeffd",
+        "aliases": [
+          "福田一美",
+          "早见优",
+          "HAYAMI Yuu",
+          "はやみ ゆう",
+          "Yu Hayami",
+          "早見 優",
+          "井上一美",
+          "舘野一美"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 팬클럽 profile은 이름 외 상세 본문이 제한적으로만 읽혔다. 실적·국가·외부 ID를 추정하지 않고 대체 자료 필요.",
+          "checkedAt": "2026-10-23T17:40:37.380Z",
+          "waitingSince": "2026-10-23T17:40:37.380Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.380Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:37.447Z",
+          "waitingSince": "2026-10-23T17:40:37.447Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.447Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 팬클럽 profile은 이름 외 상세 본문이 제한적으로만 읽혔다. 실적·국가·외부 ID를 추정하지 않고 대체 자료 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://hayami-yu.fanpla.jp/news/2/"
+      ]
+    },
+    {
+      "bandId": "59f05765-4f95-4fe3-8816-42781aba8bc2",
+      "name": "春奈るな",
+      "originalVersion": "2026-10-13T08:18:33.358988+00:00",
+      "currentVersion": "2026-10-13T08:18:33.358988+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "fe9532d4-3f0e-4685-bce6-92f91fdb35a0",
+        "aliases": [
+          "伊藤彩",
+          "Haruna Luna",
+          "Luna Haruna"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony에서 空は高く風は歌う/glory days/PEACE 및 실제 음악 활동 확인. 국가/외부 신원 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:37.513Z",
+          "waitingSince": "2026-10-23T17:40:37.513Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.513Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:37.574Z",
+          "waitingSince": "2026-10-23T17:40:37.574Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.574Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "Sony에서 空は高く風は歌う/glory days/PEACE 및 실제 음악 활동 확인. 국가/외부 신원 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.sonymusic.co.jp/artist/Lunaharuna/profile/"
+      ]
+    },
+    {
+      "bandId": "40f97a3c-dc58-4261-837e-3a68fd5c2453",
+      "name": "東京女子流",
+      "originalVersion": "2026-10-13T08:18:39.89998+00:00",
+      "currentVersion": "2026-10-13T08:18:39.89998+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "cb589717-2cd2-47b4-9262-84cf46adea54",
+        "aliases": [
+          "TOKYO GIRLS' STYLE",
+          "とうきょうじょしりゅう"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 TokyoGirlsStyle profile에서 4멤버·일본 출신지·음반 東京女子流와 직접 user/TokyoGirlsStyle 링크 확인. 채널 API ID 및 저장은 별도 검증했고 승인용 MBID/장르 근거는 여전히 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:37.638Z",
+          "waitingSince": "2026-10-23T17:40:37.638Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.638Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "공식 profile의 직접 user/TokyoGirlsStyle 링크와 API canonical ID UCkafLPXB6MgLmTbq8UHE8Cg 일치. 기존 선택 제한 저장 경로 imported1/refreshed1/readBack1 및 DB verified/refreshed/cache 재조회 확인.",
+          "checkedAt": "2026-10-23T17:40:37.719Z",
+          "waitingSince": "2026-10-23T17:40:37.719Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T17:38:32.819Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-10-30T17:38:32.819Z",
+          "proof": {
+            "decision": "verified",
+            "summary": "東京女子流 공식 profile 링크·YouTube channels forUsername ID 및 저장 후 DB cache를 대조했다.",
+            "sources": [
+              {
+                "url": "https://www.tokyogirlsstyle.jp/profile/",
+                "checkedAt": "2026-10-23T17:38:32.819Z",
+                "summary": "실제 4인 그룹·음반 활동과 공식 YouTube user/TokyoGirlsStyle 직접 링크 확인. API canonical channel UCkafLPXB6MgLmTbq8UHE8Cg 및 저장/재조회 일치."
+              }
+            ]
+          },
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-13T08:18:39.89998+00:00",
+            "checkedAt": "2026-10-23T17:38:32.819Z"
+          }
+        }
+      },
+      "supplementalResearch": "공식 TokyoGirlsStyle profile에서 4멤버·일본 출신지·음반 東京女子流와 직접 user/TokyoGirlsStyle 링크 확인. 채널 API ID 및 저장은 별도 검증했고 승인용 MBID/장르 근거는 여전히 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.tokyogirlsstyle.jp/profile/"
+      ]
+    },
+    {
+      "bandId": "29e2a4e9-02a1-4397-950d-a896551baf22",
+      "name": "松田聖子",
+      "originalVersion": "2026-10-13T08:18:12.694964+00:00",
+      "currentVersion": "2026-10-13T08:18:12.694964+00:00",
+      "originalIdentity": {
+        "country": "JP",
+        "musicBrainzId": "ef013257-e584-410e-88e8-05ea9ae9ea3a",
+        "aliases": [
+          "Seiko Matsuda",
+          "SEIKO",
+          "神田法子",
+          "Noriko Kanda",
+          "Noriko Kamachi",
+          "Seiko",
+          "松田 聖子",
+          "Matsuda Seiko",
+          "æ¾ç”°è–å­",
+          "まつだせいこ",
+          "まつだ せいこ",
+          "蒲池法子",
+          "Meg.C"
+        ]
+      },
+      "selectedTasks": [
+        "approval",
+        "channels"
+      ],
+      "outcomes": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 사이트에서 미국/대만 활동과 일본 원작 あなたに逢いたくて/Baby s breath/my pure melody 확인. 시장 국가와 원산국을 혼동하지 않으며 국가/정확한 MBID 보완 필요.",
+          "checkedAt": "2026-10-23T17:40:37.780Z",
+          "waitingSince": "2026-10-23T17:40:37.780Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.780Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선정 안에서 공식 아티스트별 직접 채널 링크·API canonical ID·잠금/기존 지정/버전 검증이 모두 갖춰진 manifest를 아직 확보하지 못함. 이름·Topic·레이블 공유 채널로 추정하거나 MusicBrainz cooldown을 우회하지 않음.",
+          "checkedAt": "2026-10-23T17:40:37.840Z",
+          "waitingSince": "2026-10-23T17:40:37.840Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T17:40:37.840Z",
+          "validUntil": null
+        }
+      },
+      "supplementalResearch": "공식 사이트에서 미국/대만 활동과 일본 원작 あなたに逢いたくて/Baby s breath/my pure melody 확인. 시장 국가와 원산국을 혼동하지 않으며 국가/정확한 MBID 보완 필요.",
+      "originalResearchPreserved": true,
+      "sourceUrls": [
+        "https://www.seikomatsuda.co.jp/profile/index.html"
+      ]
+    }
+  ],
+  "preservedBlockedDraftFiles": [
+    "approval-drafts-573f7fc2.json"
+  ],
+  "cooldownPreserved": {
+    "provider": "musicbrainz.org",
+    "nextAttemptAt": "2026-10-24T05:26:38.618Z"
+  },
+  "core200": {
+    "compositionPlan": true,
+    "mandatoryCount": 4,
+    "unfilled": 196,
+    "bmthAndYonezuRegistration": "not performed; identity CLI/journal unsupported",
+    "adoAndUverworld": "prior approved; no new write outside selected batch",
+    "candidateCacheReused": "no new charts fetched; earlier300 rows remain unverified"
+  },
+  "limitations": [
+    "기존38팀 research의 원래 proof/checkedAt/validUntil 보존. 이번 공식 보완 조사와 새 연구완료0을 구분한다.",
+    "일부 웹 자료 관측은 저장/조사구간 시각이며 정확한 개별 HTTP 요청 로그가 아님. 요건 미완료34 기존팀 및 신규2팀은 승인하지 않았다.",
+    "Last.fm error6을 받은 Гражданская оборона는 외부 신원 교차 확인 보류. 오류를 장르 밖 판정에 사용하지 않음.",
+    "기존 Avex XXXX URL이 실제 공식 profile임을 이번 직접 읽기로 확인. 문자열 형태만으로 placeholder로 단정하지 않음.",
+    "신규/별칭 mutation CLI/journal 미완성은 보존. 기존 import/seed 우회·신규/별칭 쓰기 없음.",
+    "NOL 이용허가·공연 수집·운영 감시·공개 정책·발송은 이 역할에서 처리하지 않음. 운영 DDL/배포/push/PR/merge 없음."
+  ],
+  "validation": [
+    "기존 통합 CLI의 selection/버전/요건 검사와 RPC receipt·bands·publication approval·관계 수 readback을 적용4건에서 확인",
+    "40고정 대상/82tasks와 전체checkpoint/서버finish/active null 확인",
+    "원본 blocked 초안 파일 바이트 동일 확인",
+    "JSON UTF-8/비밀·API 이미지 제외/git diff --check; 앱 코드 변경 없어 lint/build 재실행 안 함"
+  ]
+}

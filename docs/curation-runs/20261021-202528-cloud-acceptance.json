@@ -1,0 +1,144 @@
+{
+  "acceptedAt": "2026-10-21T11:25:28.099Z",
+  "sourceArchive": "local-to-cloud-20261021-201959.zip",
+  "archiveSha256": "35471d9187461e9189d2af23eec647652150b59295451555558ad8779ef10b64",
+  "manifestFiles": 82,
+  "unhashedFiles": [
+    "MANIFEST.json"
+  ],
+  "codeComparison": [
+    {
+      "path": "AGENTS.md",
+      "status": "same"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "same"
+    },
+    {
+      "path": "package.json",
+      "status": "same"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "status": "same"
+    },
+    {
+      "path": "scripts/artist-review-queue.mjs",
+      "status": "different"
+    },
+    {
+      "path": "scripts/refresh-artist-channels.mjs",
+      "status": "different"
+    },
+    {
+      "path": "scripts/youtube-channels.mjs",
+      "status": "same"
+    },
+    {
+      "path": "tests/artist-review-queue.test.mjs",
+      "status": "different"
+    },
+    {
+      "path": "docs/artist-review-handoff.md",
+      "status": "different"
+    },
+    {
+      "path": "supabase/migrations/20261020053150_integrated_artist_approval.sql",
+      "status": "same"
+    },
+    {
+      "path": "scripts/lib/artist-review-queue.mjs",
+      "status": "different"
+    },
+    {
+      "path": "scripts/lib/artist-review-migrate.mjs",
+      "status": "cloud_missing"
+    },
+    {
+      "path": "scripts/lib/artist-review-apply.mjs",
+      "status": "same"
+    },
+    {
+      "path": "skills/concert-artist-channels/SKILL.md",
+      "status": "different"
+    },
+    {
+      "path": "skills/concert-artist-curation/SKILL.md",
+      "status": "different"
+    },
+    {
+      "path": "skills/concert-artist-channels/references/sources.md",
+      "status": "same"
+    },
+    {
+      "path": "skills/concert-artist-channels/references/manifest.md",
+      "status": "different"
+    },
+    {
+      "path": "skills/concert-artist-curation/agents/openai.yaml",
+      "status": "same"
+    },
+    {
+      "path": "skills/concert-artist-curation/references/database.md",
+      "status": "same"
+    },
+    {
+      "path": "skills/concert-artist-curation/references/runner.md",
+      "status": "different"
+    }
+  ],
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "sourceRevision": 655,
+  "acceptedRevision": 656,
+  "owner": "cloud",
+  "transfer": null,
+  "activeRun": null,
+  "tracked": 625,
+  "lastStartedAt": "2026-10-21T10:24:31.367Z",
+  "nextBatchNotBefore": "2026-10-21T15:24:31.367Z",
+  "preflight": {
+    "checkedAt": "2026-10-21T11:23:14.114Z",
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "sourceRevision": 655,
+    "expectedAcceptedRevision": 656,
+    "legacyServer": "idle",
+    "catalogCount": 625,
+    "tracked": 625,
+    "mismatches": [],
+    "added": [],
+    "preservationVerified": true,
+    "restCalls": 3,
+    "nextBatchNotBefore": "2026-10-21T15:24:31.367Z"
+  },
+  "localShutdownEvidence": "Source handoff-info reports local automation PAUSED, no active batch, review process count 0, queue lock absent, source execution blocked.",
+  "automation": {
+    "id": "6ad2484e14b8819191c9b7217bdd0572",
+    "is_enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Seoul:20261017T022700\nRRULE:FREQ=HOURLY;INTERVAL=5\nEND:VEVENT",
+    "updated_at": "2026-10-21T11:24:44.779758+00:00",
+    "next_run_time": null
+  },
+  "validation": {
+    "existingCodeUsed": true,
+    "initCalled": false,
+    "entriesHistoryTimingPreserved": true,
+    "staleReplayBlocked": true,
+    "sourceCodeNotOverwritten": true,
+    "integratedServiceReadOnlyProbe": true,
+    "latestPromptMatchesSavedDoc": true
+  },
+  "preservedLocalResults": {
+    "approvalApplied": 18,
+    "newOfficialChannelPhotosSaved": 2,
+    "existingChannelRefreshed": 1,
+    "newCloudResearchOrApplication": 0
+  },
+  "limitations": [
+    "Reference code and patch are comparison data and were not executed or copied over trusted code. Core apply module and migration match. Existing code differences are listed above.",
+    "Deep Purple supplemental checkedAt is reported by local as estimated from processing time. It is preserved as a limitation, not an exact fetch log; original research validity was not extended.",
+    "Channel tool selection filters IDs, not task names, and cloud applied counter may include deferred/error writes. Future runs must verify actual successful states and DB read-back.",
+    "Existing authority_wait and approval drafts require actual missing-requirement investigation, not flag conversion after authentication.",
+    "The earliest batch time is a cadence guard, not a guaranteed exact next automation execution time."
+  ]
+}

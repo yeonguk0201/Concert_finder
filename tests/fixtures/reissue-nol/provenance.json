@@ -1,0 +1,23 @@
+{
+  "kind": "minimal fragments extracted from live HTTP HTML; no network required by tests",
+  "fixtures": [
+    {
+      "path": "reissue-detail.html",
+      "sourceUrl": "https://reissuerecords.net/2026/10/22/kenshi-yonezu-2026-2027-world-tour-ghost/",
+      "checkedAt": "2026-10-22T09:52:58.103Z",
+      "responseBytes": 38871,
+      "responseSha256": "b2711cfab297c84044e14c8d06add4610180dbc5d3daac042a28999b4a720be5",
+      "fixtureBytes": 2257,
+      "fixtureSha256": "7d2ee90707c00184b02c243c51c5f4e783cb7d093217169d9c6a0acedec28c02"
+    },
+    {
+      "path": "nol-product.html",
+      "sourceUrl": "https://nol.yanolja.com/ticket/products/26015024",
+      "checkedAt": "2026-10-22T09:52:58.526Z",
+      "responseBytes": 203099,
+      "responseSha256": "94d5b91169c4a8755dde653d83e15d1a861489f1eda8a9fb5cdb90b3534eabc3",
+      "fixtureBytes": 3124,
+      "fixtureSha256": "dc72713ace06739f738e76271d1c1332ad623018de3cc83f79a43e6a28853066"
+    }
+  ]
+}

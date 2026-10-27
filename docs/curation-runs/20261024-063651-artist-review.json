@@ -1,0 +1,3995 @@
+{
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+  "startedAt": "2026-10-23T21:26:23.519Z",
+  "finishedAt": "2026-10-23T21:33:12.047Z",
+  "savedAtKst": "2026-10-24T06:36:51.756090+09:00",
+  "queue": {
+    "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+    "owner": "cloud",
+    "revision": 1775,
+    "active": null,
+    "transfer": null
+  },
+  "summary": {
+    "selected": 40,
+    "tasks": 80,
+    "approvalApplied": 7,
+    "approvalDeferred": 33,
+    "channelApplied": 0,
+    "channelDeferred": 40,
+    "approvedNames": [
+      "椎名へきる",
+      "玉置成実",
+      "茅原実里",
+      "西野カナ",
+      "鈴木亜美",
+      "Billy Talent",
+      "Danko Jones"
+    ],
+    "catalog": {
+      "approved": 164,
+      "unreviewed": 462,
+      "excluded": 6,
+      "total": 632
+    },
+    "queueRemaining": 375,
+    "authorityWaiting": 66
+  },
+  "actualExternalApiCalls": {
+    "lastfmSuccessful": 14,
+    "lastfmFailedRequestRange": [
+      1,
+      2
+    ],
+    "lastfmTotalRange": [
+      15,
+      16
+    ],
+    "youtube": 0,
+    "musicbrainz": 0,
+    "chartRefetch": 0,
+    "limitation": "angela API6 발생 시 첫 루프가 예외 종료되어 실패가 getInfo인지 getTopAlbums인지 단계별 counter를 저장하지 못했다. 정확한 실패 요청 수를 추정해 단정하지 않고 1~2회로 보존한다. 정상 응답14회는 method별 완료가 확인된다. queue apiCalls0은 channel checkpoint 집계이며 실제 총 요청0을 뜻하지 않는다."
+  },
+  "readback": {
+    "serverTargets": 40,
+    "finishedAt": "2026-10-23T21:33:13.139131+00:00",
+    "approvalReceipts": 7,
+    "validIntegratedLeases": 0,
+    "approvalAndRelationships": "기존 CLI가 각 receipt·최신 bands·publicationApproved 및 concert_bands/band_follows 수를 검증한 경우만 applied=true. 이후 별도 읽기 SQL에서 실행 종료·7receipt·상태 집계를 확인했다."
+  },
+  "items": [
+    {
+      "bandId": "5ef48161-b087-4be1-b43e-3bac7954aab0",
+      "name": "林原めぐみ",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "5ef48161-b087-4be1-b43e-3bac7954aab0",
+        "name": "林原めぐみ",
+        "aliases": [
+          "MEGUMI",
+          "Megumi Hayashibara",
+          "Hayashibara Megumi",
+          "はやしばら めぐみ",
+          "林原 めぐみ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "375a3c4c-7898-47f0-ad0e-443a75148c7a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:11.301879+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.147Z",
+        "waitingSince": "2026-10-13T09:20:17.147Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.147Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.147Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=19176",
+              "checkedAt": "2026-10-13T09:20:17.147Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "KING 공식 음반 목록은 확인했으나 이 실행의 출신 국가 및 정확한 MBID-작품 교차 확인이 미완료다.",
+          "checkedAt": "2026-10-23T21:33:07.451Z",
+          "waitingSince": "2026-10-23T21:33:07.451Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.451Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:07.540Z",
+          "waitingSince": "2026-10-23T21:33:07.540Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.540Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 0,
+        "bandId": "5ef48161-b087-4be1-b43e-3bac7954aab0",
+        "name": "林原めぐみ",
+        "sourceUrls": [
+          "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=19176"
+        ],
+        "approval": "KING 공식 음반 목록은 확인했으나 이 실행의 출신 국가 및 정확한 MBID-작품 교차 확인이 미완료다.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+      "name": "椎名へきる",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+        "name": "椎名へきる",
+        "aliases": [
+          "Hekiru Shiina"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "39e04b15-2b96-4b36-a0f3-41f8b2e65ad3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:28.250863+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.151Z",
+        "waitingSince": "2026-10-13T09:20:17.151Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.151Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.151Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "checkedAt": "2026-10-13T09:20:17.151Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:20.682Z",
+          "waitingSince": "2026-10-23T21:31:20.682Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:20.682Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:20.682Z",
+          "proposal": {
+            "target_band_id": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+            "expected_updated_at": "2026-10-13T08:18:28.250863+00:00",
+            "artist_name": "椎名へきる",
+            "country": "JP",
+            "artist_category": "jpop",
+            "artist_aliases": [
+              "Hekiru Shiina"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:23.983641+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:07.600Z",
+          "waitingSince": "2026-10-23T21:33:07.600Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.600Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 1,
+        "bandId": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+        "name": "椎名へきる",
+        "sourceUrls": [
+          "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+          "expected_updated_at": "2026-10-13T08:18:28.250863+00:00",
+          "artist_name": "椎名へきる",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Hekiru Shiina"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다. 현재 context의 band bf87dba8-e0f8-47a7-8e68-5626268108e5 및 외부 key mb:39e04b15-2b96-4b36-a0f3-41f8b2e65ad3를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 椎名へきる를 반환받았으며, 같은 MBID getTopAlbums의 Baby Blue Eyes을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다. 현재 DB JP와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 jpop 기준을 적용한다. Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band bf87dba8-e0f8-47a7-8e68-5626268108e5 및 외부 key mb:39e04b15-2b96-4b36-a0f3-41f8b2e65ad3를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 椎名へきる를 반환받았으며, 같은 MBID getTopAlbums의 Baby Blue Eyes을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다. 현재 context의 band bf87dba8-e0f8-47a7-8e68-5626268108e5 및 외부 key mb:39e04b15-2b96-4b36-a0f3-41f8b2e65ad3를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 椎名へきる를 반환받았으며, 같은 MBID getTopAlbums의 Baby Blue Eyes을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/HekiruShiina/profile/",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "Sony 공식 소개는 도쿄 출신, Shiena 데뷔 및 Baby blue eyes의 기타 록 노선을 명시한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:29:42.437Z",
+              "summary": "현재 context의 band bf87dba8-e0f8-47a7-8e68-5626268108e5 및 외부 key mb:39e04b15-2b96-4b36-a0f3-41f8b2e65ad3를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 椎名へきる를 반환받았으며, 같은 MBID getTopAlbums의 Baby Blue Eyes을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "bf87dba8-e0f8-47a7-8e68-5626268108e5",
+        "name": "椎名へきる",
+        "aliases": [
+          "Hekiru Shiina"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "39e04b15-2b96-4b36-a0f3-41f8b2e65ad3",
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:23.983641+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "39e04b15-2b96-4b36-a0f3-41f8b2e65ad3",
+        "returnedMbid": "39e04b15-2b96-4b36-a0f3-41f8b2e65ad3",
+        "name": "椎名へきる",
+        "checkedAt": "2026-10-23T21:29:42.437Z",
+        "httpStatus": 200,
+        "listeners": "3973",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+      "name": "水樹奈々",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+        "name": "水樹奈々",
+        "aliases": [
+          "水木奈々",
+          "みずきなな",
+          "近藤奈々",
+          "Nana Kondoh",
+          "Nana Kondou",
+          "Nana Kondō",
+          "Nana Mizuki",
+          "水樹奈奈"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "a80b9231-3a25-44d3-bb3d-55526d8b278d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:37.159969+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.156Z",
+        "waitingSince": "2026-10-13T09:20:17.156Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.156Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.156Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=15413",
+              "checkedAt": "2026-10-13T09:20:17.156Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "KING 공식 Ehime 출신·가수 활동·음반은 확인했으나 정확한 외부 MBID-작품 교차 검증은 미완료다.",
+          "checkedAt": "2026-10-23T21:33:07.658Z",
+          "waitingSince": "2026-10-23T21:33:07.658Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.658Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:07.718Z",
+          "waitingSince": "2026-10-23T21:33:07.718Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.718Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 2,
+        "bandId": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+        "name": "水樹奈々",
+        "sourceUrls": [
+          "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=15413"
+        ],
+        "approval": "KING 공식 Ehime 출신·가수 활동·음반은 확인했으나 정확한 외부 MBID-작품 교차 검증은 미완료다.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "059219d7-319f-42b3-9833-d3b22d1f50de",
+      "name": "浜崎あゆみ",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "059219d7-319f-42b3-9833-d3b22d1f50de",
+        "name": "浜崎あゆみ",
+        "aliases": [
+          "浜崎くるみ",
+          "浜崎 くるみ",
+          "浜﨑あゆみ",
+          "Ayu",
+          "Ayumi Hamazaki",
+          "はまさき あゆみ",
+          "CREA",
+          "Ayumi Hamasaki",
+          "濱崎步",
+          "浜崎 あゆみ",
+          "浜﨑 あゆみ",
+          "濱崎歩",
+          "浜崎步",
+          "Ayumi Kamasaki"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "2b615bcf-baa0-4657-b9a5-1a5f34c386c4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:27.544293+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.159Z",
+        "waitingSince": "2026-10-13T09:20:17.159Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.159Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.159Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://avex.jp/ayu/",
+              "checkedAt": "2026-10-13T09:20:17.159Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "avex 공식 mimosa 발매·투어 확인. 국가 및 MBID별 작품 교차 확인 미완료.",
+          "checkedAt": "2026-10-23T21:33:07.783Z",
+          "waitingSince": "2026-10-23T21:33:07.783Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.783Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:07.852Z",
+          "waitingSince": "2026-10-23T21:33:07.852Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.852Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 3,
+        "bandId": "059219d7-319f-42b3-9833-d3b22d1f50de",
+        "name": "浜崎あゆみ",
+        "sourceUrls": [
+          "https://avex.jp/ayu/"
+        ],
+        "approval": "avex 공식 mimosa 발매·투어 확인. 국가 및 MBID별 작품 교차 확인 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+      "name": "玉置成実",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+        "name": "玉置成実",
+        "aliases": [
+          "Nami Tamaki",
+          "玉置 成実",
+          "Tamaki Nami"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "f4380e07-44ad-4e45-9445-6419b2f05516",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:43.597508+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.163Z",
+        "waitingSince": "2026-10-13T09:20:17.163Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.163Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.163Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "checkedAt": "2026-10-13T09:20:17.163Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:25.702Z",
+          "waitingSince": "2026-10-23T21:31:25.702Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:25.702Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:25.702Z",
+          "proposal": {
+            "target_band_id": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+            "expected_updated_at": "2026-10-13T08:18:43.597508+00:00",
+            "artist_name": "玉置成実",
+            "country": "JP",
+            "artist_category": "jpop",
+            "artist_aliases": [
+              "Nami Tamaki",
+              "玉置 成実",
+              "Tamaki Nami"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://www.sonymusic.co.jp/artist/namitamaki/profile/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:27.09317+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:07.908Z",
+          "waitingSince": "2026-10-23T21:33:07.908Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.908Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 4,
+        "bandId": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+        "name": "玉置成実",
+        "sourceUrls": [
+          "https://www.sonymusic.co.jp/artist/namitamaki/profile/"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+          "expected_updated_at": "2026-10-13T08:18:43.597508+00:00",
+          "artist_name": "玉置成実",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Nami Tamaki",
+            "玉置 成実",
+            "Tamaki Nami"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://www.sonymusic.co.jp/artist/namitamaki/profile/"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다. 현재 context의 band 6e7b6d04-9a27-4805-b3bd-6200a6bbb90b 및 외부 key mb:f4380e07-44ad-4e45-9445-6419b2f05516를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 玉置成実를 반환받았으며, 같은 MBID getTopAlbums의 Believe을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다. 현재 DB JP와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 jpop 기준을 적용한다. Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band 6e7b6d04-9a27-4805-b3bd-6200a6bbb90b 및 외부 key mb:f4380e07-44ad-4e45-9445-6419b2f05516를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 玉置成実를 반환받았으며, 같은 MBID getTopAlbums의 Believe을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다. 현재 context의 band 6e7b6d04-9a27-4805-b3bd-6200a6bbb90b 및 외부 key mb:f4380e07-44ad-4e45-9445-6419b2f05516를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 玉置成実를 반환받았으며, 같은 MBID getTopAlbums의 Believe을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/namitamaki/profile/",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "Sony 공식 소개는 와카야마 출신 가수 玉置成実의 Believe 데뷔와 건담 SEED/DESTINY 주제가 활동을 설명한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:29:42.950Z",
+              "summary": "현재 context의 band 6e7b6d04-9a27-4805-b3bd-6200a6bbb90b 및 외부 key mb:f4380e07-44ad-4e45-9445-6419b2f05516를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 玉置成実를 반환받았으며, 같은 MBID getTopAlbums의 Believe을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+        "name": "玉置成実",
+        "aliases": [
+          "Nami Tamaki",
+          "玉置 成実",
+          "Tamaki Nami"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "f4380e07-44ad-4e45-9445-6419b2f05516",
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:27.09317+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "f4380e07-44ad-4e45-9445-6419b2f05516",
+        "returnedMbid": "f4380e07-44ad-4e45-9445-6419b2f05516",
+        "name": "玉置成実",
+        "checkedAt": "2026-10-23T21:29:42.950Z",
+        "httpStatus": 200,
+        "listeners": "62242",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+      "name": "私立恵比寿中学",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+        "name": "私立恵比寿中学",
+        "aliases": [
+          "エビ中",
+          "Shiritsu Ebisu Chugaku"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "f13e929f-6836-4f02-8175-b86c31bb91ec",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:11.6587+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.166Z",
+        "waitingSince": "2026-10-13T09:20:17.166Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.166Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.166Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/ebichu/profile/",
+              "checkedAt": "2026-10-13T09:20:17.166Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony 공식 데뷔·中人 음반·일본인 공연 기록 확인. 현재 외부 MBID와 작품 교차 확인 미완료.",
+          "checkedAt": "2026-10-23T21:33:07.980Z",
+          "waitingSince": "2026-10-23T21:33:07.980Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:07.980Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.036Z",
+          "waitingSince": "2026-10-23T21:33:08.036Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.036Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 5,
+        "bandId": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+        "name": "私立恵比寿中学",
+        "sourceUrls": [
+          "https://www.sonymusic.co.jp/artist/ebichu/profile/"
+        ],
+        "approval": "Sony 공식 데뷔·中人 음반·일본인 공연 기록 확인. 현재 외부 MBID와 작품 교차 확인 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "cc348a08-0031-429a-b230-eb9bda439718",
+      "name": "茅原実里",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "cc348a08-0031-429a-b230-eb9bda439718",
+        "name": "茅原実里",
+        "aliases": [
+          "Minori Chihara",
+          "茅原美里"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "e9c4de4d-b5cd-4609-879c-6c51baf2be5b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:17.729712+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.169Z",
+        "waitingSince": "2026-10-13T09:20:17.169Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.169Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.169Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "checkedAt": "2026-10-13T09:20:17.169Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:27.832Z",
+          "waitingSince": "2026-10-23T21:31:27.832Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:27.832Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:27.832Z",
+          "proposal": {
+            "target_band_id": "cc348a08-0031-429a-b230-eb9bda439718",
+            "expected_updated_at": "2026-10-13T08:18:17.729712+00:00",
+            "artist_name": "茅原実里",
+            "country": "JP",
+            "artist_category": "jpop",
+            "artist_aliases": [
+              "Minori Chihara",
+              "茅原美里"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://www.lantis.jp/artist/chiharaminori/bio.html"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:28.524799+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.101Z",
+          "waitingSince": "2026-10-23T21:33:08.101Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.101Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 6,
+        "bandId": "cc348a08-0031-429a-b230-eb9bda439718",
+        "name": "茅原実里",
+        "sourceUrls": [
+          "https://www.lantis.jp/artist/chiharaminori/bio.html"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "cc348a08-0031-429a-b230-eb9bda439718",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "cc348a08-0031-429a-b230-eb9bda439718",
+          "expected_updated_at": "2026-10-13T08:18:17.729712+00:00",
+          "artist_name": "茅原実里",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Minori Chihara",
+            "茅原美里"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://www.lantis.jp/artist/chiharaminori/bio.html"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다. 현재 context의 band cc348a08-0031-429a-b230-eb9bda439718 및 외부 key mb:e9c4de4d-b5cd-4609-879c-6c51baf2be5b를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 茅原実里를 반환받았으며, 같은 MBID getTopAlbums의 HEROINE을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다. 현재 DB JP와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다.",
+            "sourceUrls": [
+              "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 jpop 기준을 적용한다. Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다.",
+            "sourceUrls": [
+              "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band cc348a08-0031-429a-b230-eb9bda439718 및 외부 key mb:e9c4de4d-b5cd-4609-879c-6c51baf2be5b를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 茅原実里를 반환받았으며, 같은 MBID getTopAlbums의 HEROINE을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다. 현재 context의 band cc348a08-0031-429a-b230-eb9bda439718 및 외부 key mb:e9c4de4d-b5cd-4609-879c-6c51baf2be5b를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 茅原実里를 반환받았으며, 같은 MBID getTopAlbums의 HEROINE을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://www.lantis.jp/artist/chiharaminori/bio.html",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "Lantis 공식 소개는 도치기 출신 가수 茅原実里의 HEROINE 데뷔와 Contact·Parade·Sing All Love 등 일본 대중음악/애니송 음반 활동을 연결한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:29:43.174Z",
+              "summary": "현재 context의 band cc348a08-0031-429a-b230-eb9bda439718 및 외부 key mb:e9c4de4d-b5cd-4609-879c-6c51baf2be5b를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 茅原実里를 반환받았으며, 같은 MBID getTopAlbums의 HEROINE을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "cc348a08-0031-429a-b230-eb9bda439718",
+        "name": "茅原実里",
+        "aliases": [
+          "Minori Chihara",
+          "茅原美里"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "e9c4de4d-b5cd-4609-879c-6c51baf2be5b",
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:28.524799+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "e9c4de4d-b5cd-4609-879c-6c51baf2be5b",
+        "returnedMbid": "e9c4de4d-b5cd-4609-879c-6c51baf2be5b",
+        "name": "茅原実里",
+        "checkedAt": "2026-10-23T21:29:43.174Z",
+        "httpStatus": 200,
+        "listeners": "68329",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+      "name": "荻野目洋子",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+        "name": "荻野目洋子",
+        "aliases": [
+          "Yoko Oginome",
+          "辻野洋子",
+          "荻野目 洋子",
+          "OGINOME Youko",
+          "ＹＯＫＯ",
+          "おぎのめ ようこ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "00fd440b-5e56-414a-8ac8-f4fa5cca9ada",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:24.252898+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.172Z",
+        "waitingSince": "2026-10-13T09:20:17.172Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.172Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.172Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.jvcmusic.co.jp/-/Profile/A000306.html",
+              "checkedAt": "2026-10-13T09:20:17.172Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Victor 공식 NON STOPPER 등 가수 활동 확인. 원산 국가와 정확한 외부 ID 교차 근거 미완료.",
+          "checkedAt": "2026-10-23T21:33:08.161Z",
+          "waitingSince": "2026-10-23T21:33:08.161Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.161Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.219Z",
+          "waitingSince": "2026-10-23T21:33:08.219Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.219Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 7,
+        "bandId": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+        "name": "荻野目洋子",
+        "sourceUrls": [
+          "https://www.jvcmusic.co.jp/-/Profile/A000306.html"
+        ],
+        "approval": "Victor 공식 NON STOPPER 등 가수 활동 확인. 원산 국가와 정확한 외부 ID 교차 근거 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+      "name": "西野カナ",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+        "name": "西野カナ",
+        "aliases": [
+          "Kana Nishino",
+          "西野 カナ",
+          "西野かな",
+          "にしの カナ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "04da690e-d317-428a-b231-43fc4b59ef83",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:36.821376+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.183Z",
+        "waitingSince": "2026-10-13T09:20:17.183Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.183Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.183Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "checkedAt": "2026-10-13T09:20:17.183Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:29.566Z",
+          "waitingSince": "2026-10-23T21:31:29.566Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:29.566Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:29.566Z",
+          "proposal": {
+            "target_band_id": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+            "expected_updated_at": "2026-10-13T08:18:36.821376+00:00",
+            "artist_name": "西野カナ",
+            "country": "JP",
+            "artist_category": "jpop",
+            "artist_aliases": [
+              "Kana Nishino",
+              "西野 カナ",
+              "西野かな",
+              "にしの カナ"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://www.sonymusic.co.jp/artist/kananishino/profile/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:30.277422+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.276Z",
+          "waitingSince": "2026-10-23T21:33:08.276Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.276Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 8,
+        "bandId": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+        "name": "西野カナ",
+        "sourceUrls": [
+          "https://www.sonymusic.co.jp/artist/kananishino/profile/"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+          "expected_updated_at": "2026-10-13T08:18:36.821376+00:00",
+          "artist_name": "西野カナ",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Kana Nishino",
+            "西野 カナ",
+            "西野かな",
+            "にしの カナ"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://www.sonymusic.co.jp/artist/kananishino/profile/"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다. 현재 context의 band c44276ad-65a8-42a0-b3d8-2c49ead986de 및 외부 key mb:04da690e-d317-428a-b231-43fc4b59ef83를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 西野カナ를 반환받았으며, 같은 MBID getTopAlbums의 to LOVE을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다. 현재 DB JP와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 jpop 기준을 적용한다. Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band c44276ad-65a8-42a0-b3d8-2c49ead986de 및 외부 key mb:04da690e-d317-428a-b231-43fc4b59ef83를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 西野カナ를 반환받았으며, 같은 MBID getTopAlbums의 to LOVE을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다. 현재 context의 band c44276ad-65a8-42a0-b3d8-2c49ead986de 및 외부 key mb:04da690e-d317-428a-b231-43fc4b59ef83를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 西野カナ를 반환받았으며, 같은 MBID getTopAlbums의 to LOVE을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/kananishino/profile/",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "Sony 공식 소개는 미에 출신 西野カナ의 가창·연애 팝송 활동과 会いたくて 会いたくて 및 to LOVE를 설명한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:29:43.402Z",
+              "summary": "현재 context의 band c44276ad-65a8-42a0-b3d8-2c49ead986de 및 외부 key mb:04da690e-d317-428a-b231-43fc4b59ef83를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 西野カナ를 반환받았으며, 같은 MBID getTopAlbums의 to LOVE을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+        "name": "西野カナ",
+        "aliases": [
+          "Kana Nishino",
+          "西野 カナ",
+          "西野かな",
+          "にしの カナ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "04da690e-d317-428a-b231-43fc4b59ef83",
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:30.277422+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "04da690e-d317-428a-b231-43fc4b59ef83",
+        "returnedMbid": "04da690e-d317-428a-b231-43fc4b59ef83",
+        "name": "西野カナ",
+        "checkedAt": "2026-10-23T21:29:43.402Z",
+        "httpStatus": 200,
+        "listeners": "57292",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "cb663e55-afcf-45f5-a190-69a6779245d9",
+      "name": "超ときめき♡宣伝部",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "cb663e55-afcf-45f5-a190-69a6779245d9",
+        "name": "超ときめき♡宣伝部",
+        "aliases": [
+          "Tokisen",
+          "Cho Tokimeki♡Sendenbu",
+          "超とき宣",
+          "とき宣",
+          "Chō Tokimeki Sendenbu",
+          "Chou Tokimeki Sendenbu",
+          "Cho Tokimeki Sendenbu",
+          "ときめき♡宣伝部"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "b901c170-0045-4555-8472-8ff0d59cbefe",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:19.056106+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.196Z",
+        "waitingSince": "2026-10-13T09:20:17.196Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.196Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.196Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile",
+              "checkedAt": "2026-10-13T09:20:17.196Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "avex 공식 5인 아이돌 유닛 소개 확인. 외부 MBID와 구체 작품 및 국가 교차 검증 미완료.",
+          "checkedAt": "2026-10-23T21:33:08.332Z",
+          "waitingSince": "2026-10-23T21:33:08.332Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.332Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.389Z",
+          "waitingSince": "2026-10-23T21:33:08.389Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.389Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 9,
+        "bandId": "cb663e55-afcf-45f5-a190-69a6779245d9",
+        "name": "超ときめき♡宣伝部",
+        "sourceUrls": [
+          "https://avexnet.jp/contents/TOKIS-XXXX-XXXX/profile"
+        ],
+        "approval": "avex 공식 5인 아이돌 유닛 소개 확인. 외부 MBID와 구체 작품 및 국가 교차 검증 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+      "name": "酒井法子",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+        "name": "酒井法子",
+        "aliases": [
+          "Noriko Sakai",
+          "法子",
+          "さかい のりこ",
+          "酒井 法子",
+          "高相法子"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "53e56331-5049-4a9f-9195-98bddff6361a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:21.895655+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.211Z",
+        "waitingSince": "2026-10-13T09:20:17.211Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.211Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.211Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.jvcmusic.co.jp/-/Profile/A000342.html",
+              "checkedAt": "2026-10-13T09:20:17.211Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Victor 공식 碧いうさぎ 등 음반 확인. 정확한 국가 및 MBID별 작품 대조 미완료.",
+          "checkedAt": "2026-10-23T21:33:08.444Z",
+          "waitingSince": "2026-10-23T21:33:08.444Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.444Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.500Z",
+          "waitingSince": "2026-10-23T21:33:08.500Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.500Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 10,
+        "bandId": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+        "name": "酒井法子",
+        "sourceUrls": [
+          "https://www.jvcmusic.co.jp/-/Profile/A000342.html"
+        ],
+        "approval": "Victor 공식 碧いうさぎ 등 음반 확인. 정확한 국가 및 MBID별 작품 대조 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "19772a44-b3d2-4dd9-869b-6182804d815b",
+      "name": "野口五郎",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "19772a44-b3d2-4dd9-869b-6182804d815b",
+        "name": "野口五郎",
+        "aliases": [
+          "野口 五郎",
+          "のぐち ごろう",
+          "NOGUCHI Gorou",
+          "SATOU Yasushi",
+          "Yasushi Sato",
+          "さとう やすし",
+          "佐藤 靖",
+          "佐藤靖",
+          "Goro Noguchi"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "6454bb18-a6f9-4f28-9be1-24fafc68f98a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:28.92819+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.225Z",
+        "waitingSince": "2026-10-13T09:20:17.225Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.225Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.225Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile",
+              "checkedAt": "2026-10-13T09:20:17.225Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "avex 공식 기후 출신·싱글 활동 확인. 외부 MBID별 작품 대조와 장르별 승인 근거 미완료.",
+          "checkedAt": "2026-10-23T21:33:08.558Z",
+          "waitingSince": "2026-10-23T21:33:08.558Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.558Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.612Z",
+          "waitingSince": "2026-10-23T21:33:08.612Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.612Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 11,
+        "bandId": "19772a44-b3d2-4dd9-869b-6182804d815b",
+        "name": "野口五郎",
+        "sourceUrls": [
+          "https://www.avexnet.jp/contents/NOGUG-XXXX-XXXX/profile"
+        ],
+        "approval": "avex 공식 기후 출신·싱글 활동 확인. 외부 MBID별 작품 대조와 장르별 승인 근거 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+      "name": "鈴木亜美",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+        "name": "鈴木亜美",
+        "aliases": [
+          "Ami Suzuki",
+          "—é–Řź”ü",
+          "鈴木あみ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "412930b7-dbdc-47a9-becb-28f2e529e751",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:51.514524+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.236Z",
+        "waitingSince": "2026-10-13T09:20:17.236Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.236Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.236Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://avex.jp/ami/profile/",
+              "checkedAt": "2026-10-13T09:20:17.236Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:30.918Z",
+          "waitingSince": "2026-10-23T21:31:30.918Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:30.918Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:30.918Z",
+          "proposal": {
+            "target_band_id": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+            "expected_updated_at": "2026-10-13T08:18:51.514524+00:00",
+            "artist_name": "鈴木亜美",
+            "country": "JP",
+            "artist_category": "jpop",
+            "artist_aliases": [
+              "Ami Suzuki",
+              "—é–Řź”ü",
+              "鈴木あみ"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://avex.jp/ami/profile/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:31.588271+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.671Z",
+          "waitingSince": "2026-10-23T21:33:08.671Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.671Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 12,
+        "bandId": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+        "name": "鈴木亜美",
+        "sourceUrls": [
+          "https://avex.jp/ami/profile/"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+          "expected_updated_at": "2026-10-13T08:18:51.514524+00:00",
+          "artist_name": "鈴木亜美",
+          "country": "JP",
+          "artist_category": "jpop",
+          "artist_aliases": [
+            "Ami Suzuki",
+            "—é–Řź”ü",
+            "鈴木あみ"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://avex.jp/ami/profile/"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다. 현재 context의 band 28014438-a3a1-4eba-89cf-f8c286bcc04c 및 외부 key mb:412930b7-dbdc-47a9-becb-28f2e529e751를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 鈴木亜美를 반환받았으며, 같은 MBID getTopAlbums의 Delightful을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://avex.jp/ami/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다. 현재 DB JP와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://avex.jp/ami/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다.",
+            "sourceUrls": [
+              "https://avex.jp/ami/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 jpop 기준을 적용한다. avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다.",
+            "sourceUrls": [
+              "https://avex.jp/ami/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band 28014438-a3a1-4eba-89cf-f8c286bcc04c 및 외부 key mb:412930b7-dbdc-47a9-becb-28f2e529e751를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 鈴木亜美를 반환받았으며, 같은 MBID getTopAlbums의 Delightful을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://avex.jp/ami/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://avex.jp/ami/profile/",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다. 현재 context의 band 28014438-a3a1-4eba-89cf-f8c286bcc04c 및 외부 key mb:412930b7-dbdc-47a9-becb-28f2e529e751를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 鈴木亜美를 반환받았으며, 같은 MBID getTopAlbums의 Delightful을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://avex.jp/ami/profile/",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "avex 공식 소개는 가나가와 출신 鈴木亜美의 love the island 가수 데뷔, Delightful과 클럽 음악·DJ 활동을 구분해 설명한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:29:43.711Z",
+              "summary": "현재 context의 band 28014438-a3a1-4eba-89cf-f8c286bcc04c 및 외부 key mb:412930b7-dbdc-47a9-becb-28f2e529e751를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 鈴木亜美를 반환받았으며, 같은 MBID getTopAlbums의 Delightful을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+        "name": "鈴木亜美",
+        "aliases": [
+          "Ami Suzuki",
+          "—é–Řź”ü",
+          "鈴木あみ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "412930b7-dbdc-47a9-becb-28f2e529e751",
+        "category": "jpop",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:31.588271+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "412930b7-dbdc-47a9-becb-28f2e529e751",
+        "returnedMbid": "412930b7-dbdc-47a9-becb-28f2e529e751",
+        "name": "鈴木亜美",
+        "checkedAt": "2026-10-23T21:29:43.711Z",
+        "httpStatus": 200,
+        "listeners": "14769",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+      "name": "雨宮天",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+        "name": "雨宮天",
+        "aliases": [
+          "雨宫天",
+          "Sora Amamiya"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "b7f02d15-1c58-458e-95fd-f2477f133095",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:35.13895+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.242Z",
+        "waitingSince": "2026-10-13T09:20:17.242Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.242Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.242Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/amamiyasora/",
+              "checkedAt": "2026-10-13T09:20:17.242Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony 공식 도쿄 출신·성우 역할 확인. 성우 활동을 음악 장르로 대신하지 않고 실제 본인 음반/외부 ID 근거 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:08.746Z",
+          "waitingSince": "2026-10-23T21:33:08.746Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.746Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:08.819Z",
+          "waitingSince": "2026-10-23T21:33:08.819Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.819Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 13,
+        "bandId": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+        "name": "雨宮天",
+        "sourceUrls": [
+          "https://www.sonymusic.co.jp/artist/amamiyasora/"
+        ],
+        "approval": "Sony 공식 도쿄 출신·성우 역할 확인. 성우 활동을 음악 장르로 대신하지 않고 실제 본인 음반/외부 ID 근거 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "981e25ef-f2cb-4333-a393-9362066e37c7",
+      "name": "飯島真理",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "981e25ef-f2cb-4333-a393-9362066e37c7",
+        "name": "飯島真理",
+        "aliases": [
+          "飯島 真理",
+          "饭岛真理",
+          "Mari Iijima",
+          "いいじま まり",
+          "いいじままり"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "668f86c0-53c5-432a-bf7b-8cba488da4ee",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:45.992803+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.246Z",
+        "waitingSince": "2026-10-13T09:20:17.246Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.246Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.246Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.jvcmusic.co.jp/-/Profile/A000283.html",
+              "checkedAt": "2026-10-13T09:20:17.246Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Victor 공식 Rose 데뷔·LA 이주 확인. 이동 거주지와 국적을 구분하고 원산 국가 및 외부 ID 대조 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:08.895Z",
+          "waitingSince": "2026-10-23T21:33:08.895Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:08.895Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.003Z",
+          "waitingSince": "2026-10-23T21:33:09.003Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.003Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 14,
+        "bandId": "981e25ef-f2cb-4333-a393-9362066e37c7",
+        "name": "飯島真理",
+        "sourceUrls": [
+          "https://www.jvcmusic.co.jp/-/Profile/A000283.html"
+        ],
+        "approval": "Victor 공식 Rose 데뷔·LA 이주 확인. 이동 거주지와 국적을 구분하고 원산 국가 및 외부 ID 대조 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+      "name": "黒木メイサ",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+        "name": "黒木メイサ",
+        "aliases": [
+          "Meisa",
+          "Meisa Kuroki"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "7a102c6f-62e0-4b39-8d6d-ab58fb94b3df",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:55.057849+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:20:17.249Z",
+        "waitingSince": "2026-10-13T09:20:17.249Z",
+        "lastSuccessfulAt": "2026-10-13T09:20:17.249Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T09:20:17.249Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.jp/artist/meisakuroki/profile/",
+              "checkedAt": "2026-10-13T09:20:17.249Z",
+              "summary": "외부 신원과 공식 아티스트/레이블 소개 및 실제 원작 음반 활동을 대조함. J-pop 또는 록 계열 보컬·음반 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Sony 공식 오키나와 출신·hellcat/R&B dance 발매 확인. 정확한 MBID-작품 및 기존 J-pop 범위 대조 미완료.",
+          "checkedAt": "2026-10-23T21:33:09.082Z",
+          "waitingSince": "2026-10-23T21:33:09.082Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.082Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.140Z",
+          "waitingSince": "2026-10-23T21:33:09.140Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.140Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 15,
+        "bandId": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+        "name": "黒木メイサ",
+        "sourceUrls": [
+          "https://www.sonymusic.co.jp/artist/meisakuroki/profile/"
+        ],
+        "approval": "Sony 공식 오키나와 출신·hellcat/R&B dance 발매 확인. 정확한 MBID-작품 및 기존 J-pop 범위 대조 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "22656510-a275-4c0d-9233-2a15434b2ce2",
+      "name": "℃‐ute",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "22656510-a275-4c0d-9233-2a15434b2ce2",
+        "name": "℃‐ute",
+        "aliases": [
+          "°C-ute",
+          "큐트",
+          "Cute",
+          "c-ute",
+          "キュート"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "98c90095-a4ee-4644-b445-ca6219f0ca00",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:41.349781+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.779Z",
+        "waitingSince": "2026-10-13T10:51:08.779Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.779Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.779Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/complete-single-collection/1514765417",
+              "checkedAt": "2026-10-13T10:51:08.779Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple 배급의 J-Pop/UP-FRONT WORKS 음반 확인. 배급 스토어 국가를 아티스트 국적으로 쓰지 않으며 신원 ID·공식 원산 근거 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:09.210Z",
+          "waitingSince": "2026-10-23T21:33:09.210Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.210Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.284Z",
+          "waitingSince": "2026-10-23T21:33:09.284Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.284Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 16,
+        "bandId": "22656510-a275-4c0d-9233-2a15434b2ce2",
+        "name": "℃‐ute",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/complete-single-collection/1514765417"
+        ],
+        "approval": "Apple 배급의 J-Pop/UP-FRONT WORKS 음반 확인. 배급 스토어 국가를 아티스트 국적으로 쓰지 않으며 신원 ID·공식 원산 근거 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "6e1fe77c-684e-4a84-807c-ca1f9165d592",
+      "name": "Alien Sex Fiend",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "6e1fe77c-684e-4a84-807c-ca1f9165d592",
+        "name": "Alien Sex Fiend",
+        "aliases": [],
+        "country_code": "GB",
+        "musicbrainz_id": "3580a118-49e3-4aa1-972a-f5f0ff750dd2",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:26.805104+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.783Z",
+        "waitingSince": "2026-10-13T10:51:08.783Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.783Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.783Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/alien-sex-fiend-the-singles-1983-1995/255757375",
+              "checkedAt": "2026-10-13T10:51:08.783Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple 배급 Rock 음반 확인. Cherry Red 대체 공식 자료 열기 실패; 검색 스니펫으로 국가·신원을 확정하지 않음.",
+          "checkedAt": "2026-10-23T21:33:09.342Z",
+          "waitingSince": "2026-10-23T21:33:09.342Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.342Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.398Z",
+          "waitingSince": "2026-10-23T21:33:09.398Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.398Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 17,
+        "bandId": "6e1fe77c-684e-4a84-807c-ca1f9165d592",
+        "name": "Alien Sex Fiend",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/alien-sex-fiend-the-singles-1983-1995/255757375"
+        ],
+        "approval": "Apple 배급 Rock 음반 확인. Cherry Red 대체 공식 자료 열기 실패; 검색 스니펫으로 국가·신원을 확정하지 않음.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "e8c50b16-0be1-44f0-a797-ece2d6a94bd4",
+      "name": "angela",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e8c50b16-0be1-44f0-a797-ece2d6a94bd4",
+        "name": "angela",
+        "aliases": [
+          "アンジェラ"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "904dfcc4-6973-4311-9580-b052a124b0cd",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:17.117768+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.786Z",
+        "waitingSince": "2026-10-13T10:51:08.786Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.786Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.786Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://angela-official.com/profile",
+              "checkedAt": "2026-10-13T10:51:08.786Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 atsuko/KATSU·오카야마 출신·일본 애니송 활동은 확인. 현재 MBID Last.fm 조회 HTTP200/API6 발생; 다른 신원으로 치환하지 않음.",
+          "checkedAt": "2026-10-23T21:33:09.461Z",
+          "waitingSince": "2026-10-23T21:33:09.461Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.461Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.519Z",
+          "waitingSince": "2026-10-23T21:33:09.519Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.519Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 18,
+        "bandId": "e8c50b16-0be1-44f0-a797-ece2d6a94bd4",
+        "name": "angela",
+        "sourceUrls": [
+          "https://angela-official.com/profile"
+        ],
+        "approval": "공식 atsuko/KATSU·오카야마 출신·일본 애니송 활동은 확인. 현재 MBID Last.fm 조회 HTTP200/API6 발생; 다른 신원으로 치환하지 않음.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "d37a71ce-bf3e-47ed-a1a0-8305a7abff85",
+      "name": "Aqours",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d37a71ce-bf3e-47ed-a1a0-8305a7abff85",
+        "name": "Aqours",
+        "aliases": [
+          "シャゼリア☆キッス",
+          "CYaZALEA Kiss"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "b1c1b09e-7a43-4090-b69d-195af799dc65",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:16.515368+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.789Z",
+        "waitingSince": "2026-10-13T10:51:08.789Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.789Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.789Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.lantis.jp/artist.php?id=7e6e2d1f",
+              "checkedAt": "2026-10-13T10:51:08.789Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Lantis 주소 접근 불가, 대체 /artist/aqours/도403. 실제 공식 소개/정확한 ID 교차 검증 기술 지연.",
+          "checkedAt": "2026-10-23T21:33:09.578Z",
+          "waitingSince": "2026-10-23T21:33:09.578Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.578Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.647Z",
+          "waitingSince": "2026-10-23T21:33:09.647Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.647Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 19,
+        "bandId": "d37a71ce-bf3e-47ed-a1a0-8305a7abff85",
+        "name": "Aqours",
+        "sourceUrls": [
+          "https://www.lantis.jp/artist.php?id=7e6e2d1f"
+        ],
+        "approval": "기존 Lantis 주소 접근 불가, 대체 /artist/aqours/도403. 실제 공식 소개/정확한 ID 교차 검증 기술 지연.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "0cfa5892-2f26-467b-8058-5697b79301ba",
+      "name": "Arena",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "0cfa5892-2f26-467b-8058-5697b79301ba",
+        "name": "Arena",
+        "aliases": [],
+        "country_code": "GB",
+        "musicbrainz_id": "c0b6a3ee-ec0e-4d15-95b4-4d45c2bb3d89",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:13.964835+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.791Z",
+        "waitingSince": "2026-10-13T10:51:08.791Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.791Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.791Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.verglas.com/arena/",
+              "checkedAt": "2026-10-13T10:51:08.791Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Verglas 공식 소개 접근 불가. 동명 Arena 및 국가/장르/MBID의 독립 근거 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:09.713Z",
+          "waitingSince": "2026-10-23T21:33:09.713Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.713Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.772Z",
+          "waitingSince": "2026-10-23T21:33:09.772Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.772Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 20,
+        "bandId": "0cfa5892-2f26-467b-8058-5697b79301ba",
+        "name": "Arena",
+        "sourceUrls": [
+          "https://www.verglas.com/arena/"
+        ],
+        "approval": "Verglas 공식 소개 접근 불가. 동명 Arena 및 국가/장르/MBID의 독립 근거 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "7b2f72d9-47d7-4f13-b963-d974aecad0d0",
+      "name": "Babybird",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "7b2f72d9-47d7-4f13-b963-d974aecad0d0",
+        "name": "Babybird",
+        "aliases": [
+          "Baby Burd"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "93aaa233-6b5f-41bf-bfe8-70cf1552c218",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:07.193969+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.794Z",
+        "waitingSince": "2026-10-13T10:51:08.794Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.794Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.794Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/fatherhood/1168887516",
+              "checkedAt": "2026-10-13T10:51:08.794Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple Fatherhood/Rock 배급 확인. 국가 및 외부 MBID 대조 미완료.",
+          "checkedAt": "2026-10-23T21:33:09.836Z",
+          "waitingSince": "2026-10-23T21:33:09.836Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.836Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:09.903Z",
+          "waitingSince": "2026-10-23T21:33:09.903Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.903Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 21,
+        "bandId": "7b2f72d9-47d7-4f13-b963-d974aecad0d0",
+        "name": "Babybird",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/fatherhood/1168887516"
+        ],
+        "approval": "Apple Fatherhood/Rock 배급 확인. 국가 및 외부 MBID 대조 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "b7a5e80a-8dfe-4ab8-a368-8ebcfb896b30",
+      "name": "Barenaked Ladies",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "b7a5e80a-8dfe-4ab8-a368-8ebcfb896b30",
+        "name": "Barenaked Ladies",
+        "aliases": [
+          "BNL",
+          "Bare Naked Ladies"
+        ],
+        "country_code": "CA",
+        "musicbrainz_id": "86e736b4-93e2-40ff-9e1c-fb7c63fef5f6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:40.497297+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.796Z",
+        "waitingSince": "2026-10-13T10:51:08.796Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.796Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.796Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.barenakedladies.com/bios/",
+              "checkedAt": "2026-10-13T10:51:08.796Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 bios403. Warner 대체 경로는 template만 반환해 실제 전기로 세지 않음. 국가·장르·정확한 외부 ID 미검증.",
+          "checkedAt": "2026-10-23T21:33:09.964Z",
+          "waitingSince": "2026-10-23T21:33:09.964Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:09.964Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.029Z",
+          "waitingSince": "2026-10-23T21:33:10.029Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.029Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 22,
+        "bandId": "b7a5e80a-8dfe-4ab8-a368-8ebcfb896b30",
+        "name": "Barenaked Ladies",
+        "sourceUrls": [
+          "https://www.barenakedladies.com/bios/"
+        ],
+        "approval": "공식 bios403. Warner 대체 경로는 template만 반환해 실제 전기로 세지 않음. 국가·장르·정확한 외부 ID 미검증.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "bca8fda2-f346-461c-86b4-6409e124da0f",
+      "name": "Bee Gees",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "bca8fda2-f346-461c-86b4-6409e124da0f",
+        "name": "Bee Gees",
+        "aliases": [
+          "The Bee Gees",
+          "Bee Gees, The",
+          "BeeGees",
+          "Би Джиз"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:20.376496+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.799Z",
+        "waitingSince": "2026-10-13T10:51:08.799Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.799Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.799Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/cucumber-castle/1444182462",
+              "checkedAt": "2026-10-13T10:51:08.799Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple Cucumber Castle의 초기 pop-psych 활동 확인. 영국/호주 활동 국가 구분 및 MBID 교차 검증 미완료.",
+          "checkedAt": "2026-10-23T21:33:10.098Z",
+          "waitingSince": "2026-10-23T21:33:10.098Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.098Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.156Z",
+          "waitingSince": "2026-10-23T21:33:10.156Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.156Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 23,
+        "bandId": "bca8fda2-f346-461c-86b4-6409e124da0f",
+        "name": "Bee Gees",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/cucumber-castle/1444182462"
+        ],
+        "approval": "Apple Cucumber Castle의 초기 pop-psych 활동 확인. 영국/호주 활동 국가 구분 및 MBID 교차 검증 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "07aac391-f72d-4c4e-835a-b3ab6abad2f5",
+      "name": "BeForU",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "07aac391-f72d-4c4e-835a-b3ab6abad2f5",
+        "name": "BeForU",
+        "aliases": [
+          "Be For U",
+          "ビーフォーユー"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "862cd6ae-ea74-4696-a35c-73055135cdb7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:58.192384+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.802Z",
+        "waitingSince": "2026-10-13T10:51:08.802Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.802Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.802Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/894888510",
+              "checkedAt": "2026-10-13T10:51:08.802Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 배급 근거 주소 접근 불가. 정확한 공식 신원·국가·작품 교차 근거 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:10.213Z",
+          "waitingSince": "2026-10-23T21:33:10.213Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.213Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.276Z",
+          "waitingSince": "2026-10-23T21:33:10.276Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.276Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 24,
+        "bandId": "07aac391-f72d-4c4e-835a-b3ab6abad2f5",
+        "name": "BeForU",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/894888510"
+        ],
+        "approval": "기존 배급 근거 주소 접근 불가. 정확한 공식 신원·국가·작품 교차 근거 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "db1d90aa-7381-4d49-ad95-510e27ba6fe3",
+      "name": "Belle and Sebastian",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "db1d90aa-7381-4d49-ad95-510e27ba6fe3",
+        "name": "Belle and Sebastian",
+        "aliases": [
+          "Belle et Sébastien",
+          "Belle & Sebatian",
+          "Belle Adn Sebastian",
+          "Belle & Sebastien",
+          "Belle and Sebastien",
+          "Belle & Sebastian",
+          "ベル・アンド・セバスチャン"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "e5c7b94f-e264-473c-bb0f-37c85d4d5c70",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:14.058204+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.804Z",
+        "waitingSince": "2026-10-13T10:51:08.804Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.804Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.804Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.matadorrecords.com/belle-and-sebastian",
+              "checkedAt": "2026-10-13T10:51:08.804Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Matador 경로 접근 불가 및 대체 shop403. 검색 스니펫을 확정 근거로 쓰지 않음.",
+          "checkedAt": "2026-10-23T21:33:10.334Z",
+          "waitingSince": "2026-10-23T21:33:10.334Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.334Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.391Z",
+          "waitingSince": "2026-10-23T21:33:10.391Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.391Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 25,
+        "bandId": "db1d90aa-7381-4d49-ad95-510e27ba6fe3",
+        "name": "Belle and Sebastian",
+        "sourceUrls": [
+          "https://www.matadorrecords.com/belle-and-sebastian"
+        ],
+        "approval": "기존 Matador 경로 접근 불가 및 대체 shop403. 검색 스니펫을 확정 근거로 쓰지 않음.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "1782ce7d-590b-4781-9557-6217bfb2e05b",
+      "name": "Beyond",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "1782ce7d-590b-4781-9557-6217bfb2e05b",
+        "name": "Beyond",
+        "aliases": [],
+        "country_code": "HK",
+        "musicbrainz_id": "d84d02ad-d74c-4227-8073-6f13a039cfac",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:51.665961+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.806Z",
+        "waitingSince": "2026-10-13T10:51:08.806Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.806Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.806Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/rock-roll-collection/",
+              "checkedAt": "2026-10-13T10:51:08.806Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Apple 주소에 작품 ID가 없어 접근 불가. 홍콩 아티스트의 정확한 공식 작품/MBID 대조 필요.",
+          "checkedAt": "2026-10-23T21:33:10.456Z",
+          "waitingSince": "2026-10-23T21:33:10.456Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.456Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.519Z",
+          "waitingSince": "2026-10-23T21:33:10.519Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.519Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 26,
+        "bandId": "1782ce7d-590b-4781-9557-6217bfb2e05b",
+        "name": "Beyond",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/rock-roll-collection/"
+        ],
+        "approval": "기존 Apple 주소에 작품 ID가 없어 접근 불가. 홍콩 아티스트의 정확한 공식 작품/MBID 대조 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+      "name": "Billy Talent",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+        "name": "Billy Talent",
+        "aliases": [
+          "Pezz"
+        ],
+        "country_code": "CA",
+        "musicbrainz_id": "fd429857-5ace-4609-ae54-1502c3bdac11",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:43.449527+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.808Z",
+        "waitingSince": "2026-10-13T10:51:08.808Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.808Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.808Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/billy-talent/79565942",
+              "checkedAt": "2026-10-13T10:51:08.808Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:32.233Z",
+          "waitingSince": "2026-10-23T21:31:32.233Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:32.233Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:32.233Z",
+          "proposal": {
+            "target_band_id": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+            "expected_updated_at": "2026-10-13T08:20:43.449527+00:00",
+            "artist_name": "Billy Talent",
+            "country": "CA",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Pezz"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:32.949935+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.578Z",
+          "waitingSince": "2026-10-23T21:33:10.578Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.578Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 27,
+        "bandId": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+        "name": "Billy Talent",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/billy-talent/79565942"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+          "expected_updated_at": "2026-10-13T08:20:43.449527+00:00",
+          "artist_name": "Billy Talent",
+          "country": "CA",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Pezz"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다. 현재 context의 band b028bd57-ec16-447b-af61-1ee8669fedd9 및 외부 key mb:fd429857-5ace-4609-ae54-1502c3bdac11를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Billy Talent를 반환받았으며, 같은 MBID getTopAlbums의 Billy Talent III을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다. 현재 DB CA와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다.",
+            "sourceUrls": [
+              "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 overseas_rock 기준을 적용한다. 공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다.",
+            "sourceUrls": [
+              "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band b028bd57-ec16-447b-af61-1ee8669fedd9 및 외부 key mb:fd429857-5ace-4609-ae54-1502c3bdac11를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Billy Talent를 반환받았으며, 같은 MBID getTopAlbums의 Billy Talent III을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다. 현재 context의 band b028bd57-ec16-447b-af61-1ee8669fedd9 및 외부 key mb:fd429857-5ace-4609-ae54-1502c3bdac11를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Billy Talent를 반환받았으며, 같은 MBID getTopAlbums의 Billy Talent III을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://www.arts-crafts.ca/files/pdf/billytalent-bio.pdf",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "공식 레이블 Arts & Crafts의 Billy Talent 전기는 캐나다 토론토 4인조의 하드 록 활동과 Ben Kowalewicz·Billy Talent III를 명시한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:30:10.446Z",
+              "summary": "현재 context의 band b028bd57-ec16-447b-af61-1ee8669fedd9 및 외부 key mb:fd429857-5ace-4609-ae54-1502c3bdac11를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Billy Talent를 반환받았으며, 같은 MBID getTopAlbums의 Billy Talent III을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "b028bd57-ec16-447b-af61-1ee8669fedd9",
+        "name": "Billy Talent",
+        "aliases": [
+          "Pezz"
+        ],
+        "country_code": "CA",
+        "musicbrainz_id": "fd429857-5ace-4609-ae54-1502c3bdac11",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:32.949935+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "fd429857-5ace-4609-ae54-1502c3bdac11",
+        "returnedMbid": "fd429857-5ace-4609-ae54-1502c3bdac11",
+        "name": "Billy Talent",
+        "checkedAt": "2026-10-23T21:30:10.446Z",
+        "httpStatus": 200,
+        "listeners": "1846267",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "a6de2517-7480-4793-8003-4f3d99149d1b",
+      "name": "BLU‐SWING",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "a6de2517-7480-4793-8003-4f3d99149d1b",
+        "name": "BLU‐SWING",
+        "aliases": [
+          "BLU-SWING"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "1c69113d-00eb-4120-b166-6699e33a0031",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.149356+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.810Z",
+        "waitingSince": "2026-10-13T10:51:08.810Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.810Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.810Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/goodtimes/1820332214",
+              "checkedAt": "2026-10-13T10:51:08.810Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple GOODTIMES J-Pop 배급 확인. 실제 혼합 재즈/팝 활동·원산 국가·외부 ID 대조 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:10.637Z",
+          "waitingSince": "2026-10-23T21:33:10.637Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.637Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.702Z",
+          "waitingSince": "2026-10-23T21:33:10.702Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.702Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 28,
+        "bandId": "a6de2517-7480-4793-8003-4f3d99149d1b",
+        "name": "BLU‐SWING",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/goodtimes/1820332214"
+        ],
+        "approval": "Apple GOODTIMES J-Pop 배급 확인. 실제 혼합 재즈/팝 활동·원산 국가·외부 ID 대조 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "34f02e89-19fb-4fbd-8881-056043d23c70",
+      "name": "Cheap Trick",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "34f02e89-19fb-4fbd-8881-056043d23c70",
+        "name": "Cheap Trick",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "9f870653-72b0-4c6d-8c59-439a95963e09",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:46.1487+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.813Z",
+        "waitingSince": "2026-10-13T10:51:08.813Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.813Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.813Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.rockhall.com/inductees/cheap-trick",
+              "checkedAt": "2026-10-13T10:51:08.813Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Rock Hall의 멤버·록 활동 소개 확인. 국가 및 MBID별 작품 교차 대조 미완료.",
+          "checkedAt": "2026-10-23T21:33:10.760Z",
+          "waitingSince": "2026-10-23T21:33:10.760Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.760Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.819Z",
+          "waitingSince": "2026-10-23T21:33:10.819Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.819Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 29,
+        "bandId": "34f02e89-19fb-4fbd-8881-056043d23c70",
+        "name": "Cheap Trick",
+        "sourceUrls": [
+          "https://www.rockhall.com/inductees/cheap-trick"
+        ],
+        "approval": "Rock Hall의 멤버·록 활동 소개 확인. 국가 및 MBID별 작품 교차 대조 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "3f2e157d-5715-4c4a-9cb8-b458439a059f",
+      "name": "COALTAR OF THE DEEPERS",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "3f2e157d-5715-4c4a-9cb8-b458439a059f",
+        "name": "COALTAR OF THE DEEPERS",
+        "aliases": [
+          "Coaltar of the Deepers"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "e031ae5d-db68-4e06-980b-f828fe5b40dd",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:24:09.149343+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.816Z",
+        "waitingSince": "2026-10-13T10:51:08.816Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.816Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.816Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/yukari-telepath/",
+              "checkedAt": "2026-10-13T10:51:08.816Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Apple 주소에 작품 ID가 없어 접근 불가. 공식 실제 작품·국가·MBID 대조 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:10.889Z",
+          "waitingSince": "2026-10-23T21:33:10.889Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.889Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:10.945Z",
+          "waitingSince": "2026-10-23T21:33:10.945Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:10.945Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 30,
+        "bandId": "3f2e157d-5715-4c4a-9cb8-b458439a059f",
+        "name": "COALTAR OF THE DEEPERS",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/yukari-telepath/"
+        ],
+        "approval": "기존 Apple 주소에 작품 ID가 없어 접근 불가. 공식 실제 작품·국가·MBID 대조 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+      "name": "Danko Jones",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+        "name": "Danko Jones",
+        "aliases": [],
+        "country_code": "CA",
+        "musicbrainz_id": "ab4721e4-bc37-4bd2-be8c-8f1550152ad6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:53.989533+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.818Z",
+        "waitingSince": "2026-10-13T10:51:08.818Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.818Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.818Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/leo-rising/1811700516",
+              "checkedAt": "2026-10-13T10:51:08.818Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-23T21:31:33.587Z",
+          "waitingSince": "2026-10-23T21:31:33.587Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-23T21:31:33.587Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-21T21:31:33.587Z",
+          "proposal": {
+            "target_band_id": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+            "expected_updated_at": "2026-10-13T08:20:53.989533+00:00",
+            "artist_name": "Danko Jones",
+            "country": "CA",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+            "evidence_url": "https://www.seymourduncan.com/artists/danko-jones"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-23T21:31:34.276719+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.005Z",
+          "waitingSince": "2026-10-23T21:33:11.005Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.005Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 31,
+        "bandId": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+        "name": "Danko Jones",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/leo-rising/1811700516"
+        ],
+        "approval": "receipt_readback_verified",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      },
+      "supplementalApproval": {
+        "runId": "c5744ce4-4f88-4696-874b-e464c345b398",
+        "bandId": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+        "readyToApply": true,
+        "proposal": {
+          "target_band_id": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+          "expected_updated_at": "2026-10-13T08:20:53.989533+00:00",
+          "artist_name": "Danko Jones",
+          "country": "CA",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다. MBID/작품/국가를 대조했고 개별 공연 공개·알림 조건은 별도 유지한다.",
+          "evidence_url": "https://www.seymourduncan.com/artists/danko-jones"
+        },
+        "requirements": {
+          "identityMatched": true,
+          "countryMatched": true,
+          "genreMatched": true,
+          "classificationMatched": true,
+          "externalIdentityLinked": true,
+          "publicationEffectUnderstood": true
+        },
+        "approvalEvidence": {
+          "identityMatched": {
+            "summary": "협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다. 현재 context의 band 92ffe724-de08-43a1-92a4-475c1f6607c7 및 외부 key mb:ab4721e4-bc37-4bd2-be8c-8f1550152ad6를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Danko Jones를 반환받았으며, 같은 MBID getTopAlbums의 Power Trio을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.seymourduncan.com/artists/danko-jones",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "countryMatched": {
+            "summary": "협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다. 현재 DB CA와 일치한다. 출처 사이트 국가나 청취 지역을 국적으로 대체하지 않았다.",
+            "sourceUrls": [
+              "https://www.seymourduncan.com/artists/danko-jones",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "genreMatched": {
+            "summary": "협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다.",
+            "sourceUrls": [
+              "https://www.seymourduncan.com/artists/danko-jones",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "classificationMatched": {
+            "summary": "실제 확인한 음악 활동에 기존 overseas_rock 기준을 적용한다. 협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다.",
+            "sourceUrls": [
+              "https://www.seymourduncan.com/artists/danko-jones",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "externalIdentityLinked": {
+            "summary": "현재 context의 band 92ffe724-de08-43a1-92a4-475c1f6607c7 및 외부 key mb:ab4721e4-bc37-4bd2-be8c-8f1550152ad6를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Danko Jones를 반환받았으며, 같은 MBID getTopAlbums의 Power Trio을 공식 자료의 작품과 대조했다.",
+            "sourceUrls": [
+              "https://www.seymourduncan.com/artists/danko-jones",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          },
+          "publicationEffectUnderstood": {
+            "summary": "이 승인은 해당 외부 신원에 공연 자동 공개 승인을 연결한다. 출처 publication OFF·정확한 발표/예매 시각·회차·수동 차단·초기 채움 무알림·기존 동의/발송 조건을 별도로 충족해야 하며 이 RPC는 개별 공연 공개나 발송을 하지 않는다.",
+            "sourceUrls": [
+              "https://www.seymourduncan.com/artists/danko-jones",
+              "https://ws.audioscrobbler.com/2.0/"
+            ]
+          }
+        },
+        "approvalProof": {
+          "decision": "keep",
+          "summary": "협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다. 현재 context의 band 92ffe724-de08-43a1-92a4-475c1f6607c7 및 외부 key mb:ab4721e4-bc37-4bd2-be8c-8f1550152ad6를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Danko Jones를 반환받았으며, 같은 MBID getTopAlbums의 Power Trio을 공식 자료의 작품과 대조했다.",
+          "sources": [
+            {
+              "url": "https://www.seymourduncan.com/artists/danko-jones",
+              "checkedAt": "2026-10-23T21:31:20.613144+00:00",
+              "summary": "협업 악기 제작사 공식 아티스트 소개는 Danko Jones를 캐나다 토론토의 록 트리오로 명시하고 멤버 및 Power Trio 음반을 설명한다."
+            },
+            {
+              "url": "https://ws.audioscrobbler.com/2.0/",
+              "checkedAt": "2026-10-23T21:30:10.756Z",
+              "summary": "현재 context의 band 92ffe724-de08-43a1-92a4-475c1f6607c7 및 외부 key mb:ab4721e4-bc37-4bd2-be8c-8f1550152ad6를 확인했다. Last.fm artist.getInfo에 이 MBID를 요청해 동일 MBID와 Danko Jones를 반환받았으며, 같은 MBID getTopAlbums의 Power Trio을 공식 자료의 작품과 대조했다."
+            }
+          ]
+        }
+      },
+      "after": {
+        "id": "92ffe724-de08-43a1-92a4-475c1f6607c7",
+        "name": "Danko Jones",
+        "aliases": [],
+        "country_code": "CA",
+        "musicbrainz_id": "ab4721e4-bc37-4bd2-be8c-8f1550152ad6",
+        "category": "overseas_rock",
+        "curation_status": "approved",
+        "updated_at": "2026-10-23T21:31:34.276719+00:00"
+      },
+      "identityApiCheck": {
+        "requestedMbid": "ab4721e4-bc37-4bd2-be8c-8f1550152ad6",
+        "returnedMbid": "ab4721e4-bc37-4bd2-be8c-8f1550152ad6",
+        "name": "Danko Jones",
+        "checkedAt": "2026-10-23T21:30:10.756Z",
+        "httpStatus": 200,
+        "listeners": "384253",
+        "calls": 2
+      }
+    },
+    {
+      "bandId": "4b2aaed6-7d31-4a88-a133-190f8c8825ed",
+      "name": "Die Toten Hosen",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "4b2aaed6-7d31-4a88-a133-190f8c8825ed",
+        "name": "Die Toten Hosen",
+        "aliases": [
+          "Die Toten Hasen",
+          "DIE ROTEN ROSEN",
+          "Tangobrüder",
+          "Die Toten Haosen",
+          "Rote Rosen",
+          "Roten Rosen",
+          "Tote Hosen",
+          "Die Roten Rosen",
+          "ディー・トーテン・ホーゼン",
+          "Die Totten Hosen"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "c3bc80a6-1f4a-4e17-8cf0-6b1efe8302f1",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:18.345154+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.820Z",
+        "waitingSince": "2026-10-13T10:51:08.820Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.820Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.820Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.dietotenhosen.de/",
+              "checkedAt": "2026-10-13T10:51:08.820Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 dth.de redirect·음반 활동 확인. 실제 국가/장르와 MBID별 작품 대조 미완료.",
+          "checkedAt": "2026-10-23T21:33:11.066Z",
+          "waitingSince": "2026-10-23T21:33:11.066Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.066Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.126Z",
+          "waitingSince": "2026-10-23T21:33:11.126Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.126Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 32,
+        "bandId": "4b2aaed6-7d31-4a88-a133-190f8c8825ed",
+        "name": "Die Toten Hosen",
+        "sourceUrls": [
+          "https://www.dietotenhosen.de/"
+        ],
+        "approval": "공식 dth.de redirect·음반 활동 확인. 실제 국가/장르와 MBID별 작품 대조 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "d9904318-3244-486d-81ed-c251c537745b",
+      "name": "Donots",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d9904318-3244-486d-81ed-c251c537745b",
+        "name": "Donots",
+        "aliases": [
+          "Donot",
+          "The Donots",
+          "Donats"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "06a4a555-1b69-4175-83df-2528a8e5af05",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:36.936202+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.823Z",
+        "waitingSince": "2026-10-13T10:51:08.823Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.823Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.823Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/calling-acoustic-ep/1821875794",
+              "checkedAt": "2026-10-13T10:51:08.823Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple Calling acoustic/Rock 배급 확인. 스토어 United States 표기를 국적으로 쓰지 않음. DE 및 외부 ID 교차 근거 필요.",
+          "checkedAt": "2026-10-23T21:33:11.185Z",
+          "waitingSince": "2026-10-23T21:33:11.185Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.185Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.244Z",
+          "waitingSince": "2026-10-23T21:33:11.244Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.244Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 33,
+        "bandId": "d9904318-3244-486d-81ed-c251c537745b",
+        "name": "Donots",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/calling-acoustic-ep/1821875794"
+        ],
+        "approval": "Apple Calling acoustic/Rock 배급 확인. 스토어 United States 표기를 국적으로 쓰지 않음. DE 및 외부 ID 교차 근거 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "95464ba0-7ca9-490a-a0a9-5aad96e35883",
+      "name": "ELLEGARDEN",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "95464ba0-7ca9-490a-a0a9-5aad96e35883",
+        "name": "ELLEGARDEN",
+        "aliases": [
+          "エルレガーデン",
+          "엘르가든"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "923158cf-9d21-4bce-8040-41e7a497c1c9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:45:05.953975+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.825Z",
+        "waitingSince": "2026-10-13T10:51:08.825Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.825Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.825Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/playlist/ellegarden-essentials/pl.2989eeee7dcc46d9a3e81e16539596c8",
+              "checkedAt": "2026-10-13T10:51:08.825Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple 편집글에서 팝펑크/얼터너티브 활동 확인. 공식 profile은 maintenance로 redirect. JP 국가·외부 ID 교차 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:11.305Z",
+          "waitingSince": "2026-10-23T21:33:11.305Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.305Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.362Z",
+          "waitingSince": "2026-10-23T21:33:11.362Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.362Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 34,
+        "bandId": "95464ba0-7ca9-490a-a0a9-5aad96e35883",
+        "name": "ELLEGARDEN",
+        "sourceUrls": [
+          "https://music.apple.com/us/playlist/ellegarden-essentials/pl.2989eeee7dcc46d9a3e81e16539596c8"
+        ],
+        "approval": "Apple 편집글에서 팝펑크/얼터너티브 활동 확인. 공식 profile은 maintenance로 redirect. JP 국가·외부 ID 교차 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "d8f9a76f-6b40-491e-90af-e15f319c3925",
+      "name": "Fugazi",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d8f9a76f-6b40-491e-90af-e15f319c3925",
+        "name": "Fugazi",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "233fc3f3-6de2-465c-985e-e721dbabbace",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:58.309922+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.827Z",
+        "waitingSince": "2026-10-13T10:51:08.827Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.827Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.827Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/artist/fugazi/49249818",
+              "checkedAt": "2026-10-13T10:51:08.827Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Dischord 공식 Washington DC·멤버·Repeater 음반 확인. 외부 MBID 대조 및 장르별 별도 근거 미완료.",
+          "checkedAt": "2026-10-23T21:33:11.419Z",
+          "waitingSince": "2026-10-23T21:33:11.419Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.419Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.493Z",
+          "waitingSince": "2026-10-23T21:33:11.493Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.493Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 35,
+        "bandId": "d8f9a76f-6b40-491e-90af-e15f319c3925",
+        "name": "Fugazi",
+        "sourceUrls": [
+          "https://music.apple.com/us/artist/fugazi/49249818"
+        ],
+        "approval": "Dischord 공식 Washington DC·멤버·Repeater 음반 확인. 외부 MBID 대조 및 장르별 별도 근거 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "e767ef92-54e3-4e97-8991-eea4e210b7c8",
+      "name": "Goo Goo Dolls",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "e767ef92-54e3-4e97-8991-eea4e210b7c8",
+        "name": "Goo Goo Dolls",
+        "aliases": [
+          "The Goo Goo Dolls",
+          "Goo Goo Dolls, The",
+          "Goo-Goo Dolls"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "e2c00c56-8365-4160-9f40-a64682917633",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:30.85527+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.830Z",
+        "waitingSince": "2026-10-13T10:51:08.830Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.830Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.830Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.googoodolls.com/",
+              "checkedAt": "2026-10-13T10:51:08.830Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "공식 Dizzy Up the Girl 등 음반 확인. 국가·실제 록 장르·외부 MBID별 작품 대조 미완료.",
+          "checkedAt": "2026-10-23T21:33:11.552Z",
+          "waitingSince": "2026-10-23T21:33:11.552Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.552Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.611Z",
+          "waitingSince": "2026-10-23T21:33:11.611Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.611Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 36,
+        "bandId": "e767ef92-54e3-4e97-8991-eea4e210b7c8",
+        "name": "Goo Goo Dolls",
+        "sourceUrls": [
+          "https://www.googoodolls.com/"
+        ],
+        "approval": "공식 Dizzy Up the Girl 등 음반 확인. 국가·실제 록 장르·외부 MBID별 작품 대조 미완료.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "a2199522-5d67-4630-a96a-ea20fe2ae1a9",
+      "name": "Grobschnitt",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "a2199522-5d67-4630-a96a-ea20fe2ae1a9",
+        "name": "Grobschnitt",
+        "aliases": [
+          "Kapelle Elias Grobschnitt",
+          "Elias Grobschnitt"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "666fd16d-d9f9-4eff-80ed-a064d5bbca7c",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:09.299978+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.832Z",
+        "waitingSince": "2026-10-13T10:51:08.832Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.832Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.832Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/grobschnitt/1585748982",
+              "checkedAt": "2026-10-13T10:51:08.832Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "Apple Rock 음반 확인. 배급 스토어 지역과 국적을 구분하고 DE·외부 ID 교차 검증 보완 필요.",
+          "checkedAt": "2026-10-23T21:33:11.678Z",
+          "waitingSince": "2026-10-23T21:33:11.678Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.678Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.736Z",
+          "waitingSince": "2026-10-23T21:33:11.736Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.736Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 37,
+        "bandId": "a2199522-5d67-4630-a96a-ea20fe2ae1a9",
+        "name": "Grobschnitt",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/grobschnitt/1585748982"
+        ],
+        "approval": "Apple Rock 음반 확인. 배급 스토어 지역과 국적을 구분하고 DE·외부 ID 교차 검증 보완 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "d6858816-ec17-40fc-811d-eb0e1d0f816a",
+      "name": "Hey! Say! JUMP",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "d6858816-ec17-40fc-811d-eb0e1d0f816a",
+        "name": "Hey! Say! JUMP",
+        "aliases": [],
+        "country_code": "JP",
+        "musicbrainz_id": "d024da79-b980-40bb-af2d-d2d56b95b3f3",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:44.632259+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.834Z",
+        "waitingSince": "2026-10-13T10:51:08.834Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.834Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.834Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.storm-labels.co.jp/s/js/artist/",
+              "checkedAt": "2026-10-13T10:51:08.834Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Storm Labels 일반 artist 경로 접근 불가. 해당 그룹의 공식 전기/작품 및 외부 ID 대조 필요.",
+          "checkedAt": "2026-10-23T21:33:11.797Z",
+          "waitingSince": "2026-10-23T21:33:11.797Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.797Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.862Z",
+          "waitingSince": "2026-10-23T21:33:11.862Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.862Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 38,
+        "bandId": "d6858816-ec17-40fc-811d-eb0e1d0f816a",
+        "name": "Hey! Say! JUMP",
+        "sourceUrls": [
+          "https://www.storm-labels.co.jp/s/js/artist/"
+        ],
+        "approval": "기존 Storm Labels 일반 artist 경로 접근 불가. 해당 그룹의 공식 전기/작품 및 외부 ID 대조 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    },
+    {
+      "bandId": "5215821c-db7c-46c3-87d7-680c4e6c4ca7",
+      "name": "HKT48",
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "before": {
+        "id": "5215821c-db7c-46c3-87d7-680c4e6c4ca7",
+        "name": "HKT48",
+        "aliases": [],
+        "country_code": "JP",
+        "musicbrainz_id": "216d2e42-ac1c-43eb-a027-d160df86508e",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:28.601433+00:00"
+      },
+      "originalResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T10:51:08.836Z",
+        "waitingSince": "2026-10-13T10:51:08.836Z",
+        "lastSuccessfulAt": "2026-10-13T10:51:08.836Z",
+        "nextAttemptAt": null,
+        "validUntil": "2027-01-11T10:51:08.836Z",
+        "applied": false,
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://music.apple.com/us/album/1444858015",
+              "checkedAt": "2026-10-13T10:51:08.836Z",
+              "summary": "외부 신원과 공식 아티스트·레이블 소개 및 실제 원작 음반·공연 활동을 대조함. J-pop 또는 록 계열 활동이 확인되어 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+      },
+      "result": {
+        "approval": {
+          "status": "deferred",
+          "reason": "기존 Apple ID만 있는 경로 접근 불가. 공식 그룹 소개·국가·작품 및 MBID 대조 필요.",
+          "checkedAt": "2026-10-23T21:33:11.920Z",
+          "waitingSince": "2026-10-23T21:33:11.920Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.920Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지.",
+          "checkedAt": "2026-10-23T21:33:11.982Z",
+          "waitingSince": "2026-10-23T21:33:11.982Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-24T21:33:11.982Z",
+          "validUntil": null
+        }
+      },
+      "notes": {
+        "i": 39,
+        "bandId": "5215821c-db7c-46c3-87d7-680c4e6c4ca7",
+        "name": "HKT48",
+        "sourceUrls": [
+          "https://music.apple.com/us/album/1444858015"
+        ],
+        "approval": "기존 Apple ID만 있는 경로 접근 불가. 공식 그룹 소개·국가·작품 및 MBID 대조 필요.",
+        "channels": "현재 선택40팀의 저장된 공식 채널 profile0. 공식 페이지의 일반 YouTube/레이블 링크를 개인 전용 채널로 승격하지 않음. 직접 채널 URL과 API ID 대조·잠금/버전 검증 미완료. MusicBrainz cooldown 유지."
+      }
+    }
+  ],
+  "preservedBlockedDraft": {
+    "file": "approval-drafts-573f7fc2.json",
+    "sha256AtEnd": "e7d705915a4d6be9523127dbc142a1bad763500cbd09c5e7796d448ae196b337",
+    "action": "기존 보류 입력은 수정/재전송하지 않았다. 이번7개 새 근거 입력은 c574-approval-* 파일로 별도 저장했다. 실행 전 checksum은 별도로 수집하지 않아 전후 hash 비교를 주장하지 않는다."
+  },
+  "cooldownPreserved": {
+    "musicbrainzNextAttemptAt": "2026-10-24T05:26:38.618Z",
+    "requests": 0
+  },
+  "core200": {
+    "mandatory": 4,
+    "unfilled": 196,
+    "candidateRows": 300,
+    "identityVerified": false,
+    "note": "편성안이며 세계 인기 상위200위가 아니다. 필수4를 보존하고 전체 차트 재수집/신규등록/별칭 쓰기는 하지 않았다."
+  },
+  "identityCompatibility": {
+    "commit": "36b0acf",
+    "productionContractReadOnly": true,
+    "journalPreparation": "validated immutable full-selection UTF-8 no-replace journal; no RPC or queue integration",
+    "notReady": [
+      "--identity-file/identity CLI",
+      "frozen selection integration and lease/server target readback",
+      "mutation receipt recovery to queue checkpoint and public search"
+    ],
+    "productionIdentityWrites": 0
+  },
+  "validation": {
+    "fixtureTests": 37,
+    "lint": "passed",
+    "build": "passed; existing chunk-size warning",
+    "utf8Json": "passed",
+    "stateAndServerFinish": "verified",
+    "gitDiffCheck": "passed"
+  },
+  "limitations": [
+    "공식 자료 열기 실패/maintenance를 대상 밖이나 사람 판단 예외로 승격하지 않았다. 나머지33팀의 국가/실제 장르/외부 신원별 미완료는 items에 기록했다.",
+    "공식 페이지의 임베디드 동영상이나 공통 레이블 YouTube 링크를 개인 전용 공식 채널로 세지 않았다. 선택40팀 기존 channel profile은0이며 새 채널·사진 저장0이다.",
+    "상속 프록시/TLS/CA를 보존했다. 실행기에서3개 공식 페이지 직접 요청이 network unavailable로 종료됐고 URL 원문/키/오류 본문을 기록하지 않았다. 실제 확인한 공개 자료는 웹 연결 도구로 읽었다.",
+    "운영 DDL·공연 수집/공개·알림·예약 변경·배포·push/PR/merge 없음."
+  ]
+}

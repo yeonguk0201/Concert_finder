@@ -15,9 +15,66 @@ test('source runner retries collection, respects leases, and records terminal fa
   assert.equal(row.attempts,3); assert.deepEqual(sleeps,[5000,10000])
   const locked = await runSource({ client: { rpc: async () => ({ data: null }) }, source: 'yes24', collect: () => assert.fail('locked') })
   assert.equal(locked.skipped,'locked_or_disabled')
-  await assert.rejects(runSource({ client, source: 'yes24', collect: async () => { throw new Error('secret URL') }, sleep: async () => {} }), /secret URL/)
+  await assert.rejects(runSource({ client, source: 'yes24', collect: async () => { throw new Error('secret URL') }, sleep: async () => {} }), /COLLECTION_OR_UPLOAD_FAILED/)
   assert.equal(calls.at(-1)[0],'service_fail_collection')
   assert.equal(calls.at(-1)[1].failure_code,'COLLECTION_OR_UPLOAD_FAILED')
+})
+
+test('source failures stop permanent requests and persist safe diagnostic codes under the same lease', async () => {
+  for (const [message, code, attempts] of [
+    ['KOPIS HTTP 400', 'COLLECTION_HTTP_400', 1],
+    ['HTTP 403', 'COLLECTION_HTTP_403', 1],
+    ['KOPIS_SERVICE_KEY missing', 'COLLECTION_CONFIGURATION_MISSING', 1],
+    ['Collection disallowed by robots.txt', 'COLLECTION_ROBOTS_DISALLOWED', 1],
+    ['KOPIS listing budget exceeded: narrow the date range', 'COLLECTION_LISTING_BUDGET_EXCEEDED', 1],
+    ['Response too large', 'COLLECTION_RESPONSE_TOO_LARGE', 1],
+    ['KOPIS request timeout', 'COLLECTION_TIMEOUT', 3],
+    ['KOPIS HTTP 503', 'COLLECTION_HTTP_503', 3],
+    ['KOPIS HTTP 429', 'COLLECTION_HTTP_429', 3],
+    ['fetch failed https://provider.test/?service=private-value', 'COLLECTION_OR_UPLOAD_FAILED', 3],
+  ]) {
+    const calls = [], sleeps = []
+    let requests = 0
+    const client = { rpc: async (name, args) => { calls.push({ name, args }); return { data: 'fixed-run' } } }
+    await assert.rejects(runSource({ client, source: 'kopis',
+      collect: async () => { requests++; throw Error(message) },
+      upload: () => assert.fail('failed collection must not upload'),
+      sleep: async ms => sleeps.push(ms),
+    }), error => error.message === code)
+    assert.equal(requests, attempts)
+    assert.equal(sleeps.length, attempts - 1)
+    assert.deepEqual(calls.map(c => c.name), ['service_begin_collection', 'service_fail_collection'])
+    assert.deepEqual(calls[1].args, { run_token: 'fixed-run', attempt_count: attempts, failure_code: code })
+    assert.ok(!JSON.stringify(calls).includes('private-value'))
+  }
+})
+
+test('uncertain upload failure is recorded separately and never recollects or registers another run', async () => {
+  const calls = []
+  let collected = 0, uploaded = 0
+  const client = { rpc: async (name, args) => { calls.push({ name, args }); return { data: 'fixed-run' } } }
+  await assert.rejects(runSource({ client, source: 'kopis',
+    collect: async () => { collected++; return { candidates: [], failures: [] } },
+    upload: async (_, token) => { uploaded++; assert.equal(token, 'fixed-run'); throw Error('private upstream body') },
+  }), /COLLECTION_UPLOAD_FAILED/)
+  assert.equal(collected, 1); assert.equal(uploaded, 1)
+  assert.deepEqual(calls.map(c => c.name), ['service_begin_collection', 'service_fail_collection'])
+  assert.equal(calls[1].args.failure_code, 'COLLECTION_UPLOAD_FAILED')
+})
+
+test('KOPIS safe request context survives permanent failure without losing server diagnostic codes', async () => {
+  const calls = []
+  const message = 'KOPIS HTTP 400 [list 20270124-20270223 page=1]'
+  await assert.rejects(runSource({
+    client: { rpc: async (name, args) => { calls.push({ name, args }); return { data: 'fixed-run' } } },
+    source: 'kopis',
+    collect: async () => { throw Object.assign(new Error(message), { retryable: false }) },
+    sleep: () => assert.fail('permanent failure must not retry'),
+    upload: () => assert.fail('failed collection must not upload'),
+  }), error => error.message === message)
+  assert.deepEqual(calls.map(c => c.name), ['service_begin_collection', 'service_fail_collection'])
+  assert.equal(calls[1].args.failure_code, 'COLLECTION_HTTP_400')
+  assert.equal(calls[1].args.attempt_count, 1)
 })
 
 test('database publication enforces approval, leases, deduplication, overrides and historical silence', async () => {

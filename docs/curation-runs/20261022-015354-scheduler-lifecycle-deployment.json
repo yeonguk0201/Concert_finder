@@ -1,0 +1,59 @@
+{
+  "completedAtKst": "2026-10-22T01:53:54.127878+09:00",
+  "migration": "20261021165010_integrated_review_lifecycle",
+  "projectRef": "czjrzylvnewfjnfwjhwf",
+  "automation": {
+    "id": "6ad2484e14b8819191c9b7217bdd0572",
+    "is_enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Seoul:20261017T022700\nRRULE:FREQ=HOURLY;INTERVAL=4\nEND:VEVENT",
+    "updated_at": "2026-10-21T16:52:59.655645+00:00"
+  },
+  "securityAdvisorDelta": {
+    "newFindings": [],
+    "totalFindings": 76
+  },
+  "verification": {
+    "checkedAt": "2026-10-21T16:52:27.072Z",
+    "catalogUnchanged": true,
+    "catalogCount": 626,
+    "queueRevision": 656,
+    "queueUnchanged": true,
+    "finishRpcAuthAndRunValidation": true,
+    "beginSelectionGuard": true,
+    "oneHourShadowBeginState": "running",
+    "shadowSelected": 40,
+    "realBatchStarted": false
+  },
+  "operationalChanges": {
+    "appCadenceHours": 4,
+    "additionalMinimumIntervalRemoved": true,
+    "writeLeaseHours": 5,
+    "unfinishedRunBlocksNewBegin": true,
+    "sameBatchMaxDistinctArtists": 40,
+    "manualVersionIdentityProtectionsPreserved": true,
+    "finishedRunsArtificiallyClosed": 0,
+    "catalogMutated": false,
+    "queueMutated": false,
+    "realReviewBatchStarted": false
+  },
+  "tests": {
+    "targetedNodePassed": 20,
+    "previousFullNodePassed": 137,
+    "previousVitestPassed": 100,
+    "lint": "passed after last CLI change",
+    "build": "passed; TS and UI unchanged since validation",
+    "diffCheck": "passed"
+  },
+  "localPCCodeSynchronized": false,
+  "deploymentCommits": [
+    "9bd7220",
+    "d51fe86"
+  ],
+  "notes": [
+    "Official MCP migration applied; installed original approval migration not reapplied.",
+    "Remote-generated migration version preserved locally. CLI attempts failed due read-only home and command/install issues; no environment credentials passed to CLI.",
+    "App schedule stayed at its existing four-hour value; only instructions and enabled state were changed.",
+    "No investigation or approval results are claimed for this deployment.",
+    "Local PC must apply the synchronization changes before switching ownership back."
+  ]
+}

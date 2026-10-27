@@ -1,0 +1,3790 @@
+{
+  "version": 1,
+  "runId": "d772052f-38e1-4799-8a5c-7603c0f17f94",
+  "checkedAt": "2026-10-22T21:43:50.532478+00:00",
+  "kst": "2026-10-23T06:43:50.532478+09:00",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "owner": "cloud",
+  "revision": 1342,
+  "active": null,
+  "transfer": null,
+  "stateSha256": "36cb7788a717ad1bcda21843bb001f2de3ccc206db50bcf625bc77b4ef524a99",
+  "selected": 40,
+  "newResearchComplete": 3,
+  "researchCompletedArtists": [
+    "김리다",
+    "유환주",
+    "이강산"
+  ],
+  "approvalApplied": 0,
+  "approvalDeferred": 40,
+  "researchDeferred": 32,
+  "channelDeferred": 40,
+  "channelsSaved": 0,
+  "photosSaved": 0,
+  "registrationsApplied": 0,
+  "aliasesApplied": 0,
+  "catalog": 626,
+  "bandsByStatus": {
+    "approved": 132,
+    "unreviewed": 488,
+    "excluded": 6
+  },
+  "remainingQueueArtists": 407,
+  "authorityWaitingHistorical": 66,
+  "verification": {
+    "all40VersionsAndNamesUnchanged": true,
+    "selectedTasksRecorded": 115,
+    "serverFinishAcknowledged": true,
+    "activeClearedAfterAcknowledgement": true
+  },
+  "automaticApprovalReview": {
+    "rejected": true,
+    "commandExecuted": false,
+    "approvalRpcCalls": 0,
+    "affectedProposals": [
+      "김리다",
+      "유환주",
+      "이강산",
+      "The Hold Steady",
+      "The Hollies",
+      "The Jam",
+      "The Jesus and Mary Chain",
+      "The Jimi Hendrix Experience"
+    ],
+    "reason": "Applying individually prepared inputs with all six requirements true across multiple artists repeated a rejected pattern; per-requirement evidence was judged insufficient for consequential publication approvals.",
+    "response": "No retry, smaller-batch attempt or indirect application. Preserve actual research and unexecuted proposals.",
+    "additionalUnmetCountryClassification": [
+      "김리다",
+      "유환주",
+      "이강산"
+    ],
+    "fiveForeignProposalsRequireReview": [
+      "The Hold Steady",
+      "The Hollies",
+      "The Jam",
+      "The Jesus and Mary Chain",
+      "The Jimi Hendrix Experience"
+    ]
+  },
+  "requests": {
+    "musicBrainzApi": 40,
+    "youtubeApi": 0,
+    "lastfmApi": 0,
+    "instrumentedSupabaseHttp": 165,
+    "supabaseUninstrumentedCli": {
+      "snapshot": 1,
+      "begin": 1
+    },
+    "additionalHttpDerivedFromCodePath": 5,
+    "supabaseExpectedTotal": 170,
+    "limitation": "snapshot/begin transports were not instrumented; total170 is code-path accounting. Context120 + shared gate40 + channels1 + finish/readback4 directly counted.",
+    "webToolInvocations": 15,
+    "webInternalHttpCount": "not observable"
+  },
+  "identityCompatibility": {
+    "commit": "0a714e1",
+    "module": "scripts/lib/artist-identity-work.mjs",
+    "scope": "Read-only receipt/public search recovery via injected readers. No writer, credentials, queue mutation or operational identity invocation.",
+    "identityCliSupported": false,
+    "tests": 30,
+    "lint": "passed",
+    "build": "passed; existing large-chunk warning"
+  },
+  "corePlan": {
+    "generatedBeforeBegin": true,
+    "priorityFileUsed": true,
+    "selectedNominees": 4,
+    "unfilled": 196,
+    "newIdentityWrite": "not executed"
+  },
+  "items": [
+    {
+      "bandId": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+      "name": "강건후",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+        "name": "강건후",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "b599c005-877b-48e2-a82e-5a6e021054e7",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T13:24:32.435618+00:00"
+      },
+      "after": {
+        "id": "a1662db7-73dc-45bf-a16f-d7ae2907afc2",
+        "name": "강건후",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "b599c005-877b-48e2-a82e-5a6e021054e7",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T13:24:32.435618+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "b599c005-877b-48e2-a82e-5a6e021054e7",
+        "name": "강건후",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "guitarist",
+        "checkedAt": "2026-10-22T21:34:34.599Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+      "name": "김경태",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "현재 MB는 enginner. 밴드 안음 작곡가와 이름만으로 연결하지 않고 해당 엔지니어 공식 크레딧 대조.",
+      "before": {
+        "id": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+        "name": "김경태",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "7fd5d6a3-8b08-469d-9119-a6f0581fb1ba",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.702286+00:00"
+      },
+      "after": {
+        "id": "2c39124f-ab61-466d-8a24-1d9c7bfd4535",
+        "name": "김경태",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "7fd5d6a3-8b08-469d-9119-a6f0581fb1ba",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.702286+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "7fd5d6a3-8b08-469d-9119-a6f0581fb1ba",
+        "name": "김경태",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "enginner",
+        "checkedAt": "2026-10-22T21:34:36.400Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+      "name": "김수희",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+        "name": "김수희",
+        "aliases": [
+          "Kim Soo Hee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149317+00:00"
+      },
+      "after": {
+        "id": "e2e0bc6a-98df-4b72-89a5-2e718380c323",
+        "name": "김수희",
+        "aliases": [
+          "Kim Soo Hee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149317+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "0da2870e-d645-4cc4-ace0-98d6923d9cc5",
+        "name": "김수희",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:39.942Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "810b1871-70ab-4563-8703-747012ea6f1d",
+      "name": "김조한",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "810b1871-70ab-4563-8703-747012ea6f1d",
+        "name": "김조한",
+        "aliases": [
+          "George Han Kim",
+          "Johan Kim",
+          "Kim Jo Han"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T01:30:28.913689+00:00"
+      },
+      "after": {
+        "id": "810b1871-70ab-4563-8703-747012ea6f1d",
+        "name": "김조한",
+        "aliases": [
+          "George Han Kim",
+          "Johan Kim",
+          "Kim Jo Han"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T01:30:28.913689+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "ec061c8b-18b5-48d7-8434-3d57289102a1",
+        "name": "김조한",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:41.947Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Solid",
+          "id": "efab2a25-c9ea-4d7d-9e31-db14fb7bfb49"
+        }
+      ],
+      "worksReadForIdentity": [
+        "me, myself, my music",
+        "Soul Family with Johan",
+        "사랑에 빠지고 싶다",
+        "내겐 너무 예쁜 그녀",
+        "2021 지금 다시 하나되어"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+      "name": "김종국",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+        "name": "김종국",
+        "aliases": [
+          "Kim Jong Kook",
+          "Kim Jong-kook"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T01:30:28.899139+00:00"
+      },
+      "after": {
+        "id": "f07da9a4-8294-49a4-bc2b-2d2932c6adfb",
+        "name": "김종국",
+        "aliases": [
+          "Kim Jong Kook",
+          "Kim Jong-kook"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T01:30:28.899139+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "f6a68f94-384c-47a2-85a8-81731e0a559c",
+        "name": "김종국",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:43.871Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "TURBO",
+          "id": "4918d94b-944b-4fc1-8c0c-25d09c6e374f"
+        }
+      ],
+      "worksReadForIdentity": [
+        "Renaissance",
+        "Evolution",
+        "This Is Me",
+        "네번째 편지",
+        "Here I am"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "59786668-4c4f-4568-8928-034dc1706ac2",
+      "name": "박성현",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "59786668-4c4f-4568-8928-034dc1706ac2",
+        "name": "박성현",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "ef019f33-047a-4091-bc38-6a951856de0a",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T19:24:49.220714+00:00"
+      },
+      "after": {
+        "id": "59786668-4c4f-4568-8928-034dc1706ac2",
+        "name": "박성현",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "ef019f33-047a-4091-bc38-6a951856de0a",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T19:24:49.220714+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "ef019f33-047a-4091-bc38-6a951856de0a",
+        "name": "박성현",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:45.768Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "영턱스클럽",
+          "id": "3d88bed8-bc9a-46eb-883a-bb9ce1af560b"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+      "name": "변진섭",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+        "name": "변진섭",
+        "aliases": [
+          "Byun Jin Sub"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149204+00:00"
+      },
+      "after": {
+        "id": "84f07eb0-1bc4-42fe-be7f-3e1905857ef5",
+        "name": "변진섭",
+        "aliases": [
+          "Byun Jin Sub"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149204+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7",
+        "name": "변진섭",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:47.726Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "변진섭",
+        "변진섭2",
+        "그대 내게 다시",
+        "변진섭 GREAT HITS",
+        "Sweet Memories"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+      "name": "심규선",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+        "name": "심규선",
+        "aliases": [
+          "Lucia",
+          "Sim Gyu Seon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "189a3528-68c2-480f-a4e1-c4db29152398",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T19:24:49.232495+00:00"
+      },
+      "after": {
+        "id": "e1d5c3b7-2dc4-4d87-9866-4d82d7186d06",
+        "name": "심규선",
+        "aliases": [
+          "Lucia",
+          "Sim Gyu Seon"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "189a3528-68c2-480f-a4e1-c4db29152398",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T19:24:49.232495+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "189a3528-68c2-480f-a4e1-c4db29152398",
+        "name": "심규선",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "Korean singer-songwriter",
+        "checkedAt": "2026-10-22T21:34:51.493Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "자기만의 방",
+        "Light & Shade Chapter.1",
+        "Light & Shade Chapter.2",
+        "#HUMANKIND",
+        "환상소곡집 op.3 〈Monster〉"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+      "name": "안다은",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+        "name": "안다은",
+        "aliases": [
+          "An Da Eun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T15:10:08.930152+00:00"
+      },
+      "after": {
+        "id": "d9f2f425-1d75-4a23-99bc-425f67df20e4",
+        "name": "안다은",
+        "aliases": [
+          "An Da Eun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T15:10:08.930152+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "c0b8df30-30f7-4b04-8a55-88c9f421d588",
+        "name": "안다은",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:54.655Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "디에이드",
+          "id": "48159a19-3121-4212-8de6-d7dc1184c813"
+        },
+        {
+          "type": "member of band",
+          "name": "어쿠스틱 콜라보",
+          "id": "853119cc-f5df-4bfb-9b0a-2d45521bac64"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+      "name": "양다일",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+        "name": "양다일",
+        "aliases": [
+          "Yang Da Il"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149229+00:00"
+      },
+      "after": {
+        "id": "a3870f18-d0b2-4751-96ae-b65db0acadfc",
+        "name": "양다일",
+        "aliases": [
+          "Yang Da Il"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149229+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "2593a1ae-572e-4d4a-b567-1fe6810a46fb",
+        "name": "양다일",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:34:58.085Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "inside",
+        "Our Joys and Sadnesses",
+        "My insecure",
+        "우린 알아",
+        "그리워"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "92a5e91a-3527-418b-b804-309bada7a55c",
+      "name": "우수현",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "92a5e91a-3527-418b-b804-309bada7a55c",
+        "name": "우수현",
+        "aliases": [
+          "Woo Suhyun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "9176781a-74ef-4617-ae0a-7c713b287554",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.692357+00:00"
+      },
+      "after": {
+        "id": "92a5e91a-3527-418b-b804-309bada7a55c",
+        "name": "우수현",
+        "aliases": [
+          "Woo Suhyun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "9176781a-74ef-4617-ae0a-7c713b287554",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.692357+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "9176781a-74ef-4617-ae0a-7c713b287554",
+        "name": "우수현",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "South Korean singer-songwriter",
+        "checkedAt": "2026-10-22T21:35:00.052Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "이름 모를 숲"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+      "name": "이기환",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+        "name": "이기환",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T01:30:28.907801+00:00"
+      },
+      "after": {
+        "id": "79bf2280-88ed-42d9-b875-efae50bc53c1",
+        "name": "이기환",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T01:30:28.907801+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "6831cb3d-9aaf-4dc5-84c0-5d15dd57c384",
+        "name": "이기환",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "composer, KIPLE",
+        "checkedAt": "2026-10-22T21:35:03.548Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "KIPLE",
+          "id": "d04a9978-079f-4b7e-adc4-491f37a68e6c"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+      "name": "이동민",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+        "name": "이동민",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.695783+00:00"
+      },
+      "after": {
+        "id": "87a238a8-6544-441a-8e66-e5cf7736e84e",
+        "name": "이동민",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.695783+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "4838ad0f-852f-4ae6-8d19-f1109556c7e9",
+        "name": "이동민",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:06.873Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+      "name": "이루다",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+        "name": "이루다",
+        "aliases": [
+          "이루다 (LEE LU DA)"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "2045d73e-23ba-4857-90b4-4064d8a19f04",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.148752+00:00"
+      },
+      "after": {
+        "id": "ca01ad47-84d2-4361-b112-b32f6ff927c4",
+        "name": "이루다",
+        "aliases": [
+          "이루다 (LEE LU DA)"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "2045d73e-23ba-4857-90b4-4064d8a19f04",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.148752+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "2045d73e-23ba-4857-90b4-4064d8a19f04",
+        "name": "이루다",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:08.990Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+      "name": "이설아",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+        "name": "이설아",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T23:14:17.350309+00:00"
+      },
+      "after": {
+        "id": "bc50ec93-f4e3-4823-9433-55c4b8de11b2",
+        "name": "이설아",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T23:14:17.350309+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "dfb57b38-13bf-4f95-850d-a085cdc1940b",
+        "name": "이설아",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "singer-songwriter",
+        "checkedAt": "2026-10-22T21:35:11.077Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+      "name": "이연재",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "현재 MB는 brass. 예전 기타리스트 동명 후보와 구분해 공식 관악 크레딧 대조.",
+      "before": {
+        "id": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+        "name": "이연재",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "4e9bd85d-790c-4116-b8ab-e29f16168ac8",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T21:28:34.358536+00:00"
+      },
+      "after": {
+        "id": "3a7b8fe0-5a44-43b8-b4a4-fb587763bbc9",
+        "name": "이연재",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "4e9bd85d-790c-4116-b8ab-e29f16168ac8",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T21:28:34.358536+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "4e9bd85d-790c-4116-b8ab-e29f16168ac8",
+        "name": "이연재",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "brass",
+        "checkedAt": "2026-10-22T21:35:13.288Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "79ff01b9-d43c-4e09-aff1-21b5e1200ad8",
+      "name": "이주헌",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "79ff01b9-d43c-4e09-aff1-21b5e1200ad8",
+        "name": "이주헌",
+        "aliases": [
+          "Josh Lee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c86ff72f-29b4-4974-b968-ca8ccd369e0e",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T18:19:45.51196+00:00"
+      },
+      "after": {
+        "id": "79ff01b9-d43c-4e09-aff1-21b5e1200ad8",
+        "name": "이주헌",
+        "aliases": [
+          "Josh Lee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "c86ff72f-29b4-4974-b968-ca8ccd369e0e",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T18:19:45.51196+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "c86ff72f-29b4-4974-b968-ca8ccd369e0e",
+        "name": "이주헌",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "KR producer, The Muze",
+        "checkedAt": "2026-10-22T21:35:16.936Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "The Muze",
+          "id": "e2efdac7-6569-45c6-93ae-de975a4584fd"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+      "name": "전상근",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+        "name": "전상근",
+        "aliases": [
+          "Jeon Sang Keun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "09009fd0-e159-4fdd-8288-af17df754f05",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T19:24:49.212607+00:00"
+      },
+      "after": {
+        "id": "c2d85932-b9a0-4689-8865-fa52210df3ca",
+        "name": "전상근",
+        "aliases": [
+          "Jeon Sang Keun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "09009fd0-e159-4fdd-8288-af17df754f05",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-14T19:24:49.212607+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "09009fd0-e159-4fdd-8288-af17df754f05",
+        "name": "전상근",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:20.616Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "한 걸음 : 흔적",
+        "하루 끝(End of a Day)",
+        "사랑이란 멜로는 없어",
+        "돌아와 줘",
+        "오늘따라 더 미운 그대가"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "90dcb73c-7d12-4524-b48f-70c3bdb0c4fd",
+      "name": "정동환",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "90dcb73c-7d12-4524-b48f-70c3bdb0c4fd",
+        "name": "정동환",
+        "aliases": [
+          "Jeong Dong Hwan"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "824507e1-6eda-4526-831f-a41455fd6295",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149216+00:00"
+      },
+      "after": {
+        "id": "90dcb73c-7d12-4524-b48f-70c3bdb0c4fd",
+        "name": "정동환",
+        "aliases": [
+          "Jeong Dong Hwan"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "824507e1-6eda-4526-831f-a41455fd6295",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-12T14:24:09.149216+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "824507e1-6eda-4526-831f-a41455fd6295",
+        "name": "정동환",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "keyboardist",
+        "checkedAt": "2026-10-22T21:35:23.804Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "MeloMance",
+          "id": "67c1cf68-fbdb-4cb8-9774-25cec93587d6"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+      "name": "최규민",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+        "name": "최규민",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "bafff12b-40a0-4149-8711-1a62a824f9e8",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.680884+00:00"
+      },
+      "after": {
+        "id": "b977fe45-b936-4d3b-93f0-e6dbb56fe24e",
+        "name": "최규민",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "bafff12b-40a0-4149-8711-1a62a824f9e8",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-15T07:26:59.680884+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "bafff12b-40a0-4149-8711-1a62a824f9e8",
+        "name": "최규민",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "trumpeter",
+        "checkedAt": "2026-10-22T21:35:26.943Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "3efe2cd9-2fb1-414f-9cb7-6ac8a7bbe128",
+      "name": "ドレスコード",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "3efe2cd9-2fb1-414f-9cb7-6ac8a7bbe128",
+        "name": "ドレスコード",
+        "aliases": [
+          "Dress Code"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "730340ac-b0fb-4c90-ae12-f645d18057e5",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:01.238714+00:00"
+      },
+      "after": {
+        "id": "3efe2cd9-2fb1-414f-9cb7-6ac8a7bbe128",
+        "name": "ドレスコード",
+        "aliases": [
+          "Dress Code"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "730340ac-b0fb-4c90-ae12-f645d18057e5",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:01.238714+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "730340ac-b0fb-4c90-ae12-f645d18057e5",
+        "name": "ドレスコード",
+        "country": "JP",
+        "type": "Group",
+        "disambiguation": "Japanese idol group",
+        "checkedAt": "2026-10-22T21:35:30.405Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "御伽りるむ",
+          "id": "dfd30d9f-be38-451c-86bb-908f98a24425"
+        },
+        {
+          "type": "member of band",
+          "name": "月野あのん",
+          "id": "51e47543-d978-47b3-82ed-533cea59399d"
+        }
+      ],
+      "worksReadForIdentity": [
+        "最カワぽっぴんプリンセス",
+        "告白マカロナージュ",
+        "きゅんとしちゃってはなれない"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+      "name": "王菲",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+        "name": "王菲",
+        "aliases": [
+          "Faye Wang",
+          "Wong Xia Lin",
+          "Wong Ching Man",
+          "Wong Fei",
+          "Wang Fei",
+          "フェイ・ウォン",
+          "王靖雯",
+          "¤ýµá",
+          "王 菲",
+          "Íõ·Æ",
+          "Shirley Wong",
+          "Faye Wong",
+          "Vương Phi"
+        ],
+        "country_code": "HK",
+        "musicbrainz_id": "692e367d-2846-442d-b13d-1177c3681c65",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:50.504389+00:00"
+      },
+      "after": {
+        "id": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+        "name": "王菲",
+        "aliases": [
+          "Faye Wang",
+          "Wong Xia Lin",
+          "Wong Ching Man",
+          "Wong Fei",
+          "Wang Fei",
+          "フェイ・ウォン",
+          "王靖雯",
+          "¤ýµá",
+          "王 菲",
+          "Íõ·Æ",
+          "Shirley Wong",
+          "Faye Wong",
+          "Vương Phi"
+        ],
+        "country_code": "HK",
+        "musicbrainz_id": "692e367d-2846-442d-b13d-1177c3681c65",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:18:50.504389+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "692e367d-2846-442d-b13d-1177c3681c65",
+        "name": "王菲",
+        "country": "HK",
+        "type": "Person",
+        "disambiguation": "Chinese singer-songwriter & actress",
+        "checkedAt": "2026-10-22T21:35:33.133Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "involved with",
+          "name": "謝霆鋒",
+          "id": "e9166500-8003-4e33-90d2-4df4c85efef9"
+        },
+        {
+          "type": "involved with",
+          "name": "謝霆鋒",
+          "id": "e9166500-8003-4e33-90d2-4df4c85efef9"
+        },
+        {
+          "type": "involved with",
+          "name": "謝霆鋒",
+          "id": "e9166500-8003-4e33-90d2-4df4c85efef9"
+        },
+        {
+          "type": "married",
+          "name": "窦唯",
+          "id": "57488107-e763-4955-abc2-f279548ffe9a"
+        },
+        {
+          "type": "named after artist",
+          "name": "王靖雯",
+          "id": "8556392a-3663-459d-be39-6eeaf73e8047"
+        },
+        {
+          "type": "parent",
+          "name": "Leah Dou",
+          "id": "f5cc9359-d2c7-4075-b3a8-acf751af642d"
+        }
+      ],
+      "worksReadForIdentity": [
+        "風從那裏來",
+        "迷人的卡勒",
+        "记得我",
+        "邓丽君故乡情",
+        "迷人小姐-王菲珍藏集"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "c41979bf-5bca-44c8-bea6-874d472fa581",
+      "name": "강민경",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "c41979bf-5bca-44c8-bea6-874d472fa581",
+        "name": "강민경",
+        "aliases": [
+          "KANG MINKYUNG",
+          "Kang Min-Kyeong"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "e2ccebd0-4c8a-4cc7-84ea-66d182a2dfad",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T16:39:22.94667+00:00"
+      },
+      "after": {
+        "id": "c41979bf-5bca-44c8-bea6-874d472fa581",
+        "name": "강민경",
+        "aliases": [
+          "KANG MINKYUNG",
+          "Kang Min-Kyeong"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "e2ccebd0-4c8a-4cc7-84ea-66d182a2dfad",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T16:39:22.94667+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "e2ccebd0-4c8a-4cc7-84ea-66d182a2dfad",
+        "name": "강민경",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "Davichi",
+        "checkedAt": "2026-10-22T21:35:36.343Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "DAVICHI",
+          "id": "0f98037f-80de-405d-afd5-30433abd872a"
+        }
+      ],
+      "worksReadForIdentity": [
+        "JUST ME",
+        "우린 그렇게 사랑해서",
+        "Same or Same"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "17a01f0f-2a9b-43d9-b812-4e74848dcd20",
+      "name": "강혜미",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "17a01f0f-2a9b-43d9-b812-4e74848dcd20",
+        "name": "강혜미",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "26634484-6cb6-4db1-b7c3-7f247310ecf4",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-17T11:36:58.67961+00:00"
+      },
+      "after": {
+        "id": "17a01f0f-2a9b-43d9-b812-4e74848dcd20",
+        "name": "강혜미",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "26634484-6cb6-4db1-b7c3-7f247310ecf4",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-17T11:36:58.67961+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "26634484-6cb6-4db1-b7c3-7f247310ecf4",
+        "name": "강혜미",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:38.272Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "is person",
+          "name": "시와",
+          "id": "ee0b1e74-2f40-4b24-88e0-2ec7a88ed605"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "c94dfe45-e1c4-4b0a-ad09-779847b5e42c",
+      "name": "곽푸른하늘",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "c94dfe45-e1c4-4b0a-ad09-779847b5e42c",
+        "name": "곽푸른하늘",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "c49a9bcf-2e90-49ed-afbf-f4ad0f27372d",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.310525+00:00"
+      },
+      "after": {
+        "id": "c94dfe45-e1c4-4b0a-ad09-779847b5e42c",
+        "name": "곽푸른하늘",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "c49a9bcf-2e90-49ed-afbf-f4ad0f27372d",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.310525+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "c49a9bcf-2e90-49ed-afbf-f4ad0f27372d",
+        "name": "곽푸른하늘",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:40.127Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "있는 듯 없는 듯",
+        "어제의 소설"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "884697bf-3242-445d-963a-5834a3281775",
+      "name": "김리다",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "sources": [
+          {
+            "url": "https://www.osen.co.kr/article/G1112572672",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+            "checkedAt": "2026-10-22T21:35:42.082Z",
+            "summary": "실제 API lookup의 MBID=193ff5cb-57b6-4f02-b8e0-4574a96cf5b5, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=884697bf-3242-445d-963a-5834a3281775, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          },
+          {
+            "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "884697bf-3242-445d-963a-5834a3281775",
+        "expected_updated_at": "2026-10-16T22:53:23.296571+00:00",
+        "artist_name": "김리다",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. 현재 MB의 김리다 국가 KR, 동일 Hwanho 구성원 관계 및 국내 레이블/음레협 자료를 현재 DB KR와 대조. 이름이나 페이지 언어만으로 국가를 정하지 않음. Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "evidence_url": "https://www.osen.co.kr/article/G1112572672"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": false,
+        "genreMatched": true,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조.",
+          "sourceUrls": [
+            "https://www.osen.co.kr/article/G1112572672",
+            "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5"
+          ]
+        },
+        "countryMatched": {
+          "summary": "MB 국가 KR와 국내 레이블 연결은 확인했으나 승인 제출에 필요한 공식 국가 근거의 충분성을 확정하지 않음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+          "sourceUrls": [
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 활동은 확인. 국가 요건 보완 후 domestic_rock 분류 제안을 다시 판단.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:193ff5cb-57b6-4f02-b8e0-4574a96cf5b5와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "sources": [
+          {
+            "url": "https://www.osen.co.kr/article/G1112572672",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "화노(Hwanho)의 기타·보컬 김리다을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 기타·보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+            "checkedAt": "2026-10-22T21:35:42.082Z",
+            "summary": "실제 API lookup의 MBID=193ff5cb-57b6-4f02-b8e0-4574a96cf5b5, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=884697bf-3242-445d-963a-5834a3281775, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          },
+          {
+            "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "884697bf-3242-445d-963a-5834a3281775",
+        "name": "김리다",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.296571+00:00"
+      },
+      "after": {
+        "id": "884697bf-3242-445d-963a-5834a3281775",
+        "name": "김리다",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.296571+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "193ff5cb-57b6-4f02-b8e0-4574a96cf5b5",
+        "name": "김리다",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "Hwanho",
+        "checkedAt": "2026-10-22T21:35:42.082Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Hwanho",
+          "id": "59a0ca11-c140-4269-bd28-8238350dda70"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "e0a8a0c9-b150-4e69-a1b4-6acff2610bc1",
+      "name": "김수찬",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "e0a8a0c9-b150-4e69-a1b4-6acff2610bc1",
+        "name": "김수찬",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6576e5d1-b325-4945-affa-21e40cfbd267",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.306904+00:00"
+      },
+      "after": {
+        "id": "e0a8a0c9-b150-4e69-a1b4-6acff2610bc1",
+        "name": "김수찬",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "6576e5d1-b325-4945-affa-21e40cfbd267",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.306904+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "6576e5d1-b325-4945-affa-21e40cfbd267",
+        "name": "김수찬",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "trot singer",
+        "checkedAt": "2026-10-22T21:35:43.889Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "40f19eb7-0fe5-448c-a38e-3d6e2311330a",
+      "name": "김윤성",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "현재 mb 신원은 is person→개코 연결. 화노의 동명 편곡/베이스 인물과 합치지 말고 해당 실제 신원의 공식 활동을 조사.",
+      "before": {
+        "id": "40f19eb7-0fe5-448c-a38e-3d6e2311330a",
+        "name": "김윤성",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "883f9f3f-39a7-4e2b-82fc-b3cbe3c945a9",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.26836+00:00"
+      },
+      "after": {
+        "id": "40f19eb7-0fe5-448c-a38e-3d6e2311330a",
+        "name": "김윤성",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "883f9f3f-39a7-4e2b-82fc-b3cbe3c945a9",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.26836+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "883f9f3f-39a7-4e2b-82fc-b3cbe3c945a9",
+        "name": "김윤성",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:47.149Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "is person",
+          "name": "개코",
+          "id": "0911a2dd-1e8f-4c63-8c93-e5b853298383"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "aeafb3eb-9427-4378-9fe1-6753f011df38",
+      "name": "박서준",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "aeafb3eb-9427-4378-9fe1-6753f011df38",
+        "name": "박서준",
+        "aliases": [
+          "Park Seo Jun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ee5805da-1ab9-4d56-9429-e337957fe653",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.30398+00:00"
+      },
+      "after": {
+        "id": "aeafb3eb-9427-4378-9fe1-6753f011df38",
+        "name": "박서준",
+        "aliases": [
+          "Park Seo Jun"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "ee5805da-1ab9-4d56-9429-e337957fe653",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.30398+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "ee5805da-1ab9-4d56-9429-e337957fe653",
+        "name": "박서준",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:49.061Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [
+        "마녀의 연애 OST Part 3",
+        "마녀의 연애 OST Part 3"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+      "name": "박승화",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+        "name": "박승화",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "f46faa51-ba65-460c-ad25-bdf3d96fcf41",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T16:39:22.929322+00:00"
+      },
+      "after": {
+        "id": "1d519f8d-5bfb-4930-ace0-c585ff736b98",
+        "name": "박승화",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "f46faa51-ba65-460c-ad25-bdf3d96fcf41",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T16:39:22.929322+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "f46faa51-ba65-460c-ad25-bdf3d96fcf41",
+        "name": "박승화",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:50.926Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "유리상자",
+          "id": "62a8b4c1-f746-4418-a665-5622bf0a26fe"
+        }
+      ],
+      "worksReadForIdentity": [
+        "박승화"
+      ],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+      "name": "박학기",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+        "name": "박학기",
+        "aliases": [
+          "Park Hak-kee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d82f829a-fa05-46fb-a46c-a45579505d00",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-17T06:57:47.359495+00:00"
+      },
+      "after": {
+        "id": "667fdcc3-34aa-4217-8936-4dc6e407ee1a",
+        "name": "박학기",
+        "aliases": [
+          "Park Hak-kee"
+        ],
+        "country_code": "KR",
+        "musicbrainz_id": "d82f829a-fa05-46fb-a46c-a45579505d00",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-17T06:57:47.359495+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "d82f829a-fa05-46fb-a46c-a45579505d00",
+        "name": "박학기",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:52.818Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "ce20750c-76b2-43e9-b915-4295022ecb0e",
+      "name": "유준열",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "ce20750c-76b2-43e9-b915-4295022ecb0e",
+        "name": "유준열",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "494f5b95-5af0-473e-ba3a-39e25daee835",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T16:39:22.913584+00:00"
+      },
+      "after": {
+        "id": "ce20750c-76b2-43e9-b915-4295022ecb0e",
+        "name": "유준열",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "494f5b95-5af0-473e-ba3a-39e25daee835",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T16:39:22.913584+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "494f5b95-5af0-473e-ba3a-39e25daee835",
+        "name": "유준열",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:35:55.197Z"
+      },
+      "relatedIdentityFacts": [],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "ef5d80b0-0e00-405e-a772-988be5c8faa7",
+      "name": "유환주",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "sources": [
+          {
+            "url": "https://www.osen.co.kr/article/G1112572672",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+            "checkedAt": "2026-10-22T21:35:57.119Z",
+            "summary": "실제 API lookup의 MBID=5fa6456f-0b90-4bc0-bdf9-0e49289840c8, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=ef5d80b0-0e00-405e-a772-988be5c8faa7, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          },
+          {
+            "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "ef5d80b0-0e00-405e-a772-988be5c8faa7",
+        "expected_updated_at": "2026-10-16T22:53:23.288158+00:00",
+        "artist_name": "유환주",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. 현재 MB의 유환주 국가 KR, 동일 Hwanho 구성원 관계 및 국내 레이블/음레협 자료를 현재 DB KR와 대조. 이름이나 페이지 언어만으로 국가를 정하지 않음. Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "evidence_url": "https://www.osen.co.kr/article/G1112572672"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": false,
+        "genreMatched": true,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조.",
+          "sourceUrls": [
+            "https://www.osen.co.kr/article/G1112572672",
+            "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8"
+          ]
+        },
+        "countryMatched": {
+          "summary": "MB 국가 KR와 국내 레이블 연결은 확인했으나 승인 제출에 필요한 공식 국가 근거의 충분성을 확정하지 않음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+          "sourceUrls": [
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 활동은 확인. 국가 요건 보완 후 domestic_rock 분류 제안을 다시 판단.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:5fa6456f-0b90-4bc0-bdf9-0e49289840c8와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "sources": [
+          {
+            "url": "https://www.osen.co.kr/article/G1112572672",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "화노(Hwanho)의 보컬 유환주을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 보컬 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+            "checkedAt": "2026-10-22T21:35:57.119Z",
+            "summary": "실제 API lookup의 MBID=5fa6456f-0b90-4bc0-bdf9-0e49289840c8, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=ef5d80b0-0e00-405e-a772-988be5c8faa7, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          },
+          {
+            "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "ef5d80b0-0e00-405e-a772-988be5c8faa7",
+        "name": "유환주",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.288158+00:00"
+      },
+      "after": {
+        "id": "ef5d80b0-0e00-405e-a772-988be5c8faa7",
+        "name": "유환주",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.288158+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "5fa6456f-0b90-4bc0-bdf9-0e49289840c8",
+        "name": "유환주",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "Hwanho",
+        "checkedAt": "2026-10-22T21:35:57.119Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Hwanho",
+          "id": "59a0ca11-c140-4269-bd28-8238350dda70"
+        },
+        {
+          "type": "member of band",
+          "name": "Hwanho",
+          "id": "59a0ca11-c140-4269-bd28-8238350dda70"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "5be986bb-68bb-4f56-8c14-f3493aaab349",
+      "name": "이강산",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "sources": [
+          {
+            "url": "https://www.osen.co.kr/article/G1112572672",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b",
+            "checkedAt": "2026-10-22T21:35:59.044Z",
+            "summary": "실제 API lookup의 MBID=a51f2173-58ff-4650-afe0-fe5c53bf341b, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=5be986bb-68bb-4f56-8c14-f3493aaab349, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          },
+          {
+            "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "5be986bb-68bb-4f56-8c14-f3493aaab349",
+        "expected_updated_at": "2026-10-16T22:53:23.298307+00:00",
+        "artist_name": "이강산",
+        "country": "KR",
+        "artist_category": "domestic_rock",
+        "artist_aliases": [],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. 현재 MB의 이강산 국가 KR, 동일 Hwanho 구성원 관계 및 국내 레이블/음레협 자료를 현재 DB KR와 대조. 이름이나 페이지 언어만으로 국가를 정하지 않음. Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "evidence_url": "https://www.osen.co.kr/article/G1112572672"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": false,
+        "genreMatched": true,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조.",
+          "sourceUrls": [
+            "https://www.osen.co.kr/article/G1112572672",
+            "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b"
+          ]
+        },
+        "countryMatched": {
+          "summary": "MB 국가 KR와 국내 레이블 연결은 확인했으나 승인 제출에 필요한 공식 국가 근거의 충분성을 확정하지 않음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "genreMatched": {
+          "summary": "Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+          "sourceUrls": [
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "실제 록 활동은 확인. 국가 요건 보완 후 domestic_rock 분류 제안을 다시 판단.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:a51f2173-58ff-4650-afe0-fe5c53bf341b와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b",
+            "https://www.osen.co.kr/article/G1112572672"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음.",
+        "sources": [
+          {
+            "url": "https://www.osen.co.kr/article/G1112572672",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "화노(Hwanho)의 드럼 이강산을 실제 인터뷰·음반 크레딧과 MB의 Hwanho 구성원 관계로 대조. Action 발매 인터뷰의 드럼 참여 및 실제 하드록 연주 활동 확인. 다른 동명 음악인의 활동을 옮기지 않음."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/a51f2173-58ff-4650-afe0-fe5c53bf341b",
+            "checkedAt": "2026-10-22T21:35:59.044Z",
+            "summary": "실제 API lookup의 MBID=a51f2173-58ff-4650-afe0-fe5c53bf341b, 국가=KR, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=5be986bb-68bb-4f56-8c14-f3493aaab349, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          },
+          {
+            "url": "https://cdnc.heyzine.com/flip-book/pdf/bf686ac14125fe245cea68d2a206cfbc8b9daae5.pdf",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "한국음악레이블산업협회 KINDIE Summit 자료의 Ruby Records/Hwanho 레이블 연결 확인. 개인 역할은 실제 인터뷰·외부 ID와 별도로 대조."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "5be986bb-68bb-4f56-8c14-f3493aaab349",
+        "name": "이강산",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a51f2173-58ff-4650-afe0-fe5c53bf341b",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.298307+00:00"
+      },
+      "after": {
+        "id": "5be986bb-68bb-4f56-8c14-f3493aaab349",
+        "name": "이강산",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "a51f2173-58ff-4650-afe0-fe5c53bf341b",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-16T22:53:23.298307+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "a51f2173-58ff-4650-afe0-fe5c53bf341b",
+        "name": "이강산",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "Hwanho",
+        "checkedAt": "2026-10-22T21:35:59.044Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Hwanho",
+          "id": "59a0ca11-c140-4269-bd28-8238350dda70"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "8563b83a-cd99-4b50-822d-339e86b108fa",
+      "name": "이정희",
+      "officialResearch": null,
+      "proposal": null,
+      "requirements": {
+        "identityMatched": false,
+        "countryMatched": false,
+        "genreMatched": false,
+        "classificationMatched": false,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": null,
+      "approvalProof": null,
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": null,
+      "nextAction": "새 외부 신원 관찰을 사용해 동일 인물의 공식 소개·실제 록/J-pop 작품을 조사. 기존 미완료 요약을 완료로 재계산하지 않음.",
+      "before": {
+        "id": "8563b83a-cd99-4b50-822d-339e86b108fa",
+        "name": "이정희",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "abdf0be4-ebf0-4a06-8324-a03ebe2f674a",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-21T13:48:31.369679+00:00"
+      },
+      "after": {
+        "id": "8563b83a-cd99-4b50-822d-339e86b108fa",
+        "name": "이정희",
+        "aliases": [],
+        "country_code": "KR",
+        "musicbrainz_id": "abdf0be4-ebf0-4a06-8324-a03ebe2f674a",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-21T13:48:31.369679+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "abdf0be4-ebf0-4a06-8324-a03ebe2f674a",
+        "name": "이정희",
+        "country": "KR",
+        "type": "Person",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:36:01.032Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "7Dayz",
+          "id": "0af9d813-3a76-46e7-a34d-89ca7ff5dc86"
+        }
+      ],
+      "worksReadForIdentity": [],
+      "researchStatus": "deferred",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+      "name": "The Hold Steady",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "레이블 소개의 Craig Finn/Tad Kubler 및 Almost Killed Me/Separation Sunday를 현재 MB 구성원·발매 목록과 대조. 공식 소개가 Craig Finn의 rock ideal과 Tad Kubler의 classic rock 기타 연주를 실제 음반 활동으로 설명.",
+        "sources": [
+          {
+            "url": "https://www.frenchkissrecords.com/artist/the-hold-steady/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "레이블 소개의 Craig Finn/Tad Kubler 및 Almost Killed Me/Separation Sunday를 현재 MB 구성원·발매 목록과 대조. 공식 소개가 Craig Finn의 rock ideal과 Tad Kubler의 classic rock 기타 연주를 실제 음반 활동으로 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/4883523d-fc0e-4d0d-802c-91379e767083",
+            "checkedAt": "2026-10-22T21:36:03.090Z",
+            "summary": "실제 API lookup의 MBID=4883523d-fc0e-4d0d-802c-91379e767083, 국가=US, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=6a7037e6-5b2a-4e79-ad9e-26e591aa566b, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+        "expected_updated_at": "2026-10-13T08:19:46.482853+00:00",
+        "artist_name": "The Hold Steady",
+        "country": "US",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Hold Steady",
+          "Hold Steady, The"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 레이블 소개의 Craig Finn/Tad Kubler 및 Almost Killed Me/Separation Sunday를 현재 MB 구성원·발매 목록과 대조. 레이블 소개의 New York City 기반 신원과 MB US 국가가 현재 DB US와 일치. 공식 소개가 Craig Finn의 rock ideal과 Tad Kubler의 classic rock 기타 연주를 실제 음반 활동으로 설명.",
+        "evidence_url": "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "레이블 소개의 Craig Finn/Tad Kubler 및 Almost Killed Me/Separation Sunday를 현재 MB 구성원·발매 목록과 대조.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/",
+            "https://musicbrainz.org/artist/4883523d-fc0e-4d0d-802c-91379e767083"
+          ]
+        },
+        "countryMatched": {
+          "summary": "레이블 소개의 New York City 기반 신원과 MB US 국가가 현재 DB US와 일치.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/4883523d-fc0e-4d0d-802c-91379e767083",
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 소개가 Craig Finn의 rock ideal과 Tad Kubler의 classic rock 기타 연주를 실제 음반 활동으로 설명.",
+          "sourceUrls": [
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "확인한 US 신원과 실제 록 활동에 기존 overseas_rock 정책 적용. 혼합 장르 신규 기준 없음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/4883523d-fc0e-4d0d-802c-91379e767083",
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:4883523d-fc0e-4d0d-802c-91379e767083와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/4883523d-fc0e-4d0d-802c-91379e767083",
+            "https://www.frenchkissrecords.com/artist/the-hold-steady/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "레이블 소개의 Craig Finn/Tad Kubler 및 Almost Killed Me/Separation Sunday를 현재 MB 구성원·발매 목록과 대조. 공식 소개가 Craig Finn의 rock ideal과 Tad Kubler의 classic rock 기타 연주를 실제 음반 활동으로 설명.",
+        "sources": [
+          {
+            "url": "https://www.frenchkissrecords.com/artist/the-hold-steady/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "레이블 소개의 Craig Finn/Tad Kubler 및 Almost Killed Me/Separation Sunday를 현재 MB 구성원·발매 목록과 대조. 공식 소개가 Craig Finn의 rock ideal과 Tad Kubler의 classic rock 기타 연주를 실제 음반 활동으로 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/4883523d-fc0e-4d0d-802c-91379e767083",
+            "checkedAt": "2026-10-22T21:36:03.090Z",
+            "summary": "실제 API lookup의 MBID=4883523d-fc0e-4d0d-802c-91379e767083, 국가=US, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=6a7037e6-5b2a-4e79-ad9e-26e591aa566b, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+        "name": "The Hold Steady",
+        "aliases": [
+          "Hold Steady",
+          "Hold Steady, The"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "4883523d-fc0e-4d0d-802c-91379e767083",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:46.482853+00:00"
+      },
+      "after": {
+        "id": "6a7037e6-5b2a-4e79-ad9e-26e591aa566b",
+        "name": "The Hold Steady",
+        "aliases": [
+          "Hold Steady",
+          "Hold Steady, The"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "4883523d-fc0e-4d0d-802c-91379e767083",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:46.482853+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "4883523d-fc0e-4d0d-802c-91379e767083",
+        "name": "The Hold Steady",
+        "country": "US",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:36:03.090Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Judd Counsell",
+          "id": "8d420039-53c1-4750-b52b-43326bea72f9"
+        },
+        {
+          "type": "member of band",
+          "name": "Steve Selvidge",
+          "id": "78550bf2-4e1e-44a1-b7e6-4c57e5a6c552"
+        },
+        {
+          "type": "member of band",
+          "name": "Franz Nicolay",
+          "id": "596ca3ac-53f8-45a7-b236-649d3fa28a65"
+        },
+        {
+          "type": "member of band",
+          "name": "Franz Nicolay",
+          "id": "596ca3ac-53f8-45a7-b236-649d3fa28a65"
+        },
+        {
+          "type": "member of band",
+          "name": "Bobby Drake",
+          "id": "8618dbe0-a1ae-4a28-bfa1-ff985bf2d7af"
+        },
+        {
+          "type": "member of band",
+          "name": "Craig Finn",
+          "id": "6a62a034-cee3-490c-a2ad-621eca2f25a4"
+        },
+        {
+          "type": "member of band",
+          "name": "Tad Kubler",
+          "id": "44fe1c49-879a-48ce-9243-3341a392ec67"
+        },
+        {
+          "type": "member of band",
+          "name": "Galen Polivka",
+          "id": "fc312b0f-606d-46f2-9d4e-ff0b5353e178"
+        }
+      ],
+      "worksReadForIdentity": [
+        "Almost Killed Me",
+        "Separation Sunday",
+        "Boys and Girls in America",
+        "Stay Positive",
+        "Heaven Is Whenever"
+      ],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "44912d6a-52b9-43b9-a11f-6bf0d958dac1",
+      "name": "The Hollies",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "Rhino 소개의 Allan Clarke/Graham Nash/Tony Hicks 및 Stay를 MB 구성원/Stay With the Hollies 목록과 대조. 레이블 본문이 rock group과 실제 British Invasion 녹음·싱글 활동을 설명.",
+        "sources": [
+          {
+            "url": "https://www.rhino.com/article/the-hollies",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "Rhino 소개의 Allan Clarke/Graham Nash/Tony Hicks 및 Stay를 MB 구성원/Stay With the Hollies 목록과 대조. 레이블 본문이 rock group과 실제 British Invasion 녹음·싱글 활동을 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/d4305549-6b4e-4a57-b24d-8af0743fe191",
+            "checkedAt": "2026-10-22T21:36:05.045Z",
+            "summary": "실제 API lookup의 MBID=d4305549-6b4e-4a57-b24d-8af0743fe191, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=44912d6a-52b9-43b9-a11f-6bf0d958dac1, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "44912d6a-52b9-43b9-a11f-6bf0d958dac1",
+        "expected_updated_at": "2026-10-13T08:19:29.234991+00:00",
+        "artist_name": "The Hollies",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Graham Nash & the Hollies",
+          "Hollies"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Rhino 소개의 Allan Clarke/Graham Nash/Tony Hicks 및 Stay를 MB 구성원/Stay With the Hollies 목록과 대조. 공식 소개의 Manchester England/British band와 MB GB 및 현재 DB GB가 일치. 레이블 본문이 rock group과 실제 British Invasion 녹음·싱글 활동을 설명.",
+        "evidence_url": "https://www.rhino.com/article/the-hollies"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Rhino 소개의 Allan Clarke/Graham Nash/Tony Hicks 및 Stay를 MB 구성원/Stay With the Hollies 목록과 대조.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-hollies",
+            "https://musicbrainz.org/artist/d4305549-6b4e-4a57-b24d-8af0743fe191"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 소개의 Manchester England/British band와 MB GB 및 현재 DB GB가 일치.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/d4305549-6b4e-4a57-b24d-8af0743fe191",
+            "https://www.rhino.com/article/the-hollies"
+          ]
+        },
+        "genreMatched": {
+          "summary": "레이블 본문이 rock group과 실제 British Invasion 녹음·싱글 활동을 설명.",
+          "sourceUrls": [
+            "https://www.rhino.com/article/the-hollies"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "확인한 GB 신원과 실제 록 활동에 기존 overseas_rock 정책 적용. 혼합 장르 신규 기준 없음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/d4305549-6b4e-4a57-b24d-8af0743fe191",
+            "https://www.rhino.com/article/the-hollies"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:d4305549-6b4e-4a57-b24d-8af0743fe191와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/d4305549-6b4e-4a57-b24d-8af0743fe191",
+            "https://www.rhino.com/article/the-hollies"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Rhino 소개의 Allan Clarke/Graham Nash/Tony Hicks 및 Stay를 MB 구성원/Stay With the Hollies 목록과 대조. 레이블 본문이 rock group과 실제 British Invasion 녹음·싱글 활동을 설명.",
+        "sources": [
+          {
+            "url": "https://www.rhino.com/article/the-hollies",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "Rhino 소개의 Allan Clarke/Graham Nash/Tony Hicks 및 Stay를 MB 구성원/Stay With the Hollies 목록과 대조. 레이블 본문이 rock group과 실제 British Invasion 녹음·싱글 활동을 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/d4305549-6b4e-4a57-b24d-8af0743fe191",
+            "checkedAt": "2026-10-22T21:36:05.045Z",
+            "summary": "실제 API lookup의 MBID=d4305549-6b4e-4a57-b24d-8af0743fe191, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=44912d6a-52b9-43b9-a11f-6bf0d958dac1, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "44912d6a-52b9-43b9-a11f-6bf0d958dac1",
+        "name": "The Hollies",
+        "aliases": [
+          "Graham Nash & the Hollies",
+          "Hollies"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "d4305549-6b4e-4a57-b24d-8af0743fe191",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:29.234991+00:00"
+      },
+      "after": {
+        "id": "44912d6a-52b9-43b9-a11f-6bf0d958dac1",
+        "name": "The Hollies",
+        "aliases": [
+          "Graham Nash & the Hollies",
+          "Hollies"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "d4305549-6b4e-4a57-b24d-8af0743fe191",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:19:29.234991+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "d4305549-6b4e-4a57-b24d-8af0743fe191",
+        "name": "The Hollies",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:36:05.045Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Eric Haydock",
+          "id": "8b961a54-e6c4-4497-bde1-d07f447b89be"
+        },
+        {
+          "type": "member of band",
+          "name": "Graham Nash",
+          "id": "2ed8ecda-5bb9-4d9f-8c99-0bf9b85b3624"
+        },
+        {
+          "type": "member of band",
+          "name": "Tony Hicks",
+          "id": "c0a7cfd5-fbb3-44bc-b348-b21c80c94f37"
+        },
+        {
+          "type": "member of band",
+          "name": "Don Rathbone",
+          "id": "2e6db507-a1a9-473e-bad7-e1287e5103e1"
+        },
+        {
+          "type": "member of band",
+          "name": "Bobby Elliott",
+          "id": "a2e29e16-e6bb-4797-8456-dab2e7f488cd"
+        },
+        {
+          "type": "member of band",
+          "name": "Allan Clarke",
+          "id": "fcc0da8f-a85c-4fac-b503-a694588e4cb4"
+        },
+        {
+          "type": "member of band",
+          "name": "Bernie Calvert",
+          "id": "c0e28f99-cff7-4b3d-b39a-20b894985d53"
+        },
+        {
+          "type": "member of band",
+          "name": "Terry Sylvester",
+          "id": "ec290c66-9f7e-4c9c-a4e0-1f0ed9f89ca8"
+        },
+        {
+          "type": "member of band",
+          "name": "Mikael Rickfors",
+          "id": "7a38053e-efab-410d-8ea7-d606ebba60c4"
+        },
+        {
+          "type": "member of band",
+          "name": "Allan Clarke",
+          "id": "fcc0da8f-a85c-4fac-b503-a694588e4cb4"
+        },
+        {
+          "type": "member of band",
+          "name": "Graham Nash",
+          "id": "2ed8ecda-5bb9-4d9f-8c99-0bf9b85b3624"
+        },
+        {
+          "type": "member of band",
+          "name": "Ian Parker",
+          "id": "a104e14c-db8e-48f1-8bd7-15e4fd398f7d"
+        },
+        {
+          "type": "member of band",
+          "name": "Carl Wayne",
+          "id": "76907faf-f81e-45c2-b5ae-4dd92a0802f7"
+        },
+        {
+          "type": "member of band",
+          "name": "Peter Howarth",
+          "id": "8f697315-2ab3-43b0-869f-046794b1bafd"
+        },
+        {
+          "type": "member of band",
+          "name": "Steve Lauri",
+          "id": "615f3cd1-7f51-4c70-aeda-b9deb3de4de6"
+        },
+        {
+          "type": "member of band",
+          "name": "Ray Stiles",
+          "id": "e0819bfe-1410-4344-a33c-2408a5506f2e"
+        },
+        {
+          "type": "member of band",
+          "name": "Alan Coates",
+          "id": "9bbb78a8-b5dc-44fe-9457-b979497178d7"
+        }
+      ],
+      "worksReadForIdentity": [
+        "Stay With the Hollies",
+        "In the Hollies Style",
+        "Hollies",
+        "Would You Believe?",
+        "Bus Stop"
+      ],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+      "name": "The Jam",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "UMG 공식 페이지의 Paul Weller와 In the City/This Is the Modern World/All Mod Cons를 MB 인물·음반과 대조. 공식 본문이 three-piece rock group과 punk/New Wave를 명시하고 In the City 등 실제 발매 활동을 설명.",
+        "sources": [
+          {
+            "url": "https://www.thejamofficial.com/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "UMG 공식 페이지의 Paul Weller와 In the City/This Is the Modern World/All Mod Cons를 MB 인물·음반과 대조. 공식 본문이 three-piece rock group과 punk/New Wave를 명시하고 In the City 등 실제 발매 활동을 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/23228f18-01d5-493e-94ce-cfcde82a8db2",
+            "checkedAt": "2026-10-22T21:36:07.119Z",
+            "summary": "실제 API lookup의 MBID=23228f18-01d5-493e-94ce-cfcde82a8db2, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=6dbcf203-83a4-4efc-878b-91b79f8a5d3d, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+        "expected_updated_at": "2026-10-13T08:20:22.976912+00:00",
+        "artist_name": "The Jam",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "Jam"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: UMG 공식 페이지의 Paul Weller와 In the City/This Is the Modern World/All Mod Cons를 MB 인물·음반과 대조. 공식 본문의 Woking 출신 그룹과 영국 활동, MB GB 국가가 현재 DB GB와 일치. 공식 본문이 three-piece rock group과 punk/New Wave를 명시하고 In the City 등 실제 발매 활동을 설명.",
+        "evidence_url": "https://www.thejamofficial.com/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "UMG 공식 페이지의 Paul Weller와 In the City/This Is the Modern World/All Mod Cons를 MB 인물·음반과 대조.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/",
+            "https://musicbrainz.org/artist/23228f18-01d5-493e-94ce-cfcde82a8db2"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 본문의 Woking 출신 그룹과 영국 활동, MB GB 국가가 현재 DB GB와 일치.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/23228f18-01d5-493e-94ce-cfcde82a8db2",
+            "https://www.thejamofficial.com/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 본문이 three-piece rock group과 punk/New Wave를 명시하고 In the City 등 실제 발매 활동을 설명.",
+          "sourceUrls": [
+            "https://www.thejamofficial.com/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "확인한 GB 신원과 실제 록 활동에 기존 overseas_rock 정책 적용. 혼합 장르 신규 기준 없음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/23228f18-01d5-493e-94ce-cfcde82a8db2",
+            "https://www.thejamofficial.com/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:23228f18-01d5-493e-94ce-cfcde82a8db2와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/23228f18-01d5-493e-94ce-cfcde82a8db2",
+            "https://www.thejamofficial.com/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "UMG 공식 페이지의 Paul Weller와 In the City/This Is the Modern World/All Mod Cons를 MB 인물·음반과 대조. 공식 본문이 three-piece rock group과 punk/New Wave를 명시하고 In the City 등 실제 발매 활동을 설명.",
+        "sources": [
+          {
+            "url": "https://www.thejamofficial.com/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "UMG 공식 페이지의 Paul Weller와 In the City/This Is the Modern World/All Mod Cons를 MB 인물·음반과 대조. 공식 본문이 three-piece rock group과 punk/New Wave를 명시하고 In the City 등 실제 발매 활동을 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/23228f18-01d5-493e-94ce-cfcde82a8db2",
+            "checkedAt": "2026-10-22T21:36:07.119Z",
+            "summary": "실제 API lookup의 MBID=23228f18-01d5-493e-94ce-cfcde82a8db2, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=6dbcf203-83a4-4efc-878b-91b79f8a5d3d, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+        "name": "The Jam",
+        "aliases": [
+          "Jam"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "23228f18-01d5-493e-94ce-cfcde82a8db2",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:22.976912+00:00"
+      },
+      "after": {
+        "id": "6dbcf203-83a4-4efc-878b-91b79f8a5d3d",
+        "name": "The Jam",
+        "aliases": [
+          "Jam"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "23228f18-01d5-493e-94ce-cfcde82a8db2",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:22.976912+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "23228f18-01d5-493e-94ce-cfcde82a8db2",
+        "name": "The Jam",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "late 70s/early 80s UK punk/mod revival band",
+        "checkedAt": "2026-10-22T21:36:07.119Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Steve Brookes",
+          "id": "6ee98835-24c2-4d5a-acc5-fb898994b544"
+        },
+        {
+          "type": "member of band",
+          "name": "Bruce Foxton",
+          "id": "18f3b19a-eeee-4c02-a856-0a4639a693dd"
+        },
+        {
+          "type": "member of band",
+          "name": "Paul Weller",
+          "id": "c4406045-e640-4cfe-8b88-4732cce314d4"
+        },
+        {
+          "type": "member of band",
+          "name": "Rick Buckler",
+          "id": "4d69e4c6-62d1-45bf-a3cb-58181b0eb4c5"
+        },
+        {
+          "type": "named after artist",
+          "name": "From the Jam",
+          "id": "b38041f2-24e7-4733-97cd-0bf51fa1439d"
+        },
+        {
+          "type": "tribute",
+          "name": "All Mod Cons",
+          "id": "1062e3ea-526c-4e6a-b8e3-4093c783fd3a"
+        },
+        {
+          "type": "tribute",
+          "name": "The Jam’d",
+          "id": "6d0e0be4-d3b1-4974-b217-1f6cb7b30464"
+        }
+      ],
+      "worksReadForIdentity": [
+        "In the City",
+        "This Is the Modern World",
+        "All Mod Cons",
+        "Setting Sons",
+        "Sound Affects"
+      ],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+      "name": "The Jesus and Mary Chain",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "Concord 소개의 Jim/William Reid와 East Kilbride 1983년 그룹을 MB 구성원 및 현재 DB 신원과 대조. 공식 출판사 본문이 alternative rock 활동과 피드백 중심의 실제 음악 활동을 설명.",
+        "sources": [
+          {
+            "url": "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "Concord 소개의 Jim/William Reid와 East Kilbride 1983년 그룹을 MB 구성원 및 현재 DB 신원과 대조. 공식 출판사 본문이 alternative rock 활동과 피드백 중심의 실제 음악 활동을 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+            "checkedAt": "2026-10-22T21:36:10.267Z",
+            "summary": "실제 API lookup의 MBID=e938a15c-b17e-4e7a-9f68-ff0d536cab44, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+        "expected_updated_at": "2026-10-13T08:20:01.775929+00:00",
+        "artist_name": "The Jesus and Mary Chain",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Jesus And Mary Chain",
+          "JAMC",
+          "Jesus and Mary Chain",
+          "Jesus & Mary Chain",
+          "The Jesus & Mary Chain",
+          "The Jesus And Marychain"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: Concord 소개의 Jim/William Reid와 East Kilbride 1983년 그룹을 MB 구성원 및 현재 DB 신원과 대조. 공식 본문이 Scottish/East Kilbride/British를 명시하며 MB GB 및 현재 DB GB와 일치. 공식 출판사 본문이 alternative rock 활동과 피드백 중심의 실제 음악 활동을 설명.",
+        "evidence_url": "https://concord.com/publishing-roster/jesus-and-mary-chain/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "Concord 소개의 Jim/William Reid와 East Kilbride 1983년 그룹을 MB 구성원 및 현재 DB 신원과 대조.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 본문이 Scottish/East Kilbride/British를 명시하며 MB GB 및 현재 DB GB와 일치.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 출판사 본문이 alternative rock 활동과 피드백 중심의 실제 음악 활동을 설명.",
+          "sourceUrls": [
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "확인한 GB 신원과 실제 록 활동에 기존 overseas_rock 정책 적용. 혼합 장르 신규 기준 없음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:e938a15c-b17e-4e7a-9f68-ff0d536cab44와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+            "https://concord.com/publishing-roster/jesus-and-mary-chain/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "Concord 소개의 Jim/William Reid와 East Kilbride 1983년 그룹을 MB 구성원 및 현재 DB 신원과 대조. 공식 출판사 본문이 alternative rock 활동과 피드백 중심의 실제 음악 활동을 설명.",
+        "sources": [
+          {
+            "url": "https://concord.com/publishing-roster/jesus-and-mary-chain/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "Concord 소개의 Jim/William Reid와 East Kilbride 1983년 그룹을 MB 구성원 및 현재 DB 신원과 대조. 공식 출판사 본문이 alternative rock 활동과 피드백 중심의 실제 음악 활동을 설명."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+            "checkedAt": "2026-10-22T21:36:10.267Z",
+            "summary": "실제 API lookup의 MBID=e938a15c-b17e-4e7a-9f68-ff0d536cab44, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+        "name": "The Jesus and Mary Chain",
+        "aliases": [
+          "The Jesus And Mary Chain",
+          "JAMC",
+          "Jesus and Mary Chain",
+          "Jesus & Mary Chain",
+          "The Jesus & Mary Chain",
+          "The Jesus And Marychain"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:01.775929+00:00"
+      },
+      "after": {
+        "id": "ddc3ea3b-c4e7-47fc-98ac-31ba7c40bbdf",
+        "name": "The Jesus and Mary Chain",
+        "aliases": [
+          "The Jesus And Mary Chain",
+          "JAMC",
+          "Jesus and Mary Chain",
+          "Jesus & Mary Chain",
+          "The Jesus & Mary Chain",
+          "The Jesus And Marychain"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:01.775929+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+        "name": "The Jesus and Mary Chain",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:36:10.267Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Bobby Gillespie",
+          "id": "23bb4a17-70b1-4ae8-9f46-fbbfcb868b24"
+        },
+        {
+          "type": "member of band",
+          "name": "Douglas Hart",
+          "id": "8906eb6c-9e45-4a7d-8025-bdb344a646e6"
+        },
+        {
+          "type": "member of band",
+          "name": "Jim Reid",
+          "id": "59e8742f-8011-4aa5-84ce-65db3ca1fef1"
+        },
+        {
+          "type": "member of band",
+          "name": "William Reid",
+          "id": "1b5a4471-06cd-4d35-8cb6-c7116bbe901b"
+        },
+        {
+          "type": "member of band",
+          "name": "Martin Hewes",
+          "id": "ea3622b2-7164-42f9-ba22-77e8be6462b4"
+        },
+        {
+          "type": "member of band",
+          "name": "John Moore",
+          "id": "c543a9ef-f361-4e42-96b1-906cfab39889"
+        },
+        {
+          "type": "member of band",
+          "name": "David Evans",
+          "id": "7215e505-6b99-4f26-85fe-ed7d77347ae2"
+        },
+        {
+          "type": "member of band",
+          "name": "Ben Lurie",
+          "id": "294a211a-0688-4327-be51-aedb8b185d14"
+        },
+        {
+          "type": "member of band",
+          "name": "Steve Monti",
+          "id": "a58e244f-814c-491d-8fb3-44f641ad72ce"
+        },
+        {
+          "type": "member of band",
+          "name": "Philip King",
+          "id": "bee38d85-fe86-4ff7-b430-7d63edf9d3e6"
+        },
+        {
+          "type": "member of band",
+          "name": "Scott Von Ryper",
+          "id": "2739b083-3ba4-48cc-b5c1-6cce5fe0eb6f"
+        },
+        {
+          "type": "member of band",
+          "name": "Nick Sanderson",
+          "id": "8db96513-5e84-4420-8012-39515b782f5c"
+        },
+        {
+          "type": "member of band",
+          "name": "Richard Thomas",
+          "id": "2bf708d8-a045-4c22-b1df-aaedf9f8435f"
+        }
+      ],
+      "worksReadForIdentity": [
+        "Psychocandy",
+        "Darklands",
+        "Barbed Wire Kisses (B-Sides and More)",
+        "Automatic",
+        "Honey’s Dead"
+      ],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 1,
+      "channelSaved": false,
+      "photoSaved": false
+    },
+    {
+      "bandId": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+      "name": "The Jimi Hendrix Experience",
+      "officialResearch": {
+        "decision": "keep",
+        "summary": "공식 자료의 Jimi Hendrix/Mitch Mitchell/Noel Redding과 Are You Experienced/Axis: Bold as Love/Electric Ladyland를 MB 그룹 구성원·음반과 대조. 솔로 Jimi 행과 구분. 공식 본문이 Are You Experienced를 실제 rock album으로 설명하고 Experience의 psychedelic 음반 활동을 명시.",
+        "sources": [
+          {
+            "url": "https://www.jimihendrix.com/biography/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "공식 자료의 Jimi Hendrix/Mitch Mitchell/Noel Redding과 Are You Experienced/Axis: Bold as Love/Electric Ladyland를 MB 그룹 구성원·음반과 대조. 솔로 Jimi 행과 구분. 공식 본문이 Are You Experienced를 실제 rock album으로 설명하고 Experience의 psychedelic 음반 활동을 명시."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+            "checkedAt": "2026-10-22T21:36:12.981Z",
+            "summary": "실제 API lookup의 MBID=33b3c323-77c2-417c-a5b4-af7e6a111cc9, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=244abb97-dd87-49a1-aecb-5d4b2faba80b, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "proposal": {
+        "target_band_id": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+        "expected_updated_at": "2026-10-13T08:20:46.470205+00:00",
+        "artist_name": "The Jimi Hendrix Experience",
+        "country": "GB",
+        "artist_category": "overseas_rock",
+        "artist_aliases": [
+          "The Jimmy Hendrix Experience",
+          "The Jimmi Hendrix Experience"
+        ],
+        "review_status": "approved",
+        "reason": "자동 검수 jpop-or-rock-v1: 공식 자료의 Jimi Hendrix/Mitch Mitchell/Noel Redding과 Are You Experienced/Axis: Bold as Love/Electric Ladyland를 MB 그룹 구성원·음반과 대조. 솔로 Jimi 행과 구분. 공식 자료의 1966년 London 결성 그룹 신원과 MB 그룹 GB가 현재 DB GB와 일치. 미국 출생 솔로 음악인의 국가로 그룹을 덮어쓰지 않음. 공식 본문이 Are You Experienced를 실제 rock album으로 설명하고 Experience의 psychedelic 음반 활동을 명시.",
+        "evidence_url": "https://www.jimihendrix.com/biography/"
+      },
+      "requirements": {
+        "identityMatched": true,
+        "countryMatched": true,
+        "genreMatched": true,
+        "classificationMatched": true,
+        "externalIdentityLinked": true,
+        "publicationEffectUnderstood": true
+      },
+      "approvalEvidence": {
+        "identityMatched": {
+          "summary": "공식 자료의 Jimi Hendrix/Mitch Mitchell/Noel Redding과 Are You Experienced/Axis: Bold as Love/Electric Ladyland를 MB 그룹 구성원·음반과 대조. 솔로 Jimi 행과 구분.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/",
+            "https://musicbrainz.org/artist/33b3c323-77c2-417c-a5b4-af7e6a111cc9"
+          ]
+        },
+        "countryMatched": {
+          "summary": "공식 자료의 1966년 London 결성 그룹 신원과 MB 그룹 GB가 현재 DB GB와 일치. 미국 출생 솔로 음악인의 국가로 그룹을 덮어쓰지 않음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "genreMatched": {
+          "summary": "공식 본문이 Are You Experienced를 실제 rock album으로 설명하고 Experience의 psychedelic 음반 활동을 명시.",
+          "sourceUrls": [
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "classificationMatched": {
+          "summary": "확인한 GB 신원과 실제 록 활동에 기존 overseas_rock 정책 적용. 혼합 장르 신규 기준 없음.",
+          "sourceUrls": [
+            "https://musicbrainz.org/artist/33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "externalIdentityLinked": {
+          "summary": "현재 context의 mb:33b3c323-77c2-417c-a5b4-af7e6a111cc9와 실제 MB lookup의 구성원/작품 및 공식 자료 신원이 일치.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "https://musicbrainz.org/artist/33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+            "https://www.jimihendrix.com/biography/"
+          ]
+        },
+        "publicationEffectUnderstood": {
+          "summary": "승인 RPC는 연결 외부 신원별 공연 자동 공개 승인 효과를 부여한다. 공연 자체는 별도 공개 조건과 기존 수동 차단을 충족해야 한다.",
+          "sourceUrls": [
+            "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context"
+          ]
+        }
+      },
+      "approvalProof": {
+        "decision": "keep",
+        "summary": "공식 자료의 Jimi Hendrix/Mitch Mitchell/Noel Redding과 Are You Experienced/Axis: Bold as Love/Electric Ladyland를 MB 그룹 구성원·음반과 대조. 솔로 Jimi 행과 구분. 공식 본문이 Are You Experienced를 실제 rock album으로 설명하고 Experience의 psychedelic 음반 활동을 명시.",
+        "sources": [
+          {
+            "url": "https://www.jimihendrix.com/biography/",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "공식 자료의 Jimi Hendrix/Mitch Mitchell/Noel Redding과 Are You Experienced/Axis: Bold as Love/Electric Ladyland를 MB 그룹 구성원·음반과 대조. 솔로 Jimi 행과 구분. 공식 본문이 Are You Experienced를 실제 rock album으로 설명하고 Experience의 psychedelic 음반 활동을 명시."
+          },
+          {
+            "url": "https://musicbrainz.org/artist/33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+            "checkedAt": "2026-10-22T21:36:12.981Z",
+            "summary": "실제 API lookup의 MBID=33b3c323-77c2-417c-a5b4-af7e6a111cc9, 국가=GB, 공식 자료와 같은 구성원/작품 신원을 대조. 태그는 판정에 사용하지 않음."
+          },
+          {
+            "url": "https://czjrzylvnewfjnfwjhwf.supabase.co/rest/v1/rpc/service_integrated_review_context",
+            "checkedAt": "2026-10-22T21:38:03.848574+00:00",
+            "summary": "현재 bandId=244abb97-dd87-49a1-aecb-5d4b2faba80b, MBID 및 연결 mb key·국가·원본 버전을 context에서 확인."
+          }
+        ]
+      },
+      "readyToApply": false,
+      "applied": false,
+      "approvalReview": {
+        "status": "rejected",
+        "reason": "Automatic approval review did not accept demonstrated per-requirement evidence and consequential publication approvals. No application command executed; no retry."
+      },
+      "nextAction": "보존한 개별 제안의 요건별 근거 검토; false 국가/분류는 공식 근거 보완 후 재평가. 차단된 적용을 재시도하지 않음.",
+      "before": {
+        "id": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+        "name": "The Jimi Hendrix Experience",
+        "aliases": [
+          "The Jimmy Hendrix Experience",
+          "The Jimmi Hendrix Experience"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:46.470205+00:00"
+      },
+      "after": {
+        "id": "244abb97-dd87-49a1-aecb-5d4b2faba80b",
+        "name": "The Jimi Hendrix Experience",
+        "aliases": [
+          "The Jimmy Hendrix Experience",
+          "The Jimmi Hendrix Experience"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+        "curation_status": "unreviewed",
+        "category": "unclassified",
+        "updated_at": "2026-10-13T08:20:46.470205+00:00"
+      },
+      "externalIdentityObservation": {
+        "mbid": "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
+        "name": "The Jimi Hendrix Experience",
+        "country": "GB",
+        "type": "Group",
+        "disambiguation": "",
+        "checkedAt": "2026-10-22T21:36:12.981Z"
+      },
+      "relatedIdentityFacts": [
+        {
+          "type": "member of band",
+          "name": "Jimi Hendrix",
+          "id": "06fb1c8b-566e-4cb2-985b-b467c90781d4"
+        },
+        {
+          "type": "member of band",
+          "name": "Mitch Mitchell",
+          "id": "0bc21d36-9bbc-4a13-afd8-6d661354a232"
+        },
+        {
+          "type": "member of band",
+          "name": "Noel Redding",
+          "id": "32e805d4-d6da-4388-b1ad-60d234ce6122"
+        },
+        {
+          "type": "member of band",
+          "name": "Billy Cox",
+          "id": "feca85d7-d578-444d-a0d5-b33de1cb1871"
+        },
+        {
+          "type": "tribute",
+          "name": "CryBaby",
+          "id": "be35ccc8-c9f6-44ab-a2ad-9d448a2a9b8a"
+        },
+        {
+          "type": "tribute",
+          "name": "Room Full of Hendrix",
+          "id": "c9cacce2-9fcf-40f2-bc7b-0e4dfef24d1b"
+        }
+      ],
+      "worksReadForIdentity": [
+        "Are You Experienced",
+        "Axis: Bold as Love",
+        "Electric Ladyland",
+        "Smash Hits",
+        "Voodoo Chile"
+      ],
+      "researchStatus": "complete",
+      "approvalStatus": "deferred",
+      "channelStatus": "deferred",
+      "channelCandidateCount": 0,
+      "channelSaved": false,
+      "photoSaved": false
+    }
+  ],
+  "limitations": [
+    "MusicBrainz metadata/country/relationships are identity support, not official genre proof by themselves.",
+    "32 research deferrals are not completed verification or genre exclusions. Retained previous notes are not new findings.",
+    "The keyword/country observation does not resolve every namesake or establish an approval requirement automatically.",
+    "LASTFM_API_KEY not observed in this environment. No popularity APIs or new nominations fetched.",
+    "Identity CLI/journal/fixed registration integration remains incomplete; module presence alone does not enable writes.",
+    "No concert collection/publication/notification activity, migration, privilege change, deployment, push or PR."
+  ]
+}

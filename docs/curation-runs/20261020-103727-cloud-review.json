@@ -1,0 +1,4514 @@
+{
+  "policy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+  "projectRef": "czjrzylvnewfjnfwjhwf",
+  "queueId": "db6258b5-7ac7-47dd-88b3-dbe0f72d75ef",
+  "queueRevision": 320,
+  "owner": "cloud",
+  "runId": "25240c56-43f1-4fe6-8ae5-06afbd8e36ff",
+  "startedAt": "2026-10-20T01:32:44.965Z",
+  "finishedAt": "2026-10-20T01:37:27.986Z",
+  "recordedAtKst": "2026-10-20T10:37:27.986+09:00",
+  "status": "batch_checkpointed_catalog_incomplete",
+  "counts": {
+    "catalogAtRead": 618,
+    "selectedDistinct": 40,
+    "newResearchCompleted": 0,
+    "importedKeepRecordsPreserved": 40,
+    "conditionalApprovalDraftsAuthorityWait": 40,
+    "readyApprovalProposals": 0,
+    "curationApplied": 0,
+    "newOfficialChannelsSaved": 2,
+    "existingOfficialChannelsRefreshed": 1,
+    "distinctChannelsAndPhotoCachesApplied": 3,
+    "channelTaskComplete": 2,
+    "channelTaskDeferred": 37,
+    "channelRefreshOutsideDueTaskWithinSelection": 1,
+    "newHumanExceptions": 0,
+    "runnableNow": 473,
+    "totalAuthorityWaiting": 68
+  },
+  "apiAccounting": {
+    "youTubeApiRequests": 8,
+    "byPhase": {
+      "initialScopedRefresh": 1,
+      "orangePreflight": 1,
+      "orangeScopedSaveRefresh": 2,
+      "kanaPreflight": 1,
+      "kanaScopedSaveRefresh": 3
+    },
+    "musicBrainzApiRequests": 0,
+    "webToolOperations": {
+      "searchQueries": 2,
+      "open": 47,
+      "find": 17,
+      "click": 0
+    },
+    "supabaseRestRequests": 21,
+    "providerHttpCountsBehindWebTool": "not exposed; tool actions are not exact provider HTTP requests"
+  },
+  "database": {
+    "changedBandIds": [],
+    "curationWrites": 0,
+    "newChannelProfileSaves": 2,
+    "channelCacheApplyRpcCalls": 6,
+    "distinctChannelCacheReadBack": 3,
+    "photoCachesConfirmed": 3,
+    "channelManifestExpirySweepInvoked": true
+  },
+  "authority": {
+    "administratorSessionProvided": false,
+    "proposalsAreConditional": true,
+    "approvalRequirementChecksStillNeeded": [
+      "official identity/country/genre/classification verification",
+      "external identity linkage via authenticated admin path"
+    ],
+    "missingAuthNoticeRepeated": false
+  },
+  "technicalDeferrals": {
+    "channelCandidatesNotFullyCrossValidated": 37,
+    "providerCooldowns": {
+      "musicbrainz.org": {
+        "lastFailureAt": "2026-10-19T20:31:08.802Z",
+        "nextAttemptAt": "2026-10-20T20:31:08.802000Z",
+        "reason": "429/failed web access; application API was not called; use alternate official sources while cooling down"
+      },
+      "antenna.co.kr": {
+        "lastFailureAt": "2026-10-19T20:31:08.802Z",
+        "nextAttemptAt": "2026-10-20T20:31:08.802000Z",
+        "reason": "official artist page returned 403; no genre exclusion or success timestamp update"
+      }
+    },
+    "noMissingEvidenceExclusion": true,
+    "nextAttemptPolicy": "checkpoint +24h, source provider cooldowns also respected"
+  },
+  "limitations": [
+    "인계된 포괄적 요약은 새 조사 완료 또는 승인 완료로 집계하지 않는다.",
+    "기존 scoped 갱신 도구는 batch ID만 제한하고 tasks를 필터링하지 않아, channels가 이번에 due가 아닌 선택 아티스트 ONE OK ROCK도 갱신했다. 전체 고정 40팀 밖에는 쓰지 않았다.",
+    "채널 캐시를 단계별 저장 도구가 재조회해 일부 동일 채널을 반복 갱신했다. 실제 요청 8회·저장 6회·서로 다른 3팀을 구분했다.",
+    "완료 근거를 보강해야 하는 승인 초안은 readyToApply=false이며 관리자 인증만 생겨도 자동 승인할 수 없다.",
+    "클라우드 현재 파일을 확인했지만 별도 머신으로의 자동 동기화/전역 잠금은 주장하지 않는다."
+  ],
+  "rows": [
+    {
+      "bandId": "dbc1821c-fd44-45b8-b2c0-09c7c4b9b818",
+      "name": "BiSH",
+      "identitySnapshot": {
+        "id": "dbc1821c-fd44-45b8-b2c0-09c7c4b9b818",
+        "name": "BiSH",
+        "aliases": [
+          "Brand-new idol SHiT"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "39bbdaa5-d30b-49e3-b191-943cfe31fde4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:52.017633+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.952Z",
+        "validUntil": "2027-01-11T09:01:43.952Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.bish.tokyo/profile/",
+              "checkedAt": "2026-10-13T09:01:43.952Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:23.942Z",
+        "waitingSince": "2026-10-20T01:36:23.942Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "dbc1821c-fd44-45b8-b2c0-09c7c4b9b818",
+          "expected_updated_at": "2026-10-13T08:19:52.017633+00:00",
+          "artist_name": "BiSH",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Brand-new idol SHiT"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.bish.tokyo/profile/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "dbc1821c-fd44-45b8-b2c0-09c7c4b9b818",
+        "proposal": {
+          "target_band_id": "dbc1821c-fd44-45b8-b2c0-09c7c4b9b818",
+          "expected_updated_at": "2026-10-13T08:19:52.017633+00:00",
+          "artist_name": "BiSH",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Brand-new idol SHiT"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.bish.tokyo/profile/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.029Z",
+        "waitingSince": "2026-10-20T01:36:24.029Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.029Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.bish.tokyo/profile/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "The punk band that doesn’t play any instruments",
+        "note": "구성원·Avex 데뷔·실제 펑크 활동 설명 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+      "name": "Black Sabbath",
+      "identitySnapshot": {
+        "id": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+        "name": "Black Sabbath",
+        "aliases": [
+          "블랙 사바쓰",
+          "Polka Tulk",
+          "Blakc Sabbath",
+          "Блэк Саббат",
+          "Blak Sabbath",
+          "Sabs",
+          "Sabbs",
+          "Sabbat",
+          "Sabbath",
+          "Black Sabbat",
+          "ブラック・サバス",
+          "Black Sabath",
+          "Earth",
+          "Polka Tulk Blues",
+          "Blac Sabat"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:22.140984+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.952Z",
+        "validUntil": "2027-01-11T09:01:43.952Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.blacksabbath.com/history.html",
+              "checkedAt": "2026-10-13T09:01:43.952Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.093Z",
+        "waitingSince": "2026-10-20T01:36:24.093Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+          "expected_updated_at": "2026-10-13T08:19:22.140984+00:00",
+          "artist_name": "Black Sabbath",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "블랙 사바쓰",
+            "Polka Tulk",
+            "Blakc Sabbath",
+            "Блэк Саббат",
+            "Blak Sabbath",
+            "Sabs",
+            "Sabbs",
+            "Sabbat",
+            "Sabbath",
+            "Black Sabbat",
+            "ブラック・サバス",
+            "Black Sabath",
+            "Earth",
+            "Polka Tulk Blues",
+            "Blac Sabat"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.blacksabbath.com/history.html"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+        "proposal": {
+          "target_band_id": "71ed7f4d-d06c-4e87-beca-c409ff49c238",
+          "expected_updated_at": "2026-10-13T08:19:22.140984+00:00",
+          "artist_name": "Black Sabbath",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "블랙 사바쓰",
+            "Polka Tulk",
+            "Blakc Sabbath",
+            "Блэк Саббат",
+            "Blak Sabbath",
+            "Sabs",
+            "Sabbs",
+            "Sabbat",
+            "Sabbath",
+            "Black Sabbat",
+            "ブラック・サバス",
+            "Black Sabath",
+            "Earth",
+            "Polka Tulk Blues",
+            "Blac Sabat"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.blacksabbath.com/history.html"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.145Z",
+        "waitingSince": "2026-10-20T01:36:24.145Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.145Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.blacksabbath.com/history.html",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "Black Sabbath is credited with creating heavy metal.",
+        "note": "Birmingham 출발·Ozzy/Iommi/Butler/Ward와 메탈 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+      "name": "Blue Öyster Cult",
+      "identitySnapshot": {
+        "id": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+        "name": "Blue Öyster Cult",
+        "aliases": [
+          "Blue Öyster Club",
+          "BOC",
+          "Blue Oyster Cult",
+          "B.O.C."
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "c7423e0c-ab3e-4ab4-be10-cdff5a9d3062",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:54.667081+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.954Z",
+        "validUntil": "2027-01-11T09:01:43.954Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.blueoystercult.com/bocBand.html",
+              "checkedAt": "2026-10-13T09:01:43.954Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.193Z",
+        "waitingSince": "2026-10-20T01:36:24.193Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+          "expected_updated_at": "2026-10-13T08:20:54.667081+00:00",
+          "artist_name": "Blue Öyster Cult",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Blue Öyster Club",
+            "BOC",
+            "Blue Oyster Cult",
+            "B.O.C."
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.blueoystercult.com/bocBand.html"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+        "proposal": {
+          "target_band_id": "9df89d99-7bd8-41dc-9cae-edb7763fbce0",
+          "expected_updated_at": "2026-10-13T08:20:54.667081+00:00",
+          "artist_name": "Blue Öyster Cult",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Blue Öyster Club",
+            "BOC",
+            "Blue Oyster Cult",
+            "B.O.C."
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.blueoystercult.com/bocBand.html"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.243Z",
+        "waitingSince": "2026-10-20T01:36:24.243Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.243Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.blueoystercult.com/bocBand.html",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "their unique take on rock music",
+        "note": "구성원·작품·록 활동 설명 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "9bc9b1c7-118e-45be-9c2a-e109e5685492",
+      "name": "Böhse Onkelz",
+      "identitySnapshot": {
+        "id": "9bc9b1c7-118e-45be-9c2a-e109e5685492",
+        "name": "Böhse Onkelz",
+        "aliases": [
+          "Bohse Onkelz",
+          "Boehse Onkelz",
+          "B hse Onkelz"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "b3a70929-32bc-4ace-994f-434b26ce96fe",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:20.034677+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.955Z",
+        "validUntil": "2027-01-11T09:01:43.955Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.onkelz.de/band/",
+              "checkedAt": "2026-10-13T09:01:43.955Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.298Z",
+        "waitingSince": "2026-10-20T01:36:24.298Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "9bc9b1c7-118e-45be-9c2a-e109e5685492",
+          "expected_updated_at": "2026-10-13T08:20:20.034677+00:00",
+          "artist_name": "Böhse Onkelz",
+          "country": "DE",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Bohse Onkelz",
+            "Boehse Onkelz",
+            "B hse Onkelz"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.onkelz.de/band/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "9bc9b1c7-118e-45be-9c2a-e109e5685492",
+        "proposal": {
+          "target_band_id": "9bc9b1c7-118e-45be-9c2a-e109e5685492",
+          "expected_updated_at": "2026-10-13T08:20:20.034677+00:00",
+          "artist_name": "Böhse Onkelz",
+          "country": "DE",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Bohse Onkelz",
+            "Boehse Onkelz",
+            "B hse Onkelz"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.onkelz.de/band/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.351Z",
+        "waitingSince": "2026-10-20T01:36:24.351Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.351Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+      "name": "Counting Crows",
+      "identitySnapshot": {
+        "id": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+        "name": "Counting Crows",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:51.291897+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.957Z",
+        "validUntil": "2027-01-11T09:01:43.957Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.countingcrows.com/band",
+              "checkedAt": "2026-10-13T09:01:43.957Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.392Z",
+        "waitingSince": "2026-10-20T01:36:24.392Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+          "expected_updated_at": "2026-10-13T08:19:51.291897+00:00",
+          "artist_name": "Counting Crows",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.countingcrows.com/band"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+        "proposal": {
+          "target_band_id": "f6c1bcf4-1135-40c7-9342-def0ef6b0c3e",
+          "expected_updated_at": "2026-10-13T08:19:51.291897+00:00",
+          "artist_name": "Counting Crows",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.countingcrows.com/band"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.450Z",
+        "waitingSince": "2026-10-20T01:36:24.450Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.450Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.countingcrows.com/band",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "one of the leading American alternative rock bands",
+        "note": "Berkeley·1991·구성원·작품과 록 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "941eaae4-fcbd-431f-b21e-c9b999e66eae",
+      "name": "Dio",
+      "identitySnapshot": {
+        "id": "941eaae4-fcbd-431f-b21e-c9b999e66eae",
+        "name": "Dio",
+        "aliases": [
+          "Ronnie James Dio"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "c55193fb-f5d2-4839-a263-4c044fca1456",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:54.331414+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.958Z",
+        "validUntil": "2027-01-11T09:01:43.958Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://ronniejamesdio.com/bio/",
+              "checkedAt": "2026-10-13T09:01:43.958Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.523Z",
+        "waitingSince": "2026-10-20T01:36:24.523Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "941eaae4-fcbd-431f-b21e-c9b999e66eae",
+          "expected_updated_at": "2026-10-13T08:20:54.331414+00:00",
+          "artist_name": "Dio",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Ronnie James Dio"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://ronniejamesdio.com/bio/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "941eaae4-fcbd-431f-b21e-c9b999e66eae",
+        "proposal": {
+          "target_band_id": "941eaae4-fcbd-431f-b21e-c9b999e66eae",
+          "expected_updated_at": "2026-10-13T08:20:54.331414+00:00",
+          "artist_name": "Dio",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Ronnie James Dio"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://ronniejamesdio.com/bio/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.587Z",
+        "waitingSince": "2026-10-20T01:36:24.587Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.587Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+      "name": "Do As Infinity",
+      "identitySnapshot": {
+        "id": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+        "name": "Do As Infinity",
+        "aliases": [
+          "DAI",
+          "ドゥー・アズ・インフィニティ",
+          "ドゥー・アズ",
+          "大无限乐团",
+          "大無限樂團"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "b128a994-2400-432d-b26a-8feede87daa8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:20.87255+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.959Z",
+        "validUntil": "2027-01-11T09:01:43.959Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://d-a-i.com/profile/",
+              "checkedAt": "2026-10-13T09:01:43.959Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.630Z",
+        "waitingSince": "2026-10-20T01:36:24.630Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+          "expected_updated_at": "2026-10-13T08:18:20.87255+00:00",
+          "artist_name": "Do As Infinity",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "DAI",
+            "ドゥー・アズ・インフィニティ",
+            "ドゥー・アズ",
+            "大无限乐团",
+            "大無限樂團"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://d-a-i.com/profile/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+        "proposal": {
+          "target_band_id": "ceb18565-c73a-43f6-8f5f-2fb7054a8a0a",
+          "expected_updated_at": "2026-10-13T08:18:20.87255+00:00",
+          "artist_name": "Do As Infinity",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "DAI",
+            "ドゥー・アズ・インフィニティ",
+            "ドゥー・アズ",
+            "大无限乐团",
+            "大無限樂團"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://d-a-i.com/profile/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.729Z",
+        "waitingSince": "2026-10-20T01:36:24.729Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.729Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://d-a-i.com/profile/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "伴 都美子（Vo.）、大渡 亮（Gt.&Vo.）からなるロックバンド。",
+        "note": "Avex 데뷔·멤버·일본 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "f07de168-545b-4338-a33d-9af308509372",
+      "name": "Doro",
+      "identitySnapshot": {
+        "id": "f07de168-545b-4338-a33d-9af308509372",
+        "name": "Doro",
+        "aliases": [],
+        "country_code": "DE",
+        "musicbrainz_id": "f3e5d65a-0510-4dd2-8bfb-0d06e86b6035",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:47.837995+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.960Z",
+        "validUntil": "2027-01-11T09:01:43.960Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.doromusic.de/",
+              "checkedAt": "2026-10-13T09:01:43.960Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.772Z",
+        "waitingSince": "2026-10-20T01:36:24.772Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "f07de168-545b-4338-a33d-9af308509372",
+          "expected_updated_at": "2026-10-13T08:20:47.837995+00:00",
+          "artist_name": "Doro",
+          "country": "DE",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.doromusic.de/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "f07de168-545b-4338-a33d-9af308509372",
+        "proposal": {
+          "target_band_id": "f07de168-545b-4338-a33d-9af308509372",
+          "expected_updated_at": "2026-10-13T08:20:47.837995+00:00",
+          "artist_name": "Doro",
+          "country": "DE",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.doromusic.de/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.822Z",
+        "waitingSince": "2026-10-20T01:36:24.822Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.822Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "5ad00e6c-1393-4854-8f46-346d1fbecf40",
+      "name": "Dwarves",
+      "identitySnapshot": {
+        "id": "5ad00e6c-1393-4854-8f46-346d1fbecf40",
+        "name": "Dwarves",
+        "aliases": [
+          "Dwarves (The)",
+          "The Dwarves"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "762e1e6d-ba12-4946-b8ee-dfa0cf9a2655",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:32.862735+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.961Z",
+        "validUntil": "2027-01-11T09:01:43.961Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://thedwarves.com/history",
+              "checkedAt": "2026-10-13T09:01:43.961Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.879Z",
+        "waitingSince": "2026-10-20T01:36:24.879Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "5ad00e6c-1393-4854-8f46-346d1fbecf40",
+          "expected_updated_at": "2026-10-13T08:20:32.862735+00:00",
+          "artist_name": "Dwarves",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Dwarves (The)",
+            "The Dwarves"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://thedwarves.com/history"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "5ad00e6c-1393-4854-8f46-346d1fbecf40",
+        "proposal": {
+          "target_band_id": "5ad00e6c-1393-4854-8f46-346d1fbecf40",
+          "expected_updated_at": "2026-10-13T08:20:32.862735+00:00",
+          "artist_name": "Dwarves",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Dwarves (The)",
+            "The Dwarves"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://thedwarves.com/history"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:24.930Z",
+        "waitingSince": "2026-10-20T01:36:24.930Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:24.930Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "45c7ed05-2086-4b5d-adb5-f056f8f5d3fe",
+      "name": "Emerson, Lake & Palmer",
+      "identitySnapshot": {
+        "id": "45c7ed05-2086-4b5d-adb5-f056f8f5d3fe",
+        "name": "Emerson, Lake & Palmer",
+        "aliases": [
+          "Emerson, Lake and Palmer",
+          "Emerson Lake and Palmer",
+          "Emerson, Lake, and Palmer",
+          "ELP",
+          "Emerson, Lake, & Palmer",
+          "Emerson Lake & Palmer",
+          "Emmerson, Lake & Palmer"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "ad996aef-cc1c-42ac-af5c-619c370f4b8a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:02.472533+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.962Z",
+        "validUntil": "2027-01-11T09:01:43.962Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.emersonlakeandpalmer.com/",
+              "checkedAt": "2026-10-13T09:01:43.962Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:24.974Z",
+        "waitingSince": "2026-10-20T01:36:24.974Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "45c7ed05-2086-4b5d-adb5-f056f8f5d3fe",
+          "expected_updated_at": "2026-10-13T08:21:02.472533+00:00",
+          "artist_name": "Emerson, Lake & Palmer",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Emerson, Lake and Palmer",
+            "Emerson Lake and Palmer",
+            "Emerson, Lake, and Palmer",
+            "ELP",
+            "Emerson, Lake, & Palmer",
+            "Emerson Lake & Palmer",
+            "Emmerson, Lake & Palmer"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.emersonlakeandpalmer.com/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "45c7ed05-2086-4b5d-adb5-f056f8f5d3fe",
+        "proposal": {
+          "target_band_id": "45c7ed05-2086-4b5d-adb5-f056f8f5d3fe",
+          "expected_updated_at": "2026-10-13T08:21:02.472533+00:00",
+          "artist_name": "Emerson, Lake & Palmer",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Emerson, Lake and Palmer",
+            "Emerson Lake and Palmer",
+            "Emerson, Lake, and Palmer",
+            "ELP",
+            "Emerson, Lake, & Palmer",
+            "Emerson Lake & Palmer",
+            "Emmerson, Lake & Palmer"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.emersonlakeandpalmer.com/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.020Z",
+        "waitingSince": "2026-10-20T01:36:25.020Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.020Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "ae89f80a-da35-4f77-aabc-0cf3b9cc418e",
+      "name": "Enuff Z’Nuff",
+      "identitySnapshot": {
+        "id": "ae89f80a-da35-4f77-aabc-0cf3b9cc418e",
+        "name": "Enuff Z’Nuff",
+        "aliases": [
+          "イナフズナフ",
+          "イナフ・ズナフ",
+          "Enuff Z Nuff",
+          "Enuff Znuff",
+          "Enuff Z-Nuff",
+          "Enuff'z Enuff"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "369cbaed-5209-4990-83c9-f8233d6c248b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:55.597721+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.963Z",
+        "validUntil": "2027-01-11T09:01:43.963Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.enuffznuff.com/bio",
+              "checkedAt": "2026-10-13T09:01:43.963Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.065Z",
+        "waitingSince": "2026-10-20T01:36:25.065Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "ae89f80a-da35-4f77-aabc-0cf3b9cc418e",
+          "expected_updated_at": "2026-10-13T08:19:55.597721+00:00",
+          "artist_name": "Enuff Z’Nuff",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "イナフズナフ",
+            "イナフ・ズナフ",
+            "Enuff Z Nuff",
+            "Enuff Znuff",
+            "Enuff Z-Nuff",
+            "Enuff'z Enuff"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.enuffznuff.com/bio"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "ae89f80a-da35-4f77-aabc-0cf3b9cc418e",
+        "proposal": {
+          "target_band_id": "ae89f80a-da35-4f77-aabc-0cf3b9cc418e",
+          "expected_updated_at": "2026-10-13T08:19:55.597721+00:00",
+          "artist_name": "Enuff Z’Nuff",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "イナフズナフ",
+            "イナフ・ズナフ",
+            "Enuff Z Nuff",
+            "Enuff Znuff",
+            "Enuff Z-Nuff",
+            "Enuff'z Enuff"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.enuffznuff.com/bio"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.114Z",
+        "waitingSince": "2026-10-20T01:36:25.114Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.114Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.enuffznuff.com/bio",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "The band was formed in 1984 in Blue Island, Illinois.",
+        "note": "공식 소개의 rock/pop·작품·신원 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "4221dfb1-e21b-40df-ba33-6068233c2b1f",
+      "name": "FLOW",
+      "identitySnapshot": {
+        "id": "4221dfb1-e21b-40df-ba33-6068233c2b1f",
+        "name": "FLOW",
+        "aliases": [
+          "フロウ",
+          "フロー"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "a0387b9b-236d-475f-8846-b2dea4af1112",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:34.396042+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.964Z",
+        "validUntil": "2027-01-11T09:01:43.964Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.flow-official.jp/biography/",
+              "checkedAt": "2026-10-13T09:01:43.964Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.155Z",
+        "waitingSince": "2026-10-20T01:36:25.155Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "4221dfb1-e21b-40df-ba33-6068233c2b1f",
+          "expected_updated_at": "2026-10-13T08:18:34.396042+00:00",
+          "artist_name": "FLOW",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "フロウ",
+            "フロー"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.flow-official.jp/biography/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "4221dfb1-e21b-40df-ba33-6068233c2b1f",
+        "proposal": {
+          "target_band_id": "4221dfb1-e21b-40df-ba33-6068233c2b1f",
+          "expected_updated_at": "2026-10-13T08:18:34.396042+00:00",
+          "artist_name": "FLOW",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "フロウ",
+            "フロー"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.flow-official.jp/biography/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.209Z",
+        "waitingSince": "2026-10-20T01:36:25.209Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.209Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "62500607-1eef-4c81-bc44-592107bc54e9",
+      "name": "Foreigner",
+      "identitySnapshot": {
+        "id": "62500607-1eef-4c81-bc44-592107bc54e9",
+        "name": "Foreigner",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "160629ab-ec18-4931-8c95-02cb92d06186",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:50.223374+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.965Z",
+        "validUntil": "2027-01-11T09:01:43.965Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.foreigneronline.com/the-band",
+              "checkedAt": "2026-10-13T09:01:43.965Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.251Z",
+        "waitingSince": "2026-10-20T01:36:25.251Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "62500607-1eef-4c81-bc44-592107bc54e9",
+          "expected_updated_at": "2026-10-13T08:20:50.223374+00:00",
+          "artist_name": "Foreigner",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.foreigneronline.com/the-band"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "62500607-1eef-4c81-bc44-592107bc54e9",
+        "proposal": {
+          "target_band_id": "62500607-1eef-4c81-bc44-592107bc54e9",
+          "expected_updated_at": "2026-10-13T08:20:50.223374+00:00",
+          "artist_name": "Foreigner",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.foreigneronline.com/the-band"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.304Z",
+        "waitingSince": "2026-10-20T01:36:25.304Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.304Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "55f12356-596c-48a4-aa0f-32cf2a6ca522",
+      "name": "Golden Earring",
+      "identitySnapshot": {
+        "id": "55f12356-596c-48a4-aa0f-32cf2a6ca522",
+        "name": "Golden Earring",
+        "aliases": [
+          "The Golden Earring",
+          "The Golden Earing",
+          "Golden Earing",
+          "Golden Earrings",
+          "Golden Ear Ring",
+          "The Golden Earrings"
+        ],
+        "country_code": "NL",
+        "musicbrainz_id": "75336c3d-2833-46cb-8037-b835cd7d646d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:56.141127+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.966Z",
+        "validUntil": "2027-01-11T09:01:43.966Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://golden-earring.nl/",
+              "checkedAt": "2026-10-13T09:01:43.966Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.357Z",
+        "waitingSince": "2026-10-20T01:36:25.357Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "55f12356-596c-48a4-aa0f-32cf2a6ca522",
+          "expected_updated_at": "2026-10-13T08:20:56.141127+00:00",
+          "artist_name": "Golden Earring",
+          "country": "NL",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Golden Earring",
+            "The Golden Earing",
+            "Golden Earing",
+            "Golden Earrings",
+            "Golden Ear Ring",
+            "The Golden Earrings"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://golden-earring.nl/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "55f12356-596c-48a4-aa0f-32cf2a6ca522",
+        "proposal": {
+          "target_band_id": "55f12356-596c-48a4-aa0f-32cf2a6ca522",
+          "expected_updated_at": "2026-10-13T08:20:56.141127+00:00",
+          "artist_name": "Golden Earring",
+          "country": "NL",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Golden Earring",
+            "The Golden Earing",
+            "Golden Earing",
+            "Golden Earrings",
+            "Golden Ear Ring",
+            "The Golden Earrings"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://golden-earring.nl/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.408Z",
+        "waitingSince": "2026-10-20T01:36:25.408Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.408Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "f8f8c4a2-6fee-4a74-a4cd-d744f36b6dbf",
+      "name": "Goose",
+      "identitySnapshot": {
+        "id": "f8f8c4a2-6fee-4a74-a4cd-d744f36b6dbf",
+        "name": "Goose",
+        "aliases": [
+          "Goose (US)"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "b925a474-d245-4217-bc13-2e153d82bebb",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:18.630036+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.967Z",
+        "validUntil": "2027-01-11T09:01:43.967Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.goosetheband.com/about",
+              "checkedAt": "2026-10-13T09:01:43.967Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.450Z",
+        "waitingSince": "2026-10-20T01:36:25.450Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "f8f8c4a2-6fee-4a74-a4cd-d744f36b6dbf",
+          "expected_updated_at": "2026-10-13T08:19:18.630036+00:00",
+          "artist_name": "Goose",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Goose (US)"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.goosetheband.com/about"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "f8f8c4a2-6fee-4a74-a4cd-d744f36b6dbf",
+        "proposal": {
+          "target_band_id": "f8f8c4a2-6fee-4a74-a4cd-d744f36b6dbf",
+          "expected_updated_at": "2026-10-13T08:19:18.630036+00:00",
+          "artist_name": "Goose",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Goose (US)"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.goosetheband.com/about"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.498Z",
+        "waitingSince": "2026-10-20T01:36:25.498Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.498Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.goosetheband.com/about",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "Goose is an American rock band",
+        "note": "구성원·작품이 기재된 미국 록 밴드 소개 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "ee132463-cb46-44e5-850f-395d0e79fef8",
+      "name": "Gov’t Mule",
+      "identitySnapshot": {
+        "id": "ee132463-cb46-44e5-850f-395d0e79fef8",
+        "name": "Gov’t Mule",
+        "aliases": [
+          "Government Mule",
+          "Govt Mule",
+          "Gov´t Mule"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "f8796712-19fd-49ca-9cc7-99c30215b3cd",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:46.808376+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.968Z",
+        "validUntil": "2027-01-11T09:01:43.968Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://mule.net/about/",
+              "checkedAt": "2026-10-13T09:01:43.968Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.543Z",
+        "waitingSince": "2026-10-20T01:36:25.543Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "ee132463-cb46-44e5-850f-395d0e79fef8",
+          "expected_updated_at": "2026-10-13T08:20:46.808376+00:00",
+          "artist_name": "Gov’t Mule",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Government Mule",
+            "Govt Mule",
+            "Gov´t Mule"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://mule.net/about/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "ee132463-cb46-44e5-850f-395d0e79fef8",
+        "proposal": {
+          "target_band_id": "ee132463-cb46-44e5-850f-395d0e79fef8",
+          "expected_updated_at": "2026-10-13T08:20:46.808376+00:00",
+          "artist_name": "Gov’t Mule",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Government Mule",
+            "Govt Mule",
+            "Gov´t Mule"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://mule.net/about/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.592Z",
+        "waitingSince": "2026-10-20T01:36:25.592Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.592Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+      "name": "Grateful Dead",
+      "identitySnapshot": {
+        "id": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+        "name": "Grateful Dead",
+        "aliases": [
+          "The Grateful Dead",
+          "Greatful Dead",
+          "Greatfull Dead"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:04.150164+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.970Z",
+        "validUntil": "2027-01-11T09:01:43.970Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.dead.net/biography",
+              "checkedAt": "2026-10-13T09:01:43.970Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.668Z",
+        "waitingSince": "2026-10-20T01:36:25.668Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+          "expected_updated_at": "2026-10-13T08:19:04.150164+00:00",
+          "artist_name": "Grateful Dead",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Grateful Dead",
+            "Greatful Dead",
+            "Greatfull Dead"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.dead.net/biography"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+        "proposal": {
+          "target_band_id": "31307741-88c6-4a0d-9811-3dc6fcc9cfde",
+          "expected_updated_at": "2026-10-13T08:19:04.150164+00:00",
+          "artist_name": "Grateful Dead",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Grateful Dead",
+            "Greatful Dead",
+            "Greatfull Dead"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.dead.net/biography"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.728Z",
+        "waitingSince": "2026-10-20T01:36:25.728Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.728Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "9868af5a-d6a5-43a4-98b1-bf0ea3b7099b",
+      "name": "Helloween",
+      "identitySnapshot": {
+        "id": "9868af5a-d6a5-43a4-98b1-bf0ea3b7099b",
+        "name": "Helloween",
+        "aliases": [
+          "ヘロウィン",
+          "Hello-Ween",
+          "ハロウィン"
+        ],
+        "country_code": "DE",
+        "musicbrainz_id": "765774a0-2060-469b-8b7d-612eea48579b",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:52.265146+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.971Z",
+        "validUntil": "2027-01-11T09:01:43.971Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.helloween.org/",
+              "checkedAt": "2026-10-13T09:01:43.971Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.773Z",
+        "waitingSince": "2026-10-20T01:36:25.773Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "9868af5a-d6a5-43a4-98b1-bf0ea3b7099b",
+          "expected_updated_at": "2026-10-13T08:20:52.265146+00:00",
+          "artist_name": "Helloween",
+          "country": "DE",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ヘロウィン",
+            "Hello-Ween",
+            "ハロウィン"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.helloween.org/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "9868af5a-d6a5-43a4-98b1-bf0ea3b7099b",
+        "proposal": {
+          "target_band_id": "9868af5a-d6a5-43a4-98b1-bf0ea3b7099b",
+          "expected_updated_at": "2026-10-13T08:20:52.265146+00:00",
+          "artist_name": "Helloween",
+          "country": "DE",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ヘロウィン",
+            "Hello-Ween",
+            "ハロウィン"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.helloween.org/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.839Z",
+        "waitingSince": "2026-10-20T01:36:25.839Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.839Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+      "name": "INXS",
+      "identitySnapshot": {
+        "id": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+        "name": "INXS",
+        "aliases": [
+          "In Excess",
+          "I.N.X.S.",
+          "The Farriss Brothers"
+        ],
+        "country_code": "AU",
+        "musicbrainz_id": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:36.353465+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.972Z",
+        "validUntil": "2027-01-11T09:01:43.972Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.inxs.com/band/",
+              "checkedAt": "2026-10-13T09:01:43.972Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:25.905Z",
+        "waitingSince": "2026-10-20T01:36:25.905Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+          "expected_updated_at": "2026-10-13T08:19:36.353465+00:00",
+          "artist_name": "INXS",
+          "country": "AU",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "In Excess",
+            "I.N.X.S.",
+            "The Farriss Brothers"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.inxs.com/band/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+        "proposal": {
+          "target_band_id": "51d0da77-bb9a-459b-8614-3d824e59bcd4",
+          "expected_updated_at": "2026-10-13T08:19:36.353465+00:00",
+          "artist_name": "INXS",
+          "country": "AU",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "In Excess",
+            "I.N.X.S.",
+            "The Farriss Brothers"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.inxs.com/band/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:25.960Z",
+        "waitingSince": "2026-10-20T01:36:25.960Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:25.960Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.inxs.com/band/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "INXS are one of the world’s greatest rock bands.",
+        "note": "Sydney·Farriss Brothers·멤버 및 록 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+      "name": "Jethro Tull",
+      "identitySnapshot": {
+        "id": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+        "name": "Jethro Tull",
+        "aliases": [
+          "ジェ入ロ",
+          "Jetro Tull",
+          "Tull",
+          "Jethrp Tull"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "ece57992-dc2e-4f67-a269-fa43626c1a3d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:12.992267+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.974Z",
+        "validUntil": "2027-01-11T09:01:43.974Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://jethrotull.com/",
+              "checkedAt": "2026-10-13T09:01:43.974Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.003Z",
+        "waitingSince": "2026-10-20T01:36:26.003Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+          "expected_updated_at": "2026-10-13T08:19:12.992267+00:00",
+          "artist_name": "Jethro Tull",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ジェ入ロ",
+            "Jetro Tull",
+            "Tull",
+            "Jethrp Tull"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://jethrotull.com/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+        "proposal": {
+          "target_band_id": "606ff6e9-cf60-4b9e-b6ef-d79db049d120",
+          "expected_updated_at": "2026-10-13T08:19:12.992267+00:00",
+          "artist_name": "Jethro Tull",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ジェ入ロ",
+            "Jetro Tull",
+            "Tull",
+            "Jethrp Tull"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://jethrotull.com/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.086Z",
+        "waitingSince": "2026-10-20T01:36:26.086Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.086Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "cae9e205-be41-48b3-bf8a-f6af11b87f75",
+      "name": "KANA-BOON",
+      "identitySnapshot": {
+        "id": "cae9e205-be41-48b3-bf8a-f6af11b87f75",
+        "name": "KANA-BOON",
+        "aliases": [
+          "카나분"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "33ff8a92-2f3b-4cac-8ea0-5eebfa995626",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:45:05.790462+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.977Z",
+        "validUntil": "2027-01-11T09:01:43.977Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://sp.kanaboon.jp/feature/profile",
+              "checkedAt": "2026-10-13T09:01:43.977Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.187Z",
+        "waitingSince": "2026-10-20T01:36:26.187Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "cae9e205-be41-48b3-bf8a-f6af11b87f75",
+          "expected_updated_at": "2026-10-12T14:45:05.790462+00:00",
+          "artist_name": "KANA-BOON",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "카나분"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://sp.kanaboon.jp/feature/profile"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "cae9e205-be41-48b3-bf8a-f6af11b87f75",
+        "proposal": {
+          "target_band_id": "cae9e205-be41-48b3-bf8a-f6af11b87f75",
+          "expected_updated_at": "2026-10-12T14:45:05.790462+00:00",
+          "artist_name": "KANA-BOON",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "카나분"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://sp.kanaboon.jp/feature/profile"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "complete",
+        "reason": "공식 아티스트 페이지 근거 및 기존 검증 신원을 대조하고 기존 서비스 경로 저장 후 채널 ID·캐시 시각·신원 버전을 재조회함. apiCalls는 해당 팀별 추정이 아닌 전체 실행 집계를 ONE OK ROCK 체크포인트에 한 번 기록.",
+        "checkedAt": "2026-10-20T01:36:26.238Z",
+        "waitingSince": "2026-10-20T01:36:26.238Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T01:34:49.329Z",
+        "nextAttemptAt": null,
+        "validUntil": "2026-10-27T01:34:49.329Z",
+        "proof": {
+          "decision": "verified",
+          "summary": "공식 채널 API 갱신 및 DB 재조회 확인",
+          "sources": [
+            {
+              "url": "https://sp.kanaboon.jp/feature/profile",
+              "checkedAt": "2026-10-20T01:36:26.238Z",
+              "excerpt": "https://www.youtube.com/@KANA-BOON_official"
+            }
+          ]
+        },
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T01:34:49.636813+00:00",
+          "checkedAt": "2026-10-20T01:34:49.329Z"
+        }
+      },
+      "channelReadBack": {
+        "bandId": "cae9e205-be41-48b3-bf8a-f6af11b87f75",
+        "name": "KANA-BOON",
+        "status": "refreshed",
+        "verification": "verified",
+        "profileVersion": "2026-10-20T01:34:49.636813+00:00",
+        "identityVersion": "2026-10-12T14:45:05.790462+00:00",
+        "cacheCheckedAt": "2026-10-20T01:34:49.329Z",
+        "channelId": "UCGZcFTKIVXJLt1uo1dHfjAQ",
+        "photoPresent": true
+      },
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://sp.kanaboon.jp/feature/profile",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "https://www.youtube.com/@KANA-BOON_official",
+        "note": "공식 프로필의 Osaka/Sakai 록 활동과 직접 채널 링크 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+      "name": "Kansas",
+      "identitySnapshot": {
+        "id": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+        "name": "Kansas",
+        "aliases": [],
+        "country_code": "US",
+        "musicbrainz_id": "69689acf-d9cd-4d20-a972-47db4ed51b1a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:07.932906+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.978Z",
+        "validUntil": "2027-01-11T09:01:43.978Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://kansasband.com/",
+              "checkedAt": "2026-10-13T09:01:43.978Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.284Z",
+        "waitingSince": "2026-10-20T01:36:26.284Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+          "expected_updated_at": "2026-10-13T08:21:07.932906+00:00",
+          "artist_name": "Kansas",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://kansasband.com/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+        "proposal": {
+          "target_band_id": "d9f487ea-89dd-4371-95aa-749e12598cd7",
+          "expected_updated_at": "2026-10-13T08:21:07.932906+00:00",
+          "artist_name": "Kansas",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://kansasband.com/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.332Z",
+        "waitingSince": "2026-10-20T01:36:26.332Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.332Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "c63159d4-7a57-4fa8-8821-dae7c15428b9",
+      "name": "Linkin Park",
+      "identitySnapshot": {
+        "id": "c63159d4-7a57-4fa8-8821-dae7c15428b9",
+        "name": "Linkin Park",
+        "aliases": [
+          "聯合公園",
+          "Lincoln Park",
+          "린킨 파크",
+          "Hybrid Theory",
+          "Limkin Park",
+          "Xero"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "f59c5520-5f46-4d2c-b2c4-822eabf53419",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:45:07.070933+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.979Z",
+        "validUntil": "2027-01-11T09:01:43.979Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.linkinpark.com/about",
+              "checkedAt": "2026-10-13T09:01:43.979Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.378Z",
+        "waitingSince": "2026-10-20T01:36:26.378Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "c63159d4-7a57-4fa8-8821-dae7c15428b9",
+          "expected_updated_at": "2026-10-12T14:45:07.070933+00:00",
+          "artist_name": "Linkin Park",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "聯合公園",
+            "Lincoln Park",
+            "린킨 파크",
+            "Hybrid Theory",
+            "Limkin Park",
+            "Xero"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.linkinpark.com/about"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "c63159d4-7a57-4fa8-8821-dae7c15428b9",
+        "proposal": {
+          "target_band_id": "c63159d4-7a57-4fa8-8821-dae7c15428b9",
+          "expected_updated_at": "2026-10-12T14:45:07.070933+00:00",
+          "artist_name": "Linkin Park",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "聯合公園",
+            "Lincoln Park",
+            "린킨 파크",
+            "Hybrid Theory",
+            "Limkin Park",
+            "Xero"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.linkinpark.com/about"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.462Z",
+        "waitingSince": "2026-10-20T01:36:26.462Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.462Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+      "name": "Lynyrd Skynyrd",
+      "identitySnapshot": {
+        "id": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+        "name": "Lynyrd Skynyrd",
+        "aliases": [
+          "Leonard Skinner",
+          "Lynyrd Skynyurd",
+          "Lynyrd Shynyrd",
+          "Lynrd Skynyrd",
+          "Lynyrd Skynard",
+          "Lynrd Skynrd",
+          "Lynyrd Skynrd",
+          "Lynryd Skynyrd",
+          "Lynard Skynard",
+          "Leonard Skinnerd",
+          "Lynard Skynyrd",
+          "Lynyrd Skynyd",
+          "Lenhard Skinnerd",
+          "Lyndyrd Skynyrd"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "c544ed4d-2390-4442-a83e-1ea2883b09c8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:49.52111+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.981Z",
+        "validUntil": "2027-01-11T09:01:43.981Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://lynyrdskynyrd.com/history",
+              "checkedAt": "2026-10-13T09:01:43.981Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.511Z",
+        "waitingSince": "2026-10-20T01:36:26.511Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+          "expected_updated_at": "2026-10-13T08:20:49.52111+00:00",
+          "artist_name": "Lynyrd Skynyrd",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Leonard Skinner",
+            "Lynyrd Skynyurd",
+            "Lynyrd Shynyrd",
+            "Lynrd Skynyrd",
+            "Lynyrd Skynard",
+            "Lynrd Skynrd",
+            "Lynyrd Skynrd",
+            "Lynryd Skynyrd",
+            "Lynard Skynard",
+            "Leonard Skinnerd",
+            "Lynard Skynyrd",
+            "Lynyrd Skynyd",
+            "Lenhard Skinnerd",
+            "Lyndyrd Skynyrd"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://lynyrdskynyrd.com/history"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+        "proposal": {
+          "target_band_id": "b69a9a8b-d3e8-4b75-a52a-b4ae9c6f1414",
+          "expected_updated_at": "2026-10-13T08:20:49.52111+00:00",
+          "artist_name": "Lynyrd Skynyrd",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Leonard Skinner",
+            "Lynyrd Skynyurd",
+            "Lynyrd Shynyrd",
+            "Lynrd Skynyrd",
+            "Lynyrd Skynard",
+            "Lynrd Skynrd",
+            "Lynyrd Skynrd",
+            "Lynryd Skynyrd",
+            "Lynard Skynard",
+            "Leonard Skinnerd",
+            "Lynard Skynyrd",
+            "Lynyrd Skynyd",
+            "Lenhard Skinnerd",
+            "Lyndyrd Skynyrd"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://lynyrdskynyrd.com/history"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.566Z",
+        "waitingSince": "2026-10-20T01:36:26.566Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.566Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+      "name": "Manic Street Preachers",
+      "identitySnapshot": {
+        "id": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+        "name": "Manic Street Preachers",
+        "aliases": [
+          "マニック・ストリート・プリーチャーズ",
+          "Manics",
+          "The Manic Street Preachers",
+          "Maniac Street Preachers",
+          "M.S.P.",
+          "MSP"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "32efea44-6cb5-4b4f-bdaa-c8b8f6cef981",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:43.141883+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.982Z",
+        "validUntil": "2027-01-11T09:01:43.982Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.sonymusic.co.uk/about/",
+              "checkedAt": "2026-10-13T09:01:43.982Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.612Z",
+        "waitingSince": "2026-10-20T01:36:26.612Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+          "expected_updated_at": "2026-10-13T08:19:43.141883+00:00",
+          "artist_name": "Manic Street Preachers",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "マニック・ストリート・プリーチャーズ",
+            "Manics",
+            "The Manic Street Preachers",
+            "Maniac Street Preachers",
+            "M.S.P.",
+            "MSP"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.sonymusic.co.uk/artist/manic-street-preachers/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+        "proposal": {
+          "target_band_id": "3b35bb5a-1289-497f-bb90-08f09f7fcfa1",
+          "expected_updated_at": "2026-10-13T08:19:43.141883+00:00",
+          "artist_name": "Manic Street Preachers",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "マニック・ストリート・プリーチャーズ",
+            "Manics",
+            "The Manic Street Preachers",
+            "Maniac Street Preachers",
+            "M.S.P.",
+            "MSP"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.sonymusic.co.uk/artist/manic-street-preachers/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.724Z",
+        "waitingSince": "2026-10-20T01:36:26.724Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.724Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.sonymusic.co.uk/artist/manic-street-preachers/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "Manic Street Preachers are a Welsh alternative rock band",
+        "note": "기존 Sony 회사 소개 URL은 팀 근거가 아니므로 조건부 제안에는 실제 아티스트 페이지 사용",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+      "name": "Megadeth",
+      "identitySnapshot": {
+        "id": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+        "name": "Megadeth",
+        "aliases": [
+          "メガデス",
+          "Megadeath",
+          "The World Needs a Hero"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:53.305875+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.983Z",
+        "validUntil": "2027-01-11T09:01:43.983Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.megadeth.com/pages/band",
+              "checkedAt": "2026-10-13T09:01:43.983Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.769Z",
+        "waitingSince": "2026-10-20T01:36:26.769Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+          "expected_updated_at": "2026-10-13T08:20:53.305875+00:00",
+          "artist_name": "Megadeth",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "メガデス",
+            "Megadeath",
+            "The World Needs a Hero"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.megadeth.com/pages/band"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+        "proposal": {
+          "target_band_id": "087b1fce-031f-49b0-aebd-d1bb64d7913b",
+          "expected_updated_at": "2026-10-13T08:20:53.305875+00:00",
+          "artist_name": "Megadeth",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "メガデス",
+            "Megadeath",
+            "The World Needs a Hero"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.megadeth.com/pages/band"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.819Z",
+        "waitingSince": "2026-10-20T01:36:26.819Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.819Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.megadeth.com/pages/band",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "MEGADETH are always and forever the point of no return for metal.",
+        "note": "Dave Mustaine·작품·메탈 활동 설명 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "9d4cf30f-79dc-41ce-999a-73a6e5412a29",
+      "name": "Midnight Oil",
+      "identitySnapshot": {
+        "id": "9d4cf30f-79dc-41ce-999a-73a6e5412a29",
+        "name": "Midnight Oil",
+        "aliases": [
+          "Farm",
+          "Blue Meanies"
+        ],
+        "country_code": "AU",
+        "musicbrainz_id": "05072650-4b05-4e8b-83d0-dba2576e306a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:56.973668+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.985Z",
+        "validUntil": "2027-01-11T09:01:43.985Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.midnightoil.com/the-band/",
+              "checkedAt": "2026-10-13T09:01:43.985Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.868Z",
+        "waitingSince": "2026-10-20T01:36:26.868Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "9d4cf30f-79dc-41ce-999a-73a6e5412a29",
+          "expected_updated_at": "2026-10-13T08:19:56.973668+00:00",
+          "artist_name": "Midnight Oil",
+          "country": "AU",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Farm",
+            "Blue Meanies"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.midnightoil.com/the-band/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "9d4cf30f-79dc-41ce-999a-73a6e5412a29",
+        "proposal": {
+          "target_band_id": "9d4cf30f-79dc-41ce-999a-73a6e5412a29",
+          "expected_updated_at": "2026-10-13T08:19:56.973668+00:00",
+          "artist_name": "Midnight Oil",
+          "country": "AU",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Farm",
+            "Blue Meanies"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.midnightoil.com/the-band/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:26.928Z",
+        "waitingSince": "2026-10-20T01:36:26.928Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:26.928Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.midnightoil.com/the-band/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "a great rock ‘n’ roll band",
+        "note": "공식 소개의 Sydney 신원 및 록 활동 설명 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "e6aa1941-822b-4dfe-b589-3e4e989dd62f",
+      "name": "moe.",
+      "identitySnapshot": {
+        "id": "e6aa1941-822b-4dfe-b589-3e4e989dd62f",
+        "name": "moe.",
+        "aliases": [
+          "Moe"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "5fab339d-5dd4-42b0-8d70-496a4493ed59",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:13.259678+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.986Z",
+        "validUntil": "2027-01-11T09:01:43.986Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.moe.org/pages/band",
+              "checkedAt": "2026-10-13T09:01:43.986Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:26.995Z",
+        "waitingSince": "2026-10-20T01:36:26.995Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "e6aa1941-822b-4dfe-b589-3e4e989dd62f",
+          "expected_updated_at": "2026-10-13T08:21:13.259678+00:00",
+          "artist_name": "moe.",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Moe"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.moe.org/pages/band"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "e6aa1941-822b-4dfe-b589-3e4e989dd62f",
+        "proposal": {
+          "target_band_id": "e6aa1941-822b-4dfe-b589-3e4e989dd62f",
+          "expected_updated_at": "2026-10-13T08:21:13.259678+00:00",
+          "artist_name": "moe.",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Moe"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.moe.org/pages/band"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:27.048Z",
+        "waitingSince": "2026-10-20T01:36:27.048Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:27.048Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+      "name": "Mötley Crüe",
+      "identitySnapshot": {
+        "id": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+        "name": "Mötley Crüe",
+        "aliases": [
+          "モトリー・クルー",
+          "Mötley Crue",
+          "Motley Crue"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "26f07661-e115-471d-a930-206f5c89d17c",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:51.25624+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.989Z",
+        "validUntil": "2027-01-11T09:01:43.989Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.motley.com/#band-section",
+              "checkedAt": "2026-10-13T09:01:43.989Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:27.099Z",
+        "waitingSince": "2026-10-20T01:36:27.099Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+          "expected_updated_at": "2026-10-13T08:20:51.25624+00:00",
+          "artist_name": "Mötley Crüe",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "モトリー・クルー",
+            "Mötley Crue",
+            "Motley Crue"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.motley.com/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+        "proposal": {
+          "target_band_id": "990b0c6e-048b-4ea9-9396-dc4110988d1f",
+          "expected_updated_at": "2026-10-13T08:20:51.25624+00:00",
+          "artist_name": "Mötley Crüe",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "モトリー・クルー",
+            "Mötley Crue",
+            "Motley Crue"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.motley.com/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:27.152Z",
+        "waitingSince": "2026-10-20T01:36:27.152Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:27.152Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+      "name": "Motörhead",
+      "identitySnapshot": {
+        "id": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+        "name": "Motörhead",
+        "aliases": [
+          "The Wacken Family Choir Mix",
+          "モーターヘッド",
+          "Moterhead",
+          "Motorhead"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "57961a97-3796-4bf7-9f02-a985a8979ae9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:22.487603+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.990Z",
+        "validUntil": "2027-01-11T09:01:43.990Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://imotorhead.com/",
+              "checkedAt": "2026-10-13T09:01:43.990Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:27.204Z",
+        "waitingSince": "2026-10-20T01:36:27.204Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+          "expected_updated_at": "2026-10-13T08:19:22.487603+00:00",
+          "artist_name": "Motörhead",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Wacken Family Choir Mix",
+            "モーターヘッド",
+            "Moterhead",
+            "Motorhead"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://imotorhead.com/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+        "proposal": {
+          "target_band_id": "52ff9604-ceb4-420c-a4ef-3543a350de39",
+          "expected_updated_at": "2026-10-13T08:19:22.487603+00:00",
+          "artist_name": "Motörhead",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "The Wacken Family Choir Mix",
+            "モーターヘッド",
+            "Moterhead",
+            "Motorhead"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://imotorhead.com/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:27.254Z",
+        "waitingSince": "2026-10-20T01:36:27.254Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:27.254Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "12088ec8-366e-4415-897f-09ce103e7626",
+      "name": "New Model Army",
+      "identitySnapshot": {
+        "id": "12088ec8-366e-4415-897f-09ce103e7626",
+        "name": "New Model Army",
+        "aliases": [
+          "Newmodel Army"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "e60e1f0b-1e8c-45e7-9d4a-222db9cb34f7",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:57.299155+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.992Z",
+        "validUntil": "2027-01-11T09:01:43.992Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.newmodelarmy.org/the-band/biography",
+              "checkedAt": "2026-10-13T09:01:43.992Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:27.303Z",
+        "waitingSince": "2026-10-20T01:36:27.303Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "12088ec8-366e-4415-897f-09ce103e7626",
+          "expected_updated_at": "2026-10-13T08:19:57.299155+00:00",
+          "artist_name": "New Model Army",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Newmodel Army"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.newmodelarmy.org/the-band/biography"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "12088ec8-366e-4415-897f-09ce103e7626",
+        "proposal": {
+          "target_band_id": "12088ec8-366e-4415-897f-09ce103e7626",
+          "expected_updated_at": "2026-10-13T08:19:57.299155+00:00",
+          "artist_name": "New Model Army",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Newmodel Army"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.newmodelarmy.org/the-band/biography"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:27.358Z",
+        "waitingSince": "2026-10-20T01:36:27.358Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:27.358Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.newmodelarmy.org/the-band/biography",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "fuelled by their passions for Punk Rock and Northern Soul",
+        "note": "Bradford·1980·원 구성원·펑크 록 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "34ad608e-4a36-4097-913d-e9631c87d550",
+      "name": "ONE OK ROCK",
+      "identitySnapshot": {
+        "id": "34ad608e-4a36-4097-913d-e9631c87d550",
+        "name": "ONE OK ROCK",
+        "aliases": [
+          "원오크록",
+          "ワンオクロック",
+          "원오케이락"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "6ef00829-fa94-4fee-a5a6-b28e1208e96a",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-12T14:45:04.658631+00:00"
+      },
+      "tasks": [
+        "approval"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.993Z",
+        "validUntil": "2027-01-11T09:01:43.993Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.oneokrock.com/en/about/",
+              "checkedAt": "2026-10-13T09:01:43.993Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:27.407Z",
+        "waitingSince": "2026-10-20T01:36:27.407Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "34ad608e-4a36-4097-913d-e9631c87d550",
+          "expected_updated_at": "2026-10-12T14:45:04.658631+00:00",
+          "artist_name": "ONE OK ROCK",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "원오크록",
+            "ワンオクロック",
+            "원오케이락"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.oneokrock.com/en/about/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "34ad608e-4a36-4097-913d-e9631c87d550",
+        "proposal": {
+          "target_band_id": "34ad608e-4a36-4097-913d-e9631c87d550",
+          "expected_updated_at": "2026-10-12T14:45:04.658631+00:00",
+          "artist_name": "ONE OK ROCK",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "원오크록",
+            "ワンオクロック",
+            "원오케이락"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.oneokrock.com/en/about/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "not_selected",
+        "reason": "이미 유효한 채널 단계. 선택 목록 전체를 처리하는 기존 갱신 도구에서 기존 ONE OK ROCK 캐시를 추가 갱신함."
+      },
+      "channelReadBack": {
+        "bandId": "34ad608e-4a36-4097-913d-e9631c87d550",
+        "name": "ONE OK ROCK",
+        "status": "refreshed",
+        "verification": "verified",
+        "profileVersion": "2026-10-15T13:09:40.434015+00:00",
+        "identityVersion": "2026-10-12T14:45:04.658631+00:00",
+        "cacheCheckedAt": "2026-10-20T01:34:49.329Z",
+        "channelId": "UCzycs8MqvIY4nXWwS-v4J9g",
+        "photoPresent": true
+      },
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.oneokrock.com/en/about/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "ONE OK ROCK is a Japanese rock band",
+        "note": "멤버·일본 록 활동 확인, 기존 공식 채널 근거는 DB에서 재사용",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "9fab7696-8527-4288-a8cc-7565957c9bc2",
+      "name": "ORANGE RANGE",
+      "identitySnapshot": {
+        "id": "9fab7696-8527-4288-a8cc-7565957c9bc2",
+        "name": "ORANGE RANGE",
+        "aliases": [
+          "ＯＲＡＮＧＥ ＲＡＮＧＥ",
+          "オレンジ・レンジ",
+          "オレンジレンジ",
+          "ORANGERANGE"
+        ],
+        "country_code": "JP",
+        "musicbrainz_id": "fee8e811-a2dc-4c09-8484-3c2aca38c3f9",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:18:52.792925+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.994Z",
+        "validUntil": "2027-01-11T09:01:43.994Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://orangerange.com/feature/profile",
+              "checkedAt": "2026-10-13T09:01:43.994Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:54.462Z",
+        "waitingSince": "2026-10-20T01:36:54.462Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "9fab7696-8527-4288-a8cc-7565957c9bc2",
+          "expected_updated_at": "2026-10-13T08:18:52.792925+00:00",
+          "artist_name": "ORANGE RANGE",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ＯＲＡＮＧＥ ＲＡＮＧＥ",
+            "オレンジ・レンジ",
+            "オレンジレンジ",
+            "ORANGERANGE"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://orangerange.com/feature/profile"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "9fab7696-8527-4288-a8cc-7565957c9bc2",
+        "proposal": {
+          "target_band_id": "9fab7696-8527-4288-a8cc-7565957c9bc2",
+          "expected_updated_at": "2026-10-13T08:18:52.792925+00:00",
+          "artist_name": "ORANGE RANGE",
+          "country": "JP",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ＯＲＡＮＧＥ ＲＡＮＧＥ",
+            "オレンジ・レンジ",
+            "オレンジレンジ",
+            "ORANGERANGE"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://orangerange.com/feature/profile"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "complete",
+        "reason": "공식 프로필의 직접 채널 URL을 API로 먼저 검증한 뒤 기존 서비스 경로 저장 및 DB 재조회 완료. apiCalls=8은 이번 전체 실행 집계를 이 체크포인트에 한 번 기록하며 팀별 요청 수를 뜻하지 않음.",
+        "checkedAt": "2026-10-20T01:36:54.544Z",
+        "waitingSince": "2026-10-20T01:36:54.544Z",
+        "applied": true,
+        "lastSuccessfulAt": "2026-10-20T01:34:49.329Z",
+        "nextAttemptAt": null,
+        "validUntil": "2026-10-27T01:34:49.329Z",
+        "proof": {
+          "decision": "verified",
+          "summary": "공식 채널과 사진 API 캐시 저장 및 DB 재조회 확인",
+          "sources": [
+            {
+              "url": "https://orangerange.com/feature/profile",
+              "checkedAt": "2026-10-20T01:36:54.544Z",
+              "excerpt": "https://www.youtube.com/@ORANGERANGEsonymusic"
+            }
+          ]
+        },
+        "verification": {
+          "readBack": true,
+          "version": "2026-10-20T01:34:24.483627+00:00",
+          "checkedAt": "2026-10-20T01:34:49.329Z"
+        }
+      },
+      "channelReadBack": {
+        "bandId": "9fab7696-8527-4288-a8cc-7565957c9bc2",
+        "name": "ORANGE RANGE",
+        "status": "refreshed",
+        "verification": "verified",
+        "profileVersion": "2026-10-20T01:34:24.483627+00:00",
+        "identityVersion": "2026-10-13T08:18:52.792925+00:00",
+        "cacheCheckedAt": "2026-10-20T01:34:49.329Z",
+        "channelId": "UC5TstGk5UmTkvg1Ne78VEQQ",
+        "photoPresent": true
+      },
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://orangerange.com/feature/profile",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "ORANGE RANGE is a five-piece rock band from Okinawa.",
+        "note": "Okinawa·작품·직접 채널 링크 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+      "name": "Rage Against the Machine",
+      "identitySnapshot": {
+        "id": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+        "name": "Rage Against the Machine",
+        "aliases": [
+          "レイジアゲインストザマシーン",
+          "レイジ・アゲインスト・ザ・マシーン",
+          "Rage",
+          "Rage Againts the Machine",
+          "RATM"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "3798b104-01cb-484c-a3b0-56adc6399b80",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:52.668155+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.995Z",
+        "validUntil": "2027-01-11T09:01:43.995Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.ratm.com/bio/",
+              "checkedAt": "2026-10-13T09:01:43.995Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:54.602Z",
+        "waitingSince": "2026-10-20T01:36:54.602Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+          "expected_updated_at": "2026-10-13T08:19:52.668155+00:00",
+          "artist_name": "Rage Against the Machine",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "レイジアゲインストザマシーン",
+            "レイジ・アゲインスト・ザ・マシーン",
+            "Rage",
+            "Rage Againts the Machine",
+            "RATM"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.ratm.com/bio/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+        "proposal": {
+          "target_band_id": "8b39f35c-d0f7-4dda-ab24-2a8f73ecc6ab",
+          "expected_updated_at": "2026-10-13T08:19:52.668155+00:00",
+          "artist_name": "Rage Against the Machine",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "レイジアゲインストザマシーン",
+            "レイジ・アゲインスト・ザ・マシーン",
+            "Rage",
+            "Rage Againts the Machine",
+            "RATM"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.ratm.com/bio/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:54.663Z",
+        "waitingSince": "2026-10-20T01:36:54.663Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:54.663Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "e086f4e4-981b-43d0-a78d-da7cc903ba54",
+      "name": "Roxy Music",
+      "identitySnapshot": {
+        "id": "e086f4e4-981b-43d0-a78d-da7cc903ba54",
+        "name": "Roxy Music",
+        "aliases": [
+          "Роксі М'юзік",
+          "Bryan Ferry and Roxy Music",
+          "Bryan Ferry - Roxy Music",
+          "Bryan Ferry + Roxy Music",
+          "Brian Ferry - Roxy Music",
+          "Music Roxy",
+          "Bryan Ferry & Roxy Music"
+        ],
+        "country_code": "GB",
+        "musicbrainz_id": "331ce348-1b08-40b9-8ed7-0763b92bd003",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:05.612312+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.996Z",
+        "validUntil": "2027-01-11T09:01:43.996Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.roxymusic.co.uk/pages/about",
+              "checkedAt": "2026-10-13T09:01:43.996Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:54.713Z",
+        "waitingSince": "2026-10-20T01:36:54.713Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "e086f4e4-981b-43d0-a78d-da7cc903ba54",
+          "expected_updated_at": "2026-10-13T08:21:05.612312+00:00",
+          "artist_name": "Roxy Music",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Роксі М'юзік",
+            "Bryan Ferry and Roxy Music",
+            "Bryan Ferry - Roxy Music",
+            "Bryan Ferry + Roxy Music",
+            "Brian Ferry - Roxy Music",
+            "Music Roxy",
+            "Bryan Ferry & Roxy Music"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.roxymusic.co.uk/pages/about"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "e086f4e4-981b-43d0-a78d-da7cc903ba54",
+        "proposal": {
+          "target_band_id": "e086f4e4-981b-43d0-a78d-da7cc903ba54",
+          "expected_updated_at": "2026-10-13T08:21:05.612312+00:00",
+          "artist_name": "Roxy Music",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Роксі М'юзік",
+            "Bryan Ferry and Roxy Music",
+            "Bryan Ferry - Roxy Music",
+            "Bryan Ferry + Roxy Music",
+            "Brian Ferry - Roxy Music",
+            "Music Roxy",
+            "Bryan Ferry & Roxy Music"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.roxymusic.co.uk/pages/about"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:54.767Z",
+        "waitingSince": "2026-10-20T01:36:54.767Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:54.767Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+      "name": "Rush",
+      "identitySnapshot": {
+        "id": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+        "name": "Rush",
+        "aliases": [
+          "ラッシュ"
+        ],
+        "country_code": "CA",
+        "musicbrainz_id": "534ee493-bfac-4575-a44a-0ae41e2c3fe4",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:19:12.008182+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.998Z",
+        "validUntil": "2027-01-11T09:01:43.998Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.rush.com/band/",
+              "checkedAt": "2026-10-13T09:01:43.998Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:54.813Z",
+        "waitingSince": "2026-10-20T01:36:54.813Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+          "expected_updated_at": "2026-10-13T08:19:12.008182+00:00",
+          "artist_name": "Rush",
+          "country": "CA",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ラッシュ"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.rush.com/band/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+        "proposal": {
+          "target_band_id": "b00f8747-e692-4a99-98c5-b8bb9cd02867",
+          "expected_updated_at": "2026-10-13T08:19:12.008182+00:00",
+          "artist_name": "Rush",
+          "country": "CA",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "ラッシュ"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.rush.com/band/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:54.865Z",
+        "waitingSince": "2026-10-20T01:36:54.865Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:54.865Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.rush.com/band/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "represents progressive rock at its grandiose heights",
+        "note": "Toronto·Geddy Lee/Alex Lifeson/Neil Peart·2112 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "863718db-7974-43fd-a019-cd5b09283951",
+      "name": "Saxon",
+      "identitySnapshot": {
+        "id": "863718db-7974-43fd-a019-cd5b09283951",
+        "name": "Saxon",
+        "aliases": [],
+        "country_code": "GB",
+        "musicbrainz_id": "bbd80354-597e-4d53-94e4-92b3a7cb8f2c",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:45.427849+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:43.999Z",
+        "validUntil": "2027-01-11T09:01:43.999Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.saxon747.com/biography",
+              "checkedAt": "2026-10-13T09:01:43.999Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:54.911Z",
+        "waitingSince": "2026-10-20T01:36:54.911Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "863718db-7974-43fd-a019-cd5b09283951",
+          "expected_updated_at": "2026-10-13T08:20:45.427849+00:00",
+          "artist_name": "Saxon",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.saxon747.com/biography"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "863718db-7974-43fd-a019-cd5b09283951",
+        "proposal": {
+          "target_band_id": "863718db-7974-43fd-a019-cd5b09283951",
+          "expected_updated_at": "2026-10-13T08:20:45.427849+00:00",
+          "artist_name": "Saxon",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.saxon747.com/biography"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:54.964Z",
+        "waitingSince": "2026-10-20T01:36:54.964Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:54.964Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.saxon747.com/biography",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "Saxon were the leaders of the new wave of British heavy metal",
+        "note": "Barnsley·1977·멤버와 NWOBHM 활동 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+      "name": "Sigur Rós",
+      "identitySnapshot": {
+        "id": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+        "name": "Sigur Rós",
+        "aliases": [
+          "Sigur Ros",
+          "シガー・ロス",
+          "Sìgur Ros",
+          "Sìgur Rós"
+        ],
+        "country_code": "IS",
+        "musicbrainz_id": "f6f2326f-6b25-4170-b89d-e235b25508e8",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:04.476574+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.000Z",
+        "validUntil": "2027-01-11T09:01:44.000Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://sigurros.com/band/",
+              "checkedAt": "2026-10-13T09:01:44.000Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:55.010Z",
+        "waitingSince": "2026-10-20T01:36:55.010Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+          "expected_updated_at": "2026-10-13T08:20:04.476574+00:00",
+          "artist_name": "Sigur Rós",
+          "country": "IS",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Sigur Ros",
+            "シガー・ロス",
+            "Sìgur Ros",
+            "Sìgur Rós"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://sigurros.com/band/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+        "proposal": {
+          "target_band_id": "c7425aef-0d3a-4df2-a2bf-34c76cfd7ca6",
+          "expected_updated_at": "2026-10-13T08:20:04.476574+00:00",
+          "artist_name": "Sigur Rós",
+          "country": "IS",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "Sigur Ros",
+            "シガー・ロス",
+            "Sìgur Ros",
+            "Sìgur Rós"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://sigurros.com/band/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:55.063Z",
+        "waitingSince": "2026-10-20T01:36:55.063Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:55.063Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://sigurros.com/band/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "they were initially labelled a post-rock band",
+        "note": "멤버·아이슬란드어 활동·실제 포스트 록 활동 이력 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    },
+    {
+      "bandId": "0ae1357b-f217-4090-a4a6-a37626174e14",
+      "name": "Snuff",
+      "identitySnapshot": {
+        "id": "0ae1357b-f217-4090-a4a6-a37626174e14",
+        "name": "Snuff",
+        "aliases": [],
+        "country_code": "GB",
+        "musicbrainz_id": "3f909c24-94e3-42bd-b7e0-e720306bb3b0",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:20:26.470789+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.001Z",
+        "validUntil": "2027-01-11T09:01:44.001Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://snuffband.com/",
+              "checkedAt": "2026-10-13T09:01:44.001Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:55.111Z",
+        "waitingSince": "2026-10-20T01:36:55.111Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "0ae1357b-f217-4090-a4a6-a37626174e14",
+          "expected_updated_at": "2026-10-13T08:20:26.470789+00:00",
+          "artist_name": "Snuff",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://snuffband.com/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "0ae1357b-f217-4090-a4a6-a37626174e14",
+        "proposal": {
+          "target_band_id": "0ae1357b-f217-4090-a4a6-a37626174e14",
+          "expected_updated_at": "2026-10-13T08:20:26.470789+00:00",
+          "artist_name": "Snuff",
+          "country": "GB",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://snuffband.com/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:55.166Z",
+        "waitingSince": "2026-10-20T01:36:55.166Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:55.166Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false
+    },
+    {
+      "bandId": "e44ac4ba-53f6-4c57-8d0a-a25ab680e14a",
+      "name": "Spock’s Beard",
+      "identitySnapshot": {
+        "id": "e44ac4ba-53f6-4c57-8d0a-a25ab680e14a",
+        "name": "Spock’s Beard",
+        "aliases": [
+          "스폭스 비어드",
+          "Spock´s Beard",
+          "Spocks Beard"
+        ],
+        "country_code": "US",
+        "musicbrainz_id": "9e57e406-4fb1-40d0-bcd2-2aa1d6390c1d",
+        "category": "unclassified",
+        "curation_status": "unreviewed",
+        "updated_at": "2026-10-13T08:21:09.620901+00:00"
+      },
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "importedResearch": {
+        "status": "complete",
+        "checkedAt": "2026-10-13T09:01:44.002Z",
+        "validUntil": "2027-01-11T09:01:44.002Z",
+        "proof": {
+          "decision": "keep",
+          "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+          "sources": [
+            {
+              "url": "https://www.spocksbeard.com/band/",
+              "checkedAt": "2026-10-13T09:01:44.002Z",
+              "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+            }
+          ]
+        },
+        "audit": "보존한 인계 기록이며 이번 새 조사 완료로 세지 않음. 포괄적인 요약만으로 승인 요건 충족을 주장하지 않음."
+      },
+      "approval": {
+        "status": "authority_wait",
+        "reason": "ADMIN_AUTHENTICATION_REQUIRED",
+        "checkedAt": "2026-10-20T01:36:55.214Z",
+        "waitingSince": "2026-10-20T01:36:55.214Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": null,
+        "validUntil": null,
+        "proposal": {
+          "target_band_id": "e44ac4ba-53f6-4c57-8d0a-a25ab680e14a",
+          "expected_updated_at": "2026-10-13T08:21:09.620901+00:00",
+          "artist_name": "Spock’s Beard",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "스폭스 비어드",
+            "Spock´s Beard",
+            "Spocks Beard"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.spocksbeard.com/band/"
+        },
+        "authorityKey": null
+      },
+      "proposalReadiness": {
+        "bandId": "e44ac4ba-53f6-4c57-8d0a-a25ab680e14a",
+        "proposal": {
+          "target_band_id": "e44ac4ba-53f6-4c57-8d0a-a25ab680e14a",
+          "expected_updated_at": "2026-10-13T08:21:09.620901+00:00",
+          "artist_name": "Spock’s Beard",
+          "country": "US",
+          "artist_category": "overseas_rock",
+          "artist_aliases": [
+            "스폭스 비어드",
+            "Spock´s Beard",
+            "Spocks Beard"
+          ],
+          "review_status": "approved",
+          "reason": "자동 검수 jpop-or-rock-v1: 기존 유지 기록에 근거한 조건부 분류·승인 제안. 신원·국가·장르·외부 신원 연결·공개 승인 요건을 최신 관리자 조회로 모두 확인한 뒤에만 적용. 이번 실행에서는 승인하지 않음.",
+          "evidence_url": "https://www.spocksbeard.com/band/"
+        },
+        "requirements": {
+          "identityMatched": false,
+          "countryMatched": false,
+          "genreMatched": false,
+          "classificationMatched": false,
+          "externalIdentityLinked": false,
+          "publicationEffectUnderstood": true
+        },
+        "readyToApply": false,
+        "remainingRequirements": "인계된 포괄적 요약은 실제 승인 요건 검증을 대신하지 않음. 인증 복구 시 공식 자료 및 외부 신원 연결을 검증한 후에만 적용."
+      },
+      "channels": {
+        "status": "deferred",
+        "reason": "공식 페이지 조사/기존 기록 대조에서 저장 가능한 직접 채널 URL·API ID·외부 신원 교차 확인을 모두 갖추지 못함. MusicBrainz 제공처는 기존 24시간 대기 중이므로 재요청하지 않음. 공식 채널 없음/장르 제외로 판정하지 않으며 대체 공식 자료 조사 후 재시도.",
+        "checkedAt": "2026-10-20T01:36:55.269Z",
+        "waitingSince": "2026-10-20T01:36:55.269Z",
+        "applied": false,
+        "lastSuccessfulAt": null,
+        "nextAttemptAt": "2026-10-21T01:36:55.269Z",
+        "validUntil": null
+      },
+      "channelReadBack": null,
+      "curationApplied": false,
+      "officialSourceObservation": {
+        "url": "https://www.spocksbeard.com/band/",
+        "checkedAt": "2026-10-20T01:37:27.986Z",
+        "excerpt": "Spock’s Beard was founded in Los Angeles in 1992",
+        "note": "Neal/Alan Morse·프로그레시브 록 활동 설명 확인",
+        "approvalRequirementsFullyVerified": false
+      }
+    }
+  ]
+}

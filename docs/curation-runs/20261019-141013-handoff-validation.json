@@ -1,0 +1,292 @@
+{
+  "mode": "implementation_validation_only",
+  "checkedAtKst": "2026-10-19T14:10:13.951663+09:00",
+  "policy": "jpop-or-rock-v1+official-channels-v1+integrated-queue-v1",
+  "projectRef": "czjrzylvnewfjnfwjhwf",
+  "catalogAtRead": 616,
+  "selectionPreview": {
+    "selected": 20,
+    "distinct": 20,
+    "artists": [
+      {
+        "bandId": "9139465d-03ba-4bf4-8418-63a8b145e5ea",
+        "name": "黒木メイサ",
+        "identityVersion": "2026-10-13T08:18:55.057849+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "53bdeb72-5f0b-4b9a-b360-da5b6145dfbd",
+        "name": "鷺巣詩郎",
+        "identityVersion": "2026-10-13T08:18:12.356018+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "981e25ef-f2cb-4333-a393-9362066e37c7",
+        "name": "飯島真理",
+        "identityVersion": "2026-10-13T08:18:45.992803+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "ff46829e-a200-49c5-bed5-2b2c8319cabe",
+        "name": "雨宮天",
+        "identityVersion": "2026-10-13T08:18:35.13895+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "9284debd-5445-4ca8-8978-3aab4a08ed14",
+        "name": "長谷川明子",
+        "identityVersion": "2026-10-13T08:18:55.430149+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "28014438-a3a1-4eba-89cf-f8c286bcc04c",
+        "name": "鈴木亜美",
+        "identityVersion": "2026-10-13T08:18:51.514524+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "19772a44-b3d2-4dd9-869b-6182804d815b",
+        "name": "野口五郎",
+        "identityVersion": "2026-10-13T08:18:28.92819+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "e2dea554-e1c9-4258-a0b6-d2f16b6639cc",
+        "name": "酒井法子",
+        "identityVersion": "2026-10-13T08:18:21.895655+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "cb663e55-afcf-45f5-a190-69a6779245d9",
+        "name": "超ときめき♡宣伝部",
+        "identityVersion": "2026-10-13T08:18:19.056106+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "c44276ad-65a8-42a0-b3d8-2c49ead986de",
+        "name": "西野カナ",
+        "identityVersion": "2026-10-13T08:18:36.821376+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "d1f01e6c-80fa-46f3-9f6d-216b9dd2f672",
+        "name": "荻野目洋子",
+        "identityVersion": "2026-10-13T08:18:24.252898+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "da3df390-dc04-4371-9c5a-2fc86af6d98e",
+        "name": "茶太",
+        "identityVersion": "2026-10-13T08:18:27.892135+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "cc348a08-0031-429a-b230-eb9bda439718",
+        "name": "茅原実里",
+        "identityVersion": "2026-10-13T08:18:17.729712+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "175b116b-f1cf-4285-bd2b-6cc5ca330be4",
+        "name": "花澤香菜",
+        "identityVersion": "2026-10-13T08:18:38.379136+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "dc544d91-2e2b-4a19-b6c8-2cd4190968a0",
+        "name": "私立恵比寿中学",
+        "identityVersion": "2026-10-13T08:18:11.6587+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "b7619d0c-3922-4a13-9bbe-2954360420a3",
+        "name": "目黒将司",
+        "identityVersion": "2026-10-13T08:18:20.261115+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "2412c66f-697b-4ec1-913d-2996cf3e1b58",
+        "name": "王菲",
+        "identityVersion": "2026-10-13T08:18:50.504389+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "6e7b6d04-9a27-4805-b3bd-6200a6bbb90b",
+        "name": "玉置成実",
+        "identityVersion": "2026-10-13T08:18:43.597508+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "059219d7-319f-42b3-9833-d3b22d1f50de",
+        "name": "浜崎あゆみ",
+        "identityVersion": "2026-10-13T08:18:27.544293+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      },
+      {
+        "bandId": "c7f52020-c0eb-47b9-bcd6-d1aaa689cced",
+        "name": "水樹奈々",
+        "identityVersion": "2026-10-13T08:18:37.159969+00:00",
+        "tasks": [
+          "research",
+          "approval",
+          "channels"
+        ],
+        "outcome": "not_investigated_in_this_validation",
+        "applied": false
+      }
+    ]
+  },
+  "apiRequests": {
+    "supabaseRest": 3,
+    "musicbrainz": 0,
+    "youtube": 0,
+    "modelApi": 0
+  },
+  "actualArtistWrites": 0,
+  "legacyRunActiveAtCheck": false,
+  "persistentActiveQueueCreated": false,
+  "automation": {
+    "cadenceHours": 5,
+    "enabled": false,
+    "promptUpdatedForHandoff": true
+  },
+  "checks": {
+    "nodeSuite": {
+      "passed": 132,
+      "failed": 0
+    },
+    "frontendSuite": {
+      "passed": 100,
+      "failed": 0
+    },
+    "finalTargetedAfterLatestChanges": {
+      "passed": 18,
+      "failed": 0
+    },
+    "lint": "passed",
+    "build": "passed; existing >500 kB bundle warning"
+  },
+  "limitations": [
+    "Native Windows execution not performed",
+    "Local Windows checkout was not edited; patch installation required",
+    "Existing local 40-artist reports/queue not available in this checkout",
+    "Latest handoff packet must be transferred when switching machines",
+    "Existing authenticated administrator session required for approval; no impersonation or new auth system",
+    "No schema, grants, deployment, push, PR or merge performed",
+    "No catalog research or photo acquisition completion claimed"
+  ]
+}

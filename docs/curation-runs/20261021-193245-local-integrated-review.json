@@ -1,0 +1,4013 @@
+{
+  "state": "finished",
+  "project": "czjrzylvnewfjnfwjhwf",
+  "runId": "933b5617-4a70-4b22-8a65-f44c038de43a",
+  "owner": "local",
+  "startedAt": "2026-10-21T10:24:31.367Z",
+  "authorityKey": "integrated-service-approval-v1",
+  "apiCalls": 5,
+  "artists": [
+    {
+      "bandId": "6173c82b-459c-4d7c-b5c5-eb9425bf84a4",
+      "name": "The Neal Morse Band",
+      "identityVersion": "2026-10-13T08:21:02.130301+00:00",
+      "key": "ba0deb33c76bde7b45b4ae7c3ea818f2a61ad24f25d68466e6bbdee5f7563ed4",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:01:44.009Z",
+          "waitingSince": "2026-10-13T09:01:44.009Z",
+          "lastSuccessfulAt": "2026-10-13T09:01:44.009Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:01:44.009Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://nealmorse.com/",
+                "checkedAt": "2026-10-13T09:01:44.009Z",
+                "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:01:44.009Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:01:44.009Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:41.823Z",
+          "waitingSince": "2026-10-21T10:32:41.823Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:41.823Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:41.869Z",
+          "waitingSince": "2026-10-21T10:32:41.869Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:41.869Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "5e188d46-145f-4701-b901-44825804820a",
+      "name": "THE ORAL CIGARETTES",
+      "identityVersion": "2026-10-21T10:29:21.208183+00:00",
+      "key": "778bb949ca11136877060e32757a1a9212cb491036ce85d316a499ea9dd99357",
+      "priority": 2,
+      "tasks": [
+        "approval"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:01:44.010Z",
+          "waitingSince": "2026-10-13T09:01:44.010Z",
+          "lastSuccessfulAt": "2026-10-13T09:01:44.010Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:01:44.010Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://www.a-sketch.com/artist/the-oral-cigarettes-2/#biography",
+                "checkedAt": "2026-10-13T09:01:44.010Z",
+                "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:01:44.010Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "complete",
+          "checkedAt": "2026-10-18T21:53:20.961+00:00",
+          "lastSuccessfulAt": "2026-10-18T21:53:20.961+00:00",
+          "waitingSince": "2026-10-13T09:01:44.010Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-10-25T21:53:20.961Z",
+          "applied": true,
+          "proof": {
+            "decision": "verified",
+            "summary": "Existing official profile and unexpired API cache verified by DB readback.",
+            "sources": [
+              {
+                "url": "https://www.a-sketch.com/artist/the-oral-cigarettes-2/",
+                "summary": "Previously verified artist page directly links the stored channel.",
+                "checkedAt": "2026-10-15T15:14:20.266Z"
+              }
+            ]
+          },
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-15T15:18:34.811457+00:00",
+            "checkedAt": "2026-10-18T21:53:20.961+00:00"
+          }
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:22.422Z",
+          "waitingSince": "2026-10-21T10:29:22.422Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:22.422Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:22.422Z",
+          "proposal": {
+            "target_band_id": "5e188d46-145f-4701-b901-44825804820a",
+            "expected_updated_at": "2026-10-12T14:24:09.149089+00:00",
+            "artist_name": "THE ORAL CIGARETTES",
+            "country": "JP",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 A-Sketch 소개가 2010년 일본 나라 결성, 起死回生STORY 데뷔·Kisses and Kills 등 작품과 실제 록밴드 활동을 명시한다. JP 신원과 일치하며 이 실행에서는 실제 확인한 록 활동을 overseas_rock으로 분류한다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://www.a-sketch.com/artist/the-oral-cigarettes-2/#biography"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:21.208183+00:00"
+          }
+        }
+      },
+      "receipts": {
+        "approval": "314bea56654a1d3eff670b7cc3ad5a4cccbee7456bd1dbfad17e01060c5269f5"
+      },
+      "originalIdentityVersion": "2026-10-12T14:24:09.149089+00:00"
+    },
+    {
+      "bandId": "c02a3fe2-700a-47e1-b1ff-b29b25feddc7",
+      "name": "The Vibrators",
+      "identityVersion": "2026-10-21T10:29:22.572745+00:00",
+      "key": "bbd297262cbe86e5c350b4aab37c2062865805982b3d831b67d852cd9bca1b0a",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:01:44.011Z",
+          "waitingSince": "2026-10-13T09:01:44.011Z",
+          "lastSuccessfulAt": "2026-10-13T09:01:44.011Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:01:44.011Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://www.thevibrators.com/biography.html",
+                "checkedAt": "2026-10-13T09:01:44.011Z",
+                "summary": "외부 ID와 공식 아티스트/레이블 소개를 대조하고 실제 록 계열 음반·공연 활동을 확인함. 혼합 장르를 포함해 유지하며 공개 승인은 변경하지 않음."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:01:44.011Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:01:44.011Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:24.060Z",
+          "waitingSince": "2026-10-21T10:29:24.060Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:24.060Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:24.060Z",
+          "proposal": {
+            "target_band_id": "c02a3fe2-700a-47e1-b1ff-b29b25feddc7",
+            "expected_updated_at": "2026-10-13T08:20:24.759816+00:00",
+            "artist_name": "The Vibrators",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Vibrators"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 밴드 전기의 북런던 결성 초기 공연·영국 활동 및 Pure Mania/V2 이력을 GB 신원과 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://www.thevibrators.com/biography.html"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:22.572745+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:41.915Z",
+          "waitingSince": "2026-10-21T10:32:41.915Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:41.915Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "7507d5e94f6854834e3f4bedf27a1791d62802d46638e087d9e5ec77a8d1340c",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:20:24.759816+00:00"
+    },
+    {
+      "bandId": "4f8e97ef-1bd6-455c-9bed-a4812fc38072",
+      "name": "AC/DC",
+      "identityVersion": "2026-10-21T10:29:24.12592+00:00",
+      "key": "23af21b5a28bd5045c2848c788e4e0458114f063ff2e094854086079ea2e9cea",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.085Z",
+          "waitingSince": "2026-10-13T09:03:42.085Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.085Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.085Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/acdc/",
+                "checkedAt": "2026-10-13T09:03:42.085Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.085Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.085Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:25.612Z",
+          "waitingSince": "2026-10-21T10:29:25.612Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:25.612Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:25.612Z",
+          "proposal": {
+            "target_band_id": "4f8e97ef-1bd6-455c-9bed-a4812fc38072",
+            "expected_updated_at": "2026-10-13T08:19:09.255851+00:00",
+            "artist_name": "AC/DC",
+            "country": "AU",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "AC|DC",
+              "Akka Dakka",
+              "Acca Dacca",
+              "AC.DC",
+              "AC⚡︎DC",
+              "ACDC",
+              "AC-DC",
+              "AC⚡DC",
+              "AC?DC",
+              "AC\\DC",
+              "AC DC"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 Aussie 그룹으로 명시하고 Bon Scott/Brian Johnson 및 Back In Black 등 실제 하드 록 활동을 확인한다. AU와 일치한다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/acdc/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:24.12592+00:00"
+          }
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "OFFICIAL_DIRECT_LINK_API_AND_DB_READBACK",
+          "checkedAt": "2026-10-21T10:32:41.697Z",
+          "waitingSince": "2026-10-21T10:32:41.697Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:30:26.533Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-10-28T10:30:26.533Z",
+          "proof": {
+            "decision": "verified",
+            "summary": "AC/DC의 공식 아티스트 사이트가 직접 연결하는 채널을 API로 해석하고 기존 전용 RPC 저장·사진 캐시를 재조회했다. 이름·구독자 수를 증거로 사용하지 않았다.",
+            "sources": [
+              {
+                "url": "https://www.acdc.com/home/",
+                "checkedAt": "2026-10-21T10:28:12.328Z",
+                "summary": "공식 아티스트 페이지의 직접 채널 링크 https://www.youtube.com/channel/UCB0JSO6d5ysH2Mmqz5I9rIw를 확인했다."
+              }
+            ]
+          },
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:30:25.028586+00:00",
+            "checkedAt": "2026-10-21T10:30:26.533Z"
+          }
+        }
+      },
+      "receipts": {
+        "approval": "b78db3c1c2f1cbe6428393c2ce02e1b157f4757c238d2279ad7693cf0213bff8",
+        "channels": "a791d6f3e78090daee96280433a619877f187e42fe5ec79d5e5fd2d0041fd768"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:09.255851+00:00"
+    },
+    {
+      "bandId": "307b19a1-ea26-4bcc-9a30-dc4dd90a1671",
+      "name": "Aerosmith",
+      "identityVersion": "2026-10-21T10:29:25.192702+00:00",
+      "key": "8e8082654314d0bdf41d4fad3225d916089a9a0f0dfd6d1be8be9421c5b9de5b",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.089Z",
+          "waitingSince": "2026-10-13T09:03:42.089Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.089Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.089Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/aerosmith/",
+                "checkedAt": "2026-10-13T09:03:42.089Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.089Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.089Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:26.647Z",
+          "waitingSince": "2026-10-21T10:29:26.647Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:26.647Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:26.647Z",
+          "proposal": {
+            "target_band_id": "307b19a1-ea26-4bcc-9a30-dc4dd90a1671",
+            "expected_updated_at": "2026-10-13T08:19:13.329652+00:00",
+            "artist_name": "Aerosmith",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "エアロスミス",
+              "Aersomith",
+              "Aero-smith",
+              "Aerosmidt",
+              "Aroesmith",
+              "Aerosmit",
+              "Aero Smith",
+              "Arosmith",
+              "Areosmith"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 보스턴 기반, Steven Tyler/Joe Perry와 미국 록 활동을 명시하여 US와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/aerosmith/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:25.192702+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:41.959Z",
+          "waitingSince": "2026-10-21T10:32:41.959Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:41.959Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "b5909c8162b2a97f99a6b0a829313bbae6642d4f2fd5c9c645b6b0479965b2d8",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:13.329652+00:00"
+    },
+    {
+      "bandId": "84a540d8-8077-49b1-8190-35ddb6095b1d",
+      "name": "Beastie Boys",
+      "identityVersion": "2026-10-21T10:29:26.235714+00:00",
+      "key": "3e0a01b1a5d7aa362444908721822d4d52c8215d3177c7069e5b102d58fb6201",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.091Z",
+          "waitingSince": "2026-10-13T09:03:42.091Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.091Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.091Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/beastie-boys/",
+                "checkedAt": "2026-10-13T09:03:42.091Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.091Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.091Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:27.723Z",
+          "waitingSince": "2026-10-21T10:29:27.723Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:27.723Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:27.723Z",
+          "proposal": {
+            "target_band_id": "84a540d8-8077-49b1-8190-35ddb6095b1d",
+            "expected_updated_at": "2026-10-13T08:19:39.073568+00:00",
+            "artist_name": "Beastie Boys",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Beastie Boys-11",
+              "The Beasty Boys",
+              "Beasty Boys",
+              "Beastie Boys, The",
+              "Beastie Boys-01",
+              "The Beastie Boys",
+              "Beastie Boys - Sabotage"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 뉴욕 맨해튼 하드코어 펑크 씬에서 출발한 그룹임을 명시한다. 힙합과 혼합된 실제 펑크 활동을 US 신원과 연결했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/beastie-boys/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:26.235714+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.003Z",
+          "waitingSince": "2026-10-21T10:32:42.003Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.003Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "3cb7f6f52abf2dfb58265b6f1c8fd526bce974297306c92f9dcc6650f0dcc898",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:39.073568+00:00"
+    },
+    {
+      "bandId": "6a8840a5-e1ef-4ee4-a171-25b592e3cc09",
+      "name": "Blondie",
+      "identityVersion": "2026-10-13T08:19:34.683922+00:00",
+      "key": "a57a5e2c3a84a8b092696e863cfc0c087533f55c375cb3f65f77b8c9bd2dc58e",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.092Z",
+          "waitingSince": "2026-10-13T09:03:42.092Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.092Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.092Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/blondie/",
+                "checkedAt": "2026-10-13T09:03:42.092Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.092Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.092Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.048Z",
+          "waitingSince": "2026-10-21T10:32:42.048Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.048Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.092Z",
+          "waitingSince": "2026-10-21T10:32:42.092Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.092Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "8a2e5094-6670-41db-a208-c093cb9fb096",
+      "name": "Bon Jovi",
+      "identityVersion": "2026-10-21T10:29:27.531624+00:00",
+      "key": "353e966c2ecc7e91f7963eb732d6d52fbb4ff547aba38ff73e12538bd9ebfeed",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.093Z",
+          "waitingSince": "2026-10-13T09:03:42.093Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.093Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.093Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/bon-jovi/",
+                "checkedAt": "2026-10-13T09:03:42.093Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.093Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.093Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:28.739Z",
+          "waitingSince": "2026-10-21T10:29:28.739Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:28.739Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:28.739Z",
+          "proposal": {
+            "target_band_id": "8a2e5094-6670-41db-a208-c093cb9fb096",
+            "expected_updated_at": "2026-10-13T08:19:16.592166+00:00",
+            "artist_name": "Bon Jovi",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Bon Giovi",
+              "ボン・ジョヴィ",
+              "BonJovi",
+              "Bon Jovi and Baktabak"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 뉴저지의 1984년 출발과 Jon Bon Jovi의 메탈·팝 혼합 록 활동을 설명하여 US와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/bon-jovi/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:27.531624+00:00"
+          }
+        },
+        "channels": {
+          "status": "complete",
+          "reason": "OFFICIAL_DIRECT_LINK_API_AND_DB_READBACK",
+          "checkedAt": "2026-10-21T10:32:41.771Z",
+          "waitingSince": "2026-10-21T10:32:41.771Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:30:26.533Z",
+          "nextAttemptAt": null,
+          "validUntil": "2026-10-28T10:30:26.533Z",
+          "proof": {
+            "decision": "verified",
+            "summary": "Bon Jovi의 공식 아티스트 사이트가 직접 연결하는 채널을 API로 해석하고 기존 전용 RPC 저장·사진 캐시를 재조회했다. 이름·구독자 수를 증거로 사용하지 않았다.",
+            "sources": [
+              {
+                "url": "https://www.bonjovi.com/",
+                "checkedAt": "2026-10-21T10:28:12.599Z",
+                "summary": "공식 아티스트 페이지의 직접 채널 링크 https://www.youtube.com/user/bonjovi를 확인했다."
+              }
+            ]
+          },
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:30:25.269727+00:00",
+            "checkedAt": "2026-10-21T10:30:26.533Z"
+          }
+        }
+      },
+      "receipts": {
+        "approval": "5549aa8c8df25f6347131464e10ac3b604781624efd9ebe425c2beb8621303a1",
+        "channels": "c8531fae79877b0a23eb628619e45f421afa2320387d8c39974e259732ba5254"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:16.592166+00:00"
+    },
+    {
+      "bandId": "ae45573c-fd29-4545-953e-292776475e00",
+      "name": "Chicago",
+      "identityVersion": "2026-10-21T10:29:28.808203+00:00",
+      "key": "945d20b1fb121010f3d091de01e74d59b8ff91fd37db1b3251b1ee517ea7e06f",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.095Z",
+          "waitingSince": "2026-10-13T09:03:42.095Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.095Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.095Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/chicago/",
+                "checkedAt": "2026-10-13T09:03:42.095Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.095Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.095Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:30.044Z",
+          "waitingSince": "2026-10-21T10:29:30.044Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:30.044Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:30.044Z",
+          "proposal": {
+            "target_band_id": "ae45573c-fd29-4545-953e-292776475e00",
+            "expected_updated_at": "2026-10-13T08:19:21.812972+00:00",
+            "artist_name": "Chicago",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "The Big Thing",
+              "Chicago Transit Authority",
+              "Chigaco"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 미국 록밴드라고 명시하고 음반·활동 이력을 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/chicago/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:28.808203+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.137Z",
+          "waitingSince": "2026-10-21T10:32:42.137Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.137Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "f7ce4fdf75a5cf77f942f62b2e69d9c7e53a4755a8376ae91c71a67774f573aa",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:21.812972+00:00"
+    },
+    {
+      "bandId": "836d8027-e0f8-4d3a-ba70-097d64f878e5",
+      "name": "Creedence Clearwater Revival",
+      "identityVersion": "2026-10-21T10:29:30.344939+00:00",
+      "key": "83c9534f290cc04948922963051d1dc158456cbe33787a9c63a22f0b28e42033",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.096Z",
+          "waitingSince": "2026-10-13T09:03:42.096Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.096Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.096Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/creedence-clearwater-revival/",
+                "checkedAt": "2026-10-13T09:03:42.096Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.096Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.096Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:31.849Z",
+          "waitingSince": "2026-10-21T10:29:31.849Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:31.849Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:31.849Z",
+          "proposal": {
+            "target_band_id": "836d8027-e0f8-4d3a-ba70-097d64f878e5",
+            "expected_updated_at": "2026-10-13T08:19:25.510152+00:00",
+            "artist_name": "Creedence Clearwater Revival",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "криденс",
+              "Creedence Clear Water Revival",
+              "Creedence Clearwater Revial",
+              "Creedance Clearwater Revival",
+              "クリーデンス・クリアウォーター・リヴァイヴァル",
+              "CCR",
+              "Creedence Clearwater Rivival",
+              "C.C.R.",
+              "Credence Clearwater Revival"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 샌프란시스코 씬에서의 루츠 록 활동과 미국 내 활동을 명시하여 US 신원과 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/creedence-clearwater-revival/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:30.344939+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.180Z",
+          "waitingSince": "2026-10-21T10:32:42.180Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.180Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "4a99bbe3754173f25a4240a5fc005fa1abd4f43b3baa3e9125e64aa15c0dcb2c",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:25.510152+00:00"
+    },
+    {
+      "bandId": "462dd460-df87-49f3-a1c4-4e83ed54cba6",
+      "name": "Deep Purple",
+      "identityVersion": "2026-10-21T10:29:31.613362+00:00",
+      "key": "52591c583ecb006ca24b5f26102e0ade1c055dc48df74fa73e9f036a5a6823aa",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.098Z",
+          "waitingSince": "2026-10-13T09:03:42.098Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.098Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.098Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/deep-purple/",
+                "checkedAt": "2026-10-13T09:03:42.098Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.098Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.098Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:32.865Z",
+          "waitingSince": "2026-10-21T10:29:32.865Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:32.865Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:32.865Z",
+          "proposal": {
+            "target_band_id": "462dd460-df87-49f3-a1c4-4e83ed54cba6",
+            "expected_updated_at": "2026-10-13T08:19:10.999403+00:00",
+            "artist_name": "Deep Purple",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Paice, Blackmore, Gillan, Glover, Lord",
+              "Dick Pimple",
+              "Deep Purple and The Royal Philharmonic Orchestra",
+              "ジープパープル",
+              "深い紫",
+              "Dee Purple",
+              "ディープパープル",
+              "ディープ・パープル",
+              "Depp Purple",
+              "Deep Purpel",
+              "ジープ・パープル",
+              "Dep Purple",
+              "DP",
+              "Dep Purpel",
+              "Purple"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 밴드 사이트 음반 공지가 British hard rock 그룹으로 직접 명시하며 Ian Gillan과 Rapture Of The Deep 음반 이력을 설명하여 GB와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/deep-purple/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:31.613362+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.225Z",
+          "waitingSince": "2026-10-21T10:32:42.225Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.225Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "3c40f6af04496ceafb53b869321f772f5990b9b834ad68765019706ac95b11ca",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:10.999403+00:00"
+    },
+    {
+      "bandId": "dc847356-ee4e-48da-9fb1-98e56f28d042",
+      "name": "Def Leppard",
+      "identityVersion": "2026-10-21T10:29:32.608738+00:00",
+      "key": "c38c5600c2af5798117d57ca5671305dd936c269935150522ca7cd6b559a91ca",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.099Z",
+          "waitingSince": "2026-10-13T09:03:42.099Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.099Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.099Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/def-leppard/",
+                "checkedAt": "2026-10-13T09:03:42.099Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.099Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.099Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:34.117Z",
+          "waitingSince": "2026-10-21T10:29:34.117Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:34.117Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:34.117Z",
+          "proposal": {
+            "target_band_id": "dc847356-ee4e-48da-9fb1-98e56f28d042",
+            "expected_updated_at": "2026-10-13T08:19:29.579253+00:00",
+            "artist_name": "Def Leppard",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "デフ・レパード",
+              "Def Leopard",
+              "Def Lepard"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 영국 헤비 메탈 밴드이며 셰필드의 1977년 초기 활동을 설명한다. GB 신원과 일치한다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/def-leppard/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:32.608738+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.271Z",
+          "waitingSince": "2026-10-21T10:32:42.271Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.271Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "135ceb1a7ecdf13f083a232ef71838b13f62696ec0d19bca692c702c09670c29",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:29.579253+00:00"
+    },
+    {
+      "bandId": "9158a0c7-9165-482e-a2d3-580acf95c276",
+      "name": "Dire Straits",
+      "identityVersion": "2026-10-13T08:19:28.909767+00:00",
+      "key": "4cad9980daf63bcf5eac9c20215546454c0a132412c72849e0c28f91d951e0d0",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.100Z",
+          "waitingSince": "2026-10-13T09:03:42.100Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.100Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.100Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/dire-straits/",
+                "checkedAt": "2026-10-13T09:03:42.100Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.100Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.100Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.320Z",
+          "waitingSince": "2026-10-21T10:32:42.320Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.320Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.360Z",
+          "waitingSince": "2026-10-21T10:32:42.360Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.360Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "b7d84b26-4c38-40ce-88cc-56732b31d9be",
+      "name": "Eagles",
+      "identityVersion": "2026-10-21T10:29:35.405529+00:00",
+      "key": "066a87454337f5512607a8ee96092df5a840444e973c2db4115e0f1ada7e14ad",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.102Z",
+          "waitingSince": "2026-10-13T09:03:42.102Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.102Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.102Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/eagles/",
+                "checkedAt": "2026-10-13T09:03:42.102Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.102Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.102Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:35.513Z",
+          "waitingSince": "2026-10-21T10:29:35.513Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:35.513Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:35.513Z",
+          "proposal": {
+            "target_band_id": "b7d84b26-4c38-40ce-88cc-56732b31d9be",
+            "expected_updated_at": "2026-10-13T08:19:26.554635+00:00",
+            "artist_name": "Eagles",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "老鹰乐队",
+              "Eagels",
+              "The Eagles",
+              "イーグルス",
+              "Eagles, The"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 남부 캘리포니아 컨트리 록밴드와 Hotel California 등 작품을 명시하여 US 신원과 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/eagles/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:35.405529+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.406Z",
+          "waitingSince": "2026-10-21T10:32:42.406Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.406Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "1052fd81dd6da48da6fc309ec01c202874b8438257f101d9335258faddd314e2",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:26.554635+00:00"
+    },
+    {
+      "bandId": "776bcdcc-c0e0-4aa6-ba10-f09f78207687",
+      "name": "Electric Light Orchestra",
+      "identityVersion": "2026-10-13T08:19:24.851553+00:00",
+      "key": "a87c483ec9925c4c080f08dfc84522326afe329caa2678ffa59b45c278be749e",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.103Z",
+          "waitingSince": "2026-10-13T09:03:42.103Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.103Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.103Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/elo/",
+                "checkedAt": "2026-10-13T09:03:42.103Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.103Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.103Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.447Z",
+          "waitingSince": "2026-10-21T10:32:42.447Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.447Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.493Z",
+          "waitingSince": "2026-10-21T10:32:42.493Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.493Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "1e2c1dae-be53-4873-be97-9485147d1742",
+      "name": "Fleetwood Mac",
+      "identityVersion": "2026-10-21T10:29:37.069647+00:00",
+      "key": "6d9bb6b3b3e175cd317289f8ec384ac4e472baee9ae1232d7320b20f48b1a30f",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.105Z",
+          "waitingSince": "2026-10-13T09:03:42.105Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.105Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.105Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/fleetwood-mac/",
+                "checkedAt": "2026-10-13T09:03:42.105Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.105Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.105Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:38.551Z",
+          "waitingSince": "2026-10-21T10:29:38.551Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:38.551Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:38.551Z",
+          "proposal": {
+            "target_band_id": "1e2c1dae-be53-4873-be97-9485147d1742",
+            "expected_updated_at": "2026-10-13T08:19:10.297898+00:00",
+            "artist_name": "Fleetwood Mac",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Peter Green’s Fleetwood Mac",
+              "Mac Fleetwood",
+              "Fleetwood Mack",
+              "Flettwood Mac",
+              "Fleedwood Mac"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 영국 블루스 밴드로 출발했으며 이후 Rumours 등 작품으로 발전했다고 설명한다. 출발 신원 GB와 실제 록 활동을 별도로 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/fleetwood-mac/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:37.069647+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.534Z",
+          "waitingSince": "2026-10-21T10:32:42.534Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.534Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "2b13a4989243aa4a818b007b52133fac376189a9c0b1fccbf8105ecce33d93f1",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:10.297898+00:00"
+    },
+    {
+      "bandId": "1052e16b-1562-4719-93f0-3c7d99041fc4",
+      "name": "Green Day",
+      "identityVersion": "2026-10-21T10:29:38.368546+00:00",
+      "key": "f748fbd6072f07b36730569b2a1c9d2d9ebb1ebd4cbb62ecef5c5035994f5d6b",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.106Z",
+          "waitingSince": "2026-10-13T09:03:42.106Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.106Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.106Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/green-day/",
+                "checkedAt": "2026-10-13T09:03:42.106Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.106Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.106Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:39.573Z",
+          "waitingSince": "2026-10-21T10:29:39.573Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:39.573Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:39.573Z",
+          "proposal": {
+            "target_band_id": "1052e16b-1562-4719-93f0-3c7d99041fc4",
+            "expected_updated_at": "2026-10-13T08:19:33.321895+00:00",
+            "artist_name": "Green Day",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Greenday",
+              "グリーン・デイ"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 미국 베이 에어리어 초기 활동, Dookie/American Idiot와 실제 펑크 록 활동을 설명하여 US와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/green-day/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:38.368546+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_LINK_NOT_IN_STATIC_RESPONSE: 공식 사이트 응답은 200이었으나 정적 응답에서 직접 채널 링크를 확인하지 못했다. 이름 검색으로 확정하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.577Z",
+          "waitingSince": "2026-10-21T10:32:42.577Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.577Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "bef0e2b1c4c82b71fd7fbea56782fb59c699b51efe47a22510fecaae7407fd30",
+        "channels": "1639f2617cc203f4e162fe6fa94cedc181dccd1a02cfebb254c51811e0e73765"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:33.321895+00:00"
+    },
+    {
+      "bandId": "ff374181-31ab-400f-95fa-9f403b8655a3",
+      "name": "Foo Fighters",
+      "identityVersion": "2026-10-12T14:45:06.73206+00:00",
+      "key": "294db12f1efe1ba54bdeb234c6421c0aaa87b0930223c433594e67a16b9333e0",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.107Z",
+          "waitingSince": "2026-10-13T09:03:42.107Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.107Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.107Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/foo-fighters/",
+                "checkedAt": "2026-10-13T09:03:42.107Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.107Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.107Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.618Z",
+          "waitingSince": "2026-10-21T10:32:42.618Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.618Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.665Z",
+          "waitingSince": "2026-10-21T10:32:42.665Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.665Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "988e032d-91c7-4630-a54b-01a68545542a",
+      "name": "Genesis",
+      "identityVersion": "2026-10-13T08:19:07.894501+00:00",
+      "key": "58bed16aec623ab8a069d604a79a545b38620e677d9fffefef5977559e086cbe",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.108Z",
+          "waitingSince": "2026-10-13T09:03:42.108Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.108Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.108Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/genesis/",
+                "checkedAt": "2026-10-13T09:03:42.108Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.108Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.108Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.708Z",
+          "waitingSince": "2026-10-21T10:32:42.708Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.708Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.758Z",
+          "waitingSince": "2026-10-21T10:32:42.758Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.758Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "10df25ad-732a-41fc-989a-cd0005bba7ab",
+      "name": "Guns N’ Roses",
+      "identityVersion": "2026-10-21T10:29:39.36431+00:00",
+      "key": "51b02f5491af8493b5f89fda06991ea32b30d46fbc72578a1d36a604919ca399",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.110Z",
+          "waitingSince": "2026-10-13T09:03:42.110Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.110Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.110Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/guns-n-roses/",
+                "checkedAt": "2026-10-13T09:03:42.110Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.110Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.110Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:40.885Z",
+          "waitingSince": "2026-10-21T10:29:40.885Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:40.885Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:40.885Z",
+          "proposal": {
+            "target_band_id": "10df25ad-732a-41fc-989a-cd0005bba7ab",
+            "expected_updated_at": "2026-10-13T08:19:16.951676+00:00",
+            "artist_name": "Guns N’ Roses",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "ガンズ・アンド・ローゼズ",
+              "Guns and Roses",
+              "Guns -N- Roses",
+              "guns 'n' roses",
+              "Guns'N Roses",
+              "Guns'N'Roses",
+              "GNR",
+              "Guns´n Roses",
+              "Gn'R",
+              "Guns 'N Roses",
+              "Guns N'Roses",
+              "Guns N´ Roses",
+              "Guns N Roses",
+              "Guns & Roses",
+              "Guns 'N' Roses"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 선셋 스트립 출발과 하드 록·메탈·펑크 혼합 활동을 명시한다. 로스앤젤레스의 해당 출발 지역을 US 신원과 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/guns-n-roses/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:39.36431+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.799Z",
+          "waitingSince": "2026-10-21T10:32:42.799Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.799Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "1ea969e393edb5a7b42d09da1a07480db0cc05315b4ef0264ac64ee1de61f9e2",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:16.951676+00:00"
+    },
+    {
+      "bandId": "59bcb7f9-2cf8-4df3-a9d1-908c6efdba95",
+      "name": "Heart",
+      "identityVersion": "2026-10-13T08:20:47.497692+00:00",
+      "key": "f8abdf98d3c7569b79b43ce0be05c8511bd1c3f6714403395e450680ad40c67c",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.111Z",
+          "waitingSince": "2026-10-13T09:03:42.111Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.111Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.111Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/heart/",
+                "checkedAt": "2026-10-13T09:03:42.111Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.111Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.111Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.843Z",
+          "waitingSince": "2026-10-21T10:32:42.843Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.843Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.883Z",
+          "waitingSince": "2026-10-21T10:32:42.883Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.883Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "4a87b412-40fb-4432-a26d-063470dac866",
+      "name": "Journey",
+      "identityVersion": "2026-10-13T08:19:34.356747+00:00",
+      "key": "02afaeb2f0925839d0d03e23636b816611677a4e69bc7dfd54b20e95b6f32d5b",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.112Z",
+          "waitingSince": "2026-10-13T09:03:42.112Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.112Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.112Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/journey/",
+                "checkedAt": "2026-10-13T09:03:42.112Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.112Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.112Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:42.926Z",
+          "waitingSince": "2026-10-21T10:32:42.926Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.926Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:42.969Z",
+          "waitingSince": "2026-10-21T10:32:42.969Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:42.969Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "0588a5bf-51d1-482d-b1a0-ef946644e9da",
+      "name": "Judas Priest",
+      "identityVersion": "2026-10-13T08:19:25.175178+00:00",
+      "key": "d7fb6ef90ffd2b86a58ea450536c091af91028eca2a026713f186f2bfb3074df",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.113Z",
+          "waitingSince": "2026-10-13T09:03:42.113Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.113Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.113Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/judas-priest/",
+                "checkedAt": "2026-10-13T09:03:42.113Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.113Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.113Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.012Z",
+          "waitingSince": "2026-10-21T10:32:43.012Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.012Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.054Z",
+          "waitingSince": "2026-10-21T10:32:43.054Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.054Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "b02f8322-167e-4a69-8b41-124f3b837eea",
+      "name": "KISS",
+      "identityVersion": "2026-10-13T08:19:07.206264+00:00",
+      "key": "875282dab5013d194e129d3bd8259262cbece23e25c9d24f5162a1a01fcf3420",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.114Z",
+          "waitingSince": "2026-10-13T09:03:42.114Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.114Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.114Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/kiss/",
+                "checkedAt": "2026-10-13T09:03:42.114Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.114Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.114Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.096Z",
+          "waitingSince": "2026-10-21T10:32:43.096Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.096Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.138Z",
+          "waitingSince": "2026-10-21T10:32:43.138Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.138Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "62230c1f-147b-4e59-b38b-e16978833055",
+      "name": "Led Zeppelin",
+      "identityVersion": "2026-10-13T08:19:05.169193+00:00",
+      "key": "9668651005c12148faf8e5073dc2277710e7947ab944557acef220e0ef342c28",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.116Z",
+          "waitingSince": "2026-10-13T09:03:42.116Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.116Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.116Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/led-zeppelin/",
+                "checkedAt": "2026-10-13T09:03:42.116Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.116Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.116Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.187Z",
+          "waitingSince": "2026-10-21T10:32:43.187Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.187Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.231Z",
+          "waitingSince": "2026-10-21T10:32:43.231Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.231Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "44315219-899b-4a01-a3fc-61a77dd3e2c3",
+      "name": "Pearl Jam",
+      "identityVersion": "2026-10-13T08:19:03.810661+00:00",
+      "key": "16000285fdbe33df0c4e88cb9475091b8ed338d31268bd05317b63bd4d4179a3",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.121Z",
+          "waitingSince": "2026-10-13T09:03:42.121Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.121Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.121Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/pearl-jam/",
+                "checkedAt": "2026-10-13T09:03:42.121Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.121Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.121Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.274Z",
+          "waitingSince": "2026-10-21T10:32:43.274Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.274Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.316Z",
+          "waitingSince": "2026-10-21T10:32:43.316Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.316Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "64b27293-b282-47e3-ac50-a6593fb4e991",
+      "name": "Queen",
+      "identityVersion": "2026-10-13T08:19:06.537012+00:00",
+      "key": "9e74f3f2cfb2286d156c46b62f94297bb1ba8c85410806144fc23bbf614d76cd",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.122Z",
+          "waitingSince": "2026-10-13T09:03:42.122Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.122Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.122Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/queen/",
+                "checkedAt": "2026-10-13T09:03:42.122Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.122Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.122Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.360Z",
+          "waitingSince": "2026-10-21T10:32:43.360Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.360Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.401Z",
+          "waitingSince": "2026-10-21T10:32:43.401Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.401Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "33a8153c-d5d7-4ea1-8b9d-91dbaa8dbc2e",
+      "name": "R.E.M.",
+      "identityVersion": "2026-10-21T10:29:40.365259+00:00",
+      "key": "df3cdd84213646867a2379369a6f84b5f477b11ef06899107ef4fe8b39f9c8b0",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.123Z",
+          "waitingSince": "2026-10-13T09:03:42.123Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.123Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.123Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/rem/",
+                "checkedAt": "2026-10-13T09:03:42.123Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.123Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.123Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:41.874Z",
+          "waitingSince": "2026-10-21T10:29:41.874Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:41.874Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:41.874Z",
+          "proposal": {
+            "target_band_id": "33a8153c-d5d7-4ea1-8b9d-91dbaa8dbc2e",
+            "expected_updated_at": "2026-10-13T08:19:09.605797+00:00",
+            "artist_name": "R.E.M.",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "R. E. M.",
+              "R.E.M",
+              "REM",
+              "R E M"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 미국 조지아주 애선스 출발과 포크 록·얼터너티브 록 및 작품 이력을 설명하여 US와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/rem/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:40.365259+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.445Z",
+          "waitingSince": "2026-10-21T10:32:43.445Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.445Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "e4a55221e02ce31fa51d1c5984186ee3ce4c1c7c366c48bd48b43b6c4cd74f30",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:09.605797+00:00"
+    },
+    {
+      "bandId": "9f9d139c-21a6-4bea-b23b-c2172a8a61dc",
+      "name": "Ramones",
+      "identityVersion": "2026-10-13T08:19:26.220705+00:00",
+      "key": "4488a410bf47d56f5f4c9101f84683f1951c68132b7e210fcb177b81dd692946",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.125Z",
+          "waitingSince": "2026-10-13T09:03:42.125Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.125Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.125Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/ramones/",
+                "checkedAt": "2026-10-13T09:03:42.125Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.125Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.125Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.487Z",
+          "waitingSince": "2026-10-21T10:32:43.487Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.487Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.532Z",
+          "waitingSince": "2026-10-21T10:32:43.532Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.532Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "e3f50f7b-4d88-4f5d-a0d7-158d0e64ed59",
+      "name": "Santana",
+      "identityVersion": "2026-10-13T08:19:11.669127+00:00",
+      "key": "3d6a0fa2dec4ea045459251233644564e4c8ab085a4a010a784bf8ac6ba70046",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.126Z",
+          "waitingSince": "2026-10-13T09:03:42.126Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.126Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.126Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/santana/",
+                "checkedAt": "2026-10-13T09:03:42.126Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.126Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.126Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.574Z",
+          "waitingSince": "2026-10-21T10:32:43.574Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.574Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.618Z",
+          "waitingSince": "2026-10-21T10:32:43.618Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.618Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "90a6ec08-6b78-44bd-9d0e-36b7c4e2b96c",
+      "name": "Sex Pistols",
+      "identityVersion": "2026-10-13T08:20:18.680465+00:00",
+      "key": "c3f9870b6a86b3cbb069f85864ff1e6599082a00fd7d8fdd76b99492d2db9754",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.128Z",
+          "waitingSince": "2026-10-13T09:03:42.128Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.128Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.128Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/sex-pistols/",
+                "checkedAt": "2026-10-13T09:03:42.128Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.128Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.128Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.665Z",
+          "waitingSince": "2026-10-21T10:32:43.665Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.665Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.713Z",
+          "waitingSince": "2026-10-21T10:32:43.713Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.713Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "d93d5301-b711-46d6-afc1-fdf7b88010a2",
+      "name": "Soundgarden",
+      "identityVersion": "2026-10-21T10:29:41.32138+00:00",
+      "key": "e2dbf20aad6572b65cc0d7d0cc0ec116cd5ed2bff139f88e0173160ed9142e12",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.129Z",
+          "waitingSince": "2026-10-13T09:03:42.129Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.129Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.129Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/soundgarden/",
+                "checkedAt": "2026-10-13T09:03:42.129Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.129Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.129Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:42.847Z",
+          "waitingSince": "2026-10-21T10:29:42.847Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:42.847Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:42.847Z",
+          "proposal": {
+            "target_band_id": "d93d5301-b711-46d6-afc1-fdf7b88010a2",
+            "expected_updated_at": "2026-10-13T08:19:38.386704+00:00",
+            "artist_name": "Soundgarden",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "Sound Garden"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 미국 시애틀의 그런지 출발과 펑크·메탈 혼합 및 Badmotorfinger/Superunknown을 설명하여 US와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/soundgarden/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:41.32138+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.755Z",
+          "waitingSince": "2026-10-21T10:32:43.755Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.755Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "7d51fe40044407a8ab7d88a0e56f90fb1fe4df4b90f3a3389ce547c603edadf2",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:38.386704+00:00"
+    },
+    {
+      "bandId": "bfbf342b-7401-4e20-8aa3-c122027aaddc",
+      "name": "The Allman Brothers Band",
+      "identityVersion": "2026-10-13T08:19:23.154041+00:00",
+      "key": "1d05ea0f7c3621054a8bb0553f3ee56956a7cc2def5f5e89621725a82d024f86",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.130Z",
+          "waitingSince": "2026-10-13T09:03:42.130Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.130Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.130Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/allman-brothers-band/",
+                "checkedAt": "2026-10-13T09:03:42.130Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.130Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.130Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.800Z",
+          "waitingSince": "2026-10-21T10:32:43.800Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.800Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.841Z",
+          "waitingSince": "2026-10-21T10:32:43.841Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.841Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "12c04199-4763-454c-86de-a60bf4d629ca",
+      "name": "The Beach Boys",
+      "identityVersion": "2026-10-21T10:29:42.587311+00:00",
+      "key": "61e1d33184771d5ea55ff1c82dd349232ff73fa8a6b7edab820204ce9b772adf",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.131Z",
+          "waitingSince": "2026-10-13T09:03:42.131Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.131Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.131Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/beach-boys/",
+                "checkedAt": "2026-10-13T09:03:42.131Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.131Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.131Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:44.078Z",
+          "waitingSince": "2026-10-21T10:29:44.078Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:44.078Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:44.078Z",
+          "proposal": {
+            "target_band_id": "12c04199-4763-454c-86de-a60bf4d629ca",
+            "expected_updated_at": "2026-10-13T08:19:06.194782+00:00",
+            "artist_name": "The Beach Boys",
+            "country": "US",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "ザ・ビーチ・ボーイズ",
+              "Beach Boys, The",
+              "Beach Boys",
+              "beachboys",
+              "The Beachboys"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 캘리포니아 서프 록 활동과 Brian Wilson의 음악 이력을 연결하여 US와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/beach-boys/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:42.587311+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.884Z",
+          "waitingSince": "2026-10-21T10:32:43.884Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.884Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "62d5faeada82abf3ff0876356954dfc585828fb4154063420761d2f72f11910d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:06.194782+00:00"
+    },
+    {
+      "bandId": "6522098a-5ced-4ea5-ba22-db836bc10eb4",
+      "name": "The Beatles",
+      "identityVersion": "2026-10-21T10:29:43.617161+00:00",
+      "key": "a682808a8e97fabfb37abfb4736340e066ec5c82828f58884cac2c2eb54fa109",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.133Z",
+          "waitingSince": "2026-10-13T09:03:42.133Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.133Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.133Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/beatles/",
+                "checkedAt": "2026-10-13T09:03:42.133Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.133Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.133Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "complete",
+          "reason": "SERVICE_RPC_AND_RECEIPT_VERIFIED",
+          "checkedAt": "2026-10-21T10:29:45.097Z",
+          "waitingSince": "2026-10-21T10:29:45.097Z",
+          "applied": true,
+          "lastSuccessfulAt": "2026-10-21T10:29:45.097Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-19T10:29:45.097Z",
+          "proposal": {
+            "target_band_id": "6522098a-5ced-4ea5-ba22-db836bc10eb4",
+            "expected_updated_at": "2026-10-13T08:19:03.137977+00:00",
+            "artist_name": "The Beatles",
+            "country": "GB",
+            "artist_category": "overseas_rock",
+            "artist_aliases": [
+              "비틀스",
+              "披头士乐队",
+              "披頭四樂團",
+              "Beatles",
+              "Beetles",
+              "披頭四樂隊",
+              "fab four",
+              "Պիթլս",
+              "ဘီးတဲလ်အဖွဲ့",
+              "द बिटल्स",
+              "ᱫᱚ ᱵᱤᱴᱞᱮᱥ",
+              "די ביטלס",
+              "Бітлз",
+              "Битлз",
+              "披头士",
+              "披頭四",
+              "The Silver Beatles",
+              "I Beatles",
+              "Die Beatles",
+              "ბითლზი",
+              "بیٹلز",
+              "เดอะบีเทิลส์",
+              "ద బీటిల్స్",
+              "பீட்டில்ஸ்",
+              "ਦ ਬੀਟਲਜ਼",
+              "Битлси",
+              "ദി ബീറ്റിൽസ്",
+              "ದಿ ಬೀಟಲ್ಸ್",
+              "Bítlarnir",
+              "द बीटल्स",
+              "더 비틀즈",
+              "הביטלס",
+              "ધ બિટલ્સ",
+              "بیتلز",
+              "দ্য বিটল্‌স",
+              "البيتلز",
+              "Los Beatles",
+              "ዘ ቢተልስ",
+              "ザ・ビートルズ",
+              "Les Beatles"
+            ],
+            "review_status": "approved",
+            "reason": "자동 검수 jpop-or-rock-v1: 공식 음악기관 본문이 리버풀 출발의 영국 밴드, John/Paul/George/Ringo와 실제 록 작품 활동을 설명하여 GB와 대조했다. 현재 외부 신원 연결 및 여섯 승인 요건을 대조하여 overseas_rock 분류·승인.",
+            "evidence_url": "https://rockhall.com/inductees/beatles/"
+          },
+          "authorityKey": "integrated-service-approval-v1",
+          "verification": {
+            "readBack": true,
+            "version": "2026-10-21T10:29:43.617161+00:00"
+          }
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "UNSUPPORTED_OFFICIAL_CHANNEL_URL: 공식 사이트가 /thebeatles 직접 링크를 제공하지만 현재 도구가 받는 channel ID/handle/user 형식으로 API 신원을 확정하지 못했다. 임의 handle로 바꾸지 않았다.",
+          "checkedAt": "2026-10-21T10:32:43.926Z",
+          "waitingSince": "2026-10-21T10:32:43.926Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.926Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "e052c9eaeba05784eae0b6bc0588e8419f4396bb0495cadf842d6c23c95485f2",
+        "channels": "f838e8be7ed152c159788eb0b3be7411a7637ea589223dc0ce4d692c8df40759"
+      },
+      "originalIdentityVersion": "2026-10-13T08:19:03.137977+00:00"
+    },
+    {
+      "bandId": "c9588501-7a8c-4e3a-a65d-17b308f96f4f",
+      "name": "The Byrds",
+      "identityVersion": "2026-10-13T08:19:27.892966+00:00",
+      "key": "a5dc6d6925f4dbeee5f9e8d718c5ebc88d6e43a6202668ace8dc8474ccb340d4",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.134Z",
+          "waitingSince": "2026-10-13T09:03:42.134Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.134Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.134Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/byrds/",
+                "checkedAt": "2026-10-13T09:03:42.134Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.134Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.134Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:43.970Z",
+          "waitingSince": "2026-10-21T10:32:43.970Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:43.970Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:44.013Z",
+          "waitingSince": "2026-10-21T10:32:44.013Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.013Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "8bd4f2b2-6ba8-41df-9fda-15d7f7e11166",
+      "name": "The Clash",
+      "identityVersion": "2026-10-13T08:19:26.893832+00:00",
+      "key": "0c1bedd9249a33fe64b76f166d3c38ddf45258fe98f86f5c5491c5a293af79bc",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.135Z",
+          "waitingSince": "2026-10-13T09:03:42.135Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.135Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.135Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/clash/",
+                "checkedAt": "2026-10-13T09:03:42.135Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.135Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.135Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:44.060Z",
+          "waitingSince": "2026-10-21T10:32:44.060Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.060Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:44.118Z",
+          "waitingSince": "2026-10-21T10:32:44.118Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.118Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "9b8ef6d7-bbc8-4363-af61-53b17bc6a8ca",
+      "name": "The Cure",
+      "identityVersion": "2026-10-13T08:19:09.960277+00:00",
+      "key": "4886e41146f41376ade35e572827d18be04cca89d714e75cfbf3398ad29edae8",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.136Z",
+          "waitingSince": "2026-10-13T09:03:42.136Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.136Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.136Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/cure/",
+                "checkedAt": "2026-10-13T09:03:42.136Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.136Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.136Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:44.172Z",
+          "waitingSince": "2026-10-21T10:32:44.172Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.172Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:44.215Z",
+          "waitingSince": "2026-10-21T10:32:44.215Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.215Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "860e91b6-cd61-4aaa-bdbd-62ace5679d8d",
+      "name": "The Kinks",
+      "identityVersion": "2026-10-13T08:19:10.644771+00:00",
+      "key": "e372499c2708aafdb02d4f3fa68f53512f2a5661fcdf6c025318a7f4ff4e1669",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.137Z",
+          "waitingSince": "2026-10-13T09:03:42.137Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.137Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.137Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/kinks/",
+                "checkedAt": "2026-10-13T09:03:42.137Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.137Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.137Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:44.261Z",
+          "waitingSince": "2026-10-21T10:32:44.261Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.261Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:44.306Z",
+          "waitingSince": "2026-10-21T10:32:44.306Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.306Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    },
+    {
+      "bandId": "8aeb201f-4f4a-45b4-8475-0d3c9d6ebd61",
+      "name": "The Moody Blues",
+      "identityVersion": "2026-10-13T08:19:32.964278+00:00",
+      "key": "b39e6b43302dc812165bd4c625883e173d46e9be6c1f2cb2ea87c4b37e70a0e0",
+      "priority": 2,
+      "tasks": [
+        "approval",
+        "channels"
+      ],
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-10-13T09:03:42.139Z",
+          "waitingSince": "2026-10-13T09:03:42.139Z",
+          "lastSuccessfulAt": "2026-10-13T09:03:42.139Z",
+          "nextAttemptAt": null,
+          "validUntil": "2027-01-11T09:03:42.139Z",
+          "applied": false,
+          "proof": {
+            "decision": "keep",
+            "summary": "동일 정책·신원·별칭·상태·버전의 90일 이내 유지 기록; DB 승인과 구분",
+            "sources": [
+              {
+                "url": "https://rockhall.com/inductees/moody-blues/",
+                "checkedAt": "2026-10-13T09:03:42.139Z",
+                "summary": "외부 ID 및 공식 음악 기관의 해당 아티스트 소개·음반 이력에서 록/펑크/메탈 활동을 확인함. 헌액 여부만으로 판정하지 않고 본문 장르 설명을 확인했으며 혼합 장르도 유지함."
+              }
+            ]
+          },
+          "importedFrom": "docs/curation-runs/20261016-200845-automation.json"
+        },
+        "approval": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.139Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        },
+        "channels": {
+          "status": "pending",
+          "waitingSince": "2026-10-13T09:03:42.139Z",
+          "checkedAt": null,
+          "nextAttemptAt": null
+        }
+      },
+      "recorded": {
+        "approval": {
+          "status": "deferred",
+          "reason": "COUNTRY_AND_APPROVAL_EVIDENCE_INCOMPLETE: 기존 유효한 keep 근거와 새 공식 장르 본문은 보존했다. 현재 외부 key 연결은 확인했으나 실제 국가/분류를 뒷받침할 승인 요건별 자료 보완이 아직 끝나지 않아 승인하지 않았다. 인증 문제나 관리자 판단 예외가 아니다.",
+          "checkedAt": "2026-10-21T10:32:44.357Z",
+          "waitingSince": "2026-10-21T10:32:44.357Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.357Z",
+          "validUntil": null
+        },
+        "channels": {
+          "status": "deferred",
+          "reason": "OFFICIAL_CHANNEL_EVIDENCE_PENDING: 동일 선정 목록에 기존 공식 채널 프로필/확정 근거가 없고 MB 관계 제공처 cooldown이 남아 요청하지 않았다. 공식 아티스트 페이지 직접 링크·API 검증 보완 전 사진을 저장하지 않았다.",
+          "checkedAt": "2026-10-21T10:32:44.399Z",
+          "waitingSince": "2026-10-21T10:32:44.399Z",
+          "applied": false,
+          "lastSuccessfulAt": null,
+          "nextAttemptAt": "2026-10-22T10:32:44.399Z",
+          "validUntil": null
+        }
+      },
+      "receipts": {
+        "approval": "d4e38261cb452ed9e4722b8a5dd0123d20ccd94408b924d2b818b932012b1c9d",
+        "channels": "d088a4a592c4862e9fa509ad4976d9637fef2e1a7cf4de2771df5a488c98c0f2"
+      }
+    }
+  ],
+  "finishedAt": "2026-10-21T10:32:44.442Z",
+  "selected": 40,
+  "remaining": 492,
+  "authorityWaiting": 66,
+  "executionRoot": "C:\\Users\\yeonguk\\.codex\\worktrees\\artist-review-automation\\concert-finder",
+  "checkpointRevision": 654,
+  "catalogCount": 625,
+  "summary": {
+    "selected": 40,
+    "reusedResearch": 40,
+    "newResearchCompleted": 0,
+    "classificationApprovalApplied": 18,
+    "approvalDeferred": 22,
+    "newOfficialChannelPhotoSaved": 2,
+    "existingChannelPhotoRefreshed": 1,
+    "channelTaskCompleted": 2,
+    "channelTaskDeferred": 37,
+    "humanJudgmentExceptionsAdded": 0,
+    "catalogComplete": false
+  },
+  "approvalOutcomes": [
+    {
+      "name": "THE ORAL CIGARETTES",
+      "bandId": "5e188d46-145f-4701-b901-44825804820a",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "The Vibrators",
+      "bandId": "c02a3fe2-700a-47e1-b1ff-b29b25feddc7",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "AC/DC",
+      "bandId": "4f8e97ef-1bd6-455c-9bed-a4812fc38072",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Aerosmith",
+      "bandId": "307b19a1-ea26-4bcc-9a30-dc4dd90a1671",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Beastie Boys",
+      "bandId": "84a540d8-8077-49b1-8190-35ddb6095b1d",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Bon Jovi",
+      "bandId": "8a2e5094-6670-41db-a208-c093cb9fb096",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Chicago",
+      "bandId": "ae45573c-fd29-4545-953e-292776475e00",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Creedence Clearwater Revival",
+      "bandId": "836d8027-e0f8-4d3a-ba70-097d64f878e5",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Deep Purple",
+      "bandId": "462dd460-df87-49f3-a1c4-4e83ed54cba6",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Def Leppard",
+      "bandId": "dc847356-ee4e-48da-9fb1-98e56f28d042",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Eagles",
+      "bandId": "b7d84b26-4c38-40ce-88cc-56732b31d9be",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Fleetwood Mac",
+      "bandId": "1e2c1dae-be53-4873-be97-9485147d1742",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Green Day",
+      "bandId": "1052e16b-1562-4719-93f0-3c7d99041fc4",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Guns N’ Roses",
+      "bandId": "10df25ad-732a-41fc-989a-cd0005bba7ab",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "R.E.M.",
+      "bandId": "33a8153c-d5d7-4ea1-8b9d-91dbaa8dbc2e",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "Soundgarden",
+      "bandId": "d93d5301-b711-46d6-afc1-fdf7b88010a2",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "The Beach Boys",
+      "bandId": "12c04199-4763-454c-86de-a60bf4d629ca",
+      "status": "complete",
+      "applied": true
+    },
+    {
+      "name": "The Beatles",
+      "bandId": "6522098a-5ced-4ea5-ba22-db836bc10eb4",
+      "status": "complete",
+      "applied": true
+    }
+  ],
+  "channelSummary": {
+    "imported": 2,
+    "importFailures": 0,
+    "artists": 3,
+    "applied": 3,
+    "writeFailures": 0,
+    "apiCalls": 2,
+    "counts": {
+      "refreshed": 3
+    },
+    "errors": {},
+    "ok": true,
+    "officiallyVerified": 3,
+    "photosAvailable": 3,
+    "readBack": 3
+  },
+  "channelPreflight": {
+    "apiCalls": 3,
+    "outcomes": [
+      {
+        "name": "AC/DC",
+        "status": "api_confirmed",
+        "resolved": [
+          {
+            "url": "https://www.youtube.com/channel/UCB0JSO6d5ysH2Mmqz5I9rIw",
+            "status": "refreshed",
+            "channelId": "UCB0JSO6d5ysH2Mmqz5I9rIw",
+            "checkedAt": "2026-10-21T10:30:25.846Z"
+          },
+          {
+            "url": "https://www.youtube.com/user/acdc",
+            "status": "refreshed",
+            "channelId": "UCB0JSO6d5ysH2Mmqz5I9rIw",
+            "checkedAt": "2026-10-21T10:30:26.119Z"
+          }
+        ]
+      },
+      {
+        "name": "Bon Jovi",
+        "status": "api_confirmed",
+        "resolved": [
+          {
+            "url": "https://www.youtube.com/user/bonjovi",
+            "status": "refreshed",
+            "channelId": "UCkBwnm7GOfYHsacwUjriC-w",
+            "checkedAt": "2026-10-21T10:30:26.248Z"
+          }
+        ]
+      }
+    ]
+  },
+  "officialChannelLinks": [
+    {
+      "name": "AC/DC",
+      "url": "https://www.acdc.com/home/",
+      "checkedAt": "2026-10-21T10:28:12.328Z",
+      "status": 200,
+      "links": [
+        "https://www.youtube.com/channel/UCB0JSO6d5ysH2Mmqz5I9rIw?sub_confirmation=1",
+        "https://www.youtube.com/shorts/3OvqDjwNZn0",
+        "https://www.youtube.com/watch?v=FAiXeTDGHpo",
+        "https://www.youtube.com/watch?v=l7-bIFDMSFA",
+        "https://www.youtube.com/watch?v=UTPKMpX9qPg",
+        "https://www.youtube.com/user/acdc?sub_confirmation=1"
+      ]
+    },
+    {
+      "name": "Bon Jovi",
+      "url": "https://www.bonjovi.com/",
+      "checkedAt": "2026-10-21T10:28:12.599Z",
+      "status": 200,
+      "links": [
+        "https://www.youtube.com/user/bonjovi"
+      ]
+    },
+    {
+      "name": "The Beatles",
+      "url": "https://www.thebeatles.com/videos",
+      "checkedAt": "2026-10-21T10:28:13.656Z",
+      "status": 200,
+      "links": [
+        "https://www.youtube.com/thebeatles"
+      ]
+    },
+    {
+      "name": "Green Day",
+      "url": "https://greenday.com/?frontpage=true",
+      "checkedAt": "2026-10-21T10:28:14.744Z",
+      "status": 200,
+      "links": []
+    }
+  ],
+  "sourceChecks": [
+    {
+      "bandId": "6173c82b-459c-4d7c-b5c5-eb9425bf84a4",
+      "name": "The Neal Morse Band",
+      "url": "https://nealmorse.com/",
+      "finalUrl": "https://nealmorse.com/",
+      "checkedAt": "2026-10-21T10:26:00.856Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "5e188d46-145f-4701-b901-44825804820a",
+      "name": "THE ORAL CIGARETTES",
+      "url": "https://www.a-sketch.com/artist/the-oral-cigarettes-2/#biography",
+      "finalUrl": "https://www.a-sketch.com/artist/the-oral-cigarettes-2/",
+      "checkedAt": "2026-10-21T10:26:00.906Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "307b19a1-ea26-4bcc-9a30-dc4dd90a1671",
+      "name": "Aerosmith",
+      "url": "https://rockhall.com/inductees/aerosmith/",
+      "finalUrl": "https://rockhall.com/inductees/aerosmith/",
+      "checkedAt": "2026-10-21T10:26:03.661Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "c02a3fe2-700a-47e1-b1ff-b29b25feddc7",
+      "name": "The Vibrators",
+      "url": "https://www.thevibrators.com/biography.html",
+      "finalUrl": "https://www.thevibrators.com/biography.html",
+      "checkedAt": "2026-10-21T10:26:00.908Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "4f8e97ef-1bd6-455c-9bed-a4812fc38072",
+      "name": "AC/DC",
+      "url": "https://rockhall.com/inductees/acdc/",
+      "finalUrl": "https://rockhall.com/inductees/acdc/",
+      "checkedAt": "2026-10-21T10:26:02.746Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "6a8840a5-e1ef-4ee4-a171-25b592e3cc09",
+      "name": "Blondie",
+      "url": "https://rockhall.com/inductees/blondie/",
+      "finalUrl": "https://rockhall.com/inductees/blondie/",
+      "checkedAt": "2026-10-21T10:26:03.933Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "84a540d8-8077-49b1-8190-35ddb6095b1d",
+      "name": "Beastie Boys",
+      "url": "https://rockhall.com/inductees/beastie-boys/",
+      "finalUrl": "https://rockhall.com/inductees/beastie-boys/",
+      "checkedAt": "2026-10-21T10:26:03.912Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "ae45573c-fd29-4545-953e-292776475e00",
+      "name": "Chicago",
+      "url": "https://rockhall.com/inductees/chicago/",
+      "finalUrl": "https://rockhall.com/inductees/chicago/",
+      "checkedAt": "2026-10-21T10:26:04.345Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "836d8027-e0f8-4d3a-ba70-097d64f878e5",
+      "name": "Creedence Clearwater Revival",
+      "url": "https://rockhall.com/inductees/creedence-clearwater-revival/",
+      "finalUrl": "https://rockhall.com/inductees/creedence-clearwater-revival/",
+      "checkedAt": "2026-10-21T10:26:04.392Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "462dd460-df87-49f3-a1c4-4e83ed54cba6",
+      "name": "Deep Purple",
+      "url": "https://rockhall.com/inductees/deep-purple/",
+      "finalUrl": "https://rockhall.com/inductees/deep-purple/",
+      "checkedAt": "2026-10-21T10:26:04.785Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "dc847356-ee4e-48da-9fb1-98e56f28d042",
+      "name": "Def Leppard",
+      "url": "https://rockhall.com/inductees/def-leppard/",
+      "finalUrl": "https://rockhall.com/inductees/def-leppard/",
+      "checkedAt": "2026-10-21T10:26:04.955Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "b7d84b26-4c38-40ce-88cc-56732b31d9be",
+      "name": "Eagles",
+      "url": "https://rockhall.com/inductees/eagles/",
+      "finalUrl": "https://rockhall.com/inductees/eagles/",
+      "checkedAt": "2026-10-21T10:26:05.309Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "776bcdcc-c0e0-4aa6-ba10-f09f78207687",
+      "name": "Electric Light Orchestra",
+      "url": "https://rockhall.com/inductees/elo/",
+      "finalUrl": "https://rockhall.com/inductees/elo/",
+      "checkedAt": "2026-10-21T10:26:05.668Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "1e2c1dae-be53-4873-be97-9485147d1742",
+      "name": "Fleetwood Mac",
+      "url": "https://rockhall.com/inductees/fleetwood-mac/",
+      "finalUrl": "https://rockhall.com/inductees/fleetwood-mac/",
+      "checkedAt": "2026-10-21T10:26:06.116Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "1052e16b-1562-4719-93f0-3c7d99041fc4",
+      "name": "Green Day",
+      "url": "https://rockhall.com/inductees/green-day/",
+      "finalUrl": "https://rockhall.com/inductees/green-day/",
+      "checkedAt": "2026-10-21T10:26:06.457Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "ff374181-31ab-400f-95fa-9f403b8655a3",
+      "name": "Foo Fighters",
+      "url": "https://rockhall.com/inductees/foo-fighters/",
+      "finalUrl": "https://rockhall.com/inductees/foo-fighters/",
+      "checkedAt": "2026-10-21T10:26:06.836Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "988e032d-91c7-4630-a54b-01a68545542a",
+      "name": "Genesis",
+      "url": "https://rockhall.com/inductees/genesis/",
+      "finalUrl": "https://rockhall.com/inductees/genesis/",
+      "checkedAt": "2026-10-21T10:26:07.318Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "9158a0c7-9165-482e-a2d3-580acf95c276",
+      "name": "Dire Straits",
+      "url": "https://rockhall.com/inductees/dire-straits/",
+      "finalUrl": "https://rockhall.com/inductees/dire-straits/",
+      "checkedAt": "2026-10-21T10:26:05.238Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "59bcb7f9-2cf8-4df3-a9d1-908c6efdba95",
+      "name": "Heart",
+      "url": "https://rockhall.com/inductees/heart/",
+      "finalUrl": "https://rockhall.com/inductees/heart/",
+      "checkedAt": "2026-10-21T10:26:15.446Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "4a87b412-40fb-4432-a26d-063470dac866",
+      "name": "Journey",
+      "url": "https://rockhall.com/inductees/journey/",
+      "finalUrl": "https://rockhall.com/inductees/journey/",
+      "checkedAt": "2026-10-21T10:26:15.923Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "0588a5bf-51d1-482d-b1a0-ef946644e9da",
+      "name": "Judas Priest",
+      "url": "https://rockhall.com/inductees/judas-priest/",
+      "finalUrl": "https://rockhall.com/inductees/judas-priest/",
+      "checkedAt": "2026-10-21T10:26:16.413Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "b02f8322-167e-4a69-8b41-124f3b837eea",
+      "name": "KISS",
+      "url": "https://rockhall.com/inductees/kiss/",
+      "finalUrl": "https://rockhall.com/inductees/kiss/",
+      "checkedAt": "2026-10-21T10:26:16.612Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "62230c1f-147b-4e59-b38b-e16978833055",
+      "name": "Led Zeppelin",
+      "url": "https://rockhall.com/inductees/led-zeppelin/",
+      "finalUrl": "https://rockhall.com/inductees/led-zeppelin/",
+      "checkedAt": "2026-10-21T10:26:17.152Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "44315219-899b-4a01-a3fc-61a77dd3e2c3",
+      "name": "Pearl Jam",
+      "url": "https://rockhall.com/inductees/pearl-jam/",
+      "finalUrl": "https://rockhall.com/inductees/pearl-jam/",
+      "checkedAt": "2026-10-21T10:26:17.688Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "10df25ad-732a-41fc-989a-cd0005bba7ab",
+      "name": "Guns N’ Roses",
+      "url": "https://rockhall.com/inductees/guns-n-roses/",
+      "finalUrl": "https://rockhall.com/inductees/guns-n-roses/",
+      "checkedAt": "2026-10-21T10:26:07.752Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "33a8153c-d5d7-4ea1-8b9d-91dbaa8dbc2e",
+      "name": "R.E.M.",
+      "url": "https://rockhall.com/inductees/rem/",
+      "finalUrl": "https://rockhall.com/inductees/rem/",
+      "checkedAt": "2026-10-21T10:26:17.916Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "64b27293-b282-47e3-ac50-a6593fb4e991",
+      "name": "Queen",
+      "url": "https://rockhall.com/inductees/queen/",
+      "finalUrl": "https://rockhall.com/inductees/queen/",
+      "checkedAt": "2026-10-21T10:26:17.902Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "9f9d139c-21a6-4bea-b23b-c2172a8a61dc",
+      "name": "Ramones",
+      "url": "https://rockhall.com/inductees/ramones/",
+      "finalUrl": "https://rockhall.com/inductees/ramones/",
+      "checkedAt": "2026-10-21T10:26:18.376Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "e3f50f7b-4d88-4f5d-a0d7-158d0e64ed59",
+      "name": "Santana",
+      "url": "https://rockhall.com/inductees/santana/",
+      "finalUrl": "https://rockhall.com/inductees/santana/",
+      "checkedAt": "2026-10-21T10:26:18.456Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "90a6ec08-6b78-44bd-9d0e-36b7c4e2b96c",
+      "name": "Sex Pistols",
+      "url": "https://rockhall.com/inductees/sex-pistols/",
+      "finalUrl": "https://rockhall.com/inductees/sex-pistols/",
+      "checkedAt": "2026-10-21T10:26:18.590Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "d93d5301-b711-46d6-afc1-fdf7b88010a2",
+      "name": "Soundgarden",
+      "url": "https://rockhall.com/inductees/soundgarden/",
+      "finalUrl": "https://rockhall.com/inductees/soundgarden/",
+      "checkedAt": "2026-10-21T10:26:18.893Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "12c04199-4763-454c-86de-a60bf4d629ca",
+      "name": "The Beach Boys",
+      "url": "https://rockhall.com/inductees/beach-boys/",
+      "finalUrl": "https://rockhall.com/inductees/beach-boys/",
+      "checkedAt": "2026-10-21T10:26:19.187Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "bfbf342b-7401-4e20-8aa3-c122027aaddc",
+      "name": "The Allman Brothers Band",
+      "url": "https://rockhall.com/inductees/allman-brothers-band/",
+      "finalUrl": "https://rockhall.com/inductees/allman-brothers-band/",
+      "checkedAt": "2026-10-21T10:26:19.034Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "6522098a-5ced-4ea5-ba22-db836bc10eb4",
+      "name": "The Beatles",
+      "url": "https://rockhall.com/inductees/beatles/",
+      "finalUrl": "https://rockhall.com/inductees/beatles/",
+      "checkedAt": "2026-10-21T10:26:19.485Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "c9588501-7a8c-4e3a-a65d-17b308f96f4f",
+      "name": "The Byrds",
+      "url": "https://rockhall.com/inductees/byrds/",
+      "finalUrl": "https://rockhall.com/inductees/byrds/",
+      "checkedAt": "2026-10-21T10:26:19.574Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "8bd4f2b2-6ba8-41df-9fda-15d7f7e11166",
+      "name": "The Clash",
+      "url": "https://rockhall.com/inductees/clash/",
+      "finalUrl": "https://rockhall.com/inductees/clash/",
+      "checkedAt": "2026-10-21T10:26:19.982Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "9b8ef6d7-bbc8-4363-af61-53b17bc6a8ca",
+      "name": "The Cure",
+      "url": "https://rockhall.com/inductees/cure/",
+      "finalUrl": "https://rockhall.com/inductees/cure/",
+      "checkedAt": "2026-10-21T10:26:20.032Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "860e91b6-cd61-4aaa-bdbd-62ace5679d8d",
+      "name": "The Kinks",
+      "url": "https://rockhall.com/inductees/kinks/",
+      "finalUrl": "https://rockhall.com/inductees/kinks/",
+      "checkedAt": "2026-10-21T10:26:20.435Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "8a2e5094-6670-41db-a208-c093cb9fb096",
+      "name": "Bon Jovi",
+      "url": "https://rockhall.com/inductees/bon-jovi/",
+      "finalUrl": "https://rockhall.com/inductees/bon-jovi/",
+      "checkedAt": "2026-10-21T10:26:04.128Z",
+      "status": 200,
+      "bodyRead": true
+    },
+    {
+      "bandId": "8aeb201f-4f4a-45b4-8475-0d3c9d6ebd61",
+      "name": "The Moody Blues",
+      "url": "https://rockhall.com/inductees/moody-blues/",
+      "finalUrl": "https://rockhall.com/inductees/moody-blues/",
+      "checkedAt": "2026-10-21T10:26:20.545Z",
+      "status": 200,
+      "bodyRead": true
+    }
+  ],
+  "requests": {
+    "youtube": 5,
+    "musicBrainz": 0,
+    "supabaseRestSourceDerived": 262,
+    "supabaseCounterMethod": "Derived from executed existing CLI paths, not a fetch observer: snapshot 2 + begin 3 + 40 contexts 120 + 18 apply/readbacks 126 + initial channel manifest 1 + channel runner 7 + final channel read 1 + final catalog 2.",
+    "officialDirectFetchInvocations": 44,
+    "webSearchQueries": 8,
+    "webOpenActions": 10,
+    "webUnderlyingHttpRequests": null
+  },
+  "remainingStageCounts": {
+    "research": {
+      "complete": 546,
+      "pending": 7,
+      "deferred": 70,
+      "exception": 2
+    },
+    "approval": {
+      "pending": 435,
+      "deferred": 93,
+      "complete": 31,
+      "authority_wait": 66
+    },
+    "channels": {
+      "pending": 427,
+      "deferred": 182,
+      "complete": 15,
+      "exception": 1
+    }
+  },
+  "limitations": [
+    "Reused research was not re-dated or counted as newly completed. Country/approval evidence remains incomplete for 22 artists.",
+    "Existing channel runner filters all selected artist IDs, not task names; it also refreshed the already verified THE ORAL CIGARETTES profile whose selected task was approval only. This is reported as one existing refresh and is not marked as a completed channel task in the queue. No artist outside the frozen 40 was touched.",
+    "The supplemental Deep Purple official article was genuinely opened during this run; its submitted checkedAt was estimated from processing time rather than a direct fetch timestamp. The existing research timestamp/validity was preserved."
+  ],
+  "newDatabaseImports": 0,
+  "schemaOrPermissionChanges": 0
+}
