@@ -7,7 +7,7 @@ import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { PGlite } from '@electric-sql/pglite'
 import { createArtistResolver, discoveredArtist, enrichArtists } from '../scripts/artist-discovery.mjs'
-import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved } from '../scripts/collection-artist-links.mjs'
+import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved, quarantineCollectionLinkRegressions } from '../scripts/collection-artist-links.mjs'
 import { runSource } from '../scripts/collection-runner.mjs'
 
 const id = n => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`
@@ -148,7 +148,36 @@ test('guarded ingestion preserves the actual SQL candidate revision/payload when
     await assertCollectionLinksPreserved(reader, first)
     await db.query("select public.admin_ingest_catalog('yes24',$1,$2)", [first, [registered]])
     assert.deepEqual((await db.query('select payload,revision from public.collection_candidates')).rows, before)
+    const unaffected = { ...candidate(), source_url: 'https://ticket.yes24.com/Perf/2' }
+    const mixed = { candidates: [candidate(), unaffected], failures: [], excluded: [] }
+    await quarantineCollectionLinkRegressions(reader, mixed)
+    assert.deepEqual(mixed.candidates, [unaffected])
+    assert.equal(mixed.failures[0].error, 'COLLECTION_IDENTITY_REGRESSION')
+    await assertCollectionLinksPreserved(reader, mixed)
+    await db.query("select public.admin_ingest_catalog('yes24',$1,'[]')", [mixed])
+    assert.deepEqual((await db.query('select payload,revision from public.collection_candidates where source_url=$1', [first.candidates[0].source_url])).rows, before)
+    assert.equal((await db.query('select count(*)::int as n from public.collection_candidates')).rows[0].n, 2)
+    // Retrying the same input neither duplicates failure entries nor re-adds the blocked update.
+    await quarantineCollectionLinkRegressions(reader, mixed)
+    assert.equal(mixed.failures.length, 1)
+    await db.exec(await readFile(new URL('../supabase/migrations/20261012134538_automated_catalog.sql', import.meta.url), 'utf8'))
+    const runId = (await db.query("select public.service_begin_collection('yes24',clock_timestamp()) as id")).rows[0].id
+    const finish = () => db.query("select public.service_complete_collection($1,$2,'[]',1,'catalog-v1') as result", [runId, mixed])
+    assert.deepEqual((await finish()).rows[0].result, { published: 0, review: 1 })
+    assert.deepEqual((await db.query('select state,candidate_count,jsonb_array_length(failures) as failures from public.collection_runs where id=$1', [runId])).rows[0],
+      { state: 'partial', candidate_count: 1, failures: 1 })
+    assert.equal((await db.query('select count(*)::int as n from private.collection_leases')).rows[0].n, 0)
+    assert.deepEqual((await finish()).rows[0].result, { published: 0, review: 1 })
+    assert.deepEqual((await db.query('select payload,revision from public.collection_candidates where source_url=$1', [first.candidates[0].source_url])).rows, before)
   } finally { await db.close() }
+})
+
+test('quarantine never converts an unavailable or ambiguous context into a partial success', async () => {
+  const batch = { candidates: [candidate()], failures: [], excluded: [] }
+  const before = structuredClone(batch)
+  await assert.rejects(quarantineCollectionLinkRegressions(priorReader(null), batch), /CONTEXT_UNAVAILABLE/)
+  assert.deepEqual(batch, before)
+  await assert.rejects(quarantineCollectionLinkRegressions(priorReader([]), { ...batch, candidates: [candidate(), candidate()] }), /CONTEXT_UNAVAILABLE/)
 })
 
 async function checkUploadMode(mode, hasLinks = true) {
@@ -173,7 +202,8 @@ async function checkUploadMode(mode, hasLinks = true) {
       if(name==='service_fail_collection') return new Response('null');
       if(name==='service_complete_collection') {
         const request=JSON.parse(options.body);
-        if(${JSON.stringify(mode)}!=='--concerts-only' || request.identities.length!==0) throw Error('Artist writer violation');
+        if(${JSON.stringify(mode)}==='--concerts-only' && request.identities.length!==0) throw Error('Artist writer violation');
+        if(request.batch.candidates.length!==${hasLinks ? 0 : 1} || request.batch.failures.length!==${hasLinks ? 1 : 0}) throw Error('Quarantine violation');
         return new Response(JSON.stringify({published:0,review:1}));
       }
       throw Error('Unexpected fetch');
@@ -194,14 +224,15 @@ async function checkUploadMode(mode, hasLinks = true) {
     }
     const report = JSON.parse(await readFile(join(directory, 'report.json'), 'utf8'))
     const result = report.results[0]
-    assert.equal(result.error, hasLinks ? 'COLLECTION_IDENTITY_REGRESSION' : undefined); assert.equal(result.uploaded, !hasLinks)
-    assert.equal(result.candidates.length, 1); assert.deepEqual(result.candidates[0].payload.artist_keys, [])
+    assert.equal(result.error, undefined); assert.equal(result.uploaded, true)
+    assert.equal(result.candidates.length, hasLinks ? 0 : 1)
+    if (!hasLinks) assert.deepEqual(result.candidates[0].payload.artist_keys, [])
     if (hasLinks) assert.deepEqual(result.identity_link_review, [{ source_url: url, reason: 'ARTIST_LINK_REMOVAL_REQUIRES_REVIEW', previous_key_count: 1, incoming_key_count: 0 }])
     const calls = JSON.parse(await readFile(join(directory, 'calls.json'), 'utf8'))
-    assert.equal(calls.includes('service_fail_collection'), hasLinks); assert.equal(calls.includes('service_complete_collection'), !hasLinks)
+    assert.equal(calls.includes('service_fail_collection'), false); assert.equal(calls.includes('service_complete_collection'), true)
   } finally { await rm(directory, { recursive: true, force: true }) }
 }
 
-test('upload CLI in skip mode blocks completion and retains a review draft', () => checkUploadMode('--skip-artist-lookup'))
+test('upload CLI in skip mode quarantines a regressing update and records a partial result', () => checkUploadMode('--skip-artist-lookup'))
 test('concert-only mode cannot bypass link-regression protection', () => checkUploadMode('--concerts-only'))
 test('concert-only mode preserves its empty identity payload on successful completion', () => checkUploadMode('--concerts-only', false))
