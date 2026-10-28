@@ -57,7 +57,8 @@ try {
   try { cache = JSON.parse(await readFile(cachePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
   const lookupArtist = skipArtistLookup ? null : createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
   const writeReport = () => output ? writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: false, results }, null, 2) + '\n', 'utf8') : Promise.resolve()
-  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis', 'reissue_nol'] : [selected]) {
+  // NOL is an optional, separately permitted adapter, never a default launch dependency.
+  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis'] : [selected]) {
     if (source === 'reissue_nol' && !reissueLinks.length) {
       results.push({ source, skipped: 'reviewed_links_missing', uploaded: false }); await writeReport(); continue
     }
