@@ -7,6 +7,7 @@
 - 읽기 전용 `scripts/concert-publication-snapshot.sql`을 현재 운영 스키마에서 실행했다. 공개 후보/정책·출처 lease·아티스트 승인 연결 및 기존 공연 중복 여부를 집계하며 개인정보·push 기기 키·Vault·cron command는 읽지 않는다. 원본 API/HTML/이미지는 Git에 넣지 않았다.
 - `scripts/concert-publication-readiness.mjs`와 CLI를 추가했다. NOL 선택 제외가 다른 공식 출처에 전파되지 않으며, 한 출처가 준비되면 다른 출처의 미완료와 관계없이 PARTIAL_LAUNCH_AVAILABLE로 판단한다. 입력은1시간 이내 실제 관측을 요구하고, 이용 조건·adapter 검증·실행기 호환과 후보별 원본 ID/revision·근거·수동 차단·중복·변경 검수는 유지한다.
 - 이 도구는 자문/검증 보고서다. DB/RPC 쓰기·등록·수집 재실행·공개 ON·알림을 하지 않는다. 이용 조건과 adapter 인증은 실제 근거가 있어야 보완할 수 있으며 관측된 DB 수만으로 true가 되지 않는다.
+- 기본 `--source=all`에서 `reissue_nol`도 제외했다. 선택 adapter 구현은 보존하되 기본 수집이 NOL 목록/허가에 의존하지 않도록 한다. 기존 워커/예약 일정·source lease·한도·공개 정책은 변경하지 않았고 실행하지 않았다.
 - 2026-10-28 16:26:18 KST 실제 snapshot: KOPIS819/UALIVE12/Mint Paper4/RADWIMPS2/YES2443, 합계880건. 검증된 발표·일반예매 시각은 모든 후보에서 미완료이며 eligible0이다. NOL은 EXCLUDED_OPTIONAL이고, 다른 출처는 각자 부족한 실제 요건 때문에 BLOCKED다. 아직 켤 수 있는 출처가 없어 정책을 변경하지 않았다.
 - NOL 의존 자료/상품 직접 링크가 있는 후보는 이번 독립 출시에서 별도로 보류한다. 이 판단은 그 출처 전체의 중단을 뜻하지 않는다. KOPIS229건에 해당 항목이 관측됐지만, 모두 발표·회차·일반예매도 미완료여서 NOL 항목만 해결해 공개할 수 있는 상태는 아니다.
 
