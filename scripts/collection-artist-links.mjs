@@ -91,3 +91,17 @@ export async function assertCollectionLinksPreserved(client, batch) {
     throw error
   }
 }
+
+// Omit conflicting updates without copying old keys or blocking unrelated
+// concerts. Failure entries keep the source partial and visible to monitoring.
+export async function quarantineCollectionLinkRegressions(client, batch) {
+  try { await assertCollectionLinksPreserved(client, batch) }
+  catch (error) {
+    if (error.message !== 'COLLECTION_IDENTITY_REGRESSION') throw error
+    const blocked = new Set(error.review.map(row => row.source_url))
+    batch.identity_link_review = [...(batch.identity_link_review ?? []), ...error.review]
+    batch.failures.push(...error.review.map(row => ({ ...row, error: 'COLLECTION_IDENTITY_REGRESSION' })))
+    batch.candidates = batch.candidates.filter(row => !blocked.has(row.source_url))
+  }
+  return batch
+}

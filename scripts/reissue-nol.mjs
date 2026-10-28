@@ -117,7 +117,12 @@ export function linkReissueNol(announcementHtml, productHtml, entry, { checkedAt
   const windows = [...sale.windows, ...product.payload.booking_windows]
   const general = [...new Set(windows.filter(w => w.kind === 'general').map(w => w.opens_at))]
   if (sale.conflict || product.payload.review_reasons.some(r => /충돌|혼합/.test(r)) || general.length !== 1) reasons.push('BOOKING_TIME_UNCONFIRMED')
-  const published = article.querySelector('time[datetime]')?.getAttribute('datetime')
+  // An update timestamp is not the initial announcement. Ambiguous timestamps
+  // also stay unverified, even if they happen to contain the same calendar day.
+  const publicationTimes = [...article.querySelectorAll('time[datetime]')].filter(t =>
+    !t.matches('[itemprop~="dateModified"],.updated,.modified')
+    && !t.closest('[itemprop~="dateModified"],.updated,.modified'))
+  const published = publicationTimes.length === 1 ? publicationTimes[0].getAttribute('datetime') : null
   const validPublication = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:\d{2})$/.test(published ?? '')
     && Number.isFinite(Date.parse(published)) && Date.parse(published) <= Date.parse(checkedAt)
   if (!validPublication) reasons.push('ANNOUNCEMENT_TIME_UNCONFIRMED')
