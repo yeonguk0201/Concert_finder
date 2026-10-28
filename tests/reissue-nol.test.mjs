@@ -37,6 +37,16 @@ test('linked source cross-checks actual individual dates, international product 
   assert.throws(() => nolSessions('공연 일시: 1월 14일 오후 7시'), /YEAR_REQUIRED/)
 })
 
+test('modified and ambiguous timestamps never become the initial announcement', () => {
+  for (const marker of ['itemprop="dateModified"', 'class="updated"', 'class="modified"']) {
+    const row = linkReissueNol(notice.replace('<time datetime=', `<time ${marker} datetime=`), product, entry)
+    assert.equal(row.payload.announced_at, null)
+    assert.ok(row.payload.review_reasons.includes('ANNOUNCEMENT_TIME_UNCONFIRMED'))
+  }
+  const ambiguous = notice.replace('</time>', '</time><time datetime="2026-10-21T12:00:00+09:00"></time>')
+  assert.equal(linkReissueNol(ambiguous, product, entry).payload.announced_at, null)
+})
+
 test('observed tour format uses its explicit year header and city rows, not a continuous date range', () => {
   const tour = `<main><h1>米津玄師 WORLD TOUR</h1><p>2026 |</p><p>12/26(Sat) Taipei TAIPEI DOME</p>
     <p>2027 |</p><p>01/14(Thu) Seoul INSPIRE ARENA</p><p>01/16(Sat) Seoul INSPIRE ARENA</p><p>01/17(Sun) Seoul INSPIRE ARENA</p>

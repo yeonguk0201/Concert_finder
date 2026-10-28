@@ -12,7 +12,7 @@ import { runSource } from './collection-runner.mjs'
 import { collectKopis } from './kopis.mjs'
 import { collectTicketlinkEvidence, supplementBooking, ticketlinkProduct } from './booking-evidence.mjs'
 import { collectReissueNol } from './reissue-nol.mjs'
-import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved } from './collection-artist-links.mjs'
+import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved, quarantineCollectionLinkRegressions } from './collection-artist-links.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
@@ -96,6 +96,10 @@ try {
       pendingResult = result
       return result
       }, upload: async (batch, runToken, attempts) => {
+        await quarantineCollectionLinkRegressions(client, batch)
+        // Quarantined concerts cannot cause separate discovered-artist writes.
+        const retainedKeys = new Set(batch.candidates.flatMap(row => row.payload.artist_keys))
+        const retainedIdentities = discoveredIdentities.filter(row => retainedKeys.has(row.key))
         let lastError
         for (let attempt = 1; attempt <= 3; attempt++) {
           try { await assertCollectionLinksPreserved(client, batch) }
@@ -103,7 +107,7 @@ try {
             if (error.message === 'COLLECTION_IDENTITY_REGRESSION') batch.identity_link_review = error.review
             throw error
           }
-          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: concertsOnly || source === 'reissue_nol' ? [] : [...artists, ...discoveredIdentities], attempt_count: attempts, adapter_version: source === 'reissue_nol' ? 'reissue-nol-review-v1' : 'catalog-v1' })
+          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: concertsOnly || source === 'reissue_nol' ? [] : [...artists, ...retainedIdentities], attempt_count: attempts, adapter_version: source === 'reissue_nol' ? 'reissue-nol-review-v1' : 'catalog-v1' })
           if (!error) return data
           lastError = error
           if (attempt < 3) await new Promise(resolve => setTimeout(resolve, attempt * 5000))
