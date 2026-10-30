@@ -10,7 +10,7 @@ test('proposed publication executor validates API facts and preserves publicatio
     const user = '00000000-0000-4000-8000-000000000099'
     await db.exec(`create role anon; create role authenticated; create role service_role;
       create schema auth; create table auth.users(id uuid primary key);
-      create function auth.uid() returns uuid language sql stable as $$ select '${user}'::uuid $$;`)
+      create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('test.uid',true),'')::uuid $$;`)
     for (const name of ['202610060001_initial', '202610070001_admin_review', '202610080001_ingestion',
       '202610090001_notifications', '202610110001_catalog_expansion', '20261011150237_discovered_artist_catalog',
       '20261012134538_automated_catalog', '20261012135134_artist_management', '20261013070742_artist_curation',
@@ -22,6 +22,7 @@ test('proposed publication executor validates API facts and preserves publicatio
     assert.deepEqual((await db.query('select * from public.collection_policies order by source')).rows, policies)
     await db.query('insert into auth.users values ($1)', [user])
     await db.query('insert into private.admins values ($1)', [user])
+    await db.query("select set_config('test.uid',$1,false)", [user])
     await db.query(`select set_config('request.jwt.claims','{"role":"service_role"}',false)`)
     const key = 'mb:00000000-0000-4000-8000-000000000001'
     const band = (await db.query('select public.service_import_artist($1) as id', [{ key, name: 'Fictional API band',
@@ -51,6 +52,17 @@ test('proposed publication executor validates API facts and preserves publicatio
     const complete = async (rows, source = 'kopis') => finish(await begin(source), rows)
     const reason = async () => (await db.query('select reason from public.collection_decisions order by decided_at desc limit 1')).rows[0].reason
     const count = async table => (await db.query(`select count(*)::int as n from ${table}`)).rows[0].n
+    const variant = (row, index) => {
+      const copy = structuredClone(row)
+      copy.source_url = url.replace('PF123456', `PF${123456 + index}`)
+      copy.content_hash = String(index).repeat(64)
+      copy.payload.title += ` ${index}`
+      const day = new Date(Date.parse(`${clock.day}T00:00:00Z`) + index * 86400000).toISOString().slice(0, 10)
+      copy.payload.starts_on = copy.payload.ends_on = day
+      copy.payload.sessions = [{ starts_on: day, starts_at: `${day}T19:00:00+09:00` }]
+      copy.payload.sources[0].url = copy.payload.ticket_evidence[0].source_url = copy.source_url
+      return copy
+    }
     const isolate = async (name, fn) => t.test(name, async () => {
       await db.exec('begin')
       try { await fn(structuredClone(original)) } finally { await db.exec('rollback') }
@@ -135,7 +147,103 @@ test('proposed publication executor validates API facts and preserves publicatio
     })
     await isolate('duplicate batch URLs fail atomically without ingestion', async row => {
       const token = await begin()
+      await db.exec('savepoint duplicate_batch')
       await assert.rejects(finish(token, [row, row]), /DUPLICATE_BATCH_SOURCE/)
+      await db.exec('rollback to savepoint duplicate_batch')
+      for (const table of ['public.collection_candidates', 'public.collection_decisions', 'public.concerts', 'private.notification_deliveries']) {
+        assert.equal(await count(table), 0)
+      }
+      assert.equal((await db.query('select state from public.collection_runs where id=$1', [token])).rows[0].state, 'running')
+      assert.equal((await finish(token, [row])).published, 1)
+    })
+    for (const resolution of ['reviewed', 'dismissed']) await isolate(`${resolution} protection survives two changed revisions and preserves candidate ID`, async row => {
+      await db.query("select public.admin_ingest_catalog('kopis',$1,'[]')", [{ candidates: [row], failures: [] }])
+      const candidate = (await db.query('select id,revision from public.collection_candidates')).rows[0]
+      await db.query('select public.admin_resolve_candidate($1,$2,$3)', [candidate.id, candidate.revision, resolution])
+      for (const hash of ['b', 'c']) {
+        row.content_hash = hash.repeat(64)
+        row.payload.venue += ' changed'
+        await complete([row])
+        assert.equal(await reason(), 'ADMIN_OVERRIDE')
+        const after = (await db.query('select id,revision,automation_blocked from public.collection_candidates')).rows[0]
+        assert.equal(after.id, candidate.id)
+        assert.equal(after.automation_blocked, true)
+        assert.ok(after.revision > candidate.revision)
+      }
+      assert.equal(await count('public.concerts'), 0)
+      assert.equal(await count('private.notification_deliveries'), 0)
+    })
+    await isolate('an administrator cancellation and every existing concert child remain unchanged', async row => {
+      await complete([row])
+      await db.exec('update public.concerts set cancelled=true')
+      const tables = ['public.concerts', 'public.concert_sources', 'public.concert_bands', 'public.concert_sessions', 'public.ticket_schedules', 'private.catalog_history', 'private.concert_history']
+      const snapshot = async () => Promise.all(tables.map(async table => (await db.query(`select to_jsonb(t) as row from ${table} t order by id`)).rows))
+      const before = await snapshot()
+      row.content_hash = 'd'.repeat(64)
+      assert.deepEqual(await complete([row]), { published: 0, review: 1 })
+      assert.equal(await reason(), 'EXISTING_CONCERT_REVIEW')
+      assert.deepEqual(await snapshot(), before)
+      assert.equal(await count('private.notification_deliveries'), 0)
+    })
+    for (const duplicate of ['normalized_title', 'overlapping_artist']) await isolate(`duplicate detection: ${duplicate}`, async row => {
+      await complete([row])
+      const other = variant(row, 1)
+      if (duplicate === 'normalized_title') other.payload.title = 'Fictional-API.Concert!!'
+      else {
+        other.payload.starts_on = row.payload.starts_on
+        other.payload.ends_on = row.payload.ends_on
+        other.payload.sessions = row.payload.sessions
+      }
+      assert.equal((await complete([other])).published, 0)
+      assert.equal(await reason(), 'POSSIBLE_DUPLICATE_OR_CONFLICT')
+      assert.equal(await count('public.concerts'), 1)
+      assert.equal(await count('private.publication_changes'), 1)
+    })
+    await isolate('initial data is publicly readable yet worker claims stay empty even after live mode begins', async row => {
+      await complete([row])
+      await db.exec("select set_config('test.uid','',true); set local role anon")
+      assert.equal((await db.query("select id from public.concerts where status='published'")).rows.length, 1)
+      assert.equal(await count('public.concert_sessions'), 1)
+      assert.equal(await count('public.ticket_schedules'), 1)
+      await db.exec('reset role')
+      await db.query("select set_config('test.uid',$1,true)", [user])
+      assert.deepEqual((await db.query('select public.claim_notification_batch() as batch')).rows[0].batch, [])
+      await db.exec("update public.collection_policies set live_after=clock_timestamp()-interval '2 days' where source='kopis'")
+      await complete([row])
+      assert.equal(await reason(), 'SAME_REVISION')
+      assert.deepEqual((await db.query('select public.claim_notification_batch() as batch')).rows[0].batch, [])
+      assert.equal(await count('private.notification_deliveries'), 0)
+      assert.equal(await count('private.notification_attempts'), 0)
+    })
+    for (const boundary of ['run_equal', 'run_before', 'announcement_equal_day']) await isolate(`silent activation boundary: ${boundary}`, async row => {
+      const token = await begin()
+      if (boundary === 'announcement_equal_day') {
+        // Run began later, but the announcement falls on the activation KST day.
+        await db.query('update public.collection_policies set live_after=$1::timestamptz where source=\'kopis\'', [now])
+        await db.query('update public.collection_runs set started_at=$1::timestamptz+interval \'1 second\' where id=$2', [now, token])
+      } else {
+        await db.query(`update public.collection_policies set live_after=(select started_at from public.collection_runs where id=$1)
+          + case when $2='run_before' then interval '1 second' else interval '0 seconds' end where source='kopis'`, [token, boundary])
+      }
+      assert.equal((await finish(token, [row])).published, 1)
+      assert.equal((await db.query('select initial_import from private.publication_changes')).rows[0].initial_import, true)
+      assert.equal(await count('private.notification_deliveries'), 0)
+    })
+    await isolate('silent and failed rows cannot leak notification mode into the next live row', async row => {
+      await db.exec("update public.collection_policies set live_after=clock_timestamp()-interval '2 days' where source='kopis'")
+      row.payload.initial_import = true
+      const invalid = variant(row, 1), live = variant(row, 2)
+      delete invalid.payload.initial_import
+      delete live.payload.initial_import
+      invalid.payload.ticket.booking_url = 'http://invalid.example/ticket'
+      await db.exec("select set_config('encore.initial_import','true',true)")
+      assert.deepEqual(await complete([row, invalid, live]), { published: 2, review: 1 })
+      assert.equal(await count('public.concerts'), 2)
+      assert.equal(await count('public.ticket_schedules'), 2)
+      assert.equal(await count('private.notification_deliveries'), 1)
+      assert.equal((await db.query("select current_setting('encore.initial_import') as value")).rows[0].value, 'true')
+      assert.equal((await db.query("select count(*)::int as n from private.publication_changes where initial_import")).rows[0].n, 1)
+      assert.equal((await db.query("select reason from public.collection_decisions where outcome='review'")).rows[0].reason, 'INVALID_PUBLICATION_FIELDS')
     })
     await isolate('unreviewed artist cannot publish using an old approval', async row => {
       await db.query("update public.bands set curation_status='unreviewed' where id=$1", [band])

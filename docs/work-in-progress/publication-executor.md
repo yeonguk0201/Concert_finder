@@ -1,5 +1,7 @@
 # 공개 실행기 보완 — 2026-10-30
 
+후속 검증: [중복·취소·수동 차단과 무알림 초기 공개](publication-protection-verification.md). 익명 조회·워커 claim·활성화 경계·배치 오류 격리 검증을 확장했다. 운영 적용 여부는 여전히 미적용이다.
+
 [역할·ID 계약 분리](artist-role-separation.md)와 [등록 차단·출처 범위](registration-source-scope.md)의 후속이다. 이번 요청의 1번 구현과 이에 필요한 2번 **로컬 격리 검증**을 수행했다. 운영 공개 ON 승인은 받지 않았으며 운영 DB·후보·예약·queue를 변경하지 않았다.
 
 ## 변경 내용
