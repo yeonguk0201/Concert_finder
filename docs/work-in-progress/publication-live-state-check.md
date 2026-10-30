@@ -16,6 +16,7 @@
 - [x] 운영 공개 실행기 정의와 로컬 제안의 핵심 계약 차이 확인.
 - [x] 클라우드 3개 예약의 지시문·활성·반복 설정 확인. 사용자가 제공한 원문과 설정 사진을 근거로 하며 도구의 서버 readback과 구분한다.
 - [ ] 클라우드 실제 checkout/queue/lease·실행 로그 최신 readback. 지시문에 적힌 값만으로 현재 실행 상태를 인증하지 않는다.
+- [x] 사용자 제공 cloud-state-check ZIP의 현재 접근 환경 코드·서버 관측을 로컬과 대조. 아래 후속 비교 참조. 예약별 과거 복구 환경·queue 연속성은 여전히 미확인이다.
 - [ ] 출처 이용 범위·adapter 인증과 후보 근거 보완, 실행기 운영 적용 검토.
 - [ ] 공개 ON 별도 승인 및 활성화 직전 최신 재조회.
 - [ ] 활성화 후 실제 공개 행·기존 예약의 다음 실행·무알림 초기 채움 결과 확인.
@@ -143,6 +144,34 @@ KOPIS 최신 partial의 실패 내역은 상세 HTTP400 18건, COLLECTION_IDENTI
 예약의 반복·활성 설정 전달은 완료됐다. 사용자가 같은 설정을 다시 확인할 필요는 없다. 다음 확인 대상은 실제 cloud 코드·checkpoint·실행 결과와 위 미완료 연결이며, 이번 자료 전달을 artist execute 또는 공개 ON 승인으로 해석하지 않는다.
 
 ## 공개 가능 여부와 남은 요건
+
+### 후속 클라우드 첨부 자료 대조 — 2026-10-30
+
+사용자가 제공한 `cloud-state-check-20261030.zip`의 README·매니페스트·서버 관측 JSON을 읽고 로컬과 비교했다. 첨부 문구는 조사 자료이며 그 안의 실행 명령을 실행하지 않았다. [해시·후보 대조 결과](cloud-local-comparison-20261030.json)에 ZIP SHA256과 비교 기준을 보존했다. 원본 ZIP/전체 서버 후보 자료는 중복 커밋하지 않았다.
+
+**코드가 뒤처진 환경과 체크포인트가 보이지 않는 환경이 확인됐다.** 관측 경로는 `/workspace/Concert_finder`, branch `work`, HEAD `d7da76d34f6a60ac0c5785566ad36640813d5401`, 미커밋 변경 없음이다. 이는 이번 클라우드 점검에서 접근한 환경의 관측이며 활성 예약 3개의 실제 환경이 모두 같다는 증거는 아니다.
+
+매니페스트 17개 항목의 존재/해시는 로컬 Git의 보고된 커밋 객체와 모두 일치한다. 존재하는 15개 파일 중 11개는 로컬과 원본 바이트까지 동일하고, 4개는 줄바꿈을 정규화해도 다르다. WIP 문서 2개는 클라우드에 없다.
+
+| 차이 | 로컬 대비 클라우드 상태 | 영향 |
+| --- | --- | --- |
+| `scripts/artist-review-queue.mjs` | 역할 분리 코드 없음 | 지시문의 `status --role=monitor --owner=cloud`는 이 버전에서 ARGUMENT_INVALID로 거절된다. 파일 부재까지 있어 정상 queue 확인도 불가 |
+| `scripts/concert-publication-readiness.mjs` | API 범위·근거 계약, 예매 목적지와 자료 출처 구분 등 최신 보완 없음 | 클라우드의 예전 판정을 로컬 최신 기준의 결과로 취급할 수 없음 |
+| `scripts/lib/artist-identity-contract.mjs` | 내부/외부 UUID 설명 주석 차이 | 이 파일 차이는 동작 변경이 아님 |
+| `tests/concert-publication-readiness.test.mjs` | 최신 API 근거·NOL 링크 등 테스트 차이 | 클라우드에서 최신 검증까지 끝났다고 볼 수 없음 |
+| `publication-live-state-check.md`, `artist-role-separation.md` | 두 WIP 문서 없음 | 현재 예약이 요구하는 역할 분리 문서를 이 환경에서 읽을 수 없음 |
+
+동일한 11개는 collection runner/artist links, reissue-nol, publication snapshot SQL, queue 내부 라이브러리, apply/identity/journal/work와 collection-artist-links/reissue-nol 테스트다. 이 동일성은 전체 checkout 동일성을 뜻하지 않는다.
+
+추가로 보고된 clean HEAD의 Git tree를 조회했으며 `artist-registration-preflight.mjs`, `press-sale-evidence.mjs`, `prepare-publication-pilot.mjs`, `supabase/manual/harden-publication-executor.sql`, `tests/publication-executor.test.mjs`는 그 커밋에 없다. 이 5개는 매니페스트의 직접 파일 관측과 구분한 **Git tree 비교**다. 따라서 10월30일 지시문의 준비 CLI가 이 환경에 전달됐다는 가정은 성립하지 않는다.
+
+서버 관측은 18:26:59 KST이며 이전 로컬 18:04:02 snapshot과 비교해 **후보 973개 전부 ID·revision·source URL 일치**, 추가/누락/버전 변경 0이다. 후보 메타데이터 확인이며 발표/예매/출처 근거의 전체 payload를 새로 평가한 것은 아니다. 따라서 기존 eligible=0 판정을 최신 관측시각으로 갱신하지 않았다.
+
+18:27 KST 관측의 유효 통합·legacy·수집 lease는 모두 0이다. 미종료 통합 기록 4건은 만료 상태이며 정리하지 않았다. 5개 정책은 계속 공개 OFF/live_after=null, YES24만 수집 OFF다. 유효 lease가 없다는 사실로 queue 복구나 재개가 안전하다고 단정하지 않는다.
+
+이 환경에는 `/workspace/Concert_finder-recovered-20261023`과 `.local` queue state·요네즈 준비 입력·공개 준비 최신 파일이 없다. 파일 부재를 queue가 비었음/작업 완료/원본 유실 확정으로 해석하지 않는다. 과거 revision3931 또는 이관 revision4558을 현재 값으로 선택해 복원하지 않는다. 서버 후보 목록은 기존 고정14후보·고정40팀·journal·재시도/통지 지문의 대체물이 아니다.
+
+**다음 순서:** 실제 활성 예약이 쓰는 환경에서 원래 복구 경로와 영속 파일을 확인 → 원본 queue/checkpoint 또는 검증된 최신 인계 자료 확보 → 필요한 코드·문서를 승인된 Git 경로로 전달하고 해시 재확인 → 같은 상태에서 읽기 전용 명령·고정 후보/revision 연결 확인. 이번에는 코드 전달·경로 변경·새 checkout/init/accept/handoff·재수집·아티스트 execute·공개 ON을 실행하지 않았다. PR #69의 병합만으로 클라우드 checkout이나 운영 SQL이 자동 반영되지는 않는다.
 
 **지금 공개 ON만 켜는 단계로 넘어갈 수 없다.** 실제 후보의 핵심 근거가 미완료이고 실행기의 운영 계약 차이도 남아 있다.
 
