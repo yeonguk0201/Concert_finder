@@ -100,7 +100,7 @@ async function workspace(t) {
   const cwd = await mkdtemp(join(tmpdir(), 'artist-queue-'))
   t.after(() => rm(cwd, { recursive: true, force: true }))
   const root = join(cwd, '.local/artist-review-queue'); await mkdir(root, { recursive: true })
-  const cmd = args => runQueueCommand(args, { cwd, now, env: { SUPABASE_URL: `https://${PROJECT}.supabase.co` }, serverGuard: async () => {}, output: () => {} })
+  const cmd = args => runQueueCommand([...args, '--role=artist'], { cwd, now, env: { SUPABASE_URL: `https://${PROJECT}.supabase.co` }, serverGuard: async () => {}, output: () => {} })
   return { cwd, root, cmd }
 }
 
@@ -154,7 +154,7 @@ test('CLI rejects symlinks, path escape, secrets, cache payload and destructive 
   assert.equal(state.project, PROJECT)
   const env = { ARTIST_REVIEW_RUNNER_SECRET: 'private-value-1234567890' }
   await writeFile(join(root, 'bad.json'), JSON.stringify({ summary: env.ARTIST_REVIEW_RUNNER_SECRET }), 'utf8')
-  await assert.rejects(runQueueCommand(['accept', '--owner=local', '--input=.local/artist-review-queue/bad.json'], { cwd, env, output: () => {} }), /SECRET_IN_ARTIFACT/)
+  await assert.rejects(runQueueCommand(['accept', '--role=artist', '--owner=local', '--input=.local/artist-review-queue/bad.json'], { cwd, env, output: () => {} }), /SECRET_IN_ARTIFACT/)
 })
 
 test('loads UTF-8 env fallback once without replacing existing bindings; wrong project makes no request', async t => {
@@ -350,7 +350,7 @@ test('finish closes the server run before clearing local state and preserves rec
     throw new Error('UNEXPECTED_REQUEST')
   }
   const env = {SUPABASE_URL:`https://${PROJECT}.supabase.co`,SUPABASE_SERVICE_ROLE_KEY:'test-only-placeholder'}
-  const finish = () => runQueueCommand(['finish','--owner=cloud','--defer-pending'],{cwd,env,now,fetcher,output:()=>{}})
+  const finish = () => runQueueCommand(['finish','--role=artist','--owner=cloud','--defer-pending'],{cwd,env,now,fetcher,output:()=>{}})
   await assert.rejects(finish(), /REVIEW_FINISH_UNCONFIRMED/)
   assert.equal(JSON.parse(await readFile(path,'utf8')).active.runId,batch.runId)
   delete env.SUPABASE_SERVICE_ROLE_KEY
@@ -375,7 +375,7 @@ test('service registration keeps its lifecycle marker even when a caller supplie
     if (String(url).endsWith('/service_integrated_review_receipt') || String(url).endsWith('/service_begin_integrated_review')) return Response.json(null)
     throw new Error('UNEXPECTED_REQUEST')
   }
-  await runQueueCommand(['begin','--owner=cloud','--authority-key=custom-admin-label','--input=.local/artist-review-queue/catalog.json'],
+  await runQueueCommand(['begin','--role=artist','--owner=cloud','--authority-key=custom-admin-label','--input=.local/artist-review-queue/catalog.json'],
     {cwd,now,env:{SUPABASE_URL:`https://${PROJECT}.supabase.co`,SUPABASE_SERVICE_ROLE_KEY:'test-only-placeholder'},fetcher,serverGuard:async()=>{},output:()=>{}})
   assert.equal(JSON.parse(await readFile(join(root,'state.json'),'utf8')).active.authorityKey,SERVICE_AUTHORITY)
 })

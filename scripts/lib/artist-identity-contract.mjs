@@ -1,6 +1,9 @@
 // Pure validation for the installed 20261022121342 contract. No RPC or queue writes.
 import { isDeepStrictEqual } from 'node:util'
 
+// Both namespaces use UUID syntax but have different provenance. bandId is a
+// caller-allocated internal row key frozen before begin/journaling; musicBrainzId
+// must be a researched external identity. This validator generates neither.
 const ID = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/
 const fail = code => { throw new Error(code) }
 const text = (value, max) => typeof value === 'string' && value.trim() && value.length <= max
@@ -43,6 +46,8 @@ export function prepareIdentityTargets(targets, work, catalog, now = Date.now())
     const change = validateIdentityMutation(item.mutation, now)
     const band = catalog.find(b => b.id === item.bandId)
     if (change.operation === 'register') {
+      // A new internal row key is expected to be absent from the catalog.
+      // Its allocation never substitutes for external identity/proof checks.
       if (band || target.expectedUpdatedAt != null || catalog.some(b => b.musicbrainz_id === change.musicBrainzId)) fail('IDENTITY_CONFLICT')
     } else {
       if (!band || band.updated_at !== target.expectedUpdatedAt) fail('EDIT_CONFLICT')

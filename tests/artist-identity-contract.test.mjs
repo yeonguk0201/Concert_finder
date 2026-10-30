@@ -10,6 +10,23 @@ const mutation = () => ({ operation: 'aliases', musicBrainzId: id(2), name: 'Exi
 const band = () => ({ id: id(1), name: 'Existing Artist', aliases: ['Existing alias'], country_code: 'JP', musicbrainz_id: id(2),
   category: 'jpop', curation_status: 'approved', updated_at: '2026-10-21T12:00:00Z', photo_mode: 'auto' })
 
+test('new internal row IDs are independent of researched external IDs and never manufacture identity proof', () => {
+  const m = { ...mutation(), operation: 'register' }
+  const target = { bandId: id(500), expectedUpdatedAt: null }
+  const work = [{ bandId: target.bandId, mutation: m }]
+  const before = JSON.stringify([target, work])
+  const result = prepareIdentityTargets([target], work, [], now)[0]
+  assert.equal(result.bandId, id(500))
+  assert.equal(result.mutation.musicBrainzId, id(2))
+  assert.equal(JSON.stringify([target, work]), before)
+  for (const external of [null, '', 'invented-id']) {
+    assert.throws(() => prepareIdentityTargets([target], [{ ...work[0], mutation: { ...m, musicBrainzId: external } }], [], now), /IDENTITY_INVALID/)
+  }
+  const unverified = structuredClone(m); unverified.requirements.identityMatched = false
+  assert.throws(() => prepareIdentityTargets([target], [{ ...work[0], mutation: unverified }], [], now), /IDENTITY_PROOF_REQUIRED/)
+  assert.throws(() => prepareIdentityTargets([target], work, [{ ...band(), musicbrainz_id: id(2) }], now), /IDENTITY_CONFLICT/)
+})
+
 test('identity proof never gains requirements from credentials or source presence', () => {
   assert.equal(validateIdentityMutation(mutation(), now).operation, 'aliases')
   for (const key of ['identityMatched', 'countryMatched', 'sameIdentityAliases']) {
