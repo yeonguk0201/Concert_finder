@@ -1,0 +1,207 @@
+{
+  "archiveSha256": "e59d869f546fa0201030fbf407b8f9eac6c88199eba552d44e583591ac3fdbad",
+  "cloud": {
+    "captured_at": "2026-10-30T09:28:56.392329+00:00",
+    "workdir": "/workspace/Concert_finder",
+    "branch": "work",
+    "head": "d7da76d34f6a60ac0c5785566ad36640813d5401",
+    "uncommitted_porcelain": ""
+  },
+  "localHead": "a6965c7cd33b2ea79c9580046149327677e7b4bd",
+  "files": [
+    {
+      "path": "docs/work-in-progress/publication-live-state-check.md",
+      "exists": false,
+      "sha256": null,
+      "localSha256": "4e68920f210483815728c5de2f9263d4567762817c70e2ad7ba28deeb2f6ff30",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "cloud_absent"
+    },
+    {
+      "path": "docs/work-in-progress/artist-role-separation.md",
+      "exists": false,
+      "sha256": null,
+      "localSha256": "044dfeefebd1451d8c19d2ca45787aef4616e5012c597aa82cf424a982b87a0a",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "cloud_absent"
+    },
+    {
+      "path": "scripts/collection-runner.mjs",
+      "exists": true,
+      "sha256": "35b644a00792d5942dd6c1e1c4cc942465b56e511d7c0f09a87f43a7c5e10013",
+      "localSha256": "35b644a00792d5942dd6c1e1c4cc942465b56e511d7c0f09a87f43a7c5e10013",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/collection-artist-links.mjs",
+      "exists": true,
+      "sha256": "ea223e528433ec73eed39b9b7167a0776ca762746fb8d75922c1512410799294",
+      "localSha256": "ea223e528433ec73eed39b9b7167a0776ca762746fb8d75922c1512410799294",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/reissue-nol.mjs",
+      "exists": true,
+      "sha256": "b818add80a808409103ccdaedfc121a659a1d5923e7461b8b06148d7f6f31fc8",
+      "localSha256": "b818add80a808409103ccdaedfc121a659a1d5923e7461b8b06148d7f6f31fc8",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/concert-publication-readiness.mjs",
+      "exists": true,
+      "sha256": "2b7a0c681f533c4dbd71b5d484cd38e1db42cffdf8b2e924770ab2a69c7262f8",
+      "localSha256": "45f374efcbeefce09c86b7e689162a648320909251ec9ed4a7b7c644631a3561",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "content_differs"
+    },
+    {
+      "path": "scripts/concert-publication-snapshot.sql",
+      "exists": true,
+      "sha256": "3383fa496e710e7b6430a936e3e02ce92cf5de19261c0f3fc68e6f71da3b92f7",
+      "localSha256": "3383fa496e710e7b6430a936e3e02ce92cf5de19261c0f3fc68e6f71da3b92f7",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/artist-review-queue.mjs",
+      "exists": true,
+      "sha256": "c06b4dda6a8c8794b126992387dc48e06d463873e0997b0888a1b0827d4989c6",
+      "localSha256": "a6d0ed3bee5fcf356fcd591fa6c6fea101d4a47795e61bc77b9bdecff8de4dcb",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "content_differs"
+    },
+    {
+      "path": "scripts/lib/artist-review-queue.mjs",
+      "exists": true,
+      "sha256": "37fcc725a3f8b0576e0c759f5cc6200fe51a808dd90b89cb9c75fa15fe7a0871",
+      "localSha256": "37fcc725a3f8b0576e0c759f5cc6200fe51a808dd90b89cb9c75fa15fe7a0871",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/lib/artist-review-apply.mjs",
+      "exists": true,
+      "sha256": "1dae2444e76476e7257858c91537a7bdc15c3b5a1068215eca2755e2af221d2e",
+      "localSha256": "1dae2444e76476e7257858c91537a7bdc15c3b5a1068215eca2755e2af221d2e",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/lib/artist-review-identity.mjs",
+      "exists": true,
+      "sha256": "485abd1f237f8bde1e89bb0a076df9c82645b02645b2ba46234c2aa50728db60",
+      "localSha256": "485abd1f237f8bde1e89bb0a076df9c82645b02645b2ba46234c2aa50728db60",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/lib/artist-identity-contract.mjs",
+      "exists": true,
+      "sha256": "a31c9a3fb133bd0de14d3358435d9c735aff04bc172fc0ca378334c439a27351",
+      "localSha256": "874533f322b46b5f50b28fd0d54d0ec6574604bfcc51138c0547d2537f3c7e1d",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "content_differs"
+    },
+    {
+      "path": "scripts/lib/artist-identity-journal.mjs",
+      "exists": true,
+      "sha256": "354de22cdec7e5b73afedbf98217321a0f364ed13048209c5b4a4d1b0038de58",
+      "localSha256": "354de22cdec7e5b73afedbf98217321a0f364ed13048209c5b4a4d1b0038de58",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "scripts/lib/artist-identity-work.mjs",
+      "exists": true,
+      "sha256": "74240f312a0037cbdbe9a7899929b54305b1ea7f305fe829bd4400d592d892bc",
+      "localSha256": "74240f312a0037cbdbe9a7899929b54305b1ea7f305fe829bd4400d592d892bc",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "tests/collection-artist-links.test.mjs",
+      "exists": true,
+      "sha256": "fe544c36128f9034cdf85e6a88ae841cb38e9bb83ca372374551f84370bb9a13",
+      "localSha256": "fe544c36128f9034cdf85e6a88ae841cb38e9bb83ca372374551f84370bb9a13",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "tests/reissue-nol.test.mjs",
+      "exists": true,
+      "sha256": "1b5318874fabfa6998f0e1ba9dc02b9fd7d554846a75648a604909f5bc10ce60",
+      "localSha256": "1b5318874fabfa6998f0e1ba9dc02b9fd7d554846a75648a604909f5bc10ce60",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "identical"
+    },
+    {
+      "path": "tests/concert-publication-readiness.test.mjs",
+      "exists": true,
+      "sha256": "9c7534e192923101a8119ba0fa29c6707ec69525d751a6924dda26bae6315089",
+      "localSha256": "2b356af3bbf68d81e02cd2af47362a4f2842cb98083e29bb75bdb1ba51281bcc",
+      "cloudMatchesReportedCommit": true,
+      "comparison": "content_differs"
+    }
+  ],
+  "serverComparison": {
+    "localObservedAt": "2026-10-30T09:04:02.103905+00:00",
+    "cloudObservedAt": "2026-10-30T09:26:59.052803+00:00",
+    "localCount": 973,
+    "cloudCount": 973,
+    "onlyLocal": [],
+    "onlyCloud": [],
+    "revisionChanges": [],
+    "sourceUrlChanges": []
+  },
+  "cloudPolicies": [
+    {
+      "source": "kopis",
+      "live_after": null,
+      "updated_at": "2026-10-14T13:19:13.30169+00:00",
+      "adapter_version": "catalog-v1",
+      "collection_enabled": true,
+      "publication_enabled": false
+    },
+    {
+      "source": "mintpaper",
+      "live_after": null,
+      "updated_at": "2026-10-12T14:24:02.473089+00:00",
+      "adapter_version": "catalog-v1",
+      "collection_enabled": true,
+      "publication_enabled": false
+    },
+    {
+      "source": "radwimps",
+      "live_after": null,
+      "updated_at": "2026-10-12T14:24:02.473098+00:00",
+      "adapter_version": "catalog-v1",
+      "collection_enabled": true,
+      "publication_enabled": false
+    },
+    {
+      "source": "ualive",
+      "live_after": null,
+      "updated_at": "2026-10-12T14:24:02.472935+00:00",
+      "adapter_version": "catalog-v1",
+      "collection_enabled": true,
+      "publication_enabled": false
+    },
+    {
+      "source": "yes24",
+      "live_after": null,
+      "updated_at": "2026-10-14T13:19:13.302839+00:00",
+      "adapter_version": "catalog-v1",
+      "collection_enabled": false,
+      "publication_enabled": false
+    }
+  ],
+  "activeLeaseCounts": {
+    "integrated_active": 0,
+    "legacy_active": 0,
+    "collection_active": 0
+  },
+  "unfinishedIntegratedCount": 4
+}
