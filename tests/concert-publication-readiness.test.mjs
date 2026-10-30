@@ -6,7 +6,7 @@ const now = Date.parse('2026-10-28T12:00:00Z')
 const url = 'https://ualive.com/concerts/123'
 function snapshot() {
   return { version: 1, observedAt: '2026-10-28T11:59:00Z', sources: [{ source: 'ualive',
-    permission: { state: 'allowed', scopes: ['publication'], checkedAt: '2026-10-28T10:00:00Z', sourceUrls: ['https://ualive.com/terms'] },
+    permission: { state: 'allowed', method: 'api', scopes: ['publication', 'concert_facts', 'source_links'], checkedAt: '2026-10-28T10:00:00Z', sourceUrls: ['https://ualive.com/terms'] },
     adapterVerified: true, runnerCompatible: true, adapterVersion: 'catalog-v1', activeLease: false,
     policy: { collection_enabled: true, publication_enabled: false, live_after: null, adapter_version: 'catalog-v1' },
     candidates: [{ id: 'fixture', revision: 1, source_url: url, automation_blocked: false,
@@ -15,7 +15,7 @@ function snapshot() {
         starts_on: '2027-01-14', ends_on: '2027-01-14', sessions: [{ starts_on: '2027-01-14', starts_at: '2027-01-14T19:00:00+09:00' }],
         announcement_verified: true, announced_on: '2026-10-28', announced_at: '2026-10-28T19:00:00+09:00', review_reasons: [],
         sources: [{ url, verified_at: '2026-10-28T11:00:00Z' }], ticket: { opens_at: '2026-10-29T12:00:00+09:00' },
-        ticket_evidence: [{ source_url: url, opens_at: '2026-10-29T12:00:00+09:00', line: '일반 예매: 2026년 10월 29일 오후 12시' }],
+        ticket_evidence: [{ source_url: url, opens_at: '2026-10-29T12:00:00+09:00', method: 'api', sale_type: 'general', event_matched: true, verified_at: '2026-10-28T11:00:00Z' }],
       } }],
   }, { source: 'reissue_nol', permission: { state: 'denied' } }] }
 }
@@ -65,20 +65,43 @@ test('missing or malformed event facts, ambiguous identities, manual blocks and 
   }
 })
 
-test('wheelchair, presale, wrong time and mismatched event evidence cannot certify a general sale', () => {
-  for (const line of ['휠체어석 2026년 10월 29일 오후 12시', '선예매: 2026년 10월 29일 오후 12시', '일반 예매: 2026년 10월 30일 오후 12시']) {
-    const s = snapshot(); s.sources[0].candidates[0].payload.ticket_evidence[0].line = line
+test('only event-matched, verified API general sale facts can certify the sale', () => {
+  for (const change of [e => { e.sale_type = 'wheelchair' }, e => { e.sale_type = 'presale' },
+    e => { e.opens_at = '2026-10-30T12:00:00+09:00' }, e => { e.method = 'html' },
+    e => { delete e.event_matched }, e => { e.verified_at = '2026-10-29T12:00:00Z' },
+    e => { e.source_url = 'https://unverified.example/sale' },
+    e => { e.line = '일반 예매: 2026년 10월 29일 오후 12시' }]) {
+    const s = snapshot(); change(s.sources[0].candidates[0].payload.ticket_evidence[0])
     assert.ok(assess(s).sources[0].candidates[0].reasons.includes('GENERAL_SALE_UNVERIFIED'))
   }
   const s = snapshot(); s.sources[0].candidates[0].payload.ticket_evidence[0].event_matched = false
   assert.equal(assess(s).sources[0].eligible, 0)
 })
 
-test('a NOL-derived evidence or product URL cannot pass as an independent official-source launch', () => {
-  for (const change of [p => { p.ticket.booking_url = 'https://nol.yanolja.com/ticket/products/123' },
+test('NOL evidence stays excluded independently of the booking destination', () => {
+  for (const change of [p => { p.sources.push({ url: 'https://nol.yanolja.com/ticket/products/123' }) },
     p => { p.ticket_evidence[0].source_url = 'https://tickets.interpark.com/notice/123' }]) {
     const s = snapshot(); change(s.sources[0].candidates[0].payload)
     assert.ok(assess(s).sources[0].candidates[0].reasons.includes('OPTIONAL_NOL_DEPENDENCY'))
+    assert.equal(assess(s).status, 'NO_VERIFIED_SOURCE_READY')
+  }
+})
+
+test('a NOL booking destination alone is a link, never a grant to acquire NOL material', () => {
+  const s = snapshot(), p = s.sources[0].candidates[0].payload
+  p.ticket.booking_url = 'https://nol.yanolja.com/ticket/products/123'
+  const before = structuredClone(s)
+  assert.equal(assess(s).sources[0].eligible, 1)
+  assert.deepEqual(s, before)
+  p.ticket_evidence[0].source_url = p.ticket.booking_url
+  assert.ok(assess(s).sources[0].candidates[0].reasons.includes('OPTIONAL_NOL_DEPENDENCY'))
+})
+
+test('API fact/link scope is explicit; publication or HTML/image permission cannot substitute for it', () => {
+  for (const change of [p => { delete p.method }, p => { p.method = 'html' },
+    p => { p.scopes = ['publication'] }, p => { p.scopes.push('images') }, p => { p.scopes.push('external_body') }]) {
+    const s = snapshot(); change(s.sources[0].permission)
+    assert.ok(assess(s).sources[0].blockers.includes('SOURCE_USE_SCOPE_UNVERIFIED'))
     assert.equal(assess(s).status, 'NO_VERIFIED_SOURCE_READY')
   }
 })

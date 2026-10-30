@@ -18,20 +18,24 @@ const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
 const selected = process.argv.find(a => a.startsWith('--source='))?.slice(9) ?? 'all'
 const includePast = process.argv.includes('--include-past')
+const factsOnly = process.argv.includes('--facts-only')
 // Concert collection must not become a second artist registration writer.
-const concertsOnly = process.argv.includes('--concerts-only')
+const concertsOnly = factsOnly || process.argv.includes('--concerts-only')
 const skipArtistLookup = concertsOnly || process.argv.includes('--skip-artist-lookup')
 const cachePath = '.artist-cache.local'
 try {
+  // Isolated API-only preview. Upload could overwrite retained legacy material;
+  // that migration and publication runner require a separate implementation.
+  if (factsOnly && (selected !== 'kopis' || upload)) throw new Error('FACTS_ONLY_KOPIS_PREVIEW_REQUIRED')
   if (!['all', 'ualive', 'mintpaper', 'radwimps', 'yes24', 'kopis', 'reissue_nol'].includes(selected)) throw new Error('Unknown source')
   if (selected === 'kopis' && !process.env.KOPIS_SERVICE_KEY) throw new Error('KOPIS_SERVICE_KEY missing')
   if (upload && (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY)) throw new Error('Server upload environment missing')
   const client = upload ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } }) : null
   const results = []
   const reissueFile = process.argv.find(a => a.startsWith('--reissue-file='))?.slice(15)
-  const reissueLinks = JSON.parse(await readFile(reissueFile ?? new URL('./reissue-nol-links.json', import.meta.url), 'utf8'))
+  const reissueLinks = factsOnly ? [] : JSON.parse(await readFile(reissueFile ?? new URL('./reissue-nol-links.json', import.meta.url), 'utf8'))
   const noticeFile = process.argv.find(a => a.startsWith('--notice-file='))?.slice(14)
-  const noticeUrls = JSON.parse(await readFile(noticeFile ?? new URL('./ticketlink-notices.json', import.meta.url), 'utf8'))
+  const noticeUrls = factsOnly ? [] : JSON.parse(await readFile(noticeFile ?? new URL('./ticketlink-notices.json', import.meta.url), 'utf8'))
   if (!Array.isArray(noticeUrls)) throw new Error('Notice allowlist must be an array')
   const noticeCache = new Map(), noticeFailures = new Map()
   const supplement = async result => {
@@ -54,7 +58,9 @@ try {
     for (const row of result.candidates) supplementBooking(row, [...noticeCache.values(), ...official])
   }
   let cache = {}
-  try { cache = JSON.parse(await readFile(cachePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
+  if (!factsOnly) {
+    try { cache = JSON.parse(await readFile(cachePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
+  }
   const lookupArtist = skipArtistLookup ? null : createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
   const writeReport = () => output ? writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: false, results }, null, 2) + '\n', 'utf8') : Promise.resolve()
   // NOL is an optional, separately permitted adapter, never a default launch dependency.
@@ -77,14 +83,14 @@ try {
       const result = source === 'reissue_nol' ? await collectReissueNol(reissueLinks) : source === 'kopis' ? await collectKopis(kopisOptions) : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
       result.excluded ??= []
       filterPastCandidates(result, { includePast })
-      await supplement(result)
+      if (!factsOnly) await supplement(result)
       console.error(`[${source}] 후보 ${result.candidates.length}개 · 제외 ${result.excluded.length}개 · 실패 ${result.failures.length}개; 아티스트 보완 중`)
       if (source !== 'reissue_nol' && result.candidates.some(row => row.payload.discovered_artists?.some(credit => !credit.key && credit.name))) {
         const bands = client ? await readCollectionArtists(client) : []
         discoveredIdentities = await enrichArtists(result, createCatalogArtistResolver(bands, lookupArtist))
       }
       for (const row of result.candidates) {
-        if (row.payload.artwork) {
+        if (!factsOnly && row.payload.artwork) {
           const discovered = row.payload.artwork
           row.payload.artwork = await validateArtwork(row.payload.artwork)
           row.payload.artwork_probe = { ...discovered, checked_at: new Date().toISOString(), status: row.payload.artwork ? 'validated' : 'rejected' }
@@ -122,7 +128,7 @@ try {
     } catch (error) { results.push({ source, ...(pendingResult ?? {}), error: error.message, uploaded: false }); console.error(`[${source}] 실패: ${error.message}`); process.exitCode = 1 }
     await writeReport()
   }
-  await writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8')
+  if (!factsOnly) await writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8')
   const report = JSON.stringify({ checked_at: new Date().toISOString(), complete: true, results }, null, 2)
   if (output) await writeFile(output, report + '\n', 'utf8')
   console.log(report)

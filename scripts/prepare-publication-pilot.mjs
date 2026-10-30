@@ -10,7 +10,7 @@ const actions = {
   SOURCE_USE_UNVERIFIED: ['collector', 'Check the exact API/license/use scope or an independent allowed source; require operator action only for a concrete unresolved external grant.'],
   RUNNER_NOT_PUBLICATION_COMPATIBLE: ['collector', 'Prepare and isolate-test publication compatibility; preserve existing ON guard until separately approved release.'],
   ADAPTER_UNVERIFIED: ['collector', 'Verify actual source layout and permitted use; synthetic tests do not certify the adapter.'],
-  GENERAL_SALE_UNVERIFIED: ['collector', 'Match original general-sale evidence and contextual date interpretation to this event; never rewrite the source line.'],
+  GENERAL_SALE_UNVERIFIED: ['collector', 'Verify event-matched general-sale API facts and their source/timestamps; do not infer a sale type or collect notice bodies.'],
   SESSIONS_UNVERIFIED: ['collector', 'Verify exact individual performance starts; never expand a date range into daily sessions.'],
   ANNOUNCEMENT_UNVERIFIED: ['collector', 'Verify original announcement timestamp separately from updates.'],
   OPTIONAL_NOL_DEPENDENCY: ['collector', 'Find independent allowed evidence/booking path; preserve NOL exclusion.'],
