@@ -34,6 +34,11 @@ export function assessPublicationReadiness(snapshot, { now = Date.now() } = {}) 
       || !instant(permission.checkedAt) || Date.parse(permission.checkedAt) > now
       || now - Date.parse(permission.checkedAt) > 90 * 86400000
       || !permission.sourceUrls?.length || !permission.sourceUrls.every(https)) blockers.push('SOURCE_USE_UNVERIFIED')
+    // This rollout permits API facts and attribution links only. A page/robots
+    // check or publication flag does not authorize copying bodies or images.
+    if (permission?.method !== 'api' || !Array.isArray(permission.scopes)
+      || !['concert_facts', 'source_links'].every(scope => permission.scopes.includes(scope))
+      || permission.scopes.some(scope => !['publication', 'concert_facts', 'source_links'].includes(scope))) blockers.push('SOURCE_USE_SCOPE_UNVERIFIED')
     if (source.adapterVerified !== true) blockers.push('ADAPTER_UNVERIFIED')
     if (source.runnerCompatible !== true) blockers.push('RUNNER_NOT_PUBLICATION_COMPATIBLE')
     if (source.policy?.collection_enabled !== true) blockers.push('COLLECTION_DISABLED')
@@ -44,7 +49,9 @@ export function assessPublicationReadiness(snapshot, { now = Date.now() } = {}) 
       const p = row.payload ?? {}, reasons = [], fail = (test, code) => { if (!test) reasons.push(code) }
       let url; try { url = new URL(row.source_url) } catch { /* unknown source stays blocked */ }
       fail(url?.protocol === 'https:' && url.hostname === hosts[source.source] && !url.username && !url.password, 'SOURCE_MISMATCH')
-      fail(![row.source_url, p.ticket?.booking_url, ...(p.sources ?? []).map(s => s.url), ...(p.ticket_evidence ?? []).map(e => e.source_url)].some(nol), 'OPTIONAL_NOL_DEPENDENCY')
+      // A booking destination is a link, not evidence acquired from that site.
+      // NOL evidence remains excluded even when the booking link points elsewhere.
+      fail(![row.source_url, ...(p.sources ?? []).map(s => s.url), ...(p.ticket_evidence ?? []).map(e => e.source_url)].some(nol), 'OPTIONAL_NOL_DEPENDENCY')
       fail(row.automation_blocked === false, 'MANUAL_BLOCK_OR_UNKNOWN')
       fail(p.cancelled === false, 'CANCELLED_OR_UNKNOWN')
       fail(p.country_code === 'KR' && Boolean(p.city?.trim()) && Boolean(p.venue?.trim()), 'KOREA_VENUE_UNVERIFIED')

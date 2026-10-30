@@ -6,7 +6,7 @@ const now = Date.parse('2026-10-28T12:00:00Z')
 const url = 'https://ualive.com/concerts/123'
 function snapshot() {
   return { version: 1, observedAt: '2026-10-28T11:59:00Z', sources: [{ source: 'ualive',
-    permission: { state: 'allowed', scopes: ['publication'], checkedAt: '2026-10-28T10:00:00Z', sourceUrls: ['https://ualive.com/terms'] },
+    permission: { state: 'allowed', method: 'api', scopes: ['publication', 'concert_facts', 'source_links'], checkedAt: '2026-10-28T10:00:00Z', sourceUrls: ['https://ualive.com/terms'] },
     adapterVerified: true, runnerCompatible: true, adapterVersion: 'catalog-v1', activeLease: false,
     policy: { collection_enabled: true, publication_enabled: false, live_after: null, adapter_version: 'catalog-v1' },
     candidates: [{ id: 'fixture', revision: 1, source_url: url, automation_blocked: false,
@@ -74,11 +74,30 @@ test('wheelchair, presale, wrong time and mismatched event evidence cannot certi
   assert.equal(assess(s).sources[0].eligible, 0)
 })
 
-test('a NOL-derived evidence or product URL cannot pass as an independent official-source launch', () => {
-  for (const change of [p => { p.ticket.booking_url = 'https://nol.yanolja.com/ticket/products/123' },
+test('NOL evidence stays excluded independently of the booking destination', () => {
+  for (const change of [p => { p.sources.push({ url: 'https://nol.yanolja.com/ticket/products/123' }) },
     p => { p.ticket_evidence[0].source_url = 'https://tickets.interpark.com/notice/123' }]) {
     const s = snapshot(); change(s.sources[0].candidates[0].payload)
     assert.ok(assess(s).sources[0].candidates[0].reasons.includes('OPTIONAL_NOL_DEPENDENCY'))
+    assert.equal(assess(s).status, 'NO_VERIFIED_SOURCE_READY')
+  }
+})
+
+test('a NOL booking destination alone is a link, never a grant to acquire NOL material', () => {
+  const s = snapshot(), p = s.sources[0].candidates[0].payload
+  p.ticket.booking_url = 'https://nol.yanolja.com/ticket/products/123'
+  const before = structuredClone(s)
+  assert.equal(assess(s).sources[0].eligible, 1)
+  assert.deepEqual(s, before)
+  p.ticket_evidence[0].source_url = p.ticket.booking_url
+  assert.ok(assess(s).sources[0].candidates[0].reasons.includes('OPTIONAL_NOL_DEPENDENCY'))
+})
+
+test('API fact/link scope is explicit; publication or HTML/image permission cannot substitute for it', () => {
+  for (const change of [p => { delete p.method }, p => { p.method = 'html' },
+    p => { p.scopes = ['publication'] }, p => { p.scopes.push('images') }, p => { p.scopes.push('external_body') }]) {
+    const s = snapshot(); change(s.sources[0].permission)
+    assert.ok(assess(s).sources[0].blockers.includes('SOURCE_USE_SCOPE_UNVERIFIED'))
     assert.equal(assess(s).status, 'NO_VERIFIED_SOURCE_READY')
   }
 })
