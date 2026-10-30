@@ -27,3 +27,5 @@ NOL **예매 목적지 링크만** 있다는 이유로 다른 API에서 가져�
 등록 사전점검·신원 계약·출처 평가·공개 보호 SQL·KOPIS 관련 격리 검사 40개, lint/build, `git diff --check` 통과. 실제 CLI를 모의 API와 연결해 KOPIS API 외 요청 없음·본문/이미지/키 유출 없음·cache 생성 없음도 검증했다. build의 기존 500kB 초과 번들 경고는 남는다. 가상 fixture의 권한/API/아티스트는 실제 이용허가나 등록 실적이 아니다. 별도로 실행한 기존 journal/identity CLI 회귀에서는 4건이 Windows hard link/symlink EPERM으로 실패했다. 우회 저장으로 journal 계약을 약화하지 않았다.
 
 다음 단계는 공개 실행기 보완 → 중복·취소·수동 차단과 무알림 초기 공개 검증 → 실제 후보 최종 상태 readback이다. 실제 등록 심사·운영 적용 성공은 별도 확인하며 공개 ON은 별도 승인 후 실행한다.
+
+후속 구현·로컬 검증: [공개 실행기 보완](publication-executor.md). API 일반예매 근거 계약을 추가했으며 운영 실행기의 교체·공개 ON·실제 후보 상태 확인 완료를 뜻하지 않는다.

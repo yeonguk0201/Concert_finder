@@ -15,7 +15,7 @@ function snapshot() {
         starts_on: '2027-01-14', ends_on: '2027-01-14', sessions: [{ starts_on: '2027-01-14', starts_at: '2027-01-14T19:00:00+09:00' }],
         announcement_verified: true, announced_on: '2026-10-28', announced_at: '2026-10-28T19:00:00+09:00', review_reasons: [],
         sources: [{ url, verified_at: '2026-10-28T11:00:00Z' }], ticket: { opens_at: '2026-10-29T12:00:00+09:00' },
-        ticket_evidence: [{ source_url: url, opens_at: '2026-10-29T12:00:00+09:00', line: '일반 예매: 2026년 10월 29일 오후 12시' }],
+        ticket_evidence: [{ source_url: url, opens_at: '2026-10-29T12:00:00+09:00', method: 'api', sale_type: 'general', event_matched: true, verified_at: '2026-10-28T11:00:00Z' }],
       } }],
   }, { source: 'reissue_nol', permission: { state: 'denied' } }] }
 }
@@ -65,9 +65,13 @@ test('missing or malformed event facts, ambiguous identities, manual blocks and 
   }
 })
 
-test('wheelchair, presale, wrong time and mismatched event evidence cannot certify a general sale', () => {
-  for (const line of ['휠체어석 2026년 10월 29일 오후 12시', '선예매: 2026년 10월 29일 오후 12시', '일반 예매: 2026년 10월 30일 오후 12시']) {
-    const s = snapshot(); s.sources[0].candidates[0].payload.ticket_evidence[0].line = line
+test('only event-matched, verified API general sale facts can certify the sale', () => {
+  for (const change of [e => { e.sale_type = 'wheelchair' }, e => { e.sale_type = 'presale' },
+    e => { e.opens_at = '2026-10-30T12:00:00+09:00' }, e => { e.method = 'html' },
+    e => { delete e.event_matched }, e => { e.verified_at = '2026-10-29T12:00:00Z' },
+    e => { e.source_url = 'https://unverified.example/sale' },
+    e => { e.line = '일반 예매: 2026년 10월 29일 오후 12시' }]) {
+    const s = snapshot(); change(s.sources[0].candidates[0].payload.ticket_evidence[0])
     assert.ok(assess(s).sources[0].candidates[0].reasons.includes('GENERAL_SALE_UNVERIFIED'))
   }
   const s = snapshot(); s.sources[0].candidates[0].payload.ticket_evidence[0].event_matched = false

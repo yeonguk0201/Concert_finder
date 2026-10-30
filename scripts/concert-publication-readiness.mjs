@@ -1,8 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import { JSDOM } from 'jsdom'
-import { generalSale } from './booking-evidence.mjs'
 
 const hosts = { ualive: 'ualive.com', mintpaper: 'www.mintpaper.co.kr', radwimps: 'radwimps.jp',
   kopis: 'www.kopis.or.kr', yes24: 'ticket.yes24.com' }
@@ -11,11 +9,12 @@ const instant = s => /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+
 const kstDay = n => new Date(n).toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' })
 const https = s => { try { const u = new URL(s); return u.protocol === 'https:' && !u.username && !u.password } catch { return false } }
 const nol = s => { try { return /(^|\.)(nol\.com|nol\.yanolja\.com|interpark\.com)$/.test(new URL(s).hostname) } catch { return false } }
-function generalEvidence(e, sale) {
-  if (!instant(e.opens_at) || Date.parse(e.opens_at) !== Date.parse(sale) || !https(e.source_url) || e.event_matched === false || e.reason || !e.line) return false
-  const p = new JSDOM('<p></p>').window.document.querySelector('p')
-  p.textContent = e.line
-  try { return Date.parse(generalSale(p).opens_at) === Date.parse(sale) } catch { return false }
+function generalEvidence(e, sale, sources, now) {
+  return e.method === 'api' && e.sale_type === 'general' && e.event_matched === true && !e.reason
+    && !['line', 'body', 'html', 'image'].some(key => key in e)
+    && instant(e.opens_at) && Date.parse(e.opens_at) === Date.parse(sale) && https(e.source_url)
+    && instant(e.verified_at) && Date.parse(e.verified_at) <= now
+    && sources?.some(s => s.url === e.source_url && instant(s.verified_at) && Date.parse(s.verified_at) <= now)
 }
 
 // Advisory only: inputs are observed DB/evidence snapshots, never authority to
@@ -63,9 +62,9 @@ export function assessPublicationReadiness(snapshot, { now = Date.now() } = {}) 
       fail(Array.isArray(p.sessions) && p.sessions.length > 0 && p.sessions.every(s => instant(s.starts_at)
         && day(s.starts_on) && s.starts_on === kstDay(Date.parse(s.starts_at))
         && s.starts_on >= p.starts_on && s.starts_on <= (p.ends_on ?? p.starts_on))
-        && new Set(p.sessions.map(s => s.starts_at)).size === p.sessions.length, 'SESSIONS_UNVERIFIED')
+        && new Set(p.sessions.map(s => Date.parse(s.starts_at))).size === p.sessions.length, 'SESSIONS_UNVERIFIED')
       const sale = p.ticket?.opens_at
-      fail(instant(sale) && p.ticket_evidence?.some(e => generalEvidence(e, sale))
+      fail(instant(sale) && p.ticket_evidence?.some(e => generalEvidence(e, sale, p.sources, now))
         && p.sessions?.some(s => instant(s.starts_at)) && p.sessions.every(s => Date.parse(sale) <= Date.parse(s.starts_at)), 'GENERAL_SALE_UNVERIFIED')
       fail(Array.isArray(p.review_reasons) && p.review_reasons.length === 0, 'PARSER_REVIEW_REQUIRED')
       fail(row.context?.identityApproved === true, 'ARTIST_IDENTITY_OR_APPROVAL_UNVERIFIED')
