@@ -5,7 +5,7 @@ description: "concert-finder 아티스트 DB를 검수해 J-pop 가수·록 밴�
 
 # 공연 아티스트 자동 검수
 
-로컬·클라우드 통합 예약은 [교대 실행 절차](../../docs/artist-review-handoff.md)를 따른다. 장르·승인·채널 전체에서 동일 최대 40팀 선택 목록을 유지한다.
+로컬·클라우드 통합 예약은 [교대 실행 절차](../../docs/artist-review-handoff.md)를 따른다. 현재 ID 구분과 artist/monitor 역할·prepare 단계는 [실행 계약](../../docs/artist-execution-contract.md)을 먼저 확인한다. 내부 행 UUID 할당은 외부 MBID 생성과 다르며, prepare/monitor에서는 아티스트 쓰기를 하지 않는다. 장르·승인·채널 전체에서 동일 최대 40팀 선택 목록을 유지한다.
 
 분류·승인이 명시적으로 포함된 통합 예약은 위 절차의 서버 전용 RPC 경로를 사용한다. 사람의 로그인 대신 기존 서버 인증으로 실행하고, 승인 요건별 조사 근거와 실제 DB 신원 연결을 확인한 후에만 적용한다. 아래 일반 검수의 관리자 RPC 규칙 대신 통합 예약에는 이 경로를 우선한다. 사람의 actor를 가장하지 않고 실행 ID가 남은 receipt와 최신 상태·관계를 재조회한다.
 

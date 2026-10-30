@@ -106,12 +106,33 @@ export async function runQueueCommand(args, { cwd = process.cwd(), env = process
   now = Date.now(), fetcher = fetch, serverGuard = checkLegacyReviewIdle } = {}) {
   const [command, ...options] = args
   if (!['init', 'begin', 'identity', 'context', 'checkpoint', 'apply', 'finish', 'status', 'handoff', 'accept', 'snapshot'].includes(command)
-    || options.some(arg => !/^--(owner|input|state|output|to|direction|authority-key|priority-file|identity-file|limit)=.+$/.test(arg) && arg !== '--defer-pending')
+    || options.some(arg => !/^--(role|owner|input|state|output|to|direction|authority-key|priority-file|identity-file|limit)=.+$/.test(arg) && arg !== '--defer-pending')
     || new Set(options.map(arg => arg.split('=')[0])).size !== options.length) throw new Error('ARGUMENT_INVALID')
   const opt = (key, fallback) => options.find(arg => arg.startsWith(`--${key}=`))?.slice(key.length + 3) ?? fallback
   const lane = opt('owner')
   if (!['local', 'cloud'].includes(lane)) throw new Error('OWNER_REQUIRED')
   if (opt('identity-file') && command !== 'begin') throw Error('ARGUMENT_INVALID')
+  // Execution intent is separate from the local/cloud ownership lane and from
+  // service authentication. This flag never grants database permissions.
+  const role = opt('role', 'monitor')
+  if (!['artist', 'monitor'].includes(role)) throw new Error('EXECUTION_ROLE_INVALID')
+  if (role !== 'artist') {
+    if (command !== 'status') throw new Error('ARTIST_ROLE_REQUIRED')
+    // A monitor may inspect an existing queue without loading env files,
+    // creating directories/locks, renewing a batch, or contacting a service.
+    const root = resolve(cwd, '.local/artist-review-queue')
+    const statePath = resolve(cwd, opt('state', '.local/artist-review-queue/state.json'))
+    if (dirname(statePath) !== root) throw new Error('IGNORED_PATH_REQUIRED')
+    if (await realpath(root) !== root || await realpath(statePath) !== statePath) throw new Error('SYMLINK_PATH_REJECTED')
+    const raw = await readFile(statePath, 'utf8')
+    if (Buffer.byteLength(raw, 'utf8') > 20000000) throw new Error('INPUT_TOO_LARGE')
+    const queue = validateQueue(JSON.parse(raw))
+    noSecrets(queue, env)
+    const result = { owner: queue.owner, revision: queue.revision, transfer: queue.transfer,
+      activeRun: queue.active?.runId ?? null, selected: queue.active?.artists.length ?? 0,
+      tracked: Object.keys(queue.entries).length }
+    output(JSON.stringify(result)); return result
+  }
   // Redaction also covers checkpoint/handoff commands launched in a fresh local process.
   await loadReviewEnvironment(env, cwd, { requireProject: false })
   const serviceClient = async () => {

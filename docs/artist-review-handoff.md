@@ -1,5 +1,7 @@
 # 로컬·클라우드 교대 검수
 
+2026-10-30 현재 우선 계약: [아티스트 실행 역할과 ID 구분](artist-execution-contract.md). 현재 단계는 prepare이며 실제 등록/승인/queue 쓰기는 다음 사용자 재개 지시까지 보류한다. 과거 포괄적인 ID 생성 금지는 외부 신원 조작 금지와 내부 행 UUID 할당을 이 계약에 따라 구분한다.
+
 2026-10-22 KST 사용자 승인 후 `20261021165010_integrated_review_lifecycle`을 운영 DB에 설치했다. 실행 간격은 앱 예약(현재 4시간)에서만 관리하며, 서버는 종료 여부와 기존 5시간 쓰기 임대로 중복 실행을 막는다. 기존 승인 마이그레이션은 재적용하지 않았다.
 
 한쪽 예약만 켜고, 실행 종료와 최신 인계 파일 전달을 확인한 뒤 다른 쪽을 켠다. 예약 일시정지는 이미 실행 중인 작업을 취소하지 않는다. 컴퓨터 종료만으로 클라우드가 로컬 파일을 읽거나 마지막 진행 위치를 알 수는 없다.
@@ -37,9 +39,9 @@
 다음은 `local` 기준이다. 클라우드에서는 `--owner=cloud`를 쓴다. `init`은 최초 한 번만 한다. 다른 컴퓨터의 대기열을 이어받을 때는 새로 init하지 않고 accept한다.
 
 ```sh
-node --use-env-proxy scripts/artist-review-queue.mjs snapshot --owner=local
-node scripts/artist-review-queue.mjs init --owner=local
-node --use-env-proxy scripts/artist-review-queue.mjs begin --owner=local --input=.local/artist-review-queue/catalog.json
+node --use-env-proxy scripts/artist-review-queue.mjs snapshot --role=artist --owner=local
+node scripts/artist-review-queue.mjs init --role=artist --owner=local
+node --use-env-proxy scripts/artist-review-queue.mjs begin --role=artist --owner=local --input=.local/artist-review-queue/catalog.json
 ```
 
 snapshot은 현재 DB를 페이지별로 읽는다. catalog.json의 건수는 그 시점 값이고 과거 585/616팀을 상수로 쓰지 않는다. 고정된 대상은 .local/artist-review-queue/batch.json에 있다. 각 팀의 tasks만 처리하며 실행 중 추가 대상을 선택하지 않는다. 스킬 조사 후 같은 폴더의 JSON으로 checkpoint한다. 예시의 ID/시각/근거는 실제 값으로 작성한다.
@@ -61,23 +63,23 @@ snapshot은 현재 DB를 페이지별로 읽는다. catalog.json의 건수는 �
 ```
 
 ```sh
-node scripts/artist-review-queue.mjs checkpoint --owner=local --input=.local/artist-review-queue/item.json
+node scripts/artist-review-queue.mjs checkpoint --role=artist --owner=local --input=.local/artist-review-queue/item.json
 ```
 
 stage는 research/approval/channels이며 complete/deferred/exception/authority_wait를 구분한다. deferred는 24시간 뒤 재시도하며 완료 근거를 만들지 않는다. 판단이 필요한 구체적 예외만 exception이다. 완료 research는 동일 신원·상태·버전·정책에서 90일, channels는 7일 재사용한다. 마지막 성공 시각을 실패로 앞으로 밀지 않고 보존한다. 90일은 실제 출처 확인 시각에서 계산하므로 오래된 근거를 불러온 날로 유효기간을 연장하지 않는다. verified 채널의 verification에는 실제 API 캐시 checkedAt도 넣어 7일 기준을 보존한다. 같은 체크포인트의 재전송은 API 건수를 중복 가산하지 않는다. 다른 결과로 덮어쓰려면 새 검수가 필요하다.
 
 `apply` 입력은 runId, bandId, proposal(기존 admin_curate_artist와 같은 입력), requirements, approvalEvidence다. 승인 requirements는 identityMatched/countryMatched/genreMatched/classificationMatched/externalIdentityLinked/publicationEffectUnderstood의 실제 확인 결과다. approvalEvidence에는 같은 여섯 키마다 `{ "summary": "해당 요건을 확인한 구체적 설명", "sourceUrls": ["research proof에 포함된 실제 출처 URL"] }`을 기록한다. 공개 효과의 summary에는 분류 승인으로 외부 신원별 공연 자동 공개 승인이 생기며 기존 이벤트 공개 조건도 필요함을 명시한다. keep를 approved와 동일하게 취급하지 않고, readyToApply=false 또는 requirements=false를 인증 복구만으로 true로 바꾸지 않는다. 미확인 요건은 공식 자료를 보완한 뒤에만 제출한다. 조사 출처에는 승인 proposal의 evidence_url도 포함한다. 제외·보류는 기존 category를 보존한다.
 
-외부 신원 연결은 선택된 팀의 서버 context로 확인한다. `{ "bandId": "선택된 UUID" }` 입력으로 다음 명령을 실행하면 현재 band와 연결된 외부 key/evidenceUrl이 context.json에 저장된다. 공식 프로필과 실제 신원을 별도로 대조한다. 서버는 승인 시 band.musicbrainz_id와 일치하는 기존 mb 신원 연결도 검사한다. 연결 누락을 임의의 새 ID 생성으로 해결하지 않는다.
+외부 신원 연결은 선택된 팀의 서버 context로 확인한다. `{ "bandId": "선택된 UUID" }` 입력으로 다음 명령을 실행하면 현재 band와 연결된 외부 key/evidenceUrl이 context.json에 저장된다. 공식 프로필과 실제 신원을 별도로 대조한다. 서버는 승인 시 band.musicbrainz_id와 일치하는 기존 mb 신원 연결도 검사한다. 외부 신원 연결 누락을 가짜 MBID나 임의 신원 관계로 해결하지 않는다. 신규 내부 행 UUID 할당은 별도의 정상 등록 절차이며 실행 계약의 고정·검증 규칙을 따른다.
 
 기존 research가 재사용되어 approval만 선택된 팀에도 새 출처 보완이 가능하다. `apply` 입력의 선택 필드 `approvalProof`에 기존 proof와 같은 `{decision, summary, sources}` 형식으로 승인에 사용한 전체 근거를 제출한다. sourceUrls와 evidence_url은 이 proof에 있는 출처를 가리킨다. 원래 조사 결과는 보존하고 서버 receipt에 보완 근거를 함께 남긴다. 판정을 바꾸거나 실제 확인 시각을 꾸미는 용도로 쓰지 않는다. 기존 연구의 유효기간과 현재 신원 버전 검사도 유지한다.
 
 ```sh
-node --use-env-proxy scripts/artist-review-queue.mjs context --owner=local --input=.local/artist-review-queue/context-input.json
+node --use-env-proxy scripts/artist-review-queue.mjs context --role=artist --owner=local --input=.local/artist-review-queue/context-input.json
 ```
 
 ```sh
-node --use-env-proxy scripts/artist-review-queue.mjs apply --owner=local --input=.local/artist-review-queue/proposal.json
+node --use-env-proxy scripts/artist-review-queue.mjs apply --role=artist --owner=local --input=.local/artist-review-queue/proposal.json
 ```
 
 채널 manifest는 동일 batch에서 tasks에 channels가 있는 팀의 ID와 identityVersion만 포함한다. 승인만 남은 팀은 채널 가져오기·갱신에서 제외한다. 공식성·신원·API 검증은 기존 채널 스킬을 따른다. 같은 신원·근거의 유효 캐시는 JSON 속성 순서나 인용문 추가 여부와 관계없이 재사용하되 공식 링크·확인 시각 등 검증 필드가 바뀌면 다시 대조한다. 다음 명령은 실제 저장이므로 조사 근거가 갖춰졌을 때만 사용한다. `--selection`을 생략하면 기존 전체 갱신 동작이므로 이 예약에서는 반드시 지정한다.
@@ -91,7 +93,7 @@ API 조회·결과 저장은 선택된 최대 40팀으로 제한한다. 기존 m
 채널 작업 후 같은 40팀의 channels 단계를 checkpoint하고 finish한다. 조회·저장 건수와 실제 요청 수를 누락하지 않는다. 완성 보고서를 검토해 API 캐시·키 없이 docs/curation-runs에 KST 실행 시각으로 저장하고 로컬 커밋한다. 이 보고서는 전체 카탈로그 완료를 뜻하지 않는다.
 
 ```sh
-node scripts/artist-review-queue.mjs finish --owner=local
+node scripts/artist-review-queue.mjs finish --role=artist --owner=local
 ```
 
 ## 컴퓨터를 끄기 전 인계
@@ -103,9 +105,9 @@ node scripts/artist-review-queue.mjs finish --owner=local
 5. 클라우드 예약을 활성화한다. 켜는 것만으로 즉시 실행이 보장되지는 않으며 앱에 저장된 예약 일정에 따른다.
 
 ```sh
-node scripts/artist-review-queue.mjs status --owner=local
-node scripts/artist-review-queue.mjs finish --owner=local --defer-pending
-node scripts/artist-review-queue.mjs handoff --owner=local --to=cloud
+node scripts/artist-review-queue.mjs status --role=artist --owner=local
+node scripts/artist-review-queue.mjs finish --role=artist --owner=local --defer-pending
+node scripts/artist-review-queue.mjs handoff --role=artist --owner=local --to=cloud
 ```
 
 finish는 active batch가 있을 때만 실행한다. 클라우드에서:
@@ -114,7 +116,7 @@ finish는 active batch가 있을 때만 실행한다. 클라우드에서:
 node scripts/artist-review-queue.mjs accept --owner=cloud --input=.local/artist-review-queue/handoff.json
 ```
 
-PC를 켤 때는 반대로 클라우드 예약 중지 → 진행 작업 종료 → handoff --owner=cloud --to=local → 파일 전달 → accept --owner=local → 로컬 예약 활성화한다. 기준 시각과 체크포인트를 이어받고 활성 실행·제공처 재시도 대기를 존중한다. 예약 활성화 시점과 별개로 실행 간격을 다시 계산하지 않는다. 이미 받은 낡은 packet은 revision 검사로 거부한다.
+PC를 켤 때는 반대로 클라우드 예약 중지 → 진행 작업 종료 → handoff --role=artist --owner=cloud --to=local → 파일 전달 → accept --role=artist --owner=local → 로컬 예약 활성화한다. 기준 시각과 체크포인트를 이어받고 활성 실행·제공처 재시도 대기를 존중한다. 예약 활성화 시점과 별개로 실행 간격을 다시 계산하지 않는다. 이미 받은 낡은 packet은 revision 검사로 거부한다.
 
 ## 남은 운영 조건
 
@@ -129,3 +131,23 @@ PC를 켤 때는 반대로 클라우드 예약 중지 → 진행 작업 종료 �
 종료 표시 없이 중단된 실행은 기존 5시간 임대가 만료될 때까지 새 실행을 차단한다. 이 임대와 24시간 제공처 cooldown, 7일 캐시, 90일 근거 유효기간은 예약 주기를 바꿔도 유지한다. 기존 실행을 임의로 완료 표시하거나 마이그레이션에서 잠금을 해제하지 않는다.
 
 배포 순서: 한쪽 예약 일시정지 → 실제 작업 종료 확인 → 승인된 새 마이그레이션 생성·검증·적용 → 양쪽 실행기 동기화 → 예약 지시문 전환 → 소유권이 있는 한쪽 예약만 재개. 옛 실행기가 종료 표시를 남기지 못했던 최근 실행은 기존 임대 만료까지 한 번 대기할 수 있다.
+
+## 요네즈 첫 공개 사례의 아티스트 선행 요건 — 2026-10-29 KST
+
+공연 공개 검증 사용자가 지정한 요네즈의 등록/승인은 기존 핵심 필수 목록과 같은 통합40팀/lease 경로에서 처리한다. 공연 감시가 queue/bands를 쓰거나 별도 import로 등록하지 않는다. 진행 중 batch를 바꾸지 않고 다음 정상 경계에서 실제 신원을 검증한다.
+
+기존20261023발굴 후보의 MBID `09d4a85c-4916-4b4e-bc96-c4cfcf371046`를 Last.fm artist.getInfo로 실제 읽어 HTTP200/API성공·동일MBID·응답명 米津玄師를 확인했다. 이것만으로 공식 신원/MB 연결 검증 완료는 아니다. `.local/concert-operations/yonezu-preparation-latest.json`은 **readyToApply=false/readyForMutation=false**인 준비 자료이며 mutation/journal 입력이 아니다. queue state를 편집하거나 거절 초안을 전환하지 않는다. 파일 부재시 새로 init/accept하지 않는다.
+
+[공식 프로필](https://reissuerecords.net/profile/)의 영문/일문 이름·도쿠시마 출신·솔로 원작과 [주최사 보도자료](https://news.livenationentertainment.com/news/kenshi-yonezu-announces-dates-in-north-america-asia-europe-and-the-uk-on-ghost-world-tour)의 일본 음악가·동일 원작을 실제 대조한 조사 단서다. MusicBrainz 정식 프로필/국가/동일 원작·관계는 cooldown `2026-10-29T17:27:45.888678Z` 이후 기존 공유 gate에서 확인하고, 기존 수동 결정/중복/신원 충돌/모든 승인 요건을 지킨다. Hachi의 과거 활동을 새 별칭 저장 허가나 단독 채널 확인으로 자동 전용하지 않는다. 지원 journal/receipt/버전·관계/모든 검색 readback을 확인한 경우만 신규/승인을 완료로 기록한다.
+
+## 요네즈 canonical 확인 후 현재 경계 — 2026-10-30 06:32 KST
+
+실제 공유 gate 조회와 공식 Reissue/Sony의 국가·원작·관계를 대조해 필수목록 MBID `09d4a85c-4916-4b4e-bc96-c4cfcf371046`를 확인했다. 한국어/일어/영문 공개 검색은 아직0이며 신규 등록·승인 완료가 아니다. 현재 상세는 이번 준비 기록 (운영 상세 기록은 별도 클라우드 인계 묶음에 보존)과 `.local/artist-review-queue/r53-yonezu-verified-preparation.json`을 따른다.
+
+자동 승인 검토가 운영 신규 identity 실행을 읽기전용/준비범위를 넘는 것으로 거절해 명령이 실행되지 않았다. 같은 명령·다른 writer로 우회하지 않고 운영 등록 범위의 명시적 확인을 기다린다. 기존 false 준비·queue4513/active=null을 유지했다. 확인 후에도 신규 등록/승인은 같은 최대40팀·불변journal/receipt/검색readback을 따르고 승인만 다음 선정 가능한 정규batch로 지연한다.
+
+## R54 현재 종료 상태 — 2026-10-30 10:39 KST
+
+최신 R54 기록 (운영 상세 기록은 별도 클라우드 인계 묶음에 보존): 같은40팀의지원begin/journal/finish는확인했으나요네즈identity실행은새내부PK범위에대한자동검토거절로실행0이다. 내부pendingID `0d2368ee-72d7-4ec8-aa52-5a708452963f`·canonical근거·원래proof시각은`.local/artist-review-queue/r54-identity-work.json`에보존한다. 외부MBID생성·다른writer·거절명령재시도없음. 명시적내부PK/운영등록확인전이입력을다른ID로바꾸어우회하지않는다.
+
+queue4558/cloud/active=null/transfer=null, tracked667중1은미등록pending이며DB666팀과구분한다. 종료된run을재전송하지않고확인후다음정상최대40팀/5시간lease/버전·수동보호·receipt·공개검색경로를따른다. 이번JoyDivision채널/사진캐시1건외등록/승인0.
