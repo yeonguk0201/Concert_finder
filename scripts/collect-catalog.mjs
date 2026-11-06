@@ -14,6 +14,7 @@ import { collectTicketlinkEvidence, supplementBooking, ticketlinkProduct } from 
 import { collectReissueNol } from './reissue-nol.mjs'
 import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved, quarantineCollectionLinkRegressions } from './collection-artist-links.mjs'
 import { assertCollectionFactsPreserved, quarantineCollectionFactRegressions } from './collection-fact-guards.mjs'
+import { readAutomaticPlan, prepareAutomaticPublication, combineAutomaticBatch } from './automatic-publication.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
@@ -32,6 +33,16 @@ try {
   if (selected === 'kopis' && !process.env.KOPIS_SERVICE_KEY) throw new Error('KOPIS_SERVICE_KEY missing')
   if (upload && (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY)) throw new Error('Server upload environment missing')
   const client = upload ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } }) : null
+  const automatic = process.env.KOPIS_AUTOMATIC_PUBLICATION === '1'
+  const reviewPlan = automatic ? await readAutomaticPlan(process.env.KOPIS_AUTOMATIC_REVIEW_FILE) : null
+  if (automatic) {
+    if (!upload || selected !== 'kopis' || !concertsOnly) throw Error('AUTOMATIC_COLLECTION_SCOPE_REQUIRED')
+    const { data: capabilities, error } = await client.rpc('service_publication_capabilities', {})
+    const { data: policy, error: policyError } = await client.from('collection_policies').select('*').eq('source', 'kopis').single()
+    if (error || policyError || capabilities?.continuous_review !== true || capabilities.executor_md5 !== process.env.KOPIS_PUBLICATION_EXECUTOR_MD5
+      || !/^[a-f0-9]{32}$/.test(process.env.KOPIS_PUBLICATION_EXECUTOR_MD5 ?? '') || !policy?.collection_enabled
+      || !policy.publication_enabled || policy.live_after !== null) throw Error('AUTOMATIC_COLLECTION_CONTRACT_CHANGED')
+  }
   const results = []
   const reissueFile = process.argv.find(a => a.startsWith('--reissue-file='))?.slice(15)
   const reissueLinks = factsOnly ? [] : JSON.parse(await readFile(reissueFile ?? new URL('./reissue-nol-links.json', import.meta.url), 'utf8'))
@@ -65,7 +76,8 @@ try {
   const lookupArtist = skipArtistLookup ? null : createArtistResolver({ cache, onCacheChanged: () => writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8') })
   const writeReport = () => output ? writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: false, results }, null, 2) + '\n', 'utf8') : Promise.resolve()
   // NOL is an optional, separately permitted adapter, never a default launch dependency.
-  for (const source of selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis'] : [selected]) {
+  for (const source of (selected === 'all' ? ['ualive', 'mintpaper', 'radwimps', 'kopis'] : [selected])
+    .filter(source => !(source === 'kopis' && process.argv.includes('--exclude-kopis')))) {
     if (source === 'reissue_nol' && !reissueLinks.length) {
       results.push({ source, skipped: 'reviewed_links_missing', uploaded: false }); await writeReport(); continue
     }
@@ -75,7 +87,7 @@ try {
       await writeReport(); continue
     }
     console.error(`[${source}] 공개 공연 목록 수집 시작`)
-    let pendingResult = null
+    let pendingResult = null, prepared = { rows: [], holds: [] }
     try {
       let discoveredIdentities = []
       const result = await runSource({ client, source, collect: async () => {
@@ -101,6 +113,10 @@ try {
         if (stable.artwork_probe) delete stable.artwork_probe.checked_at
         row.content_hash = createHash('sha256').update(JSON.stringify(stable)).digest('hex')
       }
+      if (automatic) {
+        try { prepared = await prepareAutomaticPublication({ client, plan: reviewPlan }) }
+        catch (error) { throw Object.assign(error, { retryable: false }) }
+      }
       pendingResult = result
       return result
       }, upload: async (batch, runToken, attempts) => {
@@ -117,7 +133,10 @@ try {
             throw error
           }
           await assertCollectionFactsPreserved(client, batch)
-          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: concertsOnly || source === 'reissue_nol' ? [] : [...artists, ...retainedIdentities], attempt_count: attempts, adapter_version: source === 'reissue_nol' ? 'reissue-nol-review-v1' : 'catalog-v1' })
+          // Guard raw material first, then add exact CAS-reviewed candidates.
+          const submission = automatic ? combineAutomaticBatch(structuredClone(batch), prepared) : batch
+          const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch: submission, identities: concertsOnly || source === 'reissue_nol' ? [] : [...artists, ...retainedIdentities], attempt_count: attempts, adapter_version: source === 'reissue_nol' ? 'reissue-nol-review-v1' : 'catalog-v1' })
+          if (!error && automatic) Object.assign(batch, submission)
           if (!error) return data
           lastError = error
           if (attempt < 3) await new Promise(resolve => setTimeout(resolve, attempt * 5000))
@@ -128,7 +147,7 @@ try {
       results.push({ source, ...result, artist_identity_count: discoveredIdentities.length, uploaded: upload })
       console.error(`[${source}] 완료 · 새 식별 정보 ${discoveredIdentities.length}개 · 업로드 ${upload}`)
       if (result.failures.length) process.exitCode = 1
-    } catch (error) { results.push({ source, ...(pendingResult ?? {}), error: error.message, uploaded: false }); console.error(`[${source}] 실패: ${error.message}`); process.exitCode = 1 }
+    } catch (error) { results.push({ source, ...(pendingResult ?? {}), error: error.message, run_id: error.run_id ?? null, uploaded: false }); console.error(`[${source}] 실패: ${error.message}`); process.exitCode = 1 }
     await writeReport()
   }
   if (!factsOnly) await writeFile(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8')
