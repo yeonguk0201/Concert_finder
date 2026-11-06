@@ -3,6 +3,8 @@
 begin;
 select source from public.collection_policies order by source for update;
 do $$ begin
+  if md5(pg_get_functiondef('public.service_complete_collection(uuid,jsonb,jsonb,integer,text)'::regprocedure))
+    <> '4068c76feb409183c3073f71b584eca7' then raise exception 'EXECUTOR_CHANGED_SINCE_REVIEW'; end if;
   if exists(select 1 from public.collection_policies where publication_enabled or live_after is not null)
     then raise exception 'PUBLICATION_MUST_REMAIN_OFF'; end if;
   if exists(select 1 from private.collection_leases where expires_at>clock_timestamp())
