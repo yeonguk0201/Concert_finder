@@ -60,7 +60,13 @@ export async function runReviewedPublication({ client, env = process.env, now = 
   const reference = env.KOPIS_REVIEWED_CANDIDATE
   if (!/^[a-f0-9-]{36}:[1-9][0-9]*$/.test(reference ?? '') || !env.KOPIS_REVIEWED_GUIDANCE
     || !env.KOPIS_SERVICE_KEY) throw Error('REVIEWED_RELEASE_TARGET_REQUIRED')
-  return runSource({ client, source: 'kopis', collect: async () => {
+  let runId = null
+  const leaseClient = { rpc: async (name, args) => {
+    const response = await client.rpc(name, args)
+    if (name === 'service_begin_collection' && !response.error) runId = response.data
+    return response
+  } }
+  try { return await runSource({ client: leaseClient, source: 'kopis', collect: async () => {
     try {
     // Recheck after acquiring the original source lease. The server locks and
     // compares the exact stored revision/hash/payload again before ingestion.
@@ -71,24 +77,35 @@ export async function runReviewedPublication({ client, env = process.env, now = 
     const url = new URL(`https://kopis.or.kr/openApi/restful/pblprfr/${id}`)
     url.searchParams.set('service', env.KOPIS_SERVICE_KEY)
     const response = await fetcher(url, { redirect: 'error', signal: AbortSignal.timeout(20000) })
-    if (!response.ok) throw Object.assign(Error('REVIEWED_RELEASE_SOURCE_UNAVAILABLE'), { retryable: false })
+    if (!response.ok) throw Object.assign(Error(`KOPIS HTTP ${response.status} [detail ${id}]`), { retryable: false })
     assertCurrentKopis(row, await response.text(), env.KOPIS_REVIEWED_GUIDANCE)
     return { candidates: [candidate], failures: [], excluded: [], source_verified_at: new Date().toISOString() }
     } catch (error) { throw Object.assign(error, { retryable: false }) }
   }, upload: async (batch, token, attempts) => unwrap(await client.rpc('service_complete_collection', {
     run_token: token, batch, identities: [], attempt_count: attempts, adapter_version: 'catalog-v1',
-  })) })
+  })) }) } catch (error) { throw Object.assign(error, { run_id: runId }) }
+}
+
+export function reviewedFailureReport(error) {
+  const message = /^(?:[A-Z0-9_]+|KOPIS HTTP [45][0-9]{2} \[detail PF[0-9]{6}\])$/.test(error?.message ?? '')
+    ? error.message : 'REVIEWED_RELEASE_FAILED'
+  const runId = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(error?.run_id ?? '') ? error.run_id : null
+  return { checked_at: new Date().toISOString(), complete: false,
+    results: [{ source: 'kopis', candidates: [], failures: [], uploaded: false, error: message, run_id: runId }] }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
   try {
     if (process.env.SUPABASE_URL !== 'https://czjrzylvnewfjnfwjhwf.supabase.co') throw Error('PROJECT_MISMATCH')
-    const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
     if (!output) throw Error('REVIEWED_RELEASE_OUTPUT_REQUIRED')
     const client = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY,
       { auth: { persistSession: false, autoRefreshToken: false } })
     const result = await runReviewedPublication({ client })
     await writeFile(output, JSON.stringify({ checked_at: new Date().toISOString(), complete: true,
       results: [{ source: 'kopis', ...result, uploaded: !result.skipped }] }, null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
-  } catch { console.error('REVIEWED_RELEASE_FAILED'); process.exitCode = 1 }
+  } catch (error) {
+    if (output) await writeFile(output, JSON.stringify(reviewedFailureReport(error), null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
+    console.error('REVIEWED_RELEASE_FAILED'); process.exitCode = 1
+  }
 }

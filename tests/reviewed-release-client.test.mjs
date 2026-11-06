@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { reviewedReleaseRow, runReviewedPublication, assertCurrentKopis } from '../scripts/publish-reviewed-candidate.mjs'
+import { reviewedReleaseRow, runReviewedPublication, assertCurrentKopis, reviewedFailureReport } from '../scripts/publish-reviewed-candidate.mjs'
 
 // Entirely fictional observations. No operational client, keys or source calls.
 function fixture() {
@@ -74,4 +74,17 @@ test('stale evidence, protected decisions and changed revisions stay blocked', (
     assert.throws(() => reviewedReleaseRow(row, f.env.KOPIS_REVIEWED_CANDIDATE))
   }
   assert.throws(() => assertCurrentKopis(f.row, '<!DOCTYPE x><dbs/>', f.env.KOPIS_REVIEWED_GUIDANCE))
+})
+test('HTTP400 keeps the same run and safe detail context for the existing cooldown policy', async () => {
+  const f = fixture(); let requests = 0
+  await assert.rejects(runReviewedPublication({ client: f.client, env: f.env,
+    fetcher: async () => { requests++; return new Response('', { status: 400 }) } }), error => {
+    const result = reviewedFailureReport(error).results[0]
+    assert.equal(result.error, 'KOPIS HTTP 400 [detail PF123456]')
+    assert.equal(result.run_id, '00000000-0000-4000-8000-000000000099')
+    return true
+  })
+  assert.equal(requests, 1)
+  assert.equal(f.calls.at(-1).args.failure_code, 'COLLECTION_HTTP_400')
+  assert.ok(!JSON.stringify(reviewedFailureReport(Error('https://source.test/?key=secret'))).includes('secret'))
 })
