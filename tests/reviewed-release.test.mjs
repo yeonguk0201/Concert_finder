@@ -19,6 +19,7 @@ test('reviewed publication uses exact stored facts while older collectors cannot
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
     await db.exec(await readFile(new URL('../supabase/migrations/20261106101911_reviewed_candidate_release.sql', import.meta.url), 'utf8'))
+    await db.exec(await readFile(new URL('../supabase/manual/continuous-reviewed-publication.sql', import.meta.url), 'utf8'))
     await db.query(`select set_config('request.jwt.claims','{"role":"service_role"}',false)`)
     const user = '00000000-0000-4000-8000-000000000099'
     await db.query('insert into auth.users values ($1)', [user])
@@ -140,6 +141,49 @@ test('reviewed publication uses exact stored facts while older collectors cannot
       const other = structuredClone(row); other.source_url = url.replace('PF123456', 'PF123457')
       assert.deepEqual((await complete([other])).result, { published: 0, review: 1 })
       assert.equal((await db.query('select reason from public.collection_decisions order by decided_at desc limit 1')).rows[0].reason, 'REVIEWED_RELEASE_TARGET_REQUIRED')
+    })
+    await isolate('continuous batches enrich two arbitrary candidates and persist all source links silently', async () => {
+      const other = structuredClone(row); other.source_url = url.replace('PF123456', 'PF123458')
+      other.payload.title = 'Another fictional concert'; other.payload.sources[0].url = other.source_url
+      other.payload.ticket_evidence[0].source_url = other.source_url
+      other.payload.starts_on = other.payload.ends_on = new Date(Date.parse(clock.day) + 86400000).toISOString().slice(0, 10)
+      other.payload.sessions = [{ starts_on: other.payload.starts_on, starts_at: `${other.payload.starts_on}T19:00:00+09:00` }]
+      await complete([other])
+      const second = (await db.query('select * from public.collection_candidates where source_url=$1', [other.source_url])).rows[0]
+      const rows = [snapshot, second].map((stored, i) => {
+        const r = reviewedReleaseRow(stored, `${stored.id}:${stored.revision}`)
+        r.automatic_enrichment = true; r.content_hash = String(i + 2).repeat(64)
+        r.payload.sources.push({ url: `https://official.example/notice/${i}`, label: 'Fictional official notice', verified_at: now })
+        return r
+      })
+      await db.exec("update public.collection_policies set publication_enabled=true where source='kopis'")
+      assert.deepEqual((await complete(rows)).result, { published: 2, review: 0 })
+      assert.equal((await db.query('select count(*)::int n from public.concert_sources')).rows[0].n, 4)
+      assert.equal((await db.query('select count(*)::int n from private.notification_deliveries')).rows[0].n, 0)
+      assert.equal((await db.query('select count(*)::int n from private.notification_attempts')).rows[0].n, 0)
+      assert.equal((await db.query('select bool_and(initial_import) b from private.publication_changes')).rows[0].b, true)
+    })
+    await isolate('automatic enrichment cannot bypass manual state, stale CAS or regress event facts', async () => {
+      await db.exec("update public.collection_policies set publication_enabled=true where source='kopis'")
+      const r = structuredClone(release); r.automatic_enrichment = true; r.payload.venue = 'Unverified different venue'
+      await assert.rejects(complete([r]), /REVIEWED_ENRICHMENT_INVALID/)
+    })
+    await isolate('an initially incomplete collected candidate can be enriched and published atomically', async () => {
+      const raw = structuredClone(row)
+      raw.source_url = url.replace('PF123456', 'PF123459'); raw.payload.sources[0].url = raw.source_url
+      raw.payload.sources[0].verified_at = null; raw.payload.sessions = []
+      raw.payload.announcement_verified = false; raw.payload.announced_on = null
+      raw.payload.ticket.opens_at = null; raw.payload.ticket_evidence = []
+      await complete([raw])
+      const before = (await db.query('select * from public.collection_candidates where source_url=$1', [raw.source_url])).rows[0]
+      const proposed = structuredClone(row); proposed.source_url = raw.source_url
+      proposed.payload.sources[0].url = raw.source_url; proposed.payload.ticket_evidence[0].source_url = raw.source_url
+      Object.assign(proposed, { automatic_enrichment: true, reviewed_revision: before.revision,
+        reviewed_content_hash: before.content_hash, content_hash: 'd'.repeat(64) })
+      await db.exec("update public.collection_policies set publication_enabled=true where source='kopis'")
+      assert.deepEqual((await complete([proposed])).result, { published: 1, review: 0 })
+      const after = (await db.query('select revision,payload from public.collection_candidates where id=$1', [before.id])).rows[0]
+      assert.equal(after.revision, before.revision + 1); assert.equal(after.payload.sessions.length, 1)
     })
     for (const change of [{ revision: 999 }, { status: 'dismissed' }, { automation_blocked: true }]) {
       assert.throws(() => reviewedReleaseRow({ ...snapshot, ...change }, reference))

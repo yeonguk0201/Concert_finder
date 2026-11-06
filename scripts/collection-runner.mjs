@@ -44,7 +44,7 @@ export async function runSource({ client, source, collect, upload, sleep = ms =>
       if (finished.error) throw new Error(`Failure recording failed: ${finished.error.code ?? 'RPC'}`)
     }
     // Only the adapter's fixed, credential-free request context may cross this boundary.
-    if (phase === 'collect' && /^KOPIS HTTP [45]\d{2} \[(?:list \d{8}-\d{8} page=\d+|detail PF\d{6})\]$/.test(error?.message ?? '')) throw error
-    throw new Error(failure.code)
+    if (phase === 'collect' && /^KOPIS HTTP [45]\d{2} \[(?:list \d{8}-\d{8} page=\d+|detail PF\d{6})\]$/.test(error?.message ?? '')) throw Object.assign(error, { run_id: token })
+    throw Object.assign(new Error(failure.code), { run_id: token })
   }
 }

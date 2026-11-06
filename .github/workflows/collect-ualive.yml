@@ -38,7 +38,10 @@ jobs:
           COLLECTION_SOURCE: ${{ inputs.source || 'all' }}
           KOPIS_SLOT: ${{ inputs.kopis_slot }}
         run: |
-          args=("--source=$COLLECTION_SOURCE" "--upload" "--output=collection-report.local")
+          args=("--source=$COLLECTION_SOURCE" "--concerts-only" "--upload" "--output=collection-report.local")
+          # The existing cloud scheduler owns KOPIS collection + review + release.
+          # A second hourly KOPIS run would keep its recent-attempt gate closed.
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then args+=("--exclude-kopis"); fi
           if [[ -n "$KOPIS_SLOT" ]]; then args+=("--kopis-slot=$KOPIS_SLOT"); fi
           node scripts/collect-catalog.mjs "${args[@]}"
       - name: Preserve collection report
