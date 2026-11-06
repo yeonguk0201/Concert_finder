@@ -206,7 +206,18 @@
     "manualRunThreadTurn": "01a1b045-2409-72f4-bd65-fc7dd8658dc6",
     "manualRunCommit": "44551c2",
     "manualRunResult": "recent_attempt; same previous completed run dd3cca9a-c43b-43dc-b87a-2315357a67ef",
-    "manualRuntimeChecks": 43
+    "manualRuntimeChecks": 43,
+    "finalRuntimeAdoptionConfirmed": false,
+    "lastManualRun": "ec96ca19-5ca7-40f3-a34b-fcb757b27b64",
+    "lastManualResult": {
+      "candidates": 78,
+      "review": 78,
+      "published": 0,
+      "linkHolds": 22,
+      "http400": 0
+    },
+    "lastManualCodeUnchangedFrom": "44551c2",
+    "lastManualRecordCommit": "913b739"
   },
   "authorization": {
     "sourcePublicationOnApproved": false,
