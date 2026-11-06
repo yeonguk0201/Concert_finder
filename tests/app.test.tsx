@@ -30,7 +30,7 @@ beforeEach(() => {
   localStorage.setItem('encore.bands', '["oasis"]'); localStorage.setItem('encore.saved', '["oasis-seoul"]')
   history.replaceState(null, '', '/')
 })
-afterEach(() => { cleanup(); vi.clearAllMocks() })
+afterEach(() => { cleanup(); vi.clearAllMocks(); vi.useRealTimers() })
 
 test('ordinary search stays in the approved DB catalog', () => {
   mocks.concerts = []
@@ -120,6 +120,13 @@ test('an unknown opening time still allows saving the one-to-one ticket schedule
   expect((button as HTMLButtonElement).disabled).toBe(false)
   fireEvent.click(button)
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'real-ticket'))
+})
+test('date-only announcements explicitly disclose the missing time in concert details', () => {
+  mocks.concerts = [{ ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), announcementPrecision: 'day' }]
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
+  expect(screen.getByText(/발표일만 확인, 시각 미확인/)).toBeTruthy()
+  expect(screen.getByText('공식 발표일')).toBeTruthy()
 })
 test('band search finds aliases and supports following without concerts', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
@@ -238,6 +245,7 @@ test('concert discovery contains only concerts and artist identity opens a deep-
 })
 
 test('selected calendar date filters ticket opens in KST and recommends at most three performances', () => {
+  vi.useFakeTimers({ toFake: ['Date'] }); vi.setSystemTime(new Date('2026-10-22T12:00:00Z'))
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
   const base = mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]
   mocks.concerts = Array.from({ length: 4 }, (_, i) => ({ ...base, id: `concert-${i}`, title: `Concert ${i}`, date: '2026-10-24', ticketScheduleId: `ticket-${i}`, ticketAt: '2026-10-22T15:00:00Z' }))

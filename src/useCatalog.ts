@@ -32,7 +32,7 @@ export function useCatalog() {
     const profiles = backend.rpc('artist_official_profiles').then(result => result.error ? [] : result.data ?? [], () => [])
     void Promise.all([
       approvedBands(),
-      backend.from('concerts').select('id,title,format,city,venue,starts_on,ends_on,announced_on,cancelled,artwork,concert_bands(band_id),ticket_schedules(id,opens_at,price_description,booking_url),concert_sources(url,label,verified_at)').eq('status', 'published'),
+      backend.from('concerts').select('id,title,format,city,venue,starts_on,ends_on,announced_on,announced_at,cancelled,artwork,concert_bands(band_id),ticket_schedules(id,opens_at,price_description,booking_url),concert_sources(url,label,verified_at)').eq('status', 'published'),
     ]).then(([rows, concertResult]) => {
       if (!active) return
       if (concertResult.error) throw new Error('catalog')

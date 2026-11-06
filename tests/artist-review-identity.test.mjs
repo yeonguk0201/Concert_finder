@@ -169,7 +169,7 @@ test('CLI persists the immutable journal before registration and recovers a fail
     }
     return new Response('null', { status: 200 })
   }
-  const invoke = args => runQueueCommand(args, { cwd: root, env, now, fetcher, serverGuard: async () => {} })
+  const invoke = args => runQueueCommand([...args, '--role=artist'], { cwd: root, env, now, fetcher, serverGuard: async () => {} })
   try {
     await assert.rejects(invoke(['begin', '--owner=cloud', '--input=.local/artist-review-queue/catalog.json', '--identity-file=.local/artist-review-queue/work.json']), /SERVICE_REGISTRATION_FAILED/)
     const queue = JSON.parse(await readFile(statePath, 'utf8'))
