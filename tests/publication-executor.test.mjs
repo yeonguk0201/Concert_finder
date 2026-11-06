@@ -81,6 +81,11 @@ test('proposed publication executor validates API facts and preserves publicatio
     })
     // Only the isolated fixture policy is enabled. Production is never contacted.
     await db.exec("update public.collection_policies set publication_enabled=true where source='kopis'")
+    await isolate('an unrelated excluded artist cannot block the approved concert lineup', async row => {
+      await db.query("insert into public.bands(name,country_code,curation_status) values ('Fictional unrelated excluded artist','JP','excluded')")
+      assert.deepEqual(await complete([row]), { published: 1, review: 0 })
+      assert.equal(await reason(), 'VERIFIED_NEW_EVENT')
+    })
     await isolate('date-only initial publication stores no invented timestamp and creates no notifications', async row => {
       Object.assign(row.payload, { announced_at: null, announcement_precision: 'day', initial_import: true })
       const token = await begin()

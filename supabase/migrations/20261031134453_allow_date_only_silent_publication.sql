@@ -108,7 +108,8 @@ begin
     begin
     select concert_id into target from public.concert_sources where url=candidate.source_url limit 1;
     if candidate.automation_blocked or candidate.status in ('reviewed','dismissed') then reason:='ADMIN_OVERRIDE';
-    elsif exists(select 1 from jsonb_array_elements_text(coalesce(p->'band_ids','[]')) id join public.bands b on b.id=id::uuid where b.curation_status in ('held','excluded')) then reason:='ARTIST_CURATION_BLOCKED';
+    elsif exists(select 1 from jsonb_array_elements_text(coalesce(p->'band_ids','[]')) as linked_band(value)
+      join public.bands b on b.id=linked_band.value::uuid where b.curation_status in ('held','excluded')) then reason:='ARTIST_CURATION_BLOCKED';
     elsif target is not null then
       if p->'cancelled' is distinct from 'false'::jsonb then reason:='CANCELLED_OR_UNKNOWN';
       elsif exists(select 1 from public.concerts c where c.id=target and (c.status<>'published' or c.cancelled)) then reason:='EXISTING_CONCERT_REVIEW';
