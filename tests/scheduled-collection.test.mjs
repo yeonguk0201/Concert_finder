@@ -84,3 +84,23 @@ test('collection fallback respects source policy, recent server attempts, cooldo
   assert.equal(collectionDecision({ policy, now, latest: { started_at: 'invalid' } }), 'clock_or_state_unconfirmed')
   assert.equal(collectionDecision({ policy, now, nextAttemptAt: '2026-10-23T12:00:00Z' }), 'cooldown')
 })
+
+test('continuous mode keeps discovery running when the reviewed batch is empty', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'continuous-scheduled-'))
+  try {
+    await mkdir(join(root, 'scripts'), { recursive: true })
+    await writeFile(join(root, 'scripts/collect-catalog.mjs'), `
+      import {writeFile} from 'node:fs/promises';
+      const output=process.argv.find(a=>a.startsWith('--output=')).slice(9);
+      await writeFile(output,JSON.stringify({complete:true,results:[{source:'kopis',candidates:[],failures:[],uploaded:false}]}));
+    `, 'utf8')
+    const digest = 'a'.repeat(32)
+    const env = { SUPABASE_URL: 'https://czjrzylvnewfjnfwjhwf.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'fixture',
+      KOPIS_SERVICE_KEY: 'fixture', KOPIS_PUBLICATION_EXECUTOR_MD5: digest, KOPIS_AUTOMATIC_PUBLICATION: '1', KOPIS_AUTOMATIC_REVIEW_FILE: '/fictional/empty-plan.json' }
+    const fetcher = async url => new Response(JSON.stringify(new URL(url).pathname.endsWith('/collection_policies')
+      ? [{ source: 'kopis', collection_enabled: true, publication_enabled: true, live_after: null }]
+      : new URL(url).pathname.endsWith('/collection_runs') ? []
+      : { contract: 'publication-facts-v3', reviewed_release: true, continuous_review: true, executor_md5: digest }))
+    assert.equal((await runScheduledCollection({ root, env, fetcher })).failed, false)
+  } finally { await rm(root, { recursive: true, force: true }) }
+})

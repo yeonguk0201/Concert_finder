@@ -61,7 +61,9 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
     if (!publicationCollectionCompatible(policies[0], capabilities, env.KOPIS_PUBLICATION_EXECUTOR_MD5)) {
       throw new Error('COLLECTION_PUBLICATION_CONTRACT_UNCONFIRMED')
     }
-    if (!/^[a-f0-9-]{36}:[1-9][0-9]*$/.test(env.KOPIS_REVIEWED_CANDIDATE ?? '') || !env.KOPIS_REVIEWED_GUIDANCE) {
+    if (env.KOPIS_AUTOMATIC_PUBLICATION === '1') {
+      if (capabilities.continuous_review !== true || !env.KOPIS_AUTOMATIC_REVIEW_FILE) throw new Error('COLLECTION_AUTOMATIC_REVIEW_REQUIRED')
+    } else if (!/^[a-f0-9-]{36}:[1-9][0-9]*$/.test(env.KOPIS_REVIEWED_CANDIDATE ?? '') || !env.KOPIS_REVIEWED_GUIDANCE) {
       throw new Error('COLLECTION_REVIEWED_TARGET_REQUIRED')
     }
   }
@@ -71,7 +73,7 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   let code
   try {
     code = await new Promise((done, reject) => {
-      const entry = policies[0].publication_enabled ? 'publish-reviewed-candidate.mjs' : 'collect-catalog.mjs'
+      const entry = policies[0].publication_enabled && env.KOPIS_AUTOMATIC_PUBLICATION !== '1' ? 'publish-reviewed-candidate.mjs' : 'collect-catalog.mjs'
       const child = spawn(process.execPath, ['--use-env-proxy', join(root, 'scripts', entry), '--source=kopis',
         '--concerts-only', '--upload', `--notice-file=${noticeFile}`, `--output=${outputFile}`],
       { cwd: directory, env, stdio: ['ignore', log.fd, log.fd] })
