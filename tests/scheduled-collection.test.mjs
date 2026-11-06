@@ -36,7 +36,7 @@ test('ON preflight rejects missing pins and server drift before spawning or chan
 test('publication collection requires an explicitly pinned deployed executor and silent policy', () => {
   const digest = 'a'.repeat(32)
   const policy = { source: 'kopis', collection_enabled: true, publication_enabled: true, live_after: null }
-  const capabilities = { contract: 'publication-facts-v3', executor_md5: digest }
+  const capabilities = { contract: 'publication-facts-v3', reviewed_release: true, executor_md5: digest }
   assert.equal(publicationCollectionCompatible(policy, capabilities, digest), true)
   for (const expected of [undefined, '', 'x'.repeat(32), 'b'.repeat(32)]) {
     assert.equal(publicationCollectionCompatible(policy, capabilities, expected), false)
@@ -46,7 +46,32 @@ test('publication collection requires an explicitly pinned deployed executor and
     assert.equal(publicationCollectionCompatible({ ...policy, ...changed }, capabilities, digest), false)
   }
   assert.equal(publicationCollectionCompatible(policy, null, digest), false)
+  assert.equal(publicationCollectionCompatible(policy, { ...capabilities, reviewed_release: false }, digest), false)
   assert.equal(publicationCollectionCompatible(policy, { ...capabilities, contract: 'legacy' }, digest), false)
+})
+
+test('an approved silent scheduled run selects the reviewed publisher instead of raw recollection', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'reviewed-scheduled-'))
+  try {
+    await mkdir(join(root, 'scripts'), { recursive: true })
+    await writeFile(join(root, 'scripts/publish-reviewed-candidate.mjs'), `
+      import {writeFile} from 'node:fs/promises';
+      const output=process.argv.find(a=>a.startsWith('--output=')).slice(9);
+      await writeFile(output,JSON.stringify({complete:true,results:[{source:'kopis',candidates:[],failures:[],uploaded:false}]}));
+    `, 'utf8')
+    const digest = 'a'.repeat(32)
+    const status = await runScheduledCollection({ root, env: {
+      SUPABASE_URL: 'https://czjrzylvnewfjnfwjhwf.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'fictional', KOPIS_SERVICE_KEY: 'fictional',
+      KOPIS_PUBLICATION_EXECUTOR_MD5: digest, KOPIS_REVIEWED_CANDIDATE: '00000000-0000-4000-8000-000000000001:1',
+      KOPIS_REVIEWED_GUIDANCE: '가상 검증 회차 19:00',
+    }, fetcher: async url => {
+      const path = new URL(url).pathname
+      return new Response(JSON.stringify(path.endsWith('/collection_policies') ? [{ source: 'kopis', collection_enabled: true,
+        publication_enabled: true, live_after: null }] : path.endsWith('/collection_runs') ? []
+        : { contract: 'publication-facts-v3', reviewed_release: true, executor_md5: digest }))
+    } })
+    assert.equal(status.failed, false)
+  } finally { await rm(root, { recursive: true, force: true }) }
 })
 
 test('collection fallback respects source policy, recent server attempts, cooldown and clock uncertainty', () => {

@@ -19,7 +19,7 @@ test('proposed publication executor validates API facts and preserves publicatio
     }
     const policies = (await db.query('select * from public.collection_policies order by source')).rows
     await db.exec(await readFile(new URL('../supabase/migrations/20261031132828_harden_publication_executor.sql', import.meta.url), 'utf8'))
-    await db.exec(await readFile(new URL('../supabase/migrations/20261031134453_allow_date_only_silent_publication.sql', import.meta.url), 'utf8'))
+    await db.exec(await readFile(new URL('../supabase/migrations/20261106095303_allow_date_only_silent_publication.sql', import.meta.url), 'utf8'))
     assert.deepEqual((await db.query('select * from public.collection_policies order by source')).rows, policies)
     await db.query('insert into auth.users values ($1)', [user])
     await db.query('insert into private.admins values ($1)', [user])

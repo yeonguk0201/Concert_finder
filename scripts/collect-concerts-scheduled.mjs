@@ -14,6 +14,7 @@ export function publicationCollectionCompatible(policy, capabilities, expectedMd
     && policy.publication_enabled === true && policy.live_after === null
     && /^[a-f0-9]{32}$/.test(expectedMd5 ?? '')
     && capabilities?.contract === 'publication-facts-v3'
+    && capabilities.reviewed_release === true
     && capabilities.executor_md5 === expectedMd5
 }
 
@@ -60,6 +61,9 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
     if (!publicationCollectionCompatible(policies[0], capabilities, env.KOPIS_PUBLICATION_EXECUTOR_MD5)) {
       throw new Error('COLLECTION_PUBLICATION_CONTRACT_UNCONFIRMED')
     }
+    if (!/^[a-f0-9-]{36}:[1-9][0-9]*$/.test(env.KOPIS_REVIEWED_CANDIDATE ?? '') || !env.KOPIS_REVIEWED_GUIDANCE) {
+      throw new Error('COLLECTION_REVIEWED_TARGET_REQUIRED')
+    }
   }
   const noticeFile = join(directory, 'no-notices.json'), outputFile = join(directory, `report-${randomUUID()}.json`)
   await writeFile(noticeFile, '[]\n', { encoding: 'utf8', mode: 0o600 })
@@ -67,7 +71,8 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   let code
   try {
     code = await new Promise((done, reject) => {
-      const child = spawn(process.execPath, ['--use-env-proxy', join(root, 'scripts/collect-catalog.mjs'), '--source=kopis',
+      const entry = policies[0].publication_enabled ? 'publish-reviewed-candidate.mjs' : 'collect-catalog.mjs'
+      const child = spawn(process.execPath, ['--use-env-proxy', join(root, 'scripts', entry), '--source=kopis',
         '--concerts-only', '--upload', `--notice-file=${noticeFile}`, `--output=${outputFile}`],
       { cwd: directory, env, stdio: ['ignore', log.fd, log.fd] })
       child.once('error', () => reject(new Error('COLLECTION_PROCESS_START_FAILED')))

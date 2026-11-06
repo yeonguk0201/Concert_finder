@@ -1,7 +1,7 @@
 {
   "version": 1,
   "observedAt": "2026-11-06T09:34:20.71925+00:00",
-  "status": "BLOCKED_DEPLOYMENT_AND_RUNTIME",
+  "status": "BLOCKED_REVIEWED_RELEASE_RUNTIME_ADOPTION",
   "candidate": {
     "id": "647835a8-7bed-4ef8-94c8-d7123c558e63",
     "revision": 13,
@@ -121,16 +121,22 @@
     }
   },
   "operational": {
-    "executorContract": "publication-facts-v2",
-    "executorMd5": "4068c76feb409183c3073f71b584eca7",
-    "dateMigrationApplied": false,
+    "executorContract": "publication-facts-v3",
+    "executorMd5": "6f2ffc04f241bfb76e8c9da6b3b3599b",
+    "dateMigrationApplied": true,
     "policiesOff": true,
     "liveAfter": null,
     "artistApprovals": 1,
     "duplicateCount": 0,
     "linkedConcerts": 0,
     "activeCollectionLeases": 0,
-    "existingPublicConcerts": 8
+    "existingPublicConcerts": 8,
+    "reviewedReleaseApplied": true,
+    "reviewedReleaseCapability": true,
+    "migrations": [
+      "20261106095303_allow_date_only_silent_publication",
+      "20261106101911_reviewed_candidate_release"
+    ]
   },
   "receipts": [
     {
@@ -183,7 +189,10 @@
     "lint": "passed",
     "build": "passed with existing bundle size warning",
     "productionPublicationVerified": false,
-    "productionInitialDeliveryZeroVerified": false
+    "productionInitialDeliveryZeroVerified": false,
+    "reviewedReleaseClientAndSQLChecks": 18,
+    "priorFullCI": "passed",
+    "freshKopisMatchAt": "2026-11-06T10:22:19.851Z"
   },
   "scheduler": {
     "id": "6ad9f566088c8191a029db4fd20b5613",
@@ -191,16 +200,21 @@
     "threadId": "01a1634b-debf-70f1-8be7-0c5ed087e0b9",
     "schedulePreserved": true,
     "checkpointNotCopiedOrInitialized": true,
-    "runtimeAdoptionConfirmed": false
+    "runtimeAdoptionConfirmed": false,
+    "baseRuntimeAdoptionConfirmed": true,
+    "reviewedReleaseRuntimeAdoptionConfirmed": false,
+    "manualRunThreadTurn": "01a1b045-2409-72f4-bd65-fc7dd8658dc6",
+    "manualRunCommit": "44551c2",
+    "manualRunResult": "recent_attempt; same previous completed run dd3cca9a-c43b-43dc-b87a-2315357a67ef",
+    "manualRuntimeChecks": 43
   },
   "authorization": {
     "sourcePublicationOnApproved": false,
     "liveNotificationsApproved": false
   },
   "remaining": [
-    "Confirm and apply the reviewed v3 SQL including the lineup join fix; two tool confirmations expired this session.",
-    "Verify the original scheduled checkout adopts the v3 compatibility delta while preserving cooldown and checkpoint state.",
-    "Read fresh capabilities/digest, candidate revision, policy, approval, duplicate/manual state and obtain separate scoped ON approval.",
-    "After ON, verify the existing scheduled execution publishes the same candidate with exact sessions and zero deliveries/attempts for that initial publication."
+    "Verify the final reviewed-release module and minimal scheduler delta in the original runtime, preserving its cooldown/checkpoint state.",
+    "Refresh candidate/approval/policy/manual/duplicate state and obtain separate ON approval limited to KOPIS candidate 647835a8-7bed-4ef8-94c8-d7123c558e63:13, live_after=null and silent import.",
+    "After ON, verify the next existing scheduled execution, exact stored revision/sessions, public anonymous readback, and delivery/attempt=0 for that initial publication."
   ]
 }
