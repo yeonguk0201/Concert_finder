@@ -1,8 +1,9 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { readFile, mkdtemp, rm } from 'node:fs/promises'
+import { readFile, writeFile, readdir, mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { createHash } from 'node:crypto'
@@ -52,6 +53,57 @@ test('KOPIS windows obey 31-day API limit across month/leap boundaries', () => {
   assert.deepEqual(windows, [{ start: '2028-02-01', end: '2028-03-02' }, { start: '2028-03-03', end: '2028-04-01' }])
   assert.throws(() => kopisWindows('2027-02-30', '2027-03-01'), /date/)
   assert.throws(() => kopisWindows('2027-01-01', '2029-01-01'), /range/)
+})
+
+test('API facts omit external bodies and images while retaining a NOL booking destination as a link', () => {
+  const source = xml('<poster>https://images.example/poster.jpg</poster><sty>External full body</sty><styurls><styurl>https://images.example/body.jpg</styurl></styurls>')
+    .replace('http://www.ticketlink.co.kr/product/1', 'https://nol.yanolja.com/ticket/products/123')
+  const row = parseKopis(source, 'PF000001'), serialized = JSON.stringify(row)
+  assert.equal(row.payload.ticket.booking_url, 'https://nol.yanolja.com/ticket/products/123')
+  assert.equal(row.payload.sources[0].url, kopisSource('PF000001'))
+  assert.ok(!serialized.includes('images.example'))
+  assert.ok(!serialized.includes('External full body'))
+})
+
+test('facts-only mode rejects HTML adapters, mixed collection and upload before configuration or requests', async () => {
+  const exec = promisify(execFile)
+  for (const args of [[], ['--source=ualive'], ['--source=kopis', '--upload']]) {
+    await assert.rejects(exec(process.execPath, ['scripts/collect-catalog.mjs', '--facts-only', ...args], { encoding: 'utf8' }),
+      error => error.stderr.trim() === 'FACTS_ONLY_KOPIS_PREVIEW_REQUIRED')
+  }
+})
+
+test('facts-only CLI completes offline with API requests only and no cache or external material', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'kopis-facts-'))
+  try {
+    const preload = join(dir, 'mock-fetch.mjs')
+    await writeFile(preload, `
+      import assert from 'node:assert/strict'
+      const timer = globalThis.setTimeout
+      globalThis.setTimeout = (fn, ms, ...args) => timer(fn, Math.min(ms, 1), ...args)
+      globalThis.fetch = async url => {
+        const u = new URL(url)
+        assert.equal(u.origin, 'https://kopis.or.kr')
+        assert.ok(u.pathname.startsWith('/openApi/restful/pblprfr'))
+        const body = u.pathname.endsWith('/pblprfr')
+          ? (u.searchParams.get('cpage') === '1' ? '<dbs><db><mt20id>PF000001</mt20id></db></dbs>' : '<dbs/>')
+          : ${JSON.stringify(xml('<poster>https://images.example/poster.jpg</poster><sty>Full external body</sty>').replace('2027.01.01', '2027.01.01'))}
+        return new Response(body)
+      }
+    `, 'utf8')
+    const { stdout } = await promisify(execFile)(process.execPath,
+      ['--import', pathToFileURL(preload).href, resolve('scripts/collect-catalog.mjs'), '--source=kopis', '--facts-only', '--include-past'],
+      { cwd: dir, encoding: 'utf8', env: { ...process.env, KOPIS_SERVICE_KEY: 'fictional-fixture-key' } })
+    const report = JSON.parse(stdout)
+    assert.equal(report.complete, true)
+    assert.equal(report.results[0].uploaded, false)
+    assert.equal(report.results[0].candidates.length, 1)
+    assert.equal(report.results[0].failures.length, 0)
+    assert.ok(!stdout.includes('images.example'))
+    assert.ok(!stdout.includes('Full external body'))
+    assert.ok(!stdout.includes('fictional-fixture-key'))
+    assert.deepEqual(await readdir(dir), ['mock-fetch.mjs'])
+  } finally { await rm(dir, { recursive: true, force: true }) }
 })
 
 test('KOPIS paginates, deduplicates, rotates bounded detail batches and never fetches booking URLs', async () => {

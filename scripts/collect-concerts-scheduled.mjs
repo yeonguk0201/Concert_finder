@@ -7,6 +7,17 @@ import { randomUUID } from 'node:crypto'
 const project = 'https://czjrzylvnewfjnfwjhwf.supabase.co'
 const hour = 3600000
 
+// Release opt-in is separate from policy ON. The operator pins the deployed
+// executor after review; missing/mismatched contracts keep the old ON guard.
+export function publicationCollectionCompatible(policy, capabilities, expectedMd5) {
+  return policy?.source === 'kopis' && policy.collection_enabled === true
+    && policy.publication_enabled === true && policy.live_after === null
+    && /^[a-f0-9]{32}$/.test(expectedMd5 ?? '')
+    && capabilities?.contract === 'publication-facts-v3'
+    && capabilities.reviewed_release === true
+    && capabilities.executor_md5 === expectedMd5
+}
+
 export function collectionDecision({ policy, latest, now, nextAttemptAt }) {
   if (!policy?.collection_enabled) return 'policy_off'
   if (nextAttemptAt && Date.parse(nextAttemptAt) > now) return 'cooldown'
@@ -25,10 +36,11 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   await mkdir(directory, { recursive: true, mode: 0o700 })
   let previous = {}
   try { previous = JSON.parse(await readFile(join(directory, 'latest.json'), 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw new Error('COLLECTION_CHECKPOINT_UNREADABLE') }
-  const query = async path => {
+  const query = async (path, body) => {
     let response
     try { response = await fetcher(`${project}/rest/v1/${path}`, { headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY,
-      Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}` }, redirect: 'error', signal: AbortSignal.timeout(20000) }) }
+      Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`, ...(body ? { 'Content-Type': 'application/json' } : {}) },
+      ...(body ? { method: 'POST', body: JSON.stringify(body) } : {}), redirect: 'error', signal: AbortSignal.timeout(20000) }) }
     catch { throw new Error('COLLECTION_PREFLIGHT_UNAVAILABLE') }
     if (!response.ok) throw new Error(`COLLECTION_PREFLIGHT_HTTP_${response.status}`)
     return response.json()
@@ -39,14 +51,28 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   const decision = collectionDecision({ policy: policies[0], latest: runs[0], now, nextAttemptAt: previous.nextAttemptAt })
   if (decision !== 'collect') return { source: 'kopis', skipped: decision, latestRun: runs[0]?.id ?? null }
   // Publication activation is a separate release decision, never part of collection.
-  if (policies[0].publication_enabled || policies[0].live_after !== null) throw new Error('COLLECTION_PUBLICATION_POLICY_CHANGED')
+  if (policies[0].publication_enabled || policies[0].live_after !== null) {
+    // Only silent backfill is supported here. live_after remains a separate
+    // release; this runner cannot authorize live notifications.
+    if (policies[0].live_after !== null || !/^[a-f0-9]{32}$/.test(env.KOPIS_PUBLICATION_EXECUTOR_MD5 ?? '')) {
+      throw new Error('COLLECTION_PUBLICATION_POLICY_CHANGED')
+    }
+    const capabilities = await query('rpc/service_publication_capabilities', {})
+    if (!publicationCollectionCompatible(policies[0], capabilities, env.KOPIS_PUBLICATION_EXECUTOR_MD5)) {
+      throw new Error('COLLECTION_PUBLICATION_CONTRACT_UNCONFIRMED')
+    }
+    if (!/^[a-f0-9-]{36}:[1-9][0-9]*$/.test(env.KOPIS_REVIEWED_CANDIDATE ?? '') || !env.KOPIS_REVIEWED_GUIDANCE) {
+      throw new Error('COLLECTION_REVIEWED_TARGET_REQUIRED')
+    }
+  }
   const noticeFile = join(directory, 'no-notices.json'), outputFile = join(directory, `report-${randomUUID()}.json`)
   await writeFile(noticeFile, '[]\n', { encoding: 'utf8', mode: 0o600 })
   const log = await open(join(directory, 'execution.log'), 'w', 0o600)
   let code
   try {
     code = await new Promise((done, reject) => {
-      const child = spawn(process.execPath, ['--use-env-proxy', join(root, 'scripts/collect-catalog.mjs'), '--source=kopis',
+      const entry = policies[0].publication_enabled ? 'publish-reviewed-candidate.mjs' : 'collect-catalog.mjs'
+      const child = spawn(process.execPath, ['--use-env-proxy', join(root, 'scripts', entry), '--source=kopis',
         '--concerts-only', '--upload', `--notice-file=${noticeFile}`, `--output=${outputFile}`],
       { cwd: directory, env, stdio: ['ignore', log.fd, log.fd] })
       child.once('error', () => reject(new Error('COLLECTION_PROCESS_START_FAILED')))

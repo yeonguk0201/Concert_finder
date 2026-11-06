@@ -5,6 +5,6 @@
     {"name":"Bring Me the Horizon","musicBrainzId":null,"bucket":"overseas_rock_band","expectedAliases":["BMTH","Bring Me the Horizon","브링 미 더 호라이즌","ブリング・ミー・ザ・ホライズン"],"identitySource":"https://www.sonymusic.co.jp/artist/bringmethehorizon/profile/"},
     {"name":"Ado","musicBrainzId":"e134b52f-2e9e-4734-9bc3-bea9648d1fa1","bucket":"japanese_solo_unit","expectedAliases":["Ado","아도","アド"],"identitySource":"https://www.universal-music.co.jp/ado/biography/"},
     {"name":"UVERworld","musicBrainzId":"a107bff6-58da-4302-83ad-317e86a1811c","bucket":"japanese_rock_band","expectedAliases":["UVERworld","우버월드","ウーバーワールド"],"identitySource":"https://www.sonymusic.co.jp/artist/UVERworld/profile/"},
-    {"name":"米津玄師","musicBrainzId":null,"bucket":"japanese_solo_unit","expectedAliases":["요네즈 켄시","米津玄師","Kenshi Yonezu"],"identitySource":"https://reissuerecords.net/profile/"}
+    {"name":"米津玄師","musicBrainzId":"09d4a85c-4916-4b4e-bc96-c4cfcf371046","bucket":"japanese_solo_unit","expectedAliases":["요네즈 켄시","米津玄師","Kenshi Yonezu"],"identitySource":"https://reissuerecords.net/profile/"}
   ]
 }

@@ -198,7 +198,7 @@ async function checkUploadMode(mode, hasLinks = true) {
       const name=u.pathname.split('/').at(-1); calls.push(name);
       if(name==='service_begin_collection') return new Response(JSON.stringify(${JSON.stringify(id(99))}));
       if(name==='bands') return new Response('[]');
-      if(name==='collection_candidates') return new Response(JSON.stringify([{source_url:${JSON.stringify(url)},artist_keys:${JSON.stringify(hasLinks ? [identity.key] : [])},band_ids:${JSON.stringify(hasLinks ? [id(1)] : [])}}]));
+      if(name==='collection_candidates') return new Response(JSON.stringify([{source_url:${JSON.stringify(url)},payload:{},artist_keys:${JSON.stringify(hasLinks ? [identity.key] : [])},band_ids:${JSON.stringify(hasLinks ? [id(1)] : [])}}]));
       if(name==='service_fail_collection') return new Response('null');
       if(name==='service_complete_collection') {
         const request=JSON.parse(options.body);
