@@ -13,6 +13,7 @@ import { collectKopis } from './kopis.mjs'
 import { collectTicketlinkEvidence, supplementBooking, ticketlinkProduct } from './booking-evidence.mjs'
 import { collectReissueNol } from './reissue-nol.mjs'
 import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved, quarantineCollectionLinkRegressions } from './collection-artist-links.mjs'
+import { assertCollectionFactsPreserved, quarantineCollectionFactRegressions } from './collection-fact-guards.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
@@ -104,6 +105,7 @@ try {
       return result
       }, upload: async (batch, runToken, attempts) => {
         await quarantineCollectionLinkRegressions(client, batch)
+        await quarantineCollectionFactRegressions(client, batch)
         // Quarantined concerts cannot cause separate discovered-artist writes.
         const retainedKeys = new Set(batch.candidates.flatMap(row => row.payload.artist_keys))
         const retainedIdentities = discoveredIdentities.filter(row => retainedKeys.has(row.key))
@@ -114,6 +116,7 @@ try {
             if (error.message === 'COLLECTION_IDENTITY_REGRESSION') batch.identity_link_review = error.review
             throw error
           }
+          await assertCollectionFactsPreserved(client, batch)
           const { data, error } = await client.rpc('service_complete_collection', { run_token: runToken, batch, identities: concertsOnly || source === 'reissue_nol' ? [] : [...artists, ...retainedIdentities], attempt_count: attempts, adapter_version: source === 'reissue_nol' ? 'reissue-nol-review-v1' : 'catalog-v1' })
           if (!error) return data
           lastError = error

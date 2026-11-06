@@ -18,12 +18,18 @@ test('proposed publication executor validates API facts and preserves publicatio
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
     const policies = (await db.query('select * from public.collection_policies order by source')).rows
-    await db.exec(await readFile(new URL('../supabase/manual/harden-publication-executor.sql', import.meta.url), 'utf8'))
+    await db.exec(await readFile(new URL('../supabase/migrations/20261031132828_harden_publication_executor.sql', import.meta.url), 'utf8'))
+    await db.exec(await readFile(new URL('../supabase/migrations/20261031134453_allow_date_only_silent_publication.sql', import.meta.url), 'utf8'))
     assert.deepEqual((await db.query('select * from public.collection_policies order by source')).rows, policies)
     await db.query('insert into auth.users values ($1)', [user])
     await db.query('insert into private.admins values ($1)', [user])
     await db.query("select set_config('test.uid',$1,false)", [user])
     await db.query(`select set_config('request.jwt.claims','{"role":"service_role"}',false)`)
+    const capability = (await db.query('select public.service_publication_capabilities() as c')).rows[0].c
+    assert.equal(capability.contract, 'publication-facts-v3')
+    assert.match(capability.executor_md5, /^[a-f0-9]{32}$/)
+    assert.equal((await db.query("select has_function_privilege('anon','public.service_publication_capabilities()','execute') as allowed")).rows[0].allowed, false)
+    assert.equal((await db.query("select has_function_privilege('authenticated','public.service_publication_capabilities()','execute') as allowed")).rows[0].allowed, false)
     const key = 'mb:00000000-0000-4000-8000-000000000001'
     const band = (await db.query('select public.service_import_artist($1) as id', [{ key, name: 'Fictional API band',
       country: 'JP', aliases: [], genre: 'rock', evidence: 'https://musicbrainz.org/artist/00000000-0000-4000-8000-000000000001' }])).rows[0].id
@@ -75,6 +81,56 @@ test('proposed publication executor validates API facts and preserves publicatio
     })
     // Only the isolated fixture policy is enabled. Production is never contacted.
     await db.exec("update public.collection_policies set publication_enabled=true where source='kopis'")
+    await isolate('date-only initial publication stores no invented timestamp and creates no notifications', async row => {
+      Object.assign(row.payload, { announced_at: null, announcement_precision: 'day', initial_import: true })
+      const token = await begin()
+      assert.deepEqual(await finish(token, [row]), { published: 1, review: 0 })
+      assert.deepEqual(await finish(token, [row]), { published: 1, review: 0 })
+      const stored = (await db.query('select announced_on::text,announced_at from public.concerts')).rows[0]
+      assert.deepEqual(stored, { announced_on: clock.today, announced_at: null })
+      assert.equal((await db.query('select initial_import from private.publication_changes')).rows[0].initial_import, true)
+      assert.equal(await count('private.notification_deliveries'), 0)
+      assert.equal((await db.query('select jsonb_array_length(public.claim_notification_batch()) as n')).rows[0].n, 0)
+    })
+    for (const [name, change, expected] of [
+      ['missing explicit import flag', p => { delete p.initial_import }, 'DATE_ONLY_INITIAL_BACKFILL_REQUIRED'],
+      ['false import flag', p => { p.initial_import = false }, 'DATE_ONLY_INITIAL_BACKFILL_REQUIRED'],
+      ['invented timestamp', p => { p.announced_at = now }, 'ANNOUNCEMENT_UNVERIFIED'],
+      ['future date', p => { p.announced_on = clock.day }, 'ANNOUNCEMENT_UNVERIFIED'],
+      ['unverified date', p => { p.announcement_verified = false }, 'ANNOUNCEMENT_UNVERIFIED'],
+    ]) await isolate(`date precision rejects ${name}`, async row => {
+      Object.assign(row.payload, { announced_at: null, announcement_precision: 'day', initial_import: true })
+      change(row.payload)
+      assert.deepEqual(await complete([row]), { published: 0, review: 1 })
+      assert.equal(await reason(), expected)
+      assert.equal(await count('private.notification_deliveries'), 0)
+    })
+    await isolate('date-only initial flag cannot bypass an active live policy', async row => {
+      Object.assign(row.payload, { announced_at: null, announcement_precision: 'day', initial_import: true })
+      await db.exec("update public.collection_policies set live_after=clock_timestamp()-interval '1 day' where source='kopis'")
+      assert.deepEqual(await complete([row]), { published: 0, review: 1 })
+      assert.equal(await reason(), 'DATE_ONLY_INITIAL_BACKFILL_REQUIRED')
+      assert.equal(await count('private.notification_deliveries'), 0)
+    })
+    await isolate('verified promoter notice facts can publish silently without pretending to be API evidence', async row => {
+      row.payload.initial_import = true
+      Object.assign(row.payload.ticket_evidence[0], { method: 'official_notice', publisher_role: 'promoter',
+        source_use_verified: true, use_basis_url: 'https://official.example/terms' })
+      assert.deepEqual(await complete([row]), { published: 1, review: 0 })
+      assert.equal(await count('private.notification_deliveries'), 0)
+      assert.equal((await db.query('select payload from public.collection_candidates')).rows[0].payload.ticket_evidence[0].method, 'official_notice')
+    })
+    for (const change of [{ publisher_role: 'blog' }, { source_use_verified: false }, { use_basis_url: null },
+      { event_matched: false }, { sale_type: 'presale' }, { body: 'copied notice body' }]) {
+      await isolate(`unverified promoter notice is held: ${Object.keys(change)[0]}`, async row => {
+        Object.assign(row.payload.ticket_evidence[0], { method: 'official_notice', publisher_role: 'promoter',
+          source_use_verified: true, use_basis_url: 'https://official.example/terms' }, change)
+        assert.deepEqual(await complete([row]), { published: 0, review: 1 })
+        assert.equal(await reason(), 'VERIFIED_SALE_EVIDENCE_REQUIRED')
+        assert.equal(await count('public.concerts'), 0)
+        assert.equal(await count('private.notification_deliveries'), 0)
+      })
+    }
     await isolate('initial publication is silent with an opted-in follower and active device; replay is idempotent', async row => {
       const token = await begin()
       assert.equal(await begin(), null)
@@ -96,10 +152,10 @@ test('proposed publication executor validates API facts and preserves publicatio
       ['no sessions', p => { p.sessions = [] }, 'SESSIONS_UNVERIFIED'],
       ['duplicate absolute session', p => { p.sessions.push({ ...p.sessions[0], starts_at: `${clock.day}T10:00:00Z` }) }, 'SESSIONS_UNVERIFIED'],
       ['unverified source', p => { p.sources[0].verified_at = null }, 'SOURCE_UNVERIFIED'],
-      ['presale', p => { p.ticket_evidence[0].sale_type = 'presale' }, 'API_SALE_EVIDENCE_REQUIRED'],
-      ['unmatched event', p => { delete p.ticket_evidence[0].event_matched }, 'API_SALE_EVIDENCE_REQUIRED'],
-      ['HTML excerpt', p => { p.ticket_evidence[0].line = '일반 예매 원문' }, 'API_SALE_EVIDENCE_REQUIRED'],
-      ['wrong sale time', p => { p.ticket_evidence[0].opens_at = now }, 'API_SALE_EVIDENCE_REQUIRED'],
+      ['presale', p => { p.ticket_evidence[0].sale_type = 'presale' }, 'VERIFIED_SALE_EVIDENCE_REQUIRED'],
+      ['unmatched event', p => { delete p.ticket_evidence[0].event_matched }, 'VERIFIED_SALE_EVIDENCE_REQUIRED'],
+      ['HTML excerpt', p => { p.ticket_evidence[0].line = '일반 예매 원문' }, 'VERIFIED_SALE_EVIDENCE_REQUIRED'],
+      ['wrong sale time', p => { p.ticket_evidence[0].opens_at = now }, 'VERIFIED_SALE_EVIDENCE_REQUIRED'],
       ['NOL evidence with another booking destination', p => { p.ticket.booking_url = 'https://other.example/123'; p.sources.push({ url: 'https://tickets.interpark.com/notice/1' }) }, 'OPTIONAL_NOL_DEPENDENCY'],
     ]) await isolate(name, async row => {
       change(row.payload)
@@ -170,6 +226,15 @@ test('proposed publication executor validates API facts and preserves publicatio
         assert.equal(after.automation_blocked, true)
         assert.ok(after.revision > candidate.revision)
       }
+      assert.equal(await count('public.concerts'), 0)
+      assert.equal(await count('private.notification_deliveries'), 0)
+    })
+    for (const resolution of ['reviewed', 'dismissed']) await isolate(`legacy ${resolution} status without a sticky flag cannot publish`, async row => {
+      await db.query("select public.admin_ingest_catalog('kopis',$1,'[]')", [{ candidates: [row], failures: [] }])
+      await db.query('update public.collection_candidates set status=$1', [resolution])
+      await db.exec('update public.collection_candidates set automation_blocked=false')
+      assert.deepEqual(await complete([row]), { published: 0, review: 1 })
+      assert.equal(await reason(), 'ADMIN_OVERRIDE')
       assert.equal(await count('public.concerts'), 0)
       assert.equal(await count('private.notification_deliveries'), 0)
     })

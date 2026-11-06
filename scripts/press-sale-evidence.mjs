@@ -30,7 +30,7 @@ export function preparePressSaleEvidence(input) {
   })
   if (new Set(rows.map(r => r.day)).size !== rows.length || new Set(rows.map(r => r.venue)).size !== 1) throw Error('PRESS_SESSIONS_AMBIGUOUS')
   const line = input.saleLine
-  const m = typeof line === 'string' && line.match(/^The general onsale for all dates will begin (Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), ([A-Z][a-z]+) (\d{1,2}) at (\d{1,2})(?::(\d{2}))?(am|pm) local time\.$/)
+  const m = typeof line === 'string' && line.match(/^The general onsale for all dates will begin (Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), ([A-Z][a-z]+) (\d{1,2}) at (\d{1,2})(?::(\d{2}))?(am|pm) local time(?: at LiveNation[.]com)?\.$/)
   if (!m) throw Error('PRESS_GENERAL_SALE_UNCONFIRMED')
   const saleDay = date(year, months.indexOf(m[2]) + 1, Number(m[3]))
   const delay = Date.parse(saleDay) - Date.parse(input.noticeDate)
@@ -49,5 +49,5 @@ export function preparePressSaleEvidence(input) {
     readyToApply: false, publicationPermissionCertified: false, artistIdentityCertified: false,
     sessionStartTimesVerified: false, presaleAbsenceVerified: false,
     remaining: ['source use permission or applicable public license', 'event identity and all artist approvals',
-      'exact session starts', 'original announcement timestamp and presale review', 'supported adapter and operational readback'] }
+      'exact session starts', 'original announcement day for silent backfill (exact timestamp for live) and presale review', 'supported adapter and operational readback'] }
 }
