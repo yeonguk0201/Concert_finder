@@ -45,6 +45,24 @@ test('source approval, runner compatibility and live observation cannot be infer
   assert.throws(() => assess(s), /SNAPSHOT_INVALID/)
 })
 
+test('explicit date-only evidence is accepted only for silent initial backfill, with no invented instant', () => {
+  const s = snapshot(), p = s.sources[0].candidates[0].payload
+  Object.assign(p, { announced_at: null, announcement_precision: 'day', initial_import: true })
+  const candidate = assess(s).sources[0].candidates[0]
+  assert.equal(candidate.eligible, true)
+  assert.equal(candidate.announcementPrecision, 'day')
+  assert.equal(candidate.notificationMode, 'SILENT_BACKFILL')
+  assert.equal(p.announced_at, null)
+  for (const change of [p => { delete p.initial_import }, p => { p.initial_import = false },
+    p => { p.announced_at = '2026-10-28T00:00:00+09:00' }, p => { p.announced_on = '2026-10-29' },
+    p => { p.announced_on = '2026-02-30' }, p => { p.announcement_verified = false }]) {
+    const other = structuredClone(s); change(other.sources[0].candidates[0].payload)
+    assert.ok(assess(other).sources[0].candidates[0].reasons.includes('ANNOUNCEMENT_UNVERIFIED'))
+  }
+  s.sources[0].policy.live_after = '2026-10-27T00:00:00Z'
+  assert.ok(assess(s).sources[0].candidates[0].reasons.includes('ANNOUNCEMENT_UNVERIFIED'))
+})
+
 test('missing or malformed event facts, ambiguous identities, manual blocks and duplicates remain candidate-specific', () => {
   const cases = [
     r => { r.automation_blocked = true }, r => { r.context.identityApproved = false }, r => { r.context.duplicateFree = false },
@@ -84,6 +102,20 @@ test('NOL evidence stays excluded independently of the booking destination', () 
     const s = snapshot(); change(s.sources[0].candidates[0].payload)
     assert.ok(assess(s).sources[0].candidates[0].reasons.includes('OPTIONAL_NOL_DEPENDENCY'))
     assert.equal(assess(s).status, 'NO_VERIFIED_SOURCE_READY')
+  }
+})
+
+test('promoter notices require verified use scope and preserve their actual evidence method', () => {
+  const s = snapshot(), e = s.sources[0].candidates[0].payload.ticket_evidence[0]
+  Object.assign(e, { method: 'official_notice', publisher_role: 'promoter', source_use_verified: true,
+    use_basis_url: 'https://ualive.com/terms' })
+  assert.equal(assess(s).sources[0].eligible, 1)
+  assert.equal(e.method, 'official_notice')
+  for (const change of [{ publisher_role: 'blog' }, { source_use_verified: false }, { use_basis_url: null },
+    { event_matched: false }, { sale_type: 'presale' }, { body: 'copied notice body' }]) {
+    const other = structuredClone(s)
+    Object.assign(other.sources[0].candidates[0].payload.ticket_evidence[0], change)
+    assert.ok(assess(other).sources[0].candidates[0].reasons.includes('GENERAL_SALE_UNVERIFIED'))
   }
 })
 

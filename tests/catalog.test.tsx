@@ -29,6 +29,18 @@ test('production mapping keeps unknown times unknown and supports a mixed festiv
   expect(calendar).not.toContain('[샘플]')
 })
 
+test('date precision is explicit and never turns an unknown announcement time into midnight', () => {
+  const row = { id: 'day-only', title: 'Fictional dated announcement', format: 'solo', city: '서울', venue: '가상 공연장',
+    starts_on: '2027-01-14', ends_on: null, announced_on: '2026-10-15', announced_at: null, cancelled: false,
+    concert_bands: [], ticket_schedules: null, concert_sources: [] }
+  const [concert] = mapConcerts([row], [])
+  expect(concert.announcementPrecision).toBe('day')
+  expect(concert.announcedAt).toBe('2026-10-15')
+  expect(concert.announcedAt).not.toContain('T00:00')
+  expect(mapConcerts([{ ...row, announced_at: '2026-10-15T12:00:00+09:00' }], [])[0].announcementPrecision).toBe('instant')
+  expect(mapConcerts([{ ...row, announced_on: null }], [])[0].announcementPrecision).toBeUndefined()
+})
+
 
 test('artist search normalizes multilingual aliases and keeps namesakes as separate IDs', async () => {
   const { matchesArtist } = await import('../src/catalogViews')

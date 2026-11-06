@@ -10,7 +10,10 @@ const kstDay = n => new Date(n).toLocaleDateString('sv-SE', { timeZone: 'Asia/Se
 const https = s => { try { const u = new URL(s); return u.protocol === 'https:' && !u.username && !u.password } catch { return false } }
 const nol = s => { try { return /(^|\.)(nol\.com|nol\.yanolja\.com|interpark\.com)$/.test(new URL(s).hostname) } catch { return false } }
 function generalEvidence(e, sale, sources, now) {
-  return e.method === 'api' && e.sale_type === 'general' && e.event_matched === true && !e.reason
+  const acceptedMethod = e.method === 'api' || e.method === 'official_notice'
+    && e.publisher_role === 'promoter' && e.source_use_verified === true
+    && https(e.use_basis_url)
+  return acceptedMethod && e.sale_type === 'general' && e.event_matched === true && !e.reason
     && !['line', 'body', 'html', 'image'].some(key => key in e)
     && instant(e.opens_at) && Date.parse(e.opens_at) === Date.parse(sale) && https(e.source_url)
     && instant(e.verified_at) && Date.parse(e.verified_at) <= now
@@ -57,8 +60,12 @@ export function assessPublicationReadiness(snapshot, { now = Date.now() } = {}) 
       fail(Boolean(p.title?.trim()) && ['solo', 'festival'].includes(p.format), 'EVENT_UNVERIFIED')
       fail(day(p.starts_on) && day(p.ends_on ?? p.starts_on) && p.starts_on <= (p.ends_on ?? p.starts_on)
         && (p.ends_on ?? p.starts_on) >= kstDay(now), 'PERFORMANCE_DATES_UNVERIFIED_OR_PAST')
-      fail(p.announcement_verified === true && instant(p.announced_at) && Date.parse(p.announced_at) <= now
-        && day(p.announced_on) && p.announced_on === kstDay(Date.parse(p.announced_at)), 'ANNOUNCEMENT_UNVERIFIED')
+      const dayOnly = p.announcement_precision === 'day'
+      const announcementVerified = p.announcement_verified === true && day(p.announced_on)
+        && (dayOnly ? p.announced_at === null && p.announced_on <= kstDay(now)
+          && p.initial_import === true && source.policy?.live_after === null
+          : instant(p.announced_at) && Date.parse(p.announced_at) <= now && p.announced_on === kstDay(Date.parse(p.announced_at)))
+      fail(announcementVerified, 'ANNOUNCEMENT_UNVERIFIED')
       fail(Array.isArray(p.sessions) && p.sessions.length > 0 && p.sessions.every(s => instant(s.starts_at)
         && day(s.starts_on) && s.starts_on === kstDay(Date.parse(s.starts_at))
         && s.starts_on >= p.starts_on && s.starts_on <= (p.ends_on ?? p.starts_on))
@@ -72,6 +79,7 @@ export function assessPublicationReadiness(snapshot, { now = Date.now() } = {}) 
       fail(row.context?.changeReviewed === true, 'IMPORTANT_CHANGE_UNREVIEWED')
       fail(p.sources?.some(s => s.url === row.source_url && instant(s.verified_at) && Date.parse(s.verified_at) <= now), 'SOURCE_FACTS_UNVERIFIED')
       return { id: row.id, revision: row.revision, eligible: reasons.length === 0, reasons,
+        announcementPrecision: announcementVerified ? dayOnly ? 'day' : 'instant' : 'unverified',
         notificationMode: !source.policy?.live_after || p.initial_import === true || instant(sale) && Date.parse(sale) <= now
           || day(p.announced_on) && p.announced_on <= kstDay(Date.parse(source.policy.live_after)) ? 'SILENT_BACKFILL' : 'EXISTING_CONSENT_WORKER_ONLY' }
     })

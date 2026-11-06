@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "observedAt": "2026-11-06T09:34:20.71925+00:00",
+  "status": "BLOCKED_REVIEWED_RELEASE_RUNTIME_ADOPTION",
+  "candidate": {
+    "id": "647835a8-7bed-4ef8-94c8-d7123c558e63",
+    "revision": 13,
+    "status": "pending",
+    "automationBlocked": false,
+    "sourceUrl": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?mt20Id=PF304185",
+    "payload": {
+      "city": "인천광역시",
+      "title": "요네즈 켄시 내한공연",
+      "venue": "인스파이어 엔터테인먼트 리조트 (아레나)",
+      "format": "solo",
+      "status": "review",
+      "ticket": {
+        "opens_at": "2026-10-22T12:00:00+09:00",
+        "booking_url": "https://www.livenation.com/",
+        "price_description": "플로어석 172,000원, 지정석 P 165,000원, 지정석 R 154,000원, 지정석 S 143,000원"
+      },
+      "ends_on": "2027-01-17",
+      "sources": [
+        {
+          "url": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?mt20Id=PF304185",
+          "label": "출처: (재)예술경영지원센터 공연예술통합전산망(KOPIS)",
+          "verified_at": "2026-11-06T09:28:58.658Z"
+        },
+        {
+          "url": "https://news.livenationentertainment.com/news/kenshi-yonezu-announces-dates-in-north-america-asia-europe-and-the-uk-on-ghost-world-tour",
+          "label": "Live Nation Newsroom · 공연 발표 및 일반예매 공지",
+          "verified_at": "2026-11-06T09:31:08Z"
+        }
+      ],
+      "band_ids": [
+        "0d2368ee-72d7-4ec8-aa52-5a708452963f"
+      ],
+      "kopis_id": "PF304185",
+      "sessions": [
+        {
+          "label": "2027-01-14 19:30",
+          "starts_at": "2027-01-14T19:30:00+09:00",
+          "starts_on": "2027-01-14"
+        },
+        {
+          "label": "2027-01-16 19:00",
+          "starts_at": "2027-01-16T19:00:00+09:00",
+          "starts_on": "2027-01-16"
+        },
+        {
+          "label": "2027-01-17 19:00",
+          "starts_at": "2027-01-17T19:00:00+09:00",
+          "starts_on": "2027-01-17"
+        }
+      ],
+      "cancelled": false,
+      "starts_on": "2027-01-14",
+      "artist_keys": [
+        "mb:09d4a85c-4916-4b4e-bc96-c4cfcf371046"
+      ],
+      "announced_at": null,
+      "announced_on": "2026-10-15",
+      "country_code": "KR",
+      "booking_links": [
+        {
+          "url": "https://www.livenation.com/",
+          "label": "Live Nation"
+        }
+      ],
+      "editorial_use": {
+        "scopes": [
+          "concert_facts",
+          "source_links"
+        ],
+        "purpose": "nonprofit_editorial_concert_information",
+        "reviewed_at": "2026-11-06T09:31:08Z",
+        "use_basis_url": "https://news.livenationentertainment.com/media",
+        "bodies_images_logos": false
+      },
+      "initial_import": true,
+      "presale_review": {
+        "status": "no_verified_presale_in_reviewed_notice",
+        "checked_at": "2026-11-06T09:31:08Z",
+        "source_url": "https://news.livenationentertainment.com/news/kenshi-yonezu-announces-dates-in-north-america-asia-europe-and-the-uk-on-ghost-world-tour"
+      },
+      "review_reasons": [],
+      "ticket_evidence": [
+        {
+          "method": "official_notice",
+          "opens_at": "2026-10-22T12:00:00+09:00",
+          "sale_type": "general",
+          "source_url": "https://news.livenationentertainment.com/news/kenshi-yonezu-announces-dates-in-north-america-asia-europe-and-the-uk-on-ghost-world-tour",
+          "verified_at": "2026-11-06T09:31:08Z",
+          "event_matched": true,
+          "use_basis_url": "https://news.livenationentertainment.com/media",
+          "publisher_role": "promoter",
+          "source_use_verified": true
+        }
+      ],
+      "collection_period": "upcoming",
+      "discovered_artists": [
+        {
+          "key": "mb:09d4a85c-4916-4b4e-bc96-c4cfcf371046",
+          "name": "요네즈 켄시",
+          "reason": null,
+          "band_id": "0d2368ee-72d7-4ec8-aa52-5a708452963f",
+          "matches": [],
+          "source_url": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?mt20Id=PF304185",
+          "profile_url": null
+        }
+      ],
+      "announcement_evidence": {
+        "method": "official_notice",
+        "precision": "day",
+        "source_url": "https://news.livenationentertainment.com/news/kenshi-yonezu-announces-dates-in-north-america-asia-europe-and-the-uk-on-ghost-world-tour",
+        "verified_at": "2026-11-06T09:31:08Z",
+        "announced_on": "2026-10-15"
+      },
+      "announcement_verified": true,
+      "announcement_precision": "day"
+    }
+  },
+  "operational": {
+    "executorContract": "publication-facts-v3",
+    "executorMd5": "6f2ffc04f241bfb76e8c9da6b3b3599b",
+    "dateMigrationApplied": true,
+    "policiesOff": true,
+    "liveAfter": null,
+    "artistApprovals": 1,
+    "duplicateCount": 0,
+    "linkedConcerts": 0,
+    "activeCollectionLeases": 0,
+    "existingPublicConcerts": 8,
+    "reviewedReleaseApplied": true,
+    "reviewedReleaseCapability": true,
+    "migrations": [
+      "20261106095303_allow_date_only_silent_publication",
+      "20261106101911_reviewed_candidate_release"
+    ]
+  },
+  "receipts": [
+    {
+      "runId": "65ec3ff0-93b4-40ae-888c-7b99842de80d",
+      "beforeRevision": 11,
+      "afterRevision": 12,
+      "published": 0,
+      "review": 1,
+      "purpose": "approved identity and exact KOPIS sessions"
+    },
+    {
+      "runId": "dd3cca9a-c43b-43dc-b87a-2315357a67ef",
+      "beforeRevision": 12,
+      "afterRevision": 13,
+      "published": 0,
+      "review": 1,
+      "purpose": "editorial official-notice announcement and general-sale facts"
+    }
+  ],
+  "sourceUse": {
+    "purpose": "nonprofit_editorial_concert_information",
+    "noticeBasis": "https://news.livenationentertainment.com/media",
+    "assessment": "Scoped editorial facts and attribution; not a separate written license or a grant for Korean marketplace content.",
+    "excluded": [
+      "notice bodies",
+      "images",
+      "logos",
+      "NOL acquisition",
+      "NOL product deep links",
+      "commercial or personal portfolio reuse"
+    ]
+  },
+  "verification": {
+    "nodeChecks": 90,
+    "uiChecks": 29,
+    "finalExecutorChecks": 54,
+    "livePacketV3FactsReason": null,
+    "unrelatedArtistJoin": {
+      "oldFalseMatches": 7,
+      "scopedFalseMatches": 0
+    },
+    "browser": {
+      "desktop": true,
+      "mobile": true,
+      "datePrecisionDisclosure": true,
+      "sampleDisclosure": true,
+      "horizontalOverflow": false,
+      "runtimeExceptions": 0
+    },
+    "lint": "passed",
+    "build": "passed with existing bundle size warning",
+    "productionPublicationVerified": false,
+    "productionInitialDeliveryZeroVerified": false,
+    "reviewedReleaseClientAndSQLChecks": 18,
+    "priorFullCI": "passed",
+    "freshKopisMatchAt": "2026-11-06T10:22:19.851Z"
+  },
+  "scheduler": {
+    "id": "6ad9f566088c8191a029db4fd20b5613",
+    "enabled": true,
+    "threadId": "01a1634b-debf-70f1-8be7-0c5ed087e0b9",
+    "schedulePreserved": true,
+    "checkpointNotCopiedOrInitialized": true,
+    "runtimeAdoptionConfirmed": false,
+    "baseRuntimeAdoptionConfirmed": true,
+    "reviewedReleaseRuntimeAdoptionConfirmed": false,
+    "manualRunThreadTurn": "01a1b045-2409-72f4-bd65-fc7dd8658dc6",
+    "manualRunCommit": "44551c2",
+    "manualRunResult": "recent_attempt; same previous completed run dd3cca9a-c43b-43dc-b87a-2315357a67ef",
+    "manualRuntimeChecks": 43,
+    "finalRuntimeAdoptionConfirmed": false,
+    "lastManualRun": "ec96ca19-5ca7-40f3-a34b-fcb757b27b64",
+    "lastManualResult": {
+      "candidates": 78,
+      "review": 78,
+      "published": 0,
+      "linkHolds": 22,
+      "http400": 0
+    },
+    "lastManualCodeUnchangedFrom": "44551c2",
+    "lastManualRecordCommit": "913b739"
+  },
+  "authorization": {
+    "sourcePublicationOnApproved": false,
+    "liveNotificationsApproved": false
+  },
+  "remaining": [
+    "Verify the final reviewed-release module and minimal scheduler delta in the original runtime, preserving its cooldown/checkpoint state.",
+    "Refresh candidate/approval/policy/manual/duplicate state and obtain separate ON approval limited to KOPIS candidate 647835a8-7bed-4ef8-94c8-d7123c558e63:13, live_after=null and silent import.",
+    "After ON, verify the next existing scheduled execution, exact stored revision/sessions, public anonymous readback, and delivery/attempt=0 for that initial publication."
+  ]
+}

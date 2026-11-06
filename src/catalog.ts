@@ -11,7 +11,7 @@ type TicketRow = { id: string; opens_at: string | null; price_description: strin
 export type ConcertRow = {
   artwork?: import('./adminApi').Artwork | null;
   id: string; title: string; format: string; city: string | null; venue: string | null;
-  starts_on: string | null; ends_on: string | null; announced_on: string | null; cancelled: boolean;
+  starts_on: string | null; ends_on: string | null; announced_on: string | null; announced_at?: string | null; cancelled: boolean;
   concert_bands: { band_id: string }[];
   ticket_schedules: TicketRow | TicketRow[] | null;
   concert_sources: { url: string; label: string; verified_at: string | null }[];
@@ -31,6 +31,7 @@ export function mapConcerts(rows: ConcertRow[], bands: Band[]): Concert[] {
         : bandIds.length && bandIds.every(id => bands.some(b => b.id === id && b.countryCode === 'KR')) ? '국내' : '분류 미정',
       date: row.starts_on ?? '', endsOn: row.ends_on ?? undefined, venue: row.venue ?? '장소 미정', city: row.city ?? '지역 미정',
       announcedAt: row.announced_on ?? '', ticketAt: ticket?.opens_at ?? '', price: ticket?.price_description ?? '미정',
+      announcementPrecision: row.announced_on && row.announced_at === null ? 'day' : row.announced_at ? 'instant' : undefined,
       ticketScheduleId: ticket?.id, cancelled: row.cancelled, palette: palettes[artworkIndex(row.id)], headline: bands.find(b => b.id === bandIds[0])?.name ?? row.title,
       description: row.cancelled ? '취소된 공연입니다. 공식 출처에서 변경 내용을 확인해 주세요.' : '공식 출처에서 최신 공연 정보를 확인해 주세요.',
       sources: row.concert_sources.filter(s => s.verified_at).map(s => ({ url: s.url, label: s.label })), bookingUrl: ticket?.booking_url ?? undefined,

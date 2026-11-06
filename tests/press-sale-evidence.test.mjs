@@ -20,6 +20,14 @@ test('midnight uses12am without changing the calendar day', () => {
   const input = fixture(); input.saleLine = input.saleLine.replace('12pm', '12am')
   assert.equal(preparePressSaleEvidence(input).interpretedGeneralSale.opens_at, '2028-09-08T00:00:00+09:00')
 })
+test('the publisher booking suffix is parsed without rewriting the original sentence', () => {
+  const input = fixture(); input.saleLine = input.saleLine.replace('local time.', 'local time at LiveNation.com.')
+  const result = preparePressSaleEvidence(input)
+  assert.equal(result.interpretedGeneralSale.opens_at, '2028-09-08T12:00:00+09:00')
+  assert.equal(result.originalSaleLine, input.saleLine)
+  assert.equal(result.publicationPermissionCertified, false)
+  assert.throws(() => preparePressSaleEvidence({ ...input, saleLine: input.saleLine + ' Except Korea.' }), /PRESS_/)
+})
 test('presale, exceptions, missing local-time context and weekday conflicts fail closed', () => {
   for (const line of [fixture().saleLine.replace('general onsale', 'presale'),
     fixture().saleLine.replace('all dates', 'US dates'), fixture().saleLine.replace('local time', 'ET'),
