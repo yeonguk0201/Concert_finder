@@ -4,6 +4,10 @@ All text files must be created, edited, read, and saved as UTF-8. Explicitly spe
 
 Concert fixtures are fictional. Keep the preview disclosure visible until verified official data is connected. Saving an event must not be described as scheduling a push notification before push delivery exists.
 
+## Concert automation direction
+
+Before continuing concert collection/publication work, read [the API-first automation plan](docs/api-first-concert-publication-plan.md). The user wants deterministic scheduled API ingestion and silent publication without an AI dependency in normal runs. The plan distinguishes the proposed publication criteria from currently deployed guards; reading it does not authorize bypassing guards, changing production policy, or enabling a paused schedule. Preserve existing checkpoints and consult current user authorization before operational work.
+
 ## Commit workflow
 
 Follow CONTRIBUTING.md for commit types, validation, and the PR workflow.
