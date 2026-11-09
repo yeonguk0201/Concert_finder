@@ -66,3 +66,26 @@ CLI 미리보기는 승인 카탈로그/이용 조건 설정을 운영에서 읽
 Supabase 공식 Database Functions 문서에서 search_path와 함수별 권한 지침을 확인했다. changelog 직접 조회는 환경의 대상 호스트 제한으로 HTTP CONNECT 403이었다. CLI 2.101.0은 읽기 전용 `/home/agent/.supabase` 설정 폴더 생성에서 실패했다. 따라서 저장소의 기존 준비 SQL 방식으로 변경을 남겼고, 임의 migration version이나 운영 migration 이력을 만들지 않았다. 정규 릴리스 전 CLI를 사용할 수 있는 환경에서 migration을 생성·검토해야 한다.
 
 후속 순서는 새 서버 capability/context를 사용하는 일반 실행기 연결 → UI의 미확인 표시 → 운영 상태·이용 조건·원본 체크포인트 확인 → 정규 릴리스다. 중지한 예약은 재개 요청 전 유지하며, 실제 두 정규 회차의 공개·중복·알림 0 관측 전까지 지속 운영 완료로 세지 않는다.
+
+## 3차: AI 없는 일반 실행 경로 (2026-11-09 KST)
+
+`scripts/api-first-publication.mjs`를 기존 `collect-concerts-scheduled.mjs`에 연결했다. `KOPIS_API_FIRST_PUBLICATION=1`일 때 일반 Node 프로세스가 v4 capability·두 digest·현재 정책·승인 카탈로그·출처 설정을 확인하고, 기존 source lease 안에서 KOPIS 발견/상세 → 결정적 검증 → 동일 completion RPC로 무알림 공개를 수행한다. AI 호출, fresh review plan, 외부 공지/상품 조회와 아티스트 writer는 없다. 모듈을 CLI로 직접 실행하면 기존 스케줄러를 사용하라는 오류를 내어 recent/cooldown 경로를 생략하지 못하게 한다.
+
+기존 후보는 현재 UUID/revision/hash와 수동 상태·보존 사실을 읽고 후보별 보류 또는 CAS 입력으로 연결한다. completion의 일시적인 통신 실패는 같은 run token과 동일한 batch로만 재시도한다. 실제 서버가 저장한 run의 완료 상태·후보 수·공개/보류 건수를 대조한 뒤 체크포인트에 기록한다. 응답/조회 미확정은 공개 성공으로 세지 않고 24시간 대기를 둔다.
+
+관측 시각만 갱신된 동일 공연은 안정적인 내용 hash를 사용한다. 관측 시각은 payload에 실제 값으로 남기며 서버가 freshness를 계속 검사한다. 출처 이용 조건 버전, 공연 사실, 신원, 회차가 달라지면 hash도 달라진다. 따라서 재수집 시 관측 시각만으로 후보 revision이 증가하거나 기존 공연을 중요 변경으로 보류하지 않는다.
+
+### 원본 상태와 실행 소유권
+
+- 새 경로는 **원래의** `.local/concert-collection/latest.json`이 있어야 한다. `cooldownVersion=2`와 유효한 `nextAttemptAt`을 확인하고 상태가 없거나 미확정이면 디렉터리/체크포인트를 만들지 않는다. 이 환경에는 원본이 여전히 없으므로 운영 실행하지 않았다.
+- 체크포인트의 기존 추가 필드·고정 목록·통지 지문은 병합해 보존한다. HTTP 400의 같은 요청 오류 지문은 1h→6h→24h, 지문 없는 과거 streak는 보수적으로 24h다. 새 오류·실패·최근 1시간 실행·서버 임대도 유지한다. 읽기 뒤 다른 주체가 latest를 변경하면 덮어쓰지 않는다. 저장은 임시 파일과 rename으로 수행한다.
+- 이 checkout의 상태 필드와 실제 원래 환경의 cooldownVersion2 구현이 같다고 가정하지 않는다. 실제 배치 전 원본 파일과 런타임의 차이를 읽고 이식 호환성을 확인해야 한다.
+- 실행 진입점은 `node --use-env-proxy scripts/collect-concerts-scheduled.mjs` 하나다. 일반 스케줄러가 이를 호출할 수 있도록 연결했으며, 실제 timer/cron을 설치·활성화하지는 않았다. 영속 체크포인트를 보유한 실행 주체 하나를 확정해 전달하고 기존 KOPIS 소유권을 이전해야 한다. GitHub의 기존 비 KOPIS 정기 수집은 변경하지 않았다. 원본 상태 없는 임시 Actions checkout을 새 실행 소유자로 간주하지 않는다.
+
+필요한 배포 환경 설정은 기존 Supabase/KOPIS 바인딩에 더해 `KOPIS_API_FIRST_PUBLICATION=1`, 검토한 `KOPIS_PUBLICATION_EXECUTOR_MD5`, `KOPIS_API_FACTS_MD5`다. v3 서버나 변경된 digest에는 연결되지 않는다. 현재 운영은 이전 단계에서 관측한 v3이며 이번 단계에서도 운영 DB 변경·배포·예약 재개·실제 수집은 0회다.
+
+### 검증 범위
+
+격리 Postgres와 가상 API에서 일반 실행기를 두 번 호출했다. 첫 실행은 정상 공연 1건 공개·미등록 출연진 후보 보류, 두 번째는 같은 공연의 최신 관측을 받아도 공개 추가 0·후보 revision 유지였다. completion 응답 유실도 실제 저장 후 같은 token으로 재전송해 중복 없이 복구했다. 같은 run에서 익명 공개 읽기와 notification delivery/attempt 각각 0을 확인했다.
+
+스케줄 진입점은 원본 상태 부재, cooldown, 최근 실행, digest 불일치, 서버 영수증 불일치/조회 실패, 임대 거부, 동시 체크포인트 변경을 격리 테스트로 확인했다. 관련 Node 테스트 114개가 통과했다. 이는 실제 운영의 두 정규 회차 관측을 대신하지 않는다.

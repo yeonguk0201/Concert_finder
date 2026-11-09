@@ -15,6 +15,15 @@ const instant = s => typeof s === 'string' && /^\d{4}-\d\d-\d\dT(?:[01]\d|2[0-3]
   && validDay(s.slice(0, 10)) && Number.isFinite(Date.parse(s))
 const fresh = (s, now) => instant(s) && Date.parse(s) <= now && now - Date.parse(s) <= 3600000
 
+// Observation freshness is validated separately. A fresh observation alone is
+// not a new event revision, and must not turn every repeat into a change hold.
+export function apiFactsContentHash(payload) {
+  const stable = structuredClone(payload)
+  if (stable.api_observation) delete stable.api_observation.observed_at
+  for (const source of stable.sources ?? []) delete source.verified_at
+  return createHash('sha256').update(JSON.stringify(stable)).digest('hex')
+}
+
 // Deliberately small grammar: weekday clauses, inclusive weekday ranges, or
 // explicit full dates, each with parenthesized HH:mm times. Unknown suffixes,
 // holiday exceptions, date-only periods and bare times remain held.
@@ -134,6 +143,6 @@ export function parseKopisApiFacts(xml, expectedId, { observedAt, now = Date.now
       || (previous.payload.band_ids ?? []).some(id => !p.band_ids.includes(id))) reasons.push('ARTIST_LINK_REMOVAL_REQUIRES_REVIEW')
   }
   p.review_reasons = [...new Set(reasons)]
-  row.content_hash = createHash('sha256').update(JSON.stringify(p)).digest('hex')
+  row.content_hash = apiFactsContentHash(p)
   return { ...row, api_first_preview: true, proposed_contract_ready: p.review_reasons.length === 0 }
 }

@@ -1,8 +1,9 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { readFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { PGlite } from '@electric-sql/pglite'
 import { parseKopisApiFacts, normalizeKopisSessions } from '../scripts/kopis-api-facts.mjs'
+import { runApiFirstPublication } from '../scripts/api-first-publication.mjs'
 
 // Fictional performances, approvals and subscribers in an isolated Postgres.
 // Never connects to the operational project or runs a notification worker.
@@ -101,6 +102,7 @@ test('API-first server contract publishes unknown optional times with existing g
       assert.equal((await scalar('select initial_import from private.publication_changes')).initial_import, true)
       assert.equal(await count('private.notification_deliveries'), 0); assert.equal(await count('private.notification_attempts'), 0)
       assert.equal(await count('private.collection_leases'), 0)
+
       await db.exec("set local role anon; select set_config('request.jwt.claims','{}',true)")
       assert.equal(await count('public.concerts'), 1)
       assert.equal(await count('public.concert_sources'), 1)
@@ -238,6 +240,86 @@ test('API-first server contract publishes unknown optional times with existing g
       await db.exec('reset role')
       await db.query("select set_config('request.jwt.claims','{}',false)")
       await assert.rejects(db.query('select public.service_kopis_api_context()'), /SERVICE_REQUIRED/)
+    })
+    await isolate('ordinary runner performs API discovery through anonymous publication and a second normal run with no AI plan', async () => {
+      const calls = [], requests = []
+      let loseReceipt = true
+      const client = {
+        from(table) {
+          const filters = {}
+          return { select() { return this }, eq(k, v) { filters[k] = v; return this },
+            async single() { return { data: (await db.query('select * from public.collection_policies where source=$1', [filters.source])).rows[0] } },
+            async in(_key, values) {
+              assert.equal(table, 'collection_candidates')
+              return { data: (await db.query('select * from public.collection_candidates where source_url=any($1)', [values])).rows }
+            } }
+        },
+        async rpc(name, args) {
+          calls.push({ name, args })
+          if (name === 'service_publication_capabilities') return { data: await caps() }
+          if (name === 'service_kopis_api_context') return { data: (await scalar('select public.service_kopis_api_context() c')).c }
+          if (name === 'service_begin_collection') return { data: await begin() }
+          if (name === 'service_complete_collection') {
+            const data = (await db.query('select public.service_complete_collection($1,$2,$3,$4,$5) r',
+              [args.run_token, args.batch, args.identities, args.attempt_count, args.adapter_version])).rows[0].r
+            if (loseReceipt) { loseReceipt = false; throw new TypeError('Simulated lost response') }
+            return { data }
+          }
+          if (name === 'service_fail_collection') {
+            await db.query('select public.service_fail_collection($1,$2,$3)', [args.run_token, args.attempt_count, args.failure_code])
+            return { data: null }
+          }
+          throw Error('UNEXPECTED_RPC')
+        },
+      }
+      const env = { SUPABASE_URL: 'https://czjrzylvnewfjnfwjhwf.supabase.co', KOPIS_SERVICE_KEY: 'fictional-key',
+        KOPIS_API_FIRST_PUBLICATION: '1', KOPIS_PUBLICATION_EXECUTOR_MD5: capability.executor_md5, KOPIS_API_FACTS_MD5: capability.api_facts_md5,
+        KOPIS_AUTOMATIC_REVIEW_FILE: '/does-not-exist', KOPIS_AUTOMATIC_PUBLICATION: '1' }
+      const fetcher = async url => {
+        const u = new URL(url); requests.push(u.origin)
+        assert.equal(u.origin, 'https://kopis.or.kr')
+        if (u.pathname.endsWith('/pblprfr')) return new Response('<dbs><db><mt20id>PF123456</mt20id></db><db><mt20id>PF123457</mt20id></db></dbs>')
+        const id = u.pathname.split('/').at(-1)
+        return new Response(`<dbs><db><mt20id>${id}</mt20id><prfnm>Fictional runner ${id}</prfnm><genrenm>대중음악</genrenm>
+          <prfpdfrom>${clock.day}</prfpdfrom><prfpdto>${clock.day}</prfpdto><area>서울</area><fcltynm>가상 공연장</fcltynm>
+          <prfstate>공연예정</prfstate><prfcast>${id === 'PF123456' ? 'Fictional API band' : 'Unknown guest'}</prfcast>
+          <dtguidance>${clock.day}(19:00)</dtguidance></db></dbs>`)
+      }
+      const options = { client, env, fetcher, sleep: async () => {}, collectionOptions: { today: clock.day, end: clock.day } }
+      const first = await runApiFirstPublication(options)
+      assert.deepEqual(first.publication, { published: 1, review: 0 })
+      assert.equal(first.holds.length, 1); assert.equal(first.candidates.length, 1)
+      assert.equal('api_first_preview' in first.candidates[0], false)
+      const second = await runApiFirstPublication(options)
+      assert.deepEqual(second.publication, { published: 0, review: 0 })
+      assert.equal(second.candidates[0].content_hash, first.candidates[0].content_hash)
+      assert.notEqual(second.candidates[0].payload.api_observation.observed_at, first.candidates[0].payload.api_observation.observed_at)
+      assert.equal((await stored(second.candidates[0])).revision, 1)
+      const completions = calls.filter(c => c.name === 'service_complete_collection')
+      assert.equal(completions.length, 3)
+      assert.equal(completions[0].args.run_token, completions[1].args.run_token)
+      assert.deepEqual(completions[0].args.batch, completions[1].args.batch)
+      assert.ok(completions.every(c => c.args.identities.length === 0))
+      assert.equal(requests.length, 6)
+      assert.equal(await count('public.concerts'), 1)
+      assert.equal(await count('private.notification_deliveries'), 0); assert.equal(await count('private.notification_attempts'), 0)
+      assert.equal(await count('private.collection_leases'), 0)
+      if (process.env.API_BROWSER_FIXTURE_OUTPUT) {
+        const concerts = (await db.query(`select c.*, (select jsonb_agg(jsonb_build_object('band_id',band_id)) from public.concert_bands where concert_id=c.id) concert_bands,
+          (select jsonb_agg(to_jsonb(t)) from public.ticket_schedules t where concert_id=c.id) ticket_schedules,
+          (select jsonb_agg(to_jsonb(s)) from public.concert_sources s where concert_id=c.id) concert_sources
+          from public.concerts c where status='published'`)).rows
+        await writeFile(process.env.API_BROWSER_FIXTURE_OUTPUT, JSON.stringify({ bands: (await db.query('select * from public.bands')).rows, concerts,
+          runId: first.run_id, published: first.publication.published, deliveries: 0, attempts: 0 }), 'utf8')
+      }
+      await db.exec("set local role anon; select set_config('request.jwt.claims','{}',true)")
+      assert.equal(await count('public.concerts'), 1)
+      await db.exec('reset role')
+      await db.query(`select set_config('request.jwt.claims','{"role":"service_role"}',true)`)
+      calls.length = 0
+      await assert.rejects(runApiFirstPublication({ ...options, env: { ...env, KOPIS_API_FACTS_MD5: '0'.repeat(32) } }), /API_PUBLICATION_CONTRACT_CHANGED/)
+      assert.equal(calls.some(c => c.name === 'service_begin_collection'), false)
+      assert.equal(requests.length, 6)
     })
   } finally { await db.close() }
 })
