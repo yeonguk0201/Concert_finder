@@ -15,12 +15,14 @@ import { collectReissueNol } from './reissue-nol.mjs'
 import { readCollectionArtists, createCatalogArtistResolver, assertCollectionLinksPreserved, quarantineCollectionLinkRegressions } from './collection-artist-links.mjs'
 import { assertCollectionFactsPreserved, quarantineCollectionFactRegressions } from './collection-fact-guards.mjs'
 import { readAutomaticPlan, prepareAutomaticPublication, combineAutomaticBatch } from './automatic-publication.mjs'
+import { parseKopisApiFacts } from './kopis-api-facts.mjs'
 
 const upload = process.argv.includes('--upload')
 const output = process.argv.find(a => a.startsWith('--output='))?.slice(9)
 const selected = process.argv.find(a => a.startsWith('--source='))?.slice(9) ?? 'all'
 const includePast = process.argv.includes('--include-past')
 const factsOnly = process.argv.includes('--facts-only')
+const apiFirstPreview = process.argv.includes('--api-first-preview')
 // Concert collection must not become a second artist registration writer.
 const concertsOnly = factsOnly || process.argv.includes('--concerts-only')
 const skipArtistLookup = concertsOnly || process.argv.includes('--skip-artist-lookup')
@@ -29,11 +31,12 @@ try {
   // Isolated API-only preview. Upload could overwrite retained legacy material;
   // that migration and publication runner require a separate implementation.
   if (factsOnly && (selected !== 'kopis' || upload)) throw new Error('FACTS_ONLY_KOPIS_PREVIEW_REQUIRED')
+  if (apiFirstPreview && (!factsOnly || selected !== 'kopis' || upload)) throw new Error('API_FIRST_PREVIEW_SCOPE_REQUIRED')
   if (!['all', 'ualive', 'mintpaper', 'radwimps', 'yes24', 'kopis', 'reissue_nol'].includes(selected)) throw new Error('Unknown source')
   if (selected === 'kopis' && !process.env.KOPIS_SERVICE_KEY) throw new Error('KOPIS_SERVICE_KEY missing')
   if (upload && (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY)) throw new Error('Server upload environment missing')
   const client = upload ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } }) : null
-  const automatic = process.env.KOPIS_AUTOMATIC_PUBLICATION === '1'
+  const automatic = !factsOnly && process.env.KOPIS_AUTOMATIC_PUBLICATION === '1'
   const reviewPlan = automatic ? await readAutomaticPlan(process.env.KOPIS_AUTOMATIC_REVIEW_FILE) : null
   if (automatic) {
     if (!upload || selected !== 'kopis' || !concertsOnly) throw Error('AUTOMATIC_COLLECTION_SCOPE_REQUIRED')
@@ -93,6 +96,7 @@ try {
       const result = await runSource({ client, source, collect: async () => {
       const slotOption = process.argv.find(a => a.startsWith('--kopis-slot='))?.slice(13)
       const kopisOptions = slotOption === undefined ? {} : { slot: Number(slotOption) }
+      if (apiFirstPreview) kopisOptions.parseDetail = (xml, id, observedAt) => parseKopisApiFacts(xml, id, { observedAt })
       const result = source === 'reissue_nol' ? await collectReissueNol(reissueLinks) : source === 'kopis' ? await collectKopis(kopisOptions) : source === 'ualive' ? await collect() : source === 'yes24' ? await collectYes24() : await collectAdapter(source)
       result.excluded ??= []
       filterPastCandidates(result, { includePast })
