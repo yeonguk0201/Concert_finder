@@ -1,8 +1,10 @@
-import { mkdir, readFile, writeFile, open } from 'node:fs/promises'
+import { mkdir, readFile, writeFile, open, rename } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { dirname, join, resolve } from 'node:path'
 import { randomUUID } from 'node:crypto'
+import { apiFirstCollectionCompatible, apiFirstClient, runApiFirstPublication } from './api-first-publication.mjs'
+import { assertApiCheckpoint, apiCollectionCheckpoint } from './collection-cooldown.mjs'
 
 const project = 'https://czjrzylvnewfjnfwjhwf.supabase.co'
 const hour = 3600000
@@ -30,12 +32,17 @@ export function collectionDecision({ policy, latest, now, nextAttemptAt }) {
 }
 
 export async function runScheduledCollection({ root = resolve(dirname(fileURLToPath(import.meta.url)), '..'), env = process.env,
-  fetcher = fetch, now = Date.now() } = {}) {
+  fetcher = fetch, now = Date.now(), apiExecutor = runApiFirstPublication } = {}) {
   if (env.SUPABASE_URL !== project || !env.SUPABASE_SERVICE_ROLE_KEY || !env.KOPIS_SERVICE_KEY) throw new Error('COLLECTION_CONFIGURATION_REQUIRED')
   const directory = join(root, '.local/concert-collection')
-  await mkdir(directory, { recursive: true, mode: 0o700 })
-  let previous = {}
-  try { previous = JSON.parse(await readFile(join(directory, 'latest.json'), 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw new Error('COLLECTION_CHECKPOINT_UNREADABLE') }
+  const apiFirst = env.KOPIS_API_FIRST_PUBLICATION === '1'
+  // This checkout may be a new environment without the original checkpoint.
+  // API-first activation must never silently initialize a replacement state.
+  if (!apiFirst) await mkdir(directory, { recursive: true, mode: 0o700 })
+  let previous = {}, previousText
+  try { previousText = await readFile(join(directory, 'latest.json'), 'utf8'); previous = JSON.parse(previousText) }
+  catch (error) { if (apiFirst || error.code !== 'ENOENT') throw new Error('COLLECTION_CHECKPOINT_UNREADABLE') }
+  if (apiFirst) assertApiCheckpoint(previous)
   const query = async (path, body) => {
     let response
     try { response = await fetcher(`${project}/rest/v1/${path}`, { headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY,
@@ -45,11 +52,41 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
     if (!response.ok) throw new Error(`COLLECTION_PREFLIGHT_HTTP_${response.status}`)
     return response.json()
   }
-  const policies = await query('collection_policies?source=eq.kopis&select=source,collection_enabled,publication_enabled,live_after')
+  const policies = await query(`collection_policies?source=eq.kopis&select=source,collection_enabled,publication_enabled,live_after${apiFirst ? ',adapter_version' : ''}`)
   const runs = await query('collection_runs?source=eq.kopis&state=neq.legacy&select=id,state,started_at,created_at,finished_at,candidate_count,published_count,review_count,attempts&order=created_at.desc&limit=1')
   if (!Array.isArray(policies) || policies.length !== 1 || !Array.isArray(runs)) throw new Error('COLLECTION_PREFLIGHT_INVALID')
   const decision = collectionDecision({ policy: policies[0], latest: runs[0], now, nextAttemptAt: previous.nextAttemptAt })
   if (decision !== 'collect') return { source: 'kopis', skipped: decision, latestRun: runs[0]?.id ?? null }
+  if (apiFirst) {
+    const capabilities = await query('rpc/service_publication_capabilities', {})
+    if (!apiFirstCollectionCompatible(policies[0], capabilities, env.KOPIS_PUBLICATION_EXECUTOR_MD5, env.KOPIS_API_FACTS_MD5)) {
+      throw Error('API_PUBLICATION_CONTRACT_CHANGED')
+    }
+    let result
+    try { result = await apiExecutor({ client: apiFirstClient(env, fetcher), env, fetcher }) }
+    catch (error) {
+      // Only the fixed provider error shape is retained, never SDK/provider URLs.
+      result = { error: /^KOPIS HTTP [45]\d\d \[(list \d{8}-\d{8} page=\d+|detail PF\d{6})\]$/.test(error.message)
+        ? error.message : 'API_COLLECTION_FAILED', run_id: error.run_id ?? null }
+    }
+    if (result.skipped) return { source: 'kopis', skipped: result.skipped }
+    const runId = /^[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(result.run_id ?? '') ? result.run_id : null
+    let current = []
+    try { current = runId ? await query(`collection_runs?source=eq.kopis&id=eq.${runId}&select=id,state,finished_at,candidate_count,published_count,review_count,attempts`) : [] }
+    catch { result.error = 'COLLECTION_RESULT_UNCONFIRMED' }
+    const confirmed = !result.error && current.length === 1 && Boolean(current[0].finished_at)
+      && ['success', 'partial'].includes(current[0].state) && current[0].candidate_count === result.candidates?.length
+      && current[0].published_count === result.publication?.published && current[0].review_count === result.publication?.review
+    const receiptRecorded = current.length === 1 && Boolean(current[0].finished_at)
+      && ['success', 'partial', 'failed', 'expired'].includes(current[0].state)
+    const status = apiCollectionCheckpoint(previous, result, { confirmed, latestRun: current[0] ?? null,
+      receiptUnconfirmed: !receiptRecorded, now: Date.now() })
+    if (await readFile(join(directory, 'latest.json'), 'utf8') !== previousText) throw Error('COLLECTION_CHECKPOINT_CHANGED')
+    const temporary = join(directory, `latest-${randomUUID()}.tmp`)
+    await writeFile(temporary, JSON.stringify(status, null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
+    await rename(temporary, join(directory, 'latest.json'))
+    return status
+  }
   // Publication activation is a separate release decision, never part of collection.
   if (policies[0].publication_enabled || policies[0].live_after !== null) {
     // Only silent backfill is supported here. live_after remains a separate
