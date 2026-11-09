@@ -3,14 +3,15 @@ import { spawn } from 'node:child_process'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { dirname, join, resolve } from 'node:path'
 import { randomUUID } from 'node:crypto'
+
 import { apiFirstCollectionCompatible, apiFirstClient, runApiFirstPublication } from './api-first-publication.mjs'
-import { assertApiCheckpoint, apiCollectionCheckpoint } from './collection-cooldown.mjs'
+import { assertApiCheckpoint, apiCollectionCheckpoint, collectionCooldown, migrateHttp400Cooldown } from './collection-cooldown.mjs'
+export { collectionCooldown, migrateHttp400Cooldown } from './collection-cooldown.mjs'
 
 const project = 'https://czjrzylvnewfjnfwjhwf.supabase.co'
 const hour = 3600000
 
-// Release opt-in is separate from policy ON. The operator pins the deployed
-// executor after review; missing/mismatched contracts keep the old ON guard.
+// A separately reviewed release must explicitly pin the deployed contract.
 export function publicationCollectionCompatible(policy, capabilities, expectedMd5) {
   return policy?.source === 'kopis' && policy.collection_enabled === true
     && policy.publication_enabled === true && policy.live_after === null
@@ -18,6 +19,13 @@ export function publicationCollectionCompatible(policy, capabilities, expectedMd
     && capabilities?.contract === 'publication-facts-v3'
     && capabilities.reviewed_release === true
     && capabilities.executor_md5 === expectedMd5
+}
+const safeHttpError = /^KOPIS HTTP (\d{3}) \[(list \d{8}-\d{8} page=\d+|detail PF\d{6})\]$/
+
+function http400Fingerprint(error) {
+  const match = safeHttpError.exec(error ?? '')
+  // Rolling list dates change daily; they must not reset the same page failure.
+  return match?.[1] === '400' ? `HTTP400:${match[2].replace(/^list \d{8}-\d{8}/, 'list')}` : null
 }
 
 export function collectionDecision({ policy, latest, now, nextAttemptAt }) {
@@ -35,14 +43,19 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   fetcher = fetch, now = Date.now(), apiExecutor = runApiFirstPublication } = {}) {
   if (env.SUPABASE_URL !== project || !env.SUPABASE_SERVICE_ROLE_KEY || !env.KOPIS_SERVICE_KEY) throw new Error('COLLECTION_CONFIGURATION_REQUIRED')
   const directory = join(root, '.local/concert-collection')
+  let ownership
+  try { ownership = JSON.parse(await readFile(join(directory, 'scheduler-owner.json'), 'utf8')) }
+  catch (error) { if (error.code !== 'ENOENT') throw Error('COLLECTION_OWNER_UNCONFIRMED') }
+  if (ownership && (ownership.owner !== 'github-actions-kopis-api-v1'
+    || env.CONCERT_SCHEDULER_OWNER !== ownership.owner || env.GITHUB_ACTIONS !== 'true'
+    || env.GITHUB_REF !== 'refs/heads/main')) throw Error('COLLECTION_OWNER_TRANSFERRED')
   const apiFirst = env.KOPIS_API_FIRST_PUBLICATION === '1'
-  // This checkout may be a new environment without the original checkpoint.
-  // API-first activation must never silently initialize a replacement state.
   if (!apiFirst) await mkdir(directory, { recursive: true, mode: 0o700 })
   let previous = {}, previousText
   try { previousText = await readFile(join(directory, 'latest.json'), 'utf8'); previous = JSON.parse(previousText) }
-  catch (error) { if (apiFirst || error.code !== 'ENOENT') throw new Error('COLLECTION_CHECKPOINT_UNREADABLE') }
+  catch (error) { throw new Error(!apiFirst && error.code === 'ENOENT' ? 'COLLECTION_CHECKPOINT_REQUIRED' : 'COLLECTION_CHECKPOINT_UNREADABLE') }
   if (apiFirst) assertApiCheckpoint(previous)
+  if ((!apiFirst && previous?.source !== 'kopis') || (previous.source != null && previous.source !== 'kopis') || !Number.isFinite(Date.parse(previous.nextAttemptAt))) throw new Error('COLLECTION_CHECKPOINT_UNREADABLE')
   const query = async (path, body) => {
     let response
     try { response = await fetcher(`${project}/rest/v1/${path}`, { headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY,
@@ -55,6 +68,11 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   const policies = await query(`collection_policies?source=eq.kopis&select=source,collection_enabled,publication_enabled,live_after${apiFirst ? ',adapter_version' : ''}`)
   const runs = await query('collection_runs?source=eq.kopis&state=neq.legacy&select=id,state,started_at,created_at,finished_at,candidate_count,published_count,review_count,attempts&order=created_at.desc&limit=1')
   if (!Array.isArray(policies) || policies.length !== 1 || !Array.isArray(runs)) throw new Error('COLLECTION_PREFLIGHT_INVALID')
+  const migrated = apiFirst ? previous : migrateHttp400Cooldown(previous)
+  if (migrated !== previous) {
+    await writeFile(join(directory, 'latest.json'), JSON.stringify(migrated, null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
+    previous = migrated
+  }
   const decision = collectionDecision({ policy: policies[0], latest: runs[0], now, nextAttemptAt: previous.nextAttemptAt })
   if (decision !== 'collect') return { source: 'kopis', skipped: decision, latestRun: runs[0]?.id ?? null }
   if (apiFirst) {
@@ -89,8 +107,6 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   }
   // Publication activation is a separate release decision, never part of collection.
   if (policies[0].publication_enabled || policies[0].live_after !== null) {
-    // Only silent backfill is supported here. live_after remains a separate
-    // release; this runner cannot authorize live notifications.
     if (policies[0].live_after !== null || !/^[a-f0-9]{32}$/.test(env.KOPIS_PUBLICATION_EXECUTOR_MD5 ?? '')) {
       throw new Error('COLLECTION_PUBLICATION_POLICY_CHANGED')
     }
@@ -121,10 +137,12 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   let report
   try { report = JSON.parse(await readFile(outputFile, 'utf8')) } catch { throw new Error('COLLECTION_RESULT_UNCONFIRMED') }
   const result = report.results?.find(row => row.source === 'kopis')
+  const partialErrors = (result?.failures ?? []).map(failure => failure?.error)
+  const http400Errors = [...new Set([result?.error, ...partialErrors]
+    .filter(value => typeof value === 'string' && http400Fingerprint(value)))]
   // Only this adapter's fixed, secret-free HTTP error shape is retained in status.
-  const httpError = /^KOPIS HTTP (\d{3}) \[(list \d{8}-\d{8} page=\d+|detail PF\d{6})\]$/.exec(result?.error ?? '')
+  const httpError = safeHttpError.exec(result?.error ?? '')
   let failed = code !== 0 || !report.complete || !result || Boolean(result.error) || Boolean(result.failures?.length)
-  const permanent = httpError && Number(httpError[1]) >= 400 && Number(httpError[1]) < 500 && httpError[1] !== '429'
   const runId = /^[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(result?.run_id ?? '') ? result.run_id : null
   const current = runId ? await query(`collection_runs?source=eq.kopis&id=eq.${runId}&select=id,state,started_at,created_at,finished_at,candidate_count,published_count,review_count,attempts`) : []
   const confirmed = result?.uploaded === true && current.length === 1 && current[0].finished_at
@@ -132,9 +150,11 @@ export async function runScheduledCollection({ root = resolve(dirname(fileURLToP
   if (result?.uploaded === true && !confirmed) failed = true
   const status = { checkedAt: new Date().toISOString(), source: 'kopis', failed, uploaded: result?.uploaded === true,
     skipped: result?.skipped ?? null, candidates: result?.candidates?.length ?? 0, failureCount: result?.failures?.length ?? 0,
+    deferredCandidates: result?.deferred_candidates?.length ?? 0,
     error: httpError ? `KOPIS HTTP ${httpError[1]} [${httpError[2]}]` : result?.error ? 'COLLECTION_FAILED'
       : result?.uploaded === true && !confirmed ? 'COLLECTION_RESULT_UNCONFIRMED' : null,
-    latestRun: current[0] ?? null, nextAttemptAt: new Date(Date.now() + (permanent ? 24 * hour : hour)).toISOString() }
+    http400Errors, latestRun: current[0] ?? null,
+    ...collectionCooldown({ previous, error: result?.error, errors: partialErrors, skipped: Boolean(result?.skipped) }) }
   await writeFile(join(directory, 'latest.json'), JSON.stringify(status, null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
   return status
 }

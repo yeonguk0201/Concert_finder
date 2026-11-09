@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "project": "czjrzylvnewfjnfwjhwf",
+  "contract": "publication-facts-v4",
+  "api_facts_contract": "kopis-api-facts-v1",
+  "executor_md5": "ae38470098f40cb3aec9582172c0b9c4",
+  "api_facts_md5": "490ef1e777b29fa7bce77d0fc9674d93",
+  "migration": "20261109084718_api_first_silent_publication",
+  "reviewed_source": "aadf93bb572e996d2e0a567d445eeabfa9e5891e"
+}
