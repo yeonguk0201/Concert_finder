@@ -28,3 +28,11 @@ PR #77의 API 공개 경로를 GitHub Actions의 일반 Node 작업으로 연결
 ## 운영 기준 함수 대조
 
 2026-11-09 읽기에서 기존 `admin_ingest_catalog`는 정규 `20261014125200_kopis_discovery`의 정의와 MD5 `7eb3bb5ec9c207e2ca97a26795f31500`가 같았다. 선택 Reissue wrapper를 포함하는 전체 격리 fixture와 이 기존 함수가 달랐다. 운영 함수를 바꾸거나 역사 migration을 재실행하지 않는다. 실제 기준을 정규 SQL로 재현한 별도 격리 검사에서 executor `ae38470098f40cb3aec9582172c0b9c4`, API facts `3c356e529b6e1dc2fe04041c64a3248d` 및 무알림 공개를 검증한다. 이 독립 검증값을 release pin으로 사용하며 조회값을 그대로 승인하지 않는다.
+
+## 2026-11-09 사용자 재개 지시
+
+사용자가 “예약 재개하고 바로 실행해서 확인해봐”로 일반 GitHub 스케줄러의 재개와 즉시 1회 실행을 승인했다. GitHub 연결 도구에는 repository variable 변경과 workflow dispatch가 없어 기존 workflow의 실행 설정을 정규 PR로 반영한다. 새로운 실행 주체나 ChatGPT 예약을 만들지 않는다.
+
+이 재개 릴리스 이후 비어 있는 repository switch는 true를 기본값으로 사용하고, 명시적인 false는 계속 존중한다. 저장 상태가 paused 또는 executing이면 실행되지 않는다. 운영자는 재개 전에 최신 DB lease/최근 실행/cooldown과 원본 SHA/v4 pin을 읽고 지원 Storage client로 paused→idle, generation+1만 기록·재확인한다. 원본 네 파일을 재생성하거나 수정하지 않는다.
+
+이 workflow 또는 pin 파일이 변경된 main 릴리스 push는 기존 runner를 즉시 1회 호출한다. 정기 실행도 같은 entry·단일 concurrency·서버 lease·최근1시간·cooldown을 따른다. skip이면 추가 호출로 우회하지 않는다. 수동 dispatch의 execute 기본값 false는 계속 읽기 전용이다. 중지는 repository switch false 또는 durable phase paused로 적용할 수 있고 executing 상태는 자동 해제하지 않는다. 원래 ChatGPT·아티스트·감시 예약은 재개하지 않는다.
