@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 import App from '../src/App'
 import { mapBands, mapConcerts } from '../src/catalog'
@@ -187,14 +187,30 @@ test('account mode excludes local samples and login prompt keeps the original ev
   expect(mocks.toggle).not.toHaveBeenCalled()
   expect(localStorage.getItem('encore.bands')).toBe('["oasis"]')
 })
-test('saved unknown times disable calendar, unavailable saves can still be deleted', async () => {
+test('saved schedules hide withdrawn performances and keep visible saves removable', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
   mocks.saves = ['real-ticket', 'hidden-ticket']; mocks.toggle.mockResolvedValue(true)
   history.replaceState(null, '', '/?page=saved')
   render(<App />)
-  expect(screen.getAllByRole('button', { name: '캘린더 저장' }).every(button => (button as HTMLButtonElement).disabled)).toBe(true)
-  fireEvent.click(screen.getByRole('button', { name: '공개 중단 또는 삭제된 공연 저장한 일정 삭제' }))
-  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'hidden-ticket'))
+  expect(screen.getByRole('heading', { name: '저장한 전체 예매 일정 1' })).toBeTruthy()
+  expect(screen.queryByText('공개 중단 또는 삭제된 공연')).toBeNull()
+  expect((screen.getByRole('button', { name: '캘린더 저장' }) as HTMLButtonElement).disabled).toBe(true)
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 저장한 일정 삭제' }))
+  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'real-ticket'))
+})
+
+test('discovery collapses repeated listings and keeps distinct tour dates and venues', () => {
+  const base = { ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), venue: '라이브홀', sources: [{ url: 'https://tickets.example.test/show', label: '공식 예매처' }] }
+  mocks.concerts = [base, { ...base, id: 'duplicate', ticketScheduleId: undefined },
+    { ...base, id: 'another-date', date: '2026-12-13' },
+    { ...base, id: 'another-venue', venue: '아레나' },
+    { ...base, id: 'unverified-match', sources: [] }]
+  history.replaceState(null, '', '/?page=discover')
+  render(<App />)
+  const cards = screen.getAllByRole('button', { name: 'Verified concert 상세 보기' })
+  expect(cards).toHaveLength(4)
+  fireEvent.click(cards.find(card => card.closest('article')?.textContent?.includes('2026.12.12') && card.closest('article')?.textContent?.includes('라이브홀'))!)
+  expect(new URLSearchParams(location.search).get('event')).toBe('real-concert')
 })
 
 test('search has an explicit result page, resets stale filters and restores its query from the URL', () => {
@@ -233,6 +249,25 @@ test('followed artists excludes unfollowed artists and updates after unfollowing
   view.rerender(<App />)
   expect(screen.queryByRole('heading',{name:'Followed artist'})).toBeNull()
   expect(screen.getByText('처음으로 찜할 아티스트는 누구인가요?')).toBeTruthy()
+})
+
+test('a followed artist without concerts still links to the artist page', () => {
+  mocks.follows = ['real-band']; mocks.concerts = []
+  history.replaceState(null, '', '/?page=bands')
+  render(<App />)
+  const artist = screen.getByRole('link', { name: 'Verified band' })
+  expect(artist.getAttribute('href')).toBe('?page=artist&artist=real-band')
+  fireEvent.click(artist)
+  expect(screen.getByRole('heading', { name: 'Verified band', level: 1 })).toBeTruthy()
+  expect(screen.getByText('아직 확인된 예정 공연이 없어요.')).toBeTruthy()
+})
+
+test('home identifies an empty festival filter and can return to all concerts', () => {
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: '페스티벌' }))
+  expect(screen.getByText('예정된 페스티벌이 없어요.')).toBeTruthy()
+  fireEvent.click(screen.getByRole('button', { name: '전체 공연 보기' }))
+  expect(screen.getByRole('button', { name: 'Verified concert 상세 보기' })).toBeTruthy()
 })
 
 test('a visible login button opens the email form directly', () => {
@@ -281,6 +316,45 @@ test('selected calendar date filters ticket opens in KST and recommends at most 
   fireEvent.click(screen.getByRole('button', { name: '이날 공연 4개 모두 보기' }))
   expect(new URLSearchParams(location.search).get('date')).toBe('2026-10-24')
   expect(screen.getAllByRole('button', { name: /Concert \d 상세 보기/ })).toHaveLength(4)
+})
+
+test('opening a home concert keeps the list entry and restores its category and scroll on browser back', async () => {
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: '내한', exact: true }))
+  const scrollY = vi.spyOn(window, 'scrollY', 'get').mockReturnValue(480)
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
+  scrollY.mockRestore()
+  expect(new URLSearchParams(location.search).get('event')).toBe('real-concert')
+  history.back()
+  expect((await screen.findByRole('button', { name: '내한', exact: true })).getAttribute('aria-pressed')).toBe('true')
+  expect(location.search).toBe('')
+  expect(window.scrollTo).toHaveBeenLastCalledWith({ top: 480, left: 0, behavior: 'instant' })
+  history.forward()
+  await screen.findByRole('button', { name: '공연 상세 닫기' })
+  expect(new URLSearchParams(location.search).get('event')).toBe('real-concert')
+})
+
+test('closing a deep-linked concert keeps its discover date without using browser back', () => {
+  history.replaceState(null, '', '/?page=discover&date=2026-12-12&event=real-concert')
+  const back = vi.spyOn(history, 'back')
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: '공연 상세 닫기' }))
+  expect(back).not.toHaveBeenCalled()
+  expect(location.search).toBe('?page=discover&date=2026-12-12')
+  expect((screen.getByLabelText('공연 날짜') as HTMLInputElement).value).toBe('2026-12-12')
+  back.mockRestore()
+})
+
+test('detail back restores the search query and active results tab', async () => {
+  history.replaceState(null, '', '/?page=search&q=Verified')
+  render(<App />)
+  const resultTab = () => within(screen.getByLabelText('검색 결과 종류')).getByRole('button', { name: '공연', exact: true })
+  fireEvent.click(resultTab())
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
+  expect(new URLSearchParams(location.search).get('q')).toBe('Verified')
+  fireEvent.click(screen.getByRole('button', { name: '공연 상세 닫기' }))
+  await waitFor(() => expect(resultTab().getAttribute('aria-pressed')).toBe('true'))
+  expect(location.search).toBe('?page=search&q=Verified')
 })
 
 test('browser back restores search and artist context', () => {
