@@ -115,7 +115,7 @@ export function parseKopisApiFacts(xml, expectedId, { observedAt, now = Date.now
   p.booking_links = []; p.ticket.booking_url = null; p.ticket_evidence = []
   p.initial_import = true
   p.sources[0].verified_at = observedAt
-  p.api_observation = { provider: 'kopis', id: expectedId, observed_at: observedAt, guidance, state }
+  p.api_observation = { provider: 'kopis', id: expectedId, observed_at: observedAt, guidance, state, cast: field('prfcast') }
   // Source-use review is deployment-level configuration, not an AI-authored
   // per-event review plan. Missing configuration holds the proposed release.
   let permitted = false
