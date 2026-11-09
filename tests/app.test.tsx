@@ -251,6 +251,25 @@ test('followed artists excludes unfollowed artists and updates after unfollowing
   expect(screen.getByText('처음으로 찜할 아티스트는 누구인가요?')).toBeTruthy()
 })
 
+test('a followed artist without concerts still links to the artist page', () => {
+  mocks.follows = ['real-band']; mocks.concerts = []
+  history.replaceState(null, '', '/?page=bands')
+  render(<App />)
+  const artist = screen.getByRole('link', { name: 'Verified band' })
+  expect(artist.getAttribute('href')).toBe('?page=artist&artist=real-band')
+  fireEvent.click(artist)
+  expect(screen.getByRole('heading', { name: 'Verified band', level: 1 })).toBeTruthy()
+  expect(screen.getByText('아직 확인된 예정 공연이 없어요.')).toBeTruthy()
+})
+
+test('home identifies an empty festival filter and can return to all concerts', () => {
+  render(<App />)
+  fireEvent.click(screen.getByRole('button', { name: '페스티벌' }))
+  expect(screen.getByText('예정된 페스티벌이 없어요.')).toBeTruthy()
+  fireEvent.click(screen.getByRole('button', { name: '전체 공연 보기' }))
+  expect(screen.getByRole('button', { name: 'Verified concert 상세 보기' })).toBeTruthy()
+})
+
 test('a visible login button opens the email form directly', () => {
   render(<App />)
   fireEvent.click(screen.getByRole('button',{name:'로그인',exact:true}))
