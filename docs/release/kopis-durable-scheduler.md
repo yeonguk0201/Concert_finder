@@ -24,3 +24,7 @@ PR #77의 API 공개 경로를 GitHub Actions의 일반 Node 작업으로 연결
 운영 schema 설치는 공개 OFF·idle lease에서 정규 릴리스 migration만 적용한다. 기존 역사 migration 재실행·전체 db push·history repair·직접 후보/공연 writer를 사용하지 않는다. 출처 설정은 검토한 KOPIS 사실/출처 링크 범위이며 포스터·외부 공지·상품 링크 허가로 확대하지 않는다. 다른 출처 공개·알림 live·아티스트 writer는 그대로다.
 
 설치·CI·비공개 상태 roundtrip·읽기 전용 연결 확인과 실제 첫 공개·다음 정기 회차는 별도 성과다. 중지를 유지한 설치에서는 새 수집/공개 또는 알림0 운영 receipt를 만들어냈다고 보고하지 않는다.
+
+## 운영 기준 함수 대조
+
+2026-11-09 읽기에서 기존 `admin_ingest_catalog`는 정규 `20261014125200_kopis_discovery`의 정의와 MD5 `7eb3bb5ec9c207e2ca97a26795f31500`가 같았다. 선택 Reissue wrapper를 포함하는 전체 격리 fixture와 이 기존 함수가 달랐다. 운영 함수를 바꾸거나 역사 migration을 재실행하지 않는다. 실제 기준을 정규 SQL로 재현한 별도 격리 검사에서 executor `ae38470098f40cb3aec9582172c0b9c4`, API facts `3c356e529b6e1dc2fe04041c64a3248d` 및 무알림 공개를 검증한다. 이 독립 검증값을 release pin으로 사용하며 조회값을 그대로 승인하지 않는다.
