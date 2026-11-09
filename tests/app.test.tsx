@@ -32,6 +32,28 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks(); vi.useRealTimers() })
 
+test('API performances display missing announcement and sale facts without invented dates or calendar events', async () => {
+  const concerts = mocks.concerts as ReturnType<typeof mapConcerts>
+  concerts[0] = { ...concerts[0], announcedAt: '', ticketAt: '', announcementPrecision: undefined }
+  history.replaceState(null, '', '/?event=real-concert')
+  render(<App />)
+  expect(await screen.findByText('발표일 미확인')).toBeTruthy()
+  expect(screen.getByText('예매 시작 시각 미확인')).toBeTruthy()
+  expect(screen.getByText('예매 시작 시각은 아직 확인되지 않았어요.')).toBeTruthy()
+  expect(screen.queryByText(/00:00/)).toBeNull()
+  expect(screen.getByText('일정 저장만으로 푸시 알림이 예약되지 않습니다.')).toBeTruthy()
+})
+
+test('saved performances with unknown sale time remain visible with an explicit unknown state', () => {
+  mocks.session = { user: { id: 'user', email: 'fixture@example.test' } }
+  mocks.saves = ['real-ticket']
+  history.replaceState(null, '', '/?page=saved')
+  render(<App />)
+  expect(screen.getByText('예매 시작 시각 미확인')).toBeTruthy()
+  expect(screen.queryByText('일시 미정 티켓 오픈')).toBeNull()
+  expect(screen.getByRole('button', { name: '캘린더 저장' }).hasAttribute('disabled')).toBe(true)
+})
+
 test('ordinary search stays in the approved DB catalog', () => {
   mocks.concerts = []
   render(<App />)
