@@ -20,6 +20,33 @@ export function sortConcerts(concerts: Concert[], order: ConcertOrder, now = new
     return (order === 'announcement' ? -difference : difference) || a.id.localeCompare(b.id)
   })
 }
+// A date without a time can cover separate shows at the same venue.
+export function distinctConcerts(concerts: Concert[], saved: ReadonlySet<string>): Concert[] {
+  const normalize = (value: string) => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase()
+  const priority = (concert: Concert) => Number(saved.has(concert.id)) * 4
+    + Number(Boolean(concert.ticketScheduleId)) * 2 + Number(Boolean(concert.ticketAt || concert.bookingUrl))
+  const listings: Concert[] = []
+  const indexes = new Map<string, number[]>()
+  for (const concert of concerts) {
+    const { date, endsOn, city, venue, title, cancelled, type, bandIds, sources } = concert
+    if (!date || !city || city === '지역 미정' || !venue || venue === '장소 미정') {
+      listings.push(concert)
+      continue
+    }
+    const key = JSON.stringify([normalize(title), date, endsOn || date, normalize(city), normalize(venue),
+      Boolean(cancelled), type, [...bandIds].sort()])
+    const matches = indexes.get(key) ?? []
+    const duplicate = matches.find(index => date.includes('T') || sources?.some(source =>
+      listings[index].sources?.some(existing => existing.url === source.url)))
+    if (duplicate === undefined) {
+      indexes.set(key, [...matches, listings.length])
+      listings.push(concert)
+    } else if (priority(concert) > priority(listings[duplicate])) {
+      listings[duplicate] = concert
+    }
+  }
+  return listings
+}
 export function imminentTickets(concerts: Concert[], now = new Date()) {
   return sortConcerts(concerts.filter(c => isUpcoming(c, now) && Date.parse(c.ticketAt) > now.getTime()), 'ticket', now)
 }

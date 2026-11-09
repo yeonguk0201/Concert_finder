@@ -187,14 +187,30 @@ test('account mode excludes local samples and login prompt keeps the original ev
   expect(mocks.toggle).not.toHaveBeenCalled()
   expect(localStorage.getItem('encore.bands')).toBe('["oasis"]')
 })
-test('saved unknown times disable calendar, unavailable saves can still be deleted', async () => {
+test('saved schedules hide withdrawn performances and keep visible saves removable', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
   mocks.saves = ['real-ticket', 'hidden-ticket']; mocks.toggle.mockResolvedValue(true)
   history.replaceState(null, '', '/?page=saved')
   render(<App />)
-  expect(screen.getAllByRole('button', { name: '캘린더 저장' }).every(button => (button as HTMLButtonElement).disabled)).toBe(true)
-  fireEvent.click(screen.getByRole('button', { name: '공개 중단 또는 삭제된 공연 저장한 일정 삭제' }))
-  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'hidden-ticket'))
+  expect(screen.getByRole('heading', { name: '저장한 전체 예매 일정 1' })).toBeTruthy()
+  expect(screen.queryByText('공개 중단 또는 삭제된 공연')).toBeNull()
+  expect((screen.getByRole('button', { name: '캘린더 저장' }) as HTMLButtonElement).disabled).toBe(true)
+  fireEvent.click(screen.getByRole('button', { name: 'Verified concert 저장한 일정 삭제' }))
+  await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'real-ticket'))
+})
+
+test('discovery collapses repeated listings and keeps distinct tour dates and venues', () => {
+  const base = { ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), venue: '라이브홀', sources: [{ url: 'https://tickets.example.test/show', label: '공식 예매처' }] }
+  mocks.concerts = [base, { ...base, id: 'duplicate', ticketScheduleId: undefined },
+    { ...base, id: 'another-date', date: '2026-12-13' },
+    { ...base, id: 'another-venue', venue: '아레나' },
+    { ...base, id: 'unverified-match', sources: [] }]
+  history.replaceState(null, '', '/?page=discover')
+  render(<App />)
+  const cards = screen.getAllByRole('button', { name: 'Verified concert 상세 보기' })
+  expect(cards).toHaveLength(4)
+  fireEvent.click(cards.find(card => card.closest('article')?.textContent?.includes('2026.12.12') && card.closest('article')?.textContent?.includes('라이브홀'))!)
+  expect(new URLSearchParams(location.search).get('event')).toBe('real-concert')
 })
 
 test('search has an explicit result page, resets stale filters and restores its query from the URL', () => {
