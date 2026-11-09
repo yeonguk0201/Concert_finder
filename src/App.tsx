@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import { bands as fixtureBands, concerts as fixtureConcerts } from './data'
 import type { Band, Concert } from './data'
 import { calendarFile, formatDate, readIds } from './lib'
@@ -18,7 +18,7 @@ import { useCatalog } from './useCatalog'
 import { useAdminAccess } from './useAdminAccess'
 import { AdminPanel } from './AdminPanel'
 import { useAccountStorage } from './useAccountStorage'
-import { distinctConcerts, isUpcoming, sortConcerts, matchesArtist } from './catalogViews'
+import { distinctConcerts, isUpcoming, sortConcerts, matchesArtist, recommendedArtists } from './catalogViews'
 import { ApprovedArtwork } from './ApprovedArtwork'
 import { artistStyle } from './approvedStyle'
 import { Icon } from './UiIcon'
@@ -208,7 +208,13 @@ function App() {
   const empty = (title: string, description: string, label: string, action: () => void) => <div className="flow-empty"><span><Icon name="heart" /></span><h2>{title}</h2><p>{description}</p><button className="primary" onClick={action}>{label} <Icon name="arrow" /></button></div>
   const filters = <div className="filters" aria-label="공연 분류">{['전체', '내한', '국내', '페스티벌'].map(value => <button key={value} aria-pressed={filter === value} onClick={() => setFilter(value)}>{value}</button>)}</div>
   const searchForm = (home = false) => <form className={`search${home ? '' : ' flow-search'}`} role="search" onSubmit={event => { event.preventDefault(); search(query) }}><Icon name="search" /><input aria-label="밴드 또는 공연 검색" placeholder={home ? '아티스트나 공연을 찾아보세요' : '아티스트, 공연 이름으로 검색'} value={query} onChange={event => home ? setQuery(event.target.value) : search(event.target.value)} /><button aria-label="검색 결과 보기"><Icon name="arrow" /></button></form>
-  const suggestions = bands.slice(0,3)
+  const [today, setToday] = useState(() => koreaDay(new Date().toISOString()))
+  useEffect(() => {
+    const midnight = Date.parse(`${today}T00:00:00+09:00`) + 86_400_000
+    const timer = setTimeout(() => setToday(koreaDay(new Date().toISOString())), Math.max(0, midnight - Date.now()))
+    return () => clearTimeout(timer)
+  }, [today])
+  const suggestions = useMemo(() => recommendedArtists(bands, concerts, today), [bands, concerts, today])
   const bandResult = (band: Band) => <article className="flow-artist-result" key={band.id}><ArtistIdentity band={band} variant="result" onOpen={() => openArtist(band)} />{followControl(band)}</article>
   const artistConcerts = artist ? sortConcerts(distinctConcerts(concerts.filter(c => c.bandIds.includes(artist.id) && isUpcoming(c)), saved), 'performance') : []
   const artistScreen = page === 'artist' && !selected
@@ -232,7 +238,7 @@ function App() {
       </> : <>
       {page === 'home' && <>
         <section className="poster-hero"><div className="hero-copy"><div className="intro-line"><span className="little-cross">✳</span>당신의 다음 라이브를 찾아서</div><h1>좋아하는 음악,<br />직접 만나는 순간.</h1><p>국내 밴드부터 기다리던 내한 공연까지.<br />플레이리스트 다음은, 라이브.</p>{searchForm(true)}<div className="popular">추천 검색 {suggestions.slice(0,2).map(band => <button key={band.id} onClick={() => search(band.name)}>{band.name}</button>)}</div></div><div className="poster-installation" aria-label="라이브 공연을 표현한 그래픽 포스터"><div className="floating-ticket"><span>당신의 다음 라이브</span><strong>SEE<br />YOU<br />THERE<span>✳</span></strong><div>음악이 시작되는 곳에서 만나요.<br />encore. live in your city</div><div className="barcode" /></div><div className="ticket-sticker">음악은<br />계속된다.</div><div className="ticket-shadow" /></div></section>
-        <div className="combined-layout home-layout"><div className="home-discovery"><section className="artist-section"><div className="section-heading"><div><h2>요즘, 이 아티스트</h2><p>좋아하는 이름을 발견하면, 먼저 찜해두세요.</p></div><button className="artist-manage" onClick={() => navigate('bands')}>내 아티스트 <Icon name="arrow" /></button></div><div className="artist-list">{catalog.loading && !catalog.initialized && !suggestions.length && [0,1,2].map(id => <div key={id} className="artist-item" aria-hidden="true"><div className="artist-skeleton"><span className="skeleton-avatar" /><span className="skeleton-name" /></div></div>)}{suggestions.map(band => <div className="artist-item" key={band.id}><ArtistIdentity band={band} variant="home" onOpen={() => openArtist(band)} /><button className="artist-add" aria-label={`${band.name} ${followed.includes(band.id) ? '찜 해제' : '찜하기'}`} aria-pressed={followed.includes(band.id)} disabled={savingDisabled || pending('bands',band.id)} onClick={() => void toggleBand(band.id)}>{followed.includes(band.id) ? '✓' : '+'}</button></div>)}</div></section><section id="concerts"><div className="section-heading"><div><h2>다음 공연은 여기서</h2><p>마음이 가는 공연을 골라보세요.</p></div><a href="?page=discover" onClick={event => { event.preventDefault(); navigate('discover') }}>공연 둘러보기 <Icon name="arrow" /></a></div>{filters}{upcoming.length ? cards(upcoming.slice(0,6)) : catalog.initialized && !catalog.error && (
+        <div className="combined-layout home-layout"><div className="home-discovery"><section className="artist-section"><div className="section-heading"><div><h2>요즘, 이 아티스트</h2><p>최근 발표와 예정 공연을 살펴보고, 매주 다른 이름도 만나보세요.</p></div><button className="artist-manage" onClick={() => navigate('bands')}>내 아티스트 <Icon name="arrow" /></button></div><div className="artist-list">{catalog.loading && !catalog.initialized && !suggestions.length && [0,1,2].map(id => <div key={id} className="artist-item" aria-hidden="true"><div className="artist-skeleton"><span className="skeleton-avatar" /><span className="skeleton-name" /></div></div>)}{suggestions.map(band => <div className="artist-item" key={band.id}><ArtistIdentity band={band} variant="home" onOpen={() => openArtist(band)} /><button className="artist-add" aria-label={`${band.name} ${followed.includes(band.id) ? '찜 해제' : '찜하기'}`} aria-pressed={followed.includes(band.id)} disabled={savingDisabled || pending('bands',band.id)} onClick={() => void toggleBand(band.id)}>{followed.includes(band.id) ? '✓' : '+'}</button></div>)}</div></section><section id="concerts"><div className="section-heading"><div><h2>다음 공연은 여기서</h2><p>마음이 가는 공연을 골라보세요.</p></div><a href="?page=discover" onClick={event => { event.preventDefault(); navigate('discover') }}>공연 둘러보기 <Icon name="arrow" /></a></div>{filters}{upcoming.length ? cards(upcoming.slice(0,6)) : catalog.initialized && !catalog.error && (
           <div className="home-concert-empty" role="status">
             <p>{filter === '전체' ? '예정된 공연이 없어요.' : `예정된 ${filter === '페스티벌' ? '페스티벌' : `${filter} 공연`}이 없어요.`}</p>
             {filter !== '전체' && <button className="secondary" onClick={() => setFilter('전체')}>전체 공연 보기</button>}

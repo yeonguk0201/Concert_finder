@@ -1,5 +1,6 @@
 import type { Band, Concert } from './data'
 import { matchesArtistSearch } from './artistSearch'
+import { koreaDay } from './designDates'
 export type ConcertOrder = 'announcement' | 'performance' | 'ticket'
 export function matchesArtist(band: Band, query: string) {
   return matchesArtistSearch(band, query)
@@ -49,4 +50,33 @@ export function distinctConcerts(concerts: Concert[], saved: ReadonlySet<string>
 }
 export function imminentTickets(concerts: Concert[], now = new Date()) {
   return sortConcerts(concerts.filter(c => isUpcoming(c, now) && Date.parse(c.ticketAt) > now.getTime()), 'ticket', now)
+}
+
+export function recommendedArtists(bands: Band[], concerts: Concert[], today: string): Band[] {
+  const dayMs = 86_400_000
+  const dayNumber = Date.parse(today) / dayMs
+  const week = Math.floor((dayNumber + 3) / 7) // Monday in the Korean calendar.
+  const recentSince = new Date((dayNumber - 29) * dayMs).toISOString().slice(0, 10)
+  const approved = new Map(bands.map(band => [band.id, band]))
+  const events = concerts.flatMap(concert => {
+    const starts = koreaDay(concert.date)
+    const ends = koreaDay(concert.endsOn || concert.date)
+    if (concert.cancelled || concert.unavailable || !starts || ends < today) return []
+    const announcement = koreaDay(concert.announcedAt)
+    const recent = announcement >= recentSince && announcement <= today ? announcement : ''
+    return [{ concert, starts, recent }]
+  }).sort((a, b) => b.recent.localeCompare(a.recent) || a.starts.localeCompare(b.starts)
+    || a.concert.id.localeCompare(b.concert.id))
+
+  const active = new Set(events.flatMap(({ concert }) => concert.bandIds.filter(id => approved.has(id))))
+  const rotate = (ids: string[], count: number) => {
+    if (ids.length <= count) return ids
+    const start = (week * count) % ids.length
+    return [...ids.slice(start), ...ids.slice(0, start)].slice(0, count)
+  }
+  const [lead, ...otherActive] = [...active].slice(0, 6)
+  const featured = lead ? [lead, ...rotate(otherActive, 1)] : []
+  const discovery = [...approved.keys()].filter(id => !featured.includes(id)).sort()
+  const picked = [...featured, ...rotate(discovery, 3 - featured.length)]
+  return picked.map(id => approved.get(id)!)
 }
