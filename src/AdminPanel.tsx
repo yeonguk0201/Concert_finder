@@ -137,7 +137,7 @@ export function AdminPanel({ onSaved }: { onSaved: () => void }) {
         <label>예매처 HTTPS 링크<input type="url" pattern="https://.+" value={form.ticket?.booking_url ?? ''} onChange={e => edit({ ticket: { opens_at: null, price_description: null, ...form.ticket, booking_url: e.target.value || null } })} /></label>
         <label className="wide">가격 안내<input value={form.ticket?.price_description ?? ''} onChange={e => edit({ ticket: { opens_at: null, booking_url: null, ...form.ticket, price_description: e.target.value || null } })} /></label>
       </div>
-      <p className="admin-publication-note">공개하려면 공연일, 확인된 발표일, 확인된 공식 출처와 출연 밴드가 필요합니다. 공개 중단은 일반 목록에서 숨깁니다.</p>
+      <p className="admin-publication-note">{form.publication_basis === 'kopis-api-v1' ? '공식 공연 정보로 공개된 공연입니다. 발표일·예매 시각은 미확인 상태로 유지할 수 있습니다. 확인된 출처·출연진·공연 회차는 유지해 주세요.' : '공개하려면 공연일, 확인된 발표일, 확인된 공식 출처와 출연 밴드가 필요합니다.'} 공개 중단은 일반 목록에서 숨깁니다.</p>
       <button className="primary" type="submit" disabled={needsRefresh}>{busy ? '저장 중…' : `${statusLabels[form.status]} 상태로 저장`}</button>
     </fieldset>
       <div className="admin-save-feedback" aria-label="공연 저장 결과">

@@ -5,7 +5,7 @@ on:
       source:
         description: Collection source
         type: choice
-        options: [all, kopis, ualive, mintpaper, radwimps, reissue_nol]
+        options: [all, ualive, mintpaper, radwimps, reissue_nol]
         default: all
       kopis_slot:
         description: Optional KOPIS detail slot for a reproducible verification
@@ -38,10 +38,8 @@ jobs:
           COLLECTION_SOURCE: ${{ inputs.source || 'all' }}
           KOPIS_SLOT: ${{ inputs.kopis_slot }}
         run: |
-          args=("--source=$COLLECTION_SOURCE" "--concerts-only" "--upload" "--output=collection-report.local")
-          # The existing cloud scheduler owns KOPIS collection + review + release.
-          # A second hourly KOPIS run would keep its recent-attempt gate closed.
-          if [[ "${{ github.event_name }}" == "schedule" ]]; then args+=("--exclude-kopis"); fi
+          args=("--source=$COLLECTION_SOURCE" "--concerts-only" "--upload" "--exclude-kopis" "--output=collection-report.local")
+          # KOPIS has one durable API scheduler; this workflow retains other sources.
           if [[ -n "$KOPIS_SLOT" ]]; then args+=("--kopis-slot=$KOPIS_SLOT"); fi
           node scripts/collect-catalog.mjs "${args[@]}"
       - name: Preserve collection report

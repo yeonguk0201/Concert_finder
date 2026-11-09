@@ -13,6 +13,7 @@ export type AdminConcert = {
   discovered_artists?: { name: string | null; source_url: string; profile_url?: string | null; key?: string | null; band_id?: string | null; reason?: string; matches?: { key: string; name: string; country: string | null; evidence: string; disambiguation: string }[] }[]
   artwork?: Artwork | null; review_reasons?: string[]
   id?: string; updated_at?: string; first_published_at?: string | null
+  publication_basis?: 'reviewed' | 'kopis-api-v1'
   title: string; format: 'solo' | 'festival'; city: string | null; venue: string | null
   starts_on: string | null; ends_on: string | null; announced_on: string | null; announced_at: string | null
   announcement_verified: boolean; cancelled: boolean; initial_import?: boolean; status: 'draft' | 'review' | 'published' | 'withdrawn'

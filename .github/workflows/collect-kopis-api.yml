@@ -1,0 +1,58 @@
+name: KOPIS API silent publication
+on:
+  workflow_dispatch:
+    inputs:
+      execute:
+        description: Execute only after both durable state and repository switch are resumed
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-kopis-api.yml'
+      - 'docs/release/kopis-api-runtime.json'
+  schedule:
+    - cron: '23 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: kopis-api-durable-owner
+  cancel-in-progress: false
+jobs:
+  api:
+    # Missing/false repository switch keeps the regular schedule stopped.
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'schedule' || vars.KOPIS_API_SCHEDULER_ENABLED == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment: catalog-ingestion
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Verify binding or run the existing scheduler with durable state
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          KOPIS_SERVICE_KEY: ${{ secrets.KOPIS_SERVICE_KEY }}
+          KOPIS_API_SCHEDULER_ENABLED: ${{ vars.KOPIS_API_SCHEDULER_ENABLED || 'false' }}
+          EXECUTE: ${{ github.event_name == 'schedule' || inputs.execute == true }}
+          CONCERT_SCHEDULER_OWNER: github-actions-kopis-api-v1
+        run: |
+          node --use-env-proxy --input-type=module <<'JS'
+          import { readFile } from 'node:fs/promises'
+          import { spawn } from 'node:child_process'
+          const config = JSON.parse(await readFile('docs/release/kopis-api-runtime.json', 'utf8'))
+          for (const key of ['SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY', 'KOPIS_SERVICE_KEY']) {
+            if (!process.env[key]) throw Error('SCHEDULER_BINDING_REQUIRED')
+          }
+          const child = spawn(process.execPath, ['--use-env-proxy', 'scripts/concert-scheduler-state.mjs',
+            ...(process.env.EXECUTE === 'true' ? ['--execute'] : [])], {
+            stdio: 'inherit', env: { ...process.env, KOPIS_API_FIRST_PUBLICATION: '1',
+              KOPIS_PUBLICATION_EXECUTOR_MD5: config.executor_md5, KOPIS_API_FACTS_MD5: config.api_facts_md5 }
+          })
+          child.once('error', () => { process.exitCode = 1 })
+          child.once('exit', code => { process.exitCode = code ?? 1 })
+          JS

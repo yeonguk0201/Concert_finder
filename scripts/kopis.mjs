@@ -78,7 +78,7 @@ export function kopisWindows(start, end) {
 }
 export async function collectKopis({ serviceKey = process.env.KOPIS_SERVICE_KEY, fetcher = fetch, sleep = pause,
   today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }), end = shift(today, 179),
-  slot = Math.floor(Date.now() / 3600000), maxDetails = 100, maxListRequests = 30 } = {}) {
+  slot = Math.floor(Date.now() / 3600000), maxDetails = 100, maxListRequests = 30, parseDetail = parseKopis } = {}) {
   if (!serviceKey?.trim()) throw new Error('KOPIS_SERVICE_KEY missing')
   if (!Number.isInteger(maxDetails) || maxDetails < 1 || maxDetails > 100 || !Number.isInteger(slot) || slot < 0) throw new Error('Invalid KOPIS collection budget')
   const candidates = [], failures = [], excluded = [], warnings = [], ids = new Set()
@@ -124,7 +124,8 @@ export async function collectKopis({ serviceKey = process.env.KOPIS_SERVICE_KEY,
   for (const id of selected) {
     attemptedDetails++
     try {
-      candidates.push(parseKopis(await get(id), id)); consecutiveFailures = 0
+      const xml = await get(id)
+      candidates.push(parseDetail(xml, id, new Date().toISOString())); consecutiveFailures = 0
     } catch (error) {
       failures.push({ source_url: kopisSource(id), error: error.message })
       if (++consecutiveFailures === 3) {
