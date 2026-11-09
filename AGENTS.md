@@ -8,6 +8,8 @@ Concert fixtures are fictional. Keep the preview disclosure visible until verifi
 
 Before continuing concert collection/publication work, read [the API-first automation plan](docs/api-first-concert-publication-plan.md). The user wants deterministic scheduled API ingestion and silent publication without an AI dependency in normal runs. The plan distinguishes the proposed publication criteria from currently deployed guards; reading it does not authorize bypassing guards, changing production policy, or enabling a paused schedule. Preserve existing checkpoints and consult current user authorization before operational work.
 
+For local UI or concert deduplication work, also read [the current runtime handoff](docs/release/local-ui-and-concert-dedup-handoff.md). It distinguishes deployed code and verified publication receipts from the unverified recurring schedule, identifies valid city/date variants, and records withdrawn test data. Preserve runtime checkpoints and do not replay setup or revive paused ChatGPT tasks while changing UI.
+
 ## Commit workflow
 
 Follow CONTRIBUTING.md for commit types, validation, and the PR workflow.
