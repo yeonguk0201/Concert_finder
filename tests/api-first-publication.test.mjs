@@ -9,7 +9,7 @@ import { runApiFirstPublication } from '../scripts/api-first-publication.mjs'
 // Never connects to the operational project or runs a notification worker.
 test('API-first server contract publishes unknown optional times with existing guards', async t => {
   const db = new PGlite()
-  const sql = await readFile(new URL('../supabase/manual/api-first-publication.sql', import.meta.url), 'utf8')
+  const sql = await readFile(new URL('../supabase/migrations/20261109084718_api_first_silent_publication.sql', import.meta.url), 'utf8')
   try {
     await db.exec(`create role anon; create role authenticated; create role service_role; create schema auth;
       create table auth.users(id uuid primary key);
@@ -22,7 +22,7 @@ test('API-first server contract publishes unknown optional times with existing g
       '20261106101911_reviewed_candidate_release']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
-    await db.exec(await readFile(new URL('../supabase/manual/continuous-reviewed-publication.sql', import.meta.url), 'utf8'))
+    await db.exec(await readFile(new URL('../supabase/migrations/20261106172058_continuous_reviewed_publication.sql', import.meta.url), 'utf8'))
     const before = (await db.query('select * from public.collection_policies order by source')).rows
     await db.exec("update public.collection_policies set publication_enabled=true where source='kopis'")
     await assert.rejects(db.exec(sql), /PUBLICATION_OFF_REQUIRED/)

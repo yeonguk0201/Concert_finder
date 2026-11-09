@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { mkdtemp, mkdir, writeFile, readFile, readdir, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { apiFirstCollectionCompatible } from '../scripts/api-first-publication.mjs'
+import { apiFirstCollectionCompatible, apiFirstClient } from '../scripts/api-first-publication.mjs'
 import { apiCollectionCheckpoint, assertApiCheckpoint } from '../scripts/collection-cooldown.mjs'
 import { runScheduledCollection } from '../scripts/collect-concerts-scheduled.mjs'
 
@@ -14,6 +14,21 @@ const env = { SUPABASE_URL: 'https://czjrzylvnewfjnfwjhwf.supabase.co', SUPABASE
   KOPIS_SERVICE_KEY: 'fictional', KOPIS_API_FIRST_PUBLICATION: '1', KOPIS_PUBLICATION_EXECUTOR_MD5: 'a'.repeat(32), KOPIS_API_FACTS_MD5: 'b'.repeat(32) }
 const policy = { source: 'kopis', collection_enabled: true, publication_enabled: true, live_after: null, adapter_version: 'catalog-v1' }
 const capabilities = { contract: 'publication-facts-v4', api_facts_contract: 'kopis-api-facts-v1', executor_md5: env.KOPIS_PUBLICATION_EXECUTOR_MD5, api_facts_md5: env.KOPIS_API_FACTS_MD5 }
+
+test('SDK reads and completion requests reject redirects and carry a bounded abort signal', async () => {
+  let requests = 0
+  const client = apiFirstClient(env, async (url, options) => {
+    requests++
+    assert.equal(new URL(url).origin, env.SUPABASE_URL)
+    assert.equal(options.redirect, 'error')
+    assert.ok(options.signal instanceof AbortSignal)
+    assert.equal(options.signal.aborted, false)
+    return new Response(JSON.stringify(capabilities), { headers: { 'Content-Type': 'application/json' } })
+  })
+  const result = await client.rpc('service_publication_capabilities', {})
+  assert.deepEqual(result.data, capabilities)
+  assert.equal(requests, 1)
+})
 
 test('API-first preflight requires both pinned digests and silent policy', () => {
   assert.equal(apiFirstCollectionCompatible(policy, capabilities, env.KOPIS_PUBLICATION_EXECUTOR_MD5, env.KOPIS_API_FACTS_MD5), true)

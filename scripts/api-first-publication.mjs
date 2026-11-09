@@ -108,4 +108,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
 }
 
 export const apiFirstClient = (env, fetcher) => createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY,
-  { auth: { persistSession: false, autoRefreshToken: false }, global: { fetch: fetcher } })
+  { auth: { persistSession: false, autoRefreshToken: false }, global: { fetch: (input, options = {}) => fetcher(input,
+    { ...options, redirect: 'error', signal: options.signal
+      ? AbortSignal.any([options.signal, AbortSignal.timeout(20000)]) : AbortSignal.timeout(20000) }) } })
