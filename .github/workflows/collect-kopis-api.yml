@@ -11,8 +11,6 @@ on:
     paths:
       - '.github/workflows/collect-kopis-api.yml'
       - 'docs/release/kopis-api-runtime.json'
-  schedule:
-    - cron: '23 * * * *'
 permissions:
   contents: read
 concurrency:
@@ -20,9 +18,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   api:
-    # User-approved resume: the durable owner must also be idle.
-    # An explicit repository false switch still stops the regular schedule.
-    if: github.ref == 'refs/heads/main' && (github.event_name != 'schedule' || vars.KOPIS_API_SCHEDULER_ENABLED != 'false')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     environment: catalog-ingestion
@@ -39,7 +35,7 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           KOPIS_SERVICE_KEY: ${{ secrets.KOPIS_SERVICE_KEY }}
           KOPIS_API_SCHEDULER_ENABLED: ${{ vars.KOPIS_API_SCHEDULER_ENABLED || 'true' }}
-          EXECUTE: ${{ github.event_name == 'schedule' || github.event_name == 'push' || inputs.execute == true }}
+          EXECUTE: ${{ github.event_name == 'workflow_dispatch' && inputs.execute == true }}
           CONCERT_SCHEDULER_OWNER: github-actions-kopis-api-v1
         run: |
           node --use-env-proxy --input-type=module <<'JS'

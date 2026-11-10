@@ -2,6 +2,12 @@
 
 PR #77의 API 공개 경로를 GitHub Actions의 일반 Node 작업으로 연결한다. ChatGPT·AI 검색·검수 계획 파일은 정상 실행에 없다. 이 설치의 기본 상태는 **중지**다. 기존 ChatGPT 수집·감시·아티스트 예약을 켜지 않는다.
 
+## Cloudflare 정기 트리거
+
+- Worker `concert-finder-kopis-dispatch`는 매시 23분에 GitHub의 `main` workflow를 호출한다. 실제 수집은 Worker 설정의 `KOPIS_EXECUTE_CRON`과 일치하는 예약에서만 요청한다. GitHub 자체 cron은 제거하며, 릴리스 push와 기본 수동 dispatch는 연결만 검증한다.
+- Worker Secret `GITHUB_DISPATCH_TOKEN`은 이 저장소에 한정된 GitHub Actions 쓰기 권한을 사용한다. Worker 로그에 남긴 GitHub run ID로 결과를 확인한다. 토큰 교체 후에는 `execute=false` 검증으로 연결을 확인한다.
+- 기존 GitHub workflow가 단일 수집 실행 주체로 남으며, 비공개 상태·lease·최근 1시간·오류 대기를 계속 적용한다. 복구로 GitHub cron을 다시 넣기 전 Cloudflare cron을 먼저 해제한다. 아래 최초 설치 및 사용자 재개 기록은 전환 전 이력이다.
+
 ## 실행과 비공개 영속 상태
 
 - workflow: `.github/workflows/collect-kopis-api.yml`, protected environment `catalog-ingestion`. 기존 `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `KOPIS_SERVICE_KEY` 바인딩을 사용한다. 시크릿을 Git/로그/artifact에 복사하지 않는다.
