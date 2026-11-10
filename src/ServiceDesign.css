@@ -30,13 +30,35 @@ body{--border:var(--line);--panel:var(--surface)}
 .youtube-attribution p { font-size: 11px; line-height: 1.8; color: var(--muted); }
 @media(max-width:580px) { .youtube-attribution { flex-wrap: wrap; gap: 0; }.youtube-attribution p { margin: 0 0 16px; } }
 
-/* The profile is the prototype's avatar, with source links kept independently interactive. */
 .flow-followed-card { position: relative; }
+.flow-followed-card .artist-cover { isolation: isolate; }
+.followed-card-body > .followed-card-profile { align-items: center; gap: 8px; min-height: 58px; margin-top: 0; }
+.followed-card-profile .approved-avatar { position: relative; align-self: flex-start; flex-shrink: 0; margin-top: -30px; }
+.followed-card-body .follow-control { margin-bottom: 0; }
+.followed-card-body h2 { margin-top: 10px; }
+.followed-card-body > .next-show { align-items: center; justify-content: flex-start; margin-top: 22px; }
 .followed-artist-title { color: inherit; text-decoration: none; }
 .followed-artist-title:hover { text-decoration: underline; }
-.followed-artist-title::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.followed-artist-title::after { content: ""; position: absolute; inset: 0; z-index: 2; cursor: pointer; }
 .followed-artist-title:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -3px; }
 .flow-followed-card .follow-control, .flow-followed-card button.next-show { position: relative; z-index: 3; }
+
+.calendar-month { align-items: center; gap: 6px; margin-bottom: 16px; }
+.home-calendar-controls { display: flex; align-items: center; gap: 6px; color: var(--accent); white-space: nowrap; }
+.home-calendar-controls > button { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 6px; font-size: 19px; line-height: 1; }
+.home-calendar-controls > button:hover { background: #edf2ff; }
+.home-calendar-viewport { overflow: clip; overflow-clip-margin: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .home-calendar-viewport [data-direction="-1"] { --month-offset: -20px; }
+  .home-calendar-viewport [data-direction="1"] { --month-offset: 20px; }
+  .home-calendar-viewport [data-direction="-1"], .home-calendar-viewport [data-direction="1"] {
+    animation: home-calendar-slide 220ms ease-out;
+  }
+}
+@keyframes home-calendar-slide {
+  from { transform: translateX(var(--month-offset)); opacity: .45; }
+  to { transform: translateX(0); opacity: 1; }
+}
 
 .home-discovery { display: grid; min-width: 0; gap: 30px; }
 .home-layout > .combined-calendar { grid-row: 1; }
