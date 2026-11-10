@@ -42,14 +42,13 @@
 .text-demo { margin-left: auto; font-size: 10px; text-decoration: underline; color: #627cae; white-space: nowrap; }
 .flow-followed-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
 .flow-followed-card { background: white; border: 1px solid var(--line); border-radius: 13px; overflow: hidden; }
-.artist-cover { height: 142px; position: relative; overflow: hidden; padding: 20px; }
+.artist-cover { height: 142px; position: relative; isolation: isolate; overflow: hidden; padding: 20px; }
 .artist-cover > span:first-child { font: bold italic 100px Georgia,serif; letter-spacing: -8px; opacity: .35; position: relative; z-index: 1; }
 .cover-orbit { width: 175px; height: 175px; border: 35px solid currentColor; opacity: .13; border-radius: 50%; position: absolute; top: -35px; right: -25px; }
 .followed-card-body { padding: 0 24px 22px; }
-.followed-card-body > div { display: flex; align-items: flex-end; justify-content: space-between; margin-top: -30px; position: relative; }
-.followed-card-body .avatar { border: 5px solid white; width: 76px; height: 76px; font-size: 27px; }
-.followed-card-body .follow-control { margin-bottom: 5px; }
-.followed-card-body h2 { font-size: 21px; margin-top: 16px; }
+.followed-card-profile { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 58px; }
+.followed-card-profile .approved-avatar { position: relative; align-self: flex-start; flex-shrink: 0; margin-top: -30px; }
+.followed-card-body h2 { font-size: 21px; margin-top: 10px; }
 .followed-card-body > p { font-size: 11px; color: var(--muted); margin-top: 6px; }
 .next-show { border-top: 1px solid var(--line); margin-top: 22px; padding: 20px 0 0; display: flex; align-items: center; text-align: left; gap: 12px; width: 100%; }
 .next-show > span { min-width: 0; }
