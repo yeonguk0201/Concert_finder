@@ -5,7 +5,7 @@ import { adminError } from './adminApi'
 import { candidatePeriod } from './collectionPeriod'
 
 type Candidate = { id: string; source_url: string; payload: AdminConcert; previous_payload: AdminConcert | null; revision: number; fetched_at: string; status: string }
-export function CollectionPanel({ catalog, onSelect }: { catalog: AdminCatalog; onSelect: (concert: AdminConcert) => void }) {
+export function CollectionPanel({ catalog, canSelect, onSelect }: { catalog: AdminCatalog; canSelect: boolean; onSelect: (concert: AdminConcert) => void }) {
   const [rows, setRows] = useState<Candidate[]>([])
   const [runs, setRuns] = useState<{ source?: string; excluded?: unknown[]; created_at: string; candidate_count: number; failures: { source_url: string; error: string }[] }[]>([])
   const [error, setError] = useState('')
@@ -48,7 +48,7 @@ export function CollectionPanel({ catalog, onSelect }: { catalog: AdminCatalog; 
       {row.previous_payload && <details><summary>이전 수집 내용 비교</summary><pre>{JSON.stringify(row.previous_payload, null, 2)}</pre><pre>{JSON.stringify(row.payload, null, 2)}</pre></details>}
       {row.payload.review_reasons?.map(reason => <p key={reason}>{reason}</p>)}
       {row.payload.artwork && <p>포스터 후보 · <a href={row.payload.artwork.url} target="_blank" rel="noopener noreferrer">이미지 원문 ↗</a> · {row.payload.artwork.selection_reason} · 이용 조건 검토 전 표시 안 함</p>}
-      <button className="outline" disabled={busy} onClick={() => select(row)}>검수 입력에 반영</button>
+      <button className="outline" disabled={busy || !canSelect} onClick={() => select(row)}>공연 편집에서 열기</button>
       <button className="outline" disabled={busy} onClick={() => void resolve(row, 'reviewed')}>검수 완료 표시</button>
       <button className="outline" disabled={busy} onClick={() => void resolve(row, 'dismissed')}>후보 제외</button>
     </article>)}
