@@ -218,6 +218,7 @@ function App() {
   const bandResult = (band: Band) => <article className="flow-artist-result" key={band.id}><ArtistIdentity band={band} variant="result" onOpen={() => openArtist(band)} />{followControl(band)}</article>
   const artistConcerts = artist ? sortConcerts(distinctConcerts(concerts.filter(c => c.bandIds.includes(artist.id) && isUpcoming(c)), saved), 'performance') : []
   const artistScreen = page === 'artist' && !selected
+  const showLoginInvite = !auth.loading && !auth.session
   const accountAction = () => { if (auth.session) { navigate('settings') } else setLoginOpen(true) }
   const shownSchedules = allSchedules ? savedConcerts : datedSchedules
 
@@ -243,7 +244,8 @@ function App() {
             <p>{filter === '전체' ? '예정된 공연이 없어요.' : `예정된 ${filter === '페스티벌' ? '페스티벌' : `${filter} 공연`}이 없어요.`}</p>
             {filter !== '전체' && <button className="secondary" onClick={() => setFilter('전체')}>전체 공연 보기</button>}
           </div>
-        )}</section></div><HomeCalendar concerts={listings} bands={bands} onOpen={openDetails} onAccount={accountAction} /></div><section className="join-banner"><div><h2>좋아하는 밴드가 있다면.</h2><p>로그인하고 나만의 공연 목록을 시작하세요.</p></div><button className="primary" onClick={accountAction}>로그인하고 찜하기 <Icon name="arrow" /></button></section>
+        )}</section></div><HomeCalendar concerts={listings} bands={bands} onOpen={openDetails} onLogin={showLoginInvite ? accountAction : undefined} /></div>
+        {showLoginInvite && <section className="join-banner"><div><h2>좋아하는 밴드가 있다면.</h2><p>로그인하고 나만의 공연 목록을 시작하세요.</p></div><button className="primary" onClick={accountAction}>로그인하고 찜하기 <Icon name="arrow" /></button></section>}
       </>}
 
       {page === 'discover' && <><div className="flow-page-heading"><span className="flow-kicker">당신의 다음 라이브</span><h1>공연 둘러보기</h1><p>마음이 가는 공연을 골라보세요.</p></div><div className="discover-controls">{filters}<label>공연 날짜<input type="date" aria-label="공연 날짜" value={dateFilter} onChange={event => { setDateFilter(event.target.value); updateUrl('discover', { date: event.target.value }) }} /></label>{dateFilter && <button className="clear-date" onClick={() => { setDateFilter(''); updateUrl('discover') }}>날짜 해제</button>}</div><div className="section-heading"><h2>{dateFilter ? `${dayLabel(dateFilter)} 공연` : '모든 공연'} <span>{upcoming.length}</span></h2><span>공연일순</span></div>{upcoming.length ? cards(upcoming) : empty('이 날짜에 확인된 공연이 없어요.','날짜를 해제하거나 다른 날의 공연을 둘러보세요.','전체 공연 보기',() => navigate('discover'))}</>}

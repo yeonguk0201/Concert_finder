@@ -4,8 +4,8 @@ import { dayLabel, koreaDay, monthDays, shiftMonth } from './designDates'
 import { imminentTickets } from './catalogViews'
 import { Icon } from './UiIcon'
 
-export function HomeCalendar({ concerts, bands, onOpen, onAccount }: {
-  concerts: Concert[]; bands: Band[]; onOpen: (concert: Concert) => void; onAccount: () => void
+export function HomeCalendar({ concerts, bands, onOpen, onLogin }: {
+  concerts: Concert[]; bands: Band[]; onOpen: (concert: Concert) => void; onLogin?: () => void
 }) {
   const [today] = useState(() => koreaDay(new Date().toISOString()))
   const [{ month, direction }, setView] = useState(() => ({ month: today.slice(0, 7), direction: 0 }))
@@ -81,10 +81,10 @@ export function HomeCalendar({ concerts, bands, onOpen, onAccount }: {
       {!tickets.length && <p>확인된 티켓 오픈 일정이 없습니다.</p>}
       <p>티켓 오픈 시간을 확인해 보세요.<br />일정 저장만으로 알림이 켜지지 않아요.</p>
     </section>
-    <div className="collection-invite">
+    {onLogin && <div className="collection-invite">
       <h3>나만의 라이브 컬렉션</h3>
       <p>찜한 아티스트와 저장한 일정을<br />다른 기기에서도 이어서 보세요.</p>
-      <button onClick={onAccount}>로그인하고 시작하기 <Icon name="arrow" /></button>
-    </div>
+      <button onClick={onLogin}>로그인하고 시작하기 <Icon name="arrow" /></button>
+    </div>}
   </aside>
 }
