@@ -7,11 +7,11 @@ import { mapBands, mapConcerts } from '../src/catalog'
 const mocks = vi.hoisted(() => ({
   session: null as null | { user: { id: string; email: string } },
   toggle: vi.fn(), reload: vi.fn(), addBand: vi.fn(), invoke: vi.fn(), requestLink: vi.fn(), verifyCode: vi.fn(), pendingEmail: '',
-  adminAllowed: false, catalogLoading: false, catalogInitialized: true,
+  adminAllowed: false, authLoading: false, catalogLoading: false, catalogInitialized: true,
   bands: [] as unknown[], concerts: [] as unknown[], follows: [] as string[], saves: [] as string[],
 }))
 vi.mock('../src/backend', () => ({ accountMode: true, backend: { functions: { invoke: mocks.invoke } }, configurationError: '' }))
-vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: false, error: '', busy: false, message: '', pendingEmail: mocks.pendingEmail, requestLink: mocks.requestLink, verifyCode: mocks.verifyCode, signOut: vi.fn() }) }))
+vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: mocks.authLoading, error: '', busy: false, message: '', pendingEmail: mocks.pendingEmail, requestLink: mocks.requestLink, verifyCode: mocks.verifyCode, signOut: vi.fn() }) }))
 vi.mock('../src/useCatalog', () => ({ useCatalog: () => ({ bands: mocks.bands, concerts: mocks.concerts, loading: mocks.catalogLoading, initialized: mocks.catalogInitialized, error: '', reload: mocks.reload, addBand: mocks.addBand }) }))
 vi.mock('../src/useAccountStorage', () => ({ useAccountStorage: () => ({ bands: mocks.follows, schedules: mocks.saves, loading: false, error: '', pending: [], toggle: mocks.toggle, reload: mocks.reload }) }))
 vi.mock('../src/useAdminAccess', () => ({ useAdminAccess: () => ({ allowed: mocks.adminAllowed, error: '', reload: vi.fn() }) }))
@@ -26,7 +26,7 @@ beforeEach(() => {
     concert_bands: [{ band_id: 'real-band' }], ticket_schedules: { id: 'real-ticket', opens_at: null, price_description: null, booking_url: null }, concert_sources: [] }], mocks.bands as ReturnType<typeof mapBands>)
   mocks.session = null; mocks.follows = []; mocks.saves = []
   mocks.pendingEmail = ''; mocks.requestLink.mockResolvedValue(undefined); mocks.verifyCode.mockResolvedValue(undefined)
-  mocks.adminAllowed = false; mocks.catalogLoading = false; mocks.catalogInitialized = true
+  mocks.adminAllowed = false; mocks.authLoading = false; mocks.catalogLoading = false; mocks.catalogInitialized = true
   localStorage.setItem('encore.bands', '["oasis"]'); localStorage.setItem('encore.saved', '["oasis-seoul"]')
   history.replaceState(null, '', '/')
 })
@@ -268,6 +268,38 @@ test('home identifies an empty festival filter and can return to all concerts', 
   expect(screen.getByText('예정된 페스티벌이 없어요.')).toBeTruthy()
   fireEvent.click(screen.getByRole('button', { name: '전체 공연 보기' }))
   expect(screen.getByRole('button', { name: 'Verified concert 상세 보기' })).toBeTruthy()
+})
+
+test('home calendar moves across years, shows known opening dates, and clears the day filter on month change', () => {
+  vi.useFakeTimers()
+  vi.setSystemTime(new Date('2026-12-31T15:30:00Z'))
+  mocks.concerts = [{ ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), ticketAt: '2026-12-20T09:00:00Z' }]
+  render(<App />)
+  const calendar = within(screen.getByRole('complementary', { name: '예매 일정' }))
+  expect(calendar.getByText('2027년 1월')).toBeTruthy()
+  expect(calendar.getByText('오늘 1일')).toBeTruthy()
+  fireEvent.click(calendar.getByRole('button', { name: '이전 달' }))
+  expect(calendar.getByText('2026년 12월')).toBeTruthy()
+  expect(calendar.queryByText('오늘 1일')).toBeNull()
+  fireEvent.click(calendar.getByRole('button', { name: '2026년 12월 20일 티켓 오픈' }))
+  expect(calendar.getByRole('heading', { name: '12월 20일 티켓 오픈' })).toBeTruthy()
+  expect(calendar.getByRole('button', { name: /Verified band/ })).toBeTruthy()
+  fireEvent.click(calendar.getByRole('button', { name: '다음 달' }))
+  expect(calendar.getByRole('heading', { name: '다가오는 티켓 오픈' })).toBeTruthy()
+  expect(calendar.queryByRole('button', { name: '전체 보기' })).toBeNull()
+})
+
+test('home login invitations appear only after auth resolves without a session', () => {
+  mocks.authLoading = true
+  const view = render(<App />)
+  const labels = ['로그인하고 시작하기', '로그인하고 찜하기']
+  for (const name of labels) expect(screen.queryByRole('button', { name })).toBeNull()
+  mocks.authLoading = false
+  view.rerender(<App />)
+  for (const name of labels) expect(screen.getByRole('button', { name })).toBeTruthy()
+  mocks.session = { user: { id: 'account', email: 'account@example.test' } }
+  view.rerender(<App />)
+  for (const name of labels) expect(screen.queryByRole('button', { name })).toBeNull()
 })
 
 test('a visible login button opens the email form directly', () => {
