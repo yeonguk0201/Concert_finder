@@ -12,6 +12,7 @@ export default {
         Accept: 'application/vnd.github+json',
         Authorization: 'Bearer ' + env.GITHUB_DISPATCH_TOKEN,
         'Content-Type': 'application/json',
+        'User-Agent': 'ConcertFinder-KOPIS-Worker',
         'X-GitHub-Api-Version': '2026-03-10',
       },
       body: JSON.stringify({ ref: 'main', inputs: { execute } }),
