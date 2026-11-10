@@ -2,10 +2,10 @@ const dispatchUrl =
   'https://api.github.com/repos/yeonguk0201/Concert_finder/actions/workflows/collect-kopis-api.yml/dispatches'
 
 export default {
-  async scheduled(_controller, env) {
+  async scheduled(controller, env) {
     if (!env.GITHUB_DISPATCH_TOKEN) throw new Error('KOPIS GitHub credential is missing')
 
-    const execute = env.KOPIS_EXECUTE === 'true'
+    const execute = Boolean(env.KOPIS_EXECUTE_CRON) && controller.cron === env.KOPIS_EXECUTE_CRON
     const response = await fetch(dispatchUrl, {
       method: 'POST',
       headers: {
