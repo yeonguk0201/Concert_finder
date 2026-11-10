@@ -35,7 +35,7 @@ export function ArtistReviewReadiness() {
       <p>현재 배정 가능: 최대 {status.current.eligible}팀 · 확인할 알림: {status.current.notices}건</p>
       {status.current.reason === 'lease_recovery' && <p>이전 실행의 임대가 만료됐습니다. 승인된 실행기로 복구와 미완료 대상을 확인해 주세요.</p>}
       <p>최근 서버 예약 검사: {status.lastCheckedAt ? new Date(status.lastCheckedAt).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ' KST' : '첫 검사 대기'}</p>
-      <p>작업이 있으면 클라우드에서 아티스트 검수를 요청하세요. 아티스트별 설정 조치를 해결한 경우 아래에서 팀을 선택해 재개 요청을 합니다.</p>
+      <p>작업이 있으면 클라우드에서 아티스트 검수를 요청하세요. 아티스트별 설정을 해결한 뒤에는 아티스트 관리에서 해당 팀을 열어 재개를 요청할 수 있습니다.</p>
     </div>}
   </details>
 }
