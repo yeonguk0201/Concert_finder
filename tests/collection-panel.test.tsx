@@ -11,8 +11,8 @@ test('candidate review reuses official source identity, preserves verified field
   mock.rows=[{ id:'candidate',source_url:existing.sources[0].url,payload:{...emptyConcert(),title:'Updated official title',starts_on:'2099-11-07'},previous_payload:null,revision:2,status:'pending',fetched_at:'2026-10-07T00:00:00Z' }]
   const onSelect=vi.fn()
   mock.rpc.mockResolvedValue({error:{message:'EDIT_CONFLICT'}})
-  render(<CollectionPanel catalog={{concerts:[existing],bands:[],history:[]}} onSelect={onSelect} />)
-  fireEvent.click(await screen.findByRole('button',{name:'검수 입력에 반영'}))
+  render(<CollectionPanel catalog={{concerts:[existing],bands:[],history:[]}} canSelect onSelect={onSelect} />)
+  fireEvent.click(await screen.findByRole('button',{name:'공연 편집에서 열기'}))
   expect(onSelect.mock.calls[0][0]).toMatchObject({id:'existing',updated_at:'version',title:'Updated official title',announcement_verified:true,announced_on:'2025-07-07',band_ids:['mcr'],ticket:{id:'ticket'}})
   fireEvent.click(screen.getByRole('button',{name:'검수 완료 표시'}))
   await waitFor(() => expect(screen.getByRole('alert').textContent).toContain('다른 관리자가 수정했습니다'))
@@ -25,7 +25,7 @@ test('review starts with upcoming dates and preserves unknown artist names in se
     { id:'unknown',source_url:'https://radwimps.jp/live/1/',payload:{...emptyConcert(),title:'Unknown date'},revision:1 },
     { id:'past',source_url:'https://ticket.yes24.com/Perf/2',payload:{...emptyConcert(),title:'Past',starts_on:'2000-01-01'},revision:1 },
   ]
-  render(<CollectionPanel catalog={{concerts:[],bands:[],history:[]}} onSelect={vi.fn()} />)
+  render(<CollectionPanel catalog={{concerts:[],bands:[],history:[]}} canSelect onSelect={vi.fn()} />)
   await screen.findByText('Future')
   expect(screen.getByText(/Unknown band/)).toBeTruthy()
   expect(screen.queryByText('Past')).toBeNull()
