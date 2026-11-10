@@ -50,8 +50,22 @@ dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);b
 .calendar-expand { display: none; }
 .calendar-disclosure > summary:focus-visible { outline: 3px solid #f19a37; outline-offset: -4px; }
 .combined .calendar { border: 0; border-radius: 0; padding: 18px 20px 23px; }
-.calendar-month { display: flex; justify-content: space-between; color: var(--muted); font-size: 10px; margin-bottom: 20px; }
-.calendar-month > span:last-child { color: var(--accent); }
+.calendar-month { display: flex; align-items: center; justify-content: space-between; gap: 6px; color: var(--muted); font-size: 10px; margin-bottom: 16px; }
+.home-calendar-controls { display: flex; align-items: center; gap: 6px; color: var(--accent); white-space: nowrap; }
+.home-calendar-controls > button { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 6px; font-size: 19px; line-height: 1; }
+.home-calendar-controls > button:hover { background: #edf2ff; }
+.home-calendar-viewport { overflow: clip; overflow-clip-margin: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .home-calendar-viewport [data-direction="-1"] { --month-offset: -20px; }
+  .home-calendar-viewport [data-direction="1"] { --month-offset: 20px; }
+  .home-calendar-viewport [data-direction="-1"], .home-calendar-viewport [data-direction="1"] {
+    animation: home-calendar-slide 220ms ease-out;
+  }
+}
+@keyframes home-calendar-slide {
+  from { transform: translateX(var(--month-offset)); opacity: .45; }
+  to { transform: translateX(0); opacity: 1; }
+}
 .combined .days { gap: 3px; }
 .combined .days > span, .combined .days > button { height: 31px; width: 31px; font: 11px Arial, sans-serif; display: grid; place-items: center; position: relative; border-radius: 50%; }
 .combined .days > button { background: #edf2ff; color: #3457c6; }
