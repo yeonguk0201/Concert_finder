@@ -23,7 +23,7 @@ export type ArtistProfilePreview = {
   live: ArtistVideo[]
 }
 
-// Editor-selected examples for the local preview catalog.
+// Editorial profiles shared by the catalog and the isolated design preview.
 export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>> = {
   changsub: {
     identity: {"bandId": "dcb90080-9164-478b-a728-b0f0172e2db0", "musicBrainzId": "4561aee5-6cf6-41a6-9b7b-f7be15a00a65", "wikidata": "https://www.wikidata.org/wiki/Q16183546"},
@@ -68,8 +68,8 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
     wikipedia: "https://ko.wikipedia.org/wiki/Ado_(%EA%B0%80%EC%88%98)",
     language: '한국어',
     theme: 'blue-rose',
-    // User authorized editorial preview use; this is not a production reuse grant.
-    banner: {
+    // The press illustration is cleared for the design preview only.
+    banner: import.meta.env.DEV ? {
       url: 'https://shorefire.com/images/uploads/gallery/NEW_Ado_pressshot.jpg',
       source: 'https://shorefire.com/roster/ado',
       author: 'Shore Fire Media',
@@ -78,7 +78,7 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
         thumbnailUrl: 'https://shorefire.com/images/made/f6e51e1825ad4a24/NEW_Ado_pressshot_407_500_s.jpg',
         width: 9000,
       },
-    },
+    } : undefined,
     channel: 'https://www.youtube.com/channel/UCln9P4Qm3-EAY4aiEPmRwEA',
     music: [{"id": "Qp3b-RXtz4w", "title": "【Ado】うっせぇわ", "publisher": "Ado", "channelId": "UCln9P4Qm3-EAY4aiEPmRwEA", "checkedAt": "2026-11-18T14:10:05.859602+00:00", "officialityBasis": "Universal Music artist page links official channel; Universal news 2026-01-01 links exact THE FIRST TAKE video and uploader channel.", "evidenceUrls": ["https://musicbrainz.org/artist/e134b52f-2e9e-4734-9bc3-bea9648d1fa1", "https://www.wikidata.org/wiki/Q104012678", "https://www.universal-music.co.jp/ado/news/2026-01-01/"]}],
     live: [{"id": "ujyJRxAKpVE", "title": "Ado - うっせぇわ / THE FIRST TAKE", "publisher": "THE FIRST TAKE", "channelId": "UC9zY_E8mcAo_Oq772LEZq8Q", "checkedAt": "2026-11-18T14:10:05.859602+00:00", "officialityBasis": "Universal Music artist page links official channel; Universal news 2026-01-01 links exact THE FIRST TAKE video and uploader channel.", "evidenceUrls": ["https://musicbrainz.org/artist/e134b52f-2e9e-4734-9bc3-bea9648d1fa1", "https://www.wikidata.org/wiki/Q104012678", "https://www.universal-music.co.jp/ado/news/2026-01-01/"]}],
@@ -101,4 +101,12 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
     music: [{"id": "RRKJiM9Njr8", "title": "My Chemical Romance - Welcome To The Black Parade [Official Music Video] [HD]", "publisher": "My Chemical Romance", "channelId": "UCCZGYab5SpD0I7Z5JqJZgww", "checkedAt": "2026-11-18T14:10:05.859602+00:00", "officialityBasis": "MB youtube relation and Wikidata P2397 match API uploader; channel describes itself as official.", "evidenceUrls": ["https://musicbrainz.org/artist/c07f0676-9143-4217-8a9f-4c26bd636f13", "https://www.wikidata.org/wiki/Q483285"]}],
     live: [{"id": "Ud2eziOjjTo", "title": "My Chemical Romance - The Black Parade Is Dead! [Full Concert Video]", "publisher": "My Chemical Romance", "channelId": "UCCZGYab5SpD0I7Z5JqJZgww", "checkedAt": "2026-11-18T14:10:05.859602+00:00", "officialityBasis": "MB youtube relation and Wikidata P2397 match API uploader; channel describes itself as official.", "evidenceUrls": ["https://musicbrainz.org/artist/c07f0676-9143-4217-8a9f-4c26bd636f13", "https://www.wikidata.org/wiki/Q483285"]}],
   },
+}
+
+export function catalogArtistProfile(artist: { id: string; musicbrainzId?: string }): Pick<ArtistProfilePreview, 'bio' | 'bioSource' | 'language' | 'theme' | 'banner'> | undefined {
+  const profile = Object.values(artistProfilePreviews).find(candidate =>
+    candidate?.identity.bandId === artist.id && candidate.identity.musicBrainzId === artist.musicbrainzId)
+  if (!profile) return undefined
+  const { bio, bioSource, language, theme, banner } = profile
+  return { bio, bioSource, language, theme, banner: banner?.license === '편집 용도 한정' ? undefined : banner }
 }
