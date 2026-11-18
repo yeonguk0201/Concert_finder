@@ -9,6 +9,9 @@ export const bands: Band[] = [
   { id: 'hyukoh', name: '혁오', country: '한국', genre: '인디 록', color: '#e7bc79', initials: 'hy' },
   { id: 'nothing', name: 'Nothing But Thieves', country: '영국', genre: '얼터너티브 록', color: '#94cadd', initials: 'NB' },
   { id: 'wave', name: 'wave to earth', country: '한국', genre: '인디 팝', color: '#b6d0bd', initials: 'we' },
+  { id: 'changsub', name: '이창섭', aliases: ['Lee Changsub', 'BTOB 이창섭'], country: '한국', genre: '팝', color: '#9fbfcd', initials: 'CS' },
+  { id: 'ado', name: 'Ado', aliases: ['아도', 'アド'], country: '일본', genre: 'J-pop', color: '#a8abfa', initials: 'A' },
+  { id: 'mcr', name: 'My Chemical Romance', aliases: ['마이 케미컬 로맨스', 'MCR'], country: '미국', genre: '얼터너티브 록', color: '#e78969', initials: 'MCR' },
 ]
 export const concerts: Concert[] = [
   { id: 'oasis-seoul', title: 'Oasis · Live in Seoul', bandIds: ['oasis'], type: '내한', date: '2026-12-12T19:00:00+09:00', venue: '고양종합운동장', city: '고양', announcedAt: '2026-10-06', ticketAt: '2026-10-15T12:00:00+09:00', price: '132,000원부터', palette: 'lime', headline: 'OASIS', description: '두 손을 높이 들고, 함께 부를 시간. 브릿팝 사운드로 채워질 겨울밤을 상상해보세요.' },
