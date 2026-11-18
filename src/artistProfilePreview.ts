@@ -13,7 +13,7 @@ export type ArtistProfilePreview = {
   bio: string
   wikipedia: string
   language: string
-  theme?: 'blue-rose'
+  theme: 'cobalt' | 'walnut' | 'blue-rose' | 'stage-violet'
   banner?: Banner
   channel: string
   music: ArtistVideo[]
@@ -26,6 +26,7 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
     bio: '이창섭은 보이 그룹 비투비(BTOB)에서 데뷔한 대한민국의 가수다. 그룹 활동과 함께 솔로 음반을 발표하고 뮤지컬 무대에도 올랐다.',
     wikipedia: 'https://ko.wikipedia.org/wiki/이창섭_(가수)',
     language: '한국어',
+    theme: 'cobalt',
     banner: {
       url: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/170617_Lee_Chang-sub_%285%29.jpg',
       source: 'https://commons.wikimedia.org/wiki/File:170617_Lee_Chang-sub_(5).jpg',
@@ -41,6 +42,7 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
     bio: '실리카겔은 2013년 서울예술대학교 학생들을 중심으로 결성된 인디 록 밴드다. 김건재, 김춘추, 김한주, 최웅희가 활동하며, 사이키델릭 록에 전자음악과 시각 연출을 결합한다.',
     wikipedia: 'https://ko.wikipedia.org/wiki/실리카겔_(밴드)',
     language: '한국어',
+    theme: 'walnut',
     banner: {
       url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Silica_Gel_members_in_2022.jpg',
       source: 'https://commons.wikimedia.org/wiki/File:Silica_Gel_members_in_2022.jpg',
@@ -78,6 +80,7 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
     bio: '마이 케미컬 로맨스는 2001년 미국 뉴저지에서 결성된 록 밴드다. 《Three Cheers for Sweet Revenge》와 《The Black Parade》를 발표했으며, 2013년 해체 후 2019년 재결합했다.',
     wikipedia: 'https://en.wikipedia.org/wiki/My_Chemical_Romance',
     language: '영어',
+    theme: 'stage-violet',
     banner: {
       url: 'https://upload.wikimedia.org/wikipedia/commons/3/39/My_Chemical_Romance_en_vivo.jpg',
       source: 'https://commons.wikimedia.org/wiki/File:My_Chemical_Romance_en_vivo.jpg',
