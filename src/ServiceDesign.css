@@ -95,3 +95,6 @@ body{--border:var(--line);--panel:var(--surface)}
 /* Keep concert content clear of the header, including direct event links. */
 .flow-page:has(> .flow-detail){padding-top:32px}
 @media(max-width:760px){.flow-page:has(> .flow-detail){padding-top:16px}}
+
+.detail-main .detail-booking{width:100%;margin:0 0 16px;text-decoration:none}
+.detail-booking-status{margin:0 0 16px;color:var(--muted);font-size:13px}
