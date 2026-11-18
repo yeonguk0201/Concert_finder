@@ -2,24 +2,24 @@ import { useEffect, useRef, useState } from 'react'
 import type { Band } from './data'
 import { artistStyle } from './approvedStyle'
 
-type Video = { id: string; title: string }
-const music: Video[] = [
+import type { ArtistProfilePreview, ArtistVideo } from './artistProfilePreview'
+const music: ArtistVideo[] = [
   { id: 'DIPxnt5vnhU', title: 'T + Tik Tak Tok (feat. So!YoON!)' },
   { id: 'JaIMSzE5yLA', title: 'NO PAIN' },
   { id: 'VB9cyPJCtok', title: 'APEX' },
   { id: 'IWYft_hOIgo', title: 'Desert Eagle · Performance Video' },
 ]
-const live: Video[] = [
+const live: ArtistVideo[] = [
   { id: 'qg40imnWXG8', title: 'NO PAIN · YES24 LIVE HALL' },
   { id: 'KaYT_O0CwLE', title: 'Syn. THE. Size. X · Live' },
   { id: '1VXjue62OrQ', title: 'APEX · EBS' },
   { id: 'P-5hvP1tALs', title: 'NO PAIN · EBS' },
 ]
-function Thumbnail({ video, band, live }: { video: Video; band: Band; live: boolean }) {
+function Thumbnail({ video, band, live }: { video: ArtistVideo; band: Band; live: boolean }) {
   const [failed, setFailed] = useState(false)
   return <div className={`video-thumb ${artistStyle(band)}`}><span className="video-graphic" aria-hidden="true">{band.initials}</span>{!failed && <img className="youtube-thumbnail" src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt={`${video.title} YouTube 썸네일`} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />}<span className="video-play" aria-hidden="true">▶</span><span className="video-label">{live ? 'Live' : 'Music video'}</span>{failed && <span className="thumbnail-fallback">썸네일을 불러오지 못했어요</span>}</div>
 }
-function VideoShelf({ band, title, videos, term }: { band: Band; title: string; videos: Video[]; term: string }) {
+function VideoShelf({ band, title, videos, term, channel }: { band: Band; title: string; videos: ArtistVideo[]; term: string; channel?: string }) {
   const track = useRef<HTMLDivElement>(null)
   const [edges, setEdges] = useState({ first: true, last: videos.length <= 2 })
   const moveTo = (index: number) => {
@@ -63,14 +63,14 @@ function VideoShelf({ band, title, videos, term }: { band: Band; title: string; 
     observer?.observe(el); update()
     return () => { observer?.disconnect(); el.removeEventListener('scroll',update); el.removeEventListener('pointerdown',down); el.removeEventListener('pointermove',drag); el.removeEventListener('pointerup',release); el.removeEventListener('pointercancel',release); el.removeEventListener('click',click,true); el.removeEventListener('keydown',key) }
   }, [videos.length])
-  return <section className="artist-media" aria-label={title}><div className="section-heading"><h2>{title}</h2><div className="media-controls"><a className="media-more" aria-label={`${band.name} ${title} 더보기, YouTube 새 탭`} href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${band.name} ${term}`)}`} target="_blank" rel="noopener noreferrer">더보기</a><button aria-label={`${title} 이전 영상 2개`} disabled={edges.first} onClick={() => slide(-1)}>‹</button><button aria-label={`${title} 다음 영상 2개`} disabled={edges.last} onClick={() => slide(1)}>›</button></div></div>
+  return <section className="artist-media" aria-label={title}><div className="section-heading"><h2>{title}</h2><div className="media-controls"><a className="media-more" aria-label={`${band.name} ${title} 더보기, YouTube 새 탭`} href={channel ?? `https://www.youtube.com/results?search_query=${encodeURIComponent(`${band.name} ${term}`)}`} target="_blank" rel="noopener noreferrer">더보기</a><button aria-label={`${title} 이전 영상 2개`} disabled={edges.first} onClick={() => slide(-1)}>‹</button><button aria-label={`${title} 다음 영상 2개`} disabled={edges.last} onClick={() => slide(1)}>›</button></div></div>
     {videos.length ? <div className="artist-video-grid media-track" ref={track} role="group" tabIndex={0} aria-label={`${title} 슬라이드`}>
       {videos.map(video => <a className="artist-video" key={video.id} href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" draggable={false} onDragStart={e => e.preventDefault()}><Thumbnail video={video} band={band} live={title === '라이브 공연 영상'} /><h3>{video.title}</h3><p>{band.name} · YouTube</p></a>)}
     </div> : <div className="video-awaiting">공식 영상은 확인 후 이곳에 모을게요.</div>}
   </section>
 }
-export function ArtistMedia({ band, preview }: { band: Band; preview: boolean }) {
+export function ArtistMedia({ band, profile }: { band: Band; profile?: ArtistProfilePreview }) {
   // Match an external identity, never a display name shared by different artists.
-  const silica = band.musicbrainzId === '2c8b5bb2-6110-488d-bc15-abb08379d3c6' || (preview && band.id === 'silicagel')
-  return <><VideoShelf key={`${band.id}:music`} band={band} title="동영상" videos={silica ? music : []} term="official music video" /><VideoShelf key={`${band.id}:live`} band={band} title="라이브 공연 영상" videos={silica ? live : []} term="live" /></>
+  const silica = band.musicbrainzId === '2c8b5bb2-6110-488d-bc15-abb08379d3c6'
+  return <><VideoShelf key={`${band.id}:music`} band={band} title="동영상" videos={profile?.music ?? (silica ? music : [])} channel={profile?.channel} term="official music video" /><VideoShelf key={`${band.id}:live`} band={band} title="라이브 공연 영상" videos={profile?.live ?? (silica ? live : [])} channel={profile?.channel} term="live" /></>
 }
