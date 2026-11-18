@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import type { ArtistProfilePreview } from './artistProfilePreview'
 
-export function ArtistBannerPhoto({ photo, name }: { photo: NonNullable<ArtistProfilePreview['banner']>; name: string }) {
+export function ArtistBannerPhoto({ photo, name, initials }: { photo?: ArtistProfilePreview['banner']; name: string; initials: string }) {
   const [failed, setFailed] = useState(false)
   const [logoFailed, setLogoFailed] = useState(false)
-  const illustration = photo.illustration
-  const logo = logoFailed ? undefined : photo.logo
-  if (failed && !logo) return null
+  const illustration = photo?.illustration
+  const logo = logoFailed ? undefined : photo?.logo
+  if (!photo || (failed && !logo)) return <figure className="artist-banner-photo artist-banner-initials"><span aria-label={`${name} 이니셜 배너`}>{initials}</span><figcaption>{photo ? '이미지를 불러오지 못해 이니셜로 표시' : '이미지 사용 근거 확인 전 · 이니셜 배너'}</figcaption></figure>
 
   return <figure className="artist-banner-photo">
     {!failed && <img className="artist-banner-image" src={photo.url}
