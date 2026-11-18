@@ -127,9 +127,14 @@ body{--border:var(--line);--panel:var(--surface)}
 }
 .artist-banner-photo figcaption a, .artist-bio-source { text-decoration: underline; text-underline-offset: 3px; }
 .artist-bio-source { display: inline-block; margin: 0 14px 6px 0; color: var(--ink); font-size: 12px; }
+.artist-banner-logo { inset: 48px 5% 48px 48%; }
+.artist-banner-logo img { object-fit: contain; object-position: center; mask-image: none; }
 @media (max-width: 760px) {
   .artist-screen .artist-banner:has(.artist-banner-photo) { min-height: 0; padding-bottom: 30px; }
   .artist-banner-photo { position: relative; inset: auto; margin-top: 16px; }
   .artist-banner-photo img { height: clamp(200px, 65vw, 360px); mask-image: linear-gradient(to top, transparent, #000 18%); }
   .artist-banner-photo figcaption { right: 5%; left: 5%; width: fit-content; }
+  .artist-banner-logo { margin: 16px 5% 0; }
+  .artist-banner-logo img { height: clamp(150px, 46vw, 280px); mask-image: none; }
+  .artist-banner-logo figcaption { left: 0; }
 }
