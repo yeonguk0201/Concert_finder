@@ -7,6 +7,7 @@ type Banner = {
   license: 'CC BY 2.0' | 'CC BY 3.0' | 'CC BY 4.0' | '편집 용도 한정'
   licenseUrl?: string
   illustration?: { thumbnailUrl: string; width: number }
+  logo?: { url: string; source: string }
 }
 
 export type ArtistProfilePreview = {
@@ -87,6 +88,10 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
       author: 'DOliphant',
       license: 'CC BY 2.0',
       licenseUrl: 'https://creativecommons.org/licenses/by/2.0/',
+      logo: {
+        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/My_Chemical_Romance_logo_%282019%29.svg/960px-My_Chemical_Romance_logo_%282019%29.svg.png',
+        source: 'https://commons.wikimedia.org/wiki/File:My_Chemical_Romance_logo_(2019).svg',
+      },
     },
     channel: 'https://www.youtube.com/channel/UCCZGYab5SpD0I7Z5JqJZgww',
     music: [{ id: 'RRKJiM9Njr8', title: 'Welcome to the Black Parade' }],
