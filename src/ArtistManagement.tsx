@@ -8,27 +8,69 @@ import type { ArtistPhotoData } from './artistPhotoTypes'
 import { saveArtistPhotoFile } from './artistPhotoUpload'
 import { ArtistChannelEditor } from './ArtistChannelEditor'
 import { ArtistReviewControl } from './ArtistReviewControl'
-import { ArtistReviewReadiness } from './ArtistReviewReadiness'
+
+const pageSize = 30
 
 export function ArtistManagement({ bands, onSaved }: { bands: AdminBand[]; onSaved: () => void }) {
   const [selected, setSelected] = useState('')
   const [savedMessage, setSavedMessage] = useState('')
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState('all')
+  const [page, setPage] = useState(0)
+  const heading = useRef<HTMLHeadingElement>(null)
   const band = bands.find(b => b.id === selected)
+  const search = query.trim().toLowerCase()
   const filtered = bands.filter(b => (status === 'all' || (b.curation_status ?? 'unreviewed') === status) &&
-    [b.name, b.country_code, ...b.aliases].some(value => value.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())))
-  return <section aria-label="아티스트 DB 관리"><h2>아티스트 DB·대표 이미지</h2>
-    <ArtistReviewReadiness />
-    <p>이름·국적·분류·노출 상태와 사진을 관리합니다. 보류·제외는 일반 목록과 자동 공개를 차단하며 기존 공연·찜 관계는 보존합니다. 제외 후 복구할 때 승인 근거를 다시 검토하세요.</p>
-    <div className="admin-fields"><label>DB 이름·별칭·국가 검색<input type="search" value={query} onChange={e => setQuery(e.target.value)} /></label>
-      <label>관리 상태 필터<select value={status} onChange={e => setStatus(e.target.value)}><option value="all">전체</option>{Object.entries(artistStatusLabels).map(([value,label]) => <option key={value} value={value}>{label}</option>)}</select></label></div>
-    <p>조건에 맞는 아티스트 {filtered.length}팀 · 전체 {bands.length}팀</p>
-    <label>관리할 아티스트<select value={selected} onChange={e => {setSelected(e.target.value);setSavedMessage('')}}><option value="">아티스트 선택</option>{[...filtered, ...(band && !filtered.includes(band) ? [band] : [])].map(b => <option key={b.id} value={b.id}>{b.name} ({b.country_code}) · {artistStatusLabels[b.curation_status ?? 'unreviewed']}</option>)}</select></label>
-    {band && !filtered.includes(band) && <p>선택한 아티스트는 현재 필터 밖에 있습니다. 편집 내용은 유지됩니다.</p>}
-    {savedMessage && <p role="status">{savedMessage}</p>}
-    {band && <ArtistEditor key={`${band.id}:${band.updated_at}`} band={band} onSaved={message => {setSavedMessage(message);onSaved()}} />}
-  </section>
+    [b.name, b.country_code, ...b.aliases].some(value => value.toLowerCase().includes(search)))
+  const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize))
+  const currentPage = Math.min(page, pageCount - 1)
+  const visible = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+  const selectArtist = (id: string) => {
+    setSelected(id)
+    setSavedMessage('')
+    requestAnimationFrame(() => heading.current?.focus())
+  }
+
+  return <div className="admin-layout">
+    <aside className="admin-browser" aria-labelledby="admin-artist-list-title">
+      <div className="admin-browser-tools">
+        <h2 id="admin-artist-list-title">아티스트 목록</h2>
+        <label>이름·별칭·국가 검색<input type="search" value={query} onChange={e => { setQuery(e.target.value); setPage(0) }} /></label>
+        <label>관리 상태 필터<select value={status} onChange={e => { setStatus(e.target.value); setPage(0) }}>
+          <option value="all">모든 상태</option>
+          {Object.entries(artistStatusLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+        </select></label>
+        <p role="status">{filtered.length} / {bands.length}팀</p>
+      </div>
+      <div className="admin-list" key={currentPage}>
+        {visible.map(artist => {
+          const state = artist.curation_status ?? 'unreviewed'
+          return <button className="admin-row" key={artist.id} type="button" aria-pressed={artist.id === selected} onClick={() => selectArtist(artist.id)}>
+            <strong>{artist.name}</strong>
+            <small>{artist.country_code} · {artistCategoryLabels[artist.category ?? 'unclassified']}</small>
+            <span className="admin-badge" data-status={state}>{artistStatusLabels[state]}</span>
+          </button>
+        })}
+        {!visible.length && <p className="admin-empty">검색 조건에 맞는 아티스트가 없습니다.</p>}
+      </div>
+      {pageCount > 1 && <div className="admin-pagination" aria-label="아티스트 목록 페이지">
+        <button className="outline" type="button" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>이전</button>
+        <span aria-live="polite">{currentPage + 1} / {pageCount}</span>
+        <button className="outline" type="button" disabled={currentPage === pageCount - 1} onClick={() => setPage(currentPage + 1)}>다음</button>
+      </div>}
+    </aside>
+    <div className="admin-detail">
+      <header className="admin-detail-heading">
+        <h2 ref={heading} tabIndex={-1}>{band?.name ?? '아티스트 편집'}</h2>
+        {band ? <p>
+          <span className="admin-badge" data-status={band.curation_status ?? 'unreviewed'}>{artistStatusLabels[band.curation_status ?? 'unreviewed']}</span>
+          {' '}{band.country_code} · {artistCategoryLabels[band.category ?? 'unclassified']}
+        </p> : <p>목록에서 아티스트를 선택하면 검수 상태, 대표 이미지, 공식 링크를 편집할 수 있습니다.</p>}
+      </header>
+      {savedMessage && <div className="admin-save-feedback"><p role="status" className="admin-feedback-success">{savedMessage}</p></div>}
+      {band && <ArtistEditor key={`${band.id}:${band.updated_at}`} band={band} onSaved={message => { setSavedMessage(message); onSaved() }} />}
+    </div>
+  </div>
 }
 
 function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: string) => void }) {
@@ -85,8 +127,7 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
   }
   return <div className="artist-editor">
     <form onSubmit={curate}><fieldset disabled={busy || needsRefresh}>
-      <legend>{band.name} DB 정보·노출 관리</legend>
-      <p>현재 상태: {artistStatusLabels[band.curation_status ?? 'unreviewed']} · {artistCategoryLabels[band.category ?? 'unclassified']}</p>
+      <legend>기본 정보와 노출 상태</legend>
       <div className="admin-fields">
         <label>아티스트 이름<input required maxLength={200} value={name} onChange={e => setName(e.target.value)} /></label>
         <label>국가 코드 · ISO 2자리<input required pattern="[A-Za-z]{2}" maxLength={2} value={country} onChange={e => setCountry(e.target.value)} /></label>
@@ -99,8 +140,10 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
       <p>{status === 'held' || status === 'excluded' ? '일반 목록에서 숨기고 자동 공개 승인을 해제합니다. 행과 기존 관계는 삭제하지 않습니다.' : status === 'approved' ? '신원·대상 분류·공식 근거를 확인한 경우에만 승인하세요. 공연의 공식 발표·공개 조건은 별도로 검사합니다.' : '미검수는 현재 일반 목록에 표시되지만 자동 공개 승인으로 취급하지 않습니다.'}</p>
       <button className="outline" disabled={!reason.trim() || !name.trim() || (status === 'approved' && (category === 'unclassified' || !evidence.trim()))}>{band.curation_status === 'excluded' && status !== 'excluded' ? '아티스트 복구·정보 저장' : 'DB 정보·노출 상태 저장'}</button>
     </fieldset></form>
+    <details className="admin-tool">
+    <summary>별칭과 대표 이미지</summary>
     <form onSubmit={save}><fieldset disabled={busy || needsRefresh}>
-    <legend>{band.name} 관리</legend>
+    <legend>이미지 설정</legend>
     {band.musicbrainz_id && <p><a href={`https://musicbrainz.org/artist/${band.musicbrainz_id}`} target="_blank" rel="noopener noreferrer">검증된 외부 신원 ↗</a></p>}
     <label>검색 별칭 · 쉼표로 구분<textarea value={aliases} onChange={e=>setAliases(e.target.value)} /></label>
     <label>대표 이미지 방식<select value={mode} onChange={e=>{setMode(e.target.value as typeof mode);setApproved(false)}}><option value="auto">외부 사진 자동 연결</option><option value="manual">관리자 지정 이미지</option><option value="hidden">이미지 삭제 · 이니셜 표시</option></select></label>
@@ -111,10 +154,11 @@ function ArtistEditor({ band, onSaved }: { band: AdminBand; onSaved: (message: s
       ['url','대표 이미지 HTTPS URL'],['source','이미지 원본 출처 HTTPS URL'],['author','사진 저작자'],['license','라이선스 / 허락 명칭'],['licenseUrl','이용 조건 / 허락 근거 HTTPS URL'],['usageBasis','사용 근거 · 허락 범위'],['credit','추가 크레딧'],
     ] as const).filter(([field])=>field !== 'url' || photoInput === 'url').map(([field,label])=><label key={field}>{label}<input required={field!=='credit'} maxLength={2000} type={['url','source','licenseUrl'].includes(field)?'url':'text'} pattern={['url','source','licenseUrl'].includes(field)?'https://.+':undefined} value={photo[field]??''} onChange={e=>{setPhoto(p=>({...p,[field]:e.target.value}));setApproved(false)}} /></label>)}</div>
       <label className="admin-check"><input type="checkbox" required checked={approved} onChange={e=>setApproved(e.target.checked)} />대상 아티스트와 이미지 이용 조건을 확인했습니다</label></>}
-    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} photoMode={mode} representativePhoto={photo} /></>}
+    {mode === 'manual' && photoInput === 'file' ? <p>파일은 저장 시 검증합니다. 저장 후 목록에서 사진과 출처를 확인하세요.</p> : <><p>저장 전 미리보기</p><ArtistPhoto name={band.name} photoMode={mode} representativePhoto={photo.url.trim() ? photo : null} /></>}
     <p>이미지 삭제는 표시를 중단합니다. 교체 전 보관 파일은 변경 이력 확인을 위해 유지됩니다.</p>
     <button className="outline" disabled={mode==='manual'&&(!approved || (photoInput === 'file' && !file))}>{busy && photoInput === 'file' ? '사진 검증·저장 중…' : '별칭·대표 이미지 저장'}</button>
     </fieldset></form>
+    </details>
     {needsRefresh && <p role="status">저장 완료 · 최신 버전을 불러오는 중입니다. 갱신되지 않으면 상단의 목록 다시 불러오기를 눌러 주세요.</p>}
     <ArtistChangeHistory bandId={band.id} />
     <ArtistChannelEditor band={band} onSaved={onSaved} />

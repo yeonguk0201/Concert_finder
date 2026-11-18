@@ -1,0 +1,90 @@
+// @vitest-environment jsdom
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, expect, test, vi } from 'vitest'
+import ArtistProfilePilot from '../src/ArtistProfilePilot'
+import { ArtistBannerPhoto } from '../src/ArtistBannerPhoto'
+import { ArtistProfileMedia } from '../src/ArtistProfileMedia'
+import { artistProfilePreviews } from '../src/artistProfilePreview'
+import type { Band } from '../src/data'
+
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); history.replaceState(null, '', '/') })
+
+test('theme follows the system until explicitly changed, and artist links retain the choice', () => {
+  const listeners = new Set<(event: { matches: boolean }) => void>()
+  vi.stubGlobal('matchMedia', () => ({ matches: true,
+    addEventListener: (_: string, listener: (event: { matches: boolean }) => void) => listeners.add(listener),
+    removeEventListener: (_: string, listener: (event: { matches: boolean }) => void) => listeners.delete(listener),
+  }))
+  const { container } = render(<ArtistProfilePilot />)
+  const mode = () => container.querySelector('.artist-screen')?.getAttribute('data-preview-theme')
+  expect(mode()).toBe('dark')
+  act(() => listeners.forEach(listener => listener({ matches: false })))
+  expect(mode()).toBe('light')
+  fireEvent.click(screen.getByRole('button', { name: '다크 모드' }))
+  expect(mode()).toBe('dark')
+  act(() => listeners.forEach(listener => listener({ matches: false })))
+  expect(mode()).toBe('dark')
+  expect(screen.getAllByRole('link', { name: 'Ado' }).every(link => link.getAttribute('href')?.includes('previewTheme=dark'))).toBe(true)
+  cleanup()
+  expect(listeners.size).toBe(0)
+})
+
+test('an explicit light preview overrides a dark system preference', () => {
+  history.replaceState(null, '', '/?artistProfilePreview=ado&previewTheme=light')
+  vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }))
+  const { container } = render(<ArtistProfilePilot />)
+  expect(container.querySelector('.artist-screen')?.getAttribute('data-preview-theme')).toBe('light')
+})
+
+test('Ado editorial preview keeps approved colors, image-use notice and Korean attribution without production APIs', () => {
+  history.replaceState(null, '', '/?artistProfilePreview=ado')
+  const fetcher = vi.fn(); vi.stubGlobal('fetch', fetcher)
+  const { container } = render(<ArtistProfilePilot />)
+  expect(container.querySelector('.artist-banner')?.getAttribute('data-theme')).toBe('blue-rose')
+  const image = screen.getByRole('img', { name: 'Ado 공식 일러스트' })
+  expect(image.getAttribute('src')).toBe('https://shorefire.com/images/uploads/gallery/NEW_Ado_pressshot.jpg')
+  expect(screen.getByText('편집 용도 한정')).toBeTruthy()
+  expect(screen.getByRole('link', { name: 'Shore Fire Media' }).getAttribute('href')).toBe('https://shorefire.com/roster/ado')
+  expect(screen.getByRole('link', { name: '위키백과 원문 (한국어)' }).getAttribute('href')).toContain('ko.wikipedia.org')
+  expect(screen.getByRole('link', { name: '저작자·기여 이력' }).getAttribute('href')).toContain('action=history')
+  expect(screen.getByText('THE FIRST TAKE · YouTube')).toBeTruthy()
+  expect(fetcher).not.toHaveBeenCalled()
+})
+
+test('image failure keeps an initials banner rather than collapsing its slot', () => {
+  render(<ArtistBannerPhoto photo={artistProfilePreviews.changsub!.banner} name="이창섭" initials="CS" />)
+  fireEvent.error(screen.getByRole('img'))
+  expect(screen.getByLabelText('이창섭 이니셜 배너')).toBeTruthy()
+  expect(screen.getByText('이미지를 불러오지 못해 이니셜로 표시')).toBeTruthy()
+})
+
+test('media is capped at six per category with exact video links and official channel more links', () => {
+  const band: Band = { id: 'test', name: 'Test', initials: 'T', color: '#000', country: '', genre: '' }
+  const profile = { ...artistProfilePreviews.ado!, music: Array.from({ length: 8 }, (_, i) => ({ id: `video${i}`, title: `Title ${i}` })), live: [] }
+  const { container } = render(<ArtistProfileMedia band={band} profile={profile} />)
+  const links = container.querySelectorAll('.artist-video')
+  expect(links.length).toBe(6)
+  expect(links[0].getAttribute('href')).toBe('https://www.youtube.com/watch?v=video0')
+  expect([...container.querySelectorAll('.media-more')].every(a => a.getAttribute('href') === profile.channel)).toBe(true)
+})
+
+test('preview provenance retains exact existing identities, revision attribution and video officiality evidence', () => {
+  for (const profile of Object.values(artistProfilePreviews)) {
+    expect(profile.identity.bandId).toMatch(/^[a-f0-9-]{36}$/)
+    expect(profile.identity.musicBrainzId).toMatch(/^[a-f0-9-]{36}$/)
+    expect(profile.identity.wikidata).toMatch(/^https:\/\/www.wikidata.org\/wiki\/Q\d+$/)
+    expect(profile.bioSource.revisionUrl).toBe(`${profile.wikipedia}?oldid=${profile.bioSource.revision}`)
+    expect(profile.bioSource.authorsUrl).toBe(`${profile.wikipedia}?action=history`)
+    expect(profile.bioSource.licenseUrl).toBe('https://creativecommons.org/licenses/by-sa/4.0/')
+    expect(profile.bioSource.modification).toBe('한국어 요약·수정')
+    for (const video of [...profile.music, ...profile.live]) {
+      expect(video.publisher).toBeTruthy()
+      expect(video.channelId).toMatch(/^UC[A-Za-z0-9_-]{22}$/)
+      expect(video.officialityBasis).toBeTruthy()
+      expect(video.evidenceUrls?.length).toBeGreaterThan(0)
+      expect(Number.isFinite(Date.parse(video.checkedAt!))).toBe(true)
+    }
+  }
+  expect(artistProfilePreviews.changsub!.music).toHaveLength(0)
+  expect(artistProfilePreviews.changsub!.live).toHaveLength(0)
+})
