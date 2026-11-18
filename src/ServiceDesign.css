@@ -127,14 +127,28 @@ body{--border:var(--line);--panel:var(--surface)}
 }
 .artist-banner-photo figcaption a, .artist-bio-source { text-decoration: underline; text-underline-offset: 3px; }
 .artist-bio-source { display: inline-block; margin: 0 14px 6px 0; color: var(--ink); font-size: 12px; }
-.artist-banner-logo { inset: 48px 5% 48px 48%; }
-.artist-banner-logo img { object-fit: contain; object-position: center; mask-image: none; }
+.artist-screen .artist-banner[data-theme="blue-rose"] {
+  background:
+    linear-gradient(to top, var(--artist-page-bg), transparent 36%),
+    linear-gradient(103deg, #091735, #0d2850 50%, #06465c);
+}
+.artist-banner[data-theme="blue-rose"] .artist-banner-photo img { object-position: 50% 24%; }
+.artist-banner[data-theme="blue-rose"] .artist-banner-copy > p { color: #a7d9f1; }
+.artist-banner[data-theme="blue-rose"] .follow-control { color: #143b65; border-color: #a7d9f1; }
 @media (max-width: 760px) {
-  .artist-screen .artist-banner:has(.artist-banner-photo) { min-height: 0; padding-bottom: 30px; }
-  .artist-banner-photo { position: relative; inset: auto; margin-top: 16px; }
-  .artist-banner-photo img { height: clamp(200px, 65vw, 360px); mask-image: linear-gradient(to top, transparent, #000 18%); }
+  .artist-banner { --artist-banner-image-height: clamp(200px, 65vw, 360px); }
+  .artist-screen .artist-banner:has(.artist-banner-photo) {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(375px + var(--artist-banner-image-height));
+    padding-bottom: 30px;
+  }
+  .artist-screen .artist-banner:has(.artist-banner-photo) .artist-banner-copy { margin-top: 42px; }
+  .artist-banner-photo { position: relative; inset: auto; margin-top: auto; padding-top: 16px; }
+  .artist-banner-photo img { height: var(--artist-banner-image-height); mask-image: linear-gradient(to top, transparent, #000 18%); }
   .artist-banner-photo figcaption { right: 5%; left: 5%; width: fit-content; }
-  .artist-banner-logo { margin: 16px 5% 0; }
-  .artist-banner-logo img { height: clamp(150px, 46vw, 280px); mask-image: none; }
-  .artist-banner-logo figcaption { left: 0; }
+  .artist-banner[data-theme="blue-rose"] .artist-banner-photo img {
+    object-position: 50% 28%;
+    mask-image: linear-gradient(transparent, #000 12%, #000 78%, transparent);
+  }
 }

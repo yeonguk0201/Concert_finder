@@ -6,13 +6,14 @@ type Banner = {
   author: string
   license: 'CC BY 2.0' | 'CC BY 3.0' | 'CC BY 4.0' | '편집 용도 한정'
   licenseUrl?: string
-  kind?: 'logo'
+  illustration?: { thumbnailUrl: string; width: number }
 }
 
 export type ArtistProfilePreview = {
   bio: string
   wikipedia: string
   language: string
+  theme?: 'blue-rose'
   banner?: Banner
   channel: string
   music: ArtistVideo[]
@@ -58,12 +59,16 @@ export const artistProfilePreviews: Partial<Record<string, ArtistProfilePreview>
     bio: 'Ado는 인터넷에 커버곡을 올리며 활동을 시작한 일본의 가수다. 2020년 「うっせぇわ」로 메이저 데뷔했고, 애니메이션 영화 《원피스 필름 레드》에서 우타의 노래를 맡았다.',
     wikipedia: 'https://ja.wikipedia.org/wiki/Ado',
     language: '일본어',
+    theme: 'blue-rose',
     banner: {
-      kind: 'logo',
-      url: 'https://shorefire.com/images/uploads/gallery/Ado_Logo_white.jpg',
+      url: 'https://shorefire.com/images/uploads/gallery/NEW_Ado_pressshot.jpg',
       source: 'https://shorefire.com/roster/ado',
       author: 'Shore Fire Media',
       license: '편집 용도 한정',
+      illustration: {
+        thumbnailUrl: 'https://shorefire.com/images/made/f6e51e1825ad4a24/NEW_Ado_pressshot_407_500_s.jpg',
+        width: 9000,
+      },
     },
     channel: 'https://www.youtube.com/channel/UCln9P4Qm3-EAY4aiEPmRwEA',
     music: [{ id: 'Qp3b-RXtz4w', title: 'うっせぇわ (Usseewa)' }],
