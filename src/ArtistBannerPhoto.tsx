@@ -5,12 +5,13 @@ export function ArtistBannerPhoto({ photo, name }: { photo: NonNullable<ArtistPr
   const [failed, setFailed] = useState(false)
   if (failed) return null
 
-  return <figure className="artist-banner-photo">
-    <img src={photo.url} alt={name} decoding="async" onError={() => setFailed(true)} />
+  const logo = photo.kind === 'logo'
+  return <figure className={logo ? 'artist-banner-photo artist-banner-logo' : 'artist-banner-photo'}>
+    <img src={photo.url} alt={logo ? `${name} 공식 로고` : name} decoding="async" onError={() => setFailed(true)} />
     <figcaption>
       <a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.author}</a>
-      <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a>
-      <span>일부를 잘라 표시</span>
+      {photo.licenseUrl ? <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a> : <span>{photo.license}</span>}
+      {!logo && <span>일부를 잘라 표시</span>}
     </figcaption>
   </figure>
 }
