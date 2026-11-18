@@ -98,3 +98,38 @@ body{--border:var(--line);--panel:var(--surface)}
 
 .detail-main .detail-booking{width:100%;margin:0 0 16px;text-decoration:none}
 .detail-booking-status{margin:0 0 16px;color:var(--muted);font-size:13px}
+
+.artist-banner:has(.artist-banner-photo) .artist-banner-art { display: none; }
+.artist-banner:has(.artist-banner-photo) > .notice { position: relative; z-index: 1; }
+.artist-banner-photo { position: absolute; inset: 0 0 42px 44%; margin: 0; }
+.artist-banner-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 36%;
+  mask-image: linear-gradient(to right, transparent, #000 27%), linear-gradient(to top, transparent, #000 27%);
+  mask-composite: intersect;
+}
+.artist-banner-photo figcaption {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 9px;
+  padding: 6px 9px;
+  border-radius: 5px;
+  color: #fff;
+  background: #151c30;
+  font-size: 11px;
+}
+.artist-banner-photo figcaption a, .artist-bio-source { text-decoration: underline; text-underline-offset: 3px; }
+.artist-bio-source { display: inline-block; margin: 0 14px 6px 0; color: var(--ink); font-size: 12px; }
+@media (max-width: 760px) {
+  .artist-screen .artist-banner:has(.artist-banner-photo) { min-height: 0; padding-bottom: 30px; }
+  .artist-banner-photo { position: relative; inset: auto; margin-top: 16px; }
+  .artist-banner-photo img { height: clamp(200px, 65vw, 360px); mask-image: linear-gradient(to top, transparent, #000 18%); }
+  .artist-banner-photo figcaption { right: 5%; left: 5%; width: fit-content; }
+}
