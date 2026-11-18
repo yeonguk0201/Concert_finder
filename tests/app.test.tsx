@@ -32,6 +32,32 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks(); vi.useRealTimers() })
 
+test.each([
+  ['이창섭', 'dcb90080-9164-478b-a728-b0f0172e2db0', '4561aee5-6cf6-41a6-9b7b-f7be15a00a65', '42752542', 'cobalt', 'CC BY 4.0'],
+  ['Ado', '1bb57d2e-eef1-419e-82c7-fe7e4dac7a55', 'e134b52f-2e9e-4734-9bc3-bea9648d1fa1', '42749273', 'blue-rose', null],
+  ['My Chemical Romance', '8f0b57b1-a196-44ae-92a3-5ab463fc6901', 'c07f0676-9143-4217-8a9f-4c26bd636f13', '42143697', 'stage-violet', 'CC BY 2.0'],
+  ['Silica Gel', '143af425-ea27-4e44-832a-c3215196d7a5', '2c8b5bb2-6110-488d-bc15-abb08379d3c6', '42326891', 'walnut', 'CC BY 3.0'],
+])('shows the editorial profile for catalog artist %s', (name, id, musicbrainz_id, revision, theme, license) => {
+  mocks.bands = mapBands([{ id, name, country_code: 'KR', aliases: [], description: null, musicbrainz_id }])
+  history.replaceState(null, '', `/?page=artist&artist=${id}`)
+  render(<App />)
+  const banner = screen.getByRole('heading', { name }).closest('.artist-banner')
+  expect(banner?.getAttribute('data-theme')).toBe(theme)
+  expect(screen.getByRole('link', { name: /위키백과 원문/ }).getAttribute('href')).toContain(`oldid=${revision}`)
+  expect(screen.getByRole('link', { name: /CC BY-SA 4.0/ })).toBeTruthy()
+  if (license) expect(screen.getByRole('link', { name: license })).toBeTruthy()
+  else expect(banner?.querySelector('img')).toBeNull()
+})
+
+test('an editorial profile requires matching catalog and MusicBrainz IDs', () => {
+  const id = 'dcb90080-9164-478b-a728-b0f0172e2db0'
+  mocks.bands = mapBands([{ id, name: '이창섭', country_code: 'KR', aliases: [], description: null, musicbrainz_id: 'different-artist' }])
+  history.replaceState(null, '', `/?page=artist&artist=${id}`)
+  render(<App />)
+  expect(screen.getByRole('heading', { name: '이창섭' })).toBeTruthy()
+  expect(screen.queryByRole('link', { name: /위키백과 원문/ })).toBeNull()
+})
+
 test('API performances disclose missing booking information and retain official sources', async () => {
   const concerts = mocks.concerts as ReturnType<typeof mapConcerts>
   concerts[0] = { ...concerts[0], announcedAt: '', ticketAt: '', sources: [{ url: 'https://source.example/concert', label: '공연 안내' }] }
