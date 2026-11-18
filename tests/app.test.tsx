@@ -32,12 +32,15 @@ beforeEach(() => {
 })
 afterEach(() => { cleanup(); vi.clearAllMocks(); vi.useRealTimers() })
 
-test('API performances display missing announcement and sale facts without invented dates or calendar events', async () => {
+test('API performances disclose missing booking information and retain official sources', async () => {
   const concerts = mocks.concerts as ReturnType<typeof mapConcerts>
-  concerts[0] = { ...concerts[0], announcedAt: '', ticketAt: '', announcementPrecision: undefined }
+  concerts[0] = { ...concerts[0], announcedAt: '', ticketAt: '', sources: [{ url: 'https://source.example/concert', label: '공연 안내' }] }
   history.replaceState(null, '', '/?event=real-concert')
   render(<App />)
-  expect(await screen.findByText('발표일 미확인')).toBeTruthy()
+  expect(await screen.findByText('공식 예매 링크 미확인')).toBeTruthy()
+  expect(screen.queryByText(/발표일/)).toBeNull()
+  expect(screen.queryByRole('link', { name: '예매처에서 보기' })).toBeNull()
+  expect(screen.getByRole('link', { name: /공식 출처: 공연 안내/ }).getAttribute('href')).toBe('https://source.example/concert')
   expect(screen.getByText('예매 시작 시각 미확인')).toBeTruthy()
   expect(screen.getByText('예매 시작 시각은 아직 확인되지 않았어요.')).toBeTruthy()
   expect(screen.queryByText(/00:00/)).toBeNull()
@@ -143,12 +146,25 @@ test('an unknown opening time still allows saving the one-to-one ticket schedule
   fireEvent.click(button)
   await waitFor(() => expect(mocks.toggle).toHaveBeenCalledWith('schedules', 'real-ticket'))
 })
-test('date-only announcements explicitly disclose the missing time in concert details', () => {
-  mocks.concerts = [{ ...(mocks.concerts[0] as ReturnType<typeof mapConcerts>[0]), announcementPrecision: 'day' }]
+test('signed-out visitors can open the registered booking page without an opening time', () => {
+  const bookingUrl = 'https://tickets.example/concert'
+  const concerts = mocks.concerts as ReturnType<typeof mapConcerts>
+  concerts[0] = { ...concerts[0], bookingUrl, announcementPrecision: 'day' }
   render(<App />)
   fireEvent.click(screen.getByRole('button', { name: 'Verified concert 상세 보기' }))
-  expect(screen.getByText(/발표일만 확인, 시각 미확인/)).toBeTruthy()
-  expect(screen.getByText('공식 발표일')).toBeTruthy()
+  expect(screen.queryByText(/발표일/)).toBeNull()
+  expect(screen.getByText('예매 시작 시각 미확인')).toBeTruthy()
+  const booking = screen.getByRole('link', { name: '예매처에서 보기' })
+  expect(booking.getAttribute('href')).toBe(bookingUrl)
+  expect(booking.getAttribute('target')).toBe('_blank')
+})
+test('cancelled concerts hide the booking action', () => {
+  const concerts = mocks.concerts as ReturnType<typeof mapConcerts>
+  concerts[0] = { ...concerts[0], cancelled: true, bookingUrl: 'https://tickets.example/concert' }
+  history.replaceState(null, '', '/?event=real-concert')
+  render(<App />)
+  expect(screen.getByText('취소된 공연')).toBeTruthy()
+  expect(screen.queryByRole('link', { name: '예매처에서 보기' })).toBeNull()
 })
 test('band search finds aliases and supports following without concerts', async () => {
   mocks.session = { user: { id: 'account', email: 'account@example.test' } }
