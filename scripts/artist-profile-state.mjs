@@ -32,9 +32,15 @@ export function validateProfileEvent(event) {
   return event
 }
 
+export function profileAttemptKey(locator) {
+  if (!uuid.test(locator?.runId) || !uuid.test(locator?.bandId)
+    || !Number.isSafeInteger(locator?.attempt) || locator.attempt < 1) fail('PROFILE_LOCATOR_INVALID')
+  return `${prefix}/runs/${locator.runId}/bands/${locator.bandId}/attempts/${locator.attempt}.json.gz`
+}
+
 export function profileEventKey(event) {
   validateProfileEvent(event)
-  return `${prefix}/runs/${event.runId}/bands/${event.bandId}/attempts/${event.attempt}.json.gz`
+  return profileAttemptKey(event)
 }
 
 export function profileStateStore(client) {
@@ -47,6 +53,14 @@ export function profileStateStore(client) {
     const { data, error } = await storage.download(key)
     if (error || !data) fail('PROFILE_READBACK_FAILED')
     return Buffer.from(await data.arrayBuffer())
+  }
+  const readAttempt = async locator => {
+    const key = profileAttemptKey(locator)
+    await privateBucket()
+    const bytes = await read(key)
+    const actual = validateProfileEvent(JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(gunzipSync(bytes, { maxOutputLength: 256 * 1024 }))))
+    if (profileEventKey(actual) !== key) fail('PROFILE_ATTEMPT_CONFLICT')
+    return actual
   }
   return {
     async persist(event) {
@@ -61,11 +75,11 @@ export function profileStateStore(client) {
       if (sha(actual) !== sha(bytes)) fail('PROFILE_ATTEMPT_CONFLICT')
       return { key, sha256: sha(bytes), readbackVerified: true }
     },
+    readAttempt,
     async read(event) {
-      await privateBucket()
-      const bytes = await read(profileEventKey(event))
-      const actual = validateProfileEvent(JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(gunzipSync(bytes, { maxOutputLength: 256 * 1024 }))))
-      if (profileEventKey(actual) !== profileEventKey(event)) fail('PROFILE_ATTEMPT_CONFLICT')
+      validateProfileEvent(event)
+      const actual = await readAttempt(event)
+      if (actual.musicBrainzId !== event.musicBrainzId || actual.sourceVersion !== event.sourceVersion) fail('PROFILE_ATTEMPT_CONFLICT')
       return actual
     },
   }
@@ -73,12 +87,17 @@ export function profileStateStore(client) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try {
-    if (process.argv.length !== 4 || process.argv[2] !== '--persist-candidate') fail('PROFILE_CANDIDATE_ARGUMENT_REQUIRED')
-    const event = validateProfileEvent(JSON.parse(await readFile(process.argv[3], 'utf8')))
-    if (!['candidate', 'held', 'failed'].includes(event.status)) fail('PROFILE_APPROVAL_NOT_SUPPORTED_BY_CLI')
+    const reading = process.argv[2] === '--read-attempt'
+    if (process.argv.length !== 4 || (!reading && process.argv[2] !== '--persist-candidate')) fail('PROFILE_CANDIDATE_ARGUMENT_REQUIRED')
+    const input = JSON.parse(await readFile(process.argv[3], 'utf8'))
+    if (reading) profileAttemptKey(input)
+    else {
+      validateProfileEvent(input)
+      if (!['candidate', 'held', 'failed'].includes(input.status)) fail('PROFILE_APPROVAL_NOT_SUPPORTED_BY_CLI')
+    }
     if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) fail('PROFILE_SERVER_ENV_REQUIRED')
     const client = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } })
-    console.log(JSON.stringify(await profileStateStore(client).persist(event)))
+    console.log(JSON.stringify(await profileStateStore(client)[reading ? 'readAttempt' : 'persist'](input)))
   } catch (error) {
     console.error(/^PROFILE_[A-Z_]+$/.test(error.message) ? error.message : 'PROFILE_STATE_FAILED')
     process.exitCode = 1

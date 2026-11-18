@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { profileEventKey, profileStateStore } from '../scripts/artist-profile-state.mjs'
+import { profileAttemptKey, profileEventKey, profileStateStore } from '../scripts/artist-profile-state.mjs'
 
 const event = () => ({ schemaVersion: 1, runId: '10000000-0000-4000-8000-000000000001',
   bandId: 'dcb90080-9164-478b-a728-b0f0172e2db0', musicBrainzId: '4561aee5-6cf6-41a6-9b7b-f7be15a00a65',
@@ -38,4 +38,21 @@ test('public buckets, path injection, missing evidence and unauthorized approval
   for (const changes of [{ runId: '../kopis' }, { sources: [] }, { sourceVersion: '' }, { status: 'approved' }, { application: { status: 'applied' } }]) {
     assert.throws(() => profileEventKey({ ...event(), ...changes }), /PROFILE_EVENT_INVALID/)
   }
+})
+
+test('a fresh environment reads an attempt by locator without inventing a candidate or writing', async () => {
+  const { objects, store } = fake(), e = event()
+  await store.persist(e)
+  const locator = { runId: e.runId, bandId: e.bandId, attempt: e.attempt }
+  const before = [...objects.entries()]
+  assert.deepEqual(await store.readAttempt(locator), e)
+  assert.deepEqual([...objects.entries()], before)
+  for (const changes of [{ runId: '../kopis' }, { bandId: null }, { attempt: 0 }, { attempt: '1' }]) {
+    assert.throws(() => profileAttemptKey({ ...locator, ...changes }), /PROFILE_LOCATOR_INVALID/)
+  }
+  await assert.rejects(store.read({ ...e, musicBrainzId: '10000000-0000-4000-8000-000000000002' }), /PROFILE_ATTEMPT_CONFLICT/)
+  await assert.rejects(store.read({ ...e, sourceVersion: '2026-11-19T00:00:00Z' }), /PROFILE_ATTEMPT_CONFLICT/)
+  // A valid event stored under the wrong path must never be accepted.
+  objects.set(profileAttemptKey({ ...locator, attempt: 2 }), objects.get(profileEventKey(e)))
+  await assert.rejects(store.readAttempt({ ...locator, attempt: 2 }), /PROFILE_ATTEMPT_CONFLICT/)
 })

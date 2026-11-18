@@ -67,3 +67,24 @@ test('media is capped at six per category with exact video links and official ch
   expect(links[0].getAttribute('href')).toBe('https://www.youtube.com/watch?v=video0')
   expect([...container.querySelectorAll('.media-more')].every(a => a.getAttribute('href') === profile.channel)).toBe(true)
 })
+
+test('preview provenance retains exact existing identities, revision attribution and video officiality evidence', () => {
+  for (const profile of Object.values(artistProfilePreviews)) {
+    expect(profile.identity.bandId).toMatch(/^[a-f0-9-]{36}$/)
+    expect(profile.identity.musicBrainzId).toMatch(/^[a-f0-9-]{36}$/)
+    expect(profile.identity.wikidata).toMatch(/^https:\/\/www.wikidata.org\/wiki\/Q\d+$/)
+    expect(profile.bioSource.revisionUrl).toBe(`${profile.wikipedia}?oldid=${profile.bioSource.revision}`)
+    expect(profile.bioSource.authorsUrl).toBe(`${profile.wikipedia}?action=history`)
+    expect(profile.bioSource.licenseUrl).toBe('https://creativecommons.org/licenses/by-sa/4.0/')
+    expect(profile.bioSource.modification).toBe('한국어 요약·수정')
+    for (const video of [...profile.music, ...profile.live]) {
+      expect(video.publisher).toBeTruthy()
+      expect(video.channelId).toMatch(/^UC[A-Za-z0-9_-]{22}$/)
+      expect(video.officialityBasis).toBeTruthy()
+      expect(video.evidenceUrls?.length).toBeGreaterThan(0)
+      expect(Number.isFinite(Date.parse(video.checkedAt!))).toBe(true)
+    }
+  }
+  expect(artistProfilePreviews.changsub!.music).toHaveLength(0)
+  expect(artistProfilePreviews.changsub!.live).toHaveLength(0)
+})
