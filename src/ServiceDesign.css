@@ -102,7 +102,7 @@ body{--border:var(--line);--panel:var(--surface)}
 .artist-banner:has(.artist-banner-photo) .artist-banner-art { display: none; }
 .artist-banner:has(.artist-banner-photo) > .notice { position: relative; z-index: 1; }
 .artist-banner-photo { position: absolute; inset: 0 0 42px 44%; margin: 0; }
-.artist-banner-photo img {
+.artist-banner-image {
   width: 100%;
   height: 100%;
   display: block;
@@ -110,6 +110,15 @@ body{--border:var(--line);--panel:var(--surface)}
   object-position: var(--banner-focus, 50% 36%);
   mask-image: linear-gradient(to right, transparent, #000 var(--banner-side-fade, 27%)), linear-gradient(to top, transparent, #000 27%);
   mask-composite: intersect;
+}
+.artist-banner-photo:has(.artist-banner-mark) .artist-banner-image { opacity: .48; }
+.artist-banner-mark {
+  position: absolute;
+  left: 29%;
+  top: 47%;
+  width: 54%;
+  transform: translateY(-50%);
+  filter: invert(1) drop-shadow(0 4px 12px #101022b3);
 }
 .artist-banner-photo figcaption {
   position: absolute;
@@ -182,10 +191,12 @@ body{--border:var(--line);--panel:var(--surface)}
   }
   .artist-screen .artist-banner:has(.artist-banner-photo) .artist-banner-copy { margin-top: 42px; }
   .artist-banner-photo { position: relative; inset: auto; margin-top: auto; padding-top: 16px; }
-  .artist-banner-photo img { height: var(--artist-banner-image-height); mask-image: linear-gradient(to top, transparent, #000 18%); }
+  .artist-banner-photo:not(:has(.artist-banner-image)) { min-height: calc(16px + var(--artist-banner-image-height)); }
+  .artist-banner-image { height: var(--artist-banner-image-height); mask-image: linear-gradient(to top, transparent, #000 18%); }
   .artist-banner-photo figcaption { right: 5%; left: 5%; width: fit-content; }
-  .artist-banner[data-theme] .artist-banner-photo img {
+  .artist-banner[data-theme] .artist-banner-image {
     object-position: var(--banner-mobile-focus, var(--banner-focus));
     mask-image: linear-gradient(transparent, #000 var(--banner-mobile-fade, 12%), #000 78%, transparent);
   }
+  .artist-banner-mark { left: 21%; top: 48%; width: 58%; }
 }
