@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Band } from './data'
 import { ArtistBannerPhoto } from './ArtistBannerPhoto'
 import { ArtistProfileMedia } from './ArtistProfileMedia'
@@ -12,13 +12,30 @@ const artists: Band[] = [
   { id: 'mcr', name: 'My Chemical Romance', initials: 'MCR', color: '#252343', country: '미국', genre: '록', musicbrainzId: 'c07f0676-9143-4217-8a9f-4c26bd636f13' },
 ]
 
+type PreviewTheme = 'light' | 'dark'
+
 export default function ArtistProfilePilot() {
   const slug = new URLSearchParams(location.search).get('artistProfilePreview')
   const band = artists.find(artist => artist.id === slug) ?? artists[0]
   const profile = artistProfilePreviews[band.id]!
   const [followed, setFollowed] = useState(false)
-  return <div className="combined artist-screen">
-    <header className="site-header"><a className="brand" href="/">encore<span>.</span></a><nav aria-label="아티스트 시안">{artists.map(artist => <a key={artist.id} href={`?artistProfilePreview=${artist.id}`} aria-current={band.id === artist.id ? 'page' : undefined}>{artist.name}</a>)}</nav></header>
+  const [themeOverride, setThemeOverride] = useState<PreviewTheme | null>(() => {
+    const requested = new URLSearchParams(location.search).get('previewTheme')
+    return requested === 'light' || requested === 'dark' ? requested : null
+  })
+  const [systemDark, setSystemDark] = useState(() => window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false)
+  useEffect(() => {
+    const preference = window.matchMedia?.('(prefers-color-scheme: dark)')
+    if (!preference) return
+    const changed = (event: MediaQueryListEvent) => setSystemDark(event.matches)
+    preference.addEventListener('change', changed)
+    return () => preference.removeEventListener('change', changed)
+  }, [])
+  const theme = themeOverride ?? (systemDark ? 'dark' : 'light')
+  const artistUrl = (id: string) => `?artistProfilePreview=${id}${themeOverride ? `&previewTheme=${themeOverride}` : ''}`
+
+  return <div className="combined artist-screen" data-preview-theme={theme}>
+    <header className="site-header"><a className="brand" href="/">encore<span>.</span></a><nav aria-label="아티스트 시안">{artists.map(artist => <a key={artist.id} href={artistUrl(artist.id)} aria-current={band.id === artist.id ? 'page' : undefined}>{artist.name}</a>)}</nav><button className="preview-theme-control" type="button" aria-label="다크 모드" aria-pressed={theme === 'dark'} onClick={() => setThemeOverride(theme === 'dark' ? 'light' : 'dark')}><span aria-hidden="true">☾</span> 다크</button></header>
     <main className="artist-flow-page">
       <section className="artist-banner" data-theme={profile.theme}>
         <div className="notice"><span className="notice-dot" />디자인 미리보기 · 운영 데이터와 분리된 시안입니다.</div>
@@ -28,7 +45,7 @@ export default function ArtistProfilePilot() {
       <section className="artist-about"><div><h2>아티스트 소개</h2><p className="artist-bio expanded">{profile.bio}</p><a className="artist-bio-source" href={profile.wikipedia} target="_blank" rel="noopener noreferrer">위키백과 원문 ({profile.language})</a><a className="artist-bio-source" href={`${profile.wikipedia}?action=history`} target="_blank" rel="noopener noreferrer">저작자·기여 이력</a><a className="artist-bio-source" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 · 한국어 요약·수정</a></div><div className="artist-profile-note"><span>다음 라이브</span><strong>공연 소식 준비 중</strong><span>확인된 예정 공연이 없습니다.</span></div></section>
       <section className="artist-concerts"><div className="section-heading"><h2>예정된 공연 <span>0</span></h2></div><p>확인된 예정 공연이 없습니다.</p></section>
       <ArtistProfileMedia key={band.id} band={band} profile={profile} />
-      <section className="related-artists"><div className="section-heading"><h2>함께 발견할 아티스트</h2></div><nav className="related-artist-list">{artists.filter(artist => artist.id !== band.id).map(artist => <a key={artist.id} href={`?artistProfilePreview=${artist.id}`}>{artist.name}</a>)}</nav></section>
+      <section className="related-artists"><div className="section-heading"><h2>함께 발견할 아티스트</h2></div><nav className="related-artist-list">{artists.filter(artist => artist.id !== band.id).map(artist => <a key={artist.id} href={artistUrl(artist.id)}>{artist.name}</a>)}</nav></section>
       <footer><span className="brand">encore.</span><p>다음 라이브에서 만나요.</p></footer>
     </main>
   </div>

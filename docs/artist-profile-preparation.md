@@ -2,13 +2,25 @@
 
 2026-11-18 KST. 이 문서는 첫 화면 검토용 결과다. 반복 주기·자동 등록 범위는 정하지 않았으며 예약·배포·운영 콘텐츠 반영은 하지 않았다.
 
+## 2026-11-19 KST · 그라데이션·다크 후속 구현
+
+사용자가 새 채팅 대신 현재 채팅에서 디자인을 계속하기로 했다. 모바일의 색상 전환 구간을 110px에서 240px로 늘리고, 양 끝의 변화율이 0에 가까운 코사인 곡선을 21개 opacity stop으로 근사해 퍼스널 컬러 자체를 페이드한다. 배너와 다음 본문은 같은 `--artist-page-bg`를 사용한다. 기본 8px body 여백과 시안의 기본 스타일 의존도도 제거했다. 사진 → 이름·예정 공연·찜 순서와 팔레트/출처는 유지한다.
+
+시안의 다크 모드를 구현했다. 기본은 기기의 `prefers-color-scheme`이며 상단 `다크` 버튼으로 수동 전환할 수 있다. 수동 선택은 아티스트 이동 링크의 `previewTheme`로 이어지고, 강제 선택이 없으면 실행 중 시스템 변경도 따른다. 라이트의 그라데이션 종착점은 흰색, 다크는 검정이다. 페이지 배경·본문·헤더·테두리·링크에도 같은 테마 변수를 사용한다. **운영 App 전체의 다크 모드를 추가하거나 배포한 것은 아니다.**
+
+검증: build·lint, 테마 기본/수동 선택/시스템 변경/정리와 기존 시안 UI 검사 5개 통과. 네 팀 × 라이트/다크 × 1280/390/360/320px = 실제 Chromium 32개 화면에서 이미지 로드·공통 높이·넘침 없음·출처·버튼·운영 API 요청 0을 확인했다. 양 모드의 이미지 실패 이니셜 대체와 테마 버튼 왕복도 확인했다. 배너/본문 경계의 인접 픽셀 RGB 차이는 0이었다. 모바일 마지막 220px에서 한 픽셀의 최대 채널 변화는 라이트 3/다크 2(0~255), 구별되는 색상은 최소 라이트 187/다크 132개였다. 이 수치는 육안 검토를 대신하는 최종 디자인 승인은 아니다.
+
+![라이트·다크 비교](artist-profile-preview/theme-comparison.jpg)
+
+[네 팀 라이트](artist-profile-preview/mobile-light-overview.jpg) · [네 팀 다크](artist-profile-preview/mobile-dark-overview.jpg). 원본 32개 PNG와 관측 JSON은 현재 환경 `.local/artist-profile/gradient-light`, `gradient-dark`, `gradient-theme-browser-results.json`에 있다. 키/운영 콘텐츠/SQL/함수/예약은 변경하지 않았다.
+
 ## 2026-11-19 KST · 새 채팅 인계 전 기준 브랜치 정정
 
 초기 원격 dev 해시를 확인했으나 로컬 `origin/dev`는 `f9319139858de8029dd8028df6ea45dd334a5625`에 머물러 있었다. fetch 설정이 main만 추적하고 있어 이름만으로 최신이라고 판단한 것이 오류였다. 앞선 “최신 dev 기반” 설명과 초기 전체 검사 수치는 그 점을 감안해야 한다.
 
 인계 전에 `git fetch origin refs/heads/dev:refs/remotes/origin/dev`로 실제 `ea6ab3d15bb573d2ccfadd0320170e3a7f2d256f`를 받은 뒤 그 커밋에서 같은 이름의 작업 브랜치를 다시 구성했다. 초기 커밋들은 로컬 보관 브랜치에 남기고, 원격에 공유할 브랜치는 실제 최신 dev의 후손이다. 최신 dev의 `src/ArtistMedia.tsx`, `src/ServiceDesign.css`, workflow, SQL은 변경하지 않았다. 시안 미디어와 CSS는 각각 `src/ArtistProfileMedia.tsx`, `src/ArtistProfilePilot.css`로 분리했다. 앞으로 시안 스타일은 이 CSS에서 수정한다.
 
-현재 light 고정 상태이며 다크 모드 검정 전환은 **미구현**이다. 마지막 사용자 요청인 “색→흰색 변화가 급하고 본문 경계가 끊겨 보임”도 아직 미해결이다. [새 채팅 인계 문서](release/artist-profile-cloud-handoff.md)를 우선 읽는다. 이전 캡처는 수정 전 상태를 재현하는 참고 자료다.
+인계 시점에는 라이트 고정과 그라데이션 문제가 남아 있었지만, 이후 현재 채팅에서 위와 같이 후속 구현했다. [새 채팅 인계 문서](release/artist-profile-cloud-handoff.md)를 우선 읽는다. 이전 커밋의 캡처는 당시 상태이며 현재 Git에 포함된 overview는 위 후속 구현을 반영한 화면이다.
 
 ## 2026-11-19 KST · 모바일 퍼스널 컬러 연결
 

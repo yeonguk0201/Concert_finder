@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, expect, test, vi } from 'vitest'
 import ArtistProfilePilot from '../src/ArtistProfilePilot'
 import { ArtistBannerPhoto } from '../src/ArtistBannerPhoto'
@@ -8,6 +8,33 @@ import { artistProfilePreviews } from '../src/artistProfilePreview'
 import type { Band } from '../src/data'
 
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); history.replaceState(null, '', '/') })
+
+test('theme follows the system until explicitly changed, and artist links retain the choice', () => {
+  const listeners = new Set<(event: { matches: boolean }) => void>()
+  vi.stubGlobal('matchMedia', () => ({ matches: true,
+    addEventListener: (_: string, listener: (event: { matches: boolean }) => void) => listeners.add(listener),
+    removeEventListener: (_: string, listener: (event: { matches: boolean }) => void) => listeners.delete(listener),
+  }))
+  const { container } = render(<ArtistProfilePilot />)
+  const mode = () => container.querySelector('.artist-screen')?.getAttribute('data-preview-theme')
+  expect(mode()).toBe('dark')
+  act(() => listeners.forEach(listener => listener({ matches: false })))
+  expect(mode()).toBe('light')
+  fireEvent.click(screen.getByRole('button', { name: '다크 모드' }))
+  expect(mode()).toBe('dark')
+  act(() => listeners.forEach(listener => listener({ matches: false })))
+  expect(mode()).toBe('dark')
+  expect(screen.getAllByRole('link', { name: 'Ado' }).every(link => link.getAttribute('href')?.includes('previewTheme=dark'))).toBe(true)
+  cleanup()
+  expect(listeners.size).toBe(0)
+})
+
+test('an explicit light preview overrides a dark system preference', () => {
+  history.replaceState(null, '', '/?artistProfilePreview=ado&previewTheme=light')
+  vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }))
+  const { container } = render(<ArtistProfilePilot />)
+  expect(container.querySelector('.artist-screen')?.getAttribute('data-preview-theme')).toBe('light')
+})
 
 test('Ado editorial preview keeps approved colors, image-use notice and Korean attribution without production APIs', () => {
   history.replaceState(null, '', '/?artistProfilePreview=ado')
