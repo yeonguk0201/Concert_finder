@@ -22,19 +22,27 @@ export async function readBookingSnapshot(client, concertId) {
     band_ids: concert_bands.map(b => b.band_id).sort(), ticket: ticket_schedules }
 }
 
-export async function appendAppliedBookingReview(client, proposal, original, receipt, previousBytes = null) {
+export async function appendAppliedBookingReview(client, proposal, original, receipt, previousBytes = null, previousKey = null) {
   const previous = previousBytes ? JSON.parse(previousBytes.toString('utf8')) : null
   if (previous && (previous.concert_id !== proposal.concert_id || previous.url !== proposal.url || !Number.isInteger(previous.revision))) {
     throw new Error('BOOKING_REVIEW_IDENTITY_CONFLICT')
   }
   const revision = (previous?.revision ?? 0) + 1
+  const root = `booking-link-reviews/v1/${proposal.concert_id}/`
+  if (previous && (!previousKey?.startsWith(root)
+    || !new RegExp(`^[a-f0-9]{64}/${String(previous.revision).padStart(8, '0')}\\.json\\.gz$`).test(previousKey.slice(root.length)))) {
+    throw new Error('BOOKING_REVIEW_KEY_REQUIRED')
+  }
   const record = { ...(previous ?? { schema: 1, original, original_hash: sha(encodeReview(original)) }),
     concert_id: proposal.concert_id, url: proposal.url, revision,
     previous_hash: previousBytes ? sha(previousBytes) : null,
     status: 'applied', applied: true, automatic_apply: false, checked_at: proposal.checked_at,
     evidence: [...(previous?.evidence ?? []), proposal.evidence],
     application: { ...receipt, confirmation_basis: proposal.confirmation_basis }, retry_after: null }
-  const key = `booking-link-reviews/v1/${proposal.concert_id}/${sha(proposal.url)}/${String(revision).padStart(8, '0')}.json.gz`
+  // Existing candidate identifiers were not necessarily hashes of the raw URL.
+  // Keep their directory; deriving a new one would duplicate the same candidate.
+  const prefix = previous ? previousKey.slice(0, previousKey.lastIndexOf('/')) : `${root}${sha(proposal.url)}`
+  const key = `${prefix}/${String(revision).padStart(8, '0')}.json.gz`
   const bytes = encodeReview(record)
   const store = client.storage.from(bucket)
   const { error } = await store.upload(key, gzipSync(bytes), { upsert: false, contentType: 'application/gzip', cacheControl: '0' })
