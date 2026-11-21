@@ -26,8 +26,10 @@ private 구현은 서비스 JWT role을 다시 확인하고 기존 private catal
 `proposal`과 `expected_snapshot`만 넣고 키를 포함하지 않는다. 서버 바인딩은 환경에서만 읽는다.
 mutation 응답이 불확실하면 재시도하지 말고 공개 읽기·감사 이력부터 대조한다.
 
-비공개 적용 기록은 기존 `concert-scheduler-state/booking-link-reviews/v1/<concert>/<sha256(url)>/`
-경로에서 gzip JSON을 append한다. 기존 raw JSON의 SHA256을 previous_hash에 남기며,
+비공개 적용 기록은 기존 `concert-scheduler-state/booking-link-reviews/v1/<concert>/<candidate key>/`
+경로에서 gzip JSON을 append한다. 기존 후보의 key는 원본 URL의 hash와 다를 수 있으므로
+이전 객체 경로를 명시해 같은 디렉터리를 유지한다. 신규 후보만 URL의 SHA256을 key로 사용한다.
+기존 raw JSON의 SHA256을 previous_hash에 남기며,
 원본·불확실성·이전 근거를 보존한다. 업로드는 upsert=false이고 저장 후 바이트를 대조한다.
 경합 시 덮어쓰지 않는다. DB 저장과 Storage 기록은 별도 단계이므로 Storage 실패를 DB 실패로
 간주해 mutation을 반복하지 않는다. DB의 history_id가 운영 반영 영수증이다.
@@ -49,3 +51,24 @@ mutation 응답이 불확실하면 재시도하지 말고 공개 읽기·감사 
 수동 링크 보호, 사실/가격/회차/ID/알림 상태 보존, 감사 및 no-op을 검증한다.
 Storage fixture는 append-only·이전 기록 보존·충돌 거부·읽기 재확인을 검증한다.
 lint·build도 확인한다. 실제 설치·반영·공개 읽기 결과는 작업 완료 보고의 영수증과 구분한다.
+
+## 2026-11-21 22:30 KST 운영 결과
+
+- 코드: dev PR #100, main PR #101 병합 완료. 필수 CI와 미리보기 빌드 통과.
+- 운영 설치: `20261121132828 / reviewed_booking_link`. 검토 원본 파일 버전은
+  `20261121131934`이며 MCP 설치 이력 버전과 다르다. 같은 SQL을 재실행하거나 전체 db push·history repair로 맞추지 않는다.
+- 이창섭 울산 적용 history_id: `a4d3091b-e1ac-49cd-8d02-7955140df171`.
+  기존 후보 디렉터리의 `00000003.json.gz`에 적용 기록을 append·읽기 재확인했다.
+- 최재훈 서울 적용 history_id: `88f1f91f-9a3e-48f0-b101-2523f72c2b56`.
+  `booking-link-reviews/v1/0656380c-c596-4ad6-b62e-b2794950aaa5/f4814148ee572dbbf901e852e2644fa5e83cb27a73675e525c2dc3e738526475/00000001.json.gz`에 저장·읽기 재확인했다.
+- 두 공연의 공개 API HTTP 200에서 각각 상품 65455·65630의 booking_url을 확인했다.
+  운영 상세 주소도 각각 HTTP 200이었다. 브라우저의 버튼 클릭·외부 목적지 화면은 인증서 제한으로 미검증이다.
+- 전체 원본 snapshot을 비교해 예매 URL과 공연 updated_at 외 사실·자식 행 ID가 보존됨을 확인했다.
+  opens_at=null, ticket revision=1은 그대로다.
+- 대상 공개 change 합계는 전후 2건, 연결 예매 notification delivery는 전후 0건이다.
+  collection policy 버전·KOPIS 두 digest는 그대로다. 수집·발송·예약 변경은 하지 않았다.
+- 서버 함수 실행 권한: anon=false, authenticated=false, service_role=true.
+  운영 security advisor에 새 booking 함수 관련 finding은 없었다. 기존·동시 작업의 다른 진단은 이 작업에서 변경하지 않았다.
+
+코드 병합·서버 설치·운영 데이터 반영·공개 API 확인은 완료했다.
+실제 브라우저 화면 검증은 별도 남은 항목이며, 데이터 반영 성공과 혼동하지 않는다.

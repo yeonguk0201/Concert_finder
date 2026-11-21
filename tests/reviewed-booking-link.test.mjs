@@ -17,14 +17,17 @@ test('private applied records append without overwriting and retain the original
   }, download: async key => ({ data: new Blob([files.get(key)]), error: null }) }
   const client = { storage: { from: name => { assert.equal(name, 'concert-scheduler-state'); return storage } } }
   const p = { concert_id: old.concert_id, url: old.url, checked_at: new Date().toISOString(), evidence: { method: 'fixture' }, confirmation_basis: 'fixture explicit confirmation' }
-  const key = await appendAppliedBookingReview(client, p, {}, { applied: true, history_id: 'fixture-history' }, originalBytes)
+  const previousKey = `booking-link-reviews/v1/fixture/${'a'.repeat(64)}/00000002.json.gz`
+  await assert.rejects(appendAppliedBookingReview(client, p, {}, { applied: true }, originalBytes), /REVIEW_KEY_REQUIRED/)
+  const key = await appendAppliedBookingReview(client, p, {}, { applied: true, history_id: 'fixture-history' }, originalBytes, previousKey)
+  assert.equal(key, previousKey.replace('00000002', '00000003'))
   assert.match(key, /\/00000003.json.gz$/)
   const saved = JSON.parse(gunzipSync(files.get(key)).toString('utf8'))
   assert.deepEqual(saved.original, old.original)
   assert.deepEqual(saved.uncertainties, old.uncertainties)
   assert.equal(saved.automatic_apply, false)
   assert.equal(saved.status, 'applied')
-  await assert.rejects(appendAppliedBookingReview(client, p, {}, { applied: true }, originalBytes), /REVIEW_NOT_SAVED:409/)
+  await assert.rejects(appendAppliedBookingReview(client, p, {}, { applied: true }, originalBytes, previousKey), /REVIEW_NOT_SAVED:409/)
   assert.equal(files.size, 1)
 })
 
