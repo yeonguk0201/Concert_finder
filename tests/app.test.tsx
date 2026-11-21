@@ -7,16 +7,17 @@ import { mapBands, mapConcerts } from '../src/catalog'
 const mocks = vi.hoisted(() => ({
   session: null as null | { user: { id: string; email: string } },
   toggle: vi.fn(), reload: vi.fn(), addBand: vi.fn(), invoke: vi.fn(), requestLink: vi.fn(), verifyCode: vi.fn(), pendingEmail: '',
-  adminAllowed: false, authLoading: false, catalogLoading: false, catalogInitialized: true,
+  profileRpc: vi.fn(), adminAllowed: false, authLoading: false, catalogLoading: false, catalogInitialized: true,
   bands: [] as unknown[], concerts: [] as unknown[], follows: [] as string[], saves: [] as string[],
 }))
-vi.mock('../src/backend', () => ({ accountMode: true, backend: { functions: { invoke: mocks.invoke } }, configurationError: '' }))
+vi.mock('../src/backend', () => ({ accountMode: true, backend: { functions: { invoke: mocks.invoke }, rpc: (...args: unknown[]) => mocks.profileRpc(...args) }, configurationError: '' }))
 vi.mock('../src/useAuth', () => ({ useAuth: () => ({ session: mocks.session, loading: mocks.authLoading, error: '', busy: false, message: '', pendingEmail: mocks.pendingEmail, requestLink: mocks.requestLink, verifyCode: mocks.verifyCode, signOut: vi.fn() }) }))
 vi.mock('../src/useCatalog', () => ({ useCatalog: () => ({ bands: mocks.bands, concerts: mocks.concerts, loading: mocks.catalogLoading, initialized: mocks.catalogInitialized, error: '', reload: mocks.reload, addBand: mocks.addBand }) }))
 vi.mock('../src/useAccountStorage', () => ({ useAccountStorage: () => ({ bands: mocks.follows, schedules: mocks.saves, loading: false, error: '', pending: [], toggle: mocks.toggle, reload: mocks.reload }) }))
 vi.mock('../src/useAdminAccess', () => ({ useAdminAccess: () => ({ allowed: mocks.adminAllowed, error: '', reload: vi.fn() }) }))
 vi.mock('../src/AdminPanel', () => ({ AdminPanel: () => <section aria-label="관리자 공연 검수">관리자 편집기</section> }))
 beforeEach(() => {
+  mocks.profileRpc.mockResolvedValue({error:{message:'detail migration unavailable'}})
   HTMLDialogElement.prototype.showModal = function () { this.setAttribute('open', '') }
   HTMLDialogElement.prototype.close = function () { this.removeAttribute('open') }
   Element.prototype.scrollIntoView = vi.fn()
@@ -372,7 +373,7 @@ test('concert discovery contains only concerts and artist identity opens a deep-
   expect(new URLSearchParams(location.search).get('artist')).toBe('real-band')
   fireEvent.click(screen.getByRole('button', { name: '더보기', exact: true }))
   expect(screen.getByRole('button', { name: '접기' }).getAttribute('aria-expanded')).toBe('true')
-  expect(screen.getAllByRole('link', { name: /더보기, YouTube 새 탭/ })).toHaveLength(2)
+  expect(screen.queryAllByRole('link', { name: /더보기, YouTube 새 탭/ })).toHaveLength(0)
 })
 
 test('selected calendar date filters ticket opens in KST and recommends at most three performances', () => {
@@ -491,4 +492,17 @@ test('artist cards omit country and review metadata while the biography placehol
   expect(document.querySelector('.artist-live-summary')?.textContent).toContain('예정된 공연 1개')
   expect(document.querySelector('.artist-banner')?.textContent).not.toContain('장르 미검수')
   expect(document.querySelector('.artist-banner')?.textContent).not.toContain('음악에서 발견하고, 라이브에서 만나요.')
+})
+
+
+test('published DB content reaches the production artist page with exact video links and counts',async()=>{
+  const id='dcb90080-9164-478b-a728-b0f0172e2db0', mbid='4561aee5-6cf6-41a6-9b7b-f7be15a00a65'
+  mocks.bands=mapBands([{id,name:'이창섭',country_code:'KR',aliases:[],description:null,musicbrainz_id:mbid}])
+  const source='https://ko.wikipedia.org/wiki/Artist'
+  mocks.profileRpc.mockResolvedValue({error:null,data:{identity:{bandId:id,musicBrainzId:mbid},bio:'DB에서 검증해 공개한 아티스트 소개입니다.',wikipedia:source,language:'한국어',bioSource:{revisionUrl:source+'?oldid=1',authorsUrl:source+'?action=history'},channel:'https://www.youtube.com/channel/UC3Ea2-Ut3navgOlTfoq790g',music:[{id:'kq4GcIzcwXc',title:'확인된 운영 영상',publisher:'공식 게시자'}],live:[]}})
+  history.replaceState(null,'',`/?page=artist&artist=${id}`)
+  render(<App />)
+  expect(await screen.findByText('DB에서 검증해 공개한 아티스트 소개입니다.')).toBeTruthy()
+  expect(screen.getByRole('link',{name:/확인된 운영 영상/}).getAttribute('href')).toBe('https://www.youtube.com/watch?v=kq4GcIzcwXc')
+  expect(screen.getByText('공식 게시자 · YouTube')).toBeTruthy()
 })
