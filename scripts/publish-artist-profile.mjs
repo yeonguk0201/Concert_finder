@@ -4,6 +4,8 @@ import { createClient } from '@supabase/supabase-js'
 import { profileStateStore, profileAttemptKey } from './artist-profile-state.mjs'
 
 const fail = code => { throw Error(code) }
+let nextMusicBrainzAt=0
+const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))
 const plain = value => String(value ?? '').replace(/<[^>]*>/g, '').trim()
 const same = (a,b) => JSON.stringify(canonical(a)) === JSON.stringify(canonical(b))
 const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(k => [k, canonical(value[k])])) : value
@@ -20,7 +22,13 @@ export async function prepareProfile(event, { fetcher=fetch, key, now=Date.now()
   if (event.status !== 'candidate' && event.status !== 'approved') fail('PROFILE_CANDIDATE_HELD')
   const get = async (url, headers={}) => {
     if (!evidenceUrl(url)) fail('PROFILE_SOURCE_URL_INVALID')
-    const response=await fetcher(url,{headers:{'User-Agent':'ConcertFinder/1.0 (artist profile verification)',...headers},redirect:'error',signal:AbortSignal.timeout(20000)})
+    const mbRequest=new URL(url).hostname==='musicbrainz.org'
+    if(mbRequest && nextMusicBrainzAt>Date.now()) await pause(nextMusicBrainzAt-Date.now())
+    const request=()=>fetcher(url,{headers:{'User-Agent':'ConcertFinder/1.0 (artist profile verification)',...headers},redirect:'error',signal:AbortSignal.timeout(20000)})
+    if(mbRequest) nextMusicBrainzAt=Date.now()+1100
+    let response=await request()
+    // One bounded busy-server retry, never shorten a provider's requested delay.
+    if(mbRequest && response.status===503 && !response.headers.get('retry-after')) { await pause(1500);nextMusicBrainzAt=Date.now()+1100;response=await request() }
     if (!response.ok) fail('PROFILE_SOURCE_UNAVAILABLE')
     return response
   }
@@ -49,7 +57,8 @@ export async function prepareProfile(event, { fetcher=fetch, key, now=Date.now()
     if(info && m && !plain(m.Restrictions?.value) && plain(m.Artist?.value)
       && /^https:\/\/(upload|thumb).wikimedia.org\//.test(info.url)
       && /^https:\/\/creativecommons.org\/licenses\/by(-sa)?\/(2\.0|2\.5|3\.0|4\.0)\/?$/.test(m.LicenseUrl?.value??'')) {
-      payload.banner={url:info.url,source:banner.url,author:plain(m.Artist.value),credit:plain(m.Credit?.value),license:plain(m.LicenseShortName.value),licenseUrl:m.LicenseUrl.value,useScope:'production_commons',restrictions:'',checkedAt}
+      const imageUrl=new URL(info.url);imageUrl.search='';imageUrl.hash=''
+      payload.banner={url:imageUrl.href,source:banner.url,author:plain(m.Artist.value),credit:plain(m.Credit?.value),license:plain(m.LicenseShortName.value),licenseUrl:m.LicenseUrl.value,useScope:'production_commons',restrictions:'',checkedAt}
     }
   }
   const videos=(c.videos??[]).filter(v=>v.status==='candidate' && ['music','live'].includes(v.kind))

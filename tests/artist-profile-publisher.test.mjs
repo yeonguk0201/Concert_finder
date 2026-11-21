@@ -52,3 +52,11 @@ test('uncertain apply recovers from exact state and a retry verifies public visi
  await assert.rejects(publishCandidate(client,pub,locator),/PROFILE_MANUAL_LOCK/)
  assert.equal(writes,1)
 })
+
+test('Commons tracking parameters are removed without broadening image hosts or licenses',async()=>{
+ const f=fixture({held:true});f.event.candidate.banner={status:'candidate',url:'https://commons.wikimedia.org/wiki/File:Example.jpg'}
+ const fetcher=(u,o)=>u.startsWith('https://commons.wikimedia.org/')?Promise.resolve(new Response(JSON.stringify({query:{pages:{1:{imageinfo:[{url:'https://upload.wikimedia.org/wikipedia/commons/example.jpg?utm_source=commons.wikimedia.org',extmetadata:{Artist:{value:'Author'},LicenseUrl:{value:'https://creativecommons.org/licenses/by/4.0'},LicenseShortName:{value:'CC BY 4.0'}}}]}}}}))):f.fetcher(u,o)
+ const p=await prepareProfile(f.event,{fetcher,key:'test'})
+ assert.equal(p.banner.url,'https://upload.wikimedia.org/wikipedia/commons/example.jpg')
+ assert.equal(p.banner.useScope,'production_commons')
+})
