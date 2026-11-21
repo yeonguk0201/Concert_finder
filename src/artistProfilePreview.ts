@@ -4,7 +4,7 @@ type Banner = {
   url: string
   source: string
   author: string
-  license: 'CC BY 2.0' | 'CC BY 3.0' | 'CC BY 4.0' | '편집 용도 한정'
+  license: string
   licenseUrl?: string
   illustration?: { thumbnailUrl: string; width: number }
   logo?: { url: string; source: string }

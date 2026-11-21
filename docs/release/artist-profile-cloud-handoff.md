@@ -1,5 +1,52 @@
 # 아티스트 상세 · 새 클라우드 채팅 인계
 
+## 2026-11-21 · 예약의 운영 화면 반영 경로
+
+사용자가 예약도 운영 화면까지 반영하도록 후속 요청했다. 아래 과거 후보 전용/운영 반영 금지 범위는 이 후속 요청에 따라 **검증을 통과한 기존 승인 아티스트의 상세 콘텐츠 게시**까지 확대한다. 디자인·신규 아티스트/별칭·검수 상태·기존 채널 writer·KOPIS/다른 예약 변경은 여전히 제외한다. 이후 실제 main 코드와 이 절을 우선하며 정적 네 팀 데이터를 편집하는 방식으로 예약을 구현하지 않는다.
+
+구현은 `scripts/publish-artist-profile.mjs`, 공개 상세 RPC를 읽는 `src/useArtistProfile.ts`, 기존 App/영상 컴포넌트 연결이다. [PR #99](https://github.com/yeonguk0201/Concert_finder/pull/99)에서 코드와 CI 상태를 확인한다. 기존 main의 정적 소개/사진 표시 후속을 보존하고, RPC가 준비된 환경에서는 DB의 현재 승인/신원/버전 검사 결과를 우선한다. 레이아웃·CSS는 수정하지 않았다.
+
+### 실제 DB 설치와 첫 적용
+
+프로젝트 `czjrzylvnewfjnfwjhwf`에 additive migration `artist_profile_publication`을 설치했다. 검토 파일은 `supabase/migrations/20261121131430_artist_profile_publication.sql`, 실제 원격 이력은 `20261121132144 / artist_profile_publication`이다. 기존 migration 전체 db push나 이 파일 재실행으로 history를 맞추지 않는다.
+
+- `private.artist_profile_content`: band ID별 현재 상세 데이터, 원본 MBID/band version, profile version, source key, manual lock.
+- `private.artist_profile_applications`: source key별 불변 적용 receipt와 이전 내용. 기존 Storage 후보 JSON은 덮어쓰지 않는다.
+- `service_apply_artist_profile`: service_role만 실행. 현재 승인 상태/MBID/정확한 band version, profile CAS, 수동 잠금, source key 충돌, 출처·라이선스·영상 개수/시각 검증. 다른 아티스트·채널·공연 상태를 쓰지 않는다.
+- `service_artist_profile_state` / `service_artist_profile_manifest`: 서비스용 현재 값·적용 source key·버전·잠금 확인.
+- `artist_profile_content(target_band_id)`: 익명 공개 읽기. 승인/MBID/band version이 바뀌면 숨기며 manual/hidden 사진 모드는 자동 배너를 제외한다. 영상은 확인 후 7일이 지나면 공개 응답에서 제외한다.
+- `admin_lock_artist_profile`: 관리자만 profile version을 확인해 상세 자동 갱신을 잠글 수 있다. 서비스는 이 잠금을 해제하지 못한다.
+
+2026-11-21 UTC 실제 적용: 이창섭 소개·Commons 사진, Ado 소개·MV/live 각 1개(삽화 제외), MCR 소개·Commons 사진·MV/live 각 1개. 각각 기존 run `5054d095-437d-429f-8f33-7599d85b6bc3`의 이창섭/MCR attempt 1, Ado attempt 2를 재검증해 적용했으며 원본 후보/버전/상태를 변경하지 않았다. 세 팀의 적용 receipt는 각각 1건이다. 같은 입력 재실행은 외부 재조사·두 번째 쓰기 없이 `already_applied` 및 공개 재읽기로 복구한다. 실리카겔은 여전히 unreviewed이며 상세 적용/receipt 0건이다. 기존 네 팀의 band updated_at과 검수 상태는 그대로다.
+
+첫 외부 요청 실패는 게시를 중단했고, Commons의 새 `utm_source` 쿼리는 엄격한 이미지 URL 검증에 걸렸다. 허용 호스트/라이선스는 유지한 채 원본 경로의 추적 쿼리만 제거해 해결했으며 회귀 검사에 추가했다. MusicBrainz는 공유 요청 간격을 지키고 Retry-After 없는 503에만 한 번 짧게 재시도한다. 제공처 대기를 우회하거나 반복 루프를 만들지 않는다.
+
+### 예약 실행 계약
+
+기존 3일 간격 예약을 유지하며 다음 회차도 새 예약을 생성하지 않는다. 현재 main을 먼저 fetch하고 실제 지원 RPC와 공개 키 권한을 확인한다. 현재 상태/원본 이벤트는 다음과 같이 읽는다.
+
+```js
+await server.rpc('service_artist_profile_manifest')
+await server.rpc('service_artist_profile_state', { target_band_id: bandId })
+```
+
+현재 상세가 없는 기존 승인 아티스트 최대 4팀을 우선 조사한다. 기존 공개 영상의 확인 시각이 5일 이상 됐거나 신원/원본 version·출처에 실제 변화가 있으면 신규 조사보다 갱신을 우선한다. 이미 게시된 동일 source key, 변경 없는 보류·수동 잠금·재시도 전 항목은 재생성하지 않는다. 영상은 7일 후 숨겨지므로 갱신 대상과 현재 공개 응답의 실제 개수를 확인한다. 과거 후보 이벤트를 복사할 때 확인 시각만 바꿔 검증 완료로 만들지 않는다.
+
+기존 `scripts/artist-profile-state.mjs`의 immutable create 계약으로 후보를 보존한 다음, 동일 run/band/attempt locator JSON을 UTF-8 ignored 파일에 작성하고 다음 **지원 CLI만** 사용한다.
+
+```sh
+node --use-env-proxy scripts/publish-artist-profile.mjs --apply-candidate .local/artist-profile/locator.json
+```
+
+CLI는 후보를 Storage에서 직접 재읽고 MB→Wikidata/P434→우선 한국어 Wikipedia revision, Commons의 개별 이용 근거, MB 공식 YouTube 관계 또는 해당 신원에 연결된 공식 홈페이지의 정확한 영상/채널 링크와 API 게시자를 다시 검증한다. 연구자가 출처를 공식이라고 적은 문구만으로 신뢰하지 않는다. Ado 편집용 삽화·이창섭 held 영상 등 미확인 필드는 제외한다. 기존의 검증된 값이 일부 누락된 부분 후보로 전체 상세를 덮어쓰지 않도록 원본 snapshot·현재 상세를 먼저 대조하고 완전한 후보를 준비한다.
+
+CLI의 `privateReadback`과 `publicReadback` 모두 true이며 현재 공개 영상/이미지 개수가 확인된 경우만 적용 완료다. 응답을 잃었으면 같은 source key의 state/receipt를 읽어 정확히 일치할 때 복구하며, 새 source key나 직접 SQL로 중복 적용하지 않는다. 원본 journal의 `application.status=not_attempted`는 불변 조사 시점의 기록이므로 현재 적용 여부는 새 application receipt와 공개 읽기를 함께 확인한다. 원본 event를 applied 상태로 덮어쓰지 않는다.
+
+출처/권한/버전/수동 잠금 실패는 해당 아티스트만 보류하고 재시도 근거를 기록한다. 운영 아티스트 승인·신원/별칭·기존 채널 저장·KOPIS lease/cooldown/알림·다른 예약은 건드리지 않는다. 이 예약 회차에서 DDL/함수/사이트 배포·Git push/PR/merge를 수행하지 않으며 배포된 지원 경로가 없으면 설치 필요사항을 보고한다.
+
+검증: 새 DB/게시 Node 6개와 관련 UI 50개, lint/build/diff check 통과. 실제 DB/익명 API를 사용한 production build의 브라우저 세 팀에서 소개·출처·영상 수 0/2/2·사진 2장·Ado 삽화 제외·runtime error 0을 확인했다. 프록시 CA 문제 때문에 브라우저의 동일 공개 API/이미지 요청을 TLS 검증이 되는 Node fetch로 중계했으며 가짜 응답이나 인증서 검증 해제는 사용하지 않았다. 실제 운영 배포 상태는 PR main 반영 후 해당 commit/URL에서 별도 확인한다.
+
+
 ## 2026-11-19 후속 승인 · 후보 조사 예약과 Git 릴리스
 
 사용자 후속 요청으로 **3일마다** 기존 다른 아티스트의 상세 콘텐츠 후보를 조사하는 예약 `아티스트 상세 콘텐츠 보완`을 생성했다. 첫 예정은 2026-11-22 10시 전후 KST이며 매회 최대 4팀, 기존 비공개 후보 journal 추가까지다. 운영 게시·검수 상태 변경·디자인·기존 KOPIS/중지 예약 변경은 포함하지 않는다. 예약 설정 완료와 실제 첫 실행·저장 성공은 구분한다.
