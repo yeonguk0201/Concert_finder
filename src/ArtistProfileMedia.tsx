@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import type { Band } from './data'
 import { artistStyle } from './approvedStyle'
 
-import type { ArtistProfilePreview, ArtistVideo } from './artistProfilePreview'
+import type { ArtistVideo } from './artistProfilePreview'
+import type { ArtistProfileContent } from './artistProfileContent'
 function Thumbnail({ video, band, live }: { video: ArtistVideo; band: Band; live: boolean }) {
   const [failed, setFailed] = useState(false)
   return <div className={`video-thumb ${artistStyle(band)}`}><span className="video-graphic" aria-hidden="true">{band.initials}</span>{!failed && <img className="youtube-thumbnail" src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt={`${video.title} YouTube 썸네일`} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />}<span className="video-play" aria-hidden="true">▶</span><span className="video-label">{live ? 'Live' : 'Music video'}</span>{failed && <span className="thumbnail-fallback">썸네일을 불러오지 못했어요</span>}</div>
@@ -57,6 +58,6 @@ function VideoShelf({ band, title, videos,  channel }: { band: Band; title: stri
     </div> : <div className="video-awaiting">공식 영상은 확인 후 이곳에 모을게요.</div>}
   </section>
 }
-export function ArtistProfileMedia({ band, profile }: { band: Band; profile?: ArtistProfilePreview }) {
+export function ArtistProfileMedia({ band, profile }: { band: Band; profile?: ArtistProfileContent }) {
   return <><VideoShelf key={`${band.id}:music`} band={band} title="동영상" videos={(profile?.music ?? []).slice(0, 6)} channel={profile?.channel} /><VideoShelf key={`${band.id}:live`} band={band} title="라이브 공연 영상" videos={(profile?.live ?? []).slice(0, 6)} channel={profile?.channel} /></>
 }
