@@ -26,8 +26,10 @@ private 구현은 서비스 JWT role을 다시 확인하고 기존 private catal
 `proposal`과 `expected_snapshot`만 넣고 키를 포함하지 않는다. 서버 바인딩은 환경에서만 읽는다.
 mutation 응답이 불확실하면 재시도하지 말고 공개 읽기·감사 이력부터 대조한다.
 
-비공개 적용 기록은 기존 `concert-scheduler-state/booking-link-reviews/v1/<concert>/<sha256(url)>/`
-경로에서 gzip JSON을 append한다. 기존 raw JSON의 SHA256을 previous_hash에 남기며,
+비공개 적용 기록은 기존 `concert-scheduler-state/booking-link-reviews/v1/<concert>/<candidate key>/`
+경로에서 gzip JSON을 append한다. 기존 후보의 key는 원본 URL의 hash와 다를 수 있으므로
+이전 객체 경로를 명시해 같은 디렉터리를 유지한다. 신규 후보만 URL의 SHA256을 key로 사용한다.
+기존 raw JSON의 SHA256을 previous_hash에 남기며,
 원본·불확실성·이전 근거를 보존한다. 업로드는 upsert=false이고 저장 후 바이트를 대조한다.
 경합 시 덮어쓰지 않는다. DB 저장과 Storage 기록은 별도 단계이므로 Storage 실패를 DB 실패로
 간주해 mutation을 반복하지 않는다. DB의 history_id가 운영 반영 영수증이다.
