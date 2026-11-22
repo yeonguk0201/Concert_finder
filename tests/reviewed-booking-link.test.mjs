@@ -29,6 +29,12 @@ test('private applied records append without overwriting and retain the original
   assert.equal(saved.status, 'applied')
   await assert.rejects(appendAppliedBookingReview(client, p, {}, { applied: true }, originalBytes, previousKey), /REVIEW_NOT_SAVED:409/)
   assert.equal(files.size, 1)
+  const automaticKey = await appendAppliedBookingReview(client,
+    { ...p, confirmation_mode: 'standing_policy' }, {}, { applied: true }, encodeReview(saved), key)
+  const automatic = JSON.parse(gunzipSync(files.get(automaticKey)).toString('utf8'))
+  assert.equal(automatic.automatic_apply, true)
+  assert.equal(automatic.application.confirmation_mode, 'standing_policy')
+  assert.deepEqual(automatic.original, old.original)
 })
 
 test('reviewed booking links preserve catalog facts, manual edits and notification state', async t => {
