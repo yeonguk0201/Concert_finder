@@ -36,9 +36,10 @@ export async function appendAppliedBookingReview(client, proposal, original, rec
   const record = { ...(previous ?? { schema: 1, original, original_hash: sha(encodeReview(original)) }),
     concert_id: proposal.concert_id, url: proposal.url, revision,
     previous_hash: previousBytes ? sha(previousBytes) : null,
-    status: 'applied', applied: true, automatic_apply: false, checked_at: proposal.checked_at,
+    status: 'applied', applied: true, automatic_apply: proposal.confirmation_mode === 'standing_policy', checked_at: proposal.checked_at,
     evidence: [...(previous?.evidence ?? []), proposal.evidence],
-    application: { ...receipt, confirmation_basis: proposal.confirmation_basis }, retry_after: null }
+    application: { ...receipt, confirmation_basis: proposal.confirmation_basis,
+      confirmation_mode: proposal.confirmation_mode ?? 'per_link' }, retry_after: null }
   // Existing candidate identifiers were not necessarily hashes of the raw URL.
   // Keep their directory; deriving a new one would duplicate the same candidate.
   const prefix = previous ? previousKey.slice(0, previousKey.lastIndexOf('/')) : `${root}${sha(proposal.url)}`
