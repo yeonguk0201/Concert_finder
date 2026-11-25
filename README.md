@@ -31,10 +31,13 @@ KOPIS(공연예술통합전산망) API에서 받은 공연을 Node.js 수집기�
 
 | 단계 | 구현과 검증 기록 |
 | --- | --- |
-| 수집·공개 | 첫 운영 실행에서 공연 5건을 공개하고 비로그인 조회와 발송 0건을 확인했습니다. 11월 10일 인계 시점에 정기 트리거의 후속 실행은 미확인이었습니다. [실행 기록](docs/release/local-ui-and-concert-dedup-handoff.md) |
+| 수집·공개 | Cloudflare가 매시 23분에 GitHub Actions 수집기를 호출합니다. 첫 운영 실행에서 공연 5건의 비로그인 조회와 알림 발송 0건을 확인했습니다. [첫 공개 기록](docs/curation-runs/20261109-api-first-scheduler-first-run.md) |
+| 공연 중복 표시 | 같은 공연으로 확인된 카드는 한 번만 표시합니다. 도시·날짜·장소가 다르거나 회차가 모호하면 별도로 표시합니다. [화면 수정 기록](https://github.com/yeonguk0201/Concert_finder/commit/ca26ba2) |
 | 예매처 연결 | 공식 상품의 도시·장소·기간·모든 회차가 일치하면 비어 있는 예매 URL을 채웁니다. 수동 등록 링크는 보호합니다. [검증·적용 기록](docs/release/reviewed-booking-link-application.md) |
 | 화면 갱신 | Supabase Realtime으로 공개 카탈로그와 본인 계정의 변경을 구독합니다. [구독 구조](docs/realtime-validation.md) |
 | 웹 푸시 | 발송 직전에 동의·기기·공연 상태를 다시 확인합니다. 노트북, 갤럭시 Chrome, 아이폰 홈 화면 웹앱에서 테스트 알림을 수신했습니다. [기기 검증 기록](docs/notifications.md) |
+
+**2026년 11월 25일 운영 점검** — 정기 호출은 확인됐습니다. 15:23 KST에는 KOPIS 목록 요청이 HTTP 400으로 실패했고, 16:23에는 재시도 대기 시간이라 수집을 건너뛰었습니다. 목록 요청 실패의 원인 확인과 보류 후보별 사유 저장이 남아 있습니다. [운영 점검 기록](docs/release/local-ui-and-concert-dedup-handoff.md#2026-11-25-후속-점검)
 
 <details>
 <summary>초기 프리뷰 화면 보기 · 가상 샘플</summary>
