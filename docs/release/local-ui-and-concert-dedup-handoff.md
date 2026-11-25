@@ -48,10 +48,8 @@
 - 실제 검토 pin은 executor `ae38470098f40cb3aec9582172c0b9c4`, API facts `3c356e529b6e1dc2fe04041c64a3248d`다. UI만 바꾸면 운영 함수/권한을 건드릴 이유가 없다. 서버의 중복/사실 판정을 바꾸면 격리 검증과 정규 릴리스에서 계약·pin을 함께 검토해야 한다. 조회값을 자동 승인하거나 guard를 해제하지 않는다.
 - KOPIS 사실/출처 링크 허용 범위를 유지한다. NOL/Reissue 자동 취득·상품 딥링크와 YES24 OFF, 다른 source 공개 OFF, 알림 live_after=null을 보존한다. 아티스트/별칭/승인·관련 queue·알림 claim/send/test는 UI/중복 작업에 포함하지 않는다.
 
-## 후속 작업 목록
+## 2026-11-25 후속 점검
 
-1. UI/중복 문제의 실제 재현과 원인 분류; 정상 투어/회차를 보존하는 수정.
-2. 시간 기반 schedule의 후속 실행 여부와 부재 원인 조사. 수동 push/추가 수집을 정기 실행의 증거로 바꾸지 않기.
-3. client hold94건의 사유별 영속 기록과 상태 표시 정리. latest의 failureCount12/deferredCandidates12는 이전 raw 결과에서 보존된 필드이며 이번 실제 source 실패는1건이다. 과거 수치를 이번 성과/실패로 세지 않는다.
-
-위 목록은 남은 과제를 공유한 것이며 이번 문서 PR에서 UI·중복 로직·정기 트리거를 수정하거나 운영을 추가 실행하지 않았다.
+1. **공연 카드 중복 표시 수정 완료.** 같은 공연에 해당하는 카드 중 저장된 항목이나 예매 정보가 있는 항목을 우선 표시한다. 다른 도시·날짜·장소와 모호한 회차는 각각 유지한다. 철회한 공연은 저장 목록에서 숨기고 계정의 저장 ID는 보존한다. 회귀 테스트와 로컬 프리뷰로 확인했다. [수정 커밋](https://github.com/yeonguk0201/Concert_finder/commit/ca26ba2)
+2. **정기 호출 확인, 수집 오류 조사 필요.** 인계 이후 11월 10일에 GitHub 자체 예약 실행이 기록됐다. 이후 Cloudflare의 매시 23분 타이머가 GitHub Actions를 호출하도록 전환했다. 11월 25일 15:23 KST 수집기는 KOPIS 목록 요청에서 HTTP 400을 받아 후보 0건으로 종료했고, 16:23 KST에는 재시도 대기 시간이라 건너뛰었다. 두 회차 모두 Actions에는 성공으로 표시돼 수집 결과는 실행 로그에서 확인해야 한다. [11월 10일 예약 실행](https://github.com/yeonguk0201/Concert_finder/actions/runs/42757311370) · [Cloudflare 전환](https://github.com/yeonguk0201/Concert_finder/pull/88) · [15:23 수집 결과](https://github.com/yeonguk0201/Concert_finder/actions/runs/45560203377) · [16:23 대기 기록](https://github.com/yeonguk0201/Concert_finder/actions/runs/45567712800)
+3. **보류 사유 기록과 상태 표시 미완료.** 11월 9일 첫 실행에서 공개 5건, 클라이언트 보류 94건, 출처 실패 1건을 확인했다. 당시 저장 결과에는 94건의 개별 사유가 없어 사유별 집계를 확정할 수 없다. 후속 작업은 새 보류 후보의 사유를 건별로 저장하고, 상태 화면에서 이번 실행 결과와 이전 실행에서 이어받은 값을 구분하는 것이다. 당시 `latest`의 `failureCount=12`와 `deferredCandidates=12`는 이전 값이다. [첫 실행 기록](../curation-runs/20261109-api-first-scheduler-first-run.md)
