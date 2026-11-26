@@ -2,10 +2,10 @@
 
 # encore.
 
-### 좋아하는 밴드의 다음 한국 공연을 만나는 곳
+**좋아하는 음악, 직접 만나는 순간.**
 
-국내 공연부터 내한 콘서트, 페스티벌 출연까지.<br>
-밴드를 찜하고 공연 소식과 예매 일정을 한곳에서 확인하는 모바일 대응 웹앱입니다.
+국내 공연부터 내한 콘서트와 페스티벌까지.<br>
+좋아하는 아티스트를 찜하고, 다가오는 공연과 티켓 오픈 일정을 한곳에서 확인하세요.
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)
@@ -13,17 +13,40 @@
 ![Supabase](https://img.shields.io/badge/Supabase-Auth%20%2B%20PostgreSQL-3ECF8E?logo=supabase&logoColor=black)
 [![CI](https://github.com/yeonguk0201/Concert_finder/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/yeonguk0201/Concert_finder/actions/workflows/ci.yml)
 
-[빠른 시작](#빠른-시작) · [개발 로드맵](docs/development-roadmap.md) · [Supabase 설정](docs/backend-setup.md) · [기여 가이드](CONTRIBUTING.md)
+[화면 둘러보기](#화면-둘러보기) · [빠른 시작](#빠른-시작) · [개발 로드맵](docs/development-roadmap.md) · [기여 가이드](CONTRIBUTING.md)
 
 </div>
 
 ---
 
+## 화면 둘러보기
+
+### 홈
+
+![encore. 홈 화면의 검색창, 추천 아티스트, 월별 예매 캘린더](docs/screenshots/home.png)
+
+공연이나 아티스트를 검색하고, 추천 아티스트와 이달의 예매 캘린더를 둘러볼 수 있습니다.
+
+### 공연 상세
+
+![요네즈 켄시 내한공연 상세 화면의 공연 기간, 장소, 티켓 정보와 예매 일정 저장 버튼](docs/screenshots/concert-detail.png)
+
+요네즈 켄시 내한공연 상세 화면입니다. 공연 장소와 티켓 정보를 확인하고, 예매처로 이동하거나 예매 일정을 저장할 수 있습니다.
+
+<details>
+<summary>초기 프리뷰 화면 보기 · 가상 샘플</summary>
+
+![encore. 초기 화면의 가상 샘플 데이터](docs/preview.png)
+
+초기 UI 기록입니다. 화면 속 공연·라인업·가격·장소 조합은 가상 샘플입니다.
+
+</details>
+
 ## 공연을 찾고 예매를 준비하는 방법
 
 - **공연 탐색** — 아티스트 이름이나 별칭, 공연명, 공연장으로 검색하고 지역과 공연 유형으로 좁힙니다. 아티스트 프로필에서 검수된 소개와 공식 채널을 확인하고 관심 아티스트를 찜할 수 있습니다.
 - **예매 일정** — 공연 상세에서 회차·장소·공식 출처를 확인하고 예매처로 이동합니다. 예매 시작 시각이 확인된 일정은 캘린더 파일(`.ics`)로 내려받을 수 있습니다. 미확인 시각은 미정으로 표시합니다.
-- **계정과 알림** — 이메일로 로그인하면 찜과 저장한 일정을 다른 기기에서도 불러올 수 있습니다. 웹 푸시는 계정에서 알림 종류를 선택하고 받을 기기를 등록해야 합니다. 저장한 예매의 1시간 전 알림과 찜한 아티스트의 신규 공연 알림을 지원합니다.
+- **계정과 알림** — 이메일로 로그인하면 찜과 저장한 일정을 다른 기기에서도 불러올 수 있습니다. 계정에서 알림 종류를 선택하고 수신 기기를 등록하면 저장한 일정의 예매 시작 1시간 전과 찜한 아티스트의 신규 공연 등록 시 알림을 받을 수 있습니다.
 
 ## 공식 정보가 화면에 오르기까지
 
@@ -38,15 +61,6 @@ KOPIS(공연예술통합전산망) API에서 받은 공연을 Node.js 수집기�
 | 웹 푸시 | 발송 직전에 동의·기기·공연 상태를 다시 확인합니다. 노트북, 갤럭시 Chrome, 아이폰 홈 화면 웹앱에서 테스트 알림을 수신했습니다. [기기 검증 기록](docs/notifications.md) |
 
 **2026년 11월 25일 운영 점검** — 정기 호출은 확인됐습니다. 15:23 KST에는 KOPIS 목록 요청이 HTTP 400으로 실패했고, 16:23에는 재시도 대기 시간이라 수집을 건너뛰었습니다. 목록 요청 실패의 원인 확인과 보류 후보별 사유 저장이 남아 있습니다. [운영 점검 기록](docs/release/local-ui-and-concert-dedup-handoff.md#2026-11-25-후속-점검)
-
-<details>
-<summary>초기 프리뷰 화면 보기 · 가상 샘플</summary>
-
-![encore. 초기 화면 — 가상 샘플 데이터](docs/preview.png)
-
-초기 UI 기록입니다. 이 이미지의 공연·라인업·가격·장소 조합은 가상 샘플이며, 현재 계정 모드의 실제 데이터 화면과 다릅니다.
-
-</details>
 
 ## 빠른 시작
 
