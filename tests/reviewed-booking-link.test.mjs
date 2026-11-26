@@ -47,13 +47,18 @@ test('reviewed booking links preserve catalog facts, manual edits and notificati
       '202610090001_notifications','20261121131934_reviewed_booking_link']) {
       await db.exec(await readFile(new URL(`../supabase/migrations/${name}.sql`, import.meta.url), 'utf8'))
     }
-    const id = (await db.query(`insert into public.concerts(title,format,city,venue,starts_on,ends_on,
-      announced_on,announcement_verified) values ('Fictional booking fixture','solo','서울','가상 공연장',
-      current_date+30,current_date+30,current_date,true) returning id`)).rows[0].id
+    const id = (await db.query(`with fixture_date as (
+      select (now() at time zone 'Asia/Seoul')::date as today
+    )
+    insert into public.concerts(title,format,city,venue,starts_on,ends_on,announced_on,announcement_verified)
+    select 'Fictional booking fixture','solo','서울','가상 공연장',today+30,today+30,today,true
+    from fixture_date returning id`)).rows[0].id
     const band = (await db.query("insert into public.bands(name,country_code) values ('Fictional band','KR') returning id")).rows[0].id
     await db.query('insert into public.concert_bands(concert_id,band_id) values ($1,$2)', [id, band])
     await db.query("insert into public.concert_sources(concert_id,url,label,verified_at) values ($1,'https://official.example/show','fixture',now())", [id])
-    await db.query("insert into public.concert_sessions(concert_id,label,starts_on,starts_at) values ($1,'fixture',current_date+30,now()+interval '30 days')", [id])
+    await db.query(`insert into public.concert_sessions(concert_id,label,starts_on,starts_at)
+      select id,'fixture',starts_on,(starts_on + time '19:00') at time zone 'Asia/Seoul'
+      from public.concerts where id=$1`, [id])
     await db.query("insert into public.ticket_schedules(concert_id,price_description) values ($1,'unchanged price')", [id])
     await db.exec("select set_config('encore.initial_import','true',false)")
     await db.query("update public.concerts set status='published' where id=$1", [id])
